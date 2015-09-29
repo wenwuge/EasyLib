@@ -1,0 +1,294 @@
+2015-09-24 16:04:36 [0x7f90fad48760] FATAL (skeleton.cpp:123)MasterRun - log4cxx init finish!
+2015-09-24 16:04:36 [0x7f90fad48760] FATAL (skeleton.cpp:130)MasterRun - log4cxx work in the worker!
+2015-09-24 16:04:36 [0x7f90fad48760] FATAL (skeleton.cpp:127)MasterRun - log4cxx work in the worker!
+2015-09-24 16:04:36 [0x7f90fad48760] DEBUG (skeleton.cpp:166)SignalHandle - in signal handler,sig : 17
+2015-09-24 16:06:29 [0x7f90fad48760] DEBUG (skeleton.cpp:166)SignalHandle - in signal handler,sig : 15
+2015-09-25 15:08:59 [0x7ff205d06760] FATAL (skeleton.cpp:182)MasterRun - log4cxx init finish!
+2015-09-25 15:08:59 [0x7ff205d06760] DEBUG (skeleton.cpp:123)LoadModules - find1modules
+2015-09-25 15:13:35 [0x7f23fc766760] FATAL (skeleton.cpp:182)MasterRun - log4cxx init finish!
+2015-09-25 15:13:35 [0x7f23fc766760] DEBUG (skeleton.cpp:123)LoadModules - find1modules
+2015-09-25 15:24:59 [0x7f0bc75e8760] FATAL (skeleton.cpp:182)MasterRun - log4cxx init finish!
+2015-09-25 15:24:59 [0x7f0bc75e8760] DEBUG (skeleton.cpp:123)LoadModules - find1modules modules: examplemodule/libechomodule.so:examplemodule/echo.conf
+2015-09-25 15:26:09 [0x7fe3461c7760] FATAL (skeleton.cpp:182)MasterRun - log4cxx init finish!
+2015-09-25 15:26:09 [0x7fe3461c7760] DEBUG (skeleton.cpp:123)LoadModules - find1modules modules: examplemodule/libechomodule.so:examplemodule/echo.conf
+2015-09-25 15:26:09 [0x7fe3461c7760] DEBUG (skeleton.cpp:129)LoadModules - Module name:examplemodule/libechomodule.so confexamplemodule/echo.conf
+2015-09-25 15:36:13 [0x7f9b46a0d760] FATAL (skeleton.cpp:183)MasterRun - log4cxx init finish!
+2015-09-25 15:36:13 [0x7f9b46a0d760] DEBUG (skeleton.cpp:123)LoadModules - find1modules modules: examplemodule/libechomodule.so:examplemodule/echo.conf
+2015-09-25 15:36:13 [0x7f9b46a0d760] DEBUG (skeleton.cpp:129)LoadModules - Module name:examplemodule/libechomodule.so confexamplemodule/echo.conf
+2015-09-25 15:36:43 [0x7f0bc75e8760] DEBUG (skeleton.cpp:230)SignalHandle - in signal handler,sig : 15
+2015-09-25 15:41:04 [0x7f37c1df9760] FATAL (skeleton.cpp:183)MasterRun - log4cxx init finish!
+2015-09-25 15:41:04 [0x7f37c1df9760] DEBUG (skeleton.cpp:123)LoadModules - find1modules modules: examplemodule/libechomodule.so:examplemodule/echo.conf
+2015-09-25 15:41:04 [0x7f37c1df9760] DEBUG (skeleton.cpp:129)LoadModules - Module name:examplemodule/libechomodule.so confexamplemodule/echo.conf
+2015-09-25 15:47:24 [0x7f72912e7760] FATAL (skeleton.cpp:192)MasterRun - log4cxx init finish!
+2015-09-25 15:47:24 [0x7f72912e7760] DEBUG (skeleton.cpp:123)LoadModules - find1modules modules: examplemodule/libechomodule.so:examplemodule/echo.conf
+2015-09-25 15:47:24 [0x7f72912e7760] DEBUG (skeleton.cpp:129)LoadModules - Module name:examplemodule/libechomodule.so confexamplemodule/echo.conf
+2015-09-25 15:47:24 [0x7f72912e7760] FATAL (skeleton.cpp:134)LoadModules - dlopen error
+2015-09-25 16:01:24 [0x7fc5dfa2b760] FATAL (skeleton.cpp:192)MasterRun - log4cxx init finish!
+2015-09-25 16:01:24 [0x7fc5dfa2b760] DEBUG (skeleton.cpp:123)LoadModules - find1modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf
+2015-09-25 16:01:24 [0x7fc5dfa2b760] DEBUG (skeleton.cpp:129)LoadModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-09-25 16:01:24 [0x7fc5dfa2b760] FATAL (skeleton.cpp:134)LoadModules - dlopen error
+2015-09-25 16:02:59 [0x7f3cd19df760] FATAL (skeleton.cpp:192)MasterRun - log4cxx init finish!
+2015-09-25 16:02:59 [0x7f3cd19df760] DEBUG (skeleton.cpp:123)LoadModules - find1modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf
+2015-09-25 16:02:59 [0x7f3cd19df760] DEBUG (skeleton.cpp:129)LoadModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-09-25 16:02:59 [0x7f3cd19df760] FATAL (skeleton.cpp:134)LoadModules - dlopen error,./examplemodule/libechomodule.so: undefined symbol: _ZN6Module6LoggerEv
+2015-09-25 16:06:32 [0x7f1c95189760] FATAL (skeleton.cpp:192)MasterRun - log4cxx init finish!
+2015-09-25 16:06:32 [0x7f1c95189760] DEBUG (skeleton.cpp:123)LoadModules - find1modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf
+2015-09-25 16:06:32 [0x7f1c95189760] DEBUG (skeleton.cpp:129)LoadModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-09-25 16:06:32 [0x7f1c95189760] FATAL (skeleton.cpp:150)LoadModules - DestroyModule error
+2015-09-25 16:08:40 [0x7f15eb3fc760] FATAL (skeleton.cpp:192)MasterRun - log4cxx init finish!
+2015-09-25 16:08:40 [0x7f15eb3fc760] DEBUG (skeleton.cpp:123)LoadModules - find1modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf
+2015-09-25 16:08:40 [0x7f15eb3fc760] DEBUG (skeleton.cpp:129)LoadModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-09-25 16:14:04 [0x7ff02c8e5760] FATAL (skeleton.cpp:191)MasterRun - log4cxx init finish!
+2015-09-25 16:14:04 [0x7ff02c8e5760] DEBUG (skeleton.cpp:123)LoadModules - find1modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf
+2015-09-25 16:14:04 [0x7ff02c8e5760] DEBUG (skeleton.cpp:129)LoadModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-09-25 16:14:33 [0x7f2596595760] FATAL (skeleton.cpp:191)MasterRun - log4cxx init finish!
+2015-09-25 16:14:33 [0x7f2596595760] DEBUG (skeleton.cpp:123)LoadModules - find1modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf
+2015-09-25 16:14:33 [0x7f2596595760] DEBUG (skeleton.cpp:129)LoadModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-09-25 16:14:33 [0x7f2596595760] DEBUG (skeleton.cpp:162)LoadModules - LoadModules finished!
+2015-09-25 16:14:33 [0x7f2596595760] DEBUG (skeleton.cpp:200)MasterRun - modules_.size() 1
+2015-09-25 16:14:33 [0x7f2596595760] FATAL (skeleton.cpp:172)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-09-25 16:14:33 [0x7f2596595760] DEBUG (skeleton.cpp:240)SignalHandle - in signal handler,sig : 17
+2015-09-25 16:40:03 [0x7f49d75a6760] FATAL (skeleton.cpp:192)MasterRun - log4cxx init finish!
+2015-09-25 16:40:03 [0x7f49d75a6760] DEBUG (skeleton.cpp:123)LoadModules - find1modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf
+2015-09-25 16:40:03 [0x7f49d75a6760] DEBUG (skeleton.cpp:129)LoadModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-09-25 16:40:03 [0x7f49d75a6760] DEBUG (skeleton.cpp:163)LoadModules - LoadModules finished!
+2015-09-25 16:40:03 [0x7f49d75a6760] DEBUG (skeleton.cpp:201)MasterRun - modules_.size() 1
+2015-09-25 16:40:03 [0x7f49d75a6760] FATAL (skeleton.cpp:173)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-09-25 16:40:03 [0x7f49d75a6760] DEBUG (skeleton.cpp:241)SignalHandle - in signal handler,sig : 17
+2015-09-28 11:08:28 [0x7fb0f2776760] FATAL (skeleton.cpp:214)MasterRun - log4cxx init finish!
+2015-09-28 11:08:28 [0x7fb0f2776760] DEBUG (skeleton.cpp:145)LoadModules - find1modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf
+2015-09-28 11:08:28 [0x7fb0f2776760] DEBUG (skeleton.cpp:151)LoadModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-09-28 11:08:28 [0x7fb0f2776760] DEBUG (skeleton.cpp:185)LoadModules - LoadModules finished!
+2015-09-28 11:08:28 [0x7fb0f2776760] DEBUG (skeleton.cpp:223)MasterRun - modules_.size() 1
+2015-09-28 11:08:28 [0x7fb0f2776760] FATAL (skeleton.cpp:195)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-09-28 11:08:28 [0x7fb0f2776760] DEBUG (skeleton.cpp:262)SignalHandle - in signal handler,sig : 17
+2015-09-28 11:17:47 [0x7f7d593bb760] FATAL (skeleton.cpp:218)MasterRun - log4cxx init finish!
+2015-09-28 11:17:47 [0x7f7d593bb760] DEBUG (skeleton.cpp:149)LoadModules - find1modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf
+2015-09-28 11:17:47 [0x7f7d593bb760] DEBUG (skeleton.cpp:155)LoadModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-09-28 11:17:47 [0x7f7d593bb760] DEBUG (skeleton.cpp:189)LoadModules - LoadModules finished!
+2015-09-28 11:17:47 [0x7f7d593bb760] DEBUG (skeleton.cpp:227)MasterRun - modules_.size() 1
+2015-09-28 11:17:47 [0x7f7d593bb760] FATAL (skeleton.cpp:199)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-09-28 11:17:47 [0x7f7d593bb760] DEBUG (skeleton.cpp:266)SignalHandle - in signal handler,sig : 17
+2015-09-28 11:17:51 [0x7f51111d8760] FATAL (skeleton.cpp:218)MasterRun - log4cxx init finish!
+2015-09-28 11:17:51 [0x7f51111d8760] DEBUG (skeleton.cpp:149)LoadModules - find1modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf
+2015-09-28 11:17:51 [0x7f51111d8760] DEBUG (skeleton.cpp:155)LoadModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-09-28 11:17:51 [0x7f51111d8760] DEBUG (skeleton.cpp:189)LoadModules - LoadModules finished!
+2015-09-28 11:17:51 [0x7f51111d8760] DEBUG (skeleton.cpp:227)MasterRun - modules_.size() 1
+2015-09-28 11:17:51 [0x7f51111d8760] FATAL (skeleton.cpp:199)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-09-28 11:17:51 [0x7f51111d8760] DEBUG (skeleton.cpp:266)SignalHandle - in signal handler,sig : 17
+2015-09-28 11:23:56 [0x7ffff7679760] FATAL (skeleton.cpp:218)MasterRun - log4cxx init finish!
+2015-09-28 11:23:56 [0x7ffff7679760] DEBUG (skeleton.cpp:149)LoadModules - find1modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf
+2015-09-28 11:23:56 [0x7ffff7679760] DEBUG (skeleton.cpp:155)LoadModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-09-28 11:23:56 [0x7ffff7679760] DEBUG (skeleton.cpp:189)LoadModules - LoadModules finished!
+2015-09-28 11:23:56 [0x7ffff7679760] DEBUG (skeleton.cpp:227)MasterRun - modules_.size() 1
+2015-09-28 11:23:56 [0x7ffff7679760] FATAL (skeleton.cpp:199)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-09-28 11:23:56 [0x7ffff7679760] DEBUG (skeleton.cpp:266)SignalHandle - in signal handler,sig : 17
+2015-09-28 11:48:50 [0x7ffff7679760] FATAL (skeleton.cpp:218)MasterRun - log4cxx init finish!
+2015-09-28 11:48:50 [0x7ffff7679760] DEBUG (skeleton.cpp:149)LoadModules - find1modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf
+2015-09-28 11:48:50 [0x7ffff7679760] DEBUG (skeleton.cpp:155)LoadModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-09-28 11:48:50 [0x7ffff7679760] DEBUG (skeleton.cpp:189)LoadModules - LoadModules finished!
+2015-09-28 11:48:50 [0x7ffff7679760] DEBUG (skeleton.cpp:227)MasterRun - modules_.size() 1
+2015-09-28 11:48:50 [0x7ffff7679760] FATAL (skeleton.cpp:199)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-09-28 11:48:50 [0x7ffff7679760] DEBUG (skeleton.cpp:266)SignalHandle - in signal handler,sig : 17
+2015-09-28 12:03:09 [0x7ffe975de760] FATAL (skeleton.cpp:220)MasterRun - log4cxx init finish!
+2015-09-28 12:03:09 [0x7ffe975de760] DEBUG (skeleton.cpp:151)LoadModules - find1modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf
+2015-09-28 12:03:09 [0x7ffe975de760] DEBUG (skeleton.cpp:157)LoadModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-09-28 12:03:09 [0x7ffe975de760] DEBUG (skeleton.cpp:191)LoadModules - LoadModules finished!
+2015-09-28 12:03:09 [0x7ffe975de760] DEBUG (skeleton.cpp:229)MasterRun - modules_.size() 1
+2015-09-28 12:03:09 [0x7ffe975de760] FATAL (skeleton.cpp:201)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-09-28 12:03:09 [0x7ffe975de760] DEBUG (skeleton.cpp:268)SignalHandle - in signal handler,sig : 17
+2015-09-28 12:06:05 [0x7f2901a87760] FATAL (skeleton.cpp:220)MasterRun - log4cxx init finish!
+2015-09-28 12:06:05 [0x7f2901a87760] DEBUG (skeleton.cpp:151)LoadModules - find1modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf
+2015-09-28 12:06:05 [0x7f2901a87760] DEBUG (skeleton.cpp:157)LoadModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-09-28 12:06:05 [0x7f2901a87760] DEBUG (skeleton.cpp:191)LoadModules - LoadModules finished!
+2015-09-28 12:06:05 [0x7f2901a87760] DEBUG (skeleton.cpp:229)MasterRun - modules_.size() 1
+2015-09-28 12:06:05 [0x7f2901a87760] FATAL (skeleton.cpp:201)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-09-28 12:06:05 [0x7f2901a87760] DEBUG (skeleton.cpp:268)SignalHandle - in signal handler,sig : 17
+2015-09-28 12:06:10 [0x7f84f6190760] FATAL (skeleton.cpp:222)MasterRun - log4cxx init finish!
+2015-09-28 12:06:10 [0x7f84f6190760] DEBUG (skeleton.cpp:153)LoadModules - find1modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf
+2015-09-28 12:06:10 [0x7f84f6190760] DEBUG (skeleton.cpp:159)LoadModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-09-28 12:06:10 [0x7f84f6190760] DEBUG (skeleton.cpp:193)LoadModules - LoadModules finished!
+2015-09-28 12:06:10 [0x7f84f6190760] DEBUG (skeleton.cpp:231)MasterRun - modules_.size() 1
+2015-09-28 12:06:10 [0x7f84f6190760] FATAL (skeleton.cpp:203)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-09-28 12:06:10 [0x7f84f6190760] DEBUG (skeleton.cpp:270)SignalHandle - in signal handler,sig : 17
+2015-09-28 12:10:50 [0x7f62b7bd6760] FATAL (skeleton.cpp:223)MasterRun - log4cxx init finish!
+2015-09-28 12:10:50 [0x7f62b7bd6760] DEBUG (skeleton.cpp:154)LoadModules - find1modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf
+2015-09-28 12:10:50 [0x7f62b7bd6760] DEBUG (skeleton.cpp:160)LoadModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-09-28 12:10:50 [0x7f62b7bd6760] DEBUG (skeleton.cpp:194)LoadModules - LoadModules finished!
+2015-09-28 12:10:50 [0x7f62b7bd6760] DEBUG (skeleton.cpp:232)MasterRun - modules_.size() 1
+2015-09-28 12:10:50 [0x7f62b7bd6760] FATAL (skeleton.cpp:204)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-09-28 12:10:50 [0x7f62b7bd6760] DEBUG (skeleton.cpp:271)SignalHandle - in signal handler,sig : 17
+2015-09-28 12:11:45 [0x7f5ad118f760] FATAL (skeleton.cpp:223)MasterRun - log4cxx init finish!
+2015-09-28 12:11:45 [0x7f5ad118f760] DEBUG (skeleton.cpp:154)LoadModules - find1modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf
+2015-09-28 12:11:45 [0x7f5ad118f760] DEBUG (skeleton.cpp:160)LoadModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-09-28 12:11:45 [0x7f5ad118f760] DEBUG (skeleton.cpp:194)LoadModules - LoadModules finished!
+2015-09-28 12:11:45 [0x7f5ad118f760] DEBUG (skeleton.cpp:232)MasterRun - modules_.size() 1
+2015-09-28 12:11:45 [0x7f5ad118f760] FATAL (skeleton.cpp:204)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-09-28 12:11:45 [0x7f5ad118f760] DEBUG (skeleton.cpp:271)SignalHandle - in signal handler,sig : 17
+2015-09-28 12:17:17 [0x7f43ca0b3760] FATAL (skeleton.cpp:224)MasterRun - log4cxx init finish!
+2015-09-28 12:17:17 [0x7f43ca0b3760] DEBUG (skeleton.cpp:155)LoadModules - find1modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf
+2015-09-28 12:17:17 [0x7f43ca0b3760] DEBUG (skeleton.cpp:161)LoadModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-09-28 12:17:17 [0x7f43ca0b3760] DEBUG (skeleton.cpp:195)LoadModules - LoadModules finished!
+2015-09-28 12:17:17 [0x7f43ca0b3760] DEBUG (skeleton.cpp:233)MasterRun - modules_.size() 1
+2015-09-28 12:17:17 [0x7f43ca0b3760] FATAL (skeleton.cpp:205)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-09-28 12:17:17 [0x7f43ca0b3760] DEBUG (skeleton.cpp:272)SignalHandle - in signal handler,sig : 17
+2015-09-28 12:18:27 [0x7f0ce5acf760] FATAL (skeleton.cpp:224)MasterRun - log4cxx init finish!
+2015-09-28 12:18:27 [0x7f0ce5acf760] DEBUG (skeleton.cpp:155)LoadModules - find1modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf
+2015-09-28 12:18:27 [0x7f0ce5acf760] DEBUG (skeleton.cpp:161)LoadModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-09-28 12:18:27 [0x7f0ce5acf760] DEBUG (skeleton.cpp:195)LoadModules - LoadModules finished!
+2015-09-28 12:18:27 [0x7f0ce5acf760] DEBUG (skeleton.cpp:233)MasterRun - modules_.size() 1
+2015-09-28 12:18:27 [0x7f0ce5acf760] FATAL (skeleton.cpp:205)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-09-28 12:18:27 [0x7f0ce5acf760] DEBUG (skeleton.cpp:272)SignalHandle - in signal handler,sig : 17
+2015-09-28 12:25:26 [0x7fb9388f6760] FATAL (skeleton.cpp:224)MasterRun - log4cxx init finish!
+2015-09-28 12:25:26 [0x7fb9388f6760] DEBUG (skeleton.cpp:155)LoadModules - find1modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf
+2015-09-28 12:25:26 [0x7fb9388f6760] DEBUG (skeleton.cpp:161)LoadModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-09-28 12:25:26 [0x7fb9388f6760] DEBUG (skeleton.cpp:195)LoadModules - LoadModules finished!
+2015-09-28 12:25:26 [0x7fb9388f6760] DEBUG (skeleton.cpp:233)MasterRun - modules_.size() 1
+2015-09-28 12:25:26 [0x7fb9388f6760] FATAL (skeleton.cpp:205)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-09-28 12:25:26 [0x7fb9388f6760] DEBUG (skeleton.cpp:272)SignalHandle - in signal handler,sig : 17
+2015-09-28 12:26:10 [0x7f4e18a0a760] FATAL (skeleton.cpp:224)MasterRun - log4cxx init finish!
+2015-09-28 12:26:10 [0x7f4e18a0a760] DEBUG (skeleton.cpp:155)LoadModules - find1modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf
+2015-09-28 12:26:10 [0x7f4e18a0a760] DEBUG (skeleton.cpp:161)LoadModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-09-28 12:26:10 [0x7f4e18a0a760] DEBUG (skeleton.cpp:195)LoadModules - LoadModules finished!
+2015-09-28 12:26:10 [0x7f4e18a0a760] DEBUG (skeleton.cpp:233)MasterRun - modules_.size() 1
+2015-09-28 12:26:10 [0x7f4e18a0a760] FATAL (skeleton.cpp:205)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-09-28 12:26:10 [0x7f4e18a0a760] DEBUG (skeleton.cpp:272)SignalHandle - in signal handler,sig : 17
+2015-09-28 12:26:15 [0x7f6919834760] FATAL (skeleton.cpp:224)MasterRun - log4cxx init finish!
+2015-09-28 12:26:15 [0x7f6919834760] DEBUG (skeleton.cpp:155)LoadModules - find1modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf
+2015-09-28 12:26:15 [0x7f6919834760] DEBUG (skeleton.cpp:161)LoadModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-09-28 12:26:15 [0x7f6919834760] DEBUG (skeleton.cpp:195)LoadModules - LoadModules finished!
+2015-09-28 12:26:15 [0x7f6919834760] DEBUG (skeleton.cpp:233)MasterRun - modules_.size() 1
+2015-09-28 12:26:15 [0x7f6919834760] FATAL (skeleton.cpp:205)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-09-28 12:26:15 [0x7f6919834760] DEBUG (skeleton.cpp:272)SignalHandle - in signal handler,sig : 17
+2015-09-28 12:55:05 [0x7fd3e24e1760] FATAL (skeleton.cpp:224)MasterRun - log4cxx init finish!
+2015-09-28 12:55:05 [0x7fd3e24e1760] DEBUG (skeleton.cpp:155)LoadModules - find1modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf
+2015-09-28 12:55:05 [0x7fd3e24e1760] DEBUG (skeleton.cpp:161)LoadModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-09-28 12:55:05 [0x7fd3e24e1760] DEBUG (skeleton.cpp:195)LoadModules - LoadModules finished!
+2015-09-28 12:55:05 [0x7fd3e24e1760] DEBUG (skeleton.cpp:233)MasterRun - modules_.size() 1
+2015-09-28 12:55:05 [0x7fd3e24e1760] FATAL (skeleton.cpp:205)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-09-28 12:55:05 [0x7fd3e24e1760] DEBUG (skeleton.cpp:272)SignalHandle - in signal handler,sig : 17
+2015-09-28 12:55:12 [0x7f73418ab760] FATAL (skeleton.cpp:224)MasterRun - log4cxx init finish!
+2015-09-28 12:55:12 [0x7f73418ab760] DEBUG (skeleton.cpp:155)LoadModules - find1modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf
+2015-09-28 12:55:12 [0x7f73418ab760] DEBUG (skeleton.cpp:161)LoadModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-09-28 12:55:12 [0x7f73418ab760] DEBUG (skeleton.cpp:195)LoadModules - LoadModules finished!
+2015-09-28 12:55:12 [0x7f73418ab760] DEBUG (skeleton.cpp:233)MasterRun - modules_.size() 1
+2015-09-28 12:55:12 [0x7f73418ab760] FATAL (skeleton.cpp:205)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-09-28 12:55:12 [0x7f73418ab760] DEBUG (skeleton.cpp:272)SignalHandle - in signal handler,sig : 17
+2015-09-28 12:56:24 [0x7f8892809760] FATAL (skeleton.cpp:224)MasterRun - log4cxx init finish!
+2015-09-28 12:56:24 [0x7f8892809760] DEBUG (skeleton.cpp:155)LoadModules - find1modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf
+2015-09-28 12:56:24 [0x7f8892809760] DEBUG (skeleton.cpp:161)LoadModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-09-28 12:56:24 [0x7f8892809760] DEBUG (skeleton.cpp:195)LoadModules - LoadModules finished!
+2015-09-28 12:56:24 [0x7f8892809760] DEBUG (skeleton.cpp:233)MasterRun - modules_.size() 1
+2015-09-28 12:56:24 [0x7f8892809760] FATAL (skeleton.cpp:205)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-09-28 12:56:24 [0x7f8892809760] DEBUG (skeleton.cpp:272)SignalHandle - in signal handler,sig : 17
+2015-09-28 12:56:27 [0x7fc318540760] FATAL (skeleton.cpp:224)MasterRun - log4cxx init finish!
+2015-09-28 12:56:27 [0x7fc318540760] DEBUG (skeleton.cpp:155)LoadModules - find1modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf
+2015-09-28 12:56:27 [0x7fc318540760] DEBUG (skeleton.cpp:161)LoadModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-09-28 12:56:27 [0x7fc318540760] DEBUG (skeleton.cpp:195)LoadModules - LoadModules finished!
+2015-09-28 12:56:27 [0x7fc318540760] DEBUG (skeleton.cpp:233)MasterRun - modules_.size() 1
+2015-09-28 12:56:27 [0x7fc318540760] FATAL (skeleton.cpp:205)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-09-28 12:56:27 [0x7fc318540760] DEBUG (skeleton.cpp:272)SignalHandle - in signal handler,sig : 17
+2015-09-28 12:58:04 [0x7f5c77f47760] FATAL (skeleton.cpp:224)MasterRun - log4cxx init finish!
+2015-09-28 12:58:04 [0x7f5c77f47760] DEBUG (skeleton.cpp:155)LoadModules - find1modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf
+2015-09-28 12:58:04 [0x7f5c77f47760] DEBUG (skeleton.cpp:161)LoadModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-09-28 12:58:04 [0x7f5c77f47760] DEBUG (skeleton.cpp:195)LoadModules - LoadModules finished!
+2015-09-28 12:58:04 [0x7f5c77f47760] DEBUG (skeleton.cpp:233)MasterRun - modules_.size() 1
+2015-09-28 12:58:04 [0x7f5c77f47760] FATAL (skeleton.cpp:205)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-09-28 12:58:04 [0x7f5c77f47760] DEBUG (skeleton.cpp:272)SignalHandle - in signal handler,sig : 17
+2015-09-28 12:58:28 [0x7f6dcb0e2760] FATAL (skeleton.cpp:224)MasterRun - log4cxx init finish!
+2015-09-28 12:58:28 [0x7f6dcb0e2760] DEBUG (skeleton.cpp:155)LoadModules - find1modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf
+2015-09-28 12:58:28 [0x7f6dcb0e2760] DEBUG (skeleton.cpp:161)LoadModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-09-28 12:58:28 [0x7f6dcb0e2760] DEBUG (skeleton.cpp:195)LoadModules - LoadModules finished!
+2015-09-28 12:58:28 [0x7f6dcb0e2760] DEBUG (skeleton.cpp:233)MasterRun - modules_.size() 1
+2015-09-28 12:58:28 [0x7f6dcb0e2760] FATAL (skeleton.cpp:205)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-09-28 12:58:28 [0x7f6dcb0e2760] DEBUG (skeleton.cpp:272)SignalHandle - in signal handler,sig : 17
+2015-09-28 13:00:27 [0x7ff7a43ed760] FATAL (skeleton.cpp:224)MasterRun - log4cxx init finish!
+2015-09-28 13:00:27 [0x7ff7a43ed760] DEBUG (skeleton.cpp:155)LoadModules - find1modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf
+2015-09-28 13:00:27 [0x7ff7a43ed760] DEBUG (skeleton.cpp:161)LoadModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-09-28 13:00:27 [0x7ff7a43ed760] DEBUG (skeleton.cpp:195)LoadModules - LoadModules finished!
+2015-09-28 13:00:27 [0x7ff7a43ed760] DEBUG (skeleton.cpp:233)MasterRun - modules_.size() 1
+2015-09-28 13:00:27 [0x7ff7a43ed760] FATAL (skeleton.cpp:205)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-09-28 13:00:27 [0x7ff7a43ed760] DEBUG (skeleton.cpp:272)SignalHandle - in signal handler,sig : 17
+2015-09-28 13:02:01 [0x7fd849b0b760] FATAL (skeleton.cpp:224)MasterRun - log4cxx init finish!
+2015-09-28 13:02:01 [0x7fd849b0b760] DEBUG (skeleton.cpp:155)LoadModules - find1modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf
+2015-09-28 13:02:01 [0x7fd849b0b760] DEBUG (skeleton.cpp:161)LoadModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-09-28 13:02:01 [0x7fd849b0b760] DEBUG (skeleton.cpp:195)LoadModules - LoadModules finished!
+2015-09-28 13:02:01 [0x7fd849b0b760] DEBUG (skeleton.cpp:233)MasterRun - modules_.size() 1
+2015-09-28 13:02:01 [0x7fd849b0b760] FATAL (skeleton.cpp:205)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-09-28 13:02:01 [0x7fd849b0b760] DEBUG (skeleton.cpp:272)SignalHandle - in signal handler,sig : 17
+2015-09-28 13:03:16 [0x7fee110f0760] FATAL (skeleton.cpp:224)MasterRun - log4cxx init finish!
+2015-09-28 13:03:16 [0x7fee110f0760] DEBUG (skeleton.cpp:155)LoadModules - find1modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf
+2015-09-28 13:03:16 [0x7fee110f0760] DEBUG (skeleton.cpp:161)LoadModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-09-28 13:03:16 [0x7fee110f0760] DEBUG (skeleton.cpp:195)LoadModules - LoadModules finished!
+2015-09-28 13:03:16 [0x7fee110f0760] DEBUG (skeleton.cpp:233)MasterRun - modules_.size() 1
+2015-09-28 13:03:16 [0x7fee110f0760] FATAL (skeleton.cpp:205)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-09-28 13:03:16 [0x7fee110f0760] DEBUG (skeleton.cpp:272)SignalHandle - in signal handler,sig : 17
+2015-09-28 13:04:25 [0x7ffe85a0e760] FATAL (skeleton.cpp:223)MasterRun - log4cxx init finish!
+2015-09-28 13:04:25 [0x7ffe85a0e760] DEBUG (skeleton.cpp:154)LoadModules - find1modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf
+2015-09-28 13:04:25 [0x7ffe85a0e760] DEBUG (skeleton.cpp:160)LoadModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-09-28 13:04:25 [0x7ffe85a0e760] DEBUG (skeleton.cpp:194)LoadModules - LoadModules finished!
+2015-09-28 13:04:25 [0x7ffe85a0e760] DEBUG (skeleton.cpp:232)MasterRun - modules_.size() 1
+2015-09-28 13:04:25 [0x7ffe85a0e760] FATAL (skeleton.cpp:204)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-09-28 13:04:25 [0x7ffe85a0e760] DEBUG (skeleton.cpp:271)SignalHandle - in signal handler,sig : 17
+2015-09-28 13:04:44 [0x7f7d593bb760] DEBUG (skeleton.cpp:266)SignalHandle - in signal handler,sig : 15
+2015-09-28 13:04:44 [0x7f51111d8760] DEBUG (skeleton.cpp:266)SignalHandle - in signal handler,sig : 15
+2015-09-28 13:04:44 [0x7ffff7679760] DEBUG (skeleton.cpp:266)SignalHandle - in signal handler,sig : 15
+2015-09-28 13:04:44 [0x7ffff7679760] DEBUG (skeleton.cpp:266)SignalHandle - in signal handler,sig : 15
+2015-09-28 13:04:44 [0x7ffe975de760] DEBUG (skeleton.cpp:268)SignalHandle - in signal handler,sig : 15
+2015-09-28 13:04:44 [0x7f2901a87760] DEBUG (skeleton.cpp:268)SignalHandle - in signal handler,sig : 15
+2015-09-28 13:04:44 [0x7f84f6190760] DEBUG (skeleton.cpp:270)SignalHandle - in signal handler,sig : 15
+2015-09-28 13:04:44 [0x7f62b7bd6760] DEBUG (skeleton.cpp:271)SignalHandle - in signal handler,sig : 15
+2015-09-28 13:04:44 [0x7f5ad118f760] DEBUG (skeleton.cpp:271)SignalHandle - in signal handler,sig : 15
+2015-09-28 13:04:44 [0x7f43ca0b3760] DEBUG (skeleton.cpp:272)SignalHandle - in signal handler,sig : 15
+2015-09-28 13:04:44 [0x7f0ce5acf760] DEBUG (skeleton.cpp:272)SignalHandle - in signal handler,sig : 15
+2015-09-28 13:04:44 [0x7fb9388f6760] DEBUG (skeleton.cpp:272)SignalHandle - in signal handler,sig : 15
+2015-09-28 13:04:44 [0x7f4e18a0a760] DEBUG (skeleton.cpp:272)SignalHandle - in signal handler,sig : 15
+2015-09-28 13:04:44 [0x7f6919834760] DEBUG (skeleton.cpp:272)SignalHandle - in signal handler,sig : 15
+2015-09-28 13:04:44 [0x7fd3e24e1760] DEBUG (skeleton.cpp:272)SignalHandle - in signal handler,sig : 15
+2015-09-28 13:04:44 [0x7f73418ab760] DEBUG (skeleton.cpp:272)SignalHandle - in signal handler,sig : 15
+2015-09-28 13:04:44 [0x7f8892809760] DEBUG (skeleton.cpp:272)SignalHandle - in signal handler,sig : 15
+2015-09-28 13:04:44 [0x7fc318540760] DEBUG (skeleton.cpp:272)SignalHandle - in signal handler,sig : 15
+2015-09-28 13:04:44 [0x7f5c77f47760] DEBUG (skeleton.cpp:272)SignalHandle - in signal handler,sig : 15
+2015-09-28 13:04:44 [0x7f6dcb0e2760] DEBUG (skeleton.cpp:272)SignalHandle - in signal handler,sig : 15
+2015-09-28 13:04:44 [0x7ff7a43ed760] DEBUG (skeleton.cpp:272)SignalHandle - in signal handler,sig : 15
+2015-09-28 13:04:44 [0x7fd849b0b760] DEBUG (skeleton.cpp:272)SignalHandle - in signal handler,sig : 15
+2015-09-28 13:04:44 [0x7fee110f0760] DEBUG (skeleton.cpp:272)SignalHandle - in signal handler,sig : 15
+2015-09-28 13:04:44 [0x7ffe85a0e760] DEBUG (skeleton.cpp:271)SignalHandle - in signal handler,sig : 15
+2015-09-28 13:04:58 [0x7ffe85a0e760] DEBUG (skeleton.cpp:271)SignalHandle - in signal handler,sig : 15
+2015-09-28 14:11:09 [0x7feb11612760] FATAL (skeleton.cpp:232)MasterRun - log4cxx init finish!
+2015-09-28 14:11:09 [0x7feb11612760] DEBUG (skeleton.cpp:163)LoadModules - find1modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf
+2015-09-28 14:11:09 [0x7feb11612760] DEBUG (skeleton.cpp:169)LoadModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-09-28 14:11:09 [0x7feb11612760] DEBUG (skeleton.cpp:203)LoadModules - LoadModules finished!
+2015-09-28 14:11:09 [0x7feb11612760] DEBUG (skeleton.cpp:241)MasterRun - modules_.size() 1
+2015-09-28 14:11:09 [0x7feb11612760] FATAL (skeleton.cpp:213)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-09-28 14:11:09 [0x7feb11612760] DEBUG (skeleton.cpp:280)SignalHandle - in signal handler,sig : 17
+2015-09-28 14:11:21 [0x7feb11612760] DEBUG (skeleton.cpp:280)SignalHandle - in signal handler,sig : 15
+2015-09-28 14:11:21 [0x7f1ab4bf7760] FATAL (skeleton.cpp:232)MasterRun - log4cxx init finish!
+2015-09-28 14:11:21 [0x7f1ab4bf7760] DEBUG (skeleton.cpp:163)LoadModules - find1modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf
+2015-09-28 14:11:21 [0x7f1ab4bf7760] DEBUG (skeleton.cpp:169)LoadModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-09-28 14:11:21 [0x7f1ab4bf7760] DEBUG (skeleton.cpp:203)LoadModules - LoadModules finished!
+2015-09-28 14:11:21 [0x7f1ab4bf7760] DEBUG (skeleton.cpp:241)MasterRun - modules_.size() 1
+2015-09-28 14:11:21 [0x7f1ab4bf7760] FATAL (skeleton.cpp:213)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-09-28 14:11:21 [0x7f1ab4bf7760] DEBUG (skeleton.cpp:280)SignalHandle - in signal handler,sig : 17
+2015-09-28 14:12:05 [0x7f1ab4bf7760] DEBUG (skeleton.cpp:280)SignalHandle - in signal handler,sig : 15
+2015-09-28 14:12:05 [0x7f3597b3e760] FATAL (skeleton.cpp:232)MasterRun - log4cxx init finish!
+2015-09-28 14:12:05 [0x7f3597b3e760] DEBUG (skeleton.cpp:163)LoadModules - find1modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf
+2015-09-28 14:12:05 [0x7f3597b3e760] DEBUG (skeleton.cpp:169)LoadModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-09-28 14:12:05 [0x7f3597b3e760] DEBUG (skeleton.cpp:203)LoadModules - LoadModules finished!
+2015-09-28 14:12:05 [0x7f3597b3e760] DEBUG (skeleton.cpp:241)MasterRun - modules_.size() 1
+2015-09-28 14:12:05 [0x7f3597b3e760] FATAL (skeleton.cpp:213)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-09-28 14:12:05 [0x7f3597b3e760] DEBUG (skeleton.cpp:280)SignalHandle - in signal handler,sig : 17
+2015-09-28 15:00:33 [0x7fdd7ec6d760] FATAL (skeleton.cpp:232)MasterRun - log4cxx init finish!
+2015-09-28 15:00:33 [0x7fdd7ec6d760] DEBUG (skeleton.cpp:163)LoadModules - find1modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf
+2015-09-28 15:00:33 [0x7fdd7ec6d760] DEBUG (skeleton.cpp:169)LoadModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-09-28 15:00:33 [0x7fdd7ec6d760] DEBUG (skeleton.cpp:203)LoadModules - LoadModules finished!
+2015-09-28 15:00:33 [0x7fdd7ec6d760] DEBUG (skeleton.cpp:241)MasterRun - modules_.size() 1
+2015-09-28 15:00:33 [0x7fdd7ec6d760] FATAL (skeleton.cpp:213)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-09-28 15:00:33 [0x7fdd7ec6d760] DEBUG (skeleton.cpp:280)SignalHandle - in signal handler,sig : 17
+2015-09-28 18:53:12 [0x7f6024f76760] FATAL (skeleton.cpp:233)MasterRun - log4cxx init finish!
+2015-09-28 18:53:12 [0x7f6024f76760] DEBUG (skeleton.cpp:164)LoadModules - find1modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf
+2015-09-28 18:53:12 [0x7f6024f76760] DEBUG (skeleton.cpp:170)LoadModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-09-28 18:53:12 [0x7f6024f76760] DEBUG (skeleton.cpp:204)LoadModules - LoadModules finished!
+2015-09-28 18:53:12 [0x7f6024f76760] DEBUG (skeleton.cpp:242)MasterRun - modules_.size() 1
+2015-09-28 18:53:12 [0x7f6024f76760] FATAL (skeleton.cpp:214)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-09-28 18:53:12 [0x7f6024f76760] DEBUG (skeleton.cpp:298)SignalHandle - in signal handler,sig : 17
