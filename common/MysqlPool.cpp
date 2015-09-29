@@ -1,5 +1,4 @@
 #include "MysqlPool.h"
-#include "CdnUtil.h"
 
     
 MysqlPool::MysqlPool()
@@ -39,12 +38,10 @@ bool MysqlPool::init( u_int capacity )
 		MYSQL* mysql = mysql_init(NULL);
 		if(mysql == NULL)
         {
-            LOG4CXX_WARN(logger, neFormat("mysql inited failed."));
 			return false;
 		}
 		if(!mysql_real_connect(mysql,mIp.c_str(),mUser.c_str(),mPasswd.c_str(),mDbname.c_str(),mPort,NULL,0))
         {
-            LOG4CXX_FATAL(logger, neFormat("connect to database failed."));
 			return false;
 		}
 		char value = 1;
