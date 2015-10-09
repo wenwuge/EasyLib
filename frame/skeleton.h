@@ -20,6 +20,7 @@
 #include <string.h>
 #include "module.h"
 #include <dlfcn.h>
+#include <algorithm>
 using namespace log4cxx;
 using namespace std;
 using namespace boost;
@@ -29,7 +30,6 @@ typedef void (*DestroyModule)(Module* module);
 
 struct ModuleInfo {
     ModuleInfo():module_(NULL),destroy_(NULL),handler_(NULL),pid(-1){}
-    ~ModuleInfo(){(*destroy_)(module_);}
     Module* module_;
     string  conf_;
     DestroyModule destroy_;
@@ -39,9 +39,9 @@ struct ModuleInfo {
 
 class Skel{
     enum{
-        STARTING,
-        RUNNING,
-        SUSPENDING
+        STARTING=0,
+        RUNNING=1,
+        SUSPENDING=2
     };
     enum{
         RELOAD = 0X1,
@@ -62,13 +62,14 @@ class Skel{
        void Reload();
        void SignalHandle(int sig);
 
-       void WorkerRun(ModuleInfo* info, const string & conf);
+       int WorkerRun(const string & conf);
        void MasterRun();
        static log4cxx::LoggerPtr logger;
     private:
        void DaemonRun();
        void ForeRun();
        int LoadModules();
+       int CheckModules();
        int InitModules();
        int RunModule();
        int ParseOpt(int argc, char** argv);
@@ -90,6 +91,10 @@ class Skel{
        void Kill();
        int  Status(pid_t& pid);
        void ReloadHandle();
+       
+       //process relative
+       void ChangeProcessName(string name);
+       string GetProcessNameById(pid_t pid);
     private:
        string conf_;  
        string logConf_;
@@ -97,6 +102,11 @@ class Skel{
        string modulesConf_;
        uint8_t optFlag;
        uint8_t status_;
+       uint8_t exiting_;
+       int64_t autoReboot_;
+       int64_t rebootTimeout_;
+       vector<pid_t> dropPid_;
+       vector<TimerEvent*> timerEvents_;
        vector<ModuleInfo> modules_;
        pid_t masterPid;
        std::tr1::shared_ptr<SignalEvent> signalEvent;

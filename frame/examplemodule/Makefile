@@ -8,3 +8,6 @@ $(Target) :$(Objs)
 
 %.o : %.cpp
 	$(CXX) -C $^ $(Include)
+
+clean:
+	rm -f *.o *.so

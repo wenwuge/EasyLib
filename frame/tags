@@ -4,17 +4,26 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
+ALIVE	skeleton.h	/^        ALIVE=0,$/;"	e	enum:Skel::__anon3
 Add	easyevent.cpp	/^bool SignalEvent::Add(int signo) {$/;"	f	class:SignalEvent
 Add	easyevent.h	/^    bool Add(int signo);$/;"	p	class:SignalEvent	access:public
 AsyncWait	easyevent.cpp	/^void SignalEvent::AsyncWait(const Functor& handler)$/;"	f	class:SignalEvent
+AsyncWait	easyevent.cpp	/^void TimerEvent::AsyncWait(const Functor& handler,$/;"	f	class:TimerEvent
 AsyncWait	easyevent.h	/^    void AsyncWait(const Functor& handler);$/;"	p	class:SignalEvent	access:public
+AsyncWait	easyevent.h	/^    void AsyncWait(const Functor& handler,$/;"	p	class:TimerEvent	access:public
 CFLAGS	Makefile	/^CFLAGS=-g -ldl -rdynamic $/;"	m
 CONFIG_H_	Config.h	3;"	d
 CXX	Makefile	/^CXX=\/usr\/bin\/g++$/;"	m
 CXX	examplemodule/Makefile	/^CXX=\/usr\/bin\/g++$/;"	m
 Cancel	easyevent.cpp	/^void SignalEvent::Cancel()$/;"	f	class:SignalEvent
+Cancel	easyevent.cpp	/^void TimerEvent::Cancel() {$/;"	f	class:TimerEvent
 Cancel	easyevent.h	/^    void Cancel();$/;"	p	class:SignalEvent	access:public
+Cancel	easyevent.h	/^    void Cancel();$/;"	p	class:TimerEvent	access:public
 Cflag	examplemodule/Makefile	/^Cflag=-shared -fPIC$/;"	m
+ChangeProcessName	skeleton.cpp	/^void Skel::ChangeProcessName(string name)$/;"	f	class:Skel
+ChangeProcessName	skeleton.h	/^       void ChangeProcessName(string name);$/;"	p	class:Skel	access:private
+CheckModules	skeleton.cpp	/^int Skel::CheckModules()$/;"	f	class:Skel
+CheckModules	skeleton.h	/^       int CheckModules();$/;"	p	class:Skel	access:private
 Clear	easyevent.cpp	/^bool SignalEvent::Clear() {$/;"	f	class:SignalEvent
 Clear	easyevent.h	/^    bool Clear();$/;"	p	class:SignalEvent	access:public
 Config	Config.cpp	/^Config::Config()$/;"	f	class:Config
@@ -59,6 +68,7 @@ ConfigInt	Config.h	/^struct ConfigInt$/;"	s
 ConfigInt::key	Config.h	/^	char key[64];$/;"	m	struct:ConfigInt	access:public
 ConfigInt::max	Config.h	/^	int64_t max;$/;"	m	struct:ConfigInt	access:public
 ConfigInt::min	Config.h	/^	int64_t min;$/;"	m	struct:ConfigInt	access:public
+DEAD	skeleton.h	/^        DEAD = 1$/;"	e	enum:Skel::__anon3
 DaemonRun	skeleton.cpp	/^void Skel::DaemonRun()$/;"	f	class:Skel
 DaemonRun	skeleton.h	/^       void DaemonRun();$/;"	p	class:Skel	access:private
 DestroyModule	examplemodule/echomodule.cpp	/^extern "C" void DestroyModule(Module* module)$/;"	f
@@ -70,14 +80,17 @@ EchoModule::Run	examplemodule/echomodule.cpp	/^        virtual void Run();$/;"	p
 EchoModule::Run	examplemodule/echomodule.cpp	/^void EchoModule::Run()$/;"	f	class:EchoModule
 EchoModule::Stop	examplemodule/echomodule.cpp	/^        virtual void Stop();$/;"	p	class:EchoModule	file:	access:public
 EchoModule::Stop	examplemodule/echomodule.cpp	/^void EchoModule::Stop()$/;"	f	class:EchoModule
-FORERUN	skeleton.h	/^        FORERUN = 0X8$/;"	e	enum:Skel::__anon1
+FORERUN	skeleton.h	/^        FORERUN = 0X8$/;"	e	enum:Skel::__anon2
 ForeRun	skeleton.cpp	/^void Skel::ForeRun()$/;"	f	class:Skel
 ForeRun	skeleton.h	/^       void ForeRun();$/;"	p	class:Skel	access:private
 ForeRunOpt	skeleton.cpp	/^bool Skel::ForeRunOpt()$/;"	f	class:Skel
 ForeRunOpt	skeleton.h	/^       bool ForeRunOpt();$/;"	p	class:Skel	access:private
+Functor	easyevent.h	/^    typedef std::tr1::function<void()> Functor;$/;"	t	class:TimerEvent	access:public
 Functor	easyevent.h	/^    typedef std::tr1::function<void(int)> Functor;$/;"	t	class:SignalEvent	access:public
 GetModule	examplemodule/echomodule.cpp	/^extern "C" Module* GetModule()$/;"	f
 GetModule	skeleton.h	/^typedef Module* (*GetModule)();$/;"	t
+GetProcessNameById	skeleton.cpp	/^string Skel::GetProcessNameById(pid_t pid)$/;"	f	class:Skel
+GetProcessNameById	skeleton.h	/^       string GetProcessNameById(pid_t pid);$/;"	p	class:Skel	access:private
 INCLUDE	Makefile	/^INCLUDE=-I\/home\/libin3-s\/locallibevnet\/include -I..\/include\/$/;"	m
 Include	examplemodule/Makefile	/^Include=-I..\/..\/include\/$/;"	m
 Init	examplemodule/echomodule.cpp	/^        virtual void Init(const string& conf);$/;"	p	class:EchoModule	file:	access:public
@@ -87,46 +100,50 @@ Init	skeleton.cpp	/^int Skel::Init(int argc, char ** argv)$/;"	f	class:Skel
 Init	skeleton.h	/^       int Init(int argc, char** argv); $/;"	p	class:Skel	access:public
 InitModules	skeleton.cpp	/^int Skel::InitModules()$/;"	f	class:Skel
 InitModules	skeleton.h	/^       int InitModules();$/;"	p	class:Skel	access:private
-KILL	skeleton.h	/^        KILL = 0X2,$/;"	e	enum:Skel::__anon1
+KILL	skeleton.h	/^        KILL = 0X2,$/;"	e	enum:Skel::__anon2
 Kill	skeleton.cpp	/^void Skel::Kill()$/;"	f	class:Skel
 Kill	skeleton.h	/^       void Kill();$/;"	p	class:Skel	access:private
 KillOpt	skeleton.cpp	/^bool Skel::KillOpt()$/;"	f	class:Skel
 KillOpt	skeleton.h	/^       bool KillOpt();$/;"	p	class:Skel	access:private
 KillWorker	skeleton.h	/^       void KillWorker();$/;"	p	class:Skel	access:private
 LIBS	Makefile	/^LIBS=-lpthread  \/home\/libin3-s\/locallibevnet\/lib\/libevent.a -Wl,-Bstatic  -llog4cxx -L..\/lib\/log4cxx -Wl,-Bdynamic -lm -L\/usr\/lib64 -L\/usr\/local\/apr\/lib\/ -lapr-1 -L\/usr\/local\/apr-util\/lib\/ -laprutil-1 ..\/common\/libcommon.a $/;"	m
-LoadModules	skeleton.cpp	/^int Skel::LoadModules()$/;"	f	class:Skel
 LoadModules	skeleton.h	/^       int LoadModules();$/;"	p	class:Skel	access:private
-Logger	module.cpp	/^LoggerPtr& Module::Logger()$/;"	f	class:Module
-Logger	module.h	/^        LoggerPtr& Logger();$/;"	p	class:Module	access:public
 MasterRun	skeleton.cpp	/^void Skel::MasterRun()$/;"	f	class:Skel
 MasterRun	skeleton.h	/^       void MasterRun();$/;"	p	class:Skel	access:public
+Module	module.h	/^        Module(string logname = "test"):logger(log4cxx::Logger::getLogger(logname)){};$/;"	f	class:Module	access:public
 Module	module.h	/^class Module{$/;"	c
 Module::Init	module.h	/^        virtual void Init(const string& conf) = 0;$/;"	p	class:Module	access:public
-Module::Logger	module.cpp	/^LoggerPtr& Module::Logger()$/;"	f	class:Module
-Module::Logger	module.h	/^        LoggerPtr& Logger();$/;"	p	class:Module	access:public
+Module::Module	module.h	/^        Module(string logname = "test"):logger(log4cxx::Logger::getLogger(logname)){};$/;"	f	class:Module	access:public
 Module::Run	module.h	/^        virtual void Run() = 0;$/;"	p	class:Module	access:public
 Module::Stop	module.h	/^        virtual void Stop() = 0;$/;"	p	class:Module	access:public
+Module::logger	module.h	/^        log4cxx::LoggerPtr logger;$/;"	m	class:Module	access:protected
 Module::~Module	module.h	/^        virtual ~Module(){};$/;"	f	class:Module	access:public
-ModuleInfo	skeleton.h	/^    ModuleInfo():module_(NULL),destroy_(NULL),handler_(NULL){}$/;"	f	struct:ModuleInfo	access:public
+ModuleInfo	skeleton.h	/^    ModuleInfo():module_(NULL),destroy_(NULL),handler_(NULL),pid(-1){}$/;"	f	struct:ModuleInfo	access:public
 ModuleInfo	skeleton.h	/^struct ModuleInfo {$/;"	s
-ModuleInfo::ModuleInfo	skeleton.h	/^    ModuleInfo():module_(NULL),destroy_(NULL),handler_(NULL){}$/;"	f	struct:ModuleInfo	access:public
+ModuleInfo::ModuleInfo	skeleton.h	/^    ModuleInfo():module_(NULL),destroy_(NULL),handler_(NULL),pid(-1){}$/;"	f	struct:ModuleInfo	access:public
 ModuleInfo::conf_	skeleton.h	/^    string  conf_;$/;"	m	struct:ModuleInfo	access:public
 ModuleInfo::destroy_	skeleton.h	/^    DestroyModule destroy_;$/;"	m	struct:ModuleInfo	access:public
 ModuleInfo::handler_	skeleton.h	/^    void* handler_;$/;"	m	struct:ModuleInfo	access:public
 ModuleInfo::module_	skeleton.h	/^    Module* module_;$/;"	m	struct:ModuleInfo	access:public
-ModuleInfo::~ModuleInfo	skeleton.h	/^    ~ModuleInfo(){(*destroy_)(module_);}$/;"	f	struct:ModuleInfo	access:public
+ModuleInfo::pid	skeleton.h	/^    pid_t pid;$/;"	m	struct:ModuleInfo	access:public
 OBJS	Makefile	/^OBJS=$(patsubst %.cpp,%.o,$(wildcard *.cpp))$/;"	m
 Objs	examplemodule/Makefile	/^Objs=$(patsubst %.cpp , %.o, $(wildcard *.cpp))$/;"	m
 OnSignal	easyevent.cpp	/^void SignalEvent::OnSignal(int fd, short what, void *arg)$/;"	f	class:SignalEvent
 OnSignal	easyevent.h	/^    static void OnSignal(int fd, short what, void *arg);$/;"	p	class:SignalEvent	access:public
+OnTimer	easyevent.cpp	/^void TimerEvent::OnTimer(int fd, short what, void *arg) {$/;"	f	class:TimerEvent
+OnTimer	easyevent.h	/^    static void OnTimer(int fd, short what, void *arg); $/;"	p	class:TimerEvent	access:private
 ParseOpt	skeleton.cpp	/^int Skel::ParseOpt(int argc, char** argv)$/;"	f	class:Skel
 ParseOpt	skeleton.h	/^       int ParseOpt(int argc, char** argv);$/;"	p	class:Skel	access:private
-RELOAD	skeleton.h	/^        RELOAD = 0X1,$/;"	e	enum:Skel::__anon1
+RELOAD	skeleton.h	/^        RELOAD = 0X1,$/;"	e	enum:Skel::__anon2
+RUNNING	skeleton.h	/^        RUNNING,$/;"	e	enum:Skel::__anon1
 ReadConf	skeleton.cpp	/^int Skel::ReadConf()$/;"	f	class:Skel
 ReadConf	skeleton.h	/^       int ReadConf();$/;"	p	class:Skel	access:private
 RegisterSignal	skeleton.cpp	/^void Skel::RegisterSignal()$/;"	f	class:Skel
 RegisterSignal	skeleton.h	/^       void RegisterSignal();$/;"	p	class:Skel	access:private
-Reload	skeleton.h	/^       int Reload();$/;"	p	class:Skel	access:public
+Reload	skeleton.cpp	/^void Skel::Reload()$/;"	f	class:Skel
+Reload	skeleton.h	/^       void Reload();$/;"	p	class:Skel	access:public
+ReloadHandle	skeleton.cpp	/^void Skel::ReloadHandle()$/;"	f	class:Skel
+ReloadHandle	skeleton.h	/^       void ReloadHandle();$/;"	p	class:Skel	access:private
 ReloadOpt	skeleton.cpp	/^bool Skel::ReloadOpt()$/;"	f	class:Skel
 ReloadOpt	skeleton.h	/^       bool ReloadOpt();$/;"	p	class:Skel	access:private
 Remove	easyevent.cpp	/^bool SignalEvent::Remove(int signo) {$/;"	f	class:SignalEvent
@@ -136,7 +153,9 @@ Run	examplemodule/echomodule.cpp	/^void EchoModule::Run()$/;"	f	class:EchoModule
 Run	module.h	/^        virtual void Run() = 0;$/;"	p	class:Module	access:public
 RunModule	skeleton.h	/^       int RunModule();$/;"	p	class:Skel	access:private
 SKEL_H	skeleton.h	2;"	d
-STATUS	skeleton.h	/^        STATUS = 0X4,$/;"	e	enum:Skel::__anon1
+STARTING	skeleton.h	/^        STARTING,$/;"	e	enum:Skel::__anon1
+STATUS	skeleton.h	/^        STATUS = 0X4,$/;"	e	enum:Skel::__anon2
+SUSPENDING	skeleton.h	/^        SUSPENDING$/;"	e	enum:Skel::__anon1
 SignalEvent	easyevent.cpp	/^SignalEvent::SignalEvent(event_base* base)$/;"	f	class:SignalEvent
 SignalEvent	easyevent.h	/^    SignalEvent(struct event_base* base);$/;"	p	class:SignalEvent	access:public
 SignalEvent	easyevent.h	/^class SignalEvent : noncopyable {$/;"	c	inherits:noncopyable
@@ -161,82 +180,136 @@ SignalEvent::sig_ev_	easyevent.h	/^    map<int, struct event*> sig_ev_;$/;"	m	cl
 SignalEvent::~SignalEvent	easyevent.cpp	/^SignalEvent::~SignalEvent()$/;"	f	class:SignalEvent
 SignalEvent::~SignalEvent	easyevent.h	/^    ~SignalEvent();$/;"	p	class:SignalEvent	access:public
 SignalHandle	skeleton.cpp	/^void Skel::SignalHandle(int sig)$/;"	f	class:Skel
-SignalHandle	skeleton.h	/^       static void SignalHandle(int sig);$/;"	p	class:Skel	access:public
-Skel	skeleton.cpp	/^Skel::Skel():optFlag(0), base_(NULL) $/;"	f	class:Skel
+SignalHandle	skeleton.h	/^       void SignalHandle(int sig);$/;"	p	class:Skel	access:public
+Skel	skeleton.cpp	/^Skel::Skel():optFlag(0), base_(NULL),autoReboot_(0) $/;"	f	class:Skel
 Skel	skeleton.h	/^       Skel();$/;"	p	class:Skel	access:public
 Skel	skeleton.h	/^class Skel{$/;"	c
+Skel::ALIVE	skeleton.h	/^        ALIVE=0,$/;"	e	enum:Skel::__anon3
+Skel::ChangeProcessName	skeleton.cpp	/^void Skel::ChangeProcessName(string name)$/;"	f	class:Skel
+Skel::ChangeProcessName	skeleton.h	/^       void ChangeProcessName(string name);$/;"	p	class:Skel	access:private
+Skel::CheckModules	skeleton.cpp	/^int Skel::CheckModules()$/;"	f	class:Skel
+Skel::CheckModules	skeleton.h	/^       int CheckModules();$/;"	p	class:Skel	access:private
+Skel::DEAD	skeleton.h	/^        DEAD = 1$/;"	e	enum:Skel::__anon3
 Skel::DaemonRun	skeleton.cpp	/^void Skel::DaemonRun()$/;"	f	class:Skel
 Skel::DaemonRun	skeleton.h	/^       void DaemonRun();$/;"	p	class:Skel	access:private
-Skel::FORERUN	skeleton.h	/^        FORERUN = 0X8$/;"	e	enum:Skel::__anon1
+Skel::FORERUN	skeleton.h	/^        FORERUN = 0X8$/;"	e	enum:Skel::__anon2
 Skel::ForeRun	skeleton.cpp	/^void Skel::ForeRun()$/;"	f	class:Skel
 Skel::ForeRun	skeleton.h	/^       void ForeRun();$/;"	p	class:Skel	access:private
 Skel::ForeRunOpt	skeleton.cpp	/^bool Skel::ForeRunOpt()$/;"	f	class:Skel
 Skel::ForeRunOpt	skeleton.h	/^       bool ForeRunOpt();$/;"	p	class:Skel	access:private
+Skel::GetProcessNameById	skeleton.cpp	/^string Skel::GetProcessNameById(pid_t pid)$/;"	f	class:Skel
+Skel::GetProcessNameById	skeleton.h	/^       string GetProcessNameById(pid_t pid);$/;"	p	class:Skel	access:private
 Skel::Init	skeleton.cpp	/^int Skel::Init(int argc, char ** argv)$/;"	f	class:Skel
 Skel::Init	skeleton.h	/^       int Init(int argc, char** argv); $/;"	p	class:Skel	access:public
 Skel::InitModules	skeleton.cpp	/^int Skel::InitModules()$/;"	f	class:Skel
 Skel::InitModules	skeleton.h	/^       int InitModules();$/;"	p	class:Skel	access:private
-Skel::KILL	skeleton.h	/^        KILL = 0X2,$/;"	e	enum:Skel::__anon1
+Skel::KILL	skeleton.h	/^        KILL = 0X2,$/;"	e	enum:Skel::__anon2
 Skel::Kill	skeleton.cpp	/^void Skel::Kill()$/;"	f	class:Skel
 Skel::Kill	skeleton.h	/^       void Kill();$/;"	p	class:Skel	access:private
 Skel::KillOpt	skeleton.cpp	/^bool Skel::KillOpt()$/;"	f	class:Skel
 Skel::KillOpt	skeleton.h	/^       bool KillOpt();$/;"	p	class:Skel	access:private
 Skel::KillWorker	skeleton.h	/^       void KillWorker();$/;"	p	class:Skel	access:private
-Skel::LoadModules	skeleton.cpp	/^int Skel::LoadModules()$/;"	f	class:Skel
 Skel::LoadModules	skeleton.h	/^       int LoadModules();$/;"	p	class:Skel	access:private
 Skel::MasterRun	skeleton.cpp	/^void Skel::MasterRun()$/;"	f	class:Skel
 Skel::MasterRun	skeleton.h	/^       void MasterRun();$/;"	p	class:Skel	access:public
 Skel::ParseOpt	skeleton.cpp	/^int Skel::ParseOpt(int argc, char** argv)$/;"	f	class:Skel
 Skel::ParseOpt	skeleton.h	/^       int ParseOpt(int argc, char** argv);$/;"	p	class:Skel	access:private
-Skel::RELOAD	skeleton.h	/^        RELOAD = 0X1,$/;"	e	enum:Skel::__anon1
+Skel::RELOAD	skeleton.h	/^        RELOAD = 0X1,$/;"	e	enum:Skel::__anon2
+Skel::RUNNING	skeleton.h	/^        RUNNING,$/;"	e	enum:Skel::__anon1
 Skel::ReadConf	skeleton.cpp	/^int Skel::ReadConf()$/;"	f	class:Skel
 Skel::ReadConf	skeleton.h	/^       int ReadConf();$/;"	p	class:Skel	access:private
 Skel::RegisterSignal	skeleton.cpp	/^void Skel::RegisterSignal()$/;"	f	class:Skel
 Skel::RegisterSignal	skeleton.h	/^       void RegisterSignal();$/;"	p	class:Skel	access:private
-Skel::Reload	skeleton.h	/^       int Reload();$/;"	p	class:Skel	access:public
+Skel::Reload	skeleton.cpp	/^void Skel::Reload()$/;"	f	class:Skel
+Skel::Reload	skeleton.h	/^       void Reload();$/;"	p	class:Skel	access:public
+Skel::ReloadHandle	skeleton.cpp	/^void Skel::ReloadHandle()$/;"	f	class:Skel
+Skel::ReloadHandle	skeleton.h	/^       void ReloadHandle();$/;"	p	class:Skel	access:private
 Skel::ReloadOpt	skeleton.cpp	/^bool Skel::ReloadOpt()$/;"	f	class:Skel
 Skel::ReloadOpt	skeleton.h	/^       bool ReloadOpt();$/;"	p	class:Skel	access:private
 Skel::RunModule	skeleton.h	/^       int RunModule();$/;"	p	class:Skel	access:private
-Skel::STATUS	skeleton.h	/^        STATUS = 0X4,$/;"	e	enum:Skel::__anon1
+Skel::STARTING	skeleton.h	/^        STARTING,$/;"	e	enum:Skel::__anon1
+Skel::STATUS	skeleton.h	/^        STATUS = 0X4,$/;"	e	enum:Skel::__anon2
+Skel::SUSPENDING	skeleton.h	/^        SUSPENDING$/;"	e	enum:Skel::__anon1
 Skel::SignalHandle	skeleton.cpp	/^void Skel::SignalHandle(int sig)$/;"	f	class:Skel
-Skel::SignalHandle	skeleton.h	/^       static void SignalHandle(int sig);$/;"	p	class:Skel	access:public
-Skel::Skel	skeleton.cpp	/^Skel::Skel():optFlag(0), base_(NULL) $/;"	f	class:Skel
+Skel::SignalHandle	skeleton.h	/^       void SignalHandle(int sig);$/;"	p	class:Skel	access:public
+Skel::Skel	skeleton.cpp	/^Skel::Skel():optFlag(0), base_(NULL),autoReboot_(0) $/;"	f	class:Skel
 Skel::Skel	skeleton.h	/^       Skel();$/;"	p	class:Skel	access:public
 Skel::Start	skeleton.cpp	/^int Skel::Start()$/;"	f	class:Skel
 Skel::Start	skeleton.h	/^       int Start();$/;"	p	class:Skel	access:public
+Skel::Status	skeleton.cpp	/^int Skel::Status(pid_t& pid)$/;"	f	class:Skel
+Skel::Status	skeleton.h	/^       int  Status(pid_t& pid);$/;"	p	class:Skel	access:private
 Skel::StatusOpt	skeleton.cpp	/^bool Skel::StatusOpt()$/;"	f	class:Skel
 Skel::StatusOpt	skeleton.h	/^       bool StatusOpt();$/;"	p	class:Skel	access:private
+Skel::Stop	skeleton.cpp	/^void Skel::Stop()$/;"	f	class:Skel
 Skel::Stop	skeleton.h	/^       void Stop();$/;"	p	class:Skel	access:private
-Skel::WorkerRun	skeleton.cpp	/^void Skel::WorkerRun(Module* module, const string& conf)$/;"	f	class:Skel
-Skel::WorkerRun	skeleton.h	/^       void WorkerRun(Module* module, const string & conf);$/;"	p	class:Skel	access:public
+Skel::WaitChildren	skeleton.cpp	/^void Skel::WaitChildren()$/;"	f	class:Skel
+Skel::WaitChildren	skeleton.h	/^       void WaitChildren();$/;"	p	class:Skel	access:private
+Skel::WorkerRun	skeleton.cpp	/^int Skel::WorkerRun(const string & conf)$/;"	f	class:Skel
+Skel::WorkerRun	skeleton.h	/^       int WorkerRun(const string & conf);$/;"	p	class:Skel	access:public
+Skel::autoReboot_	skeleton.h	/^       int64_t autoReboot_;$/;"	m	class:Skel	access:private
 Skel::base_	skeleton.h	/^       struct event_base *  base_;$/;"	m	class:Skel	typeref:struct:Skel::event_base	access:private
 Skel::conf_	skeleton.h	/^       string conf_;  $/;"	m	class:Skel	access:private
+Skel::dropPid_	skeleton.h	/^       vector<pid_t> dropPid_;$/;"	m	class:Skel	access:private
+Skel::exiting_	skeleton.h	/^       uint8_t exiting_;$/;"	m	class:Skel	access:private
 Skel::logConf_	skeleton.h	/^       string logConf_;$/;"	m	class:Skel	access:private
-Skel::logger	skeleton.cpp	/^log4cxx::LoggerPtr Skel::logger;$/;"	m	class:Skel	file:
 Skel::logger	skeleton.h	/^       static log4cxx::LoggerPtr logger;$/;"	m	class:Skel	access:public
 Skel::masterPid	skeleton.h	/^       pid_t masterPid;$/;"	m	class:Skel	access:private
 Skel::modulesConf_	skeleton.h	/^       string modulesConf_;$/;"	m	class:Skel	access:private
 Skel::modules_	skeleton.h	/^       vector<ModuleInfo> modules_;$/;"	m	class:Skel	access:private
 Skel::optFlag	skeleton.h	/^       uint8_t optFlag;$/;"	m	class:Skel	access:private
 Skel::pidFilePath	skeleton.h	/^       string pidFilePath;$/;"	m	class:Skel	access:private
+Skel::rebootTimeout_	skeleton.h	/^       int64_t rebootTimeout_;$/;"	m	class:Skel	access:private
 Skel::signalEvent	skeleton.h	/^       std::tr1::shared_ptr<SignalEvent> signalEvent;$/;"	m	class:Skel	access:private
+Skel::status_	skeleton.h	/^       uint8_t status_;$/;"	m	class:Skel	access:private
+Skel::timerEvents_	skeleton.h	/^       vector<TimerEvent*> timerEvents_;$/;"	m	class:Skel	access:private
 Skel::~Skel	skeleton.cpp	/^Skel::~Skel()$/;"	f	class:Skel
 Skel::~Skel	skeleton.h	/^       ~Skel();$/;"	p	class:Skel	access:public
+Start	easyevent.cpp	/^void TimerEvent::Start() {$/;"	f	class:TimerEvent
+Start	easyevent.h	/^    void Start();$/;"	p	class:TimerEvent	access:private
 Start	skeleton.cpp	/^int Skel::Start()$/;"	f	class:Skel
 Start	skeleton.h	/^       int Start();$/;"	p	class:Skel	access:public
+Status	skeleton.cpp	/^int Skel::Status(pid_t& pid)$/;"	f	class:Skel
+Status	skeleton.h	/^       int  Status(pid_t& pid);$/;"	p	class:Skel	access:private
 StatusOpt	skeleton.cpp	/^bool Skel::StatusOpt()$/;"	f	class:Skel
 StatusOpt	skeleton.h	/^       bool StatusOpt();$/;"	p	class:Skel	access:private
 Stop	examplemodule/echomodule.cpp	/^        virtual void Stop();$/;"	p	class:EchoModule	file:	access:public
 Stop	examplemodule/echomodule.cpp	/^void EchoModule::Stop()$/;"	f	class:EchoModule
 Stop	module.h	/^        virtual void Stop() = 0;$/;"	p	class:Module	access:public
+Stop	skeleton.cpp	/^void Skel::Stop()$/;"	f	class:Skel
 Stop	skeleton.h	/^       void Stop();$/;"	p	class:Skel	access:private
 TARGET	Makefile	/^TARGET=skel$/;"	m
 Target	examplemodule/Makefile	/^Target=libechomodule.so$/;"	m
-WorkerRun	skeleton.cpp	/^void Skel::WorkerRun(Module* module, const string& conf)$/;"	f	class:Skel
-WorkerRun	skeleton.h	/^       void WorkerRun(Module* module, const string & conf);$/;"	p	class:Skel	access:public
+TimerEvent	easyevent.cpp	/^TimerEvent::TimerEvent(struct event_base* base)$/;"	f	class:TimerEvent
+TimerEvent	easyevent.h	/^    TimerEvent(struct event_base* base_);$/;"	p	class:TimerEvent	access:public
+TimerEvent	easyevent.h	/^class TimerEvent : noncopyable {$/;"	c	inherits:noncopyable
+TimerEvent::AsyncWait	easyevent.cpp	/^void TimerEvent::AsyncWait(const Functor& handler,$/;"	f	class:TimerEvent
+TimerEvent::AsyncWait	easyevent.h	/^    void AsyncWait(const Functor& handler,$/;"	p	class:TimerEvent	access:public
+TimerEvent::Cancel	easyevent.cpp	/^void TimerEvent::Cancel() {$/;"	f	class:TimerEvent
+TimerEvent::Cancel	easyevent.h	/^    void Cancel();$/;"	p	class:TimerEvent	access:public
+TimerEvent::Functor	easyevent.h	/^    typedef std::tr1::function<void()> Functor;$/;"	t	class:TimerEvent	access:public
+TimerEvent::OnTimer	easyevent.cpp	/^void TimerEvent::OnTimer(int fd, short what, void *arg) {$/;"	f	class:TimerEvent
+TimerEvent::OnTimer	easyevent.h	/^    static void OnTimer(int fd, short what, void *arg); $/;"	p	class:TimerEvent	access:private
+TimerEvent::Start	easyevent.cpp	/^void TimerEvent::Start() {$/;"	f	class:TimerEvent
+TimerEvent::Start	easyevent.h	/^    void Start();$/;"	p	class:TimerEvent	access:private
+TimerEvent::TimerEvent	easyevent.cpp	/^TimerEvent::TimerEvent(struct event_base* base)$/;"	f	class:TimerEvent
+TimerEvent::TimerEvent	easyevent.h	/^    TimerEvent(struct event_base* base_);$/;"	p	class:TimerEvent	access:public
+TimerEvent::active_	easyevent.h	/^    bool active_;$/;"	m	class:TimerEvent	access:private
+TimerEvent::base_	easyevent.h	/^    struct event_base *base_;$/;"	m	class:TimerEvent	typeref:struct:TimerEvent::event_base	access:private
+TimerEvent::handler_	easyevent.h	/^    Functor handler_;$/;"	m	class:TimerEvent	access:private
+TimerEvent::timeout_	easyevent.h	/^    struct timeval timeout_;$/;"	m	class:TimerEvent	typeref:struct:TimerEvent::timeval	access:private
+TimerEvent::timer_ev_	easyevent.h	/^    struct event * timer_ev_;$/;"	m	class:TimerEvent	typeref:struct:TimerEvent::event	access:private
+TimerEvent::~TimerEvent	easyevent.cpp	/^TimerEvent::~TimerEvent() {$/;"	f	class:TimerEvent
+TimerEvent::~TimerEvent	easyevent.h	/^    ~TimerEvent();$/;"	p	class:TimerEvent	access:public
+WaitChildren	skeleton.cpp	/^void Skel::WaitChildren()$/;"	f	class:Skel
+WaitChildren	skeleton.h	/^       void WaitChildren();$/;"	p	class:Skel	access:private
+WorkerRun	skeleton.cpp	/^int Skel::WorkerRun(const string & conf)$/;"	f	class:Skel
+WorkerRun	skeleton.h	/^       int WorkerRun(const string & conf);$/;"	p	class:Skel	access:public
 __EVENTLOOP	easyevent.h	2;"	d
 __MODULE	module.h	2;"	d
+active_	easyevent.h	/^    bool active_;$/;"	m	class:TimerEvent	access:private
+autoReboot_	skeleton.h	/^       int64_t autoReboot_;$/;"	m	class:Skel	access:private
 base_	easyevent.h	/^    struct event_base * base_;$/;"	m	class:SignalEvent	typeref:struct:SignalEvent::event_base	access:private
+base_	easyevent.h	/^    struct event_base *base_;$/;"	m	class:TimerEvent	typeref:struct:TimerEvent::event_base	access:private
 base_	skeleton.h	/^       struct event_base *  base_;$/;"	m	class:Skel	typeref:struct:Skel::event_base	access:private
 checkIsInRange	Config.cpp	/^bool Config::checkIsInRange(int newIdx,const char* key,int64_t max,int64_t min)$/;"	f	class:Config
 checkIsInRange	Config.h	/^	bool checkIsInRange(int newIdx,const char* key,int64_t max,int64_t min);$/;"	p	class:Config	access:public
@@ -249,11 +322,14 @@ conf_	skeleton.h	/^    string  conf_;$/;"	m	struct:ModuleInfo	access:public
 configRechecker	Config.cpp	/^void* configRechecker(void* params)$/;"	f
 configRechecker	Config.h	/^void* configRechecker(void* params);$/;"	p
 destroy_	skeleton.h	/^    DestroyModule destroy_;$/;"	m	struct:ModuleInfo	access:public
+dropPid_	skeleton.h	/^       vector<pid_t> dropPid_;$/;"	m	class:Skel	access:private
+exiting_	skeleton.h	/^       uint8_t exiting_;$/;"	m	class:Skel	access:private
 getConfInt	Config.cpp	/^int64_t Config::getConfInt(const char* key) const$/;"	f	class:Config
 getConfInt	Config.h	/^	int64_t getConfInt(const char* key) const;$/;"	p	class:Config	access:public
 getConfStr	Config.cpp	/^const char* Config::getConfStr(const char* key) const$/;"	f	class:Config
 getConfStr	Config.h	/^	const char* getConfStr(const char* key) const;$/;"	p	class:Config	access:public
 handler_	easyevent.h	/^    Functor handler_; $/;"	m	class:SignalEvent	access:private
+handler_	easyevent.h	/^    Functor handler_;$/;"	m	class:TimerEvent	access:private
 handler_	skeleton.h	/^    void* handler_;$/;"	m	struct:ModuleInfo	access:public
 init	Config.cpp	/^bool Config::init(const char *confFile)$/;"	f	class:Config
 init	Config.h	/^	bool init(const char *confFile);$/;"	p	class:Config	access:public
@@ -261,7 +337,7 @@ join	Config.cpp	/^void Config::join()$/;"	f	class:Config
 join	Config.h	/^	void join();$/;"	p	class:Config	access:public
 key	Config.h	/^	char key[64];$/;"	m	struct:ConfigInt	access:public
 logConf_	skeleton.h	/^       string logConf_;$/;"	m	class:Skel	access:private
-logger	skeleton.cpp	/^log4cxx::LoggerPtr Skel::logger;$/;"	m	class:Skel	file:
+logger	module.h	/^        log4cxx::LoggerPtr logger;$/;"	m	class:Module	access:protected
 logger	skeleton.h	/^       static log4cxx::LoggerPtr logger;$/;"	m	class:Skel	access:public
 mConfFn	Config.h	/^	string      mConfFn;$/;"	m	class:Config	access:private
 mConfMap	Config.h	/^	map<string,string> mConfMap[2];$/;"	m	class:Config	access:private
@@ -278,7 +354,9 @@ module_	skeleton.h	/^    Module* module_;$/;"	m	struct:ModuleInfo	access:public
 modulesConf_	skeleton.h	/^       string modulesConf_;$/;"	m	class:Skel	access:private
 modules_	skeleton.h	/^       vector<ModuleInfo> modules_;$/;"	m	class:Skel	access:private
 optFlag	skeleton.h	/^       uint8_t optFlag;$/;"	m	class:Skel	access:private
+pid	skeleton.h	/^    pid_t pid;$/;"	m	struct:ModuleInfo	access:public
 pidFilePath	skeleton.h	/^       string pidFilePath;$/;"	m	class:Skel	access:private
+rebootTimeout_	skeleton.h	/^       int64_t rebootTimeout_;$/;"	m	class:Skel	access:private
 rechecking	Config.cpp	/^void Config::rechecking()$/;"	f	class:Config
 rechecking	Config.h	/^	void rechecking();$/;"	p	class:Config	access:public
 setConfItem	Config.cpp	/^void Config::setConfItem(const char*key, const char* value)$/;"	f	class:Config
@@ -289,13 +367,18 @@ sig_ev_	easyevent.h	/^    map<int, struct event*> sig_ev_;$/;"	m	class:SignalEve
 signalEvent	skeleton.h	/^       std::tr1::shared_ptr<SignalEvent> signalEvent;$/;"	m	class:Skel	access:private
 startRecheck	Config.cpp	/^bool Config::startRecheck(const char* confRecheckTimeKey)$/;"	f	class:Config
 startRecheck	Config.h	/^	bool startRecheck(const char* confRecheckTimeKey);$/;"	p	class:Config	access:public
+status_	skeleton.h	/^       uint8_t status_;$/;"	m	class:Skel	access:private
 stop	Config.cpp	/^void Config::stop()$/;"	f	class:Config
 stop	Config.h	/^	void stop();$/;"	p	class:Config	access:public
+timeout_	easyevent.h	/^    struct timeval timeout_;$/;"	m	class:TimerEvent	typeref:struct:TimerEvent::timeval	access:private
+timerEvents_	skeleton.h	/^       vector<TimerEvent*> timerEvents_;$/;"	m	class:Skel	access:private
+timer_ev_	easyevent.h	/^    struct event * timer_ev_;$/;"	m	class:TimerEvent	typeref:struct:TimerEvent::event	access:private
 ~Config	Config.cpp	/^Config::~Config()$/;"	f	class:Config
 ~Config	Config.h	/^	virtual ~Config();$/;"	p	class:Config	access:public
 ~Module	module.h	/^        virtual ~Module(){};$/;"	f	class:Module	access:public
-~ModuleInfo	skeleton.h	/^    ~ModuleInfo(){(*destroy_)(module_);}$/;"	f	struct:ModuleInfo	access:public
 ~SignalEvent	easyevent.cpp	/^SignalEvent::~SignalEvent()$/;"	f	class:SignalEvent
 ~SignalEvent	easyevent.h	/^    ~SignalEvent();$/;"	p	class:SignalEvent	access:public
 ~Skel	skeleton.cpp	/^Skel::~Skel()$/;"	f	class:Skel
 ~Skel	skeleton.h	/^       ~Skel();$/;"	p	class:Skel	access:public
+~TimerEvent	easyevent.cpp	/^TimerEvent::~TimerEvent() {$/;"	f	class:TimerEvent
+~TimerEvent	easyevent.h	/^    ~TimerEvent();$/;"	p	class:TimerEvent	access:public

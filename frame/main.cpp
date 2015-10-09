@@ -3,8 +3,8 @@
 int main(int argc , char ** argv)
 {
     Skel skel;
-    skel.Init(argc, argv);
-    skel.Start();
+    if(skel.Init(argc, argv) >=0 )
+        skel.Start();
     return 0;
 }
 

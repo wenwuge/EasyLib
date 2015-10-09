@@ -14,8 +14,10 @@
 #include <sstream>
 #include <sys/types.h>
 #include<sys/wait.h>
-log4cxx::LoggerPtr Skel::logger;
-Skel::Skel():optFlag(0), base_(NULL) 
+#include <sys/prctl.h>
+log4cxx::LoggerPtr Skel::logger(log4cxx::Logger::getLogger("master"));
+Skel::Skel():optFlag(0), base_(NULL),autoReboot_(0),
+            status_(STARTING)    
 {
 }
 
@@ -32,14 +34,12 @@ int Skel::ParseOpt(int argc, char** argv)
     logConf_ = "conf/skellog.conf";
     while((opt = getopt(argc, argv, "rksfc:l:")) != -1)
     {
-        cout << "opt is " << opt << endl;
         switch (opt)
         {
             case 'r':
                 optFlag |= RELOAD;
                 break;
             case 'k':
-                cout << "flag k" << endl;
                 optFlag |= KILL;
                 break;
             case 's':
@@ -61,6 +61,40 @@ int Skel::ParseOpt(int argc, char** argv)
 
 
     return  0;
+}
+
+void Skel::ChangeProcessName(string name)
+{
+    prctl(PR_SET_NAME, name.c_str());
+}
+
+string Skel::GetProcessNameById(pid_t pid)
+{
+    //get process exe file path
+    FILE *fptr;
+    bool bret = false;
+    char cmd[255] = {'\0'};
+    char pathName[512] ={'\0'};
+    sprintf(cmd,"readlink /proc/%d/exe",pid);
+    if((fptr = popen(cmd,"r")) != NULL)
+    {
+        if(fgets(pathName,512,fptr) != NULL)
+        {
+        }
+    }
+    pclose(fptr);
+
+
+    //get process name
+    char name[256]={'\0'};
+    const char* pos = strrchr(pathName,'/');
+    if(pos == 0)
+    {
+        strcpy(name,pathName);
+    }else{
+        strcpy(name,pos+1);
+    }
+    return name;
 }
 
 bool Skel::ReloadOpt()
@@ -94,11 +128,43 @@ int Skel::ReadConf()
     #else
     pidFilePath = "./pid";
     #endif
-    logConf_ = config.getConfStr("log_conf");
-    logger = log4cxx::LoggerPtr(log4cxx::Logger::getLogger("master"));
+    if(config.checkIsKeyExist(0,"log_conf")){
+        logConf_ = config.getConfStr("log_conf");
+    }
+    
 
 
-    modulesConf_ = config.getConfStr("modules");
+    if(config.checkIsKeyExist(0,"modules")){
+        modulesConf_ = config.getConfStr("modules");
+    }
+   
+    if(config.checkIsKeyExist(0,"autoreboot")){
+
+        autoReboot_ = config.getConfInt("autoreboot");
+    }
+
+    if(config.checkIsKeyExist(0,"reboottimeout")){
+        rebootTimeout_ = config.getConfInt("reboottimeout");
+
+    }
+    if(!KillOpt()&&!StatusOpt()&&!ReloadOpt() ){    
+        try
+        {
+            PropertyConfigurator::configure(logConf_);
+        }
+        catch(std::exception& e)
+        {
+            LOG4CXX_FATAL(logger, "exception:%s "<< e.what());
+            exit(1);
+        }
+        
+       // logger = log4cxx::LoggerPtr(log4cxx::Logger::getLogger("master"));
+        LOG4CXX_FATAL(logger,"log4cxx init finish!");
+        LOG4CXX_DEBUG(logger, "modules: "<<modulesConf_);
+        LOG4CXX_DEBUG(logger, "autoreboot: "<<autoReboot_);
+        LOG4CXX_DEBUG(logger, "reboottimeout: "<<rebootTimeout_);
+    }
+    return 0;
 }
 
 int Skel::Status(pid_t& pid)
@@ -118,7 +184,11 @@ int Skel::Status(pid_t& pid)
         cout << "process "<< pid << " not exsited, maybe have been killed" <<endl;
         return DEAD;
     }
-
+    
+    if(GetProcessNameById(pid).find("skel") == string::npos){
+        cout << "pid " << pid << " name is " << GetProcessNameById(pid) << endl;
+        return DEAD;
+    }
     return ALIVE;
 }
 
@@ -149,7 +219,7 @@ int Skel::Init(int argc, char ** argv)
     if(ParseOpt(argc, argv)){
         return -1;
     }
-    //ReadConf();
+    ReadConf();
 
     if(ReloadOpt()){
         Reload();
@@ -171,10 +241,11 @@ int Skel::Init(int argc, char ** argv)
         return -1;
     }
 
-    return ReadConf();
+    return 0;
+   // return ReadConf();
 }
 
-int Skel::LoadModules()
+int Skel::CheckModules()
 {
     vector<string> vec;
     
@@ -201,7 +272,6 @@ int Skel::LoadModules()
             LOG4CXX_FATAL(logger, "GetModule error");
             return -1;
         }
-        Module* module = (*getModule)();
         
         DestroyModule destroyModule;
         destroyModule =(DestroyModule) dlsym(handler, "DestroyModule");
@@ -209,33 +279,55 @@ int Skel::LoadModules()
             LOG4CXX_FATAL(logger, "DestroyModule error");
             return -1;
         }
-        
-        ModuleInfo info;
-        info.module_ = module;
-        info.conf_ = tmpVec[1];
-        info.destroy_ = destroyModule;
-        info.handler_ = handler;
-        modules_.push_back(info); 
 
-        //dlclose(handler);
+        dlclose(handler);
         tmpVec.clear();
     }
-    LOG4CXX_DEBUG(logger, "LoadModules finished!");
+    LOG4CXX_DEBUG(logger, "CheckModules finished!");
     return 0;
 }
 
-void Skel::WorkerRun(ModuleInfo* info, const string& conf)
+int Skel::WorkerRun(const string & conf)
 {
     pid_t pid;
 
     if((pid = fork()) > 0){
-        return;
+        ModuleInfo info;
+        info.pid = pid;
+        modules_.push_back(info);
+        return 0;
     }   
     
-    info->pid = pid;
+
     Module* module = NULL;
-    module = info->module_;
-    LOG4CXX_FATAL(logger, "worker run ,conf : " << conf); 
+
+    vector<string> tmpVec;
+    EasyString::split(conf, ":", tmpVec);
+
+    LOG4CXX_DEBUG(logger, "Module name:" << tmpVec[0] << " conf" << tmpVec[1] );
+
+    //load one module
+    void* handler = dlopen(tmpVec[0].c_str(), RTLD_NOW);
+    if(!handler){
+        LOG4CXX_FATAL(logger, "dlopen error," << dlerror());
+        return -1;
+    }
+    
+    GetModule getModule;
+    getModule =(GetModule) dlsym(handler, "GetModule");
+    if(!getModule){
+        LOG4CXX_FATAL(logger, "GetModule error");
+        return -1;
+    }
+    module = (*getModule)();
+    
+    DestroyModule destroyModule;
+    destroyModule =(DestroyModule) dlsym(handler, "DestroyModule");
+    if(!destroyModule){
+        LOG4CXX_FATAL(logger, "DestroyModule error");
+        return -1;
+    }
+    
     //child process, will run module in this process
     module->Init(conf);
     module->Run();
@@ -244,28 +336,23 @@ void Skel::WorkerRun(ModuleInfo* info, const string& conf)
 void Skel::MasterRun()
 {
     //init log4cxx 
-    try
-    {
-        PropertyConfigurator::configure(logConf_);
-    }
-    catch(std::exception& e)
-    {
-        LOG4CXX_FATAL(logger, "exception:%s "<< e.what());
-        exit(1);
-    }
-    
-    LOG4CXX_FATAL(logger,"log4cxx init finish!");
+
     
     base_ = event_base_new();
     RegisterSignal();
-    
-    if(LoadModules() < 0){
+    ChangeProcessName("Monitor"); 
+
+    if(CheckModules() < 0){
+        LOG4CXX_FATAL(logger, "checkmodules error happen");
         return;
     }
     
-    LOG4CXX_DEBUG(logger, "modules_.size() " << modules_.size());
-    for(int i = 0 ; i < modules_.size(); i ++){
-       WorkerRun(&modules_[i], modules_[i].conf_); 
+    vector<string> vec;
+    
+    EasyString::split(modulesConf_, ";", vec); 
+    LOG4CXX_DEBUG(logger, "find modules num: " << vec.size());
+    for(int i = 0 ; i < vec.size(); i ++){
+       WorkerRun(vec[i]); 
     }
 
     //will listen signal and timers
@@ -302,10 +389,17 @@ int Skel::InitModules()
 void Skel::Stop()
 {
     for(int i = 0 ; i < modules_.size(); i++){
-        modules_[i].module_->Stop();
+        //modules_[i].module_->Stop();
+        //record the pid to be killed
+        dropPid_.push_back(modules_[i].pid);
+        LOG4CXX_FATAL(logger, "send SIGKILL to " << modules_[i].pid);
         kill(modules_[i].pid , SIGKILL);
+
     }
-    
+   
+    //exit the master process
+    if(exiting_)
+        exit(0);
 }
 
 void Skel::WaitChildren()
@@ -320,6 +414,7 @@ void Skel::WaitChildren()
             return;
         }
         
+        LOG4CXX_DEBUG(logger, "waitpid pid is " << pid);
         if(WIFEXITED(status)){
             if (WEXITSTATUS(status) != 0){
                 needKillChildren = true;
@@ -328,6 +423,7 @@ void Skel::WaitChildren()
             if(WTERMSIG(status) != SIGTERM){
                 needKillChildren = true;
             }
+            
         }else if(WCOREDUMP(status)){
             needKillChildren = true;
         }else{
@@ -337,12 +433,33 @@ void Skel::WaitChildren()
         if(needKillChildren){
             kill(-pid, SIGKILL);
         }
-
+        
+        vector<pid_t>::iterator it;
+        it = find(dropPid_.begin(), dropPid_.end(), pid);
+        //not int the droppid vector, the process maybe meet some problem, pull it up again
+        if(it == dropPid_.end()){
+            LOG4CXX_DEBUG(logger, "autoReboot_: "<<autoReboot_ << " status: " << status_);
+            //need reboot the process,set one reboot timer
+            if(autoReboot_&&status_ != SUSPENDING){
+               
+               TimerEvent* tEvent_ = new TimerEvent(base_);
+               struct timeval timeout;
+               timeout.tv_sec = rebootTimeout_;
+               tEvent_->AsyncWait(std::tr1::bind(&Skel::ReloadHandle , this), 
+                            timeout);
+               timerEvents_.push_back(tEvent_);
+               status_ = SUSPENDING;
+            }
+        }else{
+            dropPid_.erase(it);
+        }
+            
     }
 }
 
 void Skel::ReloadHandle()
 {
+    //set this status for stop the master libevent work
     status_ = SUSPENDING;
 
     //read some modified conf
@@ -352,23 +469,32 @@ void Skel::ReloadHandle()
     modulesConf_ = config.getConfStr("modules");
     
     //stop worker module
+
     for(int i = 0; i < modules_.size(); i++){
-        modules_[i].module_->Stop();
+        dropPid_.push_back(modules_[i].pid);
+        //modules_[i].module_->Stop();
+        kill(modules_[i].pid,SIGKILL);
+        LOG4CXX_DEBUG(logger, "send SIGTERM TO PID "<<modules_[i].pid);
     }
 
     modules_.clear();
 
     //restart the modules
-    if(LoadModules() < 0){
+    if(CheckModules() < 0){
         LOG4CXX_ERROR(logger, "loadmodules error! exit()");
         exit(-1);
     }
   
 
-    for(int i = 0; i< modules_.size(); i ++){
-        WorkerRun(&modules_[i], modules_[i].conf_);
+    vector<string> vec;
+    
+    EasyString::split(modulesConf_, ";", vec); 
+    LOG4CXX_DEBUG(logger, "find modules num: " << vec.size());
+    for(int i = 0 ; i < vec.size(); i ++){
+       WorkerRun(vec[i]); 
     }
 
+    status_ = RUNNING;
     return;
 
 }
@@ -381,9 +507,13 @@ void Skel::SignalHandle(int sig)
         case SIGINT:
         case SIGTERM:
         case SIGQUIT:
+            //manual control, not reload need 
+            exiting_ = true;
             Stop();
             break;
         case SIGHUP:
+            exiting_ = false;
+            //Stop();
             ReloadHandle();
             break;
         case SIGCHLD:

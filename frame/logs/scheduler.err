@@ -81,3 +81,170 @@
 2015-09-28 15:00:33 [0x7fdd7ec6d760] FATAL (skeleton.cpp:213)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
 2015-09-28 18:53:12 [0x7f6024f76760] FATAL (skeleton.cpp:233)MasterRun - log4cxx init finish!
 2015-09-28 18:53:12 [0x7f6024f76760] FATAL (skeleton.cpp:214)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 14:47:17 [0x7febe12ac760] FATAL (skeleton.cpp:270)MasterRun - log4cxx init finish!
+2015-10-08 14:47:17 [0x7febe12ac760] FATAL (skeleton.cpp:251)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 15:03:34 [0x7f341790f760] FATAL (skeleton.cpp:271)MasterRun - log4cxx init finish!
+2015-10-08 15:03:34 [0x7f341790f760] FATAL (skeleton.cpp:252)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 15:51:47 [0x7f5e7fec2760] FATAL (skeleton.cpp:313)MasterRun - log4cxx init finish!
+2015-10-08 15:51:47 [0x7f5e7fec2760] FATAL (skeleton.cpp:294)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 15:53:43 [0x7f386b5d0760] FATAL (skeleton.cpp:313)MasterRun - log4cxx init finish!
+2015-10-08 15:53:43 [0x7f386b5d0760] FATAL (skeleton.cpp:294)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 15:54:16 [0x7f72b0cb5760] FATAL (skeleton.cpp:313)MasterRun - log4cxx init finish!
+2015-10-08 15:54:16 [0x7f72b0cb5760] FATAL (skeleton.cpp:294)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 15:54:42 [0x7f35748df760] FATAL (skeleton.cpp:313)MasterRun - log4cxx init finish!
+2015-10-08 15:54:42 [0x7f35748df760] FATAL (skeleton.cpp:294)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 15:55:03 [0x7fe98cd41760] FATAL (skeleton.cpp:161)ReadConf - log4cxx init finish!
+2015-10-08 15:55:03 [0x7fe98cd41760] FATAL (skeleton.cpp:306)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 16:08:07 [0x7f1bfdc3a760] FATAL (skeleton.cpp:163)ReadConf - log4cxx init finish!
+2015-10-08 16:08:07 [0x7f1bfdc3a760] FATAL (skeleton.cpp:308)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 16:12:04 [0x7f94d6fb0760] FATAL (skeleton.cpp:164)ReadConf - log4cxx init finish!
+2015-10-08 16:12:04 [0x7f94d6fb0760] FATAL (skeleton.cpp:309)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 16:15:11 [0x7f727dd15760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 16:15:11 [0x7f727dd15760] FATAL (skeleton.cpp:311)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 16:18:36 [0x7f1635b5e760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 16:18:36 [0x7f1635b5e760] FATAL (skeleton.cpp:311)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 16:18:53 [0x7fa617a3c760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 16:18:53 [0x7fa617a3c760] FATAL (skeleton.cpp:311)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 16:23:33 [0x7f4f294f0760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 16:23:33 [0x7f4f294f0760] FATAL (skeleton.cpp:312)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 16:24:33 [0x7f1d13041760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 16:24:33 [0x7f4f294f0760] FATAL (skeleton.cpp:373)Stop - send SIGKILL to -1
+2015-10-08 16:29:19 [0x7fb8911f4760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 16:29:19 [0x7fb8911f4760] FATAL (skeleton.cpp:313)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 16:29:44 [0x7fef31235760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 16:29:44 [0x7fb8911f4760] FATAL (skeleton.cpp:374)Stop - send SIGKILL to 14311
+2015-10-08 16:29:44 [0x7fef31235760] FATAL (skeleton.cpp:313)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 16:48:40 [0x7fcf1880f760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 16:48:40 [0x7fcf1880f760] FATAL (skeleton.cpp:313)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 16:49:03 [0x7f09539b3760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 16:49:03 [0x7fcf1880f760] FATAL (skeleton.cpp:374)Stop - send SIGKILL to 18125
+2015-10-08 16:50:23 [0x7fae399d7760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 16:50:23 [0x7fae399d7760] FATAL (skeleton.cpp:313)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 16:50:26 [0x7f15c6593760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 16:50:26 [0x7fae399d7760] FATAL (skeleton.cpp:374)Stop - send SIGKILL to 18495
+2015-10-08 17:02:33 [0x7fcbe9b81760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 17:02:33 [0x7fcbe9b81760] FATAL (skeleton.cpp:314)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 17:03:43 [0x7fcbe9b81760] FATAL (skeleton.cpp:375)Stop - send SIGKILL to 20879
+2015-10-08 17:04:34 [0x7fdf3b6ea760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 17:04:34 [0x7fdf3b6ea760] FATAL (skeleton.cpp:314)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 17:05:09 [0x7f66268ec760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 17:05:59 [0x7fcedcf78760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 17:05:59 [0x7fcedcf78760] FATAL (skeleton.cpp:314)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 17:06:02 [0x7fcedcf78760] FATAL (skeleton.cpp:375)Stop - send SIGKILL to 21449
+2015-10-08 17:06:27 [0x7f6000072760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 17:06:27 [0x7f6000072760] FATAL (skeleton.cpp:314)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 17:06:30 [0x7fe8a47a1760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 17:10:01 [0x7f27f5354760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 17:10:01 [0x7f27f5354760] FATAL (skeleton.cpp:314)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 17:10:05 [0x7f27f5354760] FATAL (skeleton.cpp:375)Stop - send SIGKILL to 22140
+2015-10-08 17:10:17 [0x7f0c162e4760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 17:10:17 [0x7f0c162e4760] FATAL (skeleton.cpp:314)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 17:11:03 [0x7fc6d009b760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 17:11:03 [0x7fc6d009b760] FATAL (skeleton.cpp:314)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 17:12:46 [0x7fbbe717d760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 17:12:46 [0x7fbbe717d760] FATAL (skeleton.cpp:314)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 17:15:27 [0x7fec31ff7760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 17:15:27 [0x7fec31ff7760] FATAL (skeleton.cpp:314)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 17:16:00 [0x7fec31ff7760] FATAL (skeleton.cpp:375)Stop - send SIGKILL to 23246
+2015-10-08 17:18:35 [0x7f89e4d7b760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 17:18:35 [0x7f89e4d7b760] FATAL (skeleton.cpp:314)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 17:19:52 [0x7f24c4e86760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 17:19:52 [0x7f24c4e86760] FATAL (skeleton.cpp:314)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 17:20:05 [0x7f7340db2760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 17:20:05 [0x7f7340db2760] FATAL (skeleton.cpp:314)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 17:20:29 [0x7f5b1514e760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 17:20:29 [0x7f5b1514e760] FATAL (skeleton.cpp:314)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 17:20:52 [0x7f5b1514e760] FATAL (skeleton.cpp:375)Stop - send SIGKILL to 24469
+2015-10-08 17:21:06 [0x7f2109428760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 17:21:06 [0x7f2109428760] FATAL (skeleton.cpp:314)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 17:21:22 [0x7f2109428760] FATAL (skeleton.cpp:375)Stop - send SIGKILL to 24588
+2015-10-08 17:22:26 [0x7fbe79564760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 17:22:27 [0x7fbe79564760] FATAL (skeleton.cpp:314)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 17:22:34 [0x7fbe79564760] FATAL (skeleton.cpp:375)Stop - send SIGKILL to 24840
+2015-10-08 17:25:01 [0x7f412899f760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 17:25:01 [0x7f412899f760] FATAL (skeleton.cpp:314)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 17:27:35 [0x7f412899f760] FATAL (skeleton.cpp:375)Stop - send SIGKILL to 25299
+2015-10-08 17:31:10 [0x7f101a084760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 17:31:10 [0x7f101a084760] FATAL (skeleton.cpp:314)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 17:50:22 [0x7f101a084760] FATAL (skeleton.cpp:375)Stop - send SIGKILL to 26579
+2015-10-08 17:50:33 [0x7f63f8f31760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 17:50:33 [0x7f63f8f31760] FATAL (skeleton.cpp:314)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 17:51:04 [0x7f63f8f31760] FATAL (skeleton.cpp:375)Stop - send SIGKILL to 30560
+2015-10-08 18:01:08 [0x7f1c55496760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 18:01:08 [0x7f1c55496760] FATAL (skeleton.cpp:314)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 18:02:03 [0x7f1c55496760] FATAL (skeleton.cpp:375)Stop - send SIGKILL to 32473
+2015-10-08 18:02:18 [0x7f2406b67760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 18:02:18 [0x7f2406b67760] FATAL (skeleton.cpp:314)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 18:04:39 [0x7f2406b67760] FATAL (skeleton.cpp:375)Stop - send SIGKILL to 300
+2015-10-08 18:04:47 [0x7f057db00760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 18:04:47 [0x7f057db00760] FATAL (skeleton.cpp:314)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 18:05:26 [0x7fd652264760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 18:05:26 [0x7fd652264760] FATAL (skeleton.cpp:314)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 18:05:37 [0x7fd652264760] FATAL (skeleton.cpp:375)Stop - send SIGKILL to 894
+2015-10-08 18:06:58 [0x7f70def03760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 18:06:58 [0x7f70def03760] FATAL (skeleton.cpp:314)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 18:12:23 [0x7f987b3bf760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 18:12:23 [0x7f987b3bf760] FATAL (skeleton.cpp:314)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 18:14:59 [0x7f987b3bf760] FATAL (skeleton.cpp:375)Stop - send SIGKILL to 2136
+2015-10-08 18:15:42 [0x7fcead992760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 18:15:42 [0x7fcead992760] FATAL (skeleton.cpp:314)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 18:17:06 [0x7fcead992760] FATAL (skeleton.cpp:375)Stop - send SIGKILL to 2723
+2015-10-08 18:21:21 [0x7ffe2b313760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 18:21:21 [0x7ffe2b313760] FATAL (skeleton.cpp:314)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 18:21:26 [0x7ffe2b313760] FATAL (skeleton.cpp:375)Stop - send SIGKILL to 3767
+2015-10-08 18:21:38 [0x7f622e067760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 18:21:38 [0x7f622e067760] FATAL (skeleton.cpp:314)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 18:24:48 [0x7f622e067760] FATAL (skeleton.cpp:375)Stop - send SIGKILL to 3797
+2015-10-08 18:25:09 [0x7f36b2b46760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 18:25:09 [0x7f36b2b46760] FATAL (skeleton.cpp:314)WorkerRun - worker run ,conf : ./examplemodule/echo.conf
+2015-10-08 18:25:25 [0x7f36b2b46760] FATAL (skeleton.cpp:375)Stop - send SIGKILL to 4660
+2015-10-08 18:49:34 [0x7ff51f487760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 18:50:00 [0x7fbbdebb3760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 18:56:50 [0x7fe4a4559760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 18:57:49 [0x7fe4a4559760] FATAL (skeleton.cpp:449)Stop - send SIGKILL to 10741
+2015-10-08 18:57:58 [0x7f3a00a68760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 18:59:46 [0x7f3a00a68760] FATAL (skeleton.cpp:449)Stop - send SIGKILL to 10937
+2015-10-08 19:00:59 [0x7f90aab7a760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 19:01:04 [0x7f90aab7a760] FATAL (skeleton.cpp:449)Stop - send SIGKILL to 11638
+2015-10-08 19:04:01 [0x7f272197d760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 19:04:05 [0x7f272197d760] FATAL (skeleton.cpp:449)Stop - send SIGKILL to 12199
+2015-10-08 19:04:07 [0x7f4b75c25760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 19:06:02 [0x7f6ecde50760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 19:06:03 [0x7f6ecde50760] FATAL (skeleton.cpp:449)Stop - send SIGKILL to 12577
+2015-10-08 19:06:09 [0x7f4b75c25760] FATAL (skeleton.cpp:449)Stop - send SIGKILL to 12213
+2015-10-08 19:08:11 [0x7f42223ec760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 19:09:03 [0x7f42223ec760] FATAL (skeleton.cpp:449)Stop - send SIGKILL to 12949
+2015-10-08 19:10:39 [0x7ffc6c934760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 19:10:47 [0x7ffc6c934760] FATAL (skeleton.cpp:449)Stop - send SIGKILL to 13418
+2015-10-08 19:25:59 [0x7fb687531760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 19:26:16 [0x7fb687531760] FATAL (skeleton.cpp:449)Stop - send SIGKILL to 16437
+2015-10-08 19:27:06 [0x7faf31d96760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 19:27:07 [0x7faf31d96760] FATAL (skeleton.cpp:449)Stop - send SIGKILL to 16869
+2015-10-08 19:39:23 [0x7fee65f5a760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 19:39:28 [0x7fee65f5a760] FATAL (skeleton.cpp:449)Stop - send SIGKILL to 19524
+2015-10-08 19:45:58 [0x7fc4f1fc0760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 19:46:00 [0x7fc4f1fc0760] FATAL (skeleton.cpp:449)Stop - send SIGKILL to 20770
+2015-10-08 19:50:12 [0x7fb07a6cf760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 19:50:21 [0x7fb07a6cf760] FATAL (skeleton.cpp:449)Stop - send SIGKILL to 21532
+2015-10-08 19:52:19 [0x7f61ac83e760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-08 19:52:28 [0x7f61ac83e760] FATAL (skeleton.cpp:449)Stop - send SIGKILL to 21938
+2015-10-09 10:05:51 [0x7f1065f9e760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-09 10:15:14 [0x7f1065f9e760] FATAL (skeleton.cpp:449)Stop - send SIGKILL to 13112
+2015-10-09 10:19:22 [0x7ff62fcad760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-09 11:40:59 [0x7ff62fcad760] FATAL (skeleton.cpp:449)Stop - send SIGKILL to 15681
+2015-10-09 11:52:26 [0x7fa9704f4760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-09 11:54:31 [0x7fa9704f4760] FATAL (skeleton.cpp:449)Stop - send SIGKILL to 649
+2015-10-09 11:55:49 [0x7f17bfb83760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-09 12:00:26 [0x7f3864402760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-09 12:00:44 [0x7f3864402760] FATAL (skeleton.cpp:399)Stop - send SIGKILL to 2244
+2015-10-09 12:01:05 [0x7fec24773760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-09 12:05:16 [0x7f4eb5be1760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-09 13:44:44 [0x7f4eb5be1760] FATAL (skeleton.cpp:399)Stop - send SIGKILL to 3811
+2015-10-09 13:49:57 [0x7f38a9fc5760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-09 14:05:39 [0x7f38a9fc5760] FATAL (skeleton.cpp:399)Stop - send SIGKILL to 23688
+2015-10-09 14:06:40 [0x7fd3f2c28760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-09 14:06:54 [0x7fd3f2c28760] FATAL (skeleton.cpp:399)Stop - send SIGKILL to 27875
+2015-10-09 14:09:11 [0x7fb079d45760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-09 14:11:31 [0x7fb079d45760] FATAL (skeleton.cpp:399)Stop - send SIGKILL to 28735
+2015-10-09 14:11:49 [0x7f3bab3e9760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
+2015-10-09 14:22:21 [0x7f3bab3e9760] FATAL (skeleton.cpp:399)Stop - send SIGKILL to 29111
