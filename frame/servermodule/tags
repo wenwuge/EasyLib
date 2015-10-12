@@ -1,0 +1,45 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+CXX	Makefile	/^CXX=\/usr\/bin\/g++$/;"	m
+Cflag	Makefile	/^Cflag=-shared -fPIC$/;"	m
+DestroyModule	echomodule.cpp	/^extern "C" void DestroyModule(Module* module)$/;"	f
+DestroyModule	servermodule.cpp	/^extern "C" void DestroyModule(Module* module)$/;"	f
+EchoModule	echomodule.cpp	/^class EchoModule: public Module{$/;"	c	file:	inherits:Module
+EchoModule::Init	echomodule.cpp	/^        virtual void Init(const string& conf);$/;"	p	class:EchoModule	file:	access:public
+EchoModule::Init	echomodule.cpp	/^void EchoModule::Init(const string& conf)$/;"	f	class:EchoModule
+EchoModule::Run	echomodule.cpp	/^        virtual void Run();$/;"	p	class:EchoModule	file:	access:public
+EchoModule::Run	echomodule.cpp	/^void EchoModule::Run()$/;"	f	class:EchoModule
+EchoModule::Stop	echomodule.cpp	/^        virtual void Stop();$/;"	p	class:EchoModule	file:	access:public
+EchoModule::Stop	echomodule.cpp	/^void EchoModule::Stop()$/;"	f	class:EchoModule
+GetModule	echomodule.cpp	/^extern "C" Module* GetModule()$/;"	f
+GetModule	servermodule.cpp	/^extern "C" Module* GetModule()$/;"	f
+Include	Makefile	/^Include=-I..\/..\/include\/$/;"	m
+Init	echomodule.cpp	/^        virtual void Init(const string& conf);$/;"	p	class:EchoModule	file:	access:public
+Init	echomodule.cpp	/^void EchoModule::Init(const string& conf)$/;"	f	class:EchoModule
+Init	servermodule.cpp	/^        virtual void Init(const string& conf);$/;"	p	class:ServerModule	file:	access:public
+Init	servermodule.cpp	/^void ServerModule::Init(const string& conf)$/;"	f	class:ServerModule::ServerModule
+Objs	Makefile	/^Objs=$(patsubst %.cpp , %.o, $(wildcard *.cpp))$/;"	m
+Run	echomodule.cpp	/^        virtual void Run();$/;"	p	class:EchoModule	file:	access:public
+Run	echomodule.cpp	/^void EchoModule::Run()$/;"	f	class:EchoModule
+Run	servermodule.cpp	/^        virtual void Run();$/;"	p	class:ServerModule	file:	access:public
+Run	servermodule.cpp	/^void ServerModule::Run()$/;"	f	class:ServerModule
+ServerModule	servermodule.cpp	/^        ServerModule(Uint16 thread_num);$/;"	p	class:ServerModule	file:	access:public
+ServerModule	servermodule.cpp	/^class ServerModule: public Module{$/;"	c	file:	inherits:Module
+ServerModule::Init	servermodule.cpp	/^        virtual void Init(const string& conf);$/;"	p	class:ServerModule	file:	access:public
+ServerModule::Run	servermodule.cpp	/^        virtual void Run();$/;"	p	class:ServerModule	file:	access:public
+ServerModule::Run	servermodule.cpp	/^void ServerModule::Run()$/;"	f	class:ServerModule
+ServerModule::ServerModule	servermodule.cpp	/^        ServerModule(Uint16 thread_num);$/;"	p	class:ServerModule	file:	access:public
+ServerModule::ServerModule::Init	servermodule.cpp	/^void ServerModule::Init(const string& conf)$/;"	f	class:ServerModule::ServerModule
+ServerModule::Stop	servermodule.cpp	/^        virtual void Stop();$/;"	p	class:ServerModule	file:	access:public
+ServerModule::Stop	servermodule.cpp	/^void ServerModule::Stop()$/;"	f	class:ServerModule
+ServerModule::pool	servermodule.cpp	/^        Threadpool pool;$/;"	m	class:ServerModule	file:	access:private
+Stop	echomodule.cpp	/^        virtual void Stop();$/;"	p	class:EchoModule	file:	access:public
+Stop	echomodule.cpp	/^void EchoModule::Stop()$/;"	f	class:EchoModule
+Stop	servermodule.cpp	/^        virtual void Stop();$/;"	p	class:ServerModule	file:	access:public
+Stop	servermodule.cpp	/^void ServerModule::Stop()$/;"	f	class:ServerModule
+Target	Makefile	/^Target=libservermodule.so$/;"	m
+pool	servermodule.cpp	/^        Threadpool pool;$/;"	m	class:ServerModule	file:	access:private

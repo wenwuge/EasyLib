@@ -293,7 +293,13 @@ bool Threadpool::Start(Uint16 port_, Uint16 timeout)
         cout<<"create socket error" <<endl;
         return false;
     }
-    
+   
+    int option = 1;
+    if(setsockopt(fd, SOL_SOCKET, SO_REUSEADDR, &option, sizeof(option)) < 0){
+        cout << "setsockopt error" <<endl;
+        close(fd);
+    }
+
     if(bind(fd ,(struct sockaddr*) &addr, sizeof(addr)) == -1){
         cout << "bind error" << errno<<endl;
         close(fd);
@@ -317,7 +323,7 @@ bool Threadpool::Start(Uint16 port_, Uint16 timeout)
         }
         //dispatch the new connection to threads 
         ThreadInfo * selectedThread = NULL;
-    
+
         selectedThread = &threads_[next_];
         
         struct ConnInfo connInfo;
