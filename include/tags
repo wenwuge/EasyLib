@@ -1,0 +1,1505 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ACCEPT	log4cxx/spi/filter.h	/^                        ACCEPT = 1$/;"	e	enum:log4cxx::spi::Filter::FilterDecision
+ADDRESS_PARSE_FAILURE	log4cxx/spi/errorhandler.h	/^                                ADDRESS_PARSE_FAILURE = 6$/;"	e	enum:log4cxx::spi::ErrorCode::__anon14
+ALL_INT	log4cxx/level.h	/^                    ALL_INT = INT_MIN$/;"	e	enum:log4cxx::Level::__anon11
+APRInitializer	log4cxx/helpers/aprinitializer.h	/^    class APRInitializer$/;"	c	namespace:log4cxx::helpers
+AbsoluteTimeDateFormat	log4cxx/helpers/absolutetimedateformat.h	/^                        AbsoluteTimeDateFormat()$/;"	f	class:log4cxx::helpers::AbsoluteTimeDateFormat
+AbsoluteTimeDateFormat	log4cxx/helpers/absolutetimedateformat.h	/^                class LOG4CXX_EXPORT AbsoluteTimeDateFormat : public SimpleDateFormat$/;"	c	namespace:log4cxx::helpers
+Action	log4cxx/rolling/action.h	/^        class Action : public virtual log4cxx::helpers::ObjectImpl {$/;"	c	namespace:log4cxx::rolling
+AndFilter	log4cxx/filter/andfilter.h	/^        class LOG4CXX_EXPORT AndFilter:public log4cxx::spi::Filter$/;"	c	namespace:log4cxx::filter
+Appender	log4cxx/appender.h	/^    class LOG4CXX_EXPORT Appender :$/;"	c	namespace:log4cxx
+AppenderAttachable	log4cxx/spi/appenderattachable.h	/^        class LOG4CXX_EXPORT AppenderAttachable : public virtual helpers::Object$/;"	c	namespace:log4cxx::spi
+AppenderAttachableImpl	log4cxx/helpers/appenderattachableimpl.h	/^        class LOG4CXX_EXPORT AppenderAttachableImpl :$/;"	c	namespace:log4cxx::helpers
+AppenderMap	log4cxx/xml/domconfigurator.h	/^                        typedef std::map<LogString, AppenderPtr> AppenderMap;$/;"	t	class:log4cxx::xml::DOMConfigurator
+AppenderPtr	log4cxx/basicconfigurator.h	/^   typedef helpers::ObjectPtrT<Appender> AppenderPtr;$/;"	t	namespace:log4cxx
+AppenderPtr	log4cxx/propertyconfigurator.h	/^   typedef helpers::ObjectPtrT<Appender> AppenderPtr;$/;"	t	namespace:log4cxx
+AppenderSkeleton	log4cxx/appenderskeleton.h	/^        class LOG4CXX_EXPORT AppenderSkeleton :$/;"	c	namespace:log4cxx
+AsyncAppender	log4cxx/asyncappender.h	/^        class LOG4CXX_EXPORT AsyncAppender :$/;"	c	namespace:log4cxx
+BASE_CLASS	log4cxx/filter/denyallfilter.h	/^                        typedef spi::Filter BASE_CLASS;$/;"	t	class:log4cxx::filter::DenyAllFilter
+BASE_CLASS	log4cxx/filter/levelmatchfilter.h	/^                        typedef spi::Filter BASE_CLASS;$/;"	t	class:log4cxx::filter::LevelMatchFilter
+BASE_CLASS	log4cxx/filter/levelrangefilter.h	/^                        typedef spi::Filter BASE_CLASS;$/;"	t	class:log4cxx::filter::LevelRangeFilter
+BASE_CLASS	log4cxx/filter/stringmatchfilter.h	/^                        typedef spi::Filter BASE_CLASS;$/;"	t	class:log4cxx::filter::StringMatchFilter
+BEGIN_LOG4CXX_CAST_MAP	log4cxx/helpers/object.h	116;"	d
+BUFSIZE	log4cxx/helpers/transcoder.h	/^      enum { BUFSIZE = 256 };$/;"	e	enum:log4cxx::helpers::Transcoder::__anon10
+BasicConfigurator	log4cxx/basicconfigurator.h	/^      BasicConfigurator() {}$/;"	f	class:log4cxx::BasicConfigurator
+BasicConfigurator	log4cxx/basicconfigurator.h	/^   class LOG4CXX_EXPORT BasicConfigurator$/;"	c	namespace:log4cxx
+BindException	log4cxx/helpers/exception.h	/^                class LOG4CXX_EXPORT BindException : public SocketException$/;"	c	namespace:log4cxx::helpers
+BufferedOutputStream	log4cxx/helpers/bufferedoutputstream.h	/^          class LOG4CXX_EXPORT BufferedOutputStream : public OutputStream$/;"	c	namespace:log4cxx::helpers
+BufferedWriter	log4cxx/helpers/bufferedwriter.h	/^          class LOG4CXX_EXPORT BufferedWriter : public Writer$/;"	c	namespace:log4cxx::helpers
+ByteArrayInputStream	log4cxx/helpers/bytearrayinputstream.h	/^          class LOG4CXX_EXPORT ByteArrayInputStream : public InputStream$/;"	c	namespace:log4cxx::helpers
+ByteArrayOutputStream	log4cxx/helpers/bytearrayoutputstream.h	/^          class LOG4CXX_EXPORT ByteArrayOutputStream : public OutputStream$/;"	c	namespace:log4cxx::helpers
+ByteBuffer	log4cxx/helpers/bytebuffer.h	/^          class LOG4CXX_EXPORT ByteBuffer$/;"	c	namespace:log4cxx::helpers
+CFStringRef	log4cxx/logstring.h	/^typedef const struct __CFString* CFStringRef;$/;"	t	typeref:struct:__CFString
+CLOSE_FAILURE	log4cxx/spi/errorhandler.h	/^                                CLOSE_FAILURE = 3,$/;"	e	enum:log4cxx::spi::ErrorCode::__anon14
+CONVERTER_STATE	log4cxx/pattern/patternparser.h	/^    CONVERTER_STATE = 1,$/;"	e	enum:log4cxx::pattern::PatternParser::__anon12
+CachedDateFormat	log4cxx/helpers/cacheddateformat.h	/^          class LOG4CXX_EXPORT CachedDateFormat : public log4cxx::helpers::DateFormat {$/;"	c	namespace:log4cxx::pattern
+Ch	log4cxx/stream.h	/^          typedef UniChar Ch;$/;"	t	class:log4cxx::ulogstream
+Ch	log4cxx/stream.h	/^          typedef char Ch;$/;"	t	class:log4cxx::logstream
+Ch	log4cxx/stream.h	/^          typedef wchar_t Ch;$/;"	t	class:log4cxx::wlogstream
+CharMessageBuffer	log4cxx/helpers/messagebuffer.h	/^   class LOG4CXX_EXPORT CharMessageBuffer {$/;"	c	namespace:log4cxx::helpers
+CharsetDecoder	log4cxx/helpers/charsetdecoder.h	/^          class LOG4CXX_EXPORT CharsetDecoder : public ObjectImpl$/;"	c	namespace:log4cxx::helpers
+CharsetEncoder	log4cxx/helpers/charsetencoder.h	/^          class LOG4CXX_EXPORT CharsetEncoder : public ObjectImpl$/;"	c	namespace:log4cxx::helpers
+Class	log4cxx/helpers/class.h	/^                class LOG4CXX_EXPORT Class$/;"	c	namespace:log4cxx::helpers
+ClassAccessor	log4cxx/helpers/classregistration.h	/^                        typedef const Class& (*ClassAccessor)();$/;"	t	class:log4cxx::helpers::ClassRegistration
+ClassDescriptionMap	log4cxx/helpers/objectoutputstream.h	/^                  typedef std::map<std::string, unsigned int> ClassDescriptionMap;$/;"	t	class:log4cxx::helpers::ObjectOutputStream
+ClassMap	log4cxx/helpers/class.h	/^                        typedef std::map<LogString, const Class *> ClassMap;$/;"	t	class:log4cxx::helpers::Class
+ClassNamePatternConverter	log4cxx/pattern/classnamepatternconverter.h	/^class LOG4CXX_EXPORT ClassNamePatternConverter : public NamePatternConverter {$/;"	c	namespace:log4cxx::pattern
+ClassNotFoundException	log4cxx/helpers/exception.h	/^                class LOG4CXX_EXPORT ClassNotFoundException : public Exception$/;"	c	namespace:log4cxx::helpers
+ClassRegistration	log4cxx/helpers/classregistration.h	/^                class LOG4CXX_EXPORT ClassRegistration$/;"	c	namespace:log4cxx::helpers
+ClosedChannelException	log4cxx/helpers/exception.h	/^                class LOG4CXX_EXPORT ClosedChannelException : public SocketException$/;"	c	namespace:log4cxx::helpers
+Condition	log4cxx/helpers/condition.h	/^                class LOG4CXX_EXPORT Condition$/;"	c	namespace:log4cxx::helpers
+Configurator	log4cxx/spi/configurator.h	/^      class LOG4CXX_EXPORT Configurator : virtual public helpers::Object$/;"	c	namespace:log4cxx::spi
+ConnectException	log4cxx/helpers/exception.h	/^                class LOG4CXX_EXPORT ConnectException : public SocketException$/;"	c	namespace:log4cxx::helpers
+Connection	log4cxx/net/telnetappender.h	/^                        typedef log4cxx::helpers::SocketPtr Connection;$/;"	t	class:log4cxx::net::TelnetAppender
+ConsoleAppender	log4cxx/consoleappender.h	/^        class LOG4CXX_EXPORT ConsoleAppender : public WriterAppender$/;"	c	namespace:log4cxx
+CyclicBuffer	log4cxx/helpers/cyclicbuffer.h	/^                class LOG4CXX_EXPORT CyclicBuffer$/;"	c	namespace:log4cxx::helpers
+DEBUG_INT	log4cxx/level.h	/^                    DEBUG_INT = 10000,$/;"	e	enum:log4cxx::Level::__anon11
+DECLARE_ABSTRACT_LOG4CXX_OBJECT	log4cxx/helpers/object.h	27;"	d
+DECLARE_LOG4CXX_LEVEL	log4cxx/level.h	267;"	d
+DECLARE_LOG4CXX_OBJECT	log4cxx/helpers/object.h	40;"	d
+DECLARE_LOG4CXX_OBJECT_WITH_CUSTOM_CLASS	log4cxx/helpers/object.h	57;"	d
+DECLARE_LOG4CXX_PATTERN	log4cxx/pattern/patternconverter.h	31;"	d
+DEFAULT_BUFFER_SIZE	log4cxx/asyncappender.h	/^                enum { DEFAULT_BUFFER_SIZE = 128 };$/;"	e	enum:log4cxx::AsyncAppender::__anon1
+DEFAULT_DELAY	log4cxx/helpers/filewatchdog.h	/^                        static long DEFAULT_DELAY \/*= 60000*\/;$/;"	m	class:log4cxx::helpers::FileWatchdog
+DEFAULT_PORT	log4cxx/net/socketappender.h	/^                static int DEFAULT_PORT;$/;"	m	class:log4cxx::net::SocketAppender
+DEFAULT_PORT	log4cxx/net/sockethubappender.h	/^                        static int DEFAULT_PORT;$/;"	m	class:log4cxx::net::SocketHubAppender
+DEFAULT_PORT	log4cxx/net/telnetappender.h	/^                        static const int DEFAULT_PORT;$/;"	m	class:log4cxx::net::TelnetAppender
+DEFAULT_PORT	log4cxx/net/xmlsocketappender.h	/^                static int DEFAULT_PORT;$/;"	m	class:log4cxx::net::XMLSocketAppender
+DEFAULT_RECONNECTION_DELAY	log4cxx/net/socketappender.h	/^                static int DEFAULT_RECONNECTION_DELAY;$/;"	m	class:log4cxx::net::SocketAppender
+DEFAULT_RECONNECTION_DELAY	log4cxx/net/xmlsocketappender.h	/^                static int DEFAULT_RECONNECTION_DELAY;$/;"	m	class:log4cxx::net::XMLSocketAppender
+DENY	log4cxx/spi/filter.h	/^                        DENY = -1,$/;"	e	enum:log4cxx::spi::Filter::FilterDecision
+DOCUMENT_NODE	log4cxx/helpers/xml.h	/^                                DOCUMENT_NODE = 9$/;"	e	enum:log4cxx::helpers::XMLDOMNode::XMLDOMNodeType
+DOMConfigurator	log4cxx/xml/domconfigurator.h	/^                class LOG4CXX_EXPORT DOMConfigurator :$/;"	c	namespace:log4cxx::xml
+DOMException	log4cxx/helpers/xml.h	/^                    DOMException() : RuntimeException(LOG4CXX_STR("DOM exception")) {}$/;"	f	class:log4cxx::helpers::DOMException
+DOMException	log4cxx/helpers/xml.h	/^                class LOG4CXX_EXPORT DOMException : public RuntimeException$/;"	c	namespace:log4cxx::helpers
+DOT_STATE	log4cxx/pattern/patternparser.h	/^    DOT_STATE = 3,$/;"	e	enum:log4cxx::pattern::PatternParser::__anon12
+DailyRollingFileAppender	log4cxx/dailyrollingfileappender.h	/^  class LOG4CXX_EXPORT DailyRollingFileAppender : public log4cxx::rolling::RollingFileAppenderSkeleton {$/;"	c	namespace:log4cxx
+DatagramPacket	log4cxx/helpers/datagrampacket.h	/^                class LOG4CXX_EXPORT DatagramPacket : public helpers::ObjectImpl$/;"	c	namespace:log4cxx::helpers
+DatagramSocket	log4cxx/helpers/datagramsocket.h	/^                class LOG4CXX_EXPORT DatagramSocket : public helpers::ObjectImpl$/;"	c	namespace:log4cxx::helpers
+Date	log4cxx/helpers/date.h	/^      class LOG4CXX_EXPORT Date : public ObjectImpl {$/;"	c	namespace:log4cxx::helpers
+DateFormat	log4cxx/helpers/dateformat.h	/^                class LOG4CXX_EXPORT DateFormat : public ObjectImpl {$/;"	c	namespace:log4cxx::helpers
+DateLayout	log4cxx/helpers/datelayout.h	/^                class LOG4CXX_EXPORT DateLayout : public Layout$/;"	c	namespace:log4cxx::helpers
+DatePatternConverter	log4cxx/pattern/datepatternconverter.h	/^class LOG4CXX_EXPORT DatePatternConverter : public LoggingEventPatternConverter {$/;"	c	namespace:log4cxx::pattern
+DateTimeDateFormat	log4cxx/helpers/datetimedateformat.h	/^                         DateTimeDateFormat(const std::locale* locale)$/;"	f	class:log4cxx::helpers::DateTimeDateFormat
+DateTimeDateFormat	log4cxx/helpers/datetimedateformat.h	/^                        DateTimeDateFormat()$/;"	f	class:log4cxx::helpers::DateTimeDateFormat
+DateTimeDateFormat	log4cxx/helpers/datetimedateformat.h	/^                class LOG4CXX_EXPORT DateTimeDateFormat : public SimpleDateFormat$/;"	c	namespace:log4cxx::helpers
+DefaultConfigurator	log4cxx/defaultconfigurator.h	/^      DefaultConfigurator() {}$/;"	f	class:log4cxx::DefaultConfigurator
+DefaultConfigurator	log4cxx/defaultconfigurator.h	/^   class LOG4CXX_EXPORT DefaultConfigurator$/;"	c	namespace:log4cxx
+DefaultLoggerFactory	log4cxx/defaultloggerfactory.h	/^        class LOG4CXX_EXPORT DefaultLoggerFactory :$/;"	c	namespace:log4cxx
+DefaultRepositorySelector	log4cxx/spi/defaultrepositoryselector.h	/^                class LOG4CXX_EXPORT DefaultRepositorySelector :$/;"	c	namespace:log4cxx::spi
+DenyAllFilter	log4cxx/filter/denyallfilter.h	/^                        DenyAllFilter() : spi::Filter() {$/;"	f	class:log4cxx::filter::DenyAllFilter
+DenyAllFilter	log4cxx/filter/denyallfilter.h	/^                class LOG4CXX_EXPORT DenyAllFilter : public spi::Filter$/;"	c	namespace:log4cxx::filter
+DiagnosticContext	log4cxx/ndc.h	/^                typedef std::pair<LogString, LogString> DiagnosticContext;$/;"	t	class:log4cxx::NDC
+DiscardMap	log4cxx/asyncappender.h	/^                typedef std::map<LogString, DiscardSummary> DiscardMap;$/;"	t	class:log4cxx::AsyncAppender
+DiscardSummary	log4cxx/asyncappender.h	/^                class DiscardSummary {$/;"	c	class:log4cxx::AsyncAppender
+ELEMENT_NODE	log4cxx/helpers/xml.h	/^                                ELEMENT_NODE = 1,$/;"	e	enum:log4cxx::helpers::XMLDOMNode::XMLDOMNodeType
+END_LOG4CXX_CAST_MAP	log4cxx/helpers/object.h	122;"	d
+ERROR_INT	log4cxx/level.h	/^                    ERROR_INT = 40000,$/;"	e	enum:log4cxx::Level::__anon11
+ERROR_PREFIX	log4cxx/helpers/onlyonceerrorhandler.h	/^                        LogString ERROR_PREFIX;$/;"	m	class:log4cxx::helpers::OnlyOnceErrorHandler
+ESCAPE_CHAR	log4cxx/pattern/patternparser.h	/^  static const logchar ESCAPE_CHAR;$/;"	m	class:log4cxx::pattern::PatternParser
+ErrorCode	log4cxx/spi/errorhandler.h	/^                class ErrorCode$/;"	c	namespace:log4cxx::spi
+ErrorHandler	log4cxx/spi/errorhandler.h	/^                class LOG4CXX_EXPORT ErrorHandler : public virtual OptionHandler$/;"	c	namespace:log4cxx::spi
+ErrorHandlerPtr	log4cxx/appender.h	/^                typedef log4cxx::helpers::ObjectPtrT<ErrorHandler> ErrorHandlerPtr;$/;"	t	namespace:log4cxx::spi
+ErrorHandlerPtr	log4cxx/dailyrollingfileappender.h	/^    typedef log4cxx::helpers::ObjectPtrT<ErrorHandler> ErrorHandlerPtr;$/;"	t	namespace:log4cxx::spi
+Exception	log4cxx/helpers/exception.h	/^                class LOG4CXX_EXPORT Exception : public ::std::exception$/;"	c	namespace:log4cxx::helpers
+ExpressionFilter	log4cxx/filter/expressionfilter.h	/^        class LOG4CXX_EXPORT ExpressionFilter:public log4cxx::spi::Filter$/;"	c	namespace:log4cxx::filter
+ExpressionRulePtr	log4cxx/filter/locationinfofilter.h	/^        typedef helpers::ObjectPtrT < ExpressionRule > ExpressionRulePtr;$/;"	t	namespace:log4cxx::rule
+FATAL_INT	log4cxx/level.h	/^                    FATAL_INT = 50000,$/;"	e	enum:log4cxx::Level::__anon11
+FILE_OPEN_FAILURE	log4cxx/spi/errorhandler.h	/^                                FILE_OPEN_FAILURE = 4,$/;"	e	enum:log4cxx::spi::ErrorCode::__anon14
+FLUSH_FAILURE	log4cxx/spi/errorhandler.h	/^                                FLUSH_FAILURE = 2,$/;"	e	enum:log4cxx::spi::ErrorCode::__anon14
+FallbackErrorHandler	log4cxx/varia/fallbackerrorhandler.h	/^                class LOG4CXX_EXPORT FallbackErrorHandler :$/;"	c	namespace:log4cxx::varia
+File	log4cxx/file.h	/^                class LOG4CXX_EXPORT File$/;"	c	namespace:log4cxx
+FileAppender	log4cxx/fileappender.h	/^        class LOG4CXX_EXPORT FileAppender : public WriterAppender$/;"	c	namespace:log4cxx
+FileDatePatternConverter	log4cxx/pattern/filedatepatternconverter.h	/^class LOG4CXX_EXPORT FileDatePatternConverter {$/;"	c	namespace:log4cxx::pattern
+FileInputStream	log4cxx/helpers/fileinputstream.h	/^          class LOG4CXX_EXPORT FileInputStream : public InputStream$/;"	c	namespace:log4cxx::helpers
+FileLocationPatternConverter	log4cxx/pattern/filelocationpatternconverter.h	/^class LOG4CXX_EXPORT FileLocationPatternConverter$/;"	c	namespace:log4cxx::pattern
+FileOutputStream	log4cxx/helpers/fileoutputstream.h	/^          class LOG4CXX_EXPORT FileOutputStream : public OutputStream$/;"	c	namespace:log4cxx::helpers
+FileRenameAction	log4cxx/rolling/filerenameaction.h	/^        class FileRenameAction : public Action {$/;"	c	namespace:log4cxx::rolling
+FileWatchdog	log4cxx/helpers/filewatchdog.h	/^                class LOG4CXX_EXPORT FileWatchdog$/;"	c	namespace:log4cxx::helpers
+Filter	log4cxx/spi/filter.h	/^                class LOG4CXX_EXPORT Filter : public virtual OptionHandler,$/;"	c	namespace:log4cxx::spi
+FilterBasedTriggeringPolicy	log4cxx/rolling/filterbasedtriggeringpolicy.h	/^class LOG4CXX_EXPORT FilterBasedTriggeringPolicy : public TriggeringPolicy {$/;"	c	namespace:log4cxx::rolling
+FilterDecision	log4cxx/spi/filter.h	/^            enum FilterDecision$/;"	g	class:log4cxx::spi::Filter
+FilterPtr	log4cxx/appender.h	/^        typedef helpers::ObjectPtrT<Filter> FilterPtr;$/;"	t	namespace:log4cxx::spi
+FixedWindowRollingPolicy	log4cxx/rolling/fixedwindowrollingpolicy.h	/^        class LOG4CXX_EXPORT FixedWindowRollingPolicy : public RollingPolicyBase {$/;"	c	namespace:log4cxx::rolling
+FormattingInfo	log4cxx/pattern/formattinginfo.h	/^class LOG4CXX_EXPORT FormattingInfo : public virtual log4cxx::helpers::ObjectImpl {$/;"	c	namespace:log4cxx::pattern
+FormattingInfoPtr	log4cxx/pattern/formattinginfo.h	/^typedef helpers::ObjectPtrT<FormattingInfo> FormattingInfoPtr;$/;"	t	namespace:log4cxx::pattern
+FullLocationPatternConverter	log4cxx/pattern/fulllocationpatternconverter.h	/^class LOG4CXX_EXPORT FullLocationPatternConverter$/;"	c	namespace:log4cxx::pattern
+GENERIC_FAILURE	log4cxx/spi/errorhandler.h	/^                                GENERIC_FAILURE = 0,$/;"	e	enum:log4cxx::spi::ErrorCode::__anon14
+GZCompressAction	log4cxx/rolling/gzcompressaction.h	/^        class GZCompressAction : public Action {$/;"	c	namespace:log4cxx::rolling
+HANDLE	log4cxx/nt/nteventlogappender.h	/^                        typedef void* HANDLE;$/;"	t	class:log4cxx::nt::NTEventLogAppender
+HTMLLayout	log4cxx/htmllayout.h	/^        class LOG4CXX_EXPORT HTMLLayout : public Layout$/;"	c	namespace:log4cxx
+Hierarchy	log4cxx/hierarchy.h	/^        class LOG4CXX_EXPORT Hierarchy :$/;"	c	namespace:log4cxx
+HierarchyEventListener	log4cxx/spi/hierarchyeventlistener.h	/^                class LOG4CXX_EXPORT HierarchyEventListener :$/;"	c	namespace:log4cxx::spi
+IMPLEMENT_LOG4CXX_LEVEL	log4cxx/level.h	281;"	d
+IMPLEMENT_LOG4CXX_OBJECT	log4cxx/helpers/object.h	63;"	d
+IMPLEMENT_LOG4CXX_OBJECT_WITH_CUSTOM_CLASS	log4cxx/helpers/object.h	78;"	d
+INFO_INT	log4cxx/level.h	/^                    INFO_INT = 20000,$/;"	e	enum:log4cxx::Level::__anon11
+IOException	log4cxx/helpers/exception.h	/^                class LOG4CXX_EXPORT IOException : public Exception$/;"	c	namespace:log4cxx::helpers
+ISO8601DateFormat	log4cxx/helpers/iso8601dateformat.h	/^                        ISO8601DateFormat()$/;"	f	class:log4cxx::helpers::ISO8601DateFormat
+ISO8601DateFormat	log4cxx/helpers/iso8601dateformat.h	/^                class LOG4CXX_EXPORT ISO8601DateFormat : public SimpleDateFormat$/;"	c	namespace:log4cxx::helpers
+IllegalArgumentException	log4cxx/helpers/exception.h	/^                class LOG4CXX_EXPORT IllegalArgumentException : public RuntimeException$/;"	c	namespace:log4cxx::helpers
+IllegalMonitorStateException	log4cxx/helpers/exception.h	/^                class LOG4CXX_EXPORT IllegalMonitorStateException$/;"	c	namespace:log4cxx::helpers
+IllegalStateException	log4cxx/helpers/exception.h	/^                class IllegalStateException : public Exception {$/;"	c	namespace:log4cxx::helpers
+InetAddress	log4cxx/helpers/inetaddress.h	/^                class LOG4CXX_EXPORT InetAddress : public ObjectImpl$/;"	c	namespace:log4cxx::helpers
+InputStream	log4cxx/helpers/inputstream.h	/^          class LOG4CXX_EXPORT InputStream : public ObjectImpl$/;"	c	namespace:log4cxx::helpers
+InputStreamReader	log4cxx/helpers/inputstreamreader.h	/^          class LOG4CXX_EXPORT InputStreamReader : public Reader$/;"	c	namespace:log4cxx::helpers
+InstantiationException	log4cxx/helpers/exception.h	/^                class LOG4CXX_EXPORT InstantiationException : public Exception$/;"	c	namespace:log4cxx::helpers
+Integer	log4cxx/helpers/integer.h	/^      class LOG4CXX_EXPORT Integer : public ObjectImpl {$/;"	c	namespace:log4cxx::helpers
+IntegerPatternConverter	log4cxx/pattern/integerpatternconverter.h	/^class LOG4CXX_EXPORT IntegerPatternConverter : public PatternConverter {$/;"	c	namespace:log4cxx::pattern
+InterruptedException	log4cxx/helpers/exception.h	/^                class LOG4CXX_EXPORT InterruptedException : public Exception$/;"	c	namespace:log4cxx::helpers
+InterruptedIOException	log4cxx/helpers/exception.h	/^                class LOG4CXX_EXPORT InterruptedIOException : public IOException$/;"	c	namespace:log4cxx::helpers
+LITERAL_STATE	log4cxx/pattern/patternparser.h	/^    LITERAL_STATE = 0,$/;"	e	enum:log4cxx::pattern::PatternParser::__anon12
+LOG4CXX_APR_THREAD_FMTSPEC	log4cxx/private/log4cxx_private.h	53;"	d
+LOG4CXX_ASSERT	log4cxx/logger.h	1836;"	d
+LOG4CXX_CAST_ENTRY	log4cxx/helpers/object.h	128;"	d
+LOG4CXX_CAST_ENTRY2	log4cxx/helpers/object.h	131;"	d
+LOG4CXX_CAST_ENTRY_CHAIN	log4cxx/helpers/object.h	134;"	d
+LOG4CXX_CFSTRING_API	log4cxx/log4cxx.h	35;"	d
+LOG4CXX_CHARSET_EBCDIC	log4cxx/private/log4cxx_private.h	47;"	d
+LOG4CXX_CHARSET_ISO88591	log4cxx/private/log4cxx_private.h	45;"	d
+LOG4CXX_CHARSET_USASCII	log4cxx/private/log4cxx_private.h	46;"	d
+LOG4CXX_CHARSET_UTF8	log4cxx/private/log4cxx_private.h	44;"	d
+LOG4CXX_CHAR_API	log4cxx/log4cxx.h	32;"	d
+LOG4CXX_DEBUG	log4cxx/logger.h	1779;"	d
+LOG4CXX_DECODE_CFSTRING	log4cxx/helpers/transcoder.h	204;"	d
+LOG4CXX_DECODE_CHAR	log4cxx/helpers/transcoder.h	200;"	d
+LOG4CXX_DECODE_UNICHAR	log4cxx/helpers/transcoder.h	237;"	d
+LOG4CXX_DECODE_WCHAR	log4cxx/helpers/transcoder.h	217;"	d
+LOG4CXX_ENCODE_CFSTRING	log4cxx/helpers/transcoder.h	208;"	d
+LOG4CXX_ENCODE_CHAR	log4cxx/helpers/transcoder.h	196;"	d
+LOG4CXX_ENCODE_UNICHAR	log4cxx/helpers/transcoder.h	234;"	d
+LOG4CXX_ENCODE_WCHAR	log4cxx/helpers/transcoder.h	214;"	d
+LOG4CXX_ENDMSG	log4cxx/stream.h	559;"	d
+LOG4CXX_ENDMSG	log4cxx/stream.h	561;"	d
+LOG4CXX_EOL	log4cxx/logstring.h	75;"	d
+LOG4CXX_ERROR	log4cxx/logger.h	1824;"	d
+LOG4CXX_EXPORT	log4cxx/log4cxx.h	46;"	d
+LOG4CXX_FATAL	log4cxx/logger.h	1848;"	d
+LOG4CXX_FILE	log4cxx/file.h	186;"	d
+LOG4CXX_FORCE_BYTE_CONSOLE	log4cxx/private/log4cxx_private.h	37;"	d
+LOG4CXX_FORCE_WIDE_CONSOLE	log4cxx/private/log4cxx_private.h	36;"	d
+LOG4CXX_HAS_FWIDE	log4cxx/private/log4cxx_private.h	42;"	d
+LOG4CXX_HAS_MBSRTOWCS	log4cxx/private/log4cxx_private.h	40;"	d
+LOG4CXX_HAS_STD_LOCALE	log4cxx/private/log4cxx_private.h	35;"	d
+LOG4CXX_HAS_WCSTOMBS	log4cxx/private/log4cxx_private.h	41;"	d
+LOG4CXX_HAVE_LIBESMTP	log4cxx/private/log4cxx_private.h	49;"	d
+LOG4CXX_HAVE_ODBC	log4cxx/private/log4cxx_private.h	39;"	d
+LOG4CXX_HAVE_SYSLOG	log4cxx/private/log4cxx_private.h	50;"	d
+LOG4CXX_INFO	log4cxx/logger.h	1802;"	d
+LOG4CXX_L7DLOG	log4cxx/logger.h	1860;"	d
+LOG4CXX_L7DLOG1	log4cxx/logger.h	1872;"	d
+LOG4CXX_L7DLOG2	log4cxx/logger.h	1885;"	d
+LOG4CXX_L7DLOG3	log4cxx/logger.h	1899;"	d
+LOG4CXX_LIST_DEF	log4cxx/log4cxx.h	48;"	d
+LOG4CXX_LOCATION	log4cxx/spi/location/locationinfo.h	131;"	d
+LOG4CXX_LOG	log4cxx/logger.h	1756;"	d
+LOG4CXX_LOG4CXX_H	log4cxx/log4cxx.h	19;"	d
+LOG4CXX_LOGCHAR_IS_UNICHAR	log4cxx/log4cxx.h	28;"	d
+LOG4CXX_LOGCHAR_IS_UTF8	log4cxx/log4cxx.h	29;"	d
+LOG4CXX_LOGCHAR_IS_WCHAR	log4cxx/log4cxx.h	30;"	d
+LOG4CXX_LOGLS	log4cxx/logger.h	1768;"	d
+LOG4CXX_LOGSTREAM_ADD_NOP	log4cxx/log4cxx.h	40;"	d
+LOG4CXX_MEMSET_IOS_BASE	log4cxx/private/log4cxx_private.h	38;"	d
+LOG4CXX_PRIVATE_LOG4CXX_H	log4cxx/private/log4cxx_private.h	19;"	d
+LOG4CXX_PTR_DEF	log4cxx/log4cxx.h	47;"	d
+LOG4CXX_RETURN_AFTER_THROW	log4cxx/private/log4cxx_private.h	33;"	d
+LOG4CXX_STR	log4cxx/logstring.h	50;"	d
+LOG4CXX_STR	log4cxx/logstring.h	56;"	d
+LOG4CXX_STR	log4cxx/logstring.h	58;"	d
+LOG4CXX_STR	log4cxx/logstring.h	64;"	d
+LOG4CXX_THREAD_FUNC	log4cxx/helpers/thread.h	26;"	d
+LOG4CXX_THREAD_FUNC	log4cxx/helpers/thread.h	28;"	d
+LOG4CXX_THREAD_FUNC	log4cxx/helpers/threadlocal.h	26;"	d
+LOG4CXX_THREAD_FUNC	log4cxx/helpers/threadlocal.h	28;"	d
+LOG4CXX_TRACE	log4cxx/logger.h	1790;"	d
+LOG4CXX_UNICHAR_API	log4cxx/log4cxx.h	34;"	d
+LOG4CXX_UNLIKELY	log4cxx/logger.h	1736;"	d
+LOG4CXX_USE_GLOBAL_SCOPE_TEMPLATE	log4cxx/log4cxx.h	39;"	d
+LOG4CXX_WARN	log4cxx/logger.h	1813;"	d
+LOG4CXX_WCHAR_T_API	log4cxx/log4cxx.h	33;"	d
+LOG4CXX_WIN32_THREAD_FMTSPEC	log4cxx/private/log4cxx_private.h	52;"	d
+LOGLOG_DEBUG	log4cxx/helpers/loglog.h	104;"	d
+LOGLOG_ERROR	log4cxx/helpers/loglog.h	110;"	d
+LOGLOG_WARN	log4cxx/helpers/loglog.h	107;"	d
+LOSSCHAR	log4cxx/helpers/transcoder.h	/^      enum { LOSSCHAR = 0x3F };$/;"	e	enum:log4cxx::helpers::Transcoder::__anon9
+LaunchPackage	log4cxx/helpers/thread.h	/^                        class LaunchPackage {$/;"	c	class:log4cxx::helpers::Thread
+LaunchStatus	log4cxx/helpers/thread.h	/^                        class LaunchStatus {$/;"	c	class:log4cxx::helpers::Thread
+Layout	log4cxx/layout.h	/^        class LOG4CXX_EXPORT Layout :$/;"	c	namespace:log4cxx
+LayoutPtr	log4cxx/appender.h	/^    typedef log4cxx::helpers::ObjectPtrT<Layout> LayoutPtr;$/;"	t	namespace:log4cxx
+Level	log4cxx/level.h	/^        class LOG4CXX_EXPORT Level : public helpers::ObjectImpl$/;"	c	namespace:log4cxx
+LevelClass	log4cxx/level.h	/^                        LevelClass() : helpers::Class() {}$/;"	f	class:log4cxx::Level::LevelClass
+LevelClass	log4cxx/level.h	/^                class LOG4CXX_EXPORT LevelClass : public helpers::Class$/;"	c	class:log4cxx::Level
+LevelMatchFilter	log4cxx/filter/levelmatchfilter.h	/^                class LOG4CXX_EXPORT LevelMatchFilter : public spi::Filter$/;"	c	namespace:log4cxx::filter
+LevelPatternConverter	log4cxx/pattern/levelpatternconverter.h	/^class LOG4CXX_EXPORT LevelPatternConverter : public LoggingEventPatternConverter {$/;"	c	namespace:log4cxx::pattern
+LevelPtr	log4cxx/helpers/optionconverter.h	/^        typedef helpers::ObjectPtrT<Level> LevelPtr;$/;"	t	namespace:log4cxx
+LevelRangeFilter	log4cxx/filter/levelrangefilter.h	/^                class LOG4CXX_EXPORT LevelRangeFilter : public spi::Filter$/;"	c	namespace:log4cxx::filter
+LineLocationPatternConverter	log4cxx/pattern/linelocationpatternconverter.h	/^class LOG4CXX_EXPORT LineLocationPatternConverter$/;"	c	namespace:log4cxx::pattern
+LineSeparatorPatternConverter	log4cxx/pattern/lineseparatorpatternconverter.h	/^class LOG4CXX_EXPORT LineSeparatorPatternConverter$/;"	c	namespace:log4cxx::pattern
+LiteralPatternConverter	log4cxx/pattern/literalpatternconverter.h	/^class LOG4CXX_EXPORT LiteralPatternConverter : public LoggingEventPatternConverter {$/;"	c	namespace:log4cxx::pattern
+Loader	log4cxx/helpers/loader.h	/^                class LOG4CXX_EXPORT Loader$/;"	c	namespace:log4cxx::helpers
+Locale	log4cxx/helpers/locale.h	/^                class LOG4CXX_EXPORT Locale$/;"	c	namespace:log4cxx::helpers
+LocationInfo	log4cxx/spi/location/locationinfo.h	/^      class LOG4CXX_EXPORT LocationInfo$/;"	c	namespace:log4cxx::spi
+LocationInfoFilter	log4cxx/filter/locationinfofilter.h	/^        class LOG4CXX_EXPORT LocationInfoFilter:public log4cxx::spi::Filter$/;"	c	namespace:log4cxx::filter
+LogCharMessageBuffer	log4cxx/helpers/messagebuffer.h	/^typedef CharMessageBuffer LogCharMessageBuffer;$/;"	t	namespace:log4cxx::helpers
+LogCharMessageBuffer	log4cxx/helpers/messagebuffer.h	/^typedef UniCharMessageBuffer LogCharMessageBuffer;$/;"	t	namespace:log4cxx::helpers
+LogCharMessageBuffer	log4cxx/helpers/messagebuffer.h	/^typedef WideMessageBuffer LogCharMessageBuffer;$/;"	t	namespace:log4cxx::helpers
+LogLog	log4cxx/helpers/loglog.h	/^                class LOG4CXX_EXPORT LogLog$/;"	c	namespace:log4cxx::helpers
+LogManager	log4cxx/logmanager.h	/^    class LOG4CXX_EXPORT LogManager$/;"	c	namespace:log4cxx
+LogString	log4cxx/logstring.h	/^   typedef std::basic_string<logchar> LogString;$/;"	t	namespace:log4cxx
+Logger	log4cxx/logger.h	/^    class LOG4CXX_EXPORT Logger :$/;"	c	namespace:log4cxx
+LoggerFactory	log4cxx/spi/loggerfactory.h	/^                class LOG4CXX_EXPORT LoggerFactory : public virtual helpers::Object$/;"	c	namespace:log4cxx::spi
+LoggerFactoryPtr	log4cxx/logmanager.h	/^        typedef helpers::ObjectPtrT<LoggerFactory> LoggerFactoryPtr;$/;"	t	namespace:log4cxx::spi
+LoggerList	log4cxx/logmanager.h	/^    typedef std::vector<LoggerPtr> LoggerList;$/;"	t	namespace:log4cxx
+LoggerMap	log4cxx/hierarchy.h	/^            typedef std::map<LogString, LoggerPtr> LoggerMap;$/;"	t	class:log4cxx::Hierarchy
+LoggerPatternConverter	log4cxx/pattern/loggerpatternconverter.h	/^class LOG4CXX_EXPORT LoggerPatternConverter : public NamePatternConverter {$/;"	c	namespace:log4cxx::pattern
+LoggerPtr	log4cxx/defaultloggerfactory.h	/^        typedef helpers::ObjectPtrT<Logger> LoggerPtr;$/;"	t	namespace:log4cxx
+LoggerPtr	log4cxx/logmanager.h	/^    typedef helpers::ObjectPtrT<Logger> LoggerPtr;$/;"	t	namespace:log4cxx
+LoggerPtr	log4cxx/propertyconfigurator.h	/^   typedef helpers::ObjectPtrT<Logger> LoggerPtr;$/;"	t	namespace:log4cxx
+LoggerPtr	log4cxx/provisionnode.h	/^    typedef helpers::ObjectPtrT<Logger> LoggerPtr;$/;"	t	namespace:log4cxx
+LoggerRepository	log4cxx/spi/loggerrepository.h	/^            class LOG4CXX_EXPORT LoggerRepository : public virtual helpers::Object$/;"	c	namespace:log4cxx::spi
+LoggerRepositoryPtr	log4cxx/defaultconfigurator.h	/^       typedef helpers::ObjectPtrT<LoggerRepository> LoggerRepositoryPtr;$/;"	t	namespace:log4cxx::spi
+LoggerRepositoryPtr	log4cxx/helpers/optionconverter.h	/^                typedef helpers::ObjectPtrT<LoggerRepository> LoggerRepositoryPtr;$/;"	t	namespace:log4cxx::spi
+LoggerRepositoryPtr	log4cxx/spi/repositoryselector.h	/^                typedef helpers::ObjectPtrT<LoggerRepository> LoggerRepositoryPtr;$/;"	t	namespace:log4cxx::spi
+LoggingEvent	log4cxx/spi/loggingevent.h	/^                class LOG4CXX_EXPORT LoggingEvent :$/;"	c	namespace:log4cxx::spi
+LoggingEventPatternConverter	log4cxx/pattern/loggingeventpatternconverter.h	/^class LOG4CXX_EXPORT LoggingEventPatternConverter : public PatternConverter {$/;"	c	namespace:log4cxx::pattern
+LoggingEventPtr	log4cxx/appender.h	/^        typedef helpers::ObjectPtrT<LoggingEvent> LoggingEventPtr;$/;"	t	namespace:log4cxx::spi
+LoggingEventPtr	log4cxx/helpers/appenderattachableimpl.h	/^        typedef helpers::ObjectPtrT<LoggingEvent> LoggingEventPtr;$/;"	t	namespace:log4cxx::spi
+MAX_CONNECTIONS	log4cxx/net/telnetappender.h	/^                        static const int MAX_CONNECTIONS;$/;"	m	class:log4cxx::net::TelnetAppender
+MAX_EVENT_LEN	log4cxx/net/xmlsocketappender.h	/^                static const int MAX_EVENT_LEN;$/;"	m	class:log4cxx::net::XMLSocketAppender
+MAX_STATE	log4cxx/pattern/patternparser.h	/^    MAX_STATE = 5$/;"	e	enum:log4cxx::pattern::PatternParser::__anon12
+MAX_WINDOW_SIZE	log4cxx/rolling/fixedwindowrollingpolicy.h	/^          enum { MAX_WINDOW_SIZE = 12 };$/;"	e	enum:log4cxx::rolling::FixedWindowRollingPolicy::__anon13
+MDC	log4cxx/mdc.h	/^        class LOG4CXX_EXPORT MDC$/;"	c	namespace:log4cxx
+MIN_STATE	log4cxx/pattern/patternparser.h	/^    MIN_STATE = 4,$/;"	e	enum:log4cxx::pattern::PatternParser::__anon12
+MISSING_LAYOUT	log4cxx/spi/errorhandler.h	/^                                MISSING_LAYOUT = 5,$/;"	e	enum:log4cxx::spi::ErrorCode::__anon14
+MSG_SIZE	log4cxx/helpers/exception.h	/^                        enum { MSG_SIZE = 128 };$/;"	e	enum:log4cxx::helpers::Exception::__anon4
+ManualTriggeringPolicy	log4cxx/rolling/manualtriggeringpolicy.h	/^        class LOG4CXX_EXPORT ManualTriggeringPolicy : public TriggeringPolicy {$/;"	c	namespace:log4cxx::rolling
+Map	log4cxx/mdc.h	/^                typedef std::map<LogString, LogString> Map;$/;"	t	class:log4cxx::MDC
+MapFilter	log4cxx/filter/mapfilter.h	/^        class LOG4CXX_EXPORT MapFilter:public log4cxx::spi::Filter$/;"	c	namespace:log4cxx::filter
+MessageBuffer	log4cxx/helpers/messagebuffer.h	/^   class LOG4CXX_EXPORT MessageBuffer {$/;"	c	namespace:log4cxx::helpers
+MessageBuffer	log4cxx/helpers/messagebuffer.h	/^typedef CharMessageBuffer MessageBuffer;$/;"	t	namespace:log4cxx::helpers
+MessagePatternConverter	log4cxx/pattern/messagepatternconverter.h	/^class LOG4CXX_EXPORT MessagePatternConverter : public LoggingEventPatternConverter {$/;"	c	namespace:log4cxx::pattern
+MethodLocationPatternConverter	log4cxx/pattern/methodlocationpatternconverter.h	/^class LOG4CXX_EXPORT MethodLocationPatternConverter$/;"	c	namespace:log4cxx::pattern
+MissingResourceException	log4cxx/helpers/exception.h	/^                class LOG4CXX_EXPORT MissingResourceException : public Exception$/;"	c	namespace:log4cxx::helpers
+Mutex	log4cxx/helpers/mutex.h	/^                class LOG4CXX_EXPORT Mutex$/;"	c	namespace:log4cxx::helpers
+MutexException	log4cxx/helpers/exception.h	/^                class LOG4CXX_EXPORT MutexException : public Exception$/;"	c	namespace:log4cxx::helpers
+NA	log4cxx/spi/location/locationinfo.h	/^        static const char * const NA;$/;"	m	class:log4cxx::spi::LocationInfo
+NA_METHOD	log4cxx/spi/location/locationinfo.h	/^        static const char * const NA_METHOD;$/;"	m	class:log4cxx::spi::LocationInfo
+NDC	log4cxx/ndc.h	/^        class LOG4CXX_EXPORT NDC$/;"	c	namespace:log4cxx
+NDCPatternConverter	log4cxx/pattern/ndcpatternconverter.h	/^class LOG4CXX_EXPORT NDCPatternConverter : public LoggingEventPatternConverter {$/;"	c	namespace:log4cxx::pattern
+NEUTRAL	log4cxx/spi/filter.h	/^                        NEUTRAL = 0,$/;"	e	enum:log4cxx::spi::Filter::FilterDecision
+NOT_IMPLEMENTED_NODE	log4cxx/helpers/xml.h	/^                                NOT_IMPLEMENTED_NODE = 0,$/;"	e	enum:log4cxx::helpers::XMLDOMNode::XMLDOMNodeType
+NO_MILLISECONDS	log4cxx/helpers/cacheddateformat.h	/^                 NO_MILLISECONDS = -2,$/;"	e	enum:log4cxx::pattern::CachedDateFormat::__anon2
+NTEventLogAppender	log4cxx/nt/nteventlogappender.h	/^                class LOG4CXX_EXPORT NTEventLogAppender : public AppenderSkeleton$/;"	c	namespace:log4cxx::nt
+NameAbbreviator	log4cxx/pattern/nameabbreviator.h	/^class LOG4CXX_EXPORT NameAbbreviator : public log4cxx::helpers::ObjectImpl {$/;"	c	namespace:log4cxx::pattern
+NamePatternConverter	log4cxx/pattern/namepatternconverter.h	/^class LOG4CXX_EXPORT NamePatternConverter : public LoggingEventPatternConverter {$/;"	c	namespace:log4cxx::pattern
+NoSuchElementException	log4cxx/helpers/exception.h	/^                class NoSuchElementException : public Exception {$/;"	c	namespace:log4cxx::helpers
+NullPointerException	log4cxx/helpers/exception.h	/^                class LOG4CXX_EXPORT  NullPointerException : public RuntimeException$/;"	c	namespace:log4cxx::helpers
+ODBCAppender	log4cxx/db/odbcappender.h	/^                class LOG4CXX_EXPORT ODBCAppender : public AppenderSkeleton$/;"	c	namespace:log4cxx::db
+OFF_INT	log4cxx/level.h	/^                    OFF_INT = INT_MAX,$/;"	e	enum:log4cxx::Level::__anon11
+Object	log4cxx/helpers/object.h	/^                class LOG4CXX_EXPORT Object$/;"	c	namespace:log4cxx::helpers
+ObjectImpl	log4cxx/helpers/objectimpl.h	/^      class LOG4CXX_EXPORT ObjectImpl : public virtual Object$/;"	c	namespace:log4cxx::helpers
+ObjectOutputStream	log4cxx/helpers/objectoutputstream.h	/^          class LOG4CXX_EXPORT ObjectOutputStream : public ObjectImpl$/;"	c	namespace:log4cxx::helpers
+ObjectOutputStreamPtr	log4cxx/net/sockethubappender.h	/^                typedef ObjectPtrT<ObjectOutputStream> ObjectOutputStreamPtr;$/;"	t	namespace:log4cxx::helpers
+ObjectPtr	log4cxx/config/propertysetter.h	/^                typedef ObjectPtrT<Object> ObjectPtr;$/;"	t	namespace:log4cxx::helpers
+ObjectPtr	log4cxx/helpers/class.h	/^                typedef ObjectPtrT<Object> ObjectPtr;$/;"	t	namespace:log4cxx::helpers
+ObjectPtr	log4cxx/helpers/optionconverter.h	/^                typedef ObjectPtrT<Object> ObjectPtr;$/;"	t	namespace:log4cxx::helpers
+ObjectPtrBase	log4cxx/helpers/objectptr.h	/^        class LOG4CXX_EXPORT ObjectPtrBase {$/;"	c	namespace:log4cxx::helpers
+ObjectPtrT	log4cxx/helpers/objectptr.h	/^        template<typename T> class ObjectPtrT : public ObjectPtrBase$/;"	c	namespace:log4cxx::helpers
+OnlyOnceErrorHandler	log4cxx/helpers/onlyonceerrorhandler.h	/^                class LOG4CXX_EXPORT OnlyOnceErrorHandler :$/;"	c	namespace:log4cxx::helpers
+OptionConverter	log4cxx/helpers/optionconverter.h	/^                        OptionConverter() {}$/;"	f	class:log4cxx::helpers::OptionConverter
+OptionConverter	log4cxx/helpers/optionconverter.h	/^                class LOG4CXX_EXPORT OptionConverter$/;"	c	namespace:log4cxx::helpers
+OptionHandler	log4cxx/spi/optionhandler.h	/^                class LOG4CXX_EXPORT OptionHandler : public virtual helpers::Object$/;"	c	namespace:log4cxx::spi
+OptionHandlerPtr	log4cxx/spi/optionhandler.h	/^                typedef helpers::ObjectPtrT<OptionHandler> OptionHandlerPtr;$/;"	t	namespace:log4cxx::spi
+OptionsList	log4cxx/pattern/patternconverter.h	/^  typedef std::vector<LogString> OptionsList;$/;"	t	namespace:log4cxx::pattern
+OutputDebugStringAppender	log4cxx/nt/outputdebugstringappender.h	/^                class LOG4CXX_EXPORT OutputDebugStringAppender : public AppenderSkeleton$/;"	c	namespace:log4cxx::nt
+OutputStream	log4cxx/helpers/outputstream.h	/^          class LOG4CXX_EXPORT OutputStream : public ObjectImpl$/;"	c	namespace:log4cxx::helpers
+OutputStreamWriter	log4cxx/helpers/outputstreamwriter.h	/^          class LOG4CXX_EXPORT OutputStreamWriter : public Writer$/;"	c	namespace:log4cxx::helpers
+PatternConstructor	log4cxx/pattern/patternparser.h	/^typedef PatternConverterPtr (*PatternConstructor)(const std::vector<LogString>& options);$/;"	t	namespace:log4cxx::pattern
+PatternConverter	log4cxx/pattern/patternconverter.h	/^class LOG4CXX_EXPORT PatternConverter : public virtual log4cxx::helpers::ObjectImpl {$/;"	c	namespace:log4cxx::pattern
+PatternLayout	log4cxx/patternlayout.h	/^        class LOG4CXX_EXPORT PatternLayout : public Layout$/;"	c	namespace:log4cxx
+PatternMap	log4cxx/pattern/patternparser.h	/^typedef std::map<LogString, PatternConstructor> PatternMap;$/;"	t	namespace:log4cxx::pattern
+PatternParser	log4cxx/pattern/patternparser.h	/^class LOG4CXX_EXPORT PatternParser {$/;"	c	namespace:log4cxx::pattern
+Pool	log4cxx/helpers/pool.h	/^                class LOG4CXX_EXPORT Pool$/;"	c	namespace:log4cxx::helpers
+PoolException	log4cxx/helpers/exception.h	/^                class LOG4CXX_EXPORT PoolException : public Exception$/;"	c	namespace:log4cxx::helpers
+Properties	log4cxx/helpers/properties.h	/^                class LOG4CXX_EXPORT Properties$/;"	c	namespace:log4cxx::helpers
+PropertiesPatternConverter	log4cxx/pattern/propertiespatternconverter.h	/^class LOG4CXX_EXPORT PropertiesPatternConverter$/;"	c	namespace:log4cxx::pattern
+PropertyConfigurator	log4cxx/propertyconfigurator.h	/^   class LOG4CXX_EXPORT PropertyConfigurator :$/;"	c	namespace:log4cxx
+PropertyFilter	log4cxx/filter/propertyfilter.h	/^        class LOG4CXX_EXPORT PropertyFilter : public log4cxx::spi::Filter$/;"	c	namespace:log4cxx::filter
+PropertyMap	log4cxx/filter/propertyfilter.h	/^            typedef std::map < LogString, LogString > PropertyMap;$/;"	t	class:log4cxx::filter::PropertyFilter
+PropertyMap	log4cxx/helpers/properties.h	/^                        typedef std::map<LogString, LogString> PropertyMap;$/;"	t	class:log4cxx::helpers::Properties
+PropertyResourceBundle	log4cxx/helpers/propertyresourcebundle.h	/^                class LOG4CXX_EXPORT PropertyResourceBundle : public ResourceBundle$/;"	c	namespace:log4cxx::helpers
+PropertySetter	log4cxx/config/propertysetter.h	/^                class LOG4CXX_EXPORT PropertySetter$/;"	c	namespace:log4cxx::config
+ProvisionNode	log4cxx/provisionnode.h	/^    typedef std::vector<LoggerPtr> ProvisionNode;$/;"	t	namespace:log4cxx
+ProvisionNodeMap	log4cxx/hierarchy.h	/^            typedef std::map<LogString, ProvisionNode> ProvisionNodeMap;$/;"	t	class:log4cxx::Hierarchy
+Reader	log4cxx/helpers/reader.h	/^          class LOG4CXX_EXPORT Reader : public ObjectImpl$/;"	c	namespace:log4cxx::helpers
+RelativeTimeDateFormat	log4cxx/helpers/relativetimedateformat.h	/^                class LOG4CXX_EXPORT RelativeTimeDateFormat : public DateFormat$/;"	c	namespace:log4cxx::helpers
+RelativeTimePatternConverter	log4cxx/pattern/relativetimepatternconverter.h	/^class LOG4CXX_EXPORT RelativeTimePatternConverter : public LoggingEventPatternConverter {$/;"	c	namespace:log4cxx::pattern
+RepositorySelector	log4cxx/spi/repositoryselector.h	/^                class LOG4CXX_EXPORT RepositorySelector : public virtual helpers::Object$/;"	c	namespace:log4cxx::spi
+ResourceBundle	log4cxx/helpers/resourcebundle.h	/^                class LOG4CXX_EXPORT ResourceBundle : public ObjectImpl$/;"	c	namespace:log4cxx::helpers
+RollingFileAppender	log4cxx/rolling/rollingfileappender.h	/^        class LOG4CXX_EXPORT RollingFileAppender : public RollingFileAppenderSkeleton {$/;"	c	namespace:log4cxx::rolling
+RollingFileAppender	log4cxx/rollingfileappender.h	/^  class LOG4CXX_EXPORT RollingFileAppender : public log4cxx::rolling::RollingFileAppenderSkeleton$/;"	c	namespace:log4cxx
+RollingFileAppenderSkeleton	log4cxx/rolling/rollingfileappenderskeleton.h	/^        class LOG4CXX_EXPORT RollingFileAppenderSkeleton : public FileAppender {$/;"	c	namespace:log4cxx::rolling
+RollingPolicy	log4cxx/rolling/rollingpolicy.h	/^        class LOG4CXX_EXPORT RollingPolicy :$/;"	c	namespace:log4cxx::rolling
+RollingPolicyBase	log4cxx/rolling/rollingpolicybase.h	/^        class LOG4CXX_EXPORT RollingPolicyBase :$/;"	c	namespace:log4cxx::rolling
+RolloverDescription	log4cxx/rolling/rolloverdescription.h	/^        class RolloverDescription : public log4cxx::helpers::ObjectImpl {$/;"	c	namespace:log4cxx::rolling
+RootLogger	log4cxx/spi/rootlogger.h	/^        class LOG4CXX_EXPORT RootLogger : public Logger$/;"	c	namespace:log4cxx::spi
+RulePtr	log4cxx/filter/expressionfilter.h	/^        typedef helpers::ObjectPtrT < Rule > RulePtr;$/;"	t	namespace:log4cxx::rule
+RulePtr	log4cxx/filter/locationinfofilter.h	/^        typedef helpers::ObjectPtrT < Rule > RulePtr;$/;"	t	namespace:log4cxx::rule
+Runnable	log4cxx/helpers/thread.h	/^            typedef void* (LOG4CXX_THREAD_FUNC *Runnable)(apr_thread_t* thread, void* data);$/;"	t	namespace:log4cxx::helpers
+RuntimeException	log4cxx/helpers/exception.h	/^                class LOG4CXX_EXPORT RuntimeException : public Exception$/;"	c	namespace:log4cxx::helpers
+SC_SERIALIZABLE	log4cxx/helpers/objectoutputstream.h	/^                     SC_SERIALIZABLE = 0x02 };$/;"	e	enum:log4cxx::helpers::ObjectOutputStream::__anon8
+SC_WRITE_METHOD	log4cxx/helpers/objectoutputstream.h	/^                     SC_WRITE_METHOD = 0x01,$/;"	e	enum:log4cxx::helpers::ObjectOutputStream::__anon8
+SID	log4cxx/nt/nteventlogappender.h	/^                        typedef void SID;$/;"	t	class:log4cxx::nt::NTEventLogAppender
+SMTPAppender	log4cxx/net/smtpappender.h	/^                class LOG4CXX_EXPORT SMTPAppender : public AppenderSkeleton$/;"	c	namespace:log4cxx::net
+SQLException	log4cxx/db/odbcappender.h	/^            class LOG4CXX_EXPORT SQLException : public log4cxx::helpers::Exception {$/;"	c	namespace:log4cxx::db
+SQLHANDLE	log4cxx/db/odbcappender.h	/^                        typedef void* SQLHANDLE;$/;"	t	class:log4cxx::db::ODBCAppender
+SQLHDBC	log4cxx/db/odbcappender.h	/^                        typedef void* SQLHDBC;$/;"	t	class:log4cxx::db::ODBCAppender
+SQLHENV	log4cxx/db/odbcappender.h	/^                        typedef void* SQLHENV;$/;"	t	class:log4cxx::db::ODBCAppender
+SQLSMALLINT	log4cxx/db/odbcappender.h	/^                        typedef short SQLSMALLINT;$/;"	t	class:log4cxx::db::ODBCAppender
+STREAM_MAGIC	log4cxx/helpers/objectoutputstream.h	/^                  enum { STREAM_MAGIC = 0xACED };$/;"	e	enum:log4cxx::helpers::ObjectOutputStream::__anon5
+STREAM_VERSION	log4cxx/helpers/objectoutputstream.h	/^                  enum { STREAM_VERSION = 5 };$/;"	e	enum:log4cxx::helpers::ObjectOutputStream::__anon6
+ServerSocket	log4cxx/helpers/serversocket.h	/^                class LOG4CXX_EXPORT ServerSocket$/;"	c	namespace:log4cxx::helpers
+SimpleDateFormat	log4cxx/helpers/simpledateformat.h	/^          class LOG4CXX_EXPORT SimpleDateFormat : public DateFormat$/;"	c	namespace:log4cxx::helpers
+SimpleDateFormatImpl	log4cxx/helpers/simpledateformat.h	/^          namespace SimpleDateFormatImpl {$/;"	n	namespace:log4cxx::helpers
+SimpleLayout	log4cxx/simplelayout.h	/^        class LOG4CXX_EXPORT SimpleLayout : public Layout$/;"	c	namespace:log4cxx
+SizeBasedTriggeringPolicy	log4cxx/rolling/sizebasedtriggeringpolicy.h	/^        class LOG4CXX_EXPORT SizeBasedTriggeringPolicy : public TriggeringPolicy {$/;"	c	namespace:log4cxx::rolling
+Socket	log4cxx/helpers/socket.h	/^                class LOG4CXX_EXPORT Socket : public helpers::ObjectImpl$/;"	c	namespace:log4cxx::helpers
+SocketAppender	log4cxx/net/socketappender.h	/^        class LOG4CXX_EXPORT SocketAppender : public SocketAppenderSkeleton$/;"	c	namespace:log4cxx::net
+SocketAppenderSkeleton	log4cxx/net/socketappenderskeleton.h	/^        class LOG4CXX_EXPORT SocketAppenderSkeleton : public AppenderSkeleton$/;"	c	namespace:log4cxx::net
+SocketException	log4cxx/helpers/exception.h	/^                class LOG4CXX_EXPORT SocketException : public IOException$/;"	c	namespace:log4cxx::helpers
+SocketHubAppender	log4cxx/net/sockethubappender.h	/^                class LOG4CXX_EXPORT SocketHubAppender : public AppenderSkeleton$/;"	c	namespace:log4cxx::net
+SocketOutputStream	log4cxx/helpers/socketoutputstream.h	/^                class LOG4CXX_EXPORT SocketOutputStream : public OutputStream$/;"	c	namespace:log4cxx::helpers
+SocketTimeoutException	log4cxx/helpers/exception.h	/^                class LOG4CXX_EXPORT SocketTimeoutException : public InterruptedIOException$/;"	c	namespace:log4cxx::helpers
+Stack	log4cxx/ndc.h	/^                typedef std::stack<DiagnosticContext> Stack;$/;"	t	class:log4cxx::NDC
+StrftimeDateFormat	log4cxx/helpers/strftimedateformat.h	/^          class LOG4CXX_EXPORT StrftimeDateFormat : public DateFormat$/;"	c	namespace:log4cxx::helpers
+StrictMath	log4cxx/helpers/strictmath.h	/^                class StrictMath$/;"	c	namespace:log4cxx::helpers
+StringHelper	log4cxx/helpers/stringhelper.h	/^        class LOG4CXX_EXPORT StringHelper$/;"	c	namespace:log4cxx::helpers
+StringMatchFilter	log4cxx/filter/stringmatchfilter.h	/^                class LOG4CXX_EXPORT StringMatchFilter : public spi::Filter$/;"	c	namespace:log4cxx::filter
+StringTokenizer	log4cxx/helpers/stringtokenizer.h	/^                class LOG4CXX_EXPORT StringTokenizer$/;"	c	namespace:log4cxx::helpers
+SyslogAppender	log4cxx/net/syslogappender.h	/^                class LOG4CXX_EXPORT SyslogAppender : public AppenderSkeleton$/;"	c	namespace:log4cxx::net
+SyslogWriter	log4cxx/helpers/syslogwriter.h	/^                class LOG4CXX_EXPORT SyslogWriter$/;"	c	namespace:log4cxx::helpers
+System	log4cxx/helpers/system.h	/^                class LOG4CXX_EXPORT System$/;"	c	namespace:log4cxx::helpers
+SystemErrWriter	log4cxx/helpers/systemerrwriter.h	/^          class LOG4CXX_EXPORT SystemErrWriter : public Writer$/;"	c	namespace:log4cxx::helpers
+SystemOutWriter	log4cxx/helpers/systemoutwriter.h	/^          class LOG4CXX_EXPORT SystemOutWriter : public Writer$/;"	c	namespace:log4cxx::helpers
+TC_ARRAY	log4cxx/helpers/objectoutputstream.h	/^                         TC_ARRAY = 0x75,$/;"	e	enum:log4cxx::helpers::ObjectOutputStream::__anon7
+TC_BLOCKDATA	log4cxx/helpers/objectoutputstream.h	/^                         TC_BLOCKDATA = 0x77,$/;"	e	enum:log4cxx::helpers::ObjectOutputStream::__anon7
+TC_CLASS	log4cxx/helpers/objectoutputstream.h	/^                         TC_CLASS = 0x76,$/;"	e	enum:log4cxx::helpers::ObjectOutputStream::__anon7
+TC_CLASSDESC	log4cxx/helpers/objectoutputstream.h	/^                         TC_CLASSDESC = 0x72,$/;"	e	enum:log4cxx::helpers::ObjectOutputStream::__anon7
+TC_ENDBLOCKDATA	log4cxx/helpers/objectoutputstream.h	/^                         TC_ENDBLOCKDATA = 0x78 };$/;"	e	enum:log4cxx::helpers::ObjectOutputStream::__anon7
+TC_NULL	log4cxx/helpers/objectoutputstream.h	/^                  enum { TC_NULL = 0x70,$/;"	e	enum:log4cxx::helpers::ObjectOutputStream::__anon7
+TC_OBJECT	log4cxx/helpers/objectoutputstream.h	/^                         TC_OBJECT = 0x73,$/;"	e	enum:log4cxx::helpers::ObjectOutputStream::__anon7
+TC_REFERENCE	log4cxx/helpers/objectoutputstream.h	/^                         TC_REFERENCE = 0x71,$/;"	e	enum:log4cxx::helpers::ObjectOutputStream::__anon7
+TC_STRING	log4cxx/helpers/objectoutputstream.h	/^                         TC_STRING = 0x74,$/;"	e	enum:log4cxx::helpers::ObjectOutputStream::__anon7
+TRACE_INT	log4cxx/level.h	/^                    TRACE_INT = 5000,$/;"	e	enum:log4cxx::Level::__anon11
+TTCCLayout	log4cxx/ttcclayout.h	/^        class LOG4CXX_EXPORT TTCCLayout : public helpers::DateLayout$/;"	c	namespace:log4cxx
+TelnetAppender	log4cxx/net/telnetappender.h	/^        class LOG4CXX_EXPORT TelnetAppender : public AppenderSkeleton$/;"	c	namespace:log4cxx::net
+Thread	log4cxx/helpers/thread.h	/^                class LOG4CXX_EXPORT Thread$/;"	c	namespace:log4cxx::helpers
+ThreadException	log4cxx/helpers/exception.h	/^                class LOG4CXX_EXPORT ThreadException$/;"	c	namespace:log4cxx::helpers
+ThreadLocal	log4cxx/helpers/threadlocal.h	/^                class LOG4CXX_EXPORT ThreadLocal {$/;"	c	namespace:log4cxx::helpers
+ThreadPatternConverter	log4cxx/pattern/threadpatternconverter.h	/^class LOG4CXX_EXPORT ThreadPatternConverter : public LoggingEventPatternConverter {$/;"	c	namespace:log4cxx::pattern
+ThreadSpecificData	log4cxx/helpers/threadspecificdata.h	/^                class LOG4CXX_EXPORT ThreadSpecificData$/;"	c	namespace:log4cxx::helpers
+ThrowableInformationPatternConverter	log4cxx/pattern/throwableinformationpatternconverter.h	/^class LOG4CXX_EXPORT ThrowableInformationPatternConverter$/;"	c	namespace:log4cxx::pattern
+TimeBasedRollingPolicy	log4cxx/rolling/timebasedrollingpolicy.h	/^        class LOG4CXX_EXPORT TimeBasedRollingPolicy : public RollingPolicyBase,$/;"	c	namespace:log4cxx::rolling
+TimeZone	log4cxx/helpers/timezone.h	/^      class LOG4CXX_EXPORT TimeZone : public helpers::ObjectImpl$/;"	c	namespace:log4cxx::helpers
+Transcoder	log4cxx/helpers/transcoder.h	/^      class LOG4CXX_EXPORT Transcoder {$/;"	c	namespace:log4cxx::helpers
+TranscoderException	log4cxx/helpers/exception.h	/^                class LOG4CXX_EXPORT TranscoderException : public Exception$/;"	c	namespace:log4cxx::helpers
+Transform	log4cxx/helpers/transform.h	/^                class LOG4CXX_EXPORT Transform$/;"	c	namespace:log4cxx::helpers
+TriggeringEventEvaluator	log4cxx/spi/triggeringeventevaluator.h	/^                class LOG4CXX_EXPORT TriggeringEventEvaluator : public virtual helpers::Object$/;"	c	namespace:log4cxx::spi
+TriggeringPolicy	log4cxx/rolling/triggeringpolicy.h	/^        class LOG4CXX_EXPORT TriggeringPolicy :$/;"	c	namespace:log4cxx::rolling
+UNRECOGNIZED_MILLISECONDS	log4cxx/helpers/cacheddateformat.h	/^                 UNRECOGNIZED_MILLISECONDS = -1$/;"	e	enum:log4cxx::pattern::CachedDateFormat::__anon2
+UniChar	log4cxx/logstring.h	/^typedef unsigned short UniChar;$/;"	t	namespace:log4cxx
+UniCharMessageBuffer	log4cxx/helpers/messagebuffer.h	/^   class LOG4CXX_EXPORT UniCharMessageBuffer {$/;"	c	namespace:log4cxx::helpers
+UnknownHostException	log4cxx/helpers/inetaddress.h	/^                class LOG4CXX_EXPORT UnknownHostException : public Exception$/;"	c	namespace:log4cxx::helpers
+WARN_INT	log4cxx/level.h	/^                    WARN_INT = 30000,$/;"	e	enum:log4cxx::Level::__anon11
+WARN_PREFIX	log4cxx/helpers/onlyonceerrorhandler.h	/^                        LogString WARN_PREFIX;$/;"	m	class:log4cxx::helpers::OnlyOnceErrorHandler
+WRITE_FAILURE	log4cxx/spi/errorhandler.h	/^                                WRITE_FAILURE = 1,$/;"	e	enum:log4cxx::spi::ErrorCode::__anon14
+WideMessageBuffer	log4cxx/helpers/messagebuffer.h	/^   class LOG4CXX_EXPORT WideMessageBuffer {$/;"	c	namespace:log4cxx::helpers
+Writer	log4cxx/helpers/writer.h	/^          class LOG4CXX_EXPORT Writer : public ObjectImpl$/;"	c	namespace:log4cxx::helpers
+WriterAppender	log4cxx/writerappender.h	/^        class LOG4CXX_EXPORT WriterAppender : public AppenderSkeleton$/;"	c	namespace:log4cxx
+XMLDOMDocument	log4cxx/helpers/xml.h	/^                class LOG4CXX_EXPORT XMLDOMDocument : virtual public XMLDOMNode$/;"	c	namespace:log4cxx::helpers
+XMLDOMDocumentPtr	log4cxx/helpers/xml.h	/^                typedef helpers::ObjectPtrT<XMLDOMDocument> XMLDOMDocumentPtr;$/;"	t	namespace:log4cxx::helpers
+XMLDOMElement	log4cxx/helpers/xml.h	/^                class LOG4CXX_EXPORT XMLDOMElement : virtual public XMLDOMNode$/;"	c	namespace:log4cxx::helpers
+XMLDOMNode	log4cxx/helpers/xml.h	/^                class LOG4CXX_EXPORT XMLDOMNode : virtual public Object$/;"	c	namespace:log4cxx::helpers
+XMLDOMNodeList	log4cxx/helpers/xml.h	/^                class LOG4CXX_EXPORT XMLDOMNodeList : virtual public Object$/;"	c	namespace:log4cxx::helpers
+XMLDOMNodeListPtr	log4cxx/helpers/xml.h	/^                typedef helpers::ObjectPtrT<XMLDOMNodeList> XMLDOMNodeListPtr;$/;"	t	namespace:log4cxx::helpers
+XMLDOMNodePtr	log4cxx/helpers/xml.h	/^                typedef helpers::ObjectPtrT<XMLDOMNode> XMLDOMNodePtr;$/;"	t	namespace:log4cxx::helpers
+XMLDOMNodeType	log4cxx/helpers/xml.h	/^                        enum XMLDOMNodeType$/;"	g	class:log4cxx::helpers::XMLDOMNode
+XMLLayout	log4cxx/xml/xmllayout.h	/^                class LOG4CXX_EXPORT XMLLayout : public Layout$/;"	c	namespace:log4cxx::xml
+XMLSocketAppender	log4cxx/net/xmlsocketappender.h	/^        class LOG4CXX_EXPORT XMLSocketAppender : public SocketAppenderSkeleton$/;"	c	namespace:log4cxx::net
+ZipCompressAction	log4cxx/rolling/zipcompressaction.h	/^        class ZipCompressAction : public Action {$/;"	c	namespace:log4cxx::rolling
+_LOG4CXX_APPENDER_H	log4cxx/appender.h	19;"	d
+_LOG4CXX_APPENDER_SKELETON_H	log4cxx/appenderskeleton.h	19;"	d
+_LOG4CXX_ASYNC_APPENDER_H	log4cxx/asyncappender.h	19;"	d
+_LOG4CXX_BASIC_CONFIGURATOR_H	log4cxx/basicconfigurator.h	19;"	d
+_LOG4CXX_CONFIG_PROPERTYSETTER_H	log4cxx/config/propertysetter.h	19;"	d
+_LOG4CXX_CONSOLE_APPENDER_H	log4cxx/consoleappender.h	19;"	d
+_LOG4CXX_DAILYROLLINGFILEAPPENDER_H	log4cxx/dailyrollingfileappender.h	19;"	d
+_LOG4CXX_DB_ODBC_APPENDER_H	log4cxx/db/odbcappender.h	19;"	d
+_LOG4CXX_DEFAULT_CONFIGURATOR_H	log4cxx/defaultconfigurator.h	19;"	d
+_LOG4CXX_DEFAULT_LOGGER_FACTORY_H	log4cxx/defaultloggerfactory.h	19;"	d
+_LOG4CXX_FILE_APPENDER_H	log4cxx/fileappender.h	19;"	d
+_LOG4CXX_FILE_H	log4cxx/file.h	19;"	d
+_LOG4CXX_FILTER_ANDFILTER_H	log4cxx/filter/andfilter.h	19;"	d
+_LOG4CXX_FILTER_DENY_ALL_FILTER_H	log4cxx/filter/denyallfilter.h	19;"	d
+_LOG4CXX_FILTER_EXPRESSIONFILTER_H	log4cxx/filter/expressionfilter.h	19;"	d
+_LOG4CXX_FILTER_LEVEL_MATCH_FILTER_H	log4cxx/filter/levelmatchfilter.h	19;"	d
+_LOG4CXX_FILTER_LEVEL_RANGE_FILTER_H	log4cxx/filter/levelrangefilter.h	19;"	d
+_LOG4CXX_FILTER_LOCATIONINFOFILTER_H	log4cxx/filter/locationinfofilter.h	18;"	d
+_LOG4CXX_FILTER_MAPFILTER_H	log4cxx/filter/mapfilter.h	18;"	d
+_LOG4CXX_FILTER_PROPERTYFILTER_H	log4cxx/filter/propertyfilter.h	20;"	d
+_LOG4CXX_FILTER_STRING_MATCH_FILTER_H	log4cxx/filter/stringmatchfilter.h	19;"	d
+_LOG4CXX_HELPERS_ABSOLUTE_TIME_DATE_FORMAT_H	log4cxx/helpers/absolutetimedateformat.h	19;"	d
+_LOG4CXX_HELPERS_APPENDER_ATTACHABLE_IMPL_H	log4cxx/helpers/appenderattachableimpl.h	19;"	d
+_LOG4CXX_HELPERS_APRINITIALIZER_H	log4cxx/helpers/aprinitializer.h	19;"	d
+_LOG4CXX_HELPERS_BUFFEREDOUTPUTSTREAM_H	log4cxx/helpers/bufferedoutputstream.h	19;"	d
+_LOG4CXX_HELPERS_BUFFEREDWRITER_H	log4cxx/helpers/bufferedwriter.h	19;"	d
+_LOG4CXX_HELPERS_BYTEARRAYINPUTSTREAM_H	log4cxx/helpers/bytearrayinputstream.h	19;"	d
+_LOG4CXX_HELPERS_BYTEARRAYOUTPUTSTREAM_H	log4cxx/helpers/bytearrayoutputstream.h	19;"	d
+_LOG4CXX_HELPERS_BYTEBUFFER_H	log4cxx/helpers/bytebuffer.h	19;"	d
+_LOG4CXX_HELPERS_CACHED_DATE_FORMAT_H	log4cxx/helpers/cacheddateformat.h	19;"	d
+_LOG4CXX_HELPERS_CHARSETDECODER_H	log4cxx/helpers/charsetdecoder.h	19;"	d
+_LOG4CXX_HELPERS_CHARSETENCODER_H	log4cxx/helpers/charsetencoder.h	19;"	d
+_LOG4CXX_HELPERS_CLASSREGISTRATION_H	log4cxx/helpers/classregistration.h	19;"	d
+_LOG4CXX_HELPERS_CLASS_H	log4cxx/helpers/class.h	19;"	d
+_LOG4CXX_HELPERS_CONDITION_H	log4cxx/helpers/condition.h	19;"	d
+_LOG4CXX_HELPERS_CYCLICBUFFER_H	log4cxx/helpers/cyclicbuffer.h	19;"	d
+_LOG4CXX_HELPERS_DATAGRAM_PACKET	log4cxx/helpers/datagrampacket.h	19;"	d
+_LOG4CXX_HELPERS_DATAGRAM_SOCKET_H	log4cxx/helpers/datagramsocket.h	19;"	d
+_LOG4CXX_HELPERS_DATE_FORMAT_H	log4cxx/helpers/dateformat.h	19;"	d
+_LOG4CXX_HELPERS_DATE_H	log4cxx/helpers/date.h	19;"	d
+_LOG4CXX_HELPERS_DATE_LAYOUT_H	log4cxx/helpers/datelayout.h	19;"	d
+_LOG4CXX_HELPERS_DATE_TIME_DATE_FORMAT_H	log4cxx/helpers/datetimedateformat.h	19;"	d
+_LOG4CXX_HELPERS_EXCEPTION_H	log4cxx/helpers/exception.h	19;"	d
+_LOG4CXX_HELPERS_FILEINPUTSTREAM_H	log4cxx/helpers/fileinputstream.h	19;"	d
+_LOG4CXX_HELPERS_FILEOUTPUTSTREAM_H	log4cxx/helpers/fileoutputstream.h	19;"	d
+_LOG4CXX_HELPERS_FILEWATCHDOG_H	log4cxx/helpers/filewatchdog.h	19;"	d
+_LOG4CXX_HELPERS_INPUTSTREAMREADER_H	log4cxx/helpers/inputstreamreader.h	19;"	d
+_LOG4CXX_HELPERS_INPUTSTREAM_H	log4cxx/helpers/inputstream.h	19;"	d
+_LOG4CXX_HELPERS_INTEGER_H	log4cxx/helpers/integer.h	19;"	d
+_LOG4CXX_HELPERS_ISO_8601_DATE_FORMAT_H	log4cxx/helpers/iso8601dateformat.h	19;"	d
+_LOG4CXX_HELPERS_LOADER_H	log4cxx/helpers/loader.h	19;"	d
+_LOG4CXX_HELPERS_LOCALE_H	log4cxx/helpers/locale.h	19;"	d
+_LOG4CXX_HELPERS_LOG_LOG_H	log4cxx/helpers/loglog.h	19;"	d
+_LOG4CXX_HELPERS_MUTEX_H	log4cxx/helpers/mutex.h	19;"	d
+_LOG4CXX_HELPERS_OBJECTOUTPUTSTREAM_H	log4cxx/helpers/objectoutputstream.h	19;"	d
+_LOG4CXX_HELPERS_OBJECT_H	log4cxx/helpers/object.h	19;"	d
+_LOG4CXX_HELPERS_OBJECT_IMPL_H	log4cxx/helpers/objectimpl.h	19;"	d
+_LOG4CXX_HELPERS_OBJECT_PTR_H	log4cxx/helpers/objectptr.h	19;"	d
+_LOG4CXX_HELPERS_ONLY_ONCE_ERROR_HANDLER_H	log4cxx/helpers/onlyonceerrorhandler.h	19;"	d
+_LOG4CXX_HELPERS_OUTPUTSTREAMWRITER_H	log4cxx/helpers/outputstreamwriter.h	19;"	d
+_LOG4CXX_HELPERS_OUTPUTSTREAM_H	log4cxx/helpers/outputstream.h	19;"	d
+_LOG4CXX_HELPERS_POOL_H	log4cxx/helpers/pool.h	19;"	d
+_LOG4CXX_HELPERS_PROPERTY_RESOURCE_BUNDLE_H	log4cxx/helpers/propertyresourcebundle.h	19;"	d
+_LOG4CXX_HELPERS_READER_H	log4cxx/helpers/reader.h	19;"	d
+_LOG4CXX_HELPERS_RELATIVE_TIME_DATE_FORMAT_H	log4cxx/helpers/relativetimedateformat.h	19;"	d
+_LOG4CXX_HELPERS_RESOURCE_BUNDLE_H	log4cxx/helpers/resourcebundle.h	19;"	d
+_LOG4CXX_HELPERS_SERVER_SOCKET_H	log4cxx/helpers/serversocket.h	19;"	d
+_LOG4CXX_HELPERS_SIMPLE_DATE_FORMAT_H	log4cxx/helpers/simpledateformat.h	19;"	d
+_LOG4CXX_HELPERS_SOCKET_H	log4cxx/helpers/socket.h	19;"	d
+_LOG4CXX_HELPERS_SOCKET_OUTPUT_STREAM_H	log4cxx/helpers/socketoutputstream.h	19;"	d
+_LOG4CXX_HELPERS_STRFTIME_DATE_FORMAT_H	log4cxx/helpers/strftimedateformat.h	19;"	d
+_LOG4CXX_HELPERS_STRICTMATH_H	log4cxx/helpers/strictmath.h	19;"	d
+_LOG4CXX_HELPERS_STRING_HELPER_H	log4cxx/helpers/stringhelper.h	19;"	d
+_LOG4CXX_HELPERS_STRING_TOKENIZER_H	log4cxx/helpers/stringtokenizer.h	19;"	d
+_LOG4CXX_HELPERS_SYNCHRONIZED_H	log4cxx/helpers/synchronized.h	19;"	d
+_LOG4CXX_HELPERS_SYSTEMERRWRITER_H	log4cxx/helpers/systemerrwriter.h	19;"	d
+_LOG4CXX_HELPERS_SYSTEMOUTWRITER_H	log4cxx/helpers/systemoutwriter.h	19;"	d
+_LOG4CXX_HELPERS_SYSTEM_H	log4cxx/helpers/system.h	19;"	d
+_LOG4CXX_HELPERS_TCHAR_H	log4cxx/helpers/tchar.h	19;"	d
+_LOG4CXX_HELPERS_THREAD_H	log4cxx/helpers/thread.h	19;"	d
+_LOG4CXX_HELPERS_THREAD_LOCAL_H	log4cxx/helpers/threadlocal.h	19;"	d
+_LOG4CXX_HELPERS_THREAD_SPECIFIC_DATA_H	log4cxx/helpers/threadspecificdata.h	19;"	d
+_LOG4CXX_HELPERS_TIMEZONE_H	log4cxx/helpers/timezone.h	19;"	d
+_LOG4CXX_HELPERS_TRANSCODER_H	log4cxx/helpers/transcoder.h	19;"	d
+_LOG4CXX_HELPERS_TRANSFORM_H	log4cxx/helpers/transform.h	19;"	d
+_LOG4CXX_HELPERS_WRITER_H	log4cxx/helpers/writer.h	19;"	d
+_LOG4CXX_HELPERS_XML_H	log4cxx/helpers/xml.h	19;"	d
+_LOG4CXX_HELPER_FORMATTING_INFO_H	log4cxx/pattern/formattinginfo.h	19;"	d
+_LOG4CXX_HELPER_INETADDRESS_H	log4cxx/helpers/inetaddress.h	19;"	d
+_LOG4CXX_HELPER_OPTION_CONVERTER_H	log4cxx/helpers/optionconverter.h	19;"	d
+_LOG4CXX_HELPER_PATTERN_CONVERTER_H	log4cxx/pattern/patternparser.h	20;"	d
+_LOG4CXX_HELPER_PROPERTIES_H	log4cxx/helpers/properties.h	19;"	d
+_LOG4CXX_HIERARCHY_H	log4cxx/hierarchy.h	19;"	d
+_LOG4CXX_HTML_LAYOUT_H	log4cxx/htmllayout.h	19;"	d
+_LOG4CXX_LAYOUT_H	log4cxx/layout.h	19;"	d
+_LOG4CXX_LEVEL_H	log4cxx/level.h	19;"	d
+_LOG4CXX_LOGGER_H	log4cxx/logger.h	19;"	d
+_LOG4CXX_LOG_MANAGER_H	log4cxx/logmanager.h	19;"	d
+_LOG4CXX_MDC_H	log4cxx/mdc.h	19;"	d
+_LOG4CXX_MESSAGE_BUFFER_H	log4cxx/helpers/messagebuffer.h	19;"	d
+_LOG4CXX_NDC_H	log4cxx/ndc.h	19;"	d
+_LOG4CXX_NET_SMTP_H	log4cxx/net/smtpappender.h	19;"	d
+_LOG4CXX_NET_SOCKET_APPENDER_H	log4cxx/net/socketappender.h	19;"	d
+_LOG4CXX_NET_SOCKET_APPENDER_SKELETON_H	log4cxx/net/socketappenderskeleton.h	19;"	d
+_LOG4CXX_NET_SOCKET_HUB_APPENDER_H	log4cxx/net/sockethubappender.h	19;"	d
+_LOG4CXX_NET_SYSLOG_APPENDER_H	log4cxx/net/syslogappender.h	19;"	d
+_LOG4CXX_NET_TELNET_APPENDER_H	log4cxx/net/telnetappender.h	19;"	d
+_LOG4CXX_NET_XML_SOCKET_APPENDER_H	log4cxx/net/xmlsocketappender.h	19;"	d
+_LOG4CXX_NT_EVENT_LOG_APPENDER_HEADER_	log4cxx/nt/nteventlogappender.h	19;"	d
+_LOG4CXX_NT_OUTPUTDEBUGSTRING_APPENDER_HEADER_	log4cxx/nt/outputdebugstringappender.h	19;"	d
+_LOG4CXX_OBJECTPTR_INIT	log4cxx/helpers/objectptr.h	31;"	d
+_LOG4CXX_OBJECTPTR_INIT	log4cxx/helpers/objectptr.h	33;"	d
+_LOG4CXX_PATTERN_CLASSNAME_PATTERN_CONVERTER_H	log4cxx/pattern/classnamepatternconverter.h	19;"	d
+_LOG4CXX_PATTERN_DATE_PATTERN_CONVERTER	log4cxx/pattern/datepatternconverter.h	19;"	d
+_LOG4CXX_PATTERN_FILE_DATE_PATTERN_CONVERTER	log4cxx/pattern/filedatepatternconverter.h	19;"	d
+_LOG4CXX_PATTERN_FILE_LOCATION_PATTERN_CONVERTER	log4cxx/pattern/filelocationpatternconverter.h	19;"	d
+_LOG4CXX_PATTERN_FULL_LOCATION_PATTERN_CONVERTER	log4cxx/pattern/fulllocationpatternconverter.h	19;"	d
+_LOG4CXX_PATTERN_INTEGER_PATTERN_CONVERTER	log4cxx/pattern/integerpatternconverter.h	19;"	d
+_LOG4CXX_PATTERN_LAYOUT_H	log4cxx/patternlayout.h	19;"	d
+_LOG4CXX_PATTERN_LEVEL_PATTERN_CONVERTER	log4cxx/pattern/levelpatternconverter.h	19;"	d
+_LOG4CXX_PATTERN_LINE_LOCATION_PATTERN_CONVERTER	log4cxx/pattern/linelocationpatternconverter.h	19;"	d
+_LOG4CXX_PATTERN_LINE_SEPARATOR_PATTERN_CONVERTER	log4cxx/pattern/lineseparatorpatternconverter.h	19;"	d
+_LOG4CXX_PATTERN_LITERAL_PATTERN_CONVERTER_H	log4cxx/pattern/literalpatternconverter.h	19;"	d
+_LOG4CXX_PATTERN_LOGGER_PATTERN_CONVERTER_H	log4cxx/pattern/loggerpatternconverter.h	18;"	d
+_LOG4CXX_PATTERN_LOGGING_EVENT_PATTERN_CONVERTER_H	log4cxx/pattern/loggingeventpatternconverter.h	19;"	d
+_LOG4CXX_PATTERN_MESSAGE_PATTERN_CONVERTER	log4cxx/pattern/messagepatternconverter.h	19;"	d
+_LOG4CXX_PATTERN_METHOD_LOCATION_PATTERN_CONVERTER	log4cxx/pattern/methodlocationpatternconverter.h	19;"	d
+_LOG4CXX_PATTERN_NAMED_PATTERN_CONVERTER_H	log4cxx/pattern/namepatternconverter.h	19;"	d
+_LOG4CXX_PATTERN_NAME_ABBREVIATOR	log4cxx/pattern/nameabbreviator.h	19;"	d
+_LOG4CXX_PATTERN_NDC_PATTERN_CONVERTER	log4cxx/pattern/ndcpatternconverter.h	19;"	d
+_LOG4CXX_PATTERN_PATTERN_CONVERTER_H	log4cxx/pattern/patternconverter.h	19;"	d
+_LOG4CXX_PATTERN_PROPERTIES_PATTERN_CONVERTER	log4cxx/pattern/propertiespatternconverter.h	19;"	d
+_LOG4CXX_PATTERN_RELATIVE_TIME_PATTERN_CONVERTER	log4cxx/pattern/relativetimepatternconverter.h	19;"	d
+_LOG4CXX_PATTERN_THREAD_PATTERN_CONVERTER	log4cxx/pattern/threadpatternconverter.h	19;"	d
+_LOG4CXX_PATTERN_THROWABLE_INFORMATION_PATTERN_CONVERTER	log4cxx/pattern/throwableinformationpatternconverter.h	19;"	d
+_LOG4CXX_PORTABILITY_H	log4cxx/portability.h	19;"	d
+_LOG4CXX_PROPERTY_CONFIGURATOR_H	log4cxx/propertyconfigurator.h	19;"	d
+_LOG4CXX_PROVISION_NODE_H	log4cxx/provisionnode.h	19;"	d
+_LOG4CXX_ROLLING_ACTION_H	log4cxx/rolling/action.h	19;"	d
+_LOG4CXX_ROLLING_FILE_APPENDER_H	log4cxx/rollingfileappender.h	18;"	d
+_LOG4CXX_ROLLING_FILE_RENAME_ACTION_H	log4cxx/rolling/filerenameaction.h	19;"	d
+_LOG4CXX_ROLLING_FILTER_BASED_TRIGGERING_POLICY_H	log4cxx/rolling/filterbasedtriggeringpolicy.h	19;"	d
+_LOG4CXX_ROLLING_FIXED_WINDOW_ROLLING_POLICY_H	log4cxx/rolling/fixedwindowrollingpolicy.h	19;"	d
+_LOG4CXX_ROLLING_GZ_COMPRESS_ACTION_H	log4cxx/rolling/gzcompressaction.h	19;"	d
+_LOG4CXX_ROLLING_MANUAL_TRIGGERING_POLICY_H	log4cxx/rolling/manualtriggeringpolicy.h	19;"	d
+_LOG4CXX_ROLLING_ROLLING_FILE_APPENDER_H	log4cxx/rolling/rollingfileappender.h	19;"	d
+_LOG4CXX_ROLLING_ROLLING_FILE_APPENDER_SKELETON_H	log4cxx/rolling/rollingfileappenderskeleton.h	19;"	d
+_LOG4CXX_ROLLING_ROLLING_POLICY_BASE_H	log4cxx/rolling/rollingpolicybase.h	19;"	d
+_LOG4CXX_ROLLING_ROLLING_POLICY_H	log4cxx/rolling/rollingpolicy.h	19;"	d
+_LOG4CXX_ROLLING_ROLLOVER_DESCRIPTION_H	log4cxx/rolling/rolloverdescription.h	19;"	d
+_LOG4CXX_ROLLING_SIZE_BASED_TRIGGERING_POLICY_H	log4cxx/rolling/sizebasedtriggeringpolicy.h	19;"	d
+_LOG4CXX_ROLLING_TIME_BASED_ROLLING_POLICY_H	log4cxx/rolling/timebasedrollingpolicy.h	20;"	d
+_LOG4CXX_ROLLING_TRIGGER_POLICY_H	log4cxx/rolling/triggeringpolicy.h	20;"	d
+_LOG4CXX_ROLLING_ZIP_COMPRESS_ACTION_H	log4cxx/rolling/zipcompressaction.h	19;"	d
+_LOG4CXX_SIMPLE_LAYOUT_H	log4cxx/simplelayout.h	19;"	d
+_LOG4CXX_SPI_APPENDER_ATTACHABLE_H_	log4cxx/spi/appenderattachable.h	19;"	d
+_LOG4CXX_SPI_CONFIGURATOR_H	log4cxx/spi/configurator.h	19;"	d
+_LOG4CXX_SPI_DEFAULT_REPOSITORY_SELECTOR_H	log4cxx/spi/defaultrepositoryselector.h	19;"	d
+_LOG4CXX_SPI_ERROR_HANDLER_H	log4cxx/spi/errorhandler.h	19;"	d
+_LOG4CXX_SPI_FILTER_H	log4cxx/spi/filter.h	19;"	d
+_LOG4CXX_SPI_HIERARCHY_EVENT_LISTENER_H	log4cxx/spi/hierarchyeventlistener.h	19;"	d
+_LOG4CXX_SPI_LOCATION_LOCATIONINFO_H	log4cxx/spi/location/locationinfo.h	19;"	d
+_LOG4CXX_SPI_LOGGERFACTORY_H	log4cxx/spi/loggerfactory.h	19;"	d
+_LOG4CXX_SPI_LOGGING_EVENT_H	log4cxx/spi/loggingevent.h	19;"	d
+_LOG4CXX_SPI_LOG_REPOSITORY_H	log4cxx/spi/loggerrepository.h	19;"	d
+_LOG4CXX_SPI_OPTION_HANDLER_H	log4cxx/spi/optionhandler.h	19;"	d
+_LOG4CXX_SPI_REPOSITORY_SELECTOR_H	log4cxx/spi/repositoryselector.h	19;"	d
+_LOG4CXX_SPI_ROOT_LOGGER_H	log4cxx/spi/rootlogger.h	19;"	d
+_LOG4CXX_SPI_TRIGGERING_EVENT_EVALUATOR_H	log4cxx/spi/triggeringeventevaluator.h	19;"	d
+_LOG4CXX_STREAM_H	log4cxx/stream.h	19;"	d
+_LOG4CXX_STRING_H	log4cxx/logstring.h	19;"	d
+_LOG4CXX_SYSLOG_WRITER_H	log4cxx/helpers/syslogwriter.h	19;"	d
+_LOG4CXX_TTCC_LAYOUT_H	log4cxx/ttcclayout.h	19;"	d
+_LOG4CXX_VARIA_FALLBACK_ERROR_HANDLER_H	log4cxx/varia/fallbackerrorhandler.h	19;"	d
+_LOG4CXX_WRITER_APPENDER_H	log4cxx/writerappender.h	19;"	d
+_LOG4CXX_XML_DOM_CONFIGURATOR_H	log4cxx/xml/domconfigurator.h	19;"	d
+_LOG4CXX_XML_LAYOUT_H	log4cxx/xml/xmllayout.h	19;"	d
+__LOG4CXX_FUNC__	log4cxx/spi/location/locationinfo.h	121;"	d
+__LOG4CXX_FUNC__	log4cxx/spi/location/locationinfo.h	129;"	d
+aai	log4cxx/logger.h	/^        helpers::AppenderAttachableImplPtr aai;$/;"	m	class:log4cxx::Logger
+abbreviator	log4cxx/pattern/namepatternconverter.h	/^  const NameAbbreviatorPtr abbreviator;$/;"	m	class:log4cxx::pattern::NamePatternConverter
+acceptOnMatch	log4cxx/filter/andfilter.h	/^            bool acceptOnMatch;$/;"	m	class:log4cxx::filter::AndFilter
+acceptOnMatch	log4cxx/filter/expressionfilter.h	/^            bool acceptOnMatch;$/;"	m	class:log4cxx::filter::ExpressionFilter
+acceptOnMatch	log4cxx/filter/levelmatchfilter.h	/^                        bool acceptOnMatch;$/;"	m	class:log4cxx::filter::LevelMatchFilter
+acceptOnMatch	log4cxx/filter/levelrangefilter.h	/^                        bool acceptOnMatch;$/;"	m	class:log4cxx::filter::LevelRangeFilter
+acceptOnMatch	log4cxx/filter/stringmatchfilter.h	/^                        bool acceptOnMatch;$/;"	m	class:log4cxx::filter::StringMatchFilter
+activateOptions	log4cxx/appenderskeleton.h	/^                virtual void activateOptions(log4cxx::helpers::Pool& \/* pool *\/) {}$/;"	f	class:log4cxx::AppenderSkeleton
+activateOptions	log4cxx/htmllayout.h	/^                virtual void activateOptions(log4cxx::helpers::Pool& \/* p *\/) {}$/;"	f	class:log4cxx::HTMLLayout
+activateOptions	log4cxx/simplelayout.h	/^                virtual void activateOptions(log4cxx::helpers::Pool& \/* p *\/) {}$/;"	f	class:log4cxx::SimpleLayout
+activateOptions	log4cxx/xml/xmllayout.h	/^                        void activateOptions(log4cxx::helpers::Pool& \/* p *\/) { }$/;"	f	class:log4cxx::xml::XMLLayout
+activeConnections	log4cxx/net/telnetappender.h	/^                        size_t activeConnections;$/;"	m	class:log4cxx::net::TelnetAppender
+activeFileName	log4cxx/rolling/rolloverdescription.h	/^          LogString activeFileName;$/;"	m	class:log4cxx::rolling::RolloverDescription
+additive	log4cxx/logger.h	/^                bool additive;$/;"	m	class:log4cxx::Logger
+address	log4cxx/helpers/datagrampacket.h	/^                        InetAddressPtr address;$/;"	m	class:log4cxx::helpers::DatagramPacket
+address	log4cxx/helpers/datagramsocket.h	/^                        InetAddressPtr address;$/;"	m	class:log4cxx::helpers::DatagramSocket
+address	log4cxx/helpers/socket.h	/^                        InetAddressPtr address;$/;"	m	class:log4cxx::helpers::Socket
+address	log4cxx/helpers/syslogwriter.h	/^                        InetAddressPtr address;$/;"	m	class:log4cxx::helpers::SyslogWriter
+address	log4cxx/net/socketappenderskeleton.h	/^                helpers::InetAddressPtr address;$/;"	m	class:log4cxx::net::SocketAppenderSkeleton
+alive	log4cxx/helpers/thread.h	/^                            volatile unsigned int* alive;$/;"	m	class:log4cxx::helpers::Thread::LaunchStatus
+alive	log4cxx/helpers/thread.h	/^                        volatile unsigned int alive;$/;"	m	class:log4cxx::helpers::Thread
+append	log4cxx/rolling/rolloverdescription.h	/^          bool append;$/;"	m	class:log4cxx::rolling::RolloverDescription
+appenderList	log4cxx/helpers/appenderattachableimpl.h	/^            AppenderList  appenderList;$/;"	m	class:log4cxx::helpers::AppenderAttachableImpl
+appenders	log4cxx/asyncappender.h	/^                helpers::AppenderAttachableImplPtr appenders;$/;"	m	class:log4cxx::AsyncAppender
+apr_thread_t	log4cxx/helpers/thread.h	/^    typedef struct apr_thread_t apr_thread_t;$/;"	t	typeref:struct:apr_thread_t
+array	log4cxx/helpers/bytearrayoutputstream.h	/^                 ByteList array;$/;"	m	class:log4cxx::helpers::ByteArrayOutputStream
+array	log4cxx/helpers/socketoutputstream.h	/^                        ByteList array;$/;"	m	class:log4cxx::helpers::SocketOutputStream
+asynchronous	log4cxx/rolling/rolloverdescription.h	/^          ActionPtr asynchronous;$/;"	m	class:log4cxx::rolling::RolloverDescription
+backup	log4cxx/varia/fallbackerrorhandler.h	/^                        AppenderPtr backup;$/;"	m	class:log4cxx::varia::FallbackErrorHandler
+base	log4cxx/helpers/bytebuffer.h	/^                  char* base;$/;"	m	class:log4cxx::helpers::ByteBuffer
+bcc	log4cxx/net/smtpappender.h	/^                        LogString bcc;$/;"	m	class:log4cxx::net::SMTPAppender
+blocking	log4cxx/asyncappender.h	/^                bool blocking;$/;"	m	class:log4cxx::AsyncAppender
+buf	log4cxx/helpers/bufferedoutputstream.h	/^                  LogString buf;$/;"	m	class:log4cxx::helpers::BufferedOutputStream
+buf	log4cxx/helpers/bufferedwriter.h	/^                  LogString buf;$/;"	m	class:log4cxx::helpers::BufferedWriter
+buf	log4cxx/helpers/bytearrayinputstream.h	/^              ByteList buf;$/;"	m	class:log4cxx::helpers::ByteArrayInputStream
+buf	log4cxx/helpers/datagrampacket.h	/^                        void * buf;$/;"	m	class:log4cxx::helpers::DatagramPacket
+buf	log4cxx/helpers/messagebuffer.h	/^        std::basic_string<UniChar> buf;$/;"	m	class:log4cxx::helpers::UniCharMessageBuffer
+buf	log4cxx/helpers/messagebuffer.h	/^        std::basic_string<char> buf;$/;"	m	class:log4cxx::helpers::CharMessageBuffer
+buf	log4cxx/helpers/messagebuffer.h	/^        std::basic_string<wchar_t> buf;$/;"	m	class:log4cxx::helpers::WideMessageBuffer
+buffer	log4cxx/asyncappender.h	/^                LoggingEventList buffer;$/;"	m	class:log4cxx::AsyncAppender
+buffer	log4cxx/db/odbcappender.h	/^                        std::list<spi::LoggingEventPtr> buffer;$/;"	m	class:log4cxx::db::ODBCAppender
+bufferMutex	log4cxx/asyncappender.h	/^                ::log4cxx::helpers::Mutex bufferMutex;$/;"	m	class:log4cxx::AsyncAppender
+bufferNotEmpty	log4cxx/asyncappender.h	/^                ::log4cxx::helpers::Condition bufferNotEmpty;$/;"	m	class:log4cxx::AsyncAppender
+bufferNotFull	log4cxx/asyncappender.h	/^                ::log4cxx::helpers::Condition bufferNotFull;$/;"	m	class:log4cxx::AsyncAppender
+bufferSize	log4cxx/asyncappender.h	/^                int bufferSize;$/;"	m	class:log4cxx::AsyncAppender
+bufferSize	log4cxx/db/odbcappender.h	/^                        size_t bufferSize;$/;"	m	class:log4cxx::db::ODBCAppender
+bufferSize	log4cxx/fileappender.h	/^                int bufferSize;$/;"	m	class:log4cxx::FileAppender
+bufferSize	log4cxx/net/smtpappender.h	/^                        int bufferSize; \/\/ 512$/;"	m	class:log4cxx::net::SMTPAppender
+bufferedIO	log4cxx/fileappender.h	/^                bool bufferedIO;$/;"	m	class:log4cxx::FileAppender
+cache	log4cxx/helpers/cacheddateformat.h	/^            mutable LogString cache;$/;"	m	class:log4cxx::pattern::CachedDateFormat
+cap	log4cxx/helpers/bytebuffer.h	/^                  size_t cap;$/;"	m	class:log4cxx::helpers::ByteBuffer
+categoryPrefixing	log4cxx/ttcclayout.h	/^                  bool categoryPrefixing;$/;"	m	class:log4cxx::TTCCLayout
+cb	log4cxx/net/smtpappender.h	/^                        helpers::CyclicBuffer cb;$/;"	m	class:log4cxx::net::SMTPAppender
+cbuf	log4cxx/helpers/messagebuffer.h	/^        CharMessageBuffer cbuf;$/;"	m	class:log4cxx::helpers::MessageBuffer
+cc	log4cxx/net/smtpappender.h	/^                        LogString cc;$/;"	m	class:log4cxx::net::SMTPAppender
+classDescriptions	log4cxx/helpers/objectoutputstream.h	/^                  ClassDescriptionMap* classDescriptions;$/;"	m	class:log4cxx::helpers::ObjectOutputStream
+className	log4cxx/filter/locationinfofilter.h	/^            LogString className;$/;"	m	class:log4cxx::filter::LocationInfoFilter
+close	log4cxx/nt/outputdebugstringappender.h	/^                        virtual void close() {}$/;"	f	class:log4cxx::nt::OutputDebugStringAppender
+closed	log4cxx/appenderskeleton.h	/^                bool closed;$/;"	m	class:log4cxx::AppenderSkeleton
+complete	log4cxx/rolling/action.h	/^        bool complete;$/;"	m	class:log4cxx::rolling::Action
+condition	log4cxx/helpers/condition.h	/^                        apr_thread_cond_t* condition;$/;"	m	class:log4cxx::helpers::Condition
+config	log4cxx/config/propertysetter.h	/^        namespace config$/;"	n	namespace:log4cxx
+configured	log4cxx/hierarchy.h	/^            bool configured;$/;"	m	class:log4cxx::Hierarchy
+connection	log4cxx/db/odbcappender.h	/^                        SQLHDBC connection;$/;"	m	class:log4cxx::db::ODBCAppender
+connections	log4cxx/net/telnetappender.h	/^                        ConnectionList connections;$/;"	m	class:log4cxx::net::TelnetAppender
+contextPrinting	log4cxx/ttcclayout.h	/^                  bool contextPrinting;$/;"	m	class:log4cxx::TTCCLayout
+conversionPattern	log4cxx/patternlayout.h	/^                LogString conversionPattern;$/;"	m	class:log4cxx::PatternLayout
+convertInFixToPostFix	log4cxx/filter/expressionfilter.h	/^            bool convertInFixToPostFix;$/;"	m	class:log4cxx::filter::ExpressionFilter
+convertInFixToPostFix	log4cxx/filter/locationinfofilter.h	/^            bool convertInFixToPostFix;$/;"	m	class:log4cxx::filter::LocationInfoFilter
+count	log4cxx/asyncappender.h	/^                    int count;$/;"	m	class:log4cxx::AsyncAppender::DiscardSummary
+count	log4cxx/helpers/bufferedoutputstream.h	/^                  size_t count;$/;"	m	class:log4cxx::helpers::BufferedOutputStream
+country	log4cxx/helpers/locale.h	/^                        const LogString country;$/;"	m	class:log4cxx::helpers::Locale
+current	log4cxx/helpers/bytebuffer.h	/^                  inline char* current() { return base + pos; }$/;"	f	class:log4cxx::helpers::ByteBuffer
+current	log4cxx/helpers/bytebuffer.h	/^                  inline const char* current() const { return base + pos; }$/;"	f	class:log4cxx::helpers::ByteBuffer
+data	log4cxx/helpers/bytebuffer.h	/^                  inline char* data() { return base; }$/;"	f	class:log4cxx::helpers::ByteBuffer
+data	log4cxx/helpers/bytebuffer.h	/^                  inline const char* data() const { return base; }$/;"	f	class:log4cxx::helpers::ByteBuffer
+data	log4cxx/helpers/thread.h	/^                            void* data;$/;"	m	class:log4cxx::helpers::Thread::LaunchPackage
+databasePassword	log4cxx/db/odbcappender.h	/^                        LogString databasePassword;$/;"	m	class:log4cxx::db::ODBCAppender
+databaseURL	log4cxx/db/odbcappender.h	/^                        LogString databaseURL;$/;"	m	class:log4cxx::db::ODBCAppender
+databaseUser	log4cxx/db/odbcappender.h	/^                        LogString databaseUser;$/;"	m	class:log4cxx::db::ODBCAppender
+dateFormat	log4cxx/helpers/datelayout.h	/^                        DateFormatPtr dateFormat;$/;"	m	class:log4cxx::helpers::DateLayout
+dateFormat	log4cxx/htmllayout.h	/^                helpers::ISO8601DateFormat dateFormat;$/;"	m	class:log4cxx::HTMLLayout
+dateFormatOption	log4cxx/helpers/datelayout.h	/^                        LogString dateFormatOption;$/;"	m	class:log4cxx::helpers::DateLayout
+datePattern	log4cxx/dailyrollingfileappender.h	/^  LogString datePattern;$/;"	m	class:log4cxx::DailyRollingFileAppender
+db	log4cxx/db/odbcappender.h	/^        namespace db$/;"	n	namespace:log4cxx
+debugEnabled	log4cxx/helpers/loglog.h	/^                        bool debugEnabled;$/;"	m	class:log4cxx::helpers::LogLog
+dec	log4cxx/helpers/inputstreamreader.h	/^                  CharsetDecoderPtr dec;$/;"	m	class:log4cxx::helpers::InputStreamReader
+decide	log4cxx/filter/denyallfilter.h	/^                        FilterDecision decide(const spi::LoggingEventPtr& \/* event *\/) const$/;"	f	class:log4cxx::filter::DenyAllFilter
+defaultFactory	log4cxx/hierarchy.h	/^            spi::LoggerFactoryPtr defaultFactory;$/;"	m	class:log4cxx::Hierarchy
+delay	log4cxx/helpers/filewatchdog.h	/^                        long delay;$/;"	m	class:log4cxx::helpers::FileWatchdog
+deleteSource	log4cxx/rolling/gzcompressaction.h	/^           bool deleteSource;$/;"	m	class:log4cxx::rolling::GZCompressAction
+deleteSource	log4cxx/rolling/zipcompressaction.h	/^           bool deleteSource;$/;"	m	class:log4cxx::rolling::ZipCompressAction
+delim	log4cxx/helpers/stringtokenizer.h	/^                        LogString delim;$/;"	m	class:log4cxx::helpers::StringTokenizer
+destination	log4cxx/rolling/filerenameaction.h	/^           const File destination;$/;"	m	class:log4cxx::rolling::FileRenameAction
+destination	log4cxx/rolling/gzcompressaction.h	/^           const File destination;$/;"	m	class:log4cxx::rolling::GZCompressAction
+destination	log4cxx/rolling/zipcompressaction.h	/^           const File destination;$/;"	m	class:log4cxx::rolling::ZipCompressAction
+df	log4cxx/pattern/datepatternconverter.h	/^  log4cxx::helpers::DateFormatPtr df;$/;"	m	class:log4cxx::pattern::DatePatternConverter
+digits	log4cxx/helpers/cacheddateformat.h	/^               static const logchar digits[];$/;"	m	class:log4cxx::pattern::CachedDateFormat
+discardMap	log4cxx/asyncappender.h	/^                DiscardMap* discardMap;$/;"	m	class:log4cxx::AsyncAppender
+dispatcher	log4cxx/asyncappender.h	/^                helpers::Thread dispatcher;$/;"	m	class:log4cxx::AsyncAppender
+ds	log4cxx/helpers/syslogwriter.h	/^                        DatagramSocketPtr ds;$/;"	m	class:log4cxx::helpers::SyslogWriter
+ea	log4cxx/helpers/cyclicbuffer.h	/^                        log4cxx::spi::LoggingEventList ea;$/;"	m	class:log4cxx::helpers::CyclicBuffer
+emittedNoAppenderWarning	log4cxx/hierarchy.h	/^            bool emittedNoAppenderWarning;$/;"	m	class:log4cxx::Hierarchy
+emittedNoResourceBundleWarning	log4cxx/hierarchy.h	/^            bool emittedNoResourceBundleWarning;$/;"	m	class:log4cxx::Hierarchy
+enabled	log4cxx/stream.h	/^            bool enabled;$/;"	m	class:log4cxx::logstream_base
+enc	log4cxx/helpers/outputstreamwriter.h	/^                  CharsetEncoderPtr enc;$/;"	m	class:log4cxx::helpers::OutputStreamWriter
+encoder	log4cxx/net/telnetappender.h	/^                        log4cxx::helpers::CharsetEncoderPtr encoder;$/;"	m	class:log4cxx::net::TelnetAppender
+encoding	log4cxx/net/telnetappender.h	/^                        LogString encoding;$/;"	m	class:log4cxx::net::TelnetAppender
+encoding	log4cxx/writerappender.h	/^                LogString encoding;$/;"	m	class:log4cxx::WriterAppender
+env	log4cxx/db/odbcappender.h	/^                        SQLHENV env;$/;"	m	class:log4cxx::db::ODBCAppender
+error	log4cxx/varia/fallbackerrorhandler.h	/^                        void error(const LogString& \/* message *\/) const {}$/;"	f	class:log4cxx::varia::FallbackErrorHandler
+errorHandler	log4cxx/appenderskeleton.h	/^                spi::ErrorHandlerPtr errorHandler;$/;"	m	class:log4cxx::AppenderSkeleton
+evaluator	log4cxx/net/smtpappender.h	/^                        spi::TriggeringEventEvaluatorPtr evaluator;$/;"	m	class:log4cxx::net::SMTPAppender
+expiration	log4cxx/helpers/cacheddateformat.h	/^            const int expiration;$/;"	m	class:log4cxx::pattern::CachedDateFormat
+explicitActiveFile	log4cxx/rolling/fixedwindowrollingpolicy.h	/^          bool explicitActiveFile;$/;"	m	class:log4cxx::rolling::FixedWindowRollingPolicy
+expression	log4cxx/filter/expressionfilter.h	/^            LogString expression;$/;"	m	class:log4cxx::filter::ExpressionFilter
+expression	log4cxx/filter/locationinfofilter.h	/^            LogString expression;$/;"	m	class:log4cxx::filter::LocationInfoFilter
+expressionRule	log4cxx/filter/expressionfilter.h	/^                      log4cxx::rule::RulePtr expressionRule;$/;"	m	class:log4cxx::filter::ExpressionFilter
+expressionRule	log4cxx/filter/locationinfofilter.h	/^                      log4cxx::rule::RulePtr expressionRule;$/;"	m	class:log4cxx::filter::LocationInfoFilter
+facilityPrinting	log4cxx/net/syslogappender.h	/^                        bool facilityPrinting;$/;"	m	class:log4cxx::net::SyslogAppender
+facilityStr	log4cxx/net/syslogappender.h	/^                        LogString facilityStr;$/;"	m	class:log4cxx::net::SyslogAppender
+file	log4cxx/helpers/filewatchdog.h	/^                        File file;$/;"	m	class:log4cxx::helpers::FileWatchdog
+fileAppend	log4cxx/fileappender.h	/^                bool fileAppend;$/;"	m	class:log4cxx::FileAppender
+fileLength	log4cxx/rolling/rollingfileappenderskeleton.h	/^          size_t fileLength;$/;"	m	class:log4cxx::rolling::RollingFileAppenderSkeleton
+fileName	log4cxx/fileappender.h	/^                LogString fileName;$/;"	m	class:log4cxx::FileAppender
+fileName	log4cxx/spi/location/locationinfo.h	/^        const char * fileName;$/;"	m	class:log4cxx::spi::LocationInfo
+fileNamePatternStr	log4cxx/rolling/rollingpolicybase.h	/^          LogString fileNamePatternStr;$/;"	m	class:log4cxx::rolling::RollingPolicyBase
+filePrinting	log4cxx/ttcclayout.h	/^                  bool filePrinting;$/;"	m	class:log4cxx::TTCCLayout
+fileptr	log4cxx/helpers/fileinputstream.h	/^                  apr_file_t* fileptr;$/;"	m	class:log4cxx::helpers::FileInputStream
+fileptr	log4cxx/helpers/fileoutputstream.h	/^                  apr_file_t* fileptr;$/;"	m	class:log4cxx::helpers::FileOutputStream
+fillchar	log4cxx/stream.h	/^            int fillchar;$/;"	m	class:log4cxx::logstream_base
+fillset	log4cxx/stream.h	/^            bool fillset;$/;"	m	class:log4cxx::logstream_base
+filter	log4cxx/filter/andfilter.h	/^    namespace filter$/;"	n	namespace:log4cxx
+filter	log4cxx/filter/denyallfilter.h	/^        namespace filter$/;"	n	namespace:log4cxx
+filter	log4cxx/filter/expressionfilter.h	/^    namespace filter$/;"	n	namespace:log4cxx
+filter	log4cxx/filter/levelmatchfilter.h	/^        namespace filter$/;"	n	namespace:log4cxx
+filter	log4cxx/filter/levelrangefilter.h	/^        namespace filter$/;"	n	namespace:log4cxx
+filter	log4cxx/filter/locationinfofilter.h	/^    namespace filter$/;"	n	namespace:log4cxx
+filter	log4cxx/filter/mapfilter.h	/^    namespace filter$/;"	n	namespace:log4cxx
+filter	log4cxx/filter/propertyfilter.h	/^    namespace filter$/;"	n	namespace:log4cxx
+filter	log4cxx/filter/stringmatchfilter.h	/^        namespace filter$/;"	n	namespace:log4cxx
+first	log4cxx/helpers/cyclicbuffer.h	/^                        int first;$/;"	m	class:log4cxx::helpers::CyclicBuffer
+firstTime	log4cxx/helpers/onlyonceerrorhandler.h	/^                        mutable bool firstTime;$/;"	m	class:log4cxx::helpers::OnlyOnceErrorHandler
+formatter	log4cxx/helpers/cacheddateformat.h	/^            log4cxx::helpers::DateFormatPtr formatter;$/;"	m	class:log4cxx::pattern::CachedDateFormat
+from	log4cxx/net/smtpappender.h	/^                        LogString from;$/;"	m	class:log4cxx::net::SMTPAppender
+getAcceptOnMatch	log4cxx/filter/levelmatchfilter.h	/^                        inline bool getAcceptOnMatch() const$/;"	f	class:log4cxx::filter::LevelMatchFilter
+getAcceptOnMatch	log4cxx/filter/levelrangefilter.h	/^                        inline bool getAcceptOnMatch() const$/;"	f	class:log4cxx::filter::LevelRangeFilter
+getAcceptOnMatch	log4cxx/filter/stringmatchfilter.h	/^                        inline bool getAcceptOnMatch() const$/;"	f	class:log4cxx::filter::StringMatchFilter
+getAddress	log4cxx/helpers/datagrampacket.h	/^                        inline InetAddressPtr getAddress() const$/;"	f	class:log4cxx::helpers::DatagramPacket
+getAppend	log4cxx/fileappender.h	/^                inline bool getAppend() const { return fileAppend; }$/;"	f	class:log4cxx::FileAppender
+getBackupAppender	log4cxx/varia/fallbackerrorhandler.h	/^                        const AppenderPtr& getBackupAppender() const$/;"	f	class:log4cxx::varia::FallbackErrorHandler
+getBufferSize	log4cxx/db/odbcappender.h	/^                        inline size_t getBufferSize() const$/;"	f	class:log4cxx::db::ODBCAppender
+getBufferSize	log4cxx/fileappender.h	/^               inline  int getBufferSize() const { return bufferSize; }$/;"	f	class:log4cxx::FileAppender
+getBufferSize	log4cxx/net/smtpappender.h	/^                        inline int getBufferSize() const$/;"	f	class:log4cxx::net::SMTPAppender
+getBufferedIO	log4cxx/fileappender.h	/^                inline bool getBufferedIO() const { return bufferedIO; }$/;"	f	class:log4cxx::FileAppender
+getCategoryPrefixing	log4cxx/ttcclayout.h	/^                inline bool getCategoryPrefixing() const$/;"	f	class:log4cxx::TTCCLayout
+getContentType	log4cxx/htmllayout.h	/^                virtual LogString getContentType() const { return LOG4CXX_STR("text\/html"); }$/;"	f	class:log4cxx::HTMLLayout
+getContextPrinting	log4cxx/ttcclayout.h	/^                inline bool getContextPrinting() const$/;"	f	class:log4cxx::TTCCLayout
+getConversionPattern	log4cxx/patternlayout.h	/^                inline LogString getConversionPattern() const$/;"	f	class:log4cxx::PatternLayout
+getData	log4cxx/helpers/datagrampacket.h	/^                        inline void * getData() const$/;"	f	class:log4cxx::helpers::DatagramPacket
+getDateFormat	log4cxx/helpers/datelayout.h	/^                        inline const LogString& getDateFormat() const$/;"	f	class:log4cxx::helpers::DateLayout
+getErrorHandler	log4cxx/appenderskeleton.h	/^                const spi::ErrorHandlerPtr& getErrorHandler() const { return errorHandler; }$/;"	f	class:log4cxx::AppenderSkeleton
+getFacility	log4cxx/net/syslogappender.h	/^                        inline LogString getFacility() const$/;"	f	class:log4cxx::net::SyslogAppender
+getFacilityPrinting	log4cxx/net/syslogappender.h	/^                        inline bool getFacilityPrinting() const$/;"	f	class:log4cxx::net::SyslogAppender
+getFile	log4cxx/fileappender.h	/^                inline LogString getFile() const { return fileName; }$/;"	f	class:log4cxx::FileAppender
+getFilePrinting	log4cxx/ttcclayout.h	/^                inline bool getFilePrinting() const$/;"	f	class:log4cxx::TTCCLayout
+getFilter	log4cxx/appenderskeleton.h	/^                spi::FilterPtr getFilter() const { return headFilter; }$/;"	f	class:log4cxx::AppenderSkeleton
+getFirstFilter	log4cxx/appenderskeleton.h	/^                const spi::FilterPtr& getFirstFilter() const { return headFilter; }$/;"	f	class:log4cxx::AppenderSkeleton
+getID	log4cxx/helpers/timezone.h	/^            const LogString getID() const {$/;"	f	class:log4cxx::helpers::TimeZone
+getImmediateFlush	log4cxx/writerappender.h	/^                bool getImmediateFlush() const { return immediateFlush; }$/;"	f	class:log4cxx::WriterAppender
+getInetAddress	log4cxx/helpers/datagramsocket.h	/^                        inline InetAddressPtr getInetAddress() const$/;"	f	class:log4cxx::helpers::DatagramSocket
+getLayout	log4cxx/appenderskeleton.h	/^                LayoutPtr getLayout() const { return layout; }$/;"	f	class:log4cxx::AppenderSkeleton
+getLength	log4cxx/helpers/datagrampacket.h	/^                        inline int getLength() const$/;"	f	class:log4cxx::helpers::DatagramPacket
+getLevel	log4cxx/spi/loggingevent.h	/^                        inline const LevelPtr& getLevel() const$/;"	f	class:log4cxx::spi::LoggingEvent
+getLevelMax	log4cxx/filter/levelrangefilter.h	/^                        const LevelPtr& getLevelMax() const$/;"	f	class:log4cxx::filter::LevelRangeFilter
+getLevelMin	log4cxx/filter/levelrangefilter.h	/^                        const LevelPtr& getLevelMin() const$/;"	f	class:log4cxx::filter::LevelRangeFilter
+getLocalAddress	log4cxx/helpers/datagramsocket.h	/^                        inline InetAddressPtr getLocalAddress() const$/;"	f	class:log4cxx::helpers::DatagramSocket
+getLocalPort	log4cxx/helpers/datagramsocket.h	/^                        inline int getLocalPort() const$/;"	f	class:log4cxx::helpers::DatagramSocket
+getLocationInfo	log4cxx/htmllayout.h	/^                inline bool getLocationInfo() const$/;"	f	class:log4cxx::HTMLLayout
+getLocationInfo	log4cxx/net/socketappenderskeleton.h	/^                bool getLocationInfo() const$/;"	f	class:log4cxx::net::SocketAppenderSkeleton
+getLocationInfo	log4cxx/net/sockethubappender.h	/^                        inline bool getLocationInfo() const$/;"	f	class:log4cxx::net::SocketHubAppender
+getLocationInfo	log4cxx/xml/xmllayout.h	/^                        inline bool getLocationInfo() const$/;"	f	class:log4cxx::xml::XMLLayout
+getLocationInformation	log4cxx/spi/loggingevent.h	/^                        inline const log4cxx::spi::LocationInfo& getLocationInformation() const$/;"	f	class:log4cxx::spi::LoggingEvent
+getLog	log4cxx/nt/nteventlogappender.h	/^                        const LogString& getLog() const$/;"	f	class:log4cxx::nt::NTEventLogAppender
+getLoggerName	log4cxx/spi/loggingevent.h	/^                        inline const LogString& getLoggerName() const {$/;"	f	class:log4cxx::spi::LoggingEvent
+getMaxLength	log4cxx/pattern/formattinginfo.h	/^inline int getMaxLength() const {$/;"	f	class:log4cxx::pattern::FormattingInfo
+getMaxSize	log4cxx/helpers/cyclicbuffer.h	/^                        int getMaxSize() const$/;"	f	class:log4cxx::helpers::CyclicBuffer
+getMessage	log4cxx/spi/loggingevent.h	/^                        inline const LogString& getMessage() const$/;"	f	class:log4cxx::spi::LoggingEvent
+getMinLength	log4cxx/pattern/formattinginfo.h	/^inline int getMinLength() const {$/;"	f	class:log4cxx::pattern::FormattingInfo
+getMutex	log4cxx/helpers/appenderattachableimpl.h	/^            inline const log4cxx::helpers::Mutex& getMutex() const { return mutex; }$/;"	f	class:log4cxx::helpers::AppenderAttachableImpl
+getMutex	log4cxx/logger.h	/^        inline const log4cxx::helpers::Mutex& getMutex() const { return mutex; }$/;"	f	class:log4cxx::Logger
+getName	log4cxx/appenderskeleton.h	/^                LogString getName() const { return name; }$/;"	f	class:log4cxx::AppenderSkeleton
+getName	log4cxx/level.h	/^                        virtual LogString getName() const {$/;"	f	class:log4cxx::Level::LevelClass
+getName	log4cxx/logger.h	/^        const LogString getName() const { return name; }$/;"	f	class:log4cxx::Logger
+getOffset	log4cxx/helpers/datagrampacket.h	/^                        inline int getOffset() const$/;"	f	class:log4cxx::helpers::DatagramPacket
+getPassword	log4cxx/db/odbcappender.h	/^                        inline const LogString& getPassword() const$/;"	f	class:log4cxx::db::ODBCAppender
+getPort	log4cxx/helpers/datagrampacket.h	/^                        inline int getPort() const$/;"	f	class:log4cxx::helpers::DatagramPacket
+getPort	log4cxx/helpers/datagramsocket.h	/^                        inline int getPort() const$/;"	f	class:log4cxx::helpers::DatagramSocket
+getPort	log4cxx/net/socketappenderskeleton.h	/^                int getPort() const$/;"	f	class:log4cxx::net::SocketAppenderSkeleton
+getPort	log4cxx/net/sockethubappender.h	/^                        inline int getPort() const$/;"	f	class:log4cxx::net::SocketHubAppender
+getPort	log4cxx/net/telnetappender.h	/^                        int getPort() const$/;"	f	class:log4cxx::net::TelnetAppender
+getProperties	log4cxx/xml/xmllayout.h	/^                        inline bool getProperties() {$/;"	f	class:log4cxx::xml::XMLLayout
+getReconnectionDelay	log4cxx/net/socketappenderskeleton.h	/^                int getReconnectionDelay() const$/;"	f	class:log4cxx::net::SocketAppenderSkeleton
+getRemoteHost	log4cxx/net/socketappenderskeleton.h	/^                inline const LogString& getRemoteHost() const$/;"	f	class:log4cxx::net::SocketAppenderSkeleton
+getRenderedMessage	log4cxx/spi/loggingevent.h	/^                        inline const LogString& getRenderedMessage() const$/;"	f	class:log4cxx::spi::LoggingEvent
+getServer	log4cxx/nt/nteventlogappender.h	/^                        const LogString& getServer() const$/;"	f	class:log4cxx::nt::NTEventLogAppender
+getSource	log4cxx/nt/nteventlogappender.h	/^                        const LogString& getSource() const$/;"	f	class:log4cxx::nt::NTEventLogAppender
+getSql	log4cxx/db/odbcappender.h	/^                        inline const LogString& getSql() const$/;"	f	class:log4cxx::db::ODBCAppender
+getStringToMatch	log4cxx/filter/stringmatchfilter.h	/^                        inline const LogString& getStringToMatch() const$/;"	f	class:log4cxx::filter::StringMatchFilter
+getSyslogEquivalent	log4cxx/level.h	/^                inline int getSyslogEquivalent() const {$/;"	f	class:log4cxx::Level
+getSyslogHost	log4cxx/net/syslogappender.h	/^                        inline const LogString& getSyslogHost() const$/;"	f	class:log4cxx::net::SyslogAppender
+getThreadName	log4cxx/spi/loggingevent.h	/^                        inline const LogString& getThreadName() const {$/;"	f	class:log4cxx::spi::LoggingEvent
+getThreadPrinting	log4cxx/ttcclayout.h	/^                inline bool getThreadPrinting() const$/;"	f	class:log4cxx::TTCCLayout
+getThreshold	log4cxx/appenderskeleton.h	/^                const LevelPtr& getThreshold() { return threshold; }$/;"	f	class:log4cxx::AppenderSkeleton
+getTime	log4cxx/helpers/date.h	/^      inline log4cxx_time_t getTime() const {$/;"	f	class:log4cxx::helpers::Date
+getTimeStamp	log4cxx/spi/loggingevent.h	/^                        inline log4cxx_time_t getTimeStamp() const$/;"	f	class:log4cxx::spi::LoggingEvent
+getTimeZone	log4cxx/helpers/datelayout.h	/^                        inline const LogString& getTimeZone() const$/;"	f	class:log4cxx::helpers::DateLayout
+getTitle	log4cxx/htmllayout.h	/^                inline const LogString& getTitle() const$/;"	f	class:log4cxx::HTMLLayout
+getURL	log4cxx/db/odbcappender.h	/^                        inline const LogString& getURL() const$/;"	f	class:log4cxx::db::ODBCAppender
+getUser	log4cxx/db/odbcappender.h	/^                        inline const LogString& getUser() const$/;"	f	class:log4cxx::db::ODBCAppender
+guard	log4cxx/logmanager.h	/^        static void * guard;$/;"	m	class:log4cxx::LogManager
+hEventLog	log4cxx/nt/nteventlogappender.h	/^                        HANDLE hEventLog;$/;"	m	class:log4cxx::nt::NTEventLogAppender
+headFilter	log4cxx/appenderskeleton.h	/^                spi::FilterPtr headFilter;$/;"	m	class:log4cxx::AppenderSkeleton
+headFilter	log4cxx/filter/andfilter.h	/^            log4cxx::spi::FilterPtr headFilter;$/;"	m	class:log4cxx::filter::AndFilter
+headFilter	log4cxx/rolling/filterbasedtriggeringpolicy.h	/^  log4cxx::spi::FilterPtr headFilter;$/;"	m	class:log4cxx::rolling::FilterBasedTriggeringPolicy
+helpers	log4cxx/config/propertysetter.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/dailyrollingfileappender.h	/^  namespace helpers {$/;"	n	namespace:log4cxx
+helpers	log4cxx/file.h	/^                namespace helpers {$/;"	n	namespace:log4cxx
+helpers	log4cxx/fileappender.h	/^        namespace helpers {$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/absolutetimedateformat.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/appenderattachableimpl.h	/^    namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/aprinitializer.h	/^  namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/bufferedoutputstream.h	/^        namespace helpers {$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/bufferedwriter.h	/^        namespace helpers {$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/bytearrayinputstream.h	/^        namespace helpers {$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/bytearrayoutputstream.h	/^        namespace helpers {$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/bytebuffer.h	/^        namespace helpers {$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/charsetdecoder.h	/^        namespace helpers {$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/charsetencoder.h	/^        namespace helpers {$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/class.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/classregistration.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/condition.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/cyclicbuffer.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/datagrampacket.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/datagramsocket.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/date.h	/^   namespace helpers {$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/dateformat.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/datelayout.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/datetimedateformat.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/exception.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/fileinputstream.h	/^        namespace helpers {$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/fileoutputstream.h	/^        namespace helpers {$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/filewatchdog.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/inetaddress.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/inputstream.h	/^        namespace helpers {$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/inputstreamreader.h	/^        namespace helpers {$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/integer.h	/^   namespace helpers {$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/iso8601dateformat.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/loader.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/locale.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/loglog.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/messagebuffer.h	/^   namespace helpers {$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/mutex.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/object.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/objectimpl.h	/^   namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/objectoutputstream.h	/^        namespace helpers {$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/objectptr.h	/^    namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/onlyonceerrorhandler.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/optionconverter.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/outputstream.h	/^        namespace helpers {$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/outputstreamwriter.h	/^        namespace helpers {$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/pool.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/properties.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/propertyresourcebundle.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/reader.h	/^        namespace helpers {$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/relativetimedateformat.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/resourcebundle.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/serversocket.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/simpledateformat.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/socket.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/socketoutputstream.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/strftimedateformat.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/strictmath.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/stringhelper.h	/^    namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/stringtokenizer.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/synchronized.h	/^        namespace helpers {$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/syslogwriter.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/system.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/systemerrwriter.h	/^        namespace helpers {$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/systemoutwriter.h	/^        namespace helpers {$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/thread.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/threadlocal.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/threadspecificdata.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/timezone.h	/^   namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/transcoder.h	/^   namespace helpers {$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/transform.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/writer.h	/^        namespace helpers {$/;"	n	namespace:log4cxx
+helpers	log4cxx/helpers/xml.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/logger.h	/^    namespace helpers {$/;"	n	namespace:log4cxx
+helpers	log4cxx/net/sockethubappender.h	/^        namespace helpers {$/;"	n	namespace:log4cxx
+helpers	log4cxx/net/telnetappender.h	/^        namespace helpers {$/;"	n	namespace:log4cxx
+helpers	log4cxx/propertyconfigurator.h	/^   namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/rolling/filterbasedtriggeringpolicy.h	/^     namespace helpers {$/;"	n	namespace:log4cxx
+helpers	log4cxx/rolling/fixedwindowrollingpolicy.h	/^    namespace helpers {$/;"	n	namespace:log4cxx
+helpers	log4cxx/rolling/manualtriggeringpolicy.h	/^    namespace helpers {$/;"	n	namespace:log4cxx
+helpers	log4cxx/rolling/sizebasedtriggeringpolicy.h	/^    namespace helpers {$/;"	n	namespace:log4cxx
+helpers	log4cxx/spi/loggingevent.h	/^        namespace helpers$/;"	n	namespace:log4cxx
+helpers	log4cxx/writerappender.h	/^        namespace helpers {$/;"	n	namespace:log4cxx
+hostNameString	log4cxx/helpers/inetaddress.h	/^                        LogString hostNameString;$/;"	m	class:log4cxx::helpers::InetAddress
+id	log4cxx/helpers/timezone.h	/^            const LogString id;$/;"	m	class:log4cxx::helpers::TimeZone
+ignoresThrowable	log4cxx/htmllayout.h	/^                virtual bool ignoresThrowable() const$/;"	f	class:log4cxx::HTMLLayout
+ignoresThrowable	log4cxx/patternlayout.h	/^                virtual bool ignoresThrowable() const$/;"	f	class:log4cxx::PatternLayout
+ignoresThrowable	log4cxx/simplelayout.h	/^                bool ignoresThrowable() const { return true; }$/;"	f	class:log4cxx::SimpleLayout
+ignoresThrowable	log4cxx/ttcclayout.h	/^        virtual bool ignoresThrowable() const { return true; }$/;"	f	class:log4cxx::TTCCLayout
+ignoresThrowable	log4cxx/xml/xmllayout.h	/^                        virtual bool ignoresThrowable() const$/;"	f	class:log4cxx::xml::XMLLayout
+immediateFlush	log4cxx/writerappender.h	/^                bool immediateFlush;$/;"	m	class:log4cxx::WriterAppender
+in	log4cxx/helpers/inputstreamreader.h	/^                  InputStreamPtr in;$/;"	m	class:log4cxx::helpers::InputStreamReader
+initclear	log4cxx/stream.h	/^            } initset, initclear;$/;"	m	class:log4cxx::logstream_base	typeref:class:log4cxx::logstream_base::logstream_ios_base
+initialized	log4cxx/spi/configurator.h	/^         bool initialized;$/;"	m	class:log4cxx::spi::Configurator
+initset	log4cxx/stream.h	/^            } initset, initclear;$/;"	m	class:log4cxx::logstream_base	typeref:class:log4cxx::logstream_base::logstream_ios_base
+intValue	log4cxx/helpers/integer.h	/^      inline int intValue() const {$/;"	f	class:log4cxx::helpers::Integer
+interrupted	log4cxx/helpers/filewatchdog.h	/^                        volatile unsigned int interrupted;$/;"	m	class:log4cxx::helpers::FileWatchdog
+interrupted	log4cxx/rolling/action.h	/^        bool interrupted;$/;"	m	class:log4cxx::rolling::Action
+interruptedStatus	log4cxx/helpers/thread.h	/^                        volatile unsigned int interruptedStatus;$/;"	m	class:log4cxx::helpers::Thread
+ios_base_manip	log4cxx/helpers/messagebuffer.h	/^   typedef std::ios_base& (*ios_base_manip)(std::ios_base&);$/;"	t	class:log4cxx::helpers::std
+ipAddrString	log4cxx/helpers/inetaddress.h	/^                        LogString ipAddrString;$/;"	m	class:log4cxx::helpers::InetAddress
+isActive	log4cxx/helpers/thread.h	/^                        inline bool isActive() { return thread != 0; }$/;"	f	class:log4cxx::helpers::Thread
+isBound	log4cxx/helpers/datagramsocket.h	/^                        inline bool isBound() const$/;"	f	class:log4cxx::helpers::DatagramSocket
+isClosed	log4cxx/helpers/datagramsocket.h	/^                        inline bool isClosed() const$/;"	f	class:log4cxx::helpers::DatagramSocket
+isConnected	log4cxx/helpers/datagramsocket.h	/^                        inline bool isConnected() const$/;"	f	class:log4cxx::helpers::DatagramSocket
+isDestructed	log4cxx/helpers/aprinitializer.h	/^    static bool isDestructed;$/;"	m	class:log4cxx::helpers::APRInitializer
+isEnabled	log4cxx/stream.h	/^              inline bool isEnabled() const {$/;"	f	class:log4cxx::logstream_base
+isError	log4cxx/helpers/charsetdecoder.h	/^                  inline static bool isError(log4cxx_status_t stat) {$/;"	f	class:log4cxx::helpers::CharsetDecoder
+isError	log4cxx/helpers/charsetencoder.h	/^                  inline static bool isError(log4cxx_status_t stat) {$/;"	f	class:log4cxx::helpers::CharsetEncoder
+isLeftAligned	log4cxx/pattern/formattinginfo.h	/^inline bool isLeftAligned() const {$/;"	f	class:log4cxx::pattern::FormattingInfo
+key	log4cxx/helpers/threadlocal.h	/^                     apr_threadkey_t* key;$/;"	m	class:log4cxx::helpers::ThreadLocal
+key	log4cxx/mdc.h	/^                LogString key;                $/;"	m	class:log4cxx::MDC
+language	log4cxx/helpers/locale.h	/^                        const LogString language;$/;"	m	class:log4cxx::helpers::Locale
+last	log4cxx/helpers/cyclicbuffer.h	/^                        int last;$/;"	m	class:log4cxx::helpers::CyclicBuffer
+lastFileName	log4cxx/rolling/timebasedrollingpolicy.h	/^        LogString lastFileName;$/;"	m	class:log4cxx::rolling::TimeBasedRollingPolicy
+lastModif	log4cxx/helpers/filewatchdog.h	/^                        log4cxx_time_t lastModif;$/;"	m	class:log4cxx::helpers::FileWatchdog
+layout	log4cxx/appenderskeleton.h	/^                LayoutPtr layout;$/;"	m	class:log4cxx::AppenderSkeleton
+leftAlign	log4cxx/pattern/formattinginfo.h	/^  const bool leftAlign;$/;"	m	class:log4cxx::pattern::FormattingInfo
+length	log4cxx/helpers/cyclicbuffer.h	/^                        int length() const$/;"	f	class:log4cxx::helpers::CyclicBuffer
+length	log4cxx/helpers/datagrampacket.h	/^                        int length;$/;"	m	class:log4cxx::helpers::DatagramPacket
+level	log4cxx/level.h	/^                int level;$/;"	m	class:log4cxx::Level
+level	log4cxx/logger.h	/^        LevelPtr level;$/;"	m	class:log4cxx::Logger
+level	log4cxx/spi/loggingevent.h	/^                        LevelPtr level;$/;"	m	class:log4cxx::spi::LoggingEvent
+level	log4cxx/stream.h	/^            log4cxx::LevelPtr level;$/;"	m	class:log4cxx::logstream_base
+levelMax	log4cxx/filter/levelrangefilter.h	/^                        LevelPtr levelMax;$/;"	m	class:log4cxx::filter::LevelRangeFilter
+levelMin	log4cxx/filter/levelrangefilter.h	/^                        LevelPtr levelMin;$/;"	m	class:log4cxx::filter::LevelRangeFilter
+levelToMatch	log4cxx/filter/levelmatchfilter.h	/^                        LevelPtr levelToMatch;$/;"	m	class:log4cxx::filter::LevelMatchFilter
+lim	log4cxx/helpers/bytebuffer.h	/^                  size_t lim;$/;"	m	class:log4cxx::helpers::ByteBuffer
+limit	log4cxx/helpers/bytebuffer.h	/^                  inline size_t limit() const { return lim; }$/;"	f	class:log4cxx::helpers::ByteBuffer
+lineNumber	log4cxx/spi/location/locationinfo.h	/^        int lineNumber;$/;"	m	class:log4cxx::spi::LocationInfo
+listeners	log4cxx/hierarchy.h	/^            spi::HierarchyEventListenerList listeners;$/;"	m	class:log4cxx::Hierarchy
+literal	log4cxx/pattern/literalpatternconverter.h	/^  const LogString literal;$/;"	m	class:log4cxx::pattern::LiteralPatternConverter
+localAddress	log4cxx/helpers/datagramsocket.h	/^                        InetAddressPtr localAddress;$/;"	m	class:log4cxx::helpers::DatagramSocket
+localPort	log4cxx/helpers/datagramsocket.h	/^                        int localPort;$/;"	m	class:log4cxx::helpers::DatagramSocket
+location	log4cxx/stream.h	/^            log4cxx::spi::LocationInfo location;$/;"	m	class:log4cxx::logstream_base
+locationInfo	log4cxx/asyncappender.h	/^                bool locationInfo;$/;"	m	class:log4cxx::AsyncAppender
+locationInfo	log4cxx/htmllayout.h	/^                bool locationInfo; \/\/= false$/;"	m	class:log4cxx::HTMLLayout
+locationInfo	log4cxx/net/smtpappender.h	/^                        bool locationInfo;$/;"	m	class:log4cxx::net::SMTPAppender
+locationInfo	log4cxx/net/socketappenderskeleton.h	/^                bool locationInfo;$/;"	m	class:log4cxx::net::SocketAppenderSkeleton
+locationInfo	log4cxx/net/sockethubappender.h	/^                        bool locationInfo;$/;"	m	class:log4cxx::net::SocketHubAppender
+locationInfo	log4cxx/spi/loggingevent.h	/^                        const log4cxx::spi::LocationInfo locationInfo;$/;"	m	class:log4cxx::spi::LoggingEvent
+locationInfo	log4cxx/xml/xmllayout.h	/^                        bool locationInfo; \/\/= false$/;"	m	class:log4cxx::xml::XMLLayout
+log	log4cxx/nt/nteventlogappender.h	/^                        LogString log;$/;"	m	class:log4cxx::nt::NTEventLogAppender
+log4cxx	log4cxx/appender.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/appenderskeleton.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/asyncappender.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/basicconfigurator.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/config/propertysetter.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/consoleappender.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/dailyrollingfileappender.h	/^namespace log4cxx {$/;"	n
+log4cxx	log4cxx/db/odbcappender.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/defaultconfigurator.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/defaultloggerfactory.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/file.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/fileappender.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/filter/andfilter.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/filter/denyallfilter.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/filter/expressionfilter.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/filter/levelmatchfilter.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/filter/levelrangefilter.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/filter/locationinfofilter.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/filter/mapfilter.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/filter/propertyfilter.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/filter/stringmatchfilter.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/absolutetimedateformat.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/appenderattachableimpl.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/aprinitializer.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/bufferedoutputstream.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/bufferedwriter.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/bytearrayinputstream.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/bytearrayoutputstream.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/bytebuffer.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/cacheddateformat.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/charsetdecoder.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/charsetencoder.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/class.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/classregistration.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/condition.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/cyclicbuffer.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/datagrampacket.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/datagramsocket.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/date.h	/^namespace log4cxx {$/;"	n
+log4cxx	log4cxx/helpers/dateformat.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/datelayout.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/datetimedateformat.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/exception.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/fileinputstream.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/fileoutputstream.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/filewatchdog.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/inetaddress.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/inputstream.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/inputstreamreader.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/integer.h	/^namespace log4cxx {$/;"	n
+log4cxx	log4cxx/helpers/iso8601dateformat.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/loader.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/locale.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/loglog.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/messagebuffer.h	/^namespace log4cxx {$/;"	n
+log4cxx	log4cxx/helpers/mutex.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/object.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/objectimpl.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/objectoutputstream.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/objectptr.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/onlyonceerrorhandler.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/optionconverter.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/outputstream.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/outputstreamwriter.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/pool.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/properties.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/propertyresourcebundle.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/reader.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/relativetimedateformat.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/resourcebundle.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/serversocket.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/simpledateformat.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/socket.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/socketoutputstream.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/strftimedateformat.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/strictmath.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/stringhelper.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/stringtokenizer.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/synchronized.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/syslogwriter.h	/^ namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/system.h	/^ namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/systemerrwriter.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/systemoutwriter.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/thread.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/threadlocal.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/threadspecificdata.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/timezone.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/transcoder.h	/^namespace log4cxx {$/;"	n
+log4cxx	log4cxx/helpers/transform.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/writer.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/helpers/xml.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/hierarchy.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/htmllayout.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/layout.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/level.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/logger.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/logmanager.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/logstring.h	/^namespace log4cxx {$/;"	n
+log4cxx	log4cxx/mdc.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/ndc.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/net/smtpappender.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/net/socketappender.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/net/socketappenderskeleton.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/net/sockethubappender.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/net/syslogappender.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/net/telnetappender.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/net/xmlsocketappender.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/nt/nteventlogappender.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/nt/outputdebugstringappender.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/pattern/classnamepatternconverter.h	/^namespace log4cxx {$/;"	n
+log4cxx	log4cxx/pattern/datepatternconverter.h	/^namespace log4cxx {$/;"	n
+log4cxx	log4cxx/pattern/filedatepatternconverter.h	/^namespace log4cxx { namespace pattern {$/;"	n
+log4cxx	log4cxx/pattern/filelocationpatternconverter.h	/^namespace log4cxx {$/;"	n
+log4cxx	log4cxx/pattern/formattinginfo.h	/^namespace log4cxx {$/;"	n
+log4cxx	log4cxx/pattern/fulllocationpatternconverter.h	/^namespace log4cxx {$/;"	n
+log4cxx	log4cxx/pattern/integerpatternconverter.h	/^namespace log4cxx { namespace pattern {$/;"	n
+log4cxx	log4cxx/pattern/levelpatternconverter.h	/^namespace log4cxx { namespace pattern {$/;"	n
+log4cxx	log4cxx/pattern/linelocationpatternconverter.h	/^namespace log4cxx {$/;"	n
+log4cxx	log4cxx/pattern/lineseparatorpatternconverter.h	/^namespace log4cxx {$/;"	n
+log4cxx	log4cxx/pattern/literalpatternconverter.h	/^namespace log4cxx {$/;"	n
+log4cxx	log4cxx/pattern/loggerpatternconverter.h	/^namespace log4cxx {$/;"	n
+log4cxx	log4cxx/pattern/loggingeventpatternconverter.h	/^namespace log4cxx {$/;"	n
+log4cxx	log4cxx/pattern/messagepatternconverter.h	/^namespace log4cxx { namespace pattern {$/;"	n
+log4cxx	log4cxx/pattern/methodlocationpatternconverter.h	/^namespace log4cxx { namespace pattern {$/;"	n
+log4cxx	log4cxx/pattern/nameabbreviator.h	/^namespace log4cxx {$/;"	n
+log4cxx	log4cxx/pattern/namepatternconverter.h	/^namespace log4cxx {$/;"	n
+log4cxx	log4cxx/pattern/ndcpatternconverter.h	/^namespace log4cxx { namespace pattern {$/;"	n
+log4cxx	log4cxx/pattern/patternconverter.h	/^namespace log4cxx {$/;"	n
+log4cxx	log4cxx/pattern/patternparser.h	/^namespace log4cxx {$/;"	n
+log4cxx	log4cxx/pattern/propertiespatternconverter.h	/^namespace log4cxx { namespace pattern {$/;"	n
+log4cxx	log4cxx/pattern/relativetimepatternconverter.h	/^namespace log4cxx { namespace pattern {$/;"	n
+log4cxx	log4cxx/pattern/threadpatternconverter.h	/^namespace log4cxx { namespace pattern {$/;"	n
+log4cxx	log4cxx/pattern/throwableinformationpatternconverter.h	/^namespace log4cxx { namespace pattern {$/;"	n
+log4cxx	log4cxx/patternlayout.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/propertyconfigurator.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/provisionnode.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/rolling/action.h	/^namespace log4cxx {$/;"	n
+log4cxx	log4cxx/rolling/filerenameaction.h	/^namespace log4cxx {$/;"	n
+log4cxx	log4cxx/rolling/filterbasedtriggeringpolicy.h	/^ namespace log4cxx {$/;"	n
+log4cxx	log4cxx/rolling/fixedwindowrollingpolicy.h	/^namespace log4cxx {$/;"	n
+log4cxx	log4cxx/rolling/gzcompressaction.h	/^namespace log4cxx {$/;"	n
+log4cxx	log4cxx/rolling/manualtriggeringpolicy.h	/^namespace log4cxx {$/;"	n
+log4cxx	log4cxx/rolling/rollingfileappender.h	/^namespace log4cxx {$/;"	n
+log4cxx	log4cxx/rolling/rollingfileappenderskeleton.h	/^namespace log4cxx {$/;"	n
+log4cxx	log4cxx/rolling/rollingpolicy.h	/^namespace log4cxx {$/;"	n
+log4cxx	log4cxx/rolling/rollingpolicybase.h	/^namespace log4cxx {$/;"	n
+log4cxx	log4cxx/rolling/rolloverdescription.h	/^namespace log4cxx {$/;"	n
+log4cxx	log4cxx/rolling/sizebasedtriggeringpolicy.h	/^namespace log4cxx {$/;"	n
+log4cxx	log4cxx/rolling/timebasedrollingpolicy.h	/^namespace log4cxx {$/;"	n
+log4cxx	log4cxx/rolling/triggeringpolicy.h	/^namespace log4cxx {$/;"	n
+log4cxx	log4cxx/rolling/zipcompressaction.h	/^namespace log4cxx {$/;"	n
+log4cxx	log4cxx/rollingfileappender.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/simplelayout.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/spi/appenderattachable.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/spi/configurator.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/spi/defaultrepositoryselector.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/spi/errorhandler.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/spi/filter.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/spi/hierarchyeventlistener.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/spi/location/locationinfo.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/spi/loggerfactory.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/spi/loggerrepository.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/spi/loggingevent.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/spi/optionhandler.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/spi/repositoryselector.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/spi/rootlogger.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/spi/triggeringeventevaluator.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/stream.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/ttcclayout.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/varia/fallbackerrorhandler.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/writerappender.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/xml/domconfigurator.h	/^namespace log4cxx$/;"	n
+log4cxx	log4cxx/xml/xmllayout.h	/^namespace log4cxx$/;"	n
+log4cxx_int64_t	log4cxx/log4cxx.h	/^typedef long long log4cxx_int64_t;$/;"	t
+log4cxx_status_t	log4cxx/log4cxx.h	/^typedef int log4cxx_status_t;$/;"	t
+log4cxx_time_t	log4cxx/log4cxx.h	/^typedef log4cxx_int64_t log4cxx_time_t;$/;"	t
+log4cxx_uint32_t	log4cxx/log4cxx.h	/^typedef unsigned int log4cxx_uint32_t;$/;"	t
+logchar	log4cxx/logstring.h	/^   typedef UniChar logchar;$/;"	t	namespace:log4cxx
+logchar	log4cxx/logstring.h	/^   typedef char logchar;$/;"	t	namespace:log4cxx
+logchar	log4cxx/logstring.h	/^   typedef wchar_t logchar;$/;"	t	namespace:log4cxx
+logger	log4cxx/spi/loggingevent.h	/^                        LogString logger;$/;"	m	class:log4cxx::spi::LoggingEvent
+logger	log4cxx/stream.h	/^            log4cxx::LoggerPtr logger;$/;"	m	class:log4cxx::logstream_base
+loggerFactory	log4cxx/propertyconfigurator.h	/^        helpers::ObjectPtrT<spi::LoggerFactory> loggerFactory;$/;"	m	class:log4cxx::PropertyConfigurator
+loggerFactory	log4cxx/xml/domconfigurator.h	/^                        spi::LoggerFactoryPtr loggerFactory;$/;"	m	class:log4cxx::xml::DOMConfigurator
+loggers	log4cxx/hierarchy.h	/^            LoggerMap* loggers;$/;"	m	class:log4cxx::Hierarchy
+loggers	log4cxx/varia/fallbackerrorhandler.h	/^                        std::vector<LoggerPtr> loggers;$/;"	m	class:log4cxx::varia::FallbackErrorHandler
+logstream	log4cxx/stream.h	/^        class LOG4CXX_EXPORT logstream : public logstream_base {$/;"	c	namespace:log4cxx
+logstream_base	log4cxx/stream.h	/^        class LOG4CXX_EXPORT logstream_base {$/;"	c	namespace:log4cxx
+logstream_ios_base	log4cxx/stream.h	/^            class LOG4CXX_EXPORT logstream_ios_base : public std::ios_base {$/;"	c	class:log4cxx::logstream_base
+logstream_manipulator	log4cxx/stream.h	/^      typedef logstream_base& (*logstream_manipulator)(logstream_base&);$/;"	t	namespace:log4cxx
+magic1	log4cxx/helpers/cacheddateformat.h	/^               magic1 = 654000,$/;"	e	enum:log4cxx::pattern::CachedDateFormat::__anon3
+magic2	log4cxx/helpers/cacheddateformat.h	/^               magic2 = 987000$/;"	e	enum:log4cxx::pattern::CachedDateFormat::__anon3
+magicString1	log4cxx/helpers/cacheddateformat.h	/^              static const logchar magicString1[];$/;"	m	class:log4cxx::pattern::CachedDateFormat
+magicString2	log4cxx/helpers/cacheddateformat.h	/^              static const logchar magicString2[];$/;"	m	class:log4cxx::pattern::CachedDateFormat
+maxBackupIndex	log4cxx/rollingfileappender.h	/^    int maxBackupIndex;$/;"	m	class:log4cxx::RollingFileAppender
+maxEvent	log4cxx/asyncappender.h	/^                    ::log4cxx::spi::LoggingEventPtr maxEvent;$/;"	m	class:log4cxx::AsyncAppender::DiscardSummary
+maxFileSize	log4cxx/rolling/sizebasedtriggeringpolicy.h	/^          size_t maxFileSize;$/;"	m	class:log4cxx::rolling::SizeBasedTriggeringPolicy
+maxFileSize	log4cxx/rollingfileappender.h	/^    long maxFileSize;$/;"	m	class:log4cxx::RollingFileAppender
+maxIndex	log4cxx/rolling/fixedwindowrollingpolicy.h	/^          int maxIndex;$/;"	m	class:log4cxx::rolling::FixedWindowRollingPolicy
+maxLength	log4cxx/pattern/formattinginfo.h	/^  const int maxLength;$/;"	m	class:log4cxx::pattern::FormattingInfo
+maxSize	log4cxx/helpers/cyclicbuffer.h	/^                        int maxSize;$/;"	m	class:log4cxx::helpers::CyclicBuffer
+maximum	log4cxx/helpers/strictmath.h	/^                                maximum(const _type& a, const _type& b)$/;"	f	class:log4cxx::helpers::StrictMath
+mdcCopy	log4cxx/spi/loggingevent.h	/^                        mutable MDC::Map* mdcCopy;$/;"	m	class:log4cxx::spi::LoggingEvent
+mdcCopyLookupRequired	log4cxx/spi/loggingevent.h	/^                        mutable bool mdcCopyLookupRequired;$/;"	m	class:log4cxx::spi::LoggingEvent
+mdcMap	log4cxx/helpers/threadspecificdata.h	/^                        log4cxx::MDC::Map mdcMap;$/;"	m	class:log4cxx::helpers::ThreadSpecificData
+message	log4cxx/spi/loggingevent.h	/^                        LogString message;$/;"	m	class:log4cxx::spi::LoggingEvent
+methodName	log4cxx/spi/location/locationinfo.h	/^        const char * methodName;$/;"	m	class:log4cxx::spi::LocationInfo
+millisecondStart	log4cxx/helpers/cacheddateformat.h	/^            mutable int millisecondStart;$/;"	m	class:log4cxx::pattern::CachedDateFormat
+minIndex	log4cxx/rolling/fixedwindowrollingpolicy.h	/^          int minIndex;$/;"	m	class:log4cxx::rolling::FixedWindowRollingPolicy
+minLength	log4cxx/pattern/formattinginfo.h	/^  const int minLength;$/;"	m	class:log4cxx::pattern::FormattingInfo
+minimum	log4cxx/helpers/strictmath.h	/^                                minimum(const _type& a, const _type& b)$/;"	f	class:log4cxx::helpers::StrictMath
+msg	log4cxx/helpers/exception.h	/^                        char msg[MSG_SIZE + 1];$/;"	m	class:log4cxx::helpers::Exception
+mutex	log4cxx/appenderskeleton.h	/^                log4cxx::helpers::Mutex mutex;$/;"	m	class:log4cxx::AppenderSkeleton
+mutex	log4cxx/helpers/appenderattachableimpl.h	/^            log4cxx::helpers::Mutex mutex;$/;"	m	class:log4cxx::helpers::AppenderAttachableImpl
+mutex	log4cxx/helpers/loglog.h	/^                        Mutex mutex;$/;"	m	class:log4cxx::helpers::LogLog
+mutex	log4cxx/helpers/mutex.h	/^                        apr_thread_mutex_t* mutex;$/;"	m	class:log4cxx::helpers::Mutex
+mutex	log4cxx/helpers/serversocket.h	/^                        Mutex mutex;$/;"	m	class:log4cxx::helpers::ServerSocket
+mutex	log4cxx/helpers/synchronized.h	/^                void* mutex;$/;"	m	class:log4cxx::helpers::synchronized
+mutex	log4cxx/hierarchy.h	/^            log4cxx::helpers::Mutex mutex;$/;"	m	class:log4cxx::Hierarchy
+mutex	log4cxx/logger.h	/^        log4cxx::helpers::Mutex mutex;$/;"	m	class:log4cxx::Logger
+mutex	log4cxx/rolling/action.h	/^        log4cxx::helpers::Mutex mutex;$/;"	m	class:log4cxx::rolling::Action
+name	log4cxx/appenderskeleton.h	/^                LogString name;$/;"	m	class:log4cxx::AppenderSkeleton
+name	log4cxx/level.h	/^                LogString name;$/;"	m	class:log4cxx::Level
+name	log4cxx/logger.h	/^        LogString name;$/;"	m	class:log4cxx::Logger
+name	log4cxx/pattern/patternconverter.h	/^  const LogString name;$/;"	m	class:log4cxx::pattern::PatternConverter
+ndc	log4cxx/spi/loggingevent.h	/^                        mutable LogString* ndc;$/;"	m	class:log4cxx::spi::LoggingEvent
+ndcLookupRequired	log4cxx/spi/loggingevent.h	/^                        mutable bool ndcLookupRequired;$/;"	m	class:log4cxx::spi::LoggingEvent
+ndcStack	log4cxx/helpers/threadspecificdata.h	/^                        log4cxx::NDC::Stack ndcStack;$/;"	m	class:log4cxx::helpers::ThreadSpecificData
+net	log4cxx/net/smtpappender.h	/^        namespace net$/;"	n	namespace:log4cxx
+net	log4cxx/net/socketappender.h	/^        namespace net$/;"	n	namespace:log4cxx
+net	log4cxx/net/socketappenderskeleton.h	/^        namespace net$/;"	n	namespace:log4cxx
+net	log4cxx/net/sockethubappender.h	/^        namespace net$/;"	n	namespace:log4cxx
+net	log4cxx/net/syslogappender.h	/^        namespace net$/;"	n	namespace:log4cxx
+net	log4cxx/net/telnetappender.h	/^        namespace net$/;"	n	namespace:log4cxx
+net	log4cxx/net/xmlsocketappender.h	/^        namespace net$/;"	n	namespace:log4cxx
+next	log4cxx/spi/filter.h	/^                  FilterPtr next;$/;"	m	class:log4cxx::spi::Filter
+nextCheck	log4cxx/rolling/timebasedrollingpolicy.h	/^        log4cxx_time_t nextCheck;$/;"	m	class:log4cxx::rolling::TimeBasedRollingPolicy
+nt	log4cxx/nt/nteventlogappender.h	/^        namespace nt$/;"	n	namespace:log4cxx
+nt	log4cxx/nt/outputdebugstringappender.h	/^        namespace nt$/;"	n	namespace:log4cxx
+numElems	log4cxx/helpers/cyclicbuffer.h	/^                        int numElems;$/;"	m	class:log4cxx::helpers::CyclicBuffer
+obj	log4cxx/config/propertysetter.h	/^                        helpers::ObjectPtr obj;$/;"	m	class:log4cxx::config::PropertySetter
+objectHandle	log4cxx/helpers/objectoutputstream.h	/^                  unsigned int objectHandle;$/;"	m	class:log4cxx::helpers::ObjectOutputStream
+offset	log4cxx/helpers/datagrampacket.h	/^                        int offset;$/;"	m	class:log4cxx::helpers::DatagramPacket
+oos	log4cxx/net/socketappender.h	/^                log4cxx::helpers::ObjectOutputStreamPtr oos;$/;"	m	class:log4cxx::net::SocketAppender
+operator !=	log4cxx/level.h	/^                inline bool operator!=(const Level& level1) const$/;"	f	class:log4cxx::Level
+operator <<	log4cxx/helpers/messagebuffer.h	/^UniCharMessageBuffer::uostream& operator<<(UniCharMessageBuffer& os, const V& val) {$/;"	f	namespace:log4cxx::helpers
+operator <<	log4cxx/helpers/messagebuffer.h	/^std::basic_ostream<char>& operator<<(CharMessageBuffer& os, const V& val) {$/;"	f	namespace:log4cxx::helpers
+operator <<	log4cxx/helpers/messagebuffer.h	/^std::basic_ostream<wchar_t>& operator<<(WideMessageBuffer& os, const V& val) {$/;"	f	namespace:log4cxx::helpers
+operator <<	log4cxx/helpers/messagebuffer.h	/^std::ostream& operator<<(MessageBuffer& os, const V& val) {$/;"	f	namespace:log4cxx::helpers
+operator <<	log4cxx/stream.h	/^             inline log4cxx::logstream& operator<<(const V& val) {$/;"	f	class:log4cxx::logstream
+operator <<	log4cxx/stream.h	/^             inline log4cxx::wlogstream& operator<<(const V& val) {$/;"	f	class:log4cxx::wlogstream
+operator <<	log4cxx/stream.h	/^             inline ulogstream& operator<<(const V& val) {$/;"	f	class:log4cxx::ulogstream
+operator <<	log4cxx/stream.h	/^inline log4cxx::logstream& operator<<(log4cxx::logstream& os, const V& val) {$/;"	f
+operator <<	log4cxx/stream.h	/^inline log4cxx::wlogstream& operator<<(log4cxx::wlogstream& os, const V& val) {$/;"	f
+operator ==	log4cxx/level.h	/^                inline bool operator==(const Level& level1) const$/;"	f	class:log4cxx::Level
+option	log4cxx/pattern/propertiespatternconverter.h	/^  const LogString option;$/;"	m	class:log4cxx::pattern::PropertiesPatternConverter
+os	log4cxx/helpers/objectoutputstream.h	/^                  OutputStreamPtr os;$/;"	m	class:log4cxx::helpers::ObjectOutputStream
+out	log4cxx/helpers/bufferedwriter.h	/^                  WriterPtr out;$/;"	m	class:log4cxx::helpers::BufferedWriter
+out	log4cxx/helpers/outputstreamwriter.h	/^                  OutputStreamPtr out;$/;"	m	class:log4cxx::helpers::OutputStreamWriter
+p	log4cxx/helpers/aprinitializer.h	/^      apr_pool_t* p;$/;"	m	class:log4cxx::helpers::APRInitializer
+p	log4cxx/helpers/thread.h	/^                        Pool p;$/;"	m	class:log4cxx::helpers::Thread
+p	log4cxx/helpers/threadlocal.h	/^                Pool p;$/;"	m	class:log4cxx::helpers::ThreadLocal
+pCurrentUserSID	log4cxx/nt/nteventlogappender.h	/^                        SID * pCurrentUserSID;$/;"	m	class:log4cxx::nt::NTEventLogAppender
+parent	log4cxx/helpers/resourcebundle.h	/^                        ResourceBundlePtr parent;$/;"	m	class:log4cxx::helpers::ResourceBundle
+parent	log4cxx/logger.h	/^        LoggerPtr parent;$/;"	m	class:log4cxx::Logger
+path	log4cxx/file.h	/^                    LogString path;$/;"	m	class:log4cxx::File
+pattern	log4cxx/helpers/cacheddateformat.h	/^        namespace pattern$/;"	n	namespace:log4cxx
+pattern	log4cxx/helpers/simpledateformat.h	/^                  PatternTokenList pattern;$/;"	m	class:log4cxx::helpers::SimpleDateFormat
+pattern	log4cxx/helpers/strftimedateformat.h	/^                  std::string pattern;$/;"	m	class:log4cxx::helpers::StrftimeDateFormat
+pattern	log4cxx/pattern/classnamepatternconverter.h	/^ namespace pattern {$/;"	n	namespace:log4cxx
+pattern	log4cxx/pattern/datepatternconverter.h	/^  namespace pattern {$/;"	n	namespace:log4cxx
+pattern	log4cxx/pattern/filedatepatternconverter.h	/^namespace log4cxx { namespace pattern {$/;"	n	namespace:log4cxx
+pattern	log4cxx/pattern/filelocationpatternconverter.h	/^   namespace pattern {$/;"	n	namespace:log4cxx
+pattern	log4cxx/pattern/formattinginfo.h	/^  namespace pattern {$/;"	n	namespace:log4cxx
+pattern	log4cxx/pattern/fulllocationpatternconverter.h	/^namespace pattern {$/;"	n	namespace:log4cxx
+pattern	log4cxx/pattern/integerpatternconverter.h	/^namespace log4cxx { namespace pattern {$/;"	n	namespace:log4cxx
+pattern	log4cxx/pattern/levelpatternconverter.h	/^namespace log4cxx { namespace pattern {$/;"	n	namespace:log4cxx
+pattern	log4cxx/pattern/linelocationpatternconverter.h	/^namespace pattern {$/;"	n	namespace:log4cxx
+pattern	log4cxx/pattern/lineseparatorpatternconverter.h	/^namespace pattern {$/;"	n	namespace:log4cxx
+pattern	log4cxx/pattern/literalpatternconverter.h	/^  namespace pattern {$/;"	n	namespace:log4cxx
+pattern	log4cxx/pattern/loggerpatternconverter.h	/^  namespace pattern {$/;"	n	namespace:log4cxx
+pattern	log4cxx/pattern/loggingeventpatternconverter.h	/^  namespace pattern {$/;"	n	namespace:log4cxx
+pattern	log4cxx/pattern/messagepatternconverter.h	/^namespace log4cxx { namespace pattern {$/;"	n	namespace:log4cxx
+pattern	log4cxx/pattern/methodlocationpatternconverter.h	/^namespace log4cxx { namespace pattern {$/;"	n	namespace:log4cxx
+pattern	log4cxx/pattern/nameabbreviator.h	/^  namespace pattern {$/;"	n	namespace:log4cxx
+pattern	log4cxx/pattern/namepatternconverter.h	/^  namespace pattern {$/;"	n	namespace:log4cxx
+pattern	log4cxx/pattern/ndcpatternconverter.h	/^namespace log4cxx { namespace pattern {$/;"	n	namespace:log4cxx
+pattern	log4cxx/pattern/patternconverter.h	/^  namespace pattern {$/;"	n	namespace:log4cxx
+pattern	log4cxx/pattern/patternparser.h	/^  namespace pattern {$/;"	n	namespace:log4cxx
+pattern	log4cxx/pattern/propertiespatternconverter.h	/^namespace log4cxx { namespace pattern {$/;"	n	namespace:log4cxx
+pattern	log4cxx/pattern/relativetimepatternconverter.h	/^namespace log4cxx { namespace pattern {$/;"	n	namespace:log4cxx
+pattern	log4cxx/pattern/threadpatternconverter.h	/^namespace log4cxx { namespace pattern {$/;"	n	namespace:log4cxx
+pattern	log4cxx/pattern/throwableinformationpatternconverter.h	/^namespace log4cxx { namespace pattern {$/;"	n	namespace:log4cxx
+patternConverters	log4cxx/patternlayout.h	/^                LoggingEventPatternConverterList patternConverters;$/;"	m	class:log4cxx::PatternLayout
+patternConverters	log4cxx/rolling/rollingpolicybase.h	/^          PatternConverterList patternConverters;$/;"	m	class:log4cxx::rolling::RollingPolicyBase
+patternFields	log4cxx/patternlayout.h	/^                FormattingInfoList patternFields;$/;"	m	class:log4cxx::PatternLayout
+patternFields	log4cxx/rolling/rollingpolicybase.h	/^          FormattingInfoList patternFields;$/;"	m	class:log4cxx::rolling::RollingPolicyBase
+pool	log4cxx/appenderskeleton.h	/^                log4cxx::helpers::Pool pool;$/;"	m	class:log4cxx::AppenderSkeleton
+pool	log4cxx/helpers/fileinputstream.h	/^                  Pool pool;$/;"	m	class:log4cxx::helpers::FileInputStream
+pool	log4cxx/helpers/fileoutputstream.h	/^                  Pool pool;$/;"	m	class:log4cxx::helpers::FileOutputStream
+pool	log4cxx/helpers/filewatchdog.h	/^                        Pool pool;$/;"	m	class:log4cxx::helpers::FileWatchdog
+pool	log4cxx/helpers/pool.h	/^                        apr_pool_t* pool;$/;"	m	class:log4cxx::helpers::Pool
+pool	log4cxx/helpers/serversocket.h	/^                        Pool pool;$/;"	m	class:log4cxx::helpers::ServerSocket
+pool	log4cxx/helpers/socket.h	/^                        Pool pool;$/;"	m	class:log4cxx::helpers::Socket
+pool	log4cxx/hierarchy.h	/^            log4cxx::helpers::Pool pool;$/;"	m	class:log4cxx::Hierarchy
+pool	log4cxx/logger.h	/^        helpers::Pool* pool;$/;"	m	class:log4cxx::Logger
+pool	log4cxx/rolling/action.h	/^        log4cxx::helpers::Pool pool;$/;"	m	class:log4cxx::rolling::Action
+port	log4cxx/helpers/datagrampacket.h	/^                        int port;$/;"	m	class:log4cxx::helpers::DatagramPacket
+port	log4cxx/helpers/datagramsocket.h	/^                        int port;$/;"	m	class:log4cxx::helpers::DatagramSocket
+port	log4cxx/helpers/socket.h	/^                        int port;$/;"	m	class:log4cxx::helpers::Socket
+port	log4cxx/net/socketappenderskeleton.h	/^                int port;$/;"	m	class:log4cxx::net::SocketAppenderSkeleton
+port	log4cxx/net/sockethubappender.h	/^                        int port;$/;"	m	class:log4cxx::net::SocketHubAppender
+port	log4cxx/net/telnetappender.h	/^                        int port;$/;"	m	class:log4cxx::net::TelnetAppender
+pos	log4cxx/helpers/bytearrayinputstream.h	/^              size_t pos;$/;"	m	class:log4cxx::helpers::ByteArrayInputStream
+pos	log4cxx/helpers/bytebuffer.h	/^                  size_t pos;$/;"	m	class:log4cxx::helpers::ByteBuffer
+pos	log4cxx/helpers/stringtokenizer.h	/^                        size_t pos;$/;"	m	class:log4cxx::helpers::StringTokenizer
+position	log4cxx/helpers/bytebuffer.h	/^                  inline size_t position() const { return pos; }$/;"	f	class:log4cxx::helpers::ByteBuffer
+previousTime	log4cxx/helpers/cacheddateformat.h	/^            mutable log4cxx_time_t previousTime;$/;"	m	class:log4cxx::pattern::CachedDateFormat
+primary	log4cxx/varia/fallbackerrorhandler.h	/^                        AppenderPtr primary;$/;"	m	class:log4cxx::varia::FallbackErrorHandler
+properties	log4cxx/filter/propertyfilter.h	/^            PropertyMap* properties;$/;"	m	class:log4cxx::filter::PropertyFilter
+properties	log4cxx/helpers/properties.h	/^                        PropertyMap* properties;$/;"	m	class:log4cxx::helpers::Properties
+properties	log4cxx/helpers/propertyresourcebundle.h	/^                        Properties properties;$/;"	m	class:log4cxx::helpers::PropertyResourceBundle
+properties	log4cxx/spi/loggingevent.h	/^                        std::map<LogString, LogString> * properties;$/;"	m	class:log4cxx::spi::LoggingEvent
+properties	log4cxx/xml/xmllayout.h	/^                        bool properties; \/\/ = false$/;"	m	class:log4cxx::xml::XMLLayout
+props	log4cxx/xml/domconfigurator.h	/^                        helpers::Properties props;$/;"	m	class:log4cxx::xml::DOMConfigurator
+provisionNodes	log4cxx/hierarchy.h	/^            ProvisionNodeMap* provisionNodes;$/;"	m	class:log4cxx::Hierarchy
+quietMode	log4cxx/helpers/loglog.h	/^                        bool quietMode;$/;"	m	class:log4cxx::helpers::LogLog
+reconnectionDelay	log4cxx/net/socketappenderskeleton.h	/^                int reconnectionDelay;$/;"	m	class:log4cxx::net::SocketAppenderSkeleton
+ref	log4cxx/helpers/objectimpl.h	/^         mutable unsigned int volatile ref;$/;"	m	class:log4cxx::helpers::ObjectImpl
+registry	log4cxx/propertyconfigurator.h	/^      std::map<LogString, AppenderPtr>* registry;$/;"	m	class:log4cxx::PropertyConfigurator
+release	log4cxx/helpers/pool.h	/^                        const bool release;$/;"	m	class:log4cxx::helpers::Pool
+remaining	log4cxx/helpers/bytebuffer.h	/^                  inline size_t remaining() const { return lim - pos; }$/;"	f	class:log4cxx::helpers::ByteBuffer
+remoteHost	log4cxx/net/socketappenderskeleton.h	/^                LogString remoteHost;$/;"	m	class:log4cxx::net::SocketAppenderSkeleton
+renameEmptyFile	log4cxx/rolling/filerenameaction.h	/^           bool renameEmptyFile;$/;"	m	class:log4cxx::rolling::FileRenameAction
+repository	log4cxx/logger.h	/^        log4cxx::spi::LoggerRepository * repository;$/;"	m	class:log4cxx::Logger
+repository	log4cxx/spi/defaultrepositoryselector.h	/^                        LoggerRepositoryPtr repository;$/;"	m	class:log4cxx::spi::DefaultRepositorySelector
+repository	log4cxx/xml/domconfigurator.h	/^                        spi::LoggerRepositoryPtr repository;$/;"	m	class:log4cxx::xml::DOMConfigurator
+requiresLayout	log4cxx/db/odbcappender.h	/^                        virtual bool requiresLayout() const$/;"	f	class:log4cxx::db::ODBCAppender
+requiresLayout	log4cxx/net/socketappenderskeleton.h	/^                bool requiresLayout() const$/;"	f	class:log4cxx::net::SocketAppenderSkeleton
+requiresLayout	log4cxx/net/sockethubappender.h	/^                        virtual bool requiresLayout() const$/;"	f	class:log4cxx::net::SocketHubAppender
+requiresLayout	log4cxx/net/syslogappender.h	/^                        virtual bool requiresLayout() const$/;"	f	class:log4cxx::net::SyslogAppender
+requiresLayout	log4cxx/net/telnetappender.h	/^                        virtual bool requiresLayout() const$/;"	f	class:log4cxx::net::TelnetAppender
+requiresLayout	log4cxx/nt/nteventlogappender.h	/^                         bool requiresLayout() const$/;"	f	class:log4cxx::nt::NTEventLogAppender
+requiresLayout	log4cxx/nt/outputdebugstringappender.h	/^                        bool requiresLayout() const$/;"	f	class:log4cxx::nt::OutputDebugStringAppender
+resourceBundle	log4cxx/logger.h	/^        helpers::ResourceBundlePtr resourceBundle;$/;"	m	class:log4cxx::Logger
+rolling	log4cxx/rolling/action.h	/^    namespace rolling {$/;"	n	namespace:log4cxx
+rolling	log4cxx/rolling/filerenameaction.h	/^    namespace rolling {$/;"	n	namespace:log4cxx
+rolling	log4cxx/rolling/filterbasedtriggeringpolicy.h	/^     namespace rolling {$/;"	n	namespace:log4cxx
+rolling	log4cxx/rolling/fixedwindowrollingpolicy.h	/^    namespace rolling {$/;"	n	namespace:log4cxx
+rolling	log4cxx/rolling/gzcompressaction.h	/^    namespace rolling {$/;"	n	namespace:log4cxx
+rolling	log4cxx/rolling/manualtriggeringpolicy.h	/^    namespace rolling {$/;"	n	namespace:log4cxx
+rolling	log4cxx/rolling/rollingfileappender.h	/^    namespace rolling {$/;"	n	namespace:log4cxx
+rolling	log4cxx/rolling/rollingfileappenderskeleton.h	/^    namespace rolling {$/;"	n	namespace:log4cxx
+rolling	log4cxx/rolling/rollingpolicy.h	/^    namespace rolling {$/;"	n	namespace:log4cxx
+rolling	log4cxx/rolling/rollingpolicybase.h	/^    namespace rolling {$/;"	n	namespace:log4cxx
+rolling	log4cxx/rolling/rolloverdescription.h	/^    namespace rolling {$/;"	n	namespace:log4cxx
+rolling	log4cxx/rolling/sizebasedtriggeringpolicy.h	/^    namespace rolling {$/;"	n	namespace:log4cxx
+rolling	log4cxx/rolling/timebasedrollingpolicy.h	/^    namespace rolling {$/;"	n	namespace:log4cxx
+rolling	log4cxx/rolling/triggeringpolicy.h	/^    namespace rolling {$/;"	n	namespace:log4cxx
+rolling	log4cxx/rolling/zipcompressaction.h	/^    namespace rolling {$/;"	n	namespace:log4cxx
+rollingPolicy	log4cxx/rolling/rollingfileappenderskeleton.h	/^          RollingPolicyPtr rollingPolicy;$/;"	m	class:log4cxx::rolling::RollingFileAppenderSkeleton
+root	log4cxx/hierarchy.h	/^            LoggerPtr root;$/;"	m	class:log4cxx::Hierarchy
+rule	log4cxx/filter/expressionfilter.h	/^    namespace rule$/;"	n	namespace:log4cxx
+rule	log4cxx/filter/locationinfofilter.h	/^    namespace rule$/;"	n	namespace:log4cxx
+runnable	log4cxx/helpers/thread.h	/^                            Runnable runnable; $/;"	m	class:log4cxx::helpers::Thread::LaunchPackage
+server	log4cxx/nt/nteventlogappender.h	/^                        LogString server;$/;"	m	class:log4cxx::nt::NTEventLogAppender
+serverSocket	log4cxx/net/telnetappender.h	/^                        helpers::ServerSocket* serverSocket;$/;"	m	class:log4cxx::net::TelnetAppender
+setAcceptOnMatch	log4cxx/filter/levelmatchfilter.h	/^                        inline void setAcceptOnMatch(bool acceptOnMatch1)$/;"	f	class:log4cxx::filter::LevelMatchFilter
+setAcceptOnMatch	log4cxx/filter/levelrangefilter.h	/^                        inline void setAcceptOnMatch(bool acceptOnMatch1)$/;"	f	class:log4cxx::filter::LevelRangeFilter
+setAcceptOnMatch	log4cxx/filter/stringmatchfilter.h	/^                        inline void setAcceptOnMatch(bool acceptOnMatch1)$/;"	f	class:log4cxx::filter::StringMatchFilter
+setAddress	log4cxx/helpers/datagrampacket.h	/^                        inline void setAddress(InetAddressPtr address1)$/;"	f	class:log4cxx::helpers::DatagramPacket
+setBufferSize	log4cxx/db/odbcappender.h	/^                        inline void setBufferSize(size_t newBufferSize)$/;"	f	class:log4cxx::db::ODBCAppender
+setBufferSize	log4cxx/fileappender.h	/^                void setBufferSize(int bufferSize1) { this->bufferSize = bufferSize1; }$/;"	f	class:log4cxx::FileAppender
+setCategoryPrefixing	log4cxx/ttcclayout.h	/^                inline void setCategoryPrefixing(bool categoryPrefixing1)$/;"	f	class:log4cxx::TTCCLayout
+setContextPrinting	log4cxx/ttcclayout.h	/^                inline void setContextPrinting(bool contextPrinting1)$/;"	f	class:log4cxx::TTCCLayout
+setData	log4cxx/helpers/datagrampacket.h	/^                        inline void setData(void * buf1)$/;"	f	class:log4cxx::helpers::DatagramPacket
+setData	log4cxx/helpers/datagrampacket.h	/^                        inline void setData(void * buf1, int offset1, int length1)$/;"	f	class:log4cxx::helpers::DatagramPacket
+setDateFormat	log4cxx/helpers/datelayout.h	/^                        inline void setDateFormat(const LogString& dateFormat1)$/;"	f	class:log4cxx::helpers::DateLayout
+setDelay	log4cxx/helpers/filewatchdog.h	/^                        void setDelay(long delay1)$/;"	f	class:log4cxx::helpers::FileWatchdog
+setFacilityPrinting	log4cxx/net/syslogappender.h	/^                        inline void setFacilityPrinting(bool facilityPrinting1)$/;"	f	class:log4cxx::net::SyslogAppender
+setFilePrinting	log4cxx/ttcclayout.h	/^                inline void setFilePrinting(bool filePrinting1)$/;"	f	class:log4cxx::TTCCLayout
+setLayout	log4cxx/appenderskeleton.h	/^                void setLayout(const LayoutPtr& layout1) { this->layout = layout1; }$/;"	f	class:log4cxx::AppenderSkeleton
+setLength	log4cxx/helpers/datagrampacket.h	/^                        inline void setLength(int length1)$/;"	f	class:log4cxx::helpers::DatagramPacket
+setLevelMax	log4cxx/filter/levelrangefilter.h	/^                        void setLevelMax(const LevelPtr& levelMax1)$/;"	f	class:log4cxx::filter::LevelRangeFilter
+setLevelMin	log4cxx/filter/levelrangefilter.h	/^                        void setLevelMin(const LevelPtr& levelMin1)$/;"	f	class:log4cxx::filter::LevelRangeFilter
+setLocationInfo	log4cxx/htmllayout.h	/^                inline void setLocationInfo(bool locationInfoFlag)$/;"	f	class:log4cxx::HTMLLayout
+setLocationInfo	log4cxx/net/socketappenderskeleton.h	/^                void setLocationInfo(bool locationInfo1)$/;"	f	class:log4cxx::net::SocketAppenderSkeleton
+setLocationInfo	log4cxx/net/sockethubappender.h	/^                        inline void setLocationInfo(bool locationInfo1)$/;"	f	class:log4cxx::net::SocketHubAppender
+setLocationInfo	log4cxx/xml/xmllayout.h	/^                        inline void setLocationInfo(bool locationInfo1)$/;"	f	class:log4cxx::xml::XMLLayout
+setLog	log4cxx/nt/nteventlogappender.h	/^                        void setLog(const LogString& log)$/;"	f	class:log4cxx::nt::NTEventLogAppender
+setName	log4cxx/appenderskeleton.h	/^                void setName(const LogString& name1) { this->name.assign(name1); }$/;"	f	class:log4cxx::AppenderSkeleton
+setOption	log4cxx/simplelayout.h	/^                virtual void setOption(const LogString& \/* option *\/,$/;"	f	class:log4cxx::SimpleLayout
+setParent	log4cxx/helpers/resourcebundle.h	/^                        inline void setParent(const ResourceBundlePtr& parent1)$/;"	f	class:log4cxx::helpers::ResourceBundle
+setPassword	log4cxx/db/odbcappender.h	/^                        inline void setPassword(const LogString& password)$/;"	f	class:log4cxx::db::ODBCAppender
+setPort	log4cxx/helpers/datagrampacket.h	/^                        inline void setPort(int port1)$/;"	f	class:log4cxx::helpers::DatagramPacket
+setPort	log4cxx/net/socketappenderskeleton.h	/^                void setPort(int port1)$/;"	f	class:log4cxx::net::SocketAppenderSkeleton
+setPort	log4cxx/net/sockethubappender.h	/^                        inline void setPort(int port1)$/;"	f	class:log4cxx::net::SocketHubAppender
+setPort	log4cxx/net/telnetappender.h	/^                        void setPort(int port1)$/;"	f	class:log4cxx::net::TelnetAppender
+setProperties	log4cxx/xml/xmllayout.h	/^                        inline void setProperties(bool flag) {$/;"	f	class:log4cxx::xml::XMLLayout
+setReconnectionDelay	log4cxx/net/socketappenderskeleton.h	/^                void setReconnectionDelay(int reconnectionDelay1)$/;"	f	class:log4cxx::net::SocketAppenderSkeleton
+setRemoteHost	log4cxx/net/socketappenderskeleton.h	/^                inline void setRemoteHost(const LogString& host)$/;"	f	class:log4cxx::net::SocketAppenderSkeleton
+setResourceBundle	log4cxx/logger.h	/^        inline void setResourceBundle(const helpers::ResourceBundlePtr& bundle)$/;"	f	class:log4cxx::Logger
+setServer	log4cxx/nt/nteventlogappender.h	/^                        void setServer(const LogString& server)$/;"	f	class:log4cxx::nt::NTEventLogAppender
+setSource	log4cxx/nt/nteventlogappender.h	/^                        void setSource(const LogString& source)$/;"	f	class:log4cxx::nt::NTEventLogAppender
+setStringToMatch	log4cxx/filter/stringmatchfilter.h	/^                        inline void setStringToMatch(const LogString& stringToMatch1)$/;"	f	class:log4cxx::filter::StringMatchFilter
+setThreadPrinting	log4cxx/ttcclayout.h	/^                inline void setThreadPrinting(bool threadPrinting1)$/;"	f	class:log4cxx::TTCCLayout
+setTimeZone	log4cxx/helpers/datelayout.h	/^                        inline void setTimeZone(const LogString& timeZone)$/;"	f	class:log4cxx::helpers::DateLayout
+setTitle	log4cxx/htmllayout.h	/^                inline void setTitle(const LogString& title1)$/;"	f	class:log4cxx::HTMLLayout
+setURL	log4cxx/db/odbcappender.h	/^                        inline void setURL(const LogString& url)$/;"	f	class:log4cxx::db::ODBCAppender
+setUser	log4cxx/db/odbcappender.h	/^                        inline void setUser(const LogString& user)$/;"	f	class:log4cxx::db::ODBCAppender
+sh	log4cxx/net/telnetappender.h	/^                        helpers::Thread sh;$/;"	m	class:log4cxx::net::TelnetAppender
+shortReport	log4cxx/pattern/throwableinformationpatternconverter.h	/^  const bool shortReport;$/;"	m	class:log4cxx::pattern::ThrowableInformationPatternConverter
+slotBegin	log4cxx/helpers/cacheddateformat.h	/^            mutable log4cxx_time_t slotBegin;$/;"	m	class:log4cxx::pattern::CachedDateFormat
+smtpHost	log4cxx/net/smtpappender.h	/^                        LogString smtpHost;$/;"	m	class:log4cxx::net::SMTPAppender
+smtpPassword	log4cxx/net/smtpappender.h	/^                        LogString smtpPassword;$/;"	m	class:log4cxx::net::SMTPAppender
+smtpPort	log4cxx/net/smtpappender.h	/^                        int smtpPort;$/;"	m	class:log4cxx::net::SMTPAppender
+smtpUsername	log4cxx/net/smtpappender.h	/^                        LogString smtpUsername;$/;"	m	class:log4cxx::net::SMTPAppender
+socket	log4cxx/helpers/datagramsocket.h	/^                        apr_socket_t *socket;$/;"	m	class:log4cxx::helpers::DatagramSocket
+socket	log4cxx/helpers/serversocket.h	/^                        apr_socket_t* socket;$/;"	m	class:log4cxx::helpers::ServerSocket
+socket	log4cxx/helpers/socket.h	/^                        apr_socket_t* socket;$/;"	m	class:log4cxx::helpers::Socket
+socket	log4cxx/helpers/socketoutputstream.h	/^                        SocketPtr socket;$/;"	m	class:log4cxx::helpers::SocketOutputStream
+socketPool	log4cxx/helpers/datagramsocket.h	/^                        Pool socketPool;$/;"	m	class:log4cxx::helpers::DatagramSocket
+source	log4cxx/nt/nteventlogappender.h	/^                        LogString source;$/;"	m	class:log4cxx::nt::NTEventLogAppender
+source	log4cxx/rolling/filerenameaction.h	/^           const File source;$/;"	m	class:log4cxx::rolling::FileRenameAction
+source	log4cxx/rolling/gzcompressaction.h	/^           const File source;$/;"	m	class:log4cxx::rolling::GZCompressAction
+source	log4cxx/rolling/zipcompressaction.h	/^           const File source;$/;"	m	class:log4cxx::rolling::ZipCompressAction
+spi	log4cxx/appender.h	/^    namespace spi$/;"	n	namespace:log4cxx
+spi	log4cxx/dailyrollingfileappender.h	/^  namespace spi {$/;"	n	namespace:log4cxx
+spi	log4cxx/defaultconfigurator.h	/^   namespace spi {$/;"	n	namespace:log4cxx
+spi	log4cxx/helpers/appenderattachableimpl.h	/^    namespace spi$/;"	n	namespace:log4cxx
+spi	log4cxx/helpers/optionconverter.h	/^        namespace spi$/;"	n	namespace:log4cxx
+spi	log4cxx/logger.h	/^    namespace spi {$/;"	n	namespace:log4cxx
+spi	log4cxx/logmanager.h	/^    namespace spi {$/;"	n	namespace:log4cxx
+spi	log4cxx/propertyconfigurator.h	/^    namespace spi {$/;"	n	namespace:log4cxx
+spi	log4cxx/spi/appenderattachable.h	/^    namespace spi$/;"	n	namespace:log4cxx
+spi	log4cxx/spi/configurator.h	/^   namespace spi$/;"	n	namespace:log4cxx
+spi	log4cxx/spi/defaultrepositoryselector.h	/^        namespace spi$/;"	n	namespace:log4cxx
+spi	log4cxx/spi/errorhandler.h	/^    namespace spi$/;"	n	namespace:log4cxx
+spi	log4cxx/spi/filter.h	/^        namespace spi$/;"	n	namespace:log4cxx
+spi	log4cxx/spi/hierarchyeventlistener.h	/^        namespace spi$/;"	n	namespace:log4cxx
+spi	log4cxx/spi/location/locationinfo.h	/^  namespace spi$/;"	n	namespace:log4cxx
+spi	log4cxx/spi/loggerfactory.h	/^        namespace spi$/;"	n	namespace:log4cxx
+spi	log4cxx/spi/loggerrepository.h	/^    namespace spi$/;"	n	namespace:log4cxx
+spi	log4cxx/spi/loggingevent.h	/^        namespace spi$/;"	n	namespace:log4cxx
+spi	log4cxx/spi/optionhandler.h	/^        namespace spi$/;"	n	namespace:log4cxx
+spi	log4cxx/spi/repositoryselector.h	/^        namespace spi$/;"	n	namespace:log4cxx
+spi	log4cxx/spi/rootlogger.h	/^        namespace spi$/;"	n	namespace:log4cxx
+spi	log4cxx/spi/triggeringeventevaluator.h	/^        namespace spi$/;"	n	namespace:log4cxx
+sqlStatement	log4cxx/db/odbcappender.h	/^                        LogString sqlStatement;$/;"	m	class:log4cxx::db::ODBCAppender
+src	log4cxx/helpers/stringtokenizer.h	/^                        LogString src;$/;"	m	class:log4cxx::helpers::StringTokenizer
+startTime	log4cxx/helpers/aprinitializer.h	/^      log4cxx_time_t startTime;$/;"	m	class:log4cxx::helpers::APRInitializer
+startTime	log4cxx/helpers/relativetimedateformat.h	/^                        log4cxx_time_t startTime;$/;"	m	class:log4cxx::helpers::RelativeTimeDateFormat
+std	log4cxx/helpers/simpledateformat.h	/^namespace std { class locale; }$/;"	n
+stream	log4cxx/helpers/messagebuffer.h	/^        std::basic_ostringstream<UniChar>* stream;$/;"	m	class:log4cxx::helpers::UniCharMessageBuffer
+stream	log4cxx/helpers/messagebuffer.h	/^        std::basic_ostringstream<char>* stream;$/;"	m	class:log4cxx::helpers::CharMessageBuffer
+stream	log4cxx/helpers/messagebuffer.h	/^        std::basic_ostringstream<wchar_t>* stream;$/;"	m	class:log4cxx::helpers::WideMessageBuffer
+stream	log4cxx/stream.h	/^            std::basic_stringstream<Ch>* stream;$/;"	m	class:log4cxx::logstream
+stream	log4cxx/stream.h	/^            std::basic_stringstream<Ch>* stream;$/;"	m	class:log4cxx::ulogstream
+stream	log4cxx/stream.h	/^            std::basic_stringstream<Ch>* stream;$/;"	m	class:log4cxx::wlogstream
+streams	log4cxx/net/sockethubappender.h	/^                        ObjectOutputStreamList streams;$/;"	m	class:log4cxx::net::SocketHubAppender
+stringToMatch	log4cxx/filter/stringmatchfilter.h	/^                        LogString stringToMatch;$/;"	m	class:log4cxx::filter::StringMatchFilter
+style	log4cxx/pattern/patternconverter.h	/^  const LogString style;$/;"	m	class:log4cxx::pattern::PatternConverter
+subject	log4cxx/net/smtpappender.h	/^                        LogString subject;$/;"	m	class:log4cxx::net::SMTPAppender
+suffixLength	log4cxx/rolling/timebasedrollingpolicy.h	/^        int suffixLength;$/;"	m	class:log4cxx::rolling::TimeBasedRollingPolicy
+sw	log4cxx/net/syslogappender.h	/^                        helpers::SyslogWriter * sw;$/;"	m	class:log4cxx::net::SyslogAppender
+synchronized	log4cxx/helpers/synchronized.h	/^                class LOG4CXX_EXPORT synchronized$/;"	c	namespace:log4cxx::helpers
+synchronous	log4cxx/rolling/rolloverdescription.h	/^          ActionPtr synchronous;$/;"	m	class:log4cxx::rolling::RolloverDescription
+syslogEquivalent	log4cxx/level.h	/^                int syslogEquivalent;$/;"	m	class:log4cxx::Level
+syslogFacility	log4cxx/net/syslogappender.h	/^                        int syslogFacility; \/\/ Have LOG_USER as default$/;"	m	class:log4cxx::net::SyslogAppender
+syslogHost	log4cxx/helpers/syslogwriter.h	/^                        LogString syslogHost;$/;"	m	class:log4cxx::helpers::SyslogWriter
+syslogHost	log4cxx/net/syslogappender.h	/^                        LogString syslogHost;$/;"	m	class:log4cxx::net::SyslogAppender
+sz	log4cxx/helpers/bufferedwriter.h	/^                  size_t sz;$/;"	m	class:log4cxx::helpers::BufferedWriter
+tailFilter	log4cxx/appenderskeleton.h	/^                spi::FilterPtr tailFilter;$/;"	m	class:log4cxx::AppenderSkeleton
+tailFilter	log4cxx/filter/andfilter.h	/^            log4cxx::spi::FilterPtr tailFilter;$/;"	m	class:log4cxx::filter::AndFilter
+tailFilter	log4cxx/rolling/filterbasedtriggeringpolicy.h	/^  log4cxx::spi::FilterPtr tailFilter;$/;"	m	class:log4cxx::rolling::FilterBasedTriggeringPolicy
+target	log4cxx/consoleappender.h	/^                LogString target;$/;"	m	class:log4cxx::ConsoleAppender
+thread	log4cxx/helpers/filewatchdog.h	/^                        Thread thread;$/;"	m	class:log4cxx::helpers::FileWatchdog
+thread	log4cxx/helpers/thread.h	/^                            Thread* thread;$/;"	m	class:log4cxx::helpers::Thread::LaunchPackage
+thread	log4cxx/helpers/thread.h	/^                        apr_thread_t* thread;$/;"	m	class:log4cxx::helpers::Thread
+thread	log4cxx/net/socketappenderskeleton.h	/^                   helpers::Thread thread;$/;"	m	class:log4cxx::net::SocketAppenderSkeleton
+thread	log4cxx/net/sockethubappender.h	/^                        helpers::Thread thread;$/;"	m	class:log4cxx::net::SocketHubAppender
+threadName	log4cxx/spi/loggingevent.h	/^                       const LogString threadName;$/;"	m	class:log4cxx::spi::LoggingEvent
+threadPrinting	log4cxx/ttcclayout.h	/^                  bool threadPrinting;$/;"	m	class:log4cxx::TTCCLayout
+threshold	log4cxx/appenderskeleton.h	/^                LevelPtr threshold;$/;"	m	class:log4cxx::AppenderSkeleton
+threshold	log4cxx/hierarchy.h	/^            LevelPtr threshold;$/;"	m	class:log4cxx::Hierarchy
+thresholdInt	log4cxx/hierarchy.h	/^            int thresholdInt;$/;"	m	class:log4cxx::Hierarchy
+time	log4cxx/helpers/date.h	/^      const log4cxx_time_t time;$/;"	m	class:log4cxx::helpers::Date
+timeStamp	log4cxx/spi/loggingevent.h	/^                        log4cxx_time_t timeStamp;$/;"	m	class:log4cxx::spi::LoggingEvent
+timeZone	log4cxx/helpers/simpledateformat.h	/^                  TimeZonePtr timeZone;$/;"	m	class:log4cxx::helpers::SimpleDateFormat
+timeZone	log4cxx/helpers/strftimedateformat.h	/^                  TimeZonePtr timeZone;$/;"	m	class:log4cxx::helpers::StrftimeDateFormat
+timeZoneID	log4cxx/helpers/datelayout.h	/^                        LogString timeZoneID;$/;"	m	class:log4cxx::helpers::DateLayout
+timeout	log4cxx/helpers/serversocket.h	/^                        int timeout;$/;"	m	class:log4cxx::helpers::ServerSocket
+title	log4cxx/htmllayout.h	/^                LogString title;$/;"	m	class:log4cxx::HTMLLayout
+tlsKey	log4cxx/helpers/aprinitializer.h	/^      apr_threadkey_t* tlsKey;$/;"	m	class:log4cxx::helpers::APRInitializer
+to	log4cxx/net/smtpappender.h	/^                        LogString to;$/;"	m	class:log4cxx::net::SMTPAppender
+toInt	log4cxx/level.h	/^                inline int toInt() const {$/;"	f	class:log4cxx::Level
+toLevel	log4cxx/level.h	/^                        virtual LevelPtr toLevel(const LogString& sArg) const$/;"	f	class:log4cxx::Level::LevelClass
+toLevel	log4cxx/level.h	/^                        virtual LevelPtr toLevel(int val) const$/;"	f	class:log4cxx::Level::LevelClass
+triggeringPolicy	log4cxx/rolling/rollingfileappenderskeleton.h	/^          TriggeringPolicyPtr triggeringPolicy;$/;"	m	class:log4cxx::rolling::RollingFileAppenderSkeleton
+ubuf	log4cxx/helpers/messagebuffer.h	/^        UniCharMessageBuffer* ubuf;        $/;"	m	class:log4cxx::helpers::MessageBuffer
+ulogstream	log4cxx/stream.h	/^        class LOG4CXX_EXPORT ulogstream : public logstream_base {$/;"	c	namespace:log4cxx
+uostream	log4cxx/helpers/messagebuffer.h	/^        typedef std::basic_ostream<UniChar> uostream;$/;"	t	class:log4cxx::helpers::UniCharMessageBuffer
+utf8Encoder	log4cxx/helpers/objectoutputstream.h	/^                  log4cxx::helpers::CharsetEncoderPtr utf8Encoder;$/;"	m	class:log4cxx::helpers::ObjectOutputStream
+val	log4cxx/helpers/integer.h	/^          const int val;$/;"	m	class:log4cxx::helpers::Integer
+varia	log4cxx/varia/fallbackerrorhandler.h	/^        namespace varia$/;"	n	namespace:log4cxx
+variant	log4cxx/helpers/locale.h	/^                        const LogString variant;$/;"	m	class:log4cxx::helpers::Locale
+warnedAlready	log4cxx/helpers/filewatchdog.h	/^                        bool warnedAlready;$/;"	m	class:log4cxx::helpers::FileWatchdog
+wbuf	log4cxx/helpers/messagebuffer.h	/^        WideMessageBuffer* wbuf;        $/;"	m	class:log4cxx::helpers::MessageBuffer
+wlogstream	log4cxx/stream.h	/^        class LOG4CXX_EXPORT wlogstream : public logstream_base {$/;"	c	namespace:log4cxx
+writer	log4cxx/net/xmlsocketappender.h	/^                log4cxx::helpers::WriterPtr writer;$/;"	m	class:log4cxx::net::XMLSocketAppender
+writer	log4cxx/writerappender.h	/^                log4cxx::helpers::WriterPtr writer;$/;"	m	class:log4cxx::WriterAppender
+xml	log4cxx/xml/domconfigurator.h	/^        namespace xml$/;"	n	namespace:log4cxx
+xml	log4cxx/xml/xmllayout.h	/^        namespace xml$/;"	n	namespace:log4cxx
+zeroString	log4cxx/helpers/cacheddateformat.h	/^             static const logchar zeroString[];$/;"	m	class:log4cxx::pattern::CachedDateFormat
+~Appender	log4cxx/appender.h	/^        virtual ~Appender() {}$/;"	f	class:log4cxx::Appender
+~AppenderAttachable	log4cxx/spi/appenderattachable.h	/^            virtual ~AppenderAttachable(){}$/;"	f	class:log4cxx::spi::AppenderAttachable
+~ErrorHandler	log4cxx/spi/errorhandler.h	/^                        virtual ~ErrorHandler() {}$/;"	f	class:log4cxx::spi::ErrorHandler
+~HierarchyEventListener	log4cxx/spi/hierarchyeventlistener.h	/^                        virtual ~HierarchyEventListener() {}$/;"	f	class:log4cxx::spi::HierarchyEventListener
+~LoggerFactory	log4cxx/spi/loggerfactory.h	/^                        virtual ~LoggerFactory() {}$/;"	f	class:log4cxx::spi::LoggerFactory
+~LoggerRepository	log4cxx/spi/loggerrepository.h	/^                    virtual ~LoggerRepository() {}$/;"	f	class:log4cxx::spi::LoggerRepository
+~Object	log4cxx/helpers/object.h	/^                        virtual ~Object() {}$/;"	f	class:log4cxx::helpers::Object
+~OptionHandler	log4cxx/spi/optionhandler.h	/^                        virtual ~OptionHandler() {}$/;"	f	class:log4cxx::spi::OptionHandler
+~RepositorySelector	log4cxx/spi/repositoryselector.h	/^                        virtual ~RepositorySelector() {}$/;"	f	class:log4cxx::spi::RepositorySelector
+~RollingPolicy	log4cxx/rolling/rollingpolicy.h	/^        virtual ~RollingPolicy() {}$/;"	f	class:log4cxx::rolling::RollingPolicy

@@ -1,0 +1,431 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers
+END
+charsetencoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/charsetencoder.h
+END
+systemerrwriter.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/systemerrwriter.h
+END
+properties.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/properties.h
+END
+integer.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/integer.h
+END
+bytearrayinputstream.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/bytearrayinputstream.h
+END
+bytearrayoutputstream.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/bytearrayoutputstream.h
+END
+cyclicbuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/cyclicbuffer.h
+END
+xml.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/xml.h
+END
+objectoutputstream.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/objectoutputstream.h
+END
+strftimedateformat.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/strftimedateformat.h
+END
+class.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/class.h
+END
+inetaddress.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/inetaddress.h
+END
+loader.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/loader.h
+END
+datagrampacket.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/datagrampacket.h
+END
+outputstreamwriter.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/outputstreamwriter.h
+END
+datelayout.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/datelayout.h
+END
+fileinputstream.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/fileinputstream.h
+END
+outputstream.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/outputstream.h
+END
+writer.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/writer.h
+END
+syslogwriter.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/syslogwriter.h
+END
+charsetdecoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/charsetdecoder.h
+END
+bufferedwriter.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/bufferedwriter.h
+END
+iso8601dateformat.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/iso8601dateformat.h
+END
+propertyresourcebundle.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/propertyresourcebundle.h
+END
+condition.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/condition.h
+END
+objectimpl.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/objectimpl.h
+END
+appenderattachableimpl.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/appenderattachableimpl.h
+END
+timezone.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/timezone.h
+END
+bytebuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/bytebuffer.h
+END
+locale.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/locale.h
+END
+simpledateformat.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/simpledateformat.h
+END
+tchar.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/tchar.h
+END
+stringhelper.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/stringhelper.h
+END
+pool.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/pool.h
+END
+transform.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/transform.h
+END
+fileoutputstream.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/fileoutputstream.h
+END
+date.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/date.h
+END
+strictmath.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/strictmath.h
+END
+threadlocal.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/threadlocal.h
+END
+socketoutputstream.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/socketoutputstream.h
+END
+aprinitializer.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/aprinitializer.h
+END
+datagramsocket.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/datagramsocket.h
+END
+objectptr.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/objectptr.h
+END
+onlyonceerrorhandler.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/onlyonceerrorhandler.h
+END
+classregistration.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/classregistration.h
+END
+filewatchdog.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/filewatchdog.h
+END
+stringtokenizer.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/stringtokenizer.h
+END
+relativetimedateformat.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/relativetimedateformat.h
+END
+reader.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/reader.h
+END
+mutex.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/mutex.h
+END
+datetimedateformat.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/datetimedateformat.h
+END
+absolutetimedateformat.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/absolutetimedateformat.h
+END
+transcoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/transcoder.h
+END
+object.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/object.h
+END
+threadspecificdata.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/threadspecificdata.h
+END
+cacheddateformat.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/cacheddateformat.h
+END
+serversocket.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/serversocket.h
+END
+bufferedoutputstream.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/bufferedoutputstream.h
+END
+resourcebundle.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/resourcebundle.h
+END
+loglog.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/loglog.h
+END
+system.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/system.h
+END
+dateformat.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/dateformat.h
+END
+exception.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/exception.h
+END
+inputstreamreader.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/inputstreamreader.h
+END
+optionconverter.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/optionconverter.h
+END
+thread.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/thread.h
+END
+systemoutwriter.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/systemoutwriter.h
+END
+inputstream.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/inputstream.h
+END
+messagebuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/messagebuffer.h
+END
+synchronized.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/synchronized.h
+END
+socket.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/helpers/socket.h
+END

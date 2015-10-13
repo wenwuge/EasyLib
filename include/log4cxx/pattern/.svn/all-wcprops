@@ -1,0 +1,149 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/pattern
+END
+ndcpatternconverter.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/pattern/ndcpatternconverter.h
+END
+patternparser.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/pattern/patternparser.h
+END
+classnamepatternconverter.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/pattern/classnamepatternconverter.h
+END
+levelpatternconverter.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/pattern/levelpatternconverter.h
+END
+threadpatternconverter.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/pattern/threadpatternconverter.h
+END
+lineseparatorpatternconverter.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/pattern/lineseparatorpatternconverter.h
+END
+filelocationpatternconverter.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/pattern/filelocationpatternconverter.h
+END
+methodlocationpatternconverter.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/pattern/methodlocationpatternconverter.h
+END
+nameabbreviator.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/pattern/nameabbreviator.h
+END
+filedatepatternconverter.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/pattern/filedatepatternconverter.h
+END
+datepatternconverter.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/pattern/datepatternconverter.h
+END
+loggerpatternconverter.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/pattern/loggerpatternconverter.h
+END
+patternconverter.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/pattern/patternconverter.h
+END
+linelocationpatternconverter.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/pattern/linelocationpatternconverter.h
+END
+namepatternconverter.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/pattern/namepatternconverter.h
+END
+messagepatternconverter.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/pattern/messagepatternconverter.h
+END
+loggingeventpatternconverter.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/pattern/loggingeventpatternconverter.h
+END
+relativetimepatternconverter.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/pattern/relativetimepatternconverter.h
+END
+fulllocationpatternconverter.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/pattern/fulllocationpatternconverter.h
+END
+literalpatternconverter.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/pattern/literalpatternconverter.h
+END
+propertiespatternconverter.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/pattern/propertiespatternconverter.h
+END
+integerpatternconverter.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/pattern/integerpatternconverter.h
+END
+throwableinformationpatternconverter.h
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/pattern/throwableinformationpatternconverter.h
+END
+formattinginfo.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/pattern/formattinginfo.h
+END

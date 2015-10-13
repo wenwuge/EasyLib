@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/rolling
+END
+rollingfileappenderskeleton.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/rolling/rollingfileappenderskeleton.h
+END
+gzcompressaction.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/rolling/gzcompressaction.h
+END
+fixedwindowrollingpolicy.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/rolling/fixedwindowrollingpolicy.h
+END
+timebasedrollingpolicy.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/rolling/timebasedrollingpolicy.h
+END
+filerenameaction.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/rolling/filerenameaction.h
+END
+rolloverdescription.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/rolling/rolloverdescription.h
+END
+sizebasedtriggeringpolicy.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/rolling/sizebasedtriggeringpolicy.h
+END
+zipcompressaction.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/rolling/zipcompressaction.h
+END
+action.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/rolling/action.h
+END
+manualtriggeringpolicy.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/rolling/manualtriggeringpolicy.h
+END
+triggeringpolicy.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/rolling/triggeringpolicy.h
+END
+rollingpolicybase.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/rolling/rollingpolicybase.h
+END
+rollingfileappender.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/rolling/rollingfileappender.h
+END
+rollingpolicy.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/rolling/rollingpolicy.h
+END
+filterbasedtriggeringpolicy.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/rolling/filterbasedtriggeringpolicy.h
+END

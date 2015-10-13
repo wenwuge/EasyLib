@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/filter
+END
+stringmatchfilter.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/filter/stringmatchfilter.h
+END
+levelmatchfilter.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/filter/levelmatchfilter.h
+END
+levelrangefilter.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/filter/levelrangefilter.h
+END
+locationinfofilter.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/filter/locationinfofilter.h
+END
+propertyfilter.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/filter/propertyfilter.h
+END
+denyallfilter.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/filter/denyallfilter.h
+END
+mapfilter.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/filter/mapfilter.h
+END
+expressionfilter.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/filter/expressionfilter.h
+END
+andfilter.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/filter/andfilter.h
+END

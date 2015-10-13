@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/spi
+END
+loggerrepository.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/spi/loggerrepository.h
+END
+repositoryselector.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/spi/repositoryselector.h
+END
+configurator.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/spi/configurator.h
+END
+rootlogger.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/spi/rootlogger.h
+END
+defaultrepositoryselector.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/spi/defaultrepositoryselector.h
+END
+filter.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/spi/filter.h
+END
+hierarchyeventlistener.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/spi/hierarchyeventlistener.h
+END
+optionhandler.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/spi/optionhandler.h
+END
+triggeringeventevaluator.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/spi/triggeringeventevaluator.h
+END
+appenderattachable.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/spi/appenderattachable.h
+END
+errorhandler.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/spi/errorhandler.h
+END
+loggerfactory.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/spi/loggerfactory.h
+END
+loggingevent.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/spi/loggingevent.h
+END

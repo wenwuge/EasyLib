@@ -1,0 +1,179 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx
+END
+stream.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/stream.h
+END
+writerappender.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/writerappender.h
+END
+ttcclayout.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/ttcclayout.h
+END
+asyncappender.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/asyncappender.h
+END
+appender.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/appender.h
+END
+fileappender.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/fileappender.h
+END
+provisionnode.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/provisionnode.h
+END
+htmllayout.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/htmllayout.h
+END
+portability.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/portability.h
+END
+appenderskeleton.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/appenderskeleton.h
+END
+mdc.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/mdc.h
+END
+basicconfigurator.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/basicconfigurator.h
+END
+ndc.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/ndc.h
+END
+propertyconfigurator.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/propertyconfigurator.h
+END
+defaultconfigurator.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/defaultconfigurator.h
+END
+level.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/level.h
+END
+dailyrollingfileappender.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/dailyrollingfileappender.h
+END
+logstring.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/logstring.h
+END
+patternlayout.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/patternlayout.h
+END
+logmanager.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/logmanager.h
+END
+defaultloggerfactory.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/defaultloggerfactory.h
+END
+layout.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/layout.h
+END
+hierarchy.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/hierarchy.h
+END
+logger.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/logger.h
+END
+file.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/file.h
+END
+consoleappender.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/consoleappender.h
+END
+rollingfileappender.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/rollingfileappender.h
+END
+simplelayout.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/simplelayout.h
+END
+log4cxx.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/log4cxx.h
+END

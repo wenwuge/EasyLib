@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/net
+END
+telnetappender.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/net/telnetappender.h
+END
+socketappenderskeleton.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/net/socketappenderskeleton.h
+END
+syslogappender.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/net/syslogappender.h
+END
+smtpappender.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/net/smtpappender.h
+END
+sockethubappender.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/net/sockethubappender.h
+END
+socketappender.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/net/socketappender.h
+END
+xmlsocketappender.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/include/log4cxx/log4cxx/net/xmlsocketappender.h
+END
