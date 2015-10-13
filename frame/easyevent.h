@@ -7,6 +7,45 @@
 
 using namespace std;
 
+class FdEvent : noncopyable {
+public:
+    enum Type {
+        kReadable = 1,
+        kWritable = 2,
+    };
+
+    enum {
+        kNoTime = 0,
+        kTimeDiff = 1,
+        kTimeStamp = 2,
+    };
+    typedef std::tr1::function<void(int)> Functor;
+    FdEvent(struct event_base* base);
+    ~FdEvent();
+    void AsyncWait(int fd, int events, const Functor& handler);
+#if 0
+    void AsyncWait(int fd, int events, const Functor& handler,
+            const ldd::util::Timestamp& timeout);
+    void AsyncWait(int fd, int events, const Functor& handler,
+            const ldd::util::TimeDiff& timeout);
+#endif
+    void Cancel();
+private:
+    void Start(int fd, int events);
+    static void Notify(int fd, short what, void *arg); 
+protected:
+    struct event_base  *base_;
+    struct event *ev_;
+#if 0
+    ldd::util::TimeDiff time_diff_;
+    ldd::util::Timestamp time_stamp_;
+#endif
+    Functor handler_;
+    int8_t flags_;
+    bool active_;
+    int8_t time_flag_;
+};
+
 class TimerEvent : noncopyable {
 public:
     typedef std::tr1::function<void()> Functor;
@@ -51,4 +90,6 @@ private:
     map<int, struct event*> sig_ev_;
     Functor handler_; 
 };
+
+
 #endif

@@ -2,6 +2,188 @@
 //timer event
 #include <string.h>
 
+FdEvent::FdEvent(struct event_base* base)
+    : base_(base)
+      , ev_(NULL)
+      , time_flag_(kNoTime)
+      , flags_(0)
+      , active_(false)
+{
+}
+
+FdEvent::~FdEvent() {
+
+    Cancel();
+}
+
+void FdEvent::Start(int fd, int events) {
+
+
+    if ((events & (kReadable | kWritable)) == 0 ) {
+        return;
+    }
+
+    Cancel();
+
+    if (fd >= 0) {
+        short e = 0;
+        if (events & kReadable) {
+            e |= EV_READ;
+        }
+
+        if (events & kWritable) {
+            e |= EV_WRITE;
+        }
+
+        ev_ = event_new(base_
+                , fd
+                , e /*no EV_PERSIST, because FdEvent is a once event*/
+                , Notify
+                , (void *)this);
+
+
+        if (time_flag_ == kNoTime) {
+            int rc = event_add(ev_, NULL);
+            if (rc != 0) {
+                return;
+            }
+        }
+#if 0 
+        else {
+            struct timeval tv;
+            if (time_flag_ == kTimeDiff) {
+                time_diff_.To(&tv);
+                    << time_diff_.ToMilliseconds()
+                    << ", fd: " << fd;
+            }
+            else if (time_flag_ == FdEvent::kTimestamp) {
+                ldd::util::TimeDiff td
+                    = time_stamp_ - ldd::util::Timestamp::Now();;
+                    << td.ToMilliseconds()
+                    << ", fd: " << fd;
+
+                td.To(&tv);
+            }
+            else {
+                return;
+            }
+
+            int rc = event_add(ev_, &tv);
+            if (rc != 0) {
+                return;
+            }
+        }
+
+        active_ = true;
+
+        return;
+    }
+#endif
+    else {
+        return;
+    }
+}
+}
+
+void FdEvent::Cancel() {
+
+
+    if (!active_) {
+        return;
+    }
+
+    active_ = false;
+
+    if (ev_ != NULL) {
+        int rc = event_del(ev_);
+        if (rc != 0) {
+            return;
+        }
+        event_free(ev_);
+        ev_ = NULL;
+    }
+    else {
+    }
+
+    handler_ = NULL;
+    time_flag_ = kNoTime;
+}
+
+void FdEvent::Notify(int fd, short what, void *arg) {
+
+
+
+    FdEvent *self = static_cast<FdEvent *>(arg);
+
+    if (what & EV_READ) {
+        self->flags_ |= kReadable;
+    }
+    else if (what & EV_WRITE) {
+        self->flags_ |= kWritable;
+    }
+    else if (what & EV_TIMEOUT) {
+    }
+    else {
+        return;
+    }
+
+
+    try {
+
+        if (self->active_) {
+            self->handler_(self->flags_);
+        }
+        else {
+        }
+
+    } catch (const std::exception& e) {
+    } catch (...) {
+    }
+
+}
+
+void FdEvent::AsyncWait(int fd, int events, const Functor& handler) {
+
+    if (active_) {
+        Cancel();
+    }
+
+    time_flag_ = kNoTime;
+    handler_ = handler;
+
+    Start(fd, events);
+}
+#if 0
+void FdEvent::AsyncWait(int fd, int events, const Functor& handler,
+        const ldd::util::Timestamp& timeout) {
+
+    if (active_) {
+        Cancel();
+    }
+
+    time_stamp_ = timeout;
+    time_flag_ = kTimestamp;
+    handler_ = handler;
+
+    Start(fd, events);
+}
+
+void FdEvent::AsyncWait(int fd, int events, const Functor& handler,
+        const ldd::util::TimeDiff& timeout) {
+
+
+    if (active_) {
+        Cancel();
+    }
+
+    time_diff_ = timeout;
+    time_flag_ = kTimeDiff;
+    handler_ = handler;
+
+    Start(fd, events);
+}
+#endif
+
 TimerEvent::TimerEvent(struct event_base* base)
     : base_(base)
       , timer_ev_(NULL)
