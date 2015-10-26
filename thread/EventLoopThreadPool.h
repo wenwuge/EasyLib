@@ -4,6 +4,7 @@
 #include "EventLoop.h"
 #include <vector>
 #include <tr1/memory>
+#include "../common/atomic.h"
 using namespace std;
 
 class EventLoopThreadPool
@@ -31,7 +32,8 @@ private:
     EventLoop* base_loop_;
     bool started_;
     int threads_num_;
-    AtomicInt32 next_;
+    //AtomicInt32 next_;
+    int next_;
 
     vector<EventLoopThreadPtr> threads_;
 };

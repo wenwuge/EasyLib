@@ -24,7 +24,7 @@ bool EventLoopThread::Start(bool wait_until_thread_started)
     cout << "thread start end " << endl;
     
     if(rc == true || wait_until_thread_started == false){
-        return false;
+        return true;
     }
 
     for(;;){
