@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/lib/log4cxx/pkgconfig
+END
+liblog4cxx.pc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/lib/log4cxx/pkgconfig/liblog4cxx.pc
+END
+._.svn
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/lib/log4cxx/pkgconfig/._.svn
+END
+thrift.pc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/lib/log4cxx/pkgconfig/thrift.pc
+END
+thrift-z.pc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/lib/log4cxx/pkgconfig/thrift-z.pc
+END
+thrift-nb.pc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/hao360cn_video_cdn/!svn/ver/1/trunk/lib/log4cxx/pkgconfig/thrift-nb.pc
+END

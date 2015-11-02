@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/hao360cn_video_cdn/!svn/ver/12/trunk/lib/libevent/pkgconfig
+END
+libevent_pthreads.pc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/hao360cn_video_cdn/!svn/ver/12/trunk/lib/libevent/pkgconfig/libevent_pthreads.pc
+END
+libevent.pc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/hao360cn_video_cdn/!svn/ver/12/trunk/lib/libevent/pkgconfig/libevent.pc
+END
+libevent_openssl.pc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/hao360cn_video_cdn/!svn/ver/12/trunk/lib/libevent/pkgconfig/libevent_openssl.pc
+END
