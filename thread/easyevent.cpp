@@ -73,16 +73,13 @@ void FdEvent::Start(int fd, int events) {
                 return;
             }
         }
-
+#endif
         active_ = true;
 
         return;
-    }
-#endif
-    else {
+    }else {
         return;
     }
-}
 }
 
 void FdEvent::Cancel() {

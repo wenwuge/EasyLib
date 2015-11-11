@@ -1,12 +1,14 @@
 CXX=/usr/bin/g++
 INCLUDE=-I/home/libin3-s/locallibevnet/include -I../include/
 LIBS=-lpthread  /home/libin3-s/locallibevnet/lib/libevent.a -Wl,-Bstatic  -llog4cxx -L../lib/log4cxx -Wl,-Bdynamic -lm -L/usr/lib64 -L/usr/local/apr/lib/ -lapr-1 -L/usr/local/apr-util/lib/ -laprutil-1 ../common/libcommon.a 
-CFLAGS=-g -ldl -rdynamic 
+CFLAGS=-g 
 OBJS=$(patsubst %.cpp,%.o,$(wildcard *.cpp))
-TARGET=testthread
+#TARGET=testthread
+TARGET=libthread.a
 
 $(TARGET) : $(OBJS)
-	g++ -o $@ $^ $(LIBS) $(CFLAGS) $(INCLUDE) 
+	#g++ -o $@ $^ $(LIBS) $(CFLAGS) $(INCLUDE) 
+	ar cr $@ $^
 %.o : %.cpp
 	g++ -c  $^ $(CFLAGS) $(INCLUDE)
 

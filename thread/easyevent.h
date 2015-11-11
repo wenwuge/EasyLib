@@ -1,6 +1,10 @@
 #ifndef __EASYEVENT
 #define __EASYEVENT
+#if 0
 #include <event.h>
+#else
+#include <event2/event.h>
+#endif
 #include <map>
 #include "../common/noncopyable.h"
 #include <tr1/functional>
