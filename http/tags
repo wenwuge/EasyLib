@@ -30,8 +30,14 @@ Condition::pipes_	Condition.h	/^        int     pipes_[2];$/;"	m	class:Condition
 Condition::~Condition	Condition.cpp	/^Condition::~Condition()$/;"	f	class:Condition
 Condition::~Condition	Condition.h	/^        ~Condition();$/;"	p	class:Condition	access:public
 DefalutHttpResponse	HttpService.h	/^    static  void DefalutHttpResponse(struct evhttp_request * req,void *  arg);$/;"	p	class:HttpService	access:private
+DispatchRequests	EasyHttp.cpp	/^void HttpServer::DispatchRequests(HttpContextPtr& req, ResponseCallBack callback)$/;"	f	class:HttpServer
+DispatchRequests	EasyHttp.h	/^    void DispatchRequests(HttpContextPtr& req, ResponseCallBack callback);$/;"	p	class:HttpServer	access:private
+EventLoopPtr	EasyHttp.h	/^    typedef tr1::shared_ptr<EventLoop> EventLoopPtr;$/;"	t	class:HttpServer	access:private
+EvetnBasePtr	EasyHttp.h	/^    typedef tr1::shared_ptr<event_base> EvetnBasePtr;$/;"	t	class:HttpServer	access:private
 GenericCallBack	HttpService.cpp	/^void HttpService::GenericCallBack(struct evhttp_request * req, void * arg)$/;"	f	class:HttpService
 GenericCallBack	HttpService.h	/^    static void GenericCallBack(struct evhttp_request * req, void *arg);$/;"	p	class:HttpService	access:private
+GetBody	HttpService.cpp	/^string& HttpContext::GetBody()$/;"	f	class:HttpContext
+GetBody	HttpService.h	/^    string& GetBody();$/;"	p	class:HttpContext	access:public
 GetEvhttpReq	HttpService.cpp	/^struct evhttp_request* HttpContext::GetEvhttpReq()$/;"	f	class:HttpContext
 GetEvhttpReq	HttpService.h	/^    struct evhttp_request* GetEvhttpReq();$/;"	p	class:HttpContext	access:public
 GetHeaderValue	HttpService.cpp	/^string  HttpContext::GetHeaderValue(const string &header_name)$/;"	f	class:HttpContext
@@ -45,6 +51,8 @@ GetUrl	HttpService.h	/^    string& GetUrl();$/;"	p	class:HttpContext	access:publ
 HttpContext	HttpService.cpp	/^HttpContext::HttpContext(struct evhttp_request * request)$/;"	f	class:HttpContext
 HttpContext	HttpService.h	/^    HttpContext(struct evhttp_request * request);$/;"	p	class:HttpContext	access:public
 HttpContext	HttpService.h	/^class HttpContext{$/;"	c
+HttpContext::GetBody	HttpService.cpp	/^string& HttpContext::GetBody()$/;"	f	class:HttpContext
+HttpContext::GetBody	HttpService.h	/^    string& GetBody();$/;"	p	class:HttpContext	access:public
 HttpContext::GetEvhttpReq	HttpService.cpp	/^struct evhttp_request* HttpContext::GetEvhttpReq()$/;"	f	class:HttpContext
 HttpContext::GetEvhttpReq	HttpService.h	/^    struct evhttp_request* GetEvhttpReq();$/;"	p	class:HttpContext	access:public
 HttpContext::GetHeaderValue	HttpService.cpp	/^string  HttpContext::GetHeaderValue(const string &header_name)$/;"	f	class:HttpContext
@@ -61,12 +69,42 @@ HttpContext::Init	HttpService.cpp	/^void HttpContext::Init()$/;"	f	class:HttpCon
 HttpContext::Init	HttpService.h	/^    void Init();$/;"	p	class:HttpContext	access:public
 HttpContext::ParseUri	HttpService.cpp	/^void HttpContext::ParseUri(const char* orig_uri)$/;"	f	class:HttpContext
 HttpContext::ParseUri	HttpService.h	/^    void ParseUri(const char* orig_uri);$/;"	p	class:HttpContext	access:private
+HttpContext::body_	HttpService.h	/^    string body_;$/;"	m	class:HttpContext	access:private
 HttpContext::headers_map_	HttpService.h	/^    map<string, string> headers_map_;$/;"	m	class:HttpContext	access:private
 HttpContext::output_headers_map_	HttpService.h	/^    map<string, string> output_headers_map_;$/;"	m	class:HttpContext	access:private
 HttpContext::params_map_	HttpService.h	/^    map<string, string> params_map_;$/;"	m	class:HttpContext	access:private
 HttpContext::request_	HttpService.h	/^    struct evhttp_request * request_;$/;"	m	class:HttpContext	typeref:struct:HttpContext::evhttp_request	access:private
 HttpContext::url_	HttpService.h	/^    string url_;\/\/without params $/;"	m	class:HttpContext	access:private
 HttpContextPtr	HttpService.h	/^typedef std::tr1::shared_ptr<HttpContext> HttpContextPtr; $/;"	t
+HttpServer	EasyHttp.cpp	/^HttpServer::HttpServer(int thread_num)$/;"	f	class:HttpServer
+HttpServer	EasyHttp.h	/^    HttpServer(int thread_num);$/;"	p	class:HttpServer	access:public
+HttpServer	EasyHttp.h	/^class HttpServer{$/;"	c
+HttpServer::DispatchRequests	EasyHttp.cpp	/^void HttpServer::DispatchRequests(HttpContextPtr& req, ResponseCallBack callback)$/;"	f	class:HttpServer
+HttpServer::DispatchRequests	EasyHttp.h	/^    void DispatchRequests(HttpContextPtr& req, ResponseCallBack callback);$/;"	p	class:HttpServer	access:private
+HttpServer::EventLoopPtr	EasyHttp.h	/^    typedef tr1::shared_ptr<EventLoop> EventLoopPtr;$/;"	t	class:HttpServer	access:private
+HttpServer::EvetnBasePtr	EasyHttp.h	/^    typedef tr1::shared_ptr<event_base> EvetnBasePtr;$/;"	t	class:HttpServer	access:private
+HttpServer::HttpServer	EasyHttp.cpp	/^HttpServer::HttpServer(int thread_num)$/;"	f	class:HttpServer
+HttpServer::HttpServer	EasyHttp.h	/^    HttpServer(int thread_num);$/;"	p	class:HttpServer	access:public
+HttpServer::HttpServicePtr	EasyHttp.h	/^    typedef tr1::shared_ptr<HttpService> HttpServicePtr;$/;"	t	class:HttpServer	access:private
+HttpServer::Init	EasyHttp.cpp	/^void HttpServer::Init()$/;"	f	class:HttpServer
+HttpServer::Init	EasyHttp.h	/^    void Init();$/;"	p	class:HttpServer	access:public
+HttpServer::Listen	EasyHttp.cpp	/^void HttpServer::Listen(uint16_t port)$/;"	f	class:HttpServer
+HttpServer::Listen	EasyHttp.h	/^    void Listen(uint16_t port);$/;"	p	class:HttpServer	access:public
+HttpServer::Processor	EasyHttp.h	/^    typedef tr1::function<void(HttpContextPtr& req, ResponseCallBack)> Processor; $/;"	t	class:HttpServer	access:private
+HttpServer::RegisterUrlProcessor	EasyHttp.cpp	/^void HttpServer::RegisterUrlProcessor(string& url, Processor&  processor)$/;"	f	class:HttpServer
+HttpServer::RegisterUrlProcessor	EasyHttp.h	/^    void RegisterUrlProcessor(string& url, Processor& processor);$/;"	p	class:HttpServer	access:public
+HttpServer::ResponseCallBack	EasyHttp.h	/^    typedef HttpService::ResponseCallBack ResponseCallBack;$/;"	t	class:HttpServer	access:private
+HttpServer::RunProcessor	EasyHttp.cpp	/^void HttpServer::RunProcessor(HttpContextPtr& req, ResponseCallBack callback, Processor& processor)$/;"	f	class:HttpServer
+HttpServer::RunProcessor	EasyHttp.h	/^    void RunProcessor(HttpContextPtr& req, ResponseCallBack callback, Processor& processor);$/;"	p	class:HttpServer	access:private
+HttpServer::Start	EasyHttp.cpp	/^void HttpServer::Start()$/;"	f	class:HttpServer
+HttpServer::Start	EasyHttp.h	/^    void Start();$/;"	p	class:HttpServer	access:public
+HttpServer::Stop	EasyHttp.cpp	/^void HttpServer::Stop()$/;"	f	class:HttpServer
+HttpServer::Stop	EasyHttp.h	/^    void Stop();$/;"	p	class:HttpServer	access:public
+HttpServer::event_loop_	EasyHttp.h	/^    EventLoopPtr  event_loop_;$/;"	m	class:HttpServer	access:private
+HttpServer::http_server_	EasyHttp.h	/^    HttpServicePtr http_server_;$/;"	m	class:HttpServer	access:private
+HttpServer::thread_pool_	EasyHttp.h	/^    tr1::shared_ptr<EventLoopThreadPool> thread_pool_;$/;"	m	class:HttpServer	access:private
+HttpServer::url_processors_	EasyHttp.h	/^    map<string, Processor> url_processors_;$/;"	m	class:HttpServer	access:private
+HttpServer::worker_thread_num_	EasyHttp.h	/^    int worker_thread_num_;$/;"	m	class:HttpServer	access:private
 HttpService	HttpService.cpp	/^HttpService::HttpService(struct event_base* base):port_(80),condition_(base)$/;"	f	class:HttpService
 HttpService	HttpService.h	/^    HttpService(struct event_base *base);$/;"	p	class:HttpService	access:public
 HttpService	HttpService.h	/^class HttpService{$/;"	c
@@ -79,6 +117,8 @@ HttpService::HttpService	HttpService.h	/^    HttpService(struct event_base *base
 HttpService::Listen	HttpService.cpp	/^int HttpService::Listen(uint16_t port)$/;"	f	class:HttpService
 HttpService::Listen	HttpService.h	/^    int Listen(uint16_t port);$/;"	p	class:HttpService	access:public
 HttpService::PendingReplyPtr	HttpService.h	/^    typedef std::tr1::shared_ptr<PendingReply> PendingReplyPtr; $/;"	t	class:HttpService	access:private
+HttpService::RegisterDefaultCallback	HttpService.cpp	/^void HttpService::RegisterDefaultCallback( CallBackFun callback)$/;"	f	class:HttpService
+HttpService::RegisterDefaultCallback	HttpService.h	/^    void RegisterDefaultCallback(CallBackFun callback);$/;"	p	class:HttpService	access:public
 HttpService::RegisterParseParams	HttpService.h	/^    void RegisterParseParams(string param);$/;"	p	class:HttpService	access:public
 HttpService::RegisterRequestCallback	HttpService.cpp	/^void HttpService::RegisterRequestCallback(string url, CallBackFun callback)$/;"	f	class:HttpService
 HttpService::RegisterRequestCallback	HttpService.h	/^    void RegisterRequestCallback(string url, CallBackFun callback);$/;"	p	class:HttpService	access:public
@@ -93,17 +133,23 @@ HttpService::WhetherParseParams	HttpService.h	/^    bool WhetherParseParams();$/
 HttpService::base_	HttpService.h	/^    struct event_base* base_;$/;"	m	class:HttpService	typeref:struct:HttpService::event_base	access:private
 HttpService::callback_map_	HttpService.h	/^    map<string, CallBackFun> callback_map_;$/;"	m	class:HttpService	access:private
 HttpService::condition_	HttpService.h	/^    Condition condition_;$/;"	m	class:HttpService	access:private
+HttpService::default_callback_	HttpService.h	/^    CallBackFun default_callback_;$/;"	m	class:HttpService	access:private
 HttpService::http_	HttpService.h	/^    struct evhttp * http_;$/;"	m	class:HttpService	typeref:struct:HttpService::evhttp	access:private
 HttpService::pending_reply_list_	HttpService.h	/^    list<PendingReplyPtr> pending_reply_list_;$/;"	m	class:HttpService	access:private
 HttpService::pending_reply_timer_	HttpService.h	/^    TimerEventPtr pending_reply_timer_;$/;"	m	class:HttpService	access:private
 HttpService::port_	HttpService.h	/^    uint16_t port_;$/;"	m	class:HttpService	access:private
 HttpService::reply_list_mutex_	HttpService.h	/^    pthread_mutex_t reply_list_mutex_;   $/;"	m	class:HttpService	access:private
+HttpServicePtr	EasyHttp.h	/^    typedef tr1::shared_ptr<HttpService> HttpServicePtr;$/;"	t	class:HttpServer	access:private
 INCLUDE	Makefile	/^INCLUDE=-I\/home\/libin3-s\/locallibevnet\/include -I..\/include\/$/;"	m
 Init	Condition.cpp	/^void Condition::Init()$/;"	f	class:Condition
 Init	Condition.h	/^        void Init();$/;"	p	class:Condition	access:public
+Init	EasyHttp.cpp	/^void HttpServer::Init()$/;"	f	class:HttpServer
+Init	EasyHttp.h	/^    void Init();$/;"	p	class:HttpServer	access:public
 Init	HttpService.cpp	/^void HttpContext::Init()$/;"	f	class:HttpContext
 Init	HttpService.h	/^    void Init();$/;"	p	class:HttpContext	access:public
 LIBS	Makefile	/^LIBS=-lpthread  \/home\/libin3-s\/locallibevnet\/lib\/libevent.a -Wl,-Bstatic  -llog4cxx -L..\/lib\/log4cxx -Wl,-Bdynamic -lm -L\/usr\/lib64 -L\/usr\/local\/apr\/lib\/ -lapr-1 -L\/usr\/local\/apr-util\/lib\/ -laprutil-1 ..\/common\/libcommon.a ..\/thread\/libthread.a $/;"	m
+Listen	EasyHttp.cpp	/^void HttpServer::Listen(uint16_t port)$/;"	f	class:HttpServer
+Listen	EasyHttp.h	/^    void Listen(uint16_t port);$/;"	p	class:HttpServer	access:public
 Listen	HttpService.cpp	/^int HttpService::Listen(uint16_t port)$/;"	f	class:HttpService
 Listen	HttpService.h	/^    int Listen(uint16_t port);$/;"	p	class:HttpService	access:public
 Notify	Condition.cpp	/^void Condition::Notify()$/;"	f	class:Condition
@@ -116,32 +162,49 @@ PendingReply::buffer_	HttpService.h	/^    struct evbuffer *buffer_;$/;"	m	struct
 PendingReply::req_	HttpService.h	/^    struct evhttp_request *req_;$/;"	m	struct:PendingReply	typeref:struct:PendingReply::evhttp_request	access:public
 PendingReply::~PendingReply	HttpService.h	/^    ~PendingReply()$/;"	f	struct:PendingReply	access:public
 PendingReplyPtr	HttpService.h	/^    typedef std::tr1::shared_ptr<PendingReply> PendingReplyPtr; $/;"	t	class:HttpService	access:private
+Processor	EasyHttp.h	/^    typedef tr1::function<void(HttpContextPtr& req, ResponseCallBack)> Processor; $/;"	t	class:HttpServer	access:private
+RegisterDefaultCallback	HttpService.cpp	/^void HttpService::RegisterDefaultCallback( CallBackFun callback)$/;"	f	class:HttpService
+RegisterDefaultCallback	HttpService.h	/^    void RegisterDefaultCallback(CallBackFun callback);$/;"	p	class:HttpService	access:public
 RegisterParseParams	HttpService.h	/^    void RegisterParseParams(string param);$/;"	p	class:HttpService	access:public
 RegisterRequestCallback	HttpService.cpp	/^void HttpService::RegisterRequestCallback(string url, CallBackFun callback)$/;"	f	class:HttpService
 RegisterRequestCallback	HttpService.h	/^    void RegisterRequestCallback(string url, CallBackFun callback);$/;"	p	class:HttpService	access:public
+RegisterUrlProcessor	EasyHttp.cpp	/^void HttpServer::RegisterUrlProcessor(string& url, Processor&  processor)$/;"	f	class:HttpServer
+RegisterUrlProcessor	EasyHttp.h	/^    void RegisterUrlProcessor(string& url, Processor& processor);$/;"	p	class:HttpServer	access:public
+ResponseCallBack	EasyHttp.h	/^    typedef HttpService::ResponseCallBack ResponseCallBack;$/;"	t	class:HttpServer	access:private
 ResponseCallBack	HttpService.h	/^    typedef std::tr1::function<void(string& response) > ResponseCallBack;$/;"	t	class:HttpService	access:public
+RunProcessor	EasyHttp.cpp	/^void HttpServer::RunProcessor(HttpContextPtr& req, ResponseCallBack callback, Processor& processor)$/;"	f	class:HttpServer
+RunProcessor	EasyHttp.h	/^    void RunProcessor(HttpContextPtr& req, ResponseCallBack callback, Processor& processor);$/;"	p	class:HttpServer	access:private
 SendPendingReply	HttpService.cpp	/^void HttpService::SendPendingReply()$/;"	f	class:HttpService
 SendPendingReply	HttpService.h	/^    void SendPendingReply();$/;"	p	class:HttpService	access:private
 SendReply	HttpService.cpp	/^void HttpService::SendReply(HttpContextPtr& ctx_ptr,const string & response)$/;"	f	class:HttpService
 SendReply	HttpService.h	/^    void SendReply(HttpContextPtr& ctx_ptr, const string& response);$/;"	p	class:HttpService	access:public
 SetParseParams	HttpService.h	/^    void SetParseParams();$/;"	p	class:HttpService	access:public
+Start	EasyHttp.cpp	/^void HttpServer::Start()$/;"	f	class:HttpServer
+Start	EasyHttp.h	/^    void Start();$/;"	p	class:HttpServer	access:public
+Stop	EasyHttp.cpp	/^void HttpServer::Stop()$/;"	f	class:HttpServer
+Stop	EasyHttp.h	/^    void Stop();$/;"	p	class:HttpServer	access:public
 TARGET	Makefile	/^TARGET=testhttp$/;"	m
 TimerEventPtr	HttpService.h	/^    typedef std::tr1::shared_ptr<TimerEvent> TimerEventPtr;$/;"	t	class:HttpService	access:private
 Watch	Condition.cpp	/^void Condition::Watch(functor callback, uint64_t timeout)$/;"	f	class:Condition
 Watch	Condition.h	/^        void Watch(functor callback,uint64_t timeout);$/;"	p	class:Condition	access:public
 WhetherParseParams	HttpService.h	/^    bool WhetherParseParams();$/;"	p	class:HttpService	access:public
 __CONDITION_H	Condition.h	2;"	d
+__EASY_HTTP	EasyHttp.h	2;"	d
 __HTTP_SERVICE	HttpService.h	2;"	d
 base_	Condition.h	/^        struct  event_base *base_;$/;"	m	class:Condition	typeref:struct:Condition::event_base	access:private
 base_	HttpService.h	/^    struct event_base* base_;$/;"	m	class:HttpService	typeref:struct:HttpService::event_base	access:private
+body_	HttpService.h	/^    string body_;$/;"	m	class:HttpContext	access:private
 buffer_	HttpService.h	/^    struct evbuffer *buffer_;$/;"	m	struct:PendingReply	typeref:struct:PendingReply::evbuffer	access:public
 callback_map_	HttpService.h	/^    map<string, CallBackFun> callback_map_;$/;"	m	class:HttpService	access:private
 condition_	HttpService.h	/^    Condition condition_;$/;"	m	class:HttpService	access:private
-echoresponse	main.cpp	/^void echoresponse(HttpContextPtr& req, HttpService::ResonseCallBack callback)$/;"	f
+default_callback_	HttpService.h	/^    CallBackFun default_callback_;$/;"	m	class:HttpService	access:private
+echoresponse	main.cpp	/^void echoresponse(HttpContextPtr& req, HttpService::ResponseCallBack callback)$/;"	f
+event_loop_	EasyHttp.h	/^    EventLoopPtr  event_loop_;$/;"	m	class:HttpServer	access:private
 functor	Condition.h	/^    typedef std::tr1::function<void()> functor;$/;"	t	class:Condition	access:private
 handler_	Condition.h	/^        functor handler_;$/;"	m	class:Condition	access:private
 headers_map_	HttpService.h	/^    map<string, string> headers_map_;$/;"	m	class:HttpContext	access:private
 http_	HttpService.h	/^    struct evhttp * http_;$/;"	m	class:HttpService	typeref:struct:HttpService::evhttp	access:private
+http_server_	EasyHttp.h	/^    HttpServicePtr http_server_;$/;"	m	class:HttpServer	access:private
 main	main.cpp	/^int main(int argc , char** argv)$/;"	f
 output_headers_map_	HttpService.h	/^    map<string, string> output_headers_map_;$/;"	m	class:HttpContext	access:private
 params_map_	HttpService.h	/^    map<string, string> params_map_;$/;"	m	class:HttpContext	access:private
@@ -153,7 +216,10 @@ port_	HttpService.h	/^    uint16_t port_;$/;"	m	class:HttpService	access:private
 reply_list_mutex_	HttpService.h	/^    pthread_mutex_t reply_list_mutex_;   $/;"	m	class:HttpService	access:private
 req_	HttpService.h	/^    struct evhttp_request *req_;$/;"	m	struct:PendingReply	typeref:struct:PendingReply::evhttp_request	access:public
 request_	HttpService.h	/^    struct evhttp_request * request_;$/;"	m	class:HttpContext	typeref:struct:HttpContext::evhttp_request	access:private
+thread_pool_	EasyHttp.h	/^    tr1::shared_ptr<EventLoopThreadPool> thread_pool_;$/;"	m	class:HttpServer	access:private
 url_	HttpService.h	/^    string url_;\/\/without params $/;"	m	class:HttpContext	access:private
+url_processors_	EasyHttp.h	/^    map<string, Processor> url_processors_;$/;"	m	class:HttpServer	access:private
+worker_thread_num_	EasyHttp.h	/^    int worker_thread_num_;$/;"	m	class:HttpServer	access:private
 ~Condition	Condition.cpp	/^Condition::~Condition()$/;"	f	class:Condition
 ~Condition	Condition.h	/^        ~Condition();$/;"	p	class:Condition	access:public
 ~PendingReply	HttpService.h	/^    ~PendingReply()$/;"	f	struct:PendingReply	access:public

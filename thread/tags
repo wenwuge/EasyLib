@@ -5,474 +5,194 @@
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
 Add	easyevent.cpp	/^bool SignalEvent::Add(int signo) {$/;"	f	class:SignalEvent
-Add	easyevent.h	/^    bool Add(int signo);$/;"	p	class:SignalEvent	access:public
 AsyncWait	easyevent.cpp	/^void FdEvent::AsyncWait(int fd, int events, const Functor& handler) {$/;"	f	class:FdEvent
 AsyncWait	easyevent.cpp	/^void SignalEvent::AsyncWait(const Functor& handler)$/;"	f	class:SignalEvent
 AsyncWait	easyevent.cpp	/^void TimerEvent::AsyncWait(const Functor& handler,$/;"	f	class:TimerEvent
-AsyncWait	easyevent.h	/^    void AsyncWait(const Functor& handler);$/;"	p	class:SignalEvent	access:public
-AsyncWait	easyevent.h	/^    void AsyncWait(const Functor& handler,$/;"	p	class:TimerEvent	access:public
-AsyncWait	easyevent.h	/^    void AsyncWait(int fd, int events, const Functor& handler);$/;"	p	class:FdEvent	access:public
-CFLAGS	Makefile	/^CFLAGS=-g -ldl -rdynamic $/;"	m
+CFLAGS	Makefile	/^CFLAGS=-g $/;"	m
 CXX	Makefile	/^CXX=\/usr\/bin\/g++$/;"	m
 Cancel	easyevent.cpp	/^void FdEvent::Cancel() {$/;"	f	class:FdEvent
 Cancel	easyevent.cpp	/^void SignalEvent::Cancel()$/;"	f	class:SignalEvent
 Cancel	easyevent.cpp	/^void TimerEvent::Cancel() {$/;"	f	class:TimerEvent
-Cancel	easyevent.h	/^    void Cancel();$/;"	p	class:FdEvent	access:public
-Cancel	easyevent.h	/^    void Cancel();$/;"	p	class:SignalEvent	access:public
-Cancel	easyevent.h	/^    void Cancel();$/;"	p	class:TimerEvent	access:public
 Clear	easyevent.cpp	/^bool SignalEvent::Clear() {$/;"	f	class:SignalEvent
-Clear	easyevent.h	/^    bool Clear();$/;"	p	class:SignalEvent	access:public
 DONG_BASE_THREADLOCAL_H	thread_local_storage.h	2;"	d
 DoPendingFunctors	EventLoop.cpp	/^void EventLoop::DoPendingFunctors()$/;"	f	class:EventLoop
-DoPendingFunctors	EventLoop.h	/^        void DoPendingFunctors();$/;"	p	class:EventLoop	access:private
 EventBase	EventLoop.cpp	/^struct event_base* EventLoop::EventBase(){$/;"	f	class:EventLoop
-EventBase	EventLoop.h	/^        struct event_base* EventBase();$/;"	p	class:EventLoop	access:public
 EventLoop	EventLoop.cpp	/^EventLoop::EventLoop():tid_(0),calling_pending_functors_(false)$/;"	f	class:EventLoop
-EventLoop	EventLoop.h	/^        EventLoop();$/;"	p	class:EventLoop	access:public
 EventLoop	EventLoop.h	/^class EventLoop{$/;"	c
-EventLoop::DoPendingFunctors	EventLoop.cpp	/^void EventLoop::DoPendingFunctors()$/;"	f	class:EventLoop
-EventLoop::DoPendingFunctors	EventLoop.h	/^        void DoPendingFunctors();$/;"	p	class:EventLoop	access:private
-EventLoop::EventBase	EventLoop.cpp	/^struct event_base* EventLoop::EventBase(){$/;"	f	class:EventLoop
-EventLoop::EventBase	EventLoop.h	/^        struct event_base* EventBase();$/;"	p	class:EventLoop	access:public
-EventLoop::EventLoop	EventLoop.cpp	/^EventLoop::EventLoop():tid_(0),calling_pending_functors_(false)$/;"	f	class:EventLoop
-EventLoop::EventLoop	EventLoop.h	/^        EventLoop();$/;"	p	class:EventLoop	access:public
-EventLoop::Notify	EventLoop.cpp	/^void EventLoop::Notify()$/;"	f	class:EventLoop
-EventLoop::Notify	EventLoop.h	/^        void Notify();$/;"	p	class:EventLoop	access:private
-EventLoop::PipeProcess	EventLoop.cpp	/^void EventLoop::PipeProcess(int fd, short which, void* arg)$/;"	f	class:EventLoop
-EventLoop::PipeProcess	EventLoop.h	/^        void PipeProcess(int fd, short which, void* arg);$/;"	p	class:EventLoop	access:private
-EventLoop::QueueInLoop	EventLoop.cpp	/^void EventLoop::QueueInLoop(const functor &fun)$/;"	f	class:EventLoop
-EventLoop::QueueInLoop	EventLoop.h	/^        void QueueInLoop(const functor & fun);$/;"	p	class:EventLoop	access:public
-EventLoop::Run	EventLoop.cpp	/^void EventLoop::Run()$/;"	f	class:EventLoop
-EventLoop::Run	EventLoop.h	/^        void Run();$/;"	p	class:EventLoop	access:public
-EventLoop::RunInLoop	EventLoop.cpp	/^void EventLoop::RunInLoop(const functor &fun)$/;"	f	class:EventLoop
-EventLoop::RunInLoop	EventLoop.h	/^        void RunInLoop(const functor & fun);$/;"	p	class:EventLoop	access:public
-EventLoop::Stop	EventLoop.cpp	/^void EventLoop::Stop()$/;"	f	class:EventLoop
-EventLoop::Stop	EventLoop.h	/^        void Stop();$/;"	p	class:EventLoop	access:public
-EventLoop::StopInLoop	EventLoop.cpp	/^void EventLoop::StopInLoop()$/;"	f	class:EventLoop
-EventLoop::StopInLoop	EventLoop.h	/^        void StopInLoop();$/;"	p	class:EventLoop	access:private
-EventLoop::base_	EventLoop.h	/^        struct event_base* base_;$/;"	m	class:EventLoop	typeref:struct:EventLoop::event_base	access:private
-EventLoop::calling_pending_functors_	EventLoop.h	/^        bool calling_pending_functors_;$/;"	m	class:EventLoop	access:private
-EventLoop::functor	EventLoop.h	/^        typedef std::tr1::function<void()> functor;$/;"	t	class:EventLoop	access:public
-EventLoop::functors_queue_	EventLoop.h	/^        vector<functor> functors_queue_;$/;"	m	class:EventLoop	access:private
-EventLoop::mutex_	EventLoop.h	/^        pthread_mutex_t mutex_;$/;"	m	class:EventLoop	access:private
-EventLoop::pipe_event_	EventLoop.h	/^        std::tr1::shared_ptr<FdEvent> pipe_event_;$/;"	m	class:EventLoop	access:private
-EventLoop::pipes_	EventLoop.h	/^        int32_t pipes_[2];$/;"	m	class:EventLoop	access:private
-EventLoop::tid_	EventLoop.h	/^        pthread_t tid_;$/;"	m	class:EventLoop	access:private
-EventLoop::~EventLoop	EventLoop.cpp	/^EventLoop::~EventLoop()$/;"	f	class:EventLoop
-EventLoop::~EventLoop	EventLoop.h	/^        ~EventLoop();$/;"	p	class:EventLoop	access:public
 EventLoopThread	EventLoopThread.cpp	/^EventLoopThread::EventLoopThread()$/;"	f	class:EventLoopThread
-EventLoopThread	EventLoopThread.h	/^        EventLoopThread();$/;"	p	class:EventLoopThread	access:public
 EventLoopThread	EventLoopThread.h	/^class EventLoopThread{$/;"	c
-EventLoopThread::EventLoopThread	EventLoopThread.cpp	/^EventLoopThread::EventLoopThread()$/;"	f	class:EventLoopThread
-EventLoopThread::EventLoopThread	EventLoopThread.h	/^        EventLoopThread();$/;"	p	class:EventLoopThread	access:public
-EventLoopThread::GetEventBase	EventLoopThread.cpp	/^struct event_base* EventLoopThread::GetEventBase()$/;"	f	class:EventLoopThread
-EventLoopThread::GetEventBase	EventLoopThread.h	/^        struct event_base* GetEventBase();$/;"	p	class:EventLoopThread	access:public
-EventLoopThread::GetEventLoop	EventLoopThread.cpp	/^std::tr1::shared_ptr<EventLoop> EventLoopThread::GetEventLoop()$/;"	f	class:EventLoopThread
-EventLoopThread::GetEventLoop	EventLoopThread.h	/^        std::tr1::shared_ptr<EventLoop> GetEventLoop();$/;"	p	class:EventLoopThread	access:public
-EventLoopThread::GetName	EventLoopThread.cpp	/^string EventLoopThread::GetName()$/;"	f	class:EventLoopThread
-EventLoopThread::GetName	EventLoopThread.h	/^        string GetName();$/;"	p	class:EventLoopThread	access:public
-EventLoopThread::IsRunning	EventLoopThread.cpp	/^bool EventLoopThread::IsRunning()$/;"	f	class:EventLoopThread
-EventLoopThread::IsRunning	EventLoopThread.h	/^        bool IsRunning();$/;"	p	class:EventLoopThread	access:public
-EventLoopThread::IsStopped	EventLoopThread.cpp	/^bool EventLoopThread::IsStopped()$/;"	f	class:EventLoopThread
-EventLoopThread::IsStopped	EventLoopThread.h	/^        bool IsStopped();$/;"	p	class:EventLoopThread	access:public
-EventLoopThread::Run	EventLoopThread.cpp	/^void EventLoopThread::Run()$/;"	f	class:EventLoopThread
-EventLoopThread::Run	EventLoopThread.h	/^        void Run();$/;"	p	class:EventLoopThread	access:private
-EventLoopThread::SetName	EventLoopThread.cpp	/^void EventLoopThread::SetName(string name)$/;"	f	class:EventLoopThread
-EventLoopThread::SetName	EventLoopThread.h	/^        void SetName(string name);$/;"	p	class:EventLoopThread	access:public
-EventLoopThread::Start	EventLoopThread.cpp	/^bool EventLoopThread::Start(bool wait_until_thread_started)$/;"	f	class:EventLoopThread
-EventLoopThread::Start	EventLoopThread.h	/^        bool Start(bool wait_until_thread_started=false);$/;"	p	class:EventLoopThread	access:public
-EventLoopThread::Stop	EventLoopThread.cpp	/^void EventLoopThread::Stop(bool wait_until_thread_exited)$/;"	f	class:EventLoopThread
-EventLoopThread::Stop	EventLoopThread.h	/^        void Stop(bool wait_until_thread_exited=false);$/;"	p	class:EventLoopThread	access:public
-EventLoopThread::Tid	EventLoopThread.cpp	/^pthread_t EventLoopThread::Tid()$/;"	f	class:EventLoopThread
-EventLoopThread::Tid	EventLoopThread.h	/^        pthread_t Tid();    $/;"	p	class:EventLoopThread	access:public
-EventLoopThread::event_loop_ptr_	EventLoopThread.h	/^        std::tr1::shared_ptr<EventLoop> event_loop_ptr_;$/;"	m	class:EventLoopThread	access:private
-EventLoopThread::functor	EventLoopThread.h	/^        typedef std::tr1::function<void()> functor;$/;"	t	class:EventLoopThread	access:public
-EventLoopThread::thread_ptr_	EventLoopThread.h	/^        std::tr1::shared_ptr<ThreadRunner> thread_ptr_;         $/;"	m	class:EventLoopThread	access:private
-EventLoopThread::~EventLoopThread	EventLoopThread.cpp	/^EventLoopThread::~EventLoopThread()$/;"	f	class:EventLoopThread
-EventLoopThread::~EventLoopThread	EventLoopThread.h	/^        ~EventLoopThread();$/;"	p	class:EventLoopThread	access:public
-EventLoopThreadPool	EventLoopThreadPool.h	/^    EventLoopThreadPool(EventLoop* base_loop);$/;"	p	class:EventLoopThreadPool	access:public
+EventLoopThreadPool	EventLoopThreadPool.cpp	/^EventLoopThreadPool::EventLoopThreadPool(EventLoop* base_loop):base_loop_(NULL), started_(false),threads_num_(0),next_(0)$/;"	f	class:EventLoopThreadPool
 EventLoopThreadPool	EventLoopThreadPool.h	/^class EventLoopThreadPool$/;"	c
-EventLoopThreadPool::EventLoopThreadPool	EventLoopThreadPool.h	/^    EventLoopThreadPool(EventLoop* base_loop);$/;"	p	class:EventLoopThreadPool	access:public
-EventLoopThreadPool::EventLoopThreadPtr	EventLoopThreadPool.h	/^    typedef std::tr1::shared_ptr<EventLoopThread> EventLoopThreadPtr;$/;"	t	class:EventLoopThreadPool	access:public
-EventLoopThreadPool::GetNextLoop	EventLoopThreadPool.h	/^    EventLoop* GetNextLoop();$/;"	p	class:EventLoopThreadPool	access:public
-EventLoopThreadPool::GetNextLoopWithHash	EventLoopThreadPool.h	/^    EventLoop* GetNextLoopWithHash(uint64_t hash);$/;"	p	class:EventLoopThreadPool	access:public
-EventLoopThreadPool::IsRunning	EventLoopThreadPool.h	/^    bool IsRunning() const;$/;"	p	class:EventLoopThreadPool	access:public
-EventLoopThreadPool::IsStopped	EventLoopThreadPool.h	/^    bool IsStopped() const;$/;"	p	class:EventLoopThreadPool	access:public
-EventLoopThreadPool::SetThreadNum	EventLoopThreadPool.h	/^    void SetThreadNum(int thread_num);$/;"	p	class:EventLoopThreadPool	access:public
-EventLoopThreadPool::Start	EventLoopThreadPool.h	/^    bool Start(bool wait_until_thread_started = false);$/;"	p	class:EventLoopThreadPool	access:public
-EventLoopThreadPool::Stop	EventLoopThreadPool.h	/^    void Stop(bool wait_thread_exit = false);$/;"	p	class:EventLoopThreadPool	access:public
-EventLoopThreadPool::base_loop_	EventLoopThreadPool.h	/^    EventLoop* base_loop_;$/;"	m	class:EventLoopThreadPool	access:private
-EventLoopThreadPool::next_	EventLoopThreadPool.h	/^    AtomicInt32 next_;$/;"	m	class:EventLoopThreadPool	access:private
-EventLoopThreadPool::started_	EventLoopThreadPool.h	/^    bool started_;$/;"	m	class:EventLoopThreadPool	access:private
-EventLoopThreadPool::threads	EventLoopThreadPool.h	/^    vector<EventLoopThreadPtr>* threads();$/;"	p	class:EventLoopThreadPool	access:public
-EventLoopThreadPool::threads_	EventLoopThreadPool.h	/^    vector<EventLoopThreadPtr> threads_;$/;"	m	class:EventLoopThreadPool	access:private
-EventLoopThreadPool::threads_num_	EventLoopThreadPool.h	/^    int threads_num_;$/;"	m	class:EventLoopThreadPool	access:private
-EventLoopThreadPool::~EventLoopThreadPool	EventLoopThreadPool.h	/^    ~EventLoopThreadPool();$/;"	p	class:EventLoopThreadPool	access:public
-EventLoopThreadPtr	EventLoopThreadPool.h	/^    typedef std::tr1::shared_ptr<EventLoopThread> EventLoopThreadPtr;$/;"	t	class:EventLoopThreadPool	access:public
+EventLoopThreadPtr	EventLoopThreadPool.h	/^    typedef std::tr1::shared_ptr<EventLoopThread> EventLoopThreadPtr;$/;"	t	class:EventLoopThreadPool
 FdEvent	easyevent.cpp	/^FdEvent::FdEvent(struct event_base* base)$/;"	f	class:FdEvent
-FdEvent	easyevent.h	/^    FdEvent(struct event_base* base);$/;"	p	class:FdEvent	access:public
-FdEvent	easyevent.h	/^class FdEvent : noncopyable {$/;"	c	inherits:noncopyable
-FdEvent::AsyncWait	easyevent.cpp	/^void FdEvent::AsyncWait(int fd, int events, const Functor& handler) {$/;"	f	class:FdEvent
-FdEvent::AsyncWait	easyevent.h	/^    void AsyncWait(int fd, int events, const Functor& handler);$/;"	p	class:FdEvent	access:public
-FdEvent::Cancel	easyevent.cpp	/^void FdEvent::Cancel() {$/;"	f	class:FdEvent
-FdEvent::Cancel	easyevent.h	/^    void Cancel();$/;"	p	class:FdEvent	access:public
-FdEvent::FdEvent	easyevent.cpp	/^FdEvent::FdEvent(struct event_base* base)$/;"	f	class:FdEvent
-FdEvent::FdEvent	easyevent.h	/^    FdEvent(struct event_base* base);$/;"	p	class:FdEvent	access:public
-FdEvent::Functor	easyevent.h	/^    typedef std::tr1::function<void(int)> Functor;$/;"	t	class:FdEvent	access:public
-FdEvent::Notify	easyevent.cpp	/^void FdEvent::Notify(int fd, short what, void *arg) {$/;"	f	class:FdEvent
-FdEvent::Notify	easyevent.h	/^    static void Notify(int fd, short what, void *arg); $/;"	p	class:FdEvent	access:private
-FdEvent::Start	easyevent.cpp	/^void FdEvent::Start(int fd, int events) {$/;"	f	class:FdEvent
-FdEvent::Start	easyevent.h	/^    void Start(int fd, int events);$/;"	p	class:FdEvent	access:private
-FdEvent::Type	easyevent.h	/^    enum Type {$/;"	g	class:FdEvent	access:public
-FdEvent::active_	easyevent.h	/^    bool active_;$/;"	m	class:FdEvent	access:protected
-FdEvent::base_	easyevent.h	/^    struct event_base  *base_;$/;"	m	class:FdEvent	typeref:struct:FdEvent::event_base	access:protected
-FdEvent::ev_	easyevent.h	/^    struct event *ev_;$/;"	m	class:FdEvent	typeref:struct:FdEvent::event	access:protected
-FdEvent::flags_	easyevent.h	/^    int8_t flags_;$/;"	m	class:FdEvent	access:protected
-FdEvent::handler_	easyevent.h	/^    Functor handler_;$/;"	m	class:FdEvent	access:protected
-FdEvent::kNoTime	easyevent.h	/^        kNoTime = 0,$/;"	e	enum:FdEvent::__anon1
-FdEvent::kReadable	easyevent.h	/^        kReadable = 1,$/;"	e	enum:FdEvent::Type
-FdEvent::kTimeDiff	easyevent.h	/^        kTimeDiff = 1,$/;"	e	enum:FdEvent::__anon1
-FdEvent::kTimeStamp	easyevent.h	/^        kTimeStamp = 2,$/;"	e	enum:FdEvent::__anon1
-FdEvent::kWritable	easyevent.h	/^        kWritable = 2,$/;"	e	enum:FdEvent::Type
-FdEvent::time_flag_	easyevent.h	/^    int8_t time_flag_;$/;"	m	class:FdEvent	access:protected
-FdEvent::~FdEvent	easyevent.cpp	/^FdEvent::~FdEvent() {$/;"	f	class:FdEvent
-FdEvent::~FdEvent	easyevent.h	/^    ~FdEvent();$/;"	p	class:FdEvent	access:public
-Functor	easyevent.h	/^    typedef std::tr1::function<void()> Functor;$/;"	t	class:TimerEvent	access:public
-Functor	easyevent.h	/^    typedef std::tr1::function<void(int)> Functor;$/;"	t	class:FdEvent	access:public
-Functor	easyevent.h	/^    typedef std::tr1::function<void(int)> Functor;$/;"	t	class:SignalEvent	access:public
+FdEvent	easyevent.h	/^class FdEvent : noncopyable {$/;"	c
+Functor	easyevent.h	/^    typedef std::tr1::function<void()> Functor;$/;"	t	class:TimerEvent
+Functor	easyevent.h	/^    typedef std::tr1::function<void(int)> Functor;$/;"	t	class:FdEvent
+Functor	easyevent.h	/^    typedef std::tr1::function<void(int)> Functor;$/;"	t	class:SignalEvent
 GetEventBase	EventLoopThread.cpp	/^struct event_base* EventLoopThread::GetEventBase()$/;"	f	class:EventLoopThread
-GetEventBase	EventLoopThread.h	/^        struct event_base* GetEventBase();$/;"	p	class:EventLoopThread	access:public
 GetEventLoop	EventLoopThread.cpp	/^std::tr1::shared_ptr<EventLoop> EventLoopThread::GetEventLoop()$/;"	f	class:EventLoopThread
-GetEventLoop	EventLoopThread.h	/^        std::tr1::shared_ptr<EventLoop> GetEventLoop();$/;"	p	class:EventLoopThread	access:public
 GetName	EventLoopThread.cpp	/^string EventLoopThread::GetName()$/;"	f	class:EventLoopThread
-GetName	EventLoopThread.h	/^        string GetName();$/;"	p	class:EventLoopThread	access:public
-GetNextLoop	EventLoopThreadPool.h	/^    EventLoop* GetNextLoop();$/;"	p	class:EventLoopThreadPool	access:public
-GetNextLoopWithHash	EventLoopThreadPool.h	/^    EventLoop* GetNextLoopWithHash(uint64_t hash);$/;"	p	class:EventLoopThreadPool	access:public
+GetNextLoop	EventLoopThreadPool.cpp	/^EventLoop* EventLoopThreadPool::GetNextLoop()$/;"	f	class:EventLoopThreadPool
+GetNextLoopWithHash	EventLoopThreadPool.cpp	/^EventLoop* EventLoopThreadPool::GetNextLoopWithHash(uint64_t hash)$/;"	f	class:EventLoopThreadPool
 H_LINUX_THREAD_PRIORITY	Thread.h	12;"	d
-Handler	Thread.h	/^    typedef std::tr1::function< void () > Handler;$/;"	t	class:ThreadRunner	access:public
+Handler	Thread.h	/^    typedef std::tr1::function< void () > Handler;$/;"	t	class:ThreadRunner
 INCLUDE	Makefile	/^INCLUDE=-I\/home\/libin3-s\/locallibevnet\/include -I..\/include\/$/;"	m
 IsRunning	EventLoopThread.cpp	/^bool EventLoopThread::IsRunning()$/;"	f	class:EventLoopThread
-IsRunning	EventLoopThread.h	/^        bool IsRunning();$/;"	p	class:EventLoopThread	access:public
-IsRunning	EventLoopThreadPool.h	/^    bool IsRunning() const;$/;"	p	class:EventLoopThreadPool	access:public
+IsRunning	EventLoopThreadPool.cpp	/^bool EventLoopThreadPool::IsRunning()const$/;"	f	class:EventLoopThreadPool
 IsStopped	EventLoopThread.cpp	/^bool EventLoopThread::IsStopped()$/;"	f	class:EventLoopThread
-IsStopped	EventLoopThread.h	/^        bool IsStopped();$/;"	p	class:EventLoopThread	access:public
-IsStopped	EventLoopThreadPool.h	/^    bool IsStopped() const;$/;"	p	class:EventLoopThreadPool	access:public
+IsStopped	EventLoopThreadPool.cpp	/^bool EventLoopThreadPool::IsStopped()const$/;"	f	class:EventLoopThreadPool
 LIBS	Makefile	/^LIBS=-lpthread  \/home\/libin3-s\/locallibevnet\/lib\/libevent.a -Wl,-Bstatic  -llog4cxx -L..\/lib\/log4cxx -Wl,-Bdynamic -lm -L\/usr\/lib64 -L\/usr\/local\/apr\/lib\/ -lapr-1 -L\/usr\/local\/apr-util\/lib\/ -laprutil-1 ..\/common\/libcommon.a $/;"	m
-MainThread	Thread.cpp	/^    MainThread()$/;"	f	class:MainThread	access:public
-MainThread	Thread.cpp	/^class MainThread : public Thread$/;"	c	file:	inherits:Thread
-MainThread::MainThread	Thread.cpp	/^    MainThread()$/;"	f	class:MainThread	access:public
-MainThread::join	Thread.cpp	/^    bool join( uint32_t msWait )$/;"	f	class:MainThread	access:public
-MainThread::run	Thread.cpp	/^    void run()$/;"	f	class:MainThread	access:public
-MainThread::start	Thread.cpp	/^    bool start()$/;"	f	class:MainThread	access:public
-MainThread::stop	Thread.cpp	/^    void stop()             {}$/;"	f	class:MainThread	access:public
-MainThread::terminate	Thread.cpp	/^    virtual void terminate() {}$/;"	f	class:MainThread	access:public
-MainThread::~MainThread	Thread.cpp	/^    ~MainThread()$/;"	f	class:MainThread	access:public
+MainThread	Thread.cpp	/^    MainThread()$/;"	f	class:MainThread
+MainThread	Thread.cpp	/^class MainThread : public Thread$/;"	c	file:
 Notify	EventLoop.cpp	/^void EventLoop::Notify()$/;"	f	class:EventLoop
-Notify	EventLoop.h	/^        void Notify();$/;"	p	class:EventLoop	access:private
 Notify	easyevent.cpp	/^void FdEvent::Notify(int fd, short what, void *arg) {$/;"	f	class:FdEvent
-Notify	easyevent.h	/^    static void Notify(int fd, short what, void *arg); $/;"	p	class:FdEvent	access:private
 OBJS	Makefile	/^OBJS=$(patsubst %.cpp,%.o,$(wildcard *.cpp))$/;"	m
 OnSignal	easyevent.cpp	/^void SignalEvent::OnSignal(int fd, short what, void *arg)$/;"	f	class:SignalEvent
-OnSignal	easyevent.h	/^    static void OnSignal(int fd, short what, void *arg);$/;"	p	class:SignalEvent	access:public
 OnTimer	easyevent.cpp	/^void TimerEvent::OnTimer(int fd, short what, void *arg) {$/;"	f	class:TimerEvent
-OnTimer	easyevent.h	/^    static void OnTimer(int fd, short what, void *arg); $/;"	p	class:TimerEvent	access:private
 PipeProcess	EventLoop.cpp	/^void EventLoop::PipeProcess(int fd, short which, void* arg)$/;"	f	class:EventLoop
-PipeProcess	EventLoop.h	/^        void PipeProcess(int fd, short which, void* arg);$/;"	p	class:EventLoop	access:private
 QueueInLoop	EventLoop.cpp	/^void EventLoop::QueueInLoop(const functor &fun)$/;"	f	class:EventLoop
-QueueInLoop	EventLoop.h	/^        void QueueInLoop(const functor & fun);$/;"	p	class:EventLoop	access:public
 Remove	easyevent.cpp	/^bool SignalEvent::Remove(int signo) {$/;"	f	class:SignalEvent
-Remove	easyevent.h	/^    bool Remove(int signo);$/;"	p	class:SignalEvent	access:public
 Run	EventLoop.cpp	/^void EventLoop::Run()$/;"	f	class:EventLoop
-Run	EventLoop.h	/^        void Run();$/;"	p	class:EventLoop	access:public
 Run	EventLoopThread.cpp	/^void EventLoopThread::Run()$/;"	f	class:EventLoopThread
-Run	EventLoopThread.h	/^        void Run();$/;"	p	class:EventLoopThread	access:private
 RunInLoop	EventLoop.cpp	/^void EventLoop::RunInLoop(const functor &fun)$/;"	f	class:EventLoop
-RunInLoop	EventLoop.h	/^        void RunInLoop(const functor & fun);$/;"	p	class:EventLoop	access:public
 S_FORCECHAR	Thread.h	/^            S_FORCECHAR = 0xff,$/;"	e	enum:Thread::ThreadState
 S_NULL	Thread.h	/^            S_NULL = 0,  \/\/! Thread is not initialized.$/;"	e	enum:Thread::ThreadState
 S_RUNNING	Thread.h	/^            S_RUNNING,   \/\/! Thread is running in run(...) method.$/;"	e	enum:Thread::ThreadState
 S_STARTING	Thread.h	/^            S_STARTING,  \/\/! Thread is starting, but has not entered run(...) method.$/;"	e	enum:Thread::ThreadState
 S_STOPPING	Thread.h	/^            S_STOPPING,  \/\/! Thread is required stopping.$/;"	e	enum:Thread::ThreadState
 SetName	EventLoopThread.cpp	/^void EventLoopThread::SetName(string name)$/;"	f	class:EventLoopThread
-SetName	EventLoopThread.h	/^        void SetName(string name);$/;"	p	class:EventLoopThread	access:public
-SetThreadNum	EventLoopThreadPool.h	/^    void SetThreadNum(int thread_num);$/;"	p	class:EventLoopThreadPool	access:public
+SetThreadNum	EventLoopThreadPool.cpp	/^void EventLoopThreadPool::SetThreadNum(int thread_num)$/;"	f	class:EventLoopThreadPool
 SignalEvent	easyevent.cpp	/^SignalEvent::SignalEvent(event_base* base)$/;"	f	class:SignalEvent
-SignalEvent	easyevent.h	/^    SignalEvent(struct event_base* base);$/;"	p	class:SignalEvent	access:public
-SignalEvent	easyevent.h	/^class SignalEvent : noncopyable {$/;"	c	inherits:noncopyable
-SignalEvent::Add	easyevent.cpp	/^bool SignalEvent::Add(int signo) {$/;"	f	class:SignalEvent
-SignalEvent::Add	easyevent.h	/^    bool Add(int signo);$/;"	p	class:SignalEvent	access:public
-SignalEvent::AsyncWait	easyevent.cpp	/^void SignalEvent::AsyncWait(const Functor& handler)$/;"	f	class:SignalEvent
-SignalEvent::AsyncWait	easyevent.h	/^    void AsyncWait(const Functor& handler);$/;"	p	class:SignalEvent	access:public
-SignalEvent::Cancel	easyevent.cpp	/^void SignalEvent::Cancel()$/;"	f	class:SignalEvent
-SignalEvent::Cancel	easyevent.h	/^    void Cancel();$/;"	p	class:SignalEvent	access:public
-SignalEvent::Clear	easyevent.cpp	/^bool SignalEvent::Clear() {$/;"	f	class:SignalEvent
-SignalEvent::Clear	easyevent.h	/^    bool Clear();$/;"	p	class:SignalEvent	access:public
-SignalEvent::Functor	easyevent.h	/^    typedef std::tr1::function<void(int)> Functor;$/;"	t	class:SignalEvent	access:public
-SignalEvent::OnSignal	easyevent.cpp	/^void SignalEvent::OnSignal(int fd, short what, void *arg)$/;"	f	class:SignalEvent
-SignalEvent::OnSignal	easyevent.h	/^    static void OnSignal(int fd, short what, void *arg);$/;"	p	class:SignalEvent	access:public
-SignalEvent::Remove	easyevent.cpp	/^bool SignalEvent::Remove(int signo) {$/;"	f	class:SignalEvent
-SignalEvent::Remove	easyevent.h	/^    bool Remove(int signo);$/;"	p	class:SignalEvent	access:public
-SignalEvent::SignalEvent	easyevent.cpp	/^SignalEvent::SignalEvent(event_base* base)$/;"	f	class:SignalEvent
-SignalEvent::SignalEvent	easyevent.h	/^    SignalEvent(struct event_base* base);$/;"	p	class:SignalEvent	access:public
-SignalEvent::base_	easyevent.h	/^    struct event_base * base_;$/;"	m	class:SignalEvent	typeref:struct:SignalEvent::event_base	access:private
-SignalEvent::handler_	easyevent.h	/^    Functor handler_; $/;"	m	class:SignalEvent	access:private
-SignalEvent::sig_ev_	easyevent.h	/^    map<int, struct event*> sig_ev_;$/;"	m	class:SignalEvent	access:private
-SignalEvent::~SignalEvent	easyevent.cpp	/^SignalEvent::~SignalEvent()$/;"	f	class:SignalEvent
-SignalEvent::~SignalEvent	easyevent.h	/^    ~SignalEvent();$/;"	p	class:SignalEvent	access:public
+SignalEvent	easyevent.h	/^class SignalEvent : noncopyable {$/;"	c
 Start	EventLoopThread.cpp	/^bool EventLoopThread::Start(bool wait_until_thread_started)$/;"	f	class:EventLoopThread
-Start	EventLoopThread.h	/^        bool Start(bool wait_until_thread_started=false);$/;"	p	class:EventLoopThread	access:public
-Start	EventLoopThreadPool.h	/^    bool Start(bool wait_until_thread_started = false);$/;"	p	class:EventLoopThreadPool	access:public
+Start	EventLoopThreadPool.cpp	/^bool EventLoopThreadPool::Start(bool wait_until_thread_started)$/;"	f	class:EventLoopThreadPool
 Start	easyevent.cpp	/^void FdEvent::Start(int fd, int events) {$/;"	f	class:FdEvent
 Start	easyevent.cpp	/^void TimerEvent::Start() {$/;"	f	class:TimerEvent
-Start	easyevent.h	/^    void Start();$/;"	p	class:TimerEvent	access:private
-Start	easyevent.h	/^    void Start(int fd, int events);$/;"	p	class:FdEvent	access:private
 Stop	EventLoop.cpp	/^void EventLoop::Stop()$/;"	f	class:EventLoop
-Stop	EventLoop.h	/^        void Stop();$/;"	p	class:EventLoop	access:public
 Stop	EventLoopThread.cpp	/^void EventLoopThread::Stop(bool wait_until_thread_exited)$/;"	f	class:EventLoopThread
-Stop	EventLoopThread.h	/^        void Stop(bool wait_until_thread_exited=false);$/;"	p	class:EventLoopThread	access:public
-Stop	EventLoopThreadPool.h	/^    void Stop(bool wait_thread_exit = false);$/;"	p	class:EventLoopThreadPool	access:public
+Stop	EventLoopThreadPool.cpp	/^void EventLoopThreadPool::Stop(bool wait_thread_exit)$/;"	f	class:EventLoopThreadPool
 StopInLoop	EventLoop.cpp	/^void EventLoop::StopInLoop()$/;"	f	class:EventLoop
-StopInLoop	EventLoop.h	/^        void StopInLoop();$/;"	p	class:EventLoop	access:private
-StringMap	thread_local_storage.h	/^    typedef std::map<string, T> StringMap;$/;"	t	class:ThreadLocalStorage	access:public
-TARGET	Makefile	/^TARGET=testthread$/;"	m
+StringMap	thread_local_storage.h	/^    typedef std::map<string, T> StringMap;$/;"	t	class:ThreadLocalStorage
+TARGET	Makefile	/^TARGET=libthread.a$/;"	m
 THREAD_PRIORITY_DEFAULT	Thread.h	/^            THREAD_PRIORITY_DEFAULT   \/**< Priority scheduling default    *\/$/;"	e	enum:Thread::ThreadPriority
 THREAD_PRIORITY_HIGH	Thread.h	/^            THREAD_PRIORITY_HIGH,     \/**< A high (but not max) setting   *\/$/;"	e	enum:Thread::ThreadPriority
 THREAD_PRIORITY_LOW	Thread.h	/^            THREAD_PRIORITY_LOW,      \/**< A low (but not min) setting    *\/$/;"	e	enum:Thread::ThreadPriority
 THREAD_PRIORITY_MAX	Thread.h	/^            THREAD_PRIORITY_MAX = 0,  \/**< The maximum possible priority  *\/$/;"	e	enum:Thread::ThreadPriority
 THREAD_PRIORITY_MIN	Thread.h	/^            THREAD_PRIORITY_MIN,      \/**< The minimum possible priority *\/$/;"	e	enum:Thread::ThreadPriority
 THREAD_PRIORITY_NORMAL	Thread.h	/^            THREAD_PRIORITY_NORMAL,  \/**< An average priority            *\/$/;"	e	enum:Thread::ThreadPriority
-TID	Thread.h	/^        typedef pthread_t TID;$/;"	t	class:Thread	access:public
+TID	Thread.h	/^        typedef pthread_t TID;$/;"	t	class:Thread
 Thread	Thread.cpp	/^Thread::Thread()$/;"	f	class:Thread
-Thread	Thread.h	/^        Thread();$/;"	p	class:Thread	access:public
 Thread	Thread.h	/^class Thread{$/;"	c
-Thread::S_FORCECHAR	Thread.h	/^            S_FORCECHAR = 0xff,$/;"	e	enum:Thread::ThreadState
-Thread::S_NULL	Thread.h	/^            S_NULL = 0,  \/\/! Thread is not initialized.$/;"	e	enum:Thread::ThreadState
-Thread::S_RUNNING	Thread.h	/^            S_RUNNING,   \/\/! Thread is running in run(...) method.$/;"	e	enum:Thread::ThreadState
-Thread::S_STARTING	Thread.h	/^            S_STARTING,  \/\/! Thread is starting, but has not entered run(...) method.$/;"	e	enum:Thread::ThreadState
-Thread::S_STOPPING	Thread.h	/^            S_STOPPING,  \/\/! Thread is required stopping.$/;"	e	enum:Thread::ThreadState
-Thread::THREAD_PRIORITY_DEFAULT	Thread.h	/^            THREAD_PRIORITY_DEFAULT   \/**< Priority scheduling default    *\/$/;"	e	enum:Thread::ThreadPriority
-Thread::THREAD_PRIORITY_HIGH	Thread.h	/^            THREAD_PRIORITY_HIGH,     \/**< A high (but not max) setting   *\/$/;"	e	enum:Thread::ThreadPriority
-Thread::THREAD_PRIORITY_LOW	Thread.h	/^            THREAD_PRIORITY_LOW,      \/**< A low (but not min) setting    *\/$/;"	e	enum:Thread::ThreadPriority
-Thread::THREAD_PRIORITY_MAX	Thread.h	/^            THREAD_PRIORITY_MAX = 0,  \/**< The maximum possible priority  *\/$/;"	e	enum:Thread::ThreadPriority
-Thread::THREAD_PRIORITY_MIN	Thread.h	/^            THREAD_PRIORITY_MIN,      \/**< The minimum possible priority *\/$/;"	e	enum:Thread::ThreadPriority
-Thread::THREAD_PRIORITY_NORMAL	Thread.h	/^            THREAD_PRIORITY_NORMAL,  \/**< An average priority            *\/$/;"	e	enum:Thread::ThreadPriority
-Thread::TID	Thread.h	/^        typedef pthread_t TID;$/;"	t	class:Thread	access:public
-Thread::Thread	Thread.cpp	/^Thread::Thread()$/;"	f	class:Thread
-Thread::Thread	Thread.h	/^        Thread();$/;"	p	class:Thread	access:public
-Thread::ThreadHandle	Thread.h	/^        typedef pthread_t ThreadHandle;$/;"	t	class:Thread	access:public
-Thread::ThreadPriority	Thread.h	/^        enum ThreadPriority$/;"	g	class:Thread	access:public
-Thread::ThreadProc	Thread.cpp	/^void* Thread::ThreadProc( void* pvArg )$/;"	f	class:Thread
-Thread::ThreadProc	Thread.h	/^        static void* ThreadProc( void* pvArg );$/;"	p	class:Thread	access:private
-Thread::ThreadState	Thread.h	/^        enum ThreadState$/;"	g	class:Thread	access:public
-Thread::doWork	Thread.cpp	/^void Thread::doWork()$/;"	f	class:Thread
-Thread::doWork	Thread.h	/^        void doWork();$/;"	p	class:Thread	access:private
-Thread::getCurrentThread	Thread.cpp	/^Thread* Thread::getCurrentThread()$/;"	f	class:Thread
-Thread::getCurrentThread	Thread.h	/^        static Thread* getCurrentThread();$/;"	p	class:Thread	access:public
-Thread::getCurrentThreadID	Thread.cpp	/^Thread::ThreadHandle Thread::getCurrentThreadID()$/;"	f	class:Thread
-Thread::getCurrentThreadID	Thread.h	/^        static ThreadHandle getCurrentThreadID();$/;"	p	class:Thread	access:public
-Thread::getName	Thread.h	/^        const string& getName()const$/;"	f	class:Thread	access:public
-Thread::getNumWorkingThread	Thread.cpp	/^int32_t Thread::getNumWorkingThread()$/;"	f	class:Thread
-Thread::getNumWorkingThread	Thread.h	/^        static int32_t getNumWorkingThread();$/;"	p	class:Thread	access:public
-Thread::getPriority	Thread.h	/^        ThreadPriority getPriority()const$/;"	f	class:Thread	access:public
-Thread::getProcessAffinity	Thread.cpp	/^uint32_t  Thread::getProcessAffinity()$/;"	f	class:Thread
-Thread::getProcessAffinity	Thread.h	/^        uint32_t getProcessAffinity();$/;"	p	class:Thread	access:private
-Thread::getState	Thread.h	/^        ThreadState getState() const $/;"	f	class:Thread	access:public
-Thread::getThreadHandle	Thread.h	/^        ThreadHandle getThreadHandle()const$/;"	f	class:Thread	access:public
-Thread::getTidString	Thread.cpp	/^const string& Thread::getTidString()$/;"	f	class:Thread
-Thread::getTidString	Thread.h	/^        static const string& getTidString();$/;"	p	class:Thread	access:public
-Thread::isRunning	Thread.h	/^        bool isRunning() const$/;"	f	class:Thread	access:public
-Thread::isStopped	Thread.h	/^        bool isStopped() const$/;"	f	class:Thread	access:public
-Thread::join	Thread.cpp	/^bool Thread::join( uint32_t msWait )$/;"	f	class:Thread
-Thread::join	Thread.h	/^        virtual bool join( uint32_t msWait = uint32_t( -1 ) );$/;"	p	class:Thread	access:public
-Thread::m_hThread	Thread.h	/^        ThreadHandle           m_hThread;$/;"	m	class:Thread	access:private
-Thread::m_nPriority	Thread.h	/^        ThreadPriority       m_nPriority;$/;"	m	class:Thread	access:private
-Thread::m_nState	Thread.h	/^        volatile ThreadState    m_nState;   \/\/! object state. It is maintained by thread.$/;"	m	class:Thread	access:private
-Thread::m_strName	Thread.h	/^        string                 m_strName;   \/\/! Thread Name;$/;"	m	class:Thread	access:private
-Thread::m_thread_attr	Thread.h	/^        pthread_attr_t     m_thread_attr;$/;"	m	class:Thread	access:private
-Thread::run	Thread.h	/^        virtual void run() = 0;$/;"	p	class:Thread	access:protected
-Thread::setName	Thread.h	/^        void setName( const string& strName )$/;"	f	class:Thread	access:public
-Thread::setPriority	Thread.cpp	/^void Thread::setPriority( Thread::ThreadPriority nPriority )$/;"	f	class:Thread
-Thread::setPriority	Thread.h	/^        void setPriority( ThreadPriority nPriority );$/;"	p	class:Thread	access:public
-Thread::setThreadAffinity	Thread.cpp	/^void Thread::setThreadAffinity( uint32_t nMask )$/;"	f	class:Thread
-Thread::setThreadAffinity	Thread.h	/^        void setThreadAffinity( uint32_t nMask );$/;"	p	class:Thread	access:public
-Thread::start	Thread.cpp	/^bool Thread::start()$/;"	f	class:Thread
-Thread::start	Thread.h	/^        virtual bool start();$/;"	p	class:Thread	access:public
-Thread::stop	Thread.cpp	/^void Thread::stop()$/;"	f	class:Thread
-Thread::stop	Thread.h	/^        virtual void stop();$/;"	p	class:Thread	access:public
-Thread::terminate	Thread.cpp	/^void Thread::terminate()$/;"	f	class:Thread
-Thread::terminate	Thread.h	/^        virtual void terminate();$/;"	p	class:Thread	access:public
-Thread::tid	Thread.h	/^        TID tid() const $/;"	f	class:Thread	access:public
-Thread::~Thread	Thread.cpp	/^Thread::~Thread()$/;"	f	class:Thread
-Thread::~Thread	Thread.h	/^        ~Thread();$/;"	p	class:Thread	access:public
-ThreadHandle	Thread.h	/^        typedef pthread_t ThreadHandle;$/;"	t	class:Thread	access:public
-ThreadLocal	thread_local_storage.h	/^    ThreadLocal()$/;"	f	class:ThreadLocal	access:public
-ThreadLocal	thread_local_storage.h	/^class ThreadLocal: Noncopyable$/;"	c	inherits:Noncopyable
-ThreadLocal::ThreadLocal	thread_local_storage.h	/^    ThreadLocal()$/;"	f	class:ThreadLocal	access:public
-ThreadLocal::destructor	thread_local_storage.h	/^    static void destructor(void *x)$/;"	f	class:ThreadLocal	access:private
-ThreadLocal::operator T&	thread_local_storage.h	/^    operator T&()$/;"	f	class:ThreadLocal	access:public
-ThreadLocal::thread_key_	thread_local_storage.h	/^    pthread_key_t thread_key_;$/;"	m	class:ThreadLocal	access:private
-ThreadLocal::value	thread_local_storage.h	/^    T& value()$/;"	f	class:ThreadLocal	access:public
-ThreadLocal::~ThreadLocal	thread_local_storage.h	/^    ~ThreadLocal()$/;"	f	class:ThreadLocal	access:public
-ThreadLocalStorage	thread_local_storage.h	/^    ThreadLocalStorage()$/;"	f	class:ThreadLocalStorage	access:public
-ThreadLocalStorage	thread_local_storage.h	/^class ThreadLocalStorage : Noncopyable$/;"	c	inherits:Noncopyable
-ThreadLocalStorage::StringMap	thread_local_storage.h	/^    typedef std::map<string, T> StringMap;$/;"	t	class:ThreadLocalStorage	access:public
-ThreadLocalStorage::ThreadLocalStorage	thread_local_storage.h	/^    ThreadLocalStorage()$/;"	f	class:ThreadLocalStorage	access:public
-ThreadLocalStorage::destructor	thread_local_storage.h	/^    static void destructor(void *x)$/;"	f	class:ThreadLocalStorage	access:private
-ThreadLocalStorage::thread_key_	thread_local_storage.h	/^    pthread_key_t thread_key_;$/;"	m	class:ThreadLocalStorage	access:private
-ThreadLocalStorage::value	thread_local_storage.h	/^    T& value(const string& key)$/;"	f	class:ThreadLocalStorage	access:public
-ThreadLocalStorage::~ThreadLocalStorage	thread_local_storage.h	/^    ~ThreadLocalStorage()$/;"	f	class:ThreadLocalStorage	access:public
-ThreadPriority	Thread.h	/^        enum ThreadPriority$/;"	g	class:Thread	access:public
+ThreadHandle	Thread.h	/^        typedef pthread_t ThreadHandle;$/;"	t	class:Thread
+ThreadLocal	thread_local_storage.h	/^    ThreadLocal()$/;"	f	class:ThreadLocal
+ThreadLocal	thread_local_storage.h	/^class ThreadLocal: Noncopyable$/;"	c
+ThreadLocalStorage	thread_local_storage.h	/^    ThreadLocalStorage()$/;"	f	class:ThreadLocalStorage
+ThreadLocalStorage	thread_local_storage.h	/^class ThreadLocalStorage : Noncopyable$/;"	c
+ThreadPriority	Thread.h	/^        enum ThreadPriority$/;"	g	class:Thread
 ThreadProc	Thread.cpp	/^void* Thread::ThreadProc( void* pvArg )$/;"	f	class:Thread
-ThreadProc	Thread.h	/^        static void* ThreadProc( void* pvArg );$/;"	p	class:Thread	access:private
-ThreadRunner	Thread.h	/^    ThreadRunner(Handler handler) $/;"	f	class:ThreadRunner	access:public
-ThreadRunner	Thread.h	/^class  ThreadRunner : public Thread$/;"	c	inherits:Thread
-ThreadRunner::Handler	Thread.h	/^    typedef std::tr1::function< void () > Handler;$/;"	t	class:ThreadRunner	access:public
-ThreadRunner::ThreadRunner	Thread.h	/^    ThreadRunner(Handler handler) $/;"	f	class:ThreadRunner	access:public
-ThreadRunner::handler_	Thread.h	/^    Handler handler_;$/;"	m	class:ThreadRunner	access:private
-ThreadRunner::run	Thread.h	/^    virtual void run()$/;"	f	class:ThreadRunner	access:private
-ThreadRunner::setHandler	Thread.h	/^    void setHandler(Handler handler) { handler_ = handler; }$/;"	f	class:ThreadRunner	access:protected
-ThreadState	Thread.h	/^        enum ThreadState$/;"	g	class:Thread	access:public
+ThreadRunner	Thread.h	/^    ThreadRunner(Handler handler) $/;"	f	class:ThreadRunner
+ThreadRunner	Thread.h	/^class  ThreadRunner : public Thread$/;"	c
+ThreadState	Thread.h	/^        enum ThreadState$/;"	g	class:Thread
 Tid	EventLoopThread.cpp	/^pthread_t EventLoopThread::Tid()$/;"	f	class:EventLoopThread
-Tid	EventLoopThread.h	/^        pthread_t Tid();    $/;"	p	class:EventLoopThread	access:public
 TimerEvent	easyevent.cpp	/^TimerEvent::TimerEvent(struct event_base* base)$/;"	f	class:TimerEvent
-TimerEvent	easyevent.h	/^    TimerEvent(struct event_base* base_);$/;"	p	class:TimerEvent	access:public
-TimerEvent	easyevent.h	/^class TimerEvent : noncopyable {$/;"	c	inherits:noncopyable
-TimerEvent::AsyncWait	easyevent.cpp	/^void TimerEvent::AsyncWait(const Functor& handler,$/;"	f	class:TimerEvent
-TimerEvent::AsyncWait	easyevent.h	/^    void AsyncWait(const Functor& handler,$/;"	p	class:TimerEvent	access:public
-TimerEvent::Cancel	easyevent.cpp	/^void TimerEvent::Cancel() {$/;"	f	class:TimerEvent
-TimerEvent::Cancel	easyevent.h	/^    void Cancel();$/;"	p	class:TimerEvent	access:public
-TimerEvent::Functor	easyevent.h	/^    typedef std::tr1::function<void()> Functor;$/;"	t	class:TimerEvent	access:public
-TimerEvent::OnTimer	easyevent.cpp	/^void TimerEvent::OnTimer(int fd, short what, void *arg) {$/;"	f	class:TimerEvent
-TimerEvent::OnTimer	easyevent.h	/^    static void OnTimer(int fd, short what, void *arg); $/;"	p	class:TimerEvent	access:private
-TimerEvent::Start	easyevent.cpp	/^void TimerEvent::Start() {$/;"	f	class:TimerEvent
-TimerEvent::Start	easyevent.h	/^    void Start();$/;"	p	class:TimerEvent	access:private
-TimerEvent::TimerEvent	easyevent.cpp	/^TimerEvent::TimerEvent(struct event_base* base)$/;"	f	class:TimerEvent
-TimerEvent::TimerEvent	easyevent.h	/^    TimerEvent(struct event_base* base_);$/;"	p	class:TimerEvent	access:public
-TimerEvent::active_	easyevent.h	/^    bool active_;$/;"	m	class:TimerEvent	access:private
-TimerEvent::base_	easyevent.h	/^    struct event_base *base_;$/;"	m	class:TimerEvent	typeref:struct:TimerEvent::event_base	access:private
-TimerEvent::handler_	easyevent.h	/^    Functor handler_;$/;"	m	class:TimerEvent	access:private
-TimerEvent::timeout_	easyevent.h	/^    struct timeval timeout_;$/;"	m	class:TimerEvent	typeref:struct:TimerEvent::timeval	access:private
-TimerEvent::timer_ev_	easyevent.h	/^    struct event * timer_ev_;$/;"	m	class:TimerEvent	typeref:struct:TimerEvent::event	access:private
-TimerEvent::~TimerEvent	easyevent.cpp	/^TimerEvent::~TimerEvent() {$/;"	f	class:TimerEvent
-TimerEvent::~TimerEvent	easyevent.h	/^    ~TimerEvent();$/;"	p	class:TimerEvent	access:public
+TimerEvent	easyevent.h	/^class TimerEvent : noncopyable {$/;"	c
 TlsFree	thread_local_storage.h	8;"	d
 TlsGetValue	thread_local_storage.h	6;"	d
 TlsSetValue	thread_local_storage.h	7;"	d
-Type	easyevent.h	/^    enum Type {$/;"	g	class:FdEvent	access:public
+Type	easyevent.h	/^    enum Type {$/;"	g	class:FdEvent
 __EASYEVENT	easyevent.h	2;"	d
 __EVENTLOOP	EventLoop.h	2;"	d
 __EVENTLOOPTHREAD	EventLoopThread.h	2;"	d
 __EVENT_LOOP_THREAD_POOL	EventLoopThreadPool.h	2;"	d
 __THREAD	Thread.h	2;"	d
-active_	easyevent.h	/^    bool active_;$/;"	m	class:FdEvent	access:protected
-active_	easyevent.h	/^    bool active_;$/;"	m	class:TimerEvent	access:private
-base_	EventLoop.h	/^        struct event_base* base_;$/;"	m	class:EventLoop	typeref:struct:EventLoop::event_base	access:private
-base_	easyevent.h	/^    struct event_base  *base_;$/;"	m	class:FdEvent	typeref:struct:FdEvent::event_base	access:protected
-base_	easyevent.h	/^    struct event_base * base_;$/;"	m	class:SignalEvent	typeref:struct:SignalEvent::event_base	access:private
-base_	easyevent.h	/^    struct event_base *base_;$/;"	m	class:TimerEvent	typeref:struct:TimerEvent::event_base	access:private
-base_loop_	EventLoopThreadPool.h	/^    EventLoop* base_loop_;$/;"	m	class:EventLoopThreadPool	access:private
-calling_pending_functors_	EventLoop.h	/^        bool calling_pending_functors_;$/;"	m	class:EventLoop	access:private
-destructor	thread_local_storage.h	/^    static void destructor(void *x)$/;"	f	class:ThreadLocal	access:private
-destructor	thread_local_storage.h	/^    static void destructor(void *x)$/;"	f	class:ThreadLocalStorage	access:private
+active_	easyevent.h	/^    bool active_;$/;"	m	class:FdEvent
+active_	easyevent.h	/^    bool active_;$/;"	m	class:TimerEvent
+base_	EventLoop.h	/^        struct event_base* base_;$/;"	m	class:EventLoop	typeref:struct:EventLoop::event_base
+base_	easyevent.h	/^    struct event_base  *base_;$/;"	m	class:FdEvent	typeref:struct:FdEvent::event_base
+base_	easyevent.h	/^    struct event_base * base_;$/;"	m	class:SignalEvent	typeref:struct:SignalEvent::event_base
+base_	easyevent.h	/^    struct event_base *base_;$/;"	m	class:TimerEvent	typeref:struct:TimerEvent::event_base
+base_loop_	EventLoopThreadPool.h	/^    EventLoop* base_loop_;$/;"	m	class:EventLoopThreadPool
+calling_pending_functors_	EventLoop.h	/^        bool calling_pending_functors_;$/;"	m	class:EventLoop
+destructor	thread_local_storage.h	/^    static void destructor(void *x)$/;"	f	class:ThreadLocal
+destructor	thread_local_storage.h	/^    static void destructor(void *x)$/;"	f	class:ThreadLocalStorage
 doWork	Thread.cpp	/^void Thread::doWork()$/;"	f	class:Thread
-doWork	Thread.h	/^        void doWork();$/;"	p	class:Thread	access:private
-ev_	easyevent.h	/^    struct event *ev_;$/;"	m	class:FdEvent	typeref:struct:FdEvent::event	access:protected
-event_loop_ptr_	EventLoopThread.h	/^        std::tr1::shared_ptr<EventLoop> event_loop_ptr_;$/;"	m	class:EventLoopThread	access:private
-flags_	easyevent.h	/^    int8_t flags_;$/;"	m	class:FdEvent	access:protected
-functor	EventLoop.h	/^        typedef std::tr1::function<void()> functor;$/;"	t	class:EventLoop	access:public
-functor	EventLoopThread.h	/^        typedef std::tr1::function<void()> functor;$/;"	t	class:EventLoopThread	access:public
-functors_queue_	EventLoop.h	/^        vector<functor> functors_queue_;$/;"	m	class:EventLoop	access:private
+ev_	easyevent.h	/^    struct event *ev_;$/;"	m	class:FdEvent	typeref:struct:FdEvent::event
+event_loop_ptr_	EventLoopThread.h	/^        std::tr1::shared_ptr<EventLoop> event_loop_ptr_;$/;"	m	class:EventLoopThread
+flags_	easyevent.h	/^    int8_t flags_;$/;"	m	class:FdEvent
+functor	EventLoop.h	/^        typedef std::tr1::function<void()> functor;$/;"	t	class:EventLoop
+functor	EventLoopThread.h	/^        typedef std::tr1::function<void()> functor;$/;"	t	class:EventLoopThread
+functors_queue_	EventLoop.h	/^        vector<functor> functors_queue_;$/;"	m	class:EventLoop
 getCurrentThread	Thread.cpp	/^Thread* Thread::getCurrentThread()$/;"	f	class:Thread
-getCurrentThread	Thread.h	/^        static Thread* getCurrentThread();$/;"	p	class:Thread	access:public
 getCurrentThreadID	Thread.cpp	/^Thread::ThreadHandle Thread::getCurrentThreadID()$/;"	f	class:Thread
-getCurrentThreadID	Thread.h	/^        static ThreadHandle getCurrentThreadID();$/;"	p	class:Thread	access:public
-getName	Thread.h	/^        const string& getName()const$/;"	f	class:Thread	access:public
+getName	Thread.h	/^        const string& getName()const$/;"	f	class:Thread
 getNumWorkingThread	Thread.cpp	/^int32_t Thread::getNumWorkingThread()$/;"	f	class:Thread
-getNumWorkingThread	Thread.h	/^        static int32_t getNumWorkingThread();$/;"	p	class:Thread	access:public
-getPriority	Thread.h	/^        ThreadPriority getPriority()const$/;"	f	class:Thread	access:public
+getPriority	Thread.h	/^        ThreadPriority getPriority()const$/;"	f	class:Thread
 getProcessAffinity	Thread.cpp	/^uint32_t  Thread::getProcessAffinity()$/;"	f	class:Thread
-getProcessAffinity	Thread.h	/^        uint32_t getProcessAffinity();$/;"	p	class:Thread	access:private
-getState	Thread.h	/^        ThreadState getState() const $/;"	f	class:Thread	access:public
-getThreadHandle	Thread.h	/^        ThreadHandle getThreadHandle()const$/;"	f	class:Thread	access:public
+getState	Thread.h	/^        ThreadState getState() const $/;"	f	class:Thread
+getThreadHandle	Thread.h	/^        ThreadHandle getThreadHandle()const$/;"	f	class:Thread
 getTidString	Thread.cpp	/^const string& Thread::getTidString()$/;"	f	class:Thread
-getTidString	Thread.h	/^        static const string& getTidString();$/;"	p	class:Thread	access:public
-handler_	Thread.h	/^    Handler handler_;$/;"	m	class:ThreadRunner	access:private
-handler_	easyevent.h	/^    Functor handler_; $/;"	m	class:SignalEvent	access:private
-handler_	easyevent.h	/^    Functor handler_;$/;"	m	class:FdEvent	access:protected
-handler_	easyevent.h	/^    Functor handler_;$/;"	m	class:TimerEvent	access:private
-isRunning	Thread.h	/^        bool isRunning() const$/;"	f	class:Thread	access:public
-isStopped	Thread.h	/^        bool isStopped() const$/;"	f	class:Thread	access:public
-join	Thread.cpp	/^    bool join( uint32_t msWait )$/;"	f	class:MainThread	access:public
+handler_	Thread.h	/^    Handler handler_;$/;"	m	class:ThreadRunner
+handler_	easyevent.h	/^    Functor handler_; $/;"	m	class:SignalEvent
+handler_	easyevent.h	/^    Functor handler_;$/;"	m	class:FdEvent
+handler_	easyevent.h	/^    Functor handler_;$/;"	m	class:TimerEvent
+isRunning	Thread.h	/^        bool isRunning() const$/;"	f	class:Thread
+isStopped	Thread.h	/^        bool isStopped() const$/;"	f	class:Thread
+join	Thread.cpp	/^    bool join( uint32_t msWait )$/;"	f	class:MainThread
 join	Thread.cpp	/^bool Thread::join( uint32_t msWait )$/;"	f	class:Thread
-join	Thread.h	/^        virtual bool join( uint32_t msWait = uint32_t( -1 ) );$/;"	p	class:Thread	access:public
 kNoTime	easyevent.h	/^        kNoTime = 0,$/;"	e	enum:FdEvent::__anon1
 kReadable	easyevent.h	/^        kReadable = 1,$/;"	e	enum:FdEvent::Type
 kTimeDiff	easyevent.h	/^        kTimeDiff = 1,$/;"	e	enum:FdEvent::__anon1
 kTimeStamp	easyevent.h	/^        kTimeStamp = 2,$/;"	e	enum:FdEvent::__anon1
 kWritable	easyevent.h	/^        kWritable = 2,$/;"	e	enum:FdEvent::Type
-m_hThread	Thread.h	/^        ThreadHandle           m_hThread;$/;"	m	class:Thread	access:private
-m_nPriority	Thread.h	/^        ThreadPriority       m_nPriority;$/;"	m	class:Thread	access:private
-m_nState	Thread.h	/^        volatile ThreadState    m_nState;   \/\/! object state. It is maintained by thread.$/;"	m	class:Thread	access:private
-m_strName	Thread.h	/^        string                 m_strName;   \/\/! Thread Name;$/;"	m	class:Thread	access:private
-m_thread_attr	Thread.h	/^        pthread_attr_t     m_thread_attr;$/;"	m	class:Thread	access:private
-main	main.cpp	/^int main(int argc, char** argv)$/;"	f
-mutex_	EventLoop.h	/^        pthread_mutex_t mutex_;$/;"	m	class:EventLoop	access:private
-next_	EventLoopThreadPool.h	/^    AtomicInt32 next_;$/;"	m	class:EventLoopThreadPool	access:private
-operator T&	thread_local_storage.h	/^    operator T&()$/;"	f	class:ThreadLocal	access:public
-pipe_event_	EventLoop.h	/^        std::tr1::shared_ptr<FdEvent> pipe_event_;$/;"	m	class:EventLoop	access:private
-pipes_	EventLoop.h	/^        int32_t pipes_[2];$/;"	m	class:EventLoop	access:private
-run	Thread.cpp	/^    void run()$/;"	f	class:MainThread	access:public
-run	Thread.h	/^        virtual void run() = 0;$/;"	p	class:Thread	access:protected
-run	Thread.h	/^    virtual void run()$/;"	f	class:ThreadRunner	access:private
+m_hThread	Thread.h	/^        ThreadHandle           m_hThread;$/;"	m	class:Thread
+m_nPriority	Thread.h	/^        ThreadPriority       m_nPriority;$/;"	m	class:Thread
+m_nState	Thread.h	/^        volatile ThreadState    m_nState;   \/\/! object state. It is maintained by thread.$/;"	m	class:Thread
+m_strName	Thread.h	/^        string                 m_strName;   \/\/! Thread Name;$/;"	m	class:Thread
+m_thread_attr	Thread.h	/^        pthread_attr_t     m_thread_attr;$/;"	m	class:Thread
+mutex_	EventLoop.h	/^        pthread_mutex_t mutex_;$/;"	m	class:EventLoop
+next_	EventLoopThreadPool.h	/^    int next_;$/;"	m	class:EventLoopThreadPool
+operator T&	thread_local_storage.h	/^    operator T&()$/;"	f	class:ThreadLocal
+pipe_event_	EventLoop.h	/^        std::tr1::shared_ptr<FdEvent> pipe_event_;$/;"	m	class:EventLoop
+pipes_	EventLoop.h	/^        int32_t pipes_[2];$/;"	m	class:EventLoop
+run	Thread.cpp	/^    void run()$/;"	f	class:MainThread
+run	Thread.h	/^    virtual void run()$/;"	f	class:ThreadRunner
 s_nNumThreads	Thread.cpp	/^volatile int32_t  s_nNumThreads = 0;$/;"	v
 s_nNumWorkingThread	Thread.cpp	/^volatile int32_t  s_nNumWorkingThread = 0;$/;"	v
 s_pMainThread	Thread.cpp	/^Thread* s_pMainThread = NULL;$/;"	v
 s_thread_key	Thread.cpp	/^pthread_key_t   s_thread_key = 0;$/;"	v
-setHandler	Thread.h	/^    void setHandler(Handler handler) { handler_ = handler; }$/;"	f	class:ThreadRunner	access:protected
-setName	Thread.h	/^        void setName( const string& strName )$/;"	f	class:Thread	access:public
+setHandler	Thread.h	/^    void setHandler(Handler handler) { handler_ = handler; }$/;"	f	class:ThreadRunner
+setName	Thread.h	/^        void setName( const string& strName )$/;"	f	class:Thread
 setPriority	Thread.cpp	/^void Thread::setPriority( Thread::ThreadPriority nPriority )$/;"	f	class:Thread
-setPriority	Thread.h	/^        void setPriority( ThreadPriority nPriority );$/;"	p	class:Thread	access:public
 setThreadAffinity	Thread.cpp	/^void Thread::setThreadAffinity( uint32_t nMask )$/;"	f	class:Thread
-setThreadAffinity	Thread.h	/^        void setThreadAffinity( uint32_t nMask );$/;"	p	class:Thread	access:public
-sig_ev_	easyevent.h	/^    map<int, struct event*> sig_ev_;$/;"	m	class:SignalEvent	access:private
-start	Thread.cpp	/^    bool start()$/;"	f	class:MainThread	access:public
+sig_ev_	easyevent.h	/^    map<int, struct event*> sig_ev_;$/;"	m	class:SignalEvent
+start	Thread.cpp	/^    bool start()$/;"	f	class:MainThread
 start	Thread.cpp	/^bool Thread::start()$/;"	f	class:Thread
-start	Thread.h	/^        virtual bool start();$/;"	p	class:Thread	access:public
-started_	EventLoopThreadPool.h	/^    bool started_;$/;"	m	class:EventLoopThreadPool	access:private
-stop	Thread.cpp	/^    void stop()             {}$/;"	f	class:MainThread	access:public
+started_	EventLoopThreadPool.h	/^    bool started_;$/;"	m	class:EventLoopThreadPool
+stop	Thread.cpp	/^    void stop()             {}$/;"	f	class:MainThread
 stop	Thread.cpp	/^void Thread::stop()$/;"	f	class:Thread
-stop	Thread.h	/^        virtual void stop();$/;"	p	class:Thread	access:public
 t_tid	Thread.cpp	/^static ThreadLocal<Thread::ThreadHandle> t_tid;$/;"	v	file:
 t_tidstring	Thread.cpp	/^static ThreadLocal<string>              t_tidstring;\/\/for Logging$/;"	v	file:
-terminate	Thread.cpp	/^    virtual void terminate() {}$/;"	f	class:MainThread	access:public
+terminate	Thread.cpp	/^    virtual void terminate() {}$/;"	f	class:MainThread
 terminate	Thread.cpp	/^void Thread::terminate()$/;"	f	class:Thread
-terminate	Thread.h	/^        virtual void terminate();$/;"	p	class:Thread	access:public
-thread_key_	thread_local_storage.h	/^    pthread_key_t thread_key_;$/;"	m	class:ThreadLocal	access:private
-thread_key_	thread_local_storage.h	/^    pthread_key_t thread_key_;$/;"	m	class:ThreadLocalStorage	access:private
-thread_ptr_	EventLoopThread.h	/^        std::tr1::shared_ptr<ThreadRunner> thread_ptr_;         $/;"	m	class:EventLoopThread	access:private
-threads	EventLoopThreadPool.h	/^    vector<EventLoopThreadPtr>* threads();$/;"	p	class:EventLoopThreadPool	access:public
-threads_	EventLoopThreadPool.h	/^    vector<EventLoopThreadPtr> threads_;$/;"	m	class:EventLoopThreadPool	access:private
-threads_num_	EventLoopThreadPool.h	/^    int threads_num_;$/;"	m	class:EventLoopThreadPool	access:private
-tid	Thread.h	/^        TID tid() const $/;"	f	class:Thread	access:public
-tid_	EventLoop.h	/^        pthread_t tid_;$/;"	m	class:EventLoop	access:private
-time_flag_	easyevent.h	/^    int8_t time_flag_;$/;"	m	class:FdEvent	access:protected
-timeout_	easyevent.h	/^    struct timeval timeout_;$/;"	m	class:TimerEvent	typeref:struct:TimerEvent::timeval	access:private
-timer_ev_	easyevent.h	/^    struct event * timer_ev_;$/;"	m	class:TimerEvent	typeref:struct:TimerEvent::event	access:private
-value	thread_local_storage.h	/^    T& value()$/;"	f	class:ThreadLocal	access:public
-value	thread_local_storage.h	/^    T& value(const string& key)$/;"	f	class:ThreadLocalStorage	access:public
+thread_key_	thread_local_storage.h	/^    pthread_key_t thread_key_;$/;"	m	class:ThreadLocal
+thread_key_	thread_local_storage.h	/^    pthread_key_t thread_key_;$/;"	m	class:ThreadLocalStorage
+thread_ptr_	EventLoopThread.h	/^        std::tr1::shared_ptr<ThreadRunner> thread_ptr_;         $/;"	m	class:EventLoopThread
+threads_	EventLoopThreadPool.h	/^    vector<EventLoopThreadPtr> threads_;$/;"	m	class:EventLoopThreadPool
+threads_num_	EventLoopThreadPool.h	/^    int threads_num_;$/;"	m	class:EventLoopThreadPool
+tid	Thread.h	/^        TID tid() const $/;"	f	class:Thread
+tid_	EventLoop.h	/^        pthread_t tid_;$/;"	m	class:EventLoop
+time_flag_	easyevent.h	/^    int8_t time_flag_;$/;"	m	class:FdEvent
+timeout_	easyevent.h	/^    struct timeval timeout_;$/;"	m	class:TimerEvent	typeref:struct:TimerEvent::timeval
+timer_ev_	easyevent.h	/^    struct event * timer_ev_;$/;"	m	class:TimerEvent	typeref:struct:TimerEvent::event
+value	thread_local_storage.h	/^    T& value()$/;"	f	class:ThreadLocal
+value	thread_local_storage.h	/^    T& value(const string& key)$/;"	f	class:ThreadLocalStorage
 ~EventLoop	EventLoop.cpp	/^EventLoop::~EventLoop()$/;"	f	class:EventLoop
-~EventLoop	EventLoop.h	/^        ~EventLoop();$/;"	p	class:EventLoop	access:public
 ~EventLoopThread	EventLoopThread.cpp	/^EventLoopThread::~EventLoopThread()$/;"	f	class:EventLoopThread
-~EventLoopThread	EventLoopThread.h	/^        ~EventLoopThread();$/;"	p	class:EventLoopThread	access:public
-~EventLoopThreadPool	EventLoopThreadPool.h	/^    ~EventLoopThreadPool();$/;"	p	class:EventLoopThreadPool	access:public
+~EventLoopThreadPool	EventLoopThreadPool.cpp	/^EventLoopThreadPool::~EventLoopThreadPool()$/;"	f	class:EventLoopThreadPool
 ~FdEvent	easyevent.cpp	/^FdEvent::~FdEvent() {$/;"	f	class:FdEvent
-~FdEvent	easyevent.h	/^    ~FdEvent();$/;"	p	class:FdEvent	access:public
-~MainThread	Thread.cpp	/^    ~MainThread()$/;"	f	class:MainThread	access:public
+~MainThread	Thread.cpp	/^    ~MainThread()$/;"	f	class:MainThread
 ~SignalEvent	easyevent.cpp	/^SignalEvent::~SignalEvent()$/;"	f	class:SignalEvent
-~SignalEvent	easyevent.h	/^    ~SignalEvent();$/;"	p	class:SignalEvent	access:public
 ~Thread	Thread.cpp	/^Thread::~Thread()$/;"	f	class:Thread
-~Thread	Thread.h	/^        ~Thread();$/;"	p	class:Thread	access:public
-~ThreadLocal	thread_local_storage.h	/^    ~ThreadLocal()$/;"	f	class:ThreadLocal	access:public
-~ThreadLocalStorage	thread_local_storage.h	/^    ~ThreadLocalStorage()$/;"	f	class:ThreadLocalStorage	access:public
+~ThreadLocal	thread_local_storage.h	/^    ~ThreadLocal()$/;"	f	class:ThreadLocal
+~ThreadLocalStorage	thread_local_storage.h	/^    ~ThreadLocalStorage()$/;"	f	class:ThreadLocalStorage
 ~TimerEvent	easyevent.cpp	/^TimerEvent::~TimerEvent() {$/;"	f	class:TimerEvent
-~TimerEvent	easyevent.h	/^    ~TimerEvent();$/;"	p	class:TimerEvent	access:public

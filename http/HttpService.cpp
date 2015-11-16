@@ -26,7 +26,7 @@ void HttpContext::ParseUri(const char* orig_uri)
         string key = uri.substr(pos1, pos2 - pos1) ;
         string val = uri.substr(pos2 + 1, pos - pos2 -1) ;
 
-        cout << "key: " << key << " val:" <<val << endl;
+        //cout << "key: " << key << " val:" <<val << endl;
         params_map_[key] = val;
         pos1 = pos + 1;
     }
@@ -40,7 +40,7 @@ void HttpContext::ParseUri(const char* orig_uri)
         string key = uri.substr(pos1, pos2 - pos1) ;
         string val = uri.substr(pos2 + 1, uri.size() - pos2 -1) ;
         pos1 = pos + 1;
-        cout << "key: " << key << " val:" <<val << endl;
+    //    cout << "key: " << key << " val:" <<val << endl;
         params_map_[key] = val;
     }
 
@@ -158,9 +158,11 @@ void HttpService::GenericCallBack(struct evhttp_request * req, void * arg)
         service->callback_map_[CtxPtr->GetUrl()](CtxPtr, std::tr1::bind(&HttpService::SendReply,(HttpService*)arg, CtxPtr, std::tr1::placeholders::_1));
         return;
     }
+    
+    service->default_callback_(CtxPtr, std::tr1::bind(&HttpService::SendReply,(HttpService*)arg, CtxPtr, std::tr1::placeholders::_1));
 
     //send default response;
-    evhttp_send_reply(req, HTTP_BADREQUEST, "BAD REQUEST", NULL); 
+   // evhttp_send_reply(req, HTTP_BADREQUEST, "BAD REQUEST", NULL); 
 
 
 }
@@ -203,4 +205,19 @@ void HttpService::SendReply(HttpContextPtr& ctx_ptr,const string & response)
 void HttpService::RegisterRequestCallback(string url, CallBackFun callback)
 {
     callback_map_[url] = callback;
+}
+
+void HttpService::RegisterDefaultCallback( CallBackFun callback)
+{
+    default_callback_ = callback;
+}
+
+void HttpService::Stop()
+{
+    if(http_){
+        evhttp_free(http_);
+        http_ = NULL;
+    }
+    pending_reply_list_.clear(); 
+    base_ = NULL;
 }

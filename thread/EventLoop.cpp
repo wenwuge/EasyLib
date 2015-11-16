@@ -99,6 +99,8 @@ void EventLoop::PipeProcess(int fd, short which, void* arg)
     char buf[1] = {};
     read(pipes_[0], buf, sizeof(buf));
     DoPendingFunctors();
+
+    pipe_event_->AsyncWait(pipes_[0], FdEvent::kReadable, std::tr1::bind(&EventLoop::PipeProcess, this,pipes_[0], FdEvent::kReadable,(void*) NULL));
 }
 
 void EventLoop::DoPendingFunctors()
@@ -109,12 +111,13 @@ void EventLoop::DoPendingFunctors()
     {
         //ScopedLock<pthread_mutex_t> lock(mutex_);
         pthread_mutex_lock(&mutex_);
-        functors.swap(functors_queue_);
+        //functors.swap(functors_queue_);
+        swap(functors_queue_, functors);
         pthread_mutex_unlock(&mutex_);
     }
     
-    for(int i=0; i < functors_queue_.size(); i++){
-        functors_queue_[i](); 
+    for(int i=0; i < functors.size(); i++){
+        functors[i](); 
     }
 
     calling_pending_functors_ = false;

@@ -45,7 +45,7 @@ void EventLoopThread::Stop(bool wait_until_thread_exited)
     thread_ptr_->stop();
 
     while(1){
-        if(IsStopped() || !wait_until_thread_exited == false){
+        if(IsStopped() || wait_until_thread_exited == false){
             break;
         }
         

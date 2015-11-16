@@ -1,0 +1,36 @@
+#include "Thread.h"
+#include "EventLoopThread.h"
+#include "EventLoopThreadPool.h"
+int main(int argc, char** argv)
+{
+    //just one example, introduce the Thread's usage
+#if 0
+    EventLoopThread event_thread;
+    event_thread.Start(true);
+
+    string input;
+    while(input != "end"){
+        getline(cin, input);
+    }
+
+    event_thread.Stop();
+    while(input != "realend"){
+        getline(cin, input);
+    }
+
+#endif
+    EventLoop loop;
+    EventLoopThreadPool thread_pool(&loop);
+    thread_pool.SetThreadNum(10);
+    thread_pool.Start();
+
+    string input;
+    while(input != "end"){
+        getline(cin, input);
+    }
+    thread_pool.Stop(); 
+    while(input != "realend"){
+        getline(cin, input);
+    }
+}
+

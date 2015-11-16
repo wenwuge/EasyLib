@@ -3,7 +3,7 @@
 #include <iostream>
 #include <pthread.h>
 #include <vector>
-#include <event.h>
+#include <event2/event.h>
 #include <tr1/functional>
 #include <tr1/memory>
 #include <unistd.h>

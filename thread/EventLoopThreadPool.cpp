@@ -52,7 +52,9 @@ void EventLoopThreadPool::Stop(bool wait_thread_exit)
                     break;
                 }
             }
+            break;
         }
+
     }
 
     threads_.clear();

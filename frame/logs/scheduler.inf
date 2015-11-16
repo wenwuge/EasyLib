@@ -1198,3 +1198,202 @@
 2015-10-09 14:12:46 [0x7f3bab3e9760] DEBUG (skeleton.cpp:311)WorkerRun - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
 2015-10-09 14:22:21 [0x7f3bab3e9760] DEBUG (skeleton.cpp:508)SignalHandle - in signal handler,sig : 15
 2015-10-09 14:22:21 [0x7f3bab3e9760] FATAL (skeleton.cpp:399)Stop - send SIGKILL to 29111
+2015-10-12 14:09:49 [0x7fe422d1e760] FATAL (skeleton.cpp:162)ReadConf - log4cxx init finish!
+2015-10-12 14:09:49 [0x7fe422d1e760] DEBUG (skeleton.cpp:163)ReadConf - modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf;./servermodule/libservermodule.so:./servermodule/server.conf
+2015-10-12 14:09:49 [0x7fe422d1e760] DEBUG (skeleton.cpp:164)ReadConf - autoreboot: 1
+2015-10-12 14:09:49 [0x7fe422d1e760] DEBUG (skeleton.cpp:165)ReadConf - reboottimeout: 2
+2015-10-12 14:09:49 [0x7fe422d1e760] DEBUG (skeleton.cpp:254)CheckModules - find2modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf;./servermodule/libservermodule.so:./servermodule/server.conf
+2015-10-12 14:09:49 [0x7fe422d1e760] DEBUG (skeleton.cpp:260)CheckModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-10-12 14:09:49 [0x7fe422d1e760] FATAL (skeleton.cpp:265)CheckModules - dlopen error,./examplemodule/libechomodule.so: cannot open shared object file: No such file or directory
+2015-10-12 14:09:49 [0x7fe422d1e760] FATAL (skeleton.cpp:346)MasterRun - checkmodules error happen
+2015-10-12 14:10:35 [0x7ff838a7c760] FATAL (skeleton.cpp:162)ReadConf - log4cxx init finish!
+2015-10-12 14:10:35 [0x7ff838a7c760] DEBUG (skeleton.cpp:163)ReadConf - modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf;./servermodule/libservermodule.so:./servermodule/server.conf
+2015-10-12 14:10:35 [0x7ff838a7c760] DEBUG (skeleton.cpp:164)ReadConf - autoreboot: 1
+2015-10-12 14:10:35 [0x7ff838a7c760] DEBUG (skeleton.cpp:165)ReadConf - reboottimeout: 2
+2015-10-12 14:10:35 [0x7ff838a7c760] DEBUG (skeleton.cpp:254)CheckModules - find2modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf;./servermodule/libservermodule.so:./servermodule/server.conf
+2015-10-12 14:10:35 [0x7ff838a7c760] DEBUG (skeleton.cpp:260)CheckModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-10-12 14:10:35 [0x7ff838a7c760] DEBUG (skeleton.cpp:260)CheckModules - Module name:./servermodule/libservermodule.so conf./servermodule/server.conf
+2015-10-12 14:10:35 [0x7ff838a7c760] FATAL (skeleton.cpp:265)CheckModules - dlopen error,./servermodule/libservermodule.so: undefined symbol: _ZN14TcpMessageDesc9GetBufPtrEv
+2015-10-12 14:10:35 [0x7ff838a7c760] FATAL (skeleton.cpp:346)MasterRun - checkmodules error happen
+2015-10-12 14:31:37 [0x7f403d5fc760] FATAL (skeleton.cpp:162)ReadConf - log4cxx init finish!
+2015-10-12 14:31:37 [0x7f403d5fc760] DEBUG (skeleton.cpp:163)ReadConf - modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf;./servermodule/libservermodule.so:./servermodule/server.conf
+2015-10-12 14:31:37 [0x7f403d5fc760] DEBUG (skeleton.cpp:164)ReadConf - autoreboot: 1
+2015-10-12 14:31:37 [0x7f403d5fc760] DEBUG (skeleton.cpp:165)ReadConf - reboottimeout: 2
+2015-10-12 14:31:37 [0x7f403d5fc760] DEBUG (skeleton.cpp:254)CheckModules - find2modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf;./servermodule/libservermodule.so:./servermodule/server.conf
+2015-10-12 14:31:37 [0x7f403d5fc760] DEBUG (skeleton.cpp:260)CheckModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-10-12 14:31:37 [0x7f403d5fc760] DEBUG (skeleton.cpp:260)CheckModules - Module name:./servermodule/libservermodule.so conf./servermodule/server.conf
+2015-10-12 14:31:37 [0x7f403d5fc760] FATAL (skeleton.cpp:265)CheckModules - dlopen error,./servermodule/libservermodule.so: undefined symbol: _ZN14TcpMessageDesc9GetBufPtrEv
+2015-10-12 14:31:37 [0x7f403d5fc760] FATAL (skeleton.cpp:346)MasterRun - checkmodules error happen
+2015-10-12 14:36:34 [0x7fa3d1440760] FATAL (skeleton.cpp:162)ReadConf - log4cxx init finish!
+2015-10-12 14:36:34 [0x7fa3d1440760] DEBUG (skeleton.cpp:163)ReadConf - modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf;./servermodule/libservermodule.so:./servermodule/server.conf
+2015-10-12 14:36:34 [0x7fa3d1440760] DEBUG (skeleton.cpp:164)ReadConf - autoreboot: 1
+2015-10-12 14:36:34 [0x7fa3d1440760] DEBUG (skeleton.cpp:165)ReadConf - reboottimeout: 2
+2015-10-12 14:36:34 [0x7fa3d1440760] DEBUG (skeleton.cpp:254)CheckModules - find2modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf;./servermodule/libservermodule.so:./servermodule/server.conf
+2015-10-12 14:36:34 [0x7fa3d1440760] DEBUG (skeleton.cpp:260)CheckModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-10-12 14:36:34 [0x7fa3d1440760] DEBUG (skeleton.cpp:260)CheckModules - Module name:./servermodule/libservermodule.so conf./servermodule/server.conf
+2015-10-12 14:36:34 [0x7fa3d1440760] DEBUG (skeleton.cpp:286)CheckModules - CheckModules finished!
+2015-10-12 14:36:34 [0x7fa3d1440760] DEBUG (skeleton.cpp:353)MasterRun - find modules num: 2
+2015-10-12 14:36:34 [0x7fa3d1440760] DEBUG (skeleton.cpp:307)WorkerRun - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-10-12 14:36:34 [0x7fa3d1440760] DEBUG (skeleton.cpp:307)WorkerRun - Module name:./servermodule/libservermodule.so conf./servermodule/server.conf
+2015-10-12 14:36:34 [0x7fa3d1440760] DEBUG (servermodule.cpp:57)Init - server module initi, conf./servermodule/libservermodule.so:./servermodule/server.conf
+2015-10-12 14:36:34 [0x7fa3d1440760] DEBUG (servermodule.cpp:66)Run - server module run
+2015-10-12 14:57:51 [0x7fa3d1440760] DEBUG (skeleton.cpp:504)SignalHandle - in signal handler,sig : 2
+2015-10-12 14:57:51 [0x7fa3d1440760] FATAL (skeleton.cpp:395)Stop - send SIGKILL to 24038
+2015-10-12 14:57:51 [0x7fa3d1440760] FATAL (skeleton.cpp:395)Stop - send SIGKILL to 24039
+2015-10-12 14:57:54 [0x7fc460a72760] FATAL (skeleton.cpp:162)ReadConf - log4cxx init finish!
+2015-10-12 14:57:54 [0x7fc460a72760] DEBUG (skeleton.cpp:163)ReadConf - modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf;./servermodule/libservermodule.so:./servermodule/server.conf
+2015-10-12 14:57:54 [0x7fc460a72760] DEBUG (skeleton.cpp:164)ReadConf - autoreboot: 1
+2015-10-12 14:57:54 [0x7fc460a72760] DEBUG (skeleton.cpp:165)ReadConf - reboottimeout: 2
+2015-10-12 14:57:54 [0x7fc460a72760] DEBUG (skeleton.cpp:254)CheckModules - find2modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf;./servermodule/libservermodule.so:./servermodule/server.conf
+2015-10-12 14:57:54 [0x7fc460a72760] DEBUG (skeleton.cpp:260)CheckModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-10-12 14:57:54 [0x7fc460a72760] DEBUG (skeleton.cpp:260)CheckModules - Module name:./servermodule/libservermodule.so conf./servermodule/server.conf
+2015-10-12 14:57:54 [0x7fc460a72760] DEBUG (skeleton.cpp:286)CheckModules - CheckModules finished!
+2015-10-12 14:57:54 [0x7fc460a72760] DEBUG (skeleton.cpp:353)MasterRun - find modules num: 2
+2015-10-12 14:57:54 [0x7fc460a72760] DEBUG (skeleton.cpp:307)WorkerRun - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-10-12 14:57:54 [0x7fc460a72760] DEBUG (skeleton.cpp:307)WorkerRun - Module name:./servermodule/libservermodule.so conf./servermodule/server.conf
+2015-10-12 14:57:54 [0x7fc460a72760] DEBUG (servermodule.cpp:57)Init - server module initi, conf./servermodule/libservermodule.so:./servermodule/server.conf
+2015-10-12 14:57:54 [0x7fc460a72760] DEBUG (servermodule.cpp:66)Run - server module run
+2015-10-12 14:58:33 [0x7fc460a72760] DEBUG (skeleton.cpp:504)SignalHandle - in signal handler,sig : 15
+2015-10-12 14:58:33 [0x7fc460a72760] FATAL (skeleton.cpp:395)Stop - send SIGKILL to 27485
+2015-10-12 14:58:33 [0x7fc460a72760] FATAL (skeleton.cpp:395)Stop - send SIGKILL to 27486
+2015-10-12 14:58:46 [0x7f726371f760] FATAL (skeleton.cpp:162)ReadConf - log4cxx init finish!
+2015-10-12 14:58:46 [0x7f726371f760] DEBUG (skeleton.cpp:163)ReadConf - modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf;./servermodule/libservermodule.so:./servermodule/server.conf
+2015-10-12 14:58:46 [0x7f726371f760] DEBUG (skeleton.cpp:164)ReadConf - autoreboot: 1
+2015-10-12 14:58:46 [0x7f726371f760] DEBUG (skeleton.cpp:165)ReadConf - reboottimeout: 2
+2015-10-12 14:58:46 [0x7f726371f760] DEBUG (skeleton.cpp:254)CheckModules - find2modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf;./servermodule/libservermodule.so:./servermodule/server.conf
+2015-10-12 14:58:46 [0x7f726371f760] DEBUG (skeleton.cpp:260)CheckModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-10-12 14:58:46 [0x7f726371f760] DEBUG (skeleton.cpp:260)CheckModules - Module name:./servermodule/libservermodule.so conf./servermodule/server.conf
+2015-10-12 14:58:46 [0x7f726371f760] DEBUG (skeleton.cpp:286)CheckModules - CheckModules finished!
+2015-10-12 14:58:46 [0x7f726371f760] DEBUG (skeleton.cpp:353)MasterRun - find modules num: 2
+2015-10-12 14:58:46 [0x7f726371f760] DEBUG (skeleton.cpp:307)WorkerRun - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-10-12 14:58:46 [0x7f726371f760] DEBUG (skeleton.cpp:307)WorkerRun - Module name:./servermodule/libservermodule.so conf./servermodule/server.conf
+2015-10-12 14:58:46 [0x7f726371f760] DEBUG (servermodule.cpp:57)Init - server module initi, conf./servermodule/libservermodule.so:./servermodule/server.conf
+2015-10-12 14:58:46 [0x7f726371f760] DEBUG (servermodule.cpp:66)Run - server module run
+2015-10-12 14:59:58 [0x7f726371f760] DEBUG (skeleton.cpp:504)SignalHandle - in signal handler,sig : 15
+2015-10-12 14:59:58 [0x7f726371f760] FATAL (skeleton.cpp:395)Stop - send SIGKILL to 27661
+2015-10-12 14:59:58 [0x7f726371f760] FATAL (skeleton.cpp:395)Stop - send SIGKILL to 27662
+2015-10-12 15:00:23 [0x7fb392a9f760] FATAL (skeleton.cpp:162)ReadConf - log4cxx init finish!
+2015-10-12 15:00:23 [0x7fb392a9f760] DEBUG (skeleton.cpp:163)ReadConf - modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf;./servermodule/libservermodule.so:./servermodule/server.conf
+2015-10-12 15:00:23 [0x7fb392a9f760] DEBUG (skeleton.cpp:164)ReadConf - autoreboot: 1
+2015-10-12 15:00:23 [0x7fb392a9f760] DEBUG (skeleton.cpp:165)ReadConf - reboottimeout: 2
+2015-10-12 15:00:23 [0x7fb392a9f760] DEBUG (skeleton.cpp:254)CheckModules - find2modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf;./servermodule/libservermodule.so:./servermodule/server.conf
+2015-10-12 15:00:23 [0x7fb392a9f760] DEBUG (skeleton.cpp:260)CheckModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-10-12 15:00:23 [0x7fb392a9f760] DEBUG (skeleton.cpp:260)CheckModules - Module name:./servermodule/libservermodule.so conf./servermodule/server.conf
+2015-10-12 15:00:23 [0x7fb392a9f760] DEBUG (skeleton.cpp:286)CheckModules - CheckModules finished!
+2015-10-12 15:00:23 [0x7fb392a9f760] DEBUG (skeleton.cpp:353)MasterRun - find modules num: 2
+2015-10-12 15:00:23 [0x7fb392a9f760] DEBUG (skeleton.cpp:307)WorkerRun - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-10-12 15:00:23 [0x7fb392a9f760] DEBUG (skeleton.cpp:307)WorkerRun - Module name:./servermodule/libservermodule.so conf./servermodule/server.conf
+2015-10-12 15:00:23 [0x7fb392a9f760] DEBUG (servermodule.cpp:57)Init - server module initi, conf./servermodule/libservermodule.so:./servermodule/server.conf
+2015-10-12 15:00:23 [0x7fb392a9f760] DEBUG (servermodule.cpp:66)Run - server module run
+2015-10-12 15:00:54 [0x7fb392a9f760] DEBUG (skeleton.cpp:504)SignalHandle - in signal handler,sig : 1
+2015-10-12 15:00:54 [0x7fb392a9f760] DEBUG (skeleton.cpp:477)ReloadHandle - send SIGTERM TO PID 27954
+2015-10-12 15:00:54 [0x7fb392a9f760] DEBUG (skeleton.cpp:477)ReloadHandle - send SIGTERM TO PID 27955
+2015-10-12 15:00:54 [0x7fb392a9f760] DEBUG (skeleton.cpp:254)CheckModules - find2modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf;./servermodule/libservermodule.so:./servermodule/server.conf
+2015-10-12 15:00:54 [0x7fb392a9f760] DEBUG (skeleton.cpp:260)CheckModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-10-12 15:00:54 [0x7fb392a9f760] DEBUG (skeleton.cpp:260)CheckModules - Module name:./servermodule/libservermodule.so conf./servermodule/server.conf
+2015-10-12 15:00:54 [0x7fb392a9f760] DEBUG (skeleton.cpp:286)CheckModules - CheckModules finished!
+2015-10-12 15:00:54 [0x7fb392a9f760] DEBUG (skeleton.cpp:492)ReloadHandle - find modules num: 2
+2015-10-12 15:00:54 [0x7fb392a9f760] DEBUG (skeleton.cpp:307)WorkerRun - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-10-12 15:00:54 [0x7fb392a9f760] DEBUG (skeleton.cpp:504)SignalHandle - in signal handler,sig : 17
+2015-10-12 15:00:54 [0x7fb392a9f760] DEBUG (skeleton.cpp:417)WaitChildren - waitpid pid is 27954
+2015-10-12 15:00:54 [0x7fb392a9f760] DEBUG (skeleton.cpp:417)WaitChildren - waitpid pid is 27955
+2015-10-12 15:00:54 [0x7fb392a9f760] DEBUG (skeleton.cpp:504)SignalHandle - in signal handler,sig : 17
+2015-10-12 15:00:54 [0x7fb392a9f760] DEBUG (skeleton.cpp:307)WorkerRun - Module name:./servermodule/libservermodule.so conf./servermodule/server.conf
+2015-10-12 15:00:54 [0x7fb392a9f760] DEBUG (servermodule.cpp:57)Init - server module initi, conf./servermodule/libservermodule.so:./servermodule/server.conf
+2015-10-12 15:00:54 [0x7fb392a9f760] DEBUG (servermodule.cpp:66)Run - server module run
+2015-10-12 15:04:50 [0x7fb392a9f760] DEBUG (skeleton.cpp:504)SignalHandle - in signal handler,sig : 15
+2015-10-12 15:04:50 [0x7fb392a9f760] FATAL (skeleton.cpp:395)Stop - send SIGKILL to 28048
+2015-10-12 15:04:50 [0x7fb392a9f760] FATAL (skeleton.cpp:395)Stop - send SIGKILL to 28050
+2015-10-12 15:12:44 [0x7f6a40ad1760] FATAL (skeleton.cpp:162)ReadConf - log4cxx init finish!
+2015-10-12 15:12:44 [0x7f6a40ad1760] DEBUG (skeleton.cpp:163)ReadConf - modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf;./servermodule/libservermodule.so:./servermodule/server.conf
+2015-10-12 15:12:44 [0x7f6a40ad1760] DEBUG (skeleton.cpp:164)ReadConf - autoreboot: 1
+2015-10-12 15:12:44 [0x7f6a40ad1760] DEBUG (skeleton.cpp:165)ReadConf - reboottimeout: 2
+2015-10-12 15:12:44 [0x7f6a40ad1760] DEBUG (skeleton.cpp:254)CheckModules - find2modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf;./servermodule/libservermodule.so:./servermodule/server.conf
+2015-10-12 15:12:44 [0x7f6a40ad1760] DEBUG (skeleton.cpp:260)CheckModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-10-12 15:12:44 [0x7f6a40ad1760] DEBUG (skeleton.cpp:260)CheckModules - Module name:./servermodule/libservermodule.so conf./servermodule/server.conf
+2015-10-12 15:12:44 [0x7f6a40ad1760] DEBUG (skeleton.cpp:286)CheckModules - CheckModules finished!
+2015-10-12 15:12:44 [0x7f6a40ad1760] DEBUG (skeleton.cpp:353)MasterRun - find modules num: 2
+2015-10-12 15:12:44 [0x7f6a40ad1760] DEBUG (skeleton.cpp:307)WorkerRun - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-10-12 15:12:44 [0x7f6a40ad1760] DEBUG (skeleton.cpp:307)WorkerRun - Module name:./servermodule/libservermodule.so conf./servermodule/server.conf
+2015-10-12 15:12:44 [0x7f6a40ad1760] DEBUG (servermodule.cpp:57)Init - server module initi, conf./servermodule/libservermodule.so:./servermodule/server.conf
+2015-10-12 15:12:44 [0x7f6a40ad1760] DEBUG (servermodule.cpp:66)Run - server module run
+2015-10-12 15:13:03 [0x7f6a40ad1760] DEBUG (skeleton.cpp:504)SignalHandle - in signal handler,sig : 15
+2015-10-12 15:13:03 [0x7f6a40ad1760] FATAL (skeleton.cpp:395)Stop - send SIGKILL to 30062
+2015-10-12 15:13:03 [0x7f6a40ad1760] FATAL (skeleton.cpp:395)Stop - send SIGKILL to 30063
+2015-10-12 15:13:09 [0x7f4fbdc41760] FATAL (skeleton.cpp:162)ReadConf - log4cxx init finish!
+2015-10-12 15:13:09 [0x7f4fbdc41760] DEBUG (skeleton.cpp:163)ReadConf - modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf;./servermodule/libservermodule.so:./servermodule/server.conf
+2015-10-12 15:13:09 [0x7f4fbdc41760] DEBUG (skeleton.cpp:164)ReadConf - autoreboot: 1
+2015-10-12 15:13:09 [0x7f4fbdc41760] DEBUG (skeleton.cpp:165)ReadConf - reboottimeout: 2
+2015-10-12 15:13:09 [0x7f4fbdc41760] DEBUG (skeleton.cpp:254)CheckModules - find2modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf;./servermodule/libservermodule.so:./servermodule/server.conf
+2015-10-12 15:13:09 [0x7f4fbdc41760] DEBUG (skeleton.cpp:260)CheckModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-10-12 15:13:09 [0x7f4fbdc41760] DEBUG (skeleton.cpp:260)CheckModules - Module name:./servermodule/libservermodule.so conf./servermodule/server.conf
+2015-10-12 15:13:09 [0x7f4fbdc41760] DEBUG (skeleton.cpp:286)CheckModules - CheckModules finished!
+2015-10-12 15:13:09 [0x7f4fbdc41760] DEBUG (skeleton.cpp:353)MasterRun - find modules num: 2
+2015-10-12 15:13:09 [0x7f4fbdc41760] DEBUG (skeleton.cpp:307)WorkerRun - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-10-12 15:13:09 [0x7f4fbdc41760] DEBUG (skeleton.cpp:307)WorkerRun - Module name:./servermodule/libservermodule.so conf./servermodule/server.conf
+2015-10-12 15:13:09 [0x7f4fbdc41760] DEBUG (servermodule.cpp:57)Init - server module initi, conf./servermodule/libservermodule.so:./servermodule/server.conf
+2015-10-12 15:13:09 [0x7f4fbdc41760] DEBUG (servermodule.cpp:66)Run - server module run
+2015-10-12 15:13:39 [0x7f4fbdc41760] DEBUG (skeleton.cpp:504)SignalHandle - in signal handler,sig : 1
+2015-10-12 15:13:39 [0x7f4fbdc41760] DEBUG (skeleton.cpp:477)ReloadHandle - send SIGTERM TO PID 30153
+2015-10-12 15:13:39 [0x7f4fbdc41760] DEBUG (skeleton.cpp:477)ReloadHandle - send SIGTERM TO PID 30154
+2015-10-12 15:13:39 [0x7f4fbdc41760] DEBUG (skeleton.cpp:254)CheckModules - find2modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf;./servermodule/libservermodule.so:./servermodule/server.conf
+2015-10-12 15:13:39 [0x7f4fbdc41760] DEBUG (skeleton.cpp:260)CheckModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-10-12 15:13:39 [0x7f4fbdc41760] DEBUG (skeleton.cpp:260)CheckModules - Module name:./servermodule/libservermodule.so conf./servermodule/server.conf
+2015-10-12 15:13:39 [0x7f4fbdc41760] DEBUG (skeleton.cpp:286)CheckModules - CheckModules finished!
+2015-10-12 15:13:39 [0x7f4fbdc41760] DEBUG (skeleton.cpp:492)ReloadHandle - find modules num: 2
+2015-10-12 15:13:39 [0x7f4fbdc41760] DEBUG (skeleton.cpp:504)SignalHandle - in signal handler,sig : 17
+2015-10-12 15:13:39 [0x7f4fbdc41760] DEBUG (skeleton.cpp:417)WaitChildren - waitpid pid is 30153
+2015-10-12 15:13:39 [0x7f4fbdc41760] DEBUG (skeleton.cpp:417)WaitChildren - waitpid pid is 30154
+2015-10-12 15:13:39 [0x7f4fbdc41760] DEBUG (skeleton.cpp:504)SignalHandle - in signal handler,sig : 17
+2015-10-12 15:13:39 [0x7f4fbdc41760] DEBUG (skeleton.cpp:307)WorkerRun - Module name:./servermodule/libservermodule.so conf./servermodule/server.conf
+2015-10-12 15:13:39 [0x7f4fbdc41760] DEBUG (skeleton.cpp:307)WorkerRun - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-10-12 15:13:39 [0x7f4fbdc41760] DEBUG (servermodule.cpp:57)Init - server module initi, conf./servermodule/libservermodule.so:./servermodule/server.conf
+2015-10-12 15:13:39 [0x7f4fbdc41760] DEBUG (servermodule.cpp:66)Run - server module run
+2015-10-12 15:17:14 [0x7f4fbdc41760] DEBUG (skeleton.cpp:504)SignalHandle - in signal handler,sig : 17
+2015-10-12 15:17:14 [0x7f4fbdc41760] DEBUG (skeleton.cpp:417)WaitChildren - waitpid pid is 30251
+2015-10-12 15:17:14 [0x7f4fbdc41760] DEBUG (skeleton.cpp:441)WaitChildren - autoReboot_: 1 status: 
+2015-10-12 15:17:56 [0x7f4fbdc41760] DEBUG (skeleton.cpp:477)ReloadHandle - send SIGTERM TO PID 30250
+2015-10-12 15:17:56 [0x7f4fbdc41760] DEBUG (skeleton.cpp:477)ReloadHandle - send SIGTERM TO PID 30251
+2015-10-12 15:17:56 [0x7f4fbdc41760] DEBUG (skeleton.cpp:254)CheckModules - find2modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf;./servermodule/libservermodule.so:./servermodule/server.conf
+2015-10-12 15:17:56 [0x7f4fbdc41760] DEBUG (skeleton.cpp:260)CheckModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-10-12 15:17:56 [0x7f4fbdc41760] DEBUG (skeleton.cpp:260)CheckModules - Module name:./servermodule/libservermodule.so conf./servermodule/server.conf
+2015-10-12 15:17:56 [0x7f4fbdc41760] DEBUG (skeleton.cpp:286)CheckModules - CheckModules finished!
+2015-10-12 15:17:56 [0x7f4fbdc41760] DEBUG (skeleton.cpp:492)ReloadHandle - find modules num: 2
+2015-10-12 15:17:56 [0x7f4fbdc41760] DEBUG (skeleton.cpp:504)SignalHandle - in signal handler,sig : 17
+2015-10-12 15:17:56 [0x7f4fbdc41760] DEBUG (skeleton.cpp:417)WaitChildren - waitpid pid is 30250
+2015-10-12 15:17:56 [0x7f4fbdc41760] DEBUG (skeleton.cpp:307)WorkerRun - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-10-12 15:17:56 [0x7f4fbdc41760] DEBUG (skeleton.cpp:307)WorkerRun - Module name:./servermodule/libservermodule.so conf./servermodule/server.conf
+2015-10-12 15:17:56 [0x7f4fbdc41760] DEBUG (servermodule.cpp:57)Init - server module initi, conf./servermodule/libservermodule.so:./servermodule/server.conf
+2015-10-12 15:17:56 [0x7f4fbdc41760] DEBUG (servermodule.cpp:66)Run - server module run
+2015-10-12 15:26:51 [0x7f4fbdc41760] DEBUG (skeleton.cpp:504)SignalHandle - in signal handler,sig : 15
+2015-10-12 15:26:51 [0x7f4fbdc41760] FATAL (skeleton.cpp:395)Stop - send SIGKILL to 30973
+2015-10-12 15:26:51 [0x7f4fbdc41760] FATAL (skeleton.cpp:395)Stop - send SIGKILL to 30974
+2015-10-12 15:26:59 [0x7f3a9db61760] FATAL (skeleton.cpp:162)ReadConf - log4cxx init finish!
+2015-10-12 15:26:59 [0x7f3a9db61760] DEBUG (skeleton.cpp:163)ReadConf - modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf;./servermodule/libservermodule.so:./servermodule/server.conf
+2015-10-12 15:26:59 [0x7f3a9db61760] DEBUG (skeleton.cpp:164)ReadConf - autoreboot: 1
+2015-10-12 15:26:59 [0x7f3a9db61760] DEBUG (skeleton.cpp:165)ReadConf - reboottimeout: 2
+2015-10-12 15:26:59 [0x7f3a9db61760] DEBUG (skeleton.cpp:254)CheckModules - find2modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf;./servermodule/libservermodule.so:./servermodule/server.conf
+2015-10-12 15:26:59 [0x7f3a9db61760] DEBUG (skeleton.cpp:260)CheckModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-10-12 15:26:59 [0x7f3a9db61760] DEBUG (skeleton.cpp:260)CheckModules - Module name:./servermodule/libservermodule.so conf./servermodule/server.conf
+2015-10-12 15:26:59 [0x7f3a9db61760] DEBUG (skeleton.cpp:286)CheckModules - CheckModules finished!
+2015-10-12 15:26:59 [0x7f3a9db61760] DEBUG (skeleton.cpp:353)MasterRun - find modules num: 2
+2015-10-12 15:26:59 [0x7f3a9db61760] DEBUG (skeleton.cpp:307)WorkerRun - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-10-12 15:26:59 [0x7f3a9db61760] DEBUG (skeleton.cpp:307)WorkerRun - Module name:./servermodule/libservermodule.so conf./servermodule/server.conf
+2015-10-12 15:26:59 [0x7f3a9db61760] DEBUG (servermodule.cpp:57)Init - server module initi, conf./servermodule/libservermodule.so:./servermodule/server.conf
+2015-10-12 15:26:59 [0x7f3a9db61760] DEBUG (servermodule.cpp:66)Run - server module run
+2015-10-12 15:27:36 [0x7f3a9db61760] DEBUG (skeleton.cpp:504)SignalHandle - in signal handler,sig : 17
+2015-10-12 15:27:36 [0x7f3a9db61760] DEBUG (skeleton.cpp:417)WaitChildren - waitpid pid is 32419
+2015-10-12 15:27:36 [0x7f3a9db61760] DEBUG (skeleton.cpp:441)WaitChildren - autoReboot_: 1 status:  
+2015-10-12 15:28:18 [0x7f3a9db61760] DEBUG (skeleton.cpp:477)ReloadHandle - send SIGTERM TO PID 32418
+2015-10-12 15:28:18 [0x7f3a9db61760] DEBUG (skeleton.cpp:477)ReloadHandle - send SIGTERM TO PID 32419
+2015-10-12 15:28:18 [0x7f3a9db61760] DEBUG (skeleton.cpp:254)CheckModules - find2modules modules: ./examplemodule/libechomodule.so:./examplemodule/echo.conf;./servermodule/libservermodule.so:./servermodule/server.conf
+2015-10-12 15:28:18 [0x7f3a9db61760] DEBUG (skeleton.cpp:260)CheckModules - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-10-12 15:28:18 [0x7f3a9db61760] DEBUG (skeleton.cpp:260)CheckModules - Module name:./servermodule/libservermodule.so conf./servermodule/server.conf
+2015-10-12 15:28:18 [0x7f3a9db61760] DEBUG (skeleton.cpp:286)CheckModules - CheckModules finished!
+2015-10-12 15:28:18 [0x7f3a9db61760] DEBUG (skeleton.cpp:492)ReloadHandle - find modules num: 2
+2015-10-12 15:28:18 [0x7f3a9db61760] DEBUG (skeleton.cpp:504)SignalHandle - in signal handler,sig : 17
+2015-10-12 15:28:18 [0x7f3a9db61760] DEBUG (skeleton.cpp:417)WaitChildren - waitpid pid is 32418
+2015-10-12 15:28:18 [0x7f3a9db61760] DEBUG (skeleton.cpp:307)WorkerRun - Module name:./servermodule/libservermodule.so conf./servermodule/server.conf
+2015-10-12 15:28:18 [0x7f3a9db61760] DEBUG (skeleton.cpp:307)WorkerRun - Module name:./examplemodule/libechomodule.so conf./examplemodule/echo.conf
+2015-10-12 15:28:18 [0x7f3a9db61760] DEBUG (servermodule.cpp:57)Init - server module initi, conf./servermodule/libservermodule.so:./servermodule/server.conf
+2015-10-12 15:28:18 [0x7f3a9db61760] DEBUG (servermodule.cpp:66)Run - server module run

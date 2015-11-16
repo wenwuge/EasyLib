@@ -59,12 +59,13 @@ public:
     HttpService(struct event_base *base);
     int Listen(uint16_t port);
     void RegisterRequestCallback(string url, CallBackFun callback);
+    void RegisterDefaultCallback(CallBackFun callback);
     void RegisterParseParams(string param);
     void SetParseParams();
     bool WhetherParseParams();
     //call the sendreply to send the response
     void SendReply(HttpContextPtr& ctx_ptr, const string& response);
-
+    void Stop();    
 private:
     typedef std::tr1::shared_ptr<PendingReply> PendingReplyPtr; 
     typedef std::tr1::shared_ptr<TimerEvent> TimerEventPtr;
@@ -80,6 +81,7 @@ private:
     uint16_t port_;
     TimerEventPtr pending_reply_timer_;
     map<string, CallBackFun> callback_map_;
+    CallBackFun default_callback_;
     list<PendingReplyPtr> pending_reply_list_;
     pthread_mutex_t reply_list_mutex_;   
     Condition condition_;

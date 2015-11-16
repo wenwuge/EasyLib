@@ -248,3 +248,31 @@
 2015-10-09 14:11:31 [0x7fb079d45760] FATAL (skeleton.cpp:399)Stop - send SIGKILL to 28735
 2015-10-09 14:11:49 [0x7f3bab3e9760] FATAL (skeleton.cpp:166)ReadConf - log4cxx init finish!
 2015-10-09 14:22:21 [0x7f3bab3e9760] FATAL (skeleton.cpp:399)Stop - send SIGKILL to 29111
+2015-10-12 14:09:49 [0x7fe422d1e760] FATAL (skeleton.cpp:162)ReadConf - log4cxx init finish!
+2015-10-12 14:09:49 [0x7fe422d1e760] FATAL (skeleton.cpp:265)CheckModules - dlopen error,./examplemodule/libechomodule.so: cannot open shared object file: No such file or directory
+2015-10-12 14:09:49 [0x7fe422d1e760] FATAL (skeleton.cpp:346)MasterRun - checkmodules error happen
+2015-10-12 14:10:35 [0x7ff838a7c760] FATAL (skeleton.cpp:162)ReadConf - log4cxx init finish!
+2015-10-12 14:10:35 [0x7ff838a7c760] FATAL (skeleton.cpp:265)CheckModules - dlopen error,./servermodule/libservermodule.so: undefined symbol: _ZN14TcpMessageDesc9GetBufPtrEv
+2015-10-12 14:10:35 [0x7ff838a7c760] FATAL (skeleton.cpp:346)MasterRun - checkmodules error happen
+2015-10-12 14:31:37 [0x7f403d5fc760] FATAL (skeleton.cpp:162)ReadConf - log4cxx init finish!
+2015-10-12 14:31:37 [0x7f403d5fc760] FATAL (skeleton.cpp:265)CheckModules - dlopen error,./servermodule/libservermodule.so: undefined symbol: _ZN14TcpMessageDesc9GetBufPtrEv
+2015-10-12 14:31:37 [0x7f403d5fc760] FATAL (skeleton.cpp:346)MasterRun - checkmodules error happen
+2015-10-12 14:36:34 [0x7fa3d1440760] FATAL (skeleton.cpp:162)ReadConf - log4cxx init finish!
+2015-10-12 14:57:51 [0x7fa3d1440760] FATAL (skeleton.cpp:395)Stop - send SIGKILL to 24038
+2015-10-12 14:57:51 [0x7fa3d1440760] FATAL (skeleton.cpp:395)Stop - send SIGKILL to 24039
+2015-10-12 14:57:54 [0x7fc460a72760] FATAL (skeleton.cpp:162)ReadConf - log4cxx init finish!
+2015-10-12 14:58:33 [0x7fc460a72760] FATAL (skeleton.cpp:395)Stop - send SIGKILL to 27485
+2015-10-12 14:58:33 [0x7fc460a72760] FATAL (skeleton.cpp:395)Stop - send SIGKILL to 27486
+2015-10-12 14:58:46 [0x7f726371f760] FATAL (skeleton.cpp:162)ReadConf - log4cxx init finish!
+2015-10-12 14:59:58 [0x7f726371f760] FATAL (skeleton.cpp:395)Stop - send SIGKILL to 27661
+2015-10-12 14:59:58 [0x7f726371f760] FATAL (skeleton.cpp:395)Stop - send SIGKILL to 27662
+2015-10-12 15:00:23 [0x7fb392a9f760] FATAL (skeleton.cpp:162)ReadConf - log4cxx init finish!
+2015-10-12 15:04:50 [0x7fb392a9f760] FATAL (skeleton.cpp:395)Stop - send SIGKILL to 28048
+2015-10-12 15:04:50 [0x7fb392a9f760] FATAL (skeleton.cpp:395)Stop - send SIGKILL to 28050
+2015-10-12 15:12:44 [0x7f6a40ad1760] FATAL (skeleton.cpp:162)ReadConf - log4cxx init finish!
+2015-10-12 15:13:03 [0x7f6a40ad1760] FATAL (skeleton.cpp:395)Stop - send SIGKILL to 30062
+2015-10-12 15:13:03 [0x7f6a40ad1760] FATAL (skeleton.cpp:395)Stop - send SIGKILL to 30063
+2015-10-12 15:13:09 [0x7f4fbdc41760] FATAL (skeleton.cpp:162)ReadConf - log4cxx init finish!
+2015-10-12 15:26:51 [0x7f4fbdc41760] FATAL (skeleton.cpp:395)Stop - send SIGKILL to 30973
+2015-10-12 15:26:51 [0x7f4fbdc41760] FATAL (skeleton.cpp:395)Stop - send SIGKILL to 30974
+2015-10-12 15:26:59 [0x7f3a9db61760] FATAL (skeleton.cpp:162)ReadConf - log4cxx init finish!
