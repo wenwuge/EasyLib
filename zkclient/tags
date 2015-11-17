@@ -1,0 +1,38 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+DeleteNode	SyncZkClient.h	/^        int DeleteNode();$/;"	p	class:ZkClient	access:public
+GetChildrenNodes	SyncZkClient.h	/^        int GetChildrenNodes(string& parent_path, WatchCallback watch_callback, string& children_nodes); $/;"	p	class:ZkClient	access:public
+Init	SyncZkClient.cpp	/^bool ZkClient::Init()$/;"	f	class:ZkClient
+Init	SyncZkClient.h	/^        bool Init();$/;"	p	class:ZkClient	access:public
+RegisterNode	SyncZkClient.cpp	/^bool ZkClient::RegisterNode(string& path, string& value, int expire_flag)$/;"	f	class:ZkClient
+RegisterNode	SyncZkClient.h	/^        bool RegisterNode(string& path, string& value, int expire_flag) ;$/;"	p	class:ZkClient	access:public
+ZkClient	SyncZkClient.cpp	/^ZkClient::ZkClient(string& host , watcher_fn func, int timeout, int flags):host_(host), handle_(NULL),$/;"	f	class:ZkClient
+ZkClient	SyncZkClient.h	/^        ZkClient(string& host , watcher_fn func, int timeout, int flags=0);$/;"	p	class:ZkClient	access:public
+ZkClient	SyncZkClient.h	/^class ZkClient {$/;"	c
+ZkClient::DeleteNode	SyncZkClient.h	/^        int DeleteNode();$/;"	p	class:ZkClient	access:public
+ZkClient::GetChildrenNodes	SyncZkClient.h	/^        int GetChildrenNodes(string& parent_path, WatchCallback watch_callback, string& children_nodes); $/;"	p	class:ZkClient	access:public
+ZkClient::Init	SyncZkClient.cpp	/^bool ZkClient::Init()$/;"	f	class:ZkClient
+ZkClient::Init	SyncZkClient.h	/^        bool Init();$/;"	p	class:ZkClient	access:public
+ZkClient::RegisterNode	SyncZkClient.cpp	/^bool ZkClient::RegisterNode(string& path, string& value, int expire_flag)$/;"	f	class:ZkClient
+ZkClient::RegisterNode	SyncZkClient.h	/^        bool RegisterNode(string& path, string& value, int expire_flag) ;$/;"	p	class:ZkClient	access:public
+ZkClient::ZkClient	SyncZkClient.cpp	/^ZkClient::ZkClient(string& host , watcher_fn func, int timeout, int flags):host_(host), handle_(NULL),$/;"	f	class:ZkClient
+ZkClient::ZkClient	SyncZkClient.h	/^        ZkClient(string& host , watcher_fn func, int timeout, int flags=0);$/;"	p	class:ZkClient	access:public
+ZkClient::flags_	SyncZkClient.h	/^        int     flags_;$/;"	m	class:ZkClient	access:private
+ZkClient::handle_	SyncZkClient.h	/^        zhandle_t *handle_;$/;"	m	class:ZkClient	access:private
+ZkClient::host_	SyncZkClient.h	/^        string host_;$/;"	m	class:ZkClient	access:private
+ZkClient::timeout_	SyncZkClient.h	/^        int     timeout_;$/;"	m	class:ZkClient	access:private
+ZkClient::watch_callback_	SyncZkClient.h	/^        watcher_fn watch_callback_;$/;"	m	class:ZkClient	access:private
+ZkClient::~ZkClient	SyncZkClient.cpp	/^ZkClient::~ZkClient()$/;"	f	class:ZkClient
+ZkClient::~ZkClient	SyncZkClient.h	/^        ~ZkClient();$/;"	p	class:ZkClient	access:public
+__SYNC_ZKCLIENT	SyncZkClient.h	2;"	d
+flags_	SyncZkClient.h	/^        int     flags_;$/;"	m	class:ZkClient	access:private
+handle_	SyncZkClient.h	/^        zhandle_t *handle_;$/;"	m	class:ZkClient	access:private
+host_	SyncZkClient.h	/^        string host_;$/;"	m	class:ZkClient	access:private
+timeout_	SyncZkClient.h	/^        int     timeout_;$/;"	m	class:ZkClient	access:private
+watch_callback_	SyncZkClient.h	/^        watcher_fn watch_callback_;$/;"	m	class:ZkClient	access:private
+~ZkClient	SyncZkClient.cpp	/^ZkClient::~ZkClient()$/;"	f	class:ZkClient
+~ZkClient	SyncZkClient.h	/^        ~ZkClient();$/;"	p	class:ZkClient	access:public
