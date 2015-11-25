@@ -1,0 +1,188 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Action	bridge.cpp	/^class Action{$/;"	c	file:
+Action::Move	bridge.cpp	/^        virtual void Move() = 0;$/;"	p	class:Action	file:	access:public
+Action::Start	bridge.cpp	/^        virtual void Start() = 0;$/;"	p	class:Action	file:	access:public
+Attach	supervior.cpp	/^    virtual void Attach(Observer* observer)  $/;"	f	class:ConcreteSubject	access:public
+Attach	supervior.cpp	/^    virtual void Attach(Observer*) = 0;$/;"	p	class:Subject	file:	access:public
+Boy	proxy.cpp	/^    Boy(){}$/;"	f	class:Boy	access:public
+Boy	proxy.cpp	/^class Boy: public GiveGift{$/;"	c	file:	inherits:GiveGift
+Boy::Boy	proxy.cpp	/^    Boy(){}$/;"	f	class:Boy	access:public
+Boy::GiveDoll	proxy.cpp	/^    virtual void GiveDoll()$/;"	f	class:Boy	access:public
+Boy::GiveFlower	proxy.cpp	/^    virtual void GiveFlower()$/;"	f	class:Boy	access:public
+Car	bridge.cpp	/^        Car(Action * action):Movement(action)$/;"	f	class:Car	access:public
+Car	bridge.cpp	/^class Car: public Movement{$/;"	c	file:	inherits:Movement
+Car::Car	bridge.cpp	/^        Car(Action * action):Movement(action)$/;"	f	class:Car	access:public
+CarAct	bridge.cpp	/^class CarAct: public Action{$/;"	c	file:	inherits:Action
+CarAct::Move	bridge.cpp	/^        virtual void Move()$/;"	f	class:CarAct	access:public
+CarAct::Start	bridge.cpp	/^        virtual void Start()$/;"	f	class:CarAct	access:public
+Command	command.cpp	/^class Command{$/;"	c	file:
+Command1	command.cpp	/^class Command1:public Command{$/;"	c	file:	inherits:Command
+Command1::Excute	command.cpp	/^    virtual void Excute()$/;"	f	class:Command1	access:public
+Command1::command1	command.cpp	/^    void command1()$/;"	f	class:Command1	file:	access:private
+Command2	command.cpp	/^class Command2:public Command{$/;"	c	file:	inherits:Command
+Command2::Excute	command.cpp	/^    virtual void Excute()$/;"	f	class:Command2	access:public
+Command2::command2	command.cpp	/^    void command2()$/;"	f	class:Command2	file:	access:private
+Command::Excute	command.cpp	/^    virtual void Excute() = 0;$/;"	p	class:Command	file:	access:public
+CommandMenu	command.cpp	/^class CommandMenu{$/;"	c	file:
+CommandMenu::ExecuteCommand	command.cpp	/^    void ExecuteCommand(string command)$/;"	f	class:CommandMenu	access:public
+CommandMenu::RegisterCommand	command.cpp	/^    void RegisterCommand(string name, Command* command)$/;"	f	class:CommandMenu	access:public
+CommandMenu::UnRegisterCommand	command.cpp	/^    void UnRegisterCommand(string name)$/;"	f	class:CommandMenu	access:public
+CommandMenu::menu_	command.cpp	/^    map<string, Command*> menu_;$/;"	m	class:CommandMenu	file:	access:private
+Component	decorate.cpp	/^class Component{$/;"	c	file:
+Component::Operation	decorate.cpp	/^    virtual void Operation() = 0;$/;"	p	class:Component	file:	access:public
+ConcreteComponent	decorate.cpp	/^class ConcreteComponent: public Component{$/;"	c	file:	inherits:Component
+ConcreteComponent::Operation	decorate.cpp	/^    virtual void Operation()$/;"	f	class:ConcreteComponent	access:public
+ConcreteDecoratorA	decorate.cpp	/^    ConcreteDecoratorA(Component* component):Decorator(component){}$/;"	f	class:ConcreteDecoratorA	access:public
+ConcreteDecoratorA	decorate.cpp	/^class ConcreteDecoratorA: public Decorator{$/;"	c	file:	inherits:Decorator
+ConcreteDecoratorA::ConcreteDecoratorA	decorate.cpp	/^    ConcreteDecoratorA(Component* component):Decorator(component){}$/;"	f	class:ConcreteDecoratorA	access:public
+ConcreteDecoratorA::Operation	decorate.cpp	/^    virtual void Operation()$/;"	f	class:ConcreteDecoratorA	access:public
+ConcreteDecoratorA::OperationA	decorate.cpp	/^    void OperationA()$/;"	f	class:ConcreteDecoratorA	file:	access:private
+ConcreteDecoratorB	decorate.cpp	/^    ConcreteDecoratorB(Component* component):Decorator(component){}$/;"	f	class:ConcreteDecoratorB	access:public
+ConcreteDecoratorB	decorate.cpp	/^class ConcreteDecoratorB: public Decorator{$/;"	c	file:	inherits:Decorator
+ConcreteDecoratorB::ConcreteDecoratorB	decorate.cpp	/^    ConcreteDecoratorB(Component* component):Decorator(component){}$/;"	f	class:ConcreteDecoratorB	access:public
+ConcreteDecoratorB::Operation	decorate.cpp	/^    virtual void Operation()$/;"	f	class:ConcreteDecoratorB	access:public
+ConcreteDecoratorB::OperationB	decorate.cpp	/^    void OperationB()$/;"	f	class:ConcreteDecoratorB	file:	access:private
+ConcreteObserver	supervior.cpp	/^    ConcreteObserver(Subject* subject):subject_(subject){}$/;"	f	class:ConcreteObserver	access:public
+ConcreteObserver	supervior.cpp	/^class ConcreteObserver: public Observer{$/;"	c	file:	inherits:Observer
+ConcreteObserver::ConcreteObserver	supervior.cpp	/^    ConcreteObserver(Subject* subject):subject_(subject){}$/;"	f	class:ConcreteObserver	access:public
+ConcreteObserver::Update	supervior.cpp	/^    virtual void Update(int state)$/;"	f	class:ConcreteObserver	access:public
+ConcreteObserver::subject_	supervior.cpp	/^    Subject * subject_;$/;"	m	class:ConcreteObserver	file:	access:private
+ConcreteSubject	supervior.cpp	/^class ConcreteSubject: public Subject{$/;"	c	file:	inherits:Subject
+ConcreteSubject::Attach	supervior.cpp	/^    virtual void Attach(Observer* observer)  $/;"	f	class:ConcreteSubject	access:public
+ConcreteSubject::DeAttach	supervior.cpp	/^    virtual void DeAttach(Observer* observer)$/;"	f	class:ConcreteSubject	access:public
+ConcreteSubject::Notify	supervior.cpp	/^    virtual void Notify()$/;"	f	class:ConcreteSubject	access:public
+ConcreteSubject::observer_list	supervior.cpp	/^    list<Observer*> observer_list;$/;"	m	class:ConcreteSubject	file:	access:private
+DeAttach	supervior.cpp	/^    virtual void DeAttach(Observer* observer)$/;"	f	class:ConcreteSubject	access:public
+DeAttach	supervior.cpp	/^    virtual void DeAttach(Observer*) = 0;$/;"	p	class:Subject	file:	access:public
+Decorator	decorate.cpp	/^    Decorator(Component * component):component_(component)$/;"	f	class:Decorator	access:public
+Decorator	decorate.cpp	/^class Decorator: public Component{$/;"	c	file:	inherits:Component
+Decorator::Decorator	decorate.cpp	/^    Decorator(Component * component):component_(component)$/;"	f	class:Decorator	access:public
+Decorator::Operation	decorate.cpp	/^    virtual void Operation()$/;"	f	class:Decorator	access:public
+Decorator::component_	decorate.cpp	/^    Component* component_;$/;"	m	class:Decorator	file:	access:protected
+Excute	command.cpp	/^    virtual void Excute() = 0;$/;"	p	class:Command	file:	access:public
+Excute	command.cpp	/^    virtual void Excute()$/;"	f	class:Command1	access:public
+Excute	command.cpp	/^    virtual void Excute()$/;"	f	class:Command2	access:public
+ExecuteCommand	command.cpp	/^    void ExecuteCommand(string command)$/;"	f	class:CommandMenu	access:public
+Factories	factory.h	/^    Factories(){}$/;"	f	class:Factories	access:private
+Factories	factory.h	/^    Factories(Factories& fac){}$/;"	f	class:Factories	access:private
+Factories	factory.h	/^template<typename product> class Factories{$/;"	c
+Factories::Factories	factory.h	/^    Factories(){}$/;"	f	class:Factories	access:private
+Factories::Factories	factory.h	/^    Factories(Factories& fac){}$/;"	f	class:Factories	access:private
+Factories::GetProduct	factory.h	/^    product* GetProduct(string name)$/;"	f	class:Factories	access:public
+Factories::Instance	factory.h	/^    static Factories * Instance()$/;"	f	class:Factories	access:public
+Factories::ProduceProxy	factory.h	/^    typedef product*(*ProduceProxy)();$/;"	t	class:Factories	access:public
+Factories::RegisterFactory	factory.h	/^    template<typename specialproduct> void RegisterFactory(string name)$/;"	f	class:Factories	access:public
+Factories::factories_	factory.h	/^    map<string, ProduceProxy> factories_;$/;"	m	class:Factories	access:private
+Factories::instance_	factory.h	/^    static Factories* instance_ ; $/;"	m	class:Factories	access:private
+Factories::instance_	factory.h	/^template<typename T>  Factories<T>* Factories<T>::instance_ = NULL;$/;"	m	class:Factories
+Factories::~Factories	factory.h	/^    ~Factories(){}$/;"	f	class:Factories	access:private
+Factory	factory.h	/^template<typename base, typename special> class Factory{$/;"	c
+Factory::Produce	factory.h	/^   static base* Produce()$/;"	f	class:Factory	access:public
+GetProduct	factory.h	/^    product* GetProduct(string name)$/;"	f	class:Factories	access:public
+GiveDoll	proxy.cpp	/^    virtual void GiveDoll() = 0;$/;"	p	class:GiveGift	file:	access:public
+GiveDoll	proxy.cpp	/^    virtual void GiveDoll()$/;"	f	class:Boy	access:public
+GiveDoll	proxy.cpp	/^    virtual void GiveDoll()$/;"	f	class:Proxy	access:public
+GiveFlower	proxy.cpp	/^    virtual void GiveFlower() = 0;$/;"	p	class:GiveGift	file:	access:public
+GiveFlower	proxy.cpp	/^    virtual void GiveFlower()$/;"	f	class:Boy	access:public
+GiveFlower	proxy.cpp	/^    virtual void GiveFlower()$/;"	f	class:Proxy	access:public
+GiveGift	proxy.cpp	/^class GiveGift{$/;"	c	file:
+GiveGift::GiveDoll	proxy.cpp	/^    virtual void GiveDoll() = 0;$/;"	p	class:GiveGift	file:	access:public
+GiveGift::GiveFlower	proxy.cpp	/^    virtual void GiveFlower() = 0;$/;"	p	class:GiveGift	file:	access:public
+Hero	main.cpp	/^class Hero: public Person{$/;"	c	file:	inherits:Person
+Instance	factory.h	/^    static Factories * Instance()$/;"	f	class:Factories	access:public
+Method	strategy.cpp	/^    virtual void Method() = 0;$/;"	p	class:Strategy	file:	access:public
+Method	strategy.cpp	/^    virtual void Method()$/;"	f	class:StrategyOne	access:public
+Method	strategy.cpp	/^    virtual void Method()$/;"	f	class:StrategyTwo	access:public
+Modle	template.cpp	/^class Modle{$/;"	c	file:
+Modle1	template.cpp	/^class Modle1: public Modle{$/;"	c	file:	inherits:Modle
+Modle1::Runing	template.cpp	/^    virtual void Runing()$/;"	f	class:Modle1	access:public
+Modle1::Start	template.cpp	/^    virtual void Start()$/;"	f	class:Modle1	access:public
+Modle::Run	template.cpp	/^    virtual void Run()$/;"	f	class:Modle	access:public
+Modle::Runing	template.cpp	/^    virtual void Runing() = 0;$/;"	p	class:Modle	file:	access:public
+Modle::Start	template.cpp	/^    virtual void Start() = 0;$/;"	p	class:Modle	file:	access:public
+Move	bridge.cpp	/^        virtual void Move() = 0;$/;"	p	class:Action	file:	access:public
+Move	bridge.cpp	/^        virtual void Move()$/;"	f	class:CarAct	access:public
+Move	bridge.cpp	/^        virtual void Move()$/;"	f	class:PersonAct	access:public
+Move	bridge.cpp	/^        void Move()$/;"	f	class:Movement	access:public
+Movement	bridge.cpp	/^        Movement(Action* action)$/;"	f	class:Movement	access:public
+Movement	bridge.cpp	/^class Movement{$/;"	c	file:
+Movement::Move	bridge.cpp	/^        void Move()$/;"	f	class:Movement	access:public
+Movement::Movement	bridge.cpp	/^        Movement(Action* action)$/;"	f	class:Movement	access:public
+Movement::action_	bridge.cpp	/^        Action * action_;$/;"	m	class:Movement	file:	access:private
+Movement::~Movement	bridge.cpp	/^        virtual ~Movement(){}$/;"	f	class:Movement	access:public
+Notify	supervior.cpp	/^    virtual void Notify() = 0;$/;"	p	class:Subject	file:	access:public
+Notify	supervior.cpp	/^    virtual void Notify()$/;"	f	class:ConcreteSubject	access:public
+Observer	supervior.cpp	/^class Observer{$/;"	c	file:
+Observer::Update	supervior.cpp	/^    virtual void Update(int) = 0;$/;"	p	class:Observer	file:	access:public
+Operation	decorate.cpp	/^    virtual void Operation() = 0;$/;"	p	class:Component	file:	access:public
+Operation	decorate.cpp	/^    virtual void Operation()$/;"	f	class:ConcreteComponent	access:public
+Operation	decorate.cpp	/^    virtual void Operation()$/;"	f	class:ConcreteDecoratorA	access:public
+Operation	decorate.cpp	/^    virtual void Operation()$/;"	f	class:ConcreteDecoratorB	access:public
+Operation	decorate.cpp	/^    virtual void Operation()$/;"	f	class:Decorator	access:public
+OperationA	decorate.cpp	/^    void OperationA()$/;"	f	class:ConcreteDecoratorA	file:	access:private
+OperationB	decorate.cpp	/^    void OperationB()$/;"	f	class:ConcreteDecoratorB	file:	access:private
+Person	bridge.cpp	/^        Person(Action * action):Movement(action)$/;"	f	class:Person	access:public
+Person	bridge.cpp	/^class Person: public Movement{$/;"	c	file:	inherits:Movement
+Person	main.cpp	/^class Person{$/;"	c	file:
+Person::Person	bridge.cpp	/^        Person(Action * action):Movement(action)$/;"	f	class:Person	access:public
+PersonAct	bridge.cpp	/^class PersonAct: public Action{$/;"	c	file:	inherits:Action
+PersonAct::Move	bridge.cpp	/^        virtual void Move()$/;"	f	class:PersonAct	access:public
+PersonAct::Start	bridge.cpp	/^        virtual void Start()$/;"	f	class:PersonAct	access:public
+Produce	factory.h	/^   static base* Produce()$/;"	f	class:Factory	access:public
+ProduceProxy	factory.h	/^    typedef product*(*ProduceProxy)();$/;"	t	class:Factories	access:public
+Proxy	proxy.cpp	/^    Proxy(GiveGift* givegift):lover_(givegift){}$/;"	f	class:Proxy	access:public
+Proxy	proxy.cpp	/^class Proxy: public GiveGift{$/;"	c	file:	inherits:GiveGift
+Proxy::GiveDoll	proxy.cpp	/^    virtual void GiveDoll()$/;"	f	class:Proxy	access:public
+Proxy::GiveFlower	proxy.cpp	/^    virtual void GiveFlower()$/;"	f	class:Proxy	access:public
+Proxy::Proxy	proxy.cpp	/^    Proxy(GiveGift* givegift):lover_(givegift){}$/;"	f	class:Proxy	access:public
+Proxy::lover_	proxy.cpp	/^    GiveGift * lover_;$/;"	m	class:Proxy	file:	access:private
+RegisterCommand	command.cpp	/^    void RegisterCommand(string name, Command* command)$/;"	f	class:CommandMenu	access:public
+RegisterFactory	factory.h	/^    template<typename specialproduct> void RegisterFactory(string name)$/;"	f	class:Factories	access:public
+Run	template.cpp	/^    virtual void Run()$/;"	f	class:Modle	access:public
+Runing	template.cpp	/^    virtual void Runing() = 0;$/;"	p	class:Modle	file:	access:public
+Runing	template.cpp	/^    virtual void Runing()$/;"	f	class:Modle1	access:public
+Start	bridge.cpp	/^        virtual void Start() = 0;$/;"	p	class:Action	file:	access:public
+Start	bridge.cpp	/^        virtual void Start()$/;"	f	class:CarAct	access:public
+Start	bridge.cpp	/^        virtual void Start()$/;"	f	class:PersonAct	access:public
+Start	template.cpp	/^    virtual void Start() = 0;$/;"	p	class:Modle	file:	access:public
+Start	template.cpp	/^    virtual void Start()$/;"	f	class:Modle1	access:public
+Strategy	strategy.cpp	/^class Strategy{$/;"	c	file:
+Strategy::Method	strategy.cpp	/^    virtual void Method() = 0;$/;"	p	class:Strategy	file:	access:public
+StrategyOne	strategy.cpp	/^class StrategyOne: public Strategy{$/;"	c	file:	inherits:Strategy
+StrategyOne::Method	strategy.cpp	/^    virtual void Method()$/;"	f	class:StrategyOne	access:public
+StrategyTwo	strategy.cpp	/^class StrategyTwo: public Strategy{$/;"	c	file:	inherits:Strategy
+StrategyTwo::Method	strategy.cpp	/^    virtual void Method()$/;"	f	class:StrategyTwo	access:public
+Subject	supervior.cpp	/^class Subject{$/;"	c	file:
+Subject::Attach	supervior.cpp	/^    virtual void Attach(Observer*) = 0;$/;"	p	class:Subject	file:	access:public
+Subject::DeAttach	supervior.cpp	/^    virtual void DeAttach(Observer*) = 0;$/;"	p	class:Subject	file:	access:public
+Subject::Notify	supervior.cpp	/^    virtual void Notify() = 0;$/;"	p	class:Subject	file:	access:public
+UnRegisterCommand	command.cpp	/^    void UnRegisterCommand(string name)$/;"	f	class:CommandMenu	access:public
+Update	supervior.cpp	/^    virtual void Update(int state)$/;"	f	class:ConcreteObserver	access:public
+Update	supervior.cpp	/^    virtual void Update(int) = 0;$/;"	p	class:Observer	file:	access:public
+__FACTORY_MODE	factory.h	2;"	d
+action_	bridge.cpp	/^        Action * action_;$/;"	m	class:Movement	file:	access:private
+command1	command.cpp	/^    void command1()$/;"	f	class:Command1	file:	access:private
+command2	command.cpp	/^    void command2()$/;"	f	class:Command2	file:	access:private
+component_	decorate.cpp	/^    Component* component_;$/;"	m	class:Decorator	file:	access:protected
+factories_	factory.h	/^    map<string, ProduceProxy> factories_;$/;"	m	class:Factories	access:private
+instance_	factory.h	/^    static Factories* instance_ ; $/;"	m	class:Factories	access:private
+instance_	factory.h	/^template<typename T>  Factories<T>* Factories<T>::instance_ = NULL;$/;"	m	class:Factories
+lover_	proxy.cpp	/^    GiveGift * lover_;$/;"	m	class:Proxy	file:	access:private
+main	bridge.cpp	/^int main(int argc, char** argv)$/;"	f
+main	command.cpp	/^int main(int argc, char** argv)$/;"	f
+main	decorate.cpp	/^int main(int argc, char** argv)$/;"	f
+main	main.cpp	/^int main(int argc, char** argv)$/;"	f
+main	proxy.cpp	/^int main(int argc, char** argv)$/;"	f
+main	strategy.cpp	/^int main(int argc, char** argv)$/;"	f
+main	supervior.cpp	/^int main(int argc, char** argv)$/;"	f
+main	template.cpp	/^int main(int argc, char** argv)$/;"	f
+menu_	command.cpp	/^    map<string, Command*> menu_;$/;"	m	class:CommandMenu	file:	access:private
+observer_list	supervior.cpp	/^    list<Observer*> observer_list;$/;"	m	class:ConcreteSubject	file:	access:private
+subject_	supervior.cpp	/^    Subject * subject_;$/;"	m	class:ConcreteObserver	file:	access:private
+~Factories	factory.h	/^    ~Factories(){}$/;"	f	class:Factories	access:private
+~Movement	bridge.cpp	/^        virtual ~Movement(){}$/;"	f	class:Movement	access:public
