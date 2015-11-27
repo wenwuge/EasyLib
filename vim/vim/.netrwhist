@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/libin3-s/streamscheduler/streamscheduler/c11/trunk/app/conf'
+let g:netrw_dirhist_2='/home/libin3-s/mygithub/EasyLib/common'
+let g:netrw_dirhist_3='/home/libin3-s/streamscheduler/streamscheduler/c11/trunk'
+let g:netrw_dirhist_4='/home/libin3-s/streamscheduler/streamscheduler/c11/trunk/streammanager'
+let g:netrw_dirhist_5='/home/libin3-s/zookeeper/zookeeper-2/conf'
+let g:netrw_dirhist_6='/home/libin3-s/kfk/librdkafka/src-cpp'
+let g:netrw_dirhist_7='/home/libin3-s/mygithub/EasyLib/designmode'
+let g:netrw_dirhist_8='/home/libin3-s/mygithub/EasyLib'
