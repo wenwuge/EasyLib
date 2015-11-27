@@ -7,6 +7,13 @@
 Action	bridge.cpp	/^class Action{$/;"	c	file:
 Action::Move	bridge.cpp	/^        virtual void Move() = 0;$/;"	p	class:Action	file:	access:public
 Action::Start	bridge.cpp	/^        virtual void Start() = 0;$/;"	p	class:Action	file:	access:public
+Adaptee	adapter.cpp	/^class Adaptee{$/;"	c	file:
+Adaptee::SpecialRequest	adapter.cpp	/^    void SpecialRequest()$/;"	f	class:Adaptee	access:public
+Adapter	adapter.cpp	/^    Adapter(Adaptee* adaptee):adaptee_(adaptee){}$/;"	f	class:Adapter	access:public
+Adapter	adapter.cpp	/^class Adapter: public Target{$/;"	c	file:	inherits:Target
+Adapter::Adapter	adapter.cpp	/^    Adapter(Adaptee* adaptee):adaptee_(adaptee){}$/;"	f	class:Adapter	access:public
+Adapter::Request	adapter.cpp	/^    virtual void Request()$/;"	f	class:Adapter	access:public
+Adapter::adaptee_	adapter.cpp	/^    Adaptee * adaptee_;$/;"	m	class:Adapter	file:	access:private
 Attach	supervior.cpp	/^    virtual void Attach(Observer* observer)  $/;"	f	class:ConcreteSubject	access:public
 Attach	supervior.cpp	/^    virtual void Attach(Observer*) = 0;$/;"	p	class:Subject	file:	access:public
 Boy	proxy.cpp	/^    Boy(){}$/;"	f	class:Boy	access:public
@@ -57,6 +64,7 @@ ConcreteSubject::Attach	supervior.cpp	/^    virtual void Attach(Observer* observ
 ConcreteSubject::DeAttach	supervior.cpp	/^    virtual void DeAttach(Observer* observer)$/;"	f	class:ConcreteSubject	access:public
 ConcreteSubject::Notify	supervior.cpp	/^    virtual void Notify()$/;"	f	class:ConcreteSubject	access:public
 ConcreteSubject::observer_list	supervior.cpp	/^    list<Observer*> observer_list;$/;"	m	class:ConcreteSubject	file:	access:private
+ConcreteTarget	adapter.cpp	/^class ConcreteTarget:public Target{$/;"	c	file:	inherits:Target
 DeAttach	supervior.cpp	/^    virtual void DeAttach(Observer* observer)$/;"	f	class:ConcreteSubject	access:public
 DeAttach	supervior.cpp	/^    virtual void DeAttach(Observer*) = 0;$/;"	p	class:Subject	file:	access:public
 Decorator	decorate.cpp	/^    Decorator(Component * component):component_(component)$/;"	f	class:Decorator	access:public
@@ -143,9 +151,12 @@ Proxy::Proxy	proxy.cpp	/^    Proxy(GiveGift* givegift):lover_(givegift){}$/;"	f	
 Proxy::lover_	proxy.cpp	/^    GiveGift * lover_;$/;"	m	class:Proxy	file:	access:private
 RegisterCommand	command.cpp	/^    void RegisterCommand(string name, Command* command)$/;"	f	class:CommandMenu	access:public
 RegisterFactory	factory.h	/^    template<typename specialproduct> void RegisterFactory(string name)$/;"	f	class:Factories	access:public
+Request	adapter.cpp	/^    virtual void Request() = 0;$/;"	p	class:Target	file:	access:public
+Request	adapter.cpp	/^    virtual void Request()$/;"	f	class:Adapter	access:public
 Run	template.cpp	/^    virtual void Run()$/;"	f	class:Modle	access:public
 Runing	template.cpp	/^    virtual void Runing() = 0;$/;"	p	class:Modle	file:	access:public
 Runing	template.cpp	/^    virtual void Runing()$/;"	f	class:Modle1	access:public
+SpecialRequest	adapter.cpp	/^    void SpecialRequest()$/;"	f	class:Adaptee	access:public
 Start	bridge.cpp	/^        virtual void Start() = 0;$/;"	p	class:Action	file:	access:public
 Start	bridge.cpp	/^        virtual void Start()$/;"	f	class:CarAct	access:public
 Start	bridge.cpp	/^        virtual void Start()$/;"	f	class:PersonAct	access:public
@@ -161,11 +172,14 @@ Subject	supervior.cpp	/^class Subject{$/;"	c	file:
 Subject::Attach	supervior.cpp	/^    virtual void Attach(Observer*) = 0;$/;"	p	class:Subject	file:	access:public
 Subject::DeAttach	supervior.cpp	/^    virtual void DeAttach(Observer*) = 0;$/;"	p	class:Subject	file:	access:public
 Subject::Notify	supervior.cpp	/^    virtual void Notify() = 0;$/;"	p	class:Subject	file:	access:public
+Target	adapter.cpp	/^class Target{$/;"	c	file:
+Target::Request	adapter.cpp	/^    virtual void Request() = 0;$/;"	p	class:Target	file:	access:public
 UnRegisterCommand	command.cpp	/^    void UnRegisterCommand(string name)$/;"	f	class:CommandMenu	access:public
 Update	supervior.cpp	/^    virtual void Update(int state)$/;"	f	class:ConcreteObserver	access:public
 Update	supervior.cpp	/^    virtual void Update(int) = 0;$/;"	p	class:Observer	file:	access:public
 __FACTORY_MODE	factory.h	2;"	d
 action_	bridge.cpp	/^        Action * action_;$/;"	m	class:Movement	file:	access:private
+adaptee_	adapter.cpp	/^    Adaptee * adaptee_;$/;"	m	class:Adapter	file:	access:private
 command1	command.cpp	/^    void command1()$/;"	f	class:Command1	file:	access:private
 command2	command.cpp	/^    void command2()$/;"	f	class:Command2	file:	access:private
 component_	decorate.cpp	/^    Component* component_;$/;"	m	class:Decorator	file:	access:protected
