@@ -1,0 +1,103 @@
+#include <boost/bind.hpp>
+#include <glog/logging.h>
+
+#include "msg_factory.h"
+#include "upstream.h"
+#include "channel.h"
+
+namespace ldd { namespace net {
+
+using namespace std;
+
+UpStream::UpStream(WorkerPool *worker_pool
+        , int listen_port, ChannelHandler channel_handler, uint32_t heartbeat_interval)
+            : Stream(worker_pool, channel_handler)
+            , listen_port_(listen_port)
+            , acceptor_(main_worker_.ios())
+            , heartbeat_interval_(heartbeat_interval)
+{
+}
+
+bool UpStream::Open()
+{
+    Worker *worker = worker_pool_->GetWorker();
+    if (worker == NULL) {
+        return false;
+    }
+
+    new_channel_.reset(new Channel(worker
+                , worker->ios()
+                , this, heartbeat_interval_
+                , channel_handler_));
+
+    try {
+        boost::asio::ip::tcp::endpoint endpoint(boost::asio::ip::tcp::v4()
+                , listen_port_);
+        acceptor_.open(endpoint.protocol());
+        acceptor_.set_option(boost::asio::ip::tcp::acceptor::reuse_address(true));
+        acceptor_.bind(endpoint);
+        acceptor_.listen();
+        acceptor_.async_accept(new_channel_->socket()
+                    , boost::bind(&UpStream::HandleAccept
+                    , this
+                    , boost::asio::placeholders::error));
+    }
+    catch (boost::system::system_error &e) {
+        LOG(ERROR) << "UpStream::Listen: " << e.what();
+        return false;
+    }
+    catch (...) {
+        LOG(ERROR) << "UpStream::Listen: unknown exception";
+        return false;
+    }
+
+    main_worker_.Start();
+
+    return true;
+}
+
+bool UpStream::Close()
+{
+    acceptor_.close();
+    main_worker_.Stop();
+
+    return true;
+}
+
+void UpStream::HandleAccept(const boost::system::error_code& e)
+{
+    if (e) {
+        new_channel_.reset();
+        LOG(INFO) << "UpStream::HandleAccept: " << e.value();
+        return;
+    }
+
+    LOG(INFO) << "UpStream::HandleAccept: accept on socket";
+
+    //启动channel事件循环
+    new_channel_->Start();
+
+    Worker *worker = worker_pool_->GetWorker();
+    if (worker == NULL) {
+        LOG(INFO) << "UpStream::HandleAccept: no worker can be used";
+        return;
+    }
+
+    new_channel_.reset(new Channel(worker
+                , worker->ios()
+                , this
+                , heartbeat_interval_
+                , channel_handler_));
+
+    acceptor_.async_accept(new_channel_->socket()
+                    , boost::bind(&UpStream::HandleAccept
+                            , this
+                            , boost::asio::placeholders::error)
+                    );
+
+    return;
+}
+
+} /*namespace net*/
+} /*namespace ldd*/
+

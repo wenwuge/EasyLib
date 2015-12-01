@@ -1,0 +1,62 @@
+#ifndef LDD_NET_INCOMING_MSG_H_
+#define LDD_NET_INCOMING_MSG_H_
+
+#include <map>
+#include <boost/shared_ptr.hpp>
+#include <boost/noncopyable.hpp>
+#include "ldd/net/buffer.h"
+#include "ldd/net/types.h"
+
+namespace ldd { namespace net {
+
+class Channel;
+
+#define DECLARE_INCOMING_MSG_TYPE(N) \
+    const static MsgType kType = N; \
+    virtual ldd::net::MsgType type() const { return kType; }
+
+class IncomingMsg : private boost::noncopyable {
+    friend class Channel;
+public:
+    IncomingMsg();
+    virtual ~IncomingMsg();
+
+    MsgId id() const;
+    boost::shared_ptr<Channel> channel();
+
+    bool IsCancelled() const;
+    void Cancel();
+
+    bool Respond(const Buffer& result);
+    bool Respond(const Buffer& result, const std::map<int8_t, Buffer>& extras);
+    void Finalize();
+
+    virtual MsgType type() const = 0;
+
+protected:
+    virtual bool ParseFrom(const Buffer &request,
+            const std::map<int8_t, Buffer>& extras) = 0;
+
+    virtual void HandleCancel() = 0;
+
+private:
+    class Impl;
+    Impl* impl_;
+};
+
+class DynamicIncomingMsg : public IncomingMsg {
+    friend class Channel;
+public:
+    MsgType type() const { return type_; }
+protected:
+    virtual bool ParseFrom(const Buffer &request,
+            const std::map<int8_t, Buffer>& extras) = 0;
+    virtual void HandleCancel() = 0;
+private:
+    MsgType type_;
+};
+
+} /*net*/
+} /*ldd*/
+
+#endif // LDD_NET_INCOMING_MSG_H_

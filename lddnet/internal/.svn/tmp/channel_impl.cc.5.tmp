@@ -1,0 +1,585 @@
+// channel_impl.cc (2013-08-19)
+// Li Xinjie (xjason.li@gmail.com)
+
+#include <boost/bind.hpp>
+#include <boost/make_shared.hpp>
+#include <glog/logging.h>
+#include "ldd/net/outgoing_msg.h"
+#include "ldd/net/incoming_msg.h"
+#include "channel_impl.h"
+#include "event_loop_impl.h"
+#include "outgoing_msg_impl.h"
+#include "incoming_msg_impl.h"
+#include "packet_writer.h"
+#include "packet_reader.h"
+#include "outgoing_packet.h"
+#include "pulse_emitter.h"
+#include "pulse_checker.h"
+#include "convert_addr.h"
+
+namespace ldd {
+namespace net {
+
+using namespace std;
+using namespace boost;
+using namespace boost::asio::ip;
+
+static const char* kNotifierNames[] = {
+    "CLOSED",
+    "CONNECTING",
+    "CONNECTED",
+};
+
+Channel::Impl::Impl(Owner* owner, EventLoop* event_loop)
+    : owner_(owner),
+      event_loop_(event_loop),
+      state_(Channel::kClosed),
+      socket_(io_service()),
+      outgoing_msg_id_(-1),
+      self_endpoint_(Address::V4),
+      peer_endpoint_(Address::V4)
+{
+}
+
+Channel::Impl::~Impl() {
+}
+
+boost::asio::io_service& Channel::Impl::io_service() {
+    return event_loop()->impl_->io_service();
+}
+
+bool Channel::Impl::FillEndpoints() {
+    boost::system::error_code ec;
+    tcp::endpoint self_endpoint = socket().local_endpoint(ec);
+    if (ec) {
+        LOG(ERROR) << "Get self endpoint failed: " << ec.message();
+        return false;
+    }
+    tcp::endpoint peer_endpoint = socket().remote_endpoint(ec);
+    if (ec) {
+        LOG(ERROR) << "Get peer endpoint failed: " << ec.message();
+        return false;
+    }
+    self_endpoint_.set_address(ConvertAddr(self_endpoint.address()));
+    self_endpoint_.set_port(self_endpoint.port());
+    peer_endpoint_.set_address(ConvertAddr(peer_endpoint.address()));
+    peer_endpoint_.set_port(peer_endpoint.port());
+    return true;
+}
+
+void Channel::Impl::Notify(const Notifier& notifier) {
+    if (notifier) {
+        try {
+            notifier(owner_->shared_from_this());
+        } catch (const std::exception& e) {
+            LOG(FATAL) << "Notify " << kNotifierNames[state()] << " exception: "
+                << e.what();
+        } catch (...) {
+            LOG(FATAL) << "Notify " << kNotifierNames[state()] << " error";
+        }
+    }
+}
+
+void Channel::Impl::Post(const boost::shared_ptr<OutgoingMsg>& omsg,
+        const ldd::util::TimeDiff& timeout) {
+    if (state() == Channel::kClosed) {
+        omsg->impl_->OnFailed();
+        return;
+    }
+
+    int32_t id = NextOutgoingMsgId();
+    std::pair<OutgoingMsgMap::iterator, bool> r = 
+        omsgs_.insert(std::make_pair(id, omsg));
+    if (r.second) {
+        omsg->impl_->Init(id, owner(), timeout);
+    } else {
+        LOG(ERROR) << "Duplicated outgoing message id on this channel";
+        OnError();
+        omsg->impl_->OnFailed();
+    }
+}
+
+void Channel::Impl::Write(OutgoingPacket* packet) {
+    writer_->Write(packet);
+    OnOutgoingPacket();
+}
+
+void Channel::Impl::Close() {
+    if (state() == Channel::kClosed) {
+        return;
+    }
+    OnClose();
+}
+
+void Channel::Impl::ClearIncomingMsg() {
+    IncomingMsgMap::iterator iit = imsgs_.begin();
+    for (; iit != imsgs_.end();) {
+        LOG(INFO) << "canceling incoming msg id = " << iit->first;
+        (iit++)->second->impl_->DoCancel();
+    }
+    imsgs_.clear();
+}
+
+void Channel::Impl::ClearOutgoingMsg() {
+    OutgoingMsgMap::iterator oit = omsgs_.begin();
+    for (; oit != omsgs_.end();) {
+        (oit++)->second->impl_->OnFailed();
+    }
+    omsgs_.clear();
+}
+
+bool Channel::Impl::AddIncomingMsg(const boost::shared_ptr<IncomingMsg>& msg) {
+    CHECK_GE(msg->id(), 0);
+    std::pair<IncomingMsgMap::iterator, bool> r =
+        imsgs_.insert(std::make_pair(msg->id(), msg));
+    return r.second;
+}
+
+boost::shared_ptr<IncomingMsg> Channel::Impl::GetIncomingMsg(
+        int32_t id, bool remove) {
+    IncomingMsgMap::iterator it = imsgs_.find(id);
+    if (it == imsgs_.end()) {
+        return boost::shared_ptr<IncomingMsg>();
+    }
+    boost::shared_ptr<IncomingMsg> imsg = it->second;
+    if (remove) {
+        imsgs_.erase(it);
+    }
+    return imsg;
+}
+
+boost::shared_ptr<OutgoingMsg> Channel::Impl::GetOutgoingMsg(
+        int32_t id, bool remove) {
+    OutgoingMsgMap::iterator it = omsgs_.find(id);
+    if (it == omsgs_.end()) {
+        return boost::shared_ptr<OutgoingMsg>();
+    }
+    boost::shared_ptr<OutgoingMsg> omsg = it->second;
+    if (remove) {
+        omsgs_.erase(it);
+    }
+    return omsg;
+}
+
+void Channel::Impl::InitReader() {
+    CHECK(!reader_);
+    reader_ = make_shared<PacketReader>(this);
+    reader_->Start();
+    CHECK(reader_);
+}
+
+void Channel::Impl::InitWriter() {
+    CHECK(!writer_);
+    writer_ = make_shared<PacketWriter>(this);
+    CHECK(writer_);
+}
+
+void Channel::Impl::OpenWriter() {
+    CHECK(writer_);
+    CHECK(!writer_->IsOpen());
+    writer_->Open();
+    CHECK(writer_->IsOpen());
+}
+
+void Channel::Impl::CloseReader() {
+    CHECK(reader_);
+    reader_->Close();
+    reader_.reset();
+}
+
+void Channel::Impl::CloseWriter() {
+    CHECK(writer_);
+    writer_->Close();
+    writer_.reset();
+}
+
+void Channel::Impl::OnIncomingPacket() {
+    pulse_checker_->NotifyIncomingPacket();
+    pulse_emitter_->NotifyIncomingPacket();
+}
+
+void Channel::Impl::OnOutgoingPacket() {
+    pulse_emitter_->NotifyOutgoingPacket();
+}
+
+void Channel::Impl::OnPulseFailed() {
+    LOG(ERROR) << "Pulse timeout";
+    OnError();
+}
+
+// IncomingChannel
+IncomingChannel::IncomingChannel(Owner* owner, EventLoop* event_loop,
+        Server::Impl* server)
+    : Super(owner, event_loop),
+      server_(server)
+{
+    InitPulse();
+}
+
+void IncomingChannel::InitPulse() {
+    PulseChecker::Reporter reporter =
+        boost::bind(&IncomingChannel::OnPulseFailed, this);
+    if (options().pulse_relaxed_checking) {
+        pulse_checker_.reset(new RelaxedPulseChecker(event_loop(),
+                    reporter, util::TimeDiff::Milliseconds(
+                        options().pulse_interval)));
+    } else {
+        pulse_checker_.reset(new StrictPulseChecker(event_loop(),
+                    reporter, util::TimeDiff::Milliseconds(
+                        options().pulse_interval)));
+    }
+
+    PulseEmitter::Pulser pulser = 
+        boost::bind(&IncomingChannel::DoPulse, this);
+    if (options().pulse_lazy_emitting) {
+        pulse_emitter_.reset(new LazyPulseEmitter(event_loop(),
+                    pulser, util::TimeDiff::Milliseconds(
+                        options().pulse_interval)));
+    } else {
+        pulse_emitter_.reset(new ReplyPulseEmitter(event_loop(),
+                    pulser, util::TimeDiff::Milliseconds(
+                        options().pulse_interval)));
+    }
+}
+
+IncomingChannel::~IncomingChannel() {
+}
+
+void IncomingChannel::Open() {
+    if (!FillEndpoints()) {
+        return;
+    }
+
+    set_state(Channel::kConnected);
+    InitWriter();
+    OpenWriter();
+    InitReader();
+    pulse_checker_->Start();
+    pulse_emitter_->Start();
+    Notify(options().notify_connected);
+}
+
+void IncomingChannel::OnPing() {
+    //LOG(INFO) << "Ping recved";
+    pulse_checker_->NotifyIncomingPulse();
+    pulse_emitter_->NotifyIncomingPulse();
+}
+
+void IncomingChannel::OnPong() {
+    LOG(ERROR) << "Incoming channel recved pong message";
+    OnError();
+}
+
+void IncomingChannel::OnError() {
+    LOG(INFO) << "IncomingChannel error, " << peer_endpoint_.ToString();
+    OnClose();
+}
+
+void IncomingChannel::OnClose() {
+    LOG(INFO) << "IncomingChannel closed";
+    CHECK_NE(state(), Channel::kClosed);
+
+    set_state(Channel::kClosed);
+
+    ClearIncomingMsg();
+    ClearOutgoingMsg();
+    CloseReader();
+    CloseWriter();
+
+    socket().close();
+    
+    Notify(options().notify_closed);
+}
+
+void IncomingChannel::DoPulse() {
+    //LOG(INFO) << "Pong is sending";
+    OutgoingPong* pong = new OutgoingPong(NextOutgoingMsgId());
+    Write(pong);
+}
+
+// OutgoingChannel
+OutgoingChannel::OutgoingChannel(Owner* owner, EventLoop* event_loop,
+        Client::Impl* client, const std::string& host, uint16_t port)
+    : Super(owner, event_loop),
+      client_(client),
+      timer_(event_loop),
+      connect_id_(0),
+      connect_failure_(0),
+      connect_delay_(false)
+{
+    Address addr = Address::FromString(Address::V4, host);
+    if (!addr.ToU32()) {
+        query_.reset(new tcp::resolver::query(host, ""));
+    } else {
+        peer_endpoint_.set_address(addr);
+    }
+    peer_endpoint_.set_port(port);
+    InitPulse();
+}
+
+OutgoingChannel::OutgoingChannel(Owner* owner, EventLoop* event_loop,
+        Client::Impl* client, const Endpoint& remote)
+    : Super(owner, event_loop),
+      client_(client),
+      timer_(event_loop)
+{
+    peer_endpoint_ = remote;
+    InitPulse();
+}
+
+void OutgoingChannel::InitPulse() {
+    PulseChecker::Reporter reporter =
+        boost::bind(&OutgoingChannel::OnPulseFailed, this);
+    if (options().pulse_relaxed_checking) {
+        pulse_checker_.reset(new RelaxedPulseChecker(event_loop(),
+                    reporter, util::TimeDiff::Milliseconds(
+                        options().pulse_interval)));
+    } else {
+        pulse_checker_.reset(new StrictPulseChecker(event_loop(),
+                    reporter, util::TimeDiff::Milliseconds(
+                        options().pulse_interval)));
+    }
+
+    PulseEmitter::Pulser pulser = 
+        boost::bind(&OutgoingChannel::DoPulse, this);
+    if (options().pulse_lazy_emitting) {
+        pulse_emitter_.reset(new LazyPulseEmitter(event_loop(),
+                    pulser, util::TimeDiff::Milliseconds(
+                        options().pulse_interval)));
+    } else {
+        pulse_emitter_.reset(new ClockPulseEmitter(event_loop(),
+                    pulser, util::TimeDiff::Milliseconds(
+                        options().pulse_interval)));
+    }
+}
+
+OutgoingChannel::~OutgoingChannel() {
+}
+
+void OutgoingChannel::Open() {
+    set_state(Channel::kConnecting);
+    DoConnect();
+}
+
+void OutgoingChannel::DoConnect() {
+    InitWriter();
+    if (query_) {
+        Resolve();
+    } else {
+        Connect();
+    }
+}
+
+void OutgoingChannel::Reconnect() {
+    CHECK_EQ(state(), Channel::kConnecting);
+    if (connect_failure_ >= options().connect_delay_count) {
+        DelayConnect();
+    } else {
+        DoConnect();
+    }
+}
+
+void OutgoingChannel::DelayConnect() {
+    CHECK_GE(connect_failure_, options().connect_delay_count);
+
+    int n = options().connect_delay_time_initial +
+        options().connect_delay_time_step * 
+        (connect_failure_ - options().connect_delay_count);
+    n = std::min(n, options().connect_delay_time_final);
+    util::TimeDiff timeout = util::TimeDiff::Milliseconds(n);
+    LOG(INFO) << "Delay connect for " << n << " ms";
+    timer_.AsyncWait(
+            boost::bind(&OutgoingChannel::DoDelayConnect, this, owner()),
+            timeout);
+    connect_delay_ = true;
+}
+
+void OutgoingChannel::DoDelayConnect(const boost::shared_ptr<Channel>&) {
+    connect_delay_ = false;
+    DoConnect();
+}
+
+void OutgoingChannel::Resolve() {
+    CHECK(query_);
+    CHECK(resolver_.expired());
+
+    boost::shared_ptr<tcp::resolver> resolver(new tcp::resolver(io_service()));
+    resolver->async_resolve(*query_, 
+            boost::bind(&OutgoingChannel::OnResolve, this,
+                boost::asio::placeholders::error,
+                boost::asio::placeholders::iterator,
+                resolver, owner()));
+    timer_.AsyncWait(
+            boost::bind(&OutgoingChannel::OnResolveTimeout, this, owner()),
+            util::TimeDiff::Milliseconds(options().resolve_timeout));
+    resolver_ = resolver;
+}
+
+void OutgoingChannel::OnResolveTimeout(const boost::shared_ptr<Channel>& o) {
+    boost::shared_ptr<tcp::resolver> r = resolver_.lock();
+    CHECK(r);
+    connect_failure_++;
+    r->cancel();
+    resolver_.reset();
+    OnError();
+}
+
+void OutgoingChannel::OnResolve(const boost::system::error_code& error,
+        tcp::resolver::iterator iterator,
+        const boost::shared_ptr<tcp::resolver> resolver,
+        const boost::shared_ptr<Channel>& o) {
+    if (state() == Channel::kClosed) {
+        timer_.Cancel();
+        LOG(INFO) << "Resolve canceled because channel is closed";
+        return;
+    } else if (resolver_.lock() != resolver) {
+        LOG(INFO) << "Resolve timeout";
+        return;
+    } else if (error) {
+        connect_failure_++;
+        timer_.Cancel();
+        LOG(ERROR) << "Resolve " << query_->host_name() << " failed: "
+            << error.message();
+        OnError();
+        return;
+    }
+    peer_endpoint_.set_address(ConvertAddr(iterator->endpoint().address()));
+    LOG(INFO) << "Resolved " << query_->host_name() << " = "
+        << peer_endpoint_.address().ToString();
+    query_.reset();
+    resolver_.reset();
+    Connect();
+}
+
+void OutgoingChannel::Connect() {
+    CHECK(!query_);
+    LOG(INFO) << "Connecting " << peer_endpoint_.ToString();
+    tcp::endpoint remote;
+    remote.address(ConvertAddr(peer_endpoint_.address()));
+    remote.port(peer_endpoint_.port());
+
+    socket().async_connect(remote,
+            boost::bind(&OutgoingChannel::OnConnect, this,
+                boost::asio::placeholders::error, owner(), connect_id_));
+    timer_.AsyncWait(
+            boost::bind(&OutgoingChannel::OnConnectTimeout, this, owner()),
+            util::TimeDiff::Milliseconds(options().connect_timeout));
+}
+
+void OutgoingChannel::OnConnectTimeout(const boost::shared_ptr<Channel>& o) {
+    LOG(INFO) << "Connect " << peer_endpoint_.ToString() << " timeout";
+    ++connect_id_;
+    connect_failure_++;
+    socket().close();
+    OnError();
+}
+
+void OutgoingChannel::OnConnect(const boost::system::error_code& error,
+        const boost::shared_ptr<Channel>& o, int id) {
+    if (state() == Channel::kClosed) {
+        timer_.Cancel();
+        LOG(INFO) << "Connect canceled because channel is closed";
+        return;
+    } else if (id != connect_id_) {
+        return;
+    } else if (error) {
+        connect_failure_++;
+        timer_.Cancel();
+        ++connect_id_;
+        LOG(ERROR) << "Connect " << peer_endpoint_.ToString()
+            << ":" << peer_endpoint_.port() << " failed: "
+            << error.message();
+        OnError();
+        return;
+    }
+    connect_failure_ = 0;
+    ++connect_id_;
+    LOG(INFO) << "Connected " << peer_endpoint_.ToString();
+    timer_.Cancel();
+
+    set_state(Channel::kConnected);
+    OpenWriter();
+    InitReader();
+    pulse_checker_->Start();
+    pulse_emitter_->Start();
+    Notify(options().notify_connected);
+}
+
+void OutgoingChannel::OnPing() {
+    LOG(ERROR) << "Outgoing channel recved ping message";
+    OnError();
+}
+
+void OutgoingChannel::OnPong() {
+    pulse_checker_->NotifyIncomingPulse();
+    pulse_emitter_->NotifyIncomingPulse();
+}
+
+void OutgoingChannel::OnError() {
+    LOG(INFO) << "Outgoing channel on error " << peer_endpoint_.ToString();
+    CHECK_NE(state(), Channel::kClosed);
+
+    Channel::State old_state = state();
+    set_state(Channel::kConnecting);
+
+    if (old_state == Channel::kConnecting) {
+        ClearOutgoingMsg();
+        CloseWriter();
+        socket().close();
+        timer_.Cancel();
+    } else if (old_state == Channel::kConnected) {
+        ClearIncomingMsg();
+        ClearOutgoingMsg();
+        CloseReader();
+        CloseWriter();
+        pulse_checker_->Stop();
+        pulse_emitter_->Stop();
+        socket().close();
+        if (old_state != state()) {
+            Notify(options().notify_connecting);
+        }
+    } else {
+        LOG(FATAL) << "Invalid OutgoingChannel old state = " << old_state;
+    }
+    Reconnect();
+}
+
+void OutgoingChannel::OnClose() {
+    LOG(INFO) << "OutgoingChannel closed";
+    CHECK_NE(state(), Channel::kClosed);
+
+    Channel::State old_state = state();
+    set_state(Channel::kClosed);
+
+    if (old_state == Channel::kConnecting) {
+        if (connect_delay_) {
+            timer_.Cancel();
+        } else {
+            ClearOutgoingMsg();
+            CloseWriter();
+            socket().close();
+            timer_.Cancel();
+        }
+    } else if (old_state == Channel::kConnected) {
+        ClearIncomingMsg();
+        ClearOutgoingMsg();
+        CloseReader();
+        CloseWriter();
+        pulse_checker_->Stop();
+        pulse_emitter_->Stop();
+        socket().close();
+    } else {
+        LOG(FATAL) << "Invalid OutgoingChannel old state = " << old_state;
+    }
+    Notify(options().notify_closed);
+}
+
+void OutgoingChannel::DoPulse() {
+    //LOG(INFO) << "Ping is sending";
+    OutgoingPing* ping = new OutgoingPing(NextOutgoingMsgId());
+    Write(ping);
+}
+
+
+} // namespace net
+} // namespace ldd

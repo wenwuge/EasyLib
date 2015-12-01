@@ -1,0 +1,62 @@
+PWD := $(shell pwd)
+
+CXX := g++
+CXXFLAGS := -g3 -O0 -Wall -Werror \
+	-I../../../../ \
+	-I/usr/local/include
+LDFLAGS := -pthread \
+	-L../../../util \
+	-L../../../courier \
+	-L../../../net \
+	-L/usr/local/lib/ \
+	-llddnet \
+	-llddutil
+RTFLAGS := \
+	-Wl,-rpath=/home/s/lib/ \
+	-Wl,-rpath=$(PWD)/../../../util \
+	-Wl,-rpath=$(PWD)/../../../courier \
+	-Wl,-rpath=$(PWD)/../../../net
+LIBS := -lglog -lgflags
+
+DIR := .
+SRC := $(foreach d, $(DIR), $(wildcard $(d)/*.cc))
+OBJ := $(patsubst %.cc, %.o, $(SRC))
+DEP := $(patsubst %.o, %.d, $(OBJ))
+
+STATIC_EXT = a
+STATIC_LIB = $(LIBNAME).$(STATIC_EXT)
+
+TARGET := ldd_test
+
+all: $(TARGET)
+
+static: $(STATIC_LIB)
+
+$(TARGET): main.o $(STATIC_LIB)
+	$(CXX) $^ -o $@ $(RTFLAGS) $(LDFLAGS) $(LIBS)
+
+$(STATIC_LIB) : $(filter-out main.o, $(OBJ))
+	ar -rs $@ $^
+
+target: $(TARGET)
+
+%.o : %.cc
+	$(CXX) -c $(CXXFLAGS) $< -o $@
+%.o : %.cpp
+	$(CXX) -c $(CXXFLAGS) $< -o $@
+
+%.d : %.cc
+	@$(CXX) -MM $< $(CXXFLAGS) | sed 's/$(notdir $*)\.o/$(subst /,\/,$*).o $(subst /,\/,$*).d/g' > $@
+%.d : %.cpp
+	@$(CXX) -MM $< $(CXXFLAGS) | sed 's/$(notdir $*)\.o/$(subst /,\/,$*).o $(subst /,\/,$*).d/g' > $@
+
+-include $(DEP)
+
+clean:
+	-rm -rf $(OBJ) $(TARGET) $(STATIC_LIB) $(DEP)
+	-rm -rf *.pid *.log *.core
+
+test: static
+	$(MAKE) test -C ut
+
+.PHONY: all target clean test static

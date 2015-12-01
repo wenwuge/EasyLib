@@ -1,0 +1,110 @@
+#ifndef LDD_NET_INTERNAL_PACKET_H_
+#define LDD_NET_INTERNAL_PACKET_H_
+
+#include <vector>
+#include <boost/asio.hpp>
+
+#include "protocol.h"
+#include "ldd/net/buffer.h"
+
+namespace ldd { namespace net {
+
+class Packet {
+public:
+    enum Type {
+        kInvalid = 0,
+        kOutgoing,
+        kIncoming,
+        kControl
+    };
+
+    Packet() {}
+    virtual ~Packet() {}
+    virtual void AppendTo(std::vector<boost::asio::const_buffer>* buffers) = 0;
+    virtual bool last() = 0;
+    virtual void *msg() const = 0;
+    
+    virtual int32_t type() const = 0;
+};
+
+class IncomingMsg;
+class OutgoingMsg;
+
+class PacketWithBody : public Packet {
+public:
+    PacketWithBody();
+    PacketWithBody(const Buffer& body, 
+            const std::map<int8_t, Buffer>& extras);
+    virtual void AppendTo(std::vector<boost::asio::const_buffer>* buffers);
+
+    uint32_t InitExtraHeader();
+protected:
+    Buffer body_;
+    Buffer ext_hdr_;
+    std::map<int8_t, Buffer> extras_;
+};
+
+class Request : public PacketWithBody {
+public:
+    Request(OutgoingMsg *msg);
+    virtual ~Request();
+
+    virtual void AppendTo(std::vector<boost::asio::const_buffer>* buffers);
+    virtual bool last() { return true; };
+    virtual void *msg() const { return (void *)msg_; }
+    virtual int32_t type() const { return type_; }
+
+private:
+    OutgoingMsg *msg_;
+    char header_[Header::kByteSize];
+    int32_t type_;
+};
+
+
+class Response : public PacketWithBody {
+public:
+    Response(IncomingMsg *msg
+            , const Buffer &buffer
+            , const std::map<int8_t, Buffer> &extra);
+    Response(IncomingMsg *msg);
+
+    virtual ~Response();
+
+    virtual void AppendTo(std::vector<boost::asio::const_buffer>* buffers);
+    virtual bool last() { return last_; }
+    virtual void *msg() const { return (void *)msg_; }
+    virtual int32_t type() const { return type_; }
+
+    void set_last() { last_ = true; }
+
+private:
+    IncomingMsg *msg_;
+    bool last_;
+    char header_[Header::kByteSize];
+    int32_t type_;
+    bool empty_;
+};
+
+class Ctrl: public Packet {
+public:
+    Ctrl(MsgId msg_id, uint8_t ctrl_type);
+    virtual ~Ctrl();
+
+    virtual void AppendTo(std::vector<boost::asio::const_buffer>* buffers);
+    virtual bool last() { return true; }
+    virtual void *msg() const { return NULL; }
+    virtual int32_t type() const { return type_; }
+
+private:
+    friend class Channel;
+    MsgId msg_id_;
+    uint8_t ctrl_type_;
+    char header_[Header::kByteSize];
+    int32_t type_;
+};
+
+
+} /*namespace net*/
+} /*namespace ldd*/
+
+#endif // LDD_NET_INTERNAL_PACKET_H_

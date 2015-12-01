@@ -1,0 +1,191 @@
+// event_impl.h (2013-07-01)
+// Yan Gaofeng (yangaofeng@360.cn)
+
+#ifndef __EVENT_RUNNER_IMPL__
+#define __EVENT_RUNNER_IMPL__
+#include <map>
+#include <boost/asio.hpp>
+#include <boost/scoped_ptr.hpp>
+#include "ldd/util/thread.h"
+#include "ldd/util/mutex.h"
+#include "ldd/net/event_runner.h"
+
+namespace ldd { namespace net {
+
+typedef boost::asio::deadline_timer Timer;
+
+class EventImpl : public Event {
+public:
+    EventImpl(boost::asio::io_service &ios
+            , int fd
+            , const EventRunner::EventHandler &handler)
+        : fd_(fd)
+          , stream_(ios, fd)
+          , handler_(handler)
+          , event_type_(Event::kInvalid)
+    {}
+
+    ~EventImpl() {}
+
+    virtual int fd() const { return fd_; }
+    virtual uint32_t types() const { return event_type_; }
+
+    virtual void Add(Type type);
+    virtual void Del(Type type);
+
+    virtual void Clear();
+
+private:
+    void Read();
+    void Write();
+
+    void HandleRead(const boost::system::error_code& error
+            , size_t bytes_transferred);
+    void HandleWrite(const boost::system::error_code& error
+            , size_t bytes_transferred);
+
+private:
+    int fd_;
+    boost::asio::posix::stream_descriptor stream_;
+    EventRunner::EventHandler handler_;
+    uint32_t event_type_;
+};
+
+class EventRunner::Impl {
+public:
+    class InplaceEventRunner;
+    class ThreadedEventRunner;
+    Impl() {}
+    virtual ~Impl() {}
+
+    virtual Event* NewEvent(int fd, const EventHandler& handler) = 0;
+
+    virtual void Post(const UserHandler &func) = 0;
+    virtual void Dispatch(const UserHandler &func) = 0;
+
+    virtual TimerId RunAt(const uint64_t us, const UserHandler &func) = 0;
+    virtual TimerId RunAfter(const uint64_t delay, const UserHandler &func) = 0;
+    virtual TimerId RunEvery(const uint64_t interval ,
+            const UserHandler &func) = 0;
+    virtual void DeleteTimer(TimerId timer_id) = 0;
+    virtual boost::asio::io_service &ios() = 0;
+
+    virtual bool Start() = 0;
+    virtual void Stop() = 0;
+    virtual void AfterFork() = 0;
+    //virtual bool Init() = 0;
+};
+
+class EventRunner::Impl::InplaceEventRunner: public EventRunner::Impl {
+public:
+    InplaceEventRunner();
+    virtual ~InplaceEventRunner();
+
+    virtual Event* NewEvent(int fd, const EventHandler &handler);
+
+    virtual void Post(const UserHandler &func);
+    virtual void Dispatch(const UserHandler &func);
+
+    virtual TimerId RunAt(const uint64_t time_ms, const UserHandler &func);
+    virtual TimerId RunAfter(const uint64_t delay_ms, const UserHandler &func);
+    virtual TimerId RunEvery(const uint64_t interval_ms, const UserHandler &func);
+    virtual void DeleteTimer(TimerId timer_id);
+
+    virtual bool Start();
+    virtual void Stop();
+    virtual void AfterFork();
+    //virtual bool Init();
+
+    virtual boost::asio::io_service &ios() { return *io_service_; }
+
+    void set_accept_handler(const UserHandler &accept_handler)
+    {
+        accept_handler_ = accept_handler;
+    }
+
+    void reset_io_service(boost::asio::io_service *io_service)
+    {
+        delete io_service_;
+        io_service_ = io_service;
+    }
+
+private:
+    void RealRunAt(TimerId timer_id
+            , Timer *timer
+            , uint64_t time_ms
+            , const UserHandler &func);
+
+    void HandleRunAt(
+        const boost::system::error_code& error
+        , TimerId timer_id
+        , UserHandler func);
+
+    void RealRunAfter(TimerId timer_id
+            , Timer *timer
+            , uint64_t delay
+            , const UserHandler &func);
+
+    void HandleRunAfter(
+            const boost::system::error_code& error
+            , TimerId timer_id
+            , UserHandler func);
+
+    void RealRunEvery(TimerId timer_id
+            , Timer *timer
+            , uint64_t interval
+            , const UserHandler &func);
+
+    void HandleRunEvery(
+            const boost::system::error_code& error
+            , TimerId timer_id
+            , uint64_t interval
+            , UserHandler func);
+
+protected:
+    boost::asio::io_service *io_service_;
+    boost::asio::io_service::work *work_;
+    bool start_;
+
+    util::Mutex timer_mutex_;
+    TimerId next_timer_id_;
+    std::map<TimerId, Timer*> timers_;
+
+    UserHandler accept_handler_;
+    //pid_t pid_;
+};
+
+class EventRunner::Impl::ThreadedEventRunner: public InplaceEventRunner {
+public:
+    ThreadedEventRunner();
+    virtual ~ThreadedEventRunner();
+
+    virtual bool Start();
+    virtual void Stop();
+
+private:
+    void Run();
+private:
+    boost::scoped_ptr<util::Thread> thread_;
+};
+
+class EventRunnerGroupImpl: public EventRunnerGroup {
+public:
+    EventRunnerGroupImpl(int runner_count);
+    virtual ~EventRunnerGroupImpl();
+
+    virtual bool Start();
+    virtual void Stop();
+    virtual EventRunner *GetEventRunner();
+
+private:
+    int runner_count_;
+    int runner_index_;
+    std::vector<EventRunner *> runners_;
+};
+
+} /*net*/
+} /*ldd*/
+
+
+#endif /*__EVENT_RUNNER_IMPL__*/
+

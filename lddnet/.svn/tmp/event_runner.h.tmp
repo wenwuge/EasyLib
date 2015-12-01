@@ -1,0 +1,84 @@
+// event_runner.h (2013-07-01)
+// Yan Gaofeng (yangaofeng@360.cn)
+
+#ifndef LDD_NET_EVENT_RUNNER_H_
+#define LDD_NET_EVENT_RUNNER_H_
+
+#include <boost/function.hpp>
+#include <boost/noncopyable.hpp>
+
+namespace ldd { namespace net {
+
+class Event {
+public:
+    enum Type {
+        kInvalid = 0,
+        kReadable = 1,
+        kWritable = 2
+        //kTimedOut = 4
+    };
+
+
+    Event() {}
+    virtual ~Event() {}
+
+    virtual int fd() const = 0;
+    virtual uint32_t types() const = 0;
+
+    virtual void Add(Type event_type) = 0;
+    virtual void Del(Type event_type) = 0;
+    virtual void Clear() = 0;
+};
+
+typedef uint64_t TimerId;
+
+class EventRunner : private boost::noncopyable {
+public:
+    typedef boost::function<void(Event::Type type, const Event &event)> EventHandler;
+    typedef boost::function<void()> UserHandler;
+
+    ~EventRunner();
+    static EventRunner* NewInplaceEventRunner();
+    static EventRunner* NewThreadedEventRunner();
+
+    Event* NewEvent(int fd, const EventHandler& handler);
+
+    void Post(const UserHandler &func);
+    void Dispatch(const UserHandler &func);
+
+    TimerId RunAt(const uint64_t timestamp_ms, const UserHandler &func);
+    TimerId RunAfter(const uint64_t delay_ms, const UserHandler &func);
+    TimerId RunEvery(const uint64_t interval_ms , const UserHandler &func);
+    void DeleteTimer(TimerId timer_id);
+
+    bool Start();
+    void Stop();
+
+    void AfterFork();
+private:
+    EventRunner() {}
+
+    class Impl;
+    Impl* impl_;
+
+    friend class Channel;
+    friend class DownStream;
+    friend class UpStream;
+};
+
+class EventRunnerGroup {
+public:
+    EventRunnerGroup() {}
+    virtual ~EventRunnerGroup() {}
+
+    virtual bool Start() = 0;
+    virtual void Stop() = 0;
+    virtual EventRunner *GetEventRunner() = 0;
+
+    static EventRunnerGroup* NewEventRunnerGroup(int runner_count);
+};
+
+} /*net*/
+} /*ldd*/
+
+#endif // LDD_NET_EVENT_RUNNER_H_
