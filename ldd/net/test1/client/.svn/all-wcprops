@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/qdev/!svn/ver/70365/CloudLDD/trunk/src/ldd/net/test/client
+END
+get.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/qdev/!svn/ver/66152/CloudLDD/trunk/src/ldd/net/test/client/get.cc
+END
+heartbeat.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/qdev/!svn/ver/66152/CloudLDD/trunk/src/ldd/net/test/client/heartbeat.cc
+END
+x_socket.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/qdev/!svn/ver/66152/CloudLDD/trunk/src/ldd/net/test/client/x_socket.cc
+END
+x_socket.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/qdev/!svn/ver/66152/CloudLDD/trunk/src/ldd/net/test/client/x_socket.h
+END
+main.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/qdev/!svn/ver/66152/CloudLDD/trunk/src/ldd/net/test/client/main.cc
+END
+put.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/qdev/!svn/ver/66152/CloudLDD/trunk/src/ldd/net/test/client/put.cc
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/qdev/!svn/ver/70365/CloudLDD/trunk/src/ldd/net/test/client/Makefile
+END
+common.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/qdev/!svn/ver/66152/CloudLDD/trunk/src/ldd/net/test/client/common.h
+END

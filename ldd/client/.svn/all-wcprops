@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/qdev/!svn/ver/89268/CloudLDD/trunk/src/ldd/client
+END
+provider.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/qdev/!svn/ver/84321/CloudLDD/trunk/src/ldd/client/provider.h
+END
+client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/qdev/!svn/ver/77725/CloudLDD/trunk/src/ldd/client/client.cc
+END
+client.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/qdev/!svn/ver/81937/CloudLDD/trunk/src/ldd/client/client.h
+END
+redo_simple_policy.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/qdev/!svn/ver/71559/CloudLDD/trunk/src/ldd/client/redo_simple_policy.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/qdev/!svn/ver/89268/CloudLDD/trunk/src/ldd/client/Makefile
+END
+provider.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/qdev/!svn/ver/84331/CloudLDD/trunk/src/ldd/client/provider.cc
+END
+redo_policy.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/qdev/!svn/ver/71559/CloudLDD/trunk/src/ldd/client/redo_policy.h
+END

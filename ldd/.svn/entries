@@ -1,0 +1,92 @@
+10
+
+dir
+109535
+https://se.src.corp.qihoo.net/qdev/CloudLDD/trunk/src/ldd
+https://se.src.corp.qihoo.net/qdev
+
+
+
+2014-08-11T04:52:33.539095Z
+107658
+yangaofeng
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+af987009-ea32-0410-84f2-cf2a347b64f7
+
+cage
+dir
+
+proxy
+dir
+
+protocol
+dir
+
+net
+dir
+
+syn_client
+dir
+
+courier
+dir
+
+store
+dir
+
+util
+dir
+
+Makefile
+file
+
+
+
+
+2014-01-15T11:09:30.000000Z
+6e14813fc98e34f2a30df39a6ecfffda
+2013-12-19T04:54:36.360807Z
+81810
+lixinjie
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+426
+
+client
+dir
+
+skel
+dir
+

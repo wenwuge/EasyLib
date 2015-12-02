@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/qdev/!svn/ver/104887/CloudLDD/trunk/src/ldd/util/ut
+END
+01_const_buffer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/qdev/!svn/ver/81810/CloudLDD/trunk/src/ldd/util/ut/01_const_buffer.cc
+END
+00_mutable_buffer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/qdev/!svn/ver/81810/CloudLDD/trunk/src/ldd/util/ut/00_mutable_buffer.cc
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/qdev/!svn/ver/104887/CloudLDD/trunk/src/ldd/util/ut/Makefile
+END

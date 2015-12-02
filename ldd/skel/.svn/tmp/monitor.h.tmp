@@ -1,0 +1,52 @@
+// monitor.h (2013-07-26)
+// Li Xinjie (xjason.li@gmail.com)
+
+#ifndef LDD_SKEL_MONITOR_H_
+#define LDD_SKEL_MONITOR_H_
+
+#include <boost/scoped_ptr.hpp>
+#include <boost/shared_ptr.hpp>
+#include <boost/ptr_container/ptr_map.hpp>
+#include <ldd/util/atomic.h>
+#include <ldd/net/event_runner.h>
+#include <ldd/net/downstream.h>
+#include "config.h"
+
+namespace ldd {
+namespace skel {
+
+
+class Monitor {
+public:
+    Monitor();
+    bool Init(int argc, char** argv);
+    void Run();
+private:
+    
+    void RunMasters();
+    void RunMaster(int port);
+    void RunMaster();
+    void WatchSignals();
+    void Loop();
+    void StopChildren();
+    void HandleSignal(net::Event::Type t, const net::Event& event);
+    void HandleChild();
+    void HandleReload();
+
+    bool stop_flag_;
+    boost::scoped_ptr<Config> config_;
+    boost::scoped_ptr<net::Event> signal_event_;
+    boost::scoped_ptr<net::EventRunner> monitor_runner_;
+    boost::scoped_ptr<net::EventRunner> accept_runner_;
+    boost::ptr_map<int, net::EventRunnerGroup> thread_runners_;
+    boost::ptr_map<int, net::DownStream> listeners_;
+    std::map<pid_t, int> childs_;
+    std::map<int, net::TimerId> restart_timers_;
+    bool reloading_;
+    net::TimerId reload_timer_;
+};
+
+} // namespace skel
+} // namespace ldd
+
+#endif // LDD_SKEL_MONITOR_H_

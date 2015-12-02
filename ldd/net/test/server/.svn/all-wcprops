@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/qdev/!svn/ver/107247/CloudLDD/trunk/src/ldd/net/test/server
+END
+imsg.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/qdev/!svn/ver/72241/CloudLDD/trunk/src/ldd/net/test/server/imsg.cc
+END
+imsg.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/qdev/!svn/ver/72109/CloudLDD/trunk/src/ldd/net/test/server/imsg.h
+END
+main.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/qdev/!svn/ver/107247/CloudLDD/trunk/src/ldd/net/test/server/main.cc
+END
+omsg.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/qdev/!svn/ver/72109/CloudLDD/trunk/src/ldd/net/test/server/omsg.cc
+END
+omsg.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/qdev/!svn/ver/72109/CloudLDD/trunk/src/ldd/net/test/server/omsg.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/qdev/!svn/ver/72241/CloudLDD/trunk/src/ldd/net/test/server/Makefile
+END

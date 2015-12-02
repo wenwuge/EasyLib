@@ -1,0 +1,1037 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BaseModuleCtx	internal/context.h	/^    BaseModuleCtx(Config* config, ldd::net::EventLoop* event_loop)$/;"	f	class:ldd::skel::BaseModuleCtx	access:public
+BaseModuleCtx	internal/context.h	/^class BaseModuleCtx : virtual public Module::ModuleCtx{$/;"	c	namespace:ldd::skel	inherits:Module::ModuleCtx
+BaseWorkerCtx	internal/context.h	/^    BaseWorkerCtx(ldd::net::Listener* listener)$/;"	f	class:ldd::skel::BaseWorkerCtx	access:public
+BaseWorkerCtx	internal/context.h	/^class BaseWorkerCtx : virtual public Module::WorkerCtx {$/;"	c	namespace:ldd::skel	inherits:Module::WorkerCtx
+CLEAN	Makefile	/^CLEAN = $/;"	m
+CLEAN	examples/client/Makefile	/^CLEAN = $/;"	m
+CLEAN	examples/example1/src/Makefile	/^CLEAN = $/;"	m
+CLEAN	examples/example2/src/Makefile	/^CLEAN = log *.pid example2$/;"	m
+CLEAN	examples/template/src/Makefile	/^CLEAN = log template *.pid$/;"	m
+Cancel	examples/example1/src/example1.cc	/^    virtual void Cancel() {$/;"	f	class:MyEchoMsg	file:	access:private
+Cancel	examples/example2/src/example2.cc	/^    virtual void Cancel() {$/;"	f	class:MyEchoMsg	file:	access:private
+Cancel	examples/template/src/template.cc	/^    virtual void Cancel() {$/;"	f	class:MyEchoMsg	file:	access:private
+ChangeUser	internal/monitor.cc	/^void Monitor::ChangeUser() {$/;"	f	class:ldd::skel::Monitor
+ChangeUser	internal/monitor.h	/^    void ChangeUser();$/;"	p	class:ldd::skel::Monitor	access:private
+CheckStatus	internal/skel.cc	/^void Skel::CheckStatus() {$/;"	f	class:ldd::skel::Skel
+CheckStatus	internal/skel.h	/^    void CheckStatus();$/;"	p	class:ldd::skel::Skel	access:private
+CheckUser	internal/config.cc	/^bool CheckUser(const std::string& user, std::string* what) {$/;"	f	namespace:ldd::skel
+CheckUser	internal/config.cc	/^static bool CheckUser(const std::string& user, std::string* what);$/;"	p	namespace:ldd::skel	file:
+Child	internal/child.cc	/^Child::Child(Config* config, Module::Type type)$/;"	f	class:ldd::skel::Child
+Child	internal/child.h	/^    Child(Config* config, Module::Type type);$/;"	p	class:ldd::skel::Child	access:public
+Child	internal/child.h	/^class Child {$/;"	c	namespace:ldd::skel
+ClearDropped	internal/monitor.cc	/^void Monitor::ClearDropped(pid_t pid) {$/;"	f	class:ldd::skel::Monitor
+ClearDropped	internal/monitor.h	/^    void ClearDropped(pid_t pid);$/;"	p	class:ldd::skel::Monitor	access:private
+Config	internal/config.cc	/^Config::Config()$/;"	f	class:ldd::skel::Config
+Config	internal/config.h	/^    explicit Config();$/;"	p	class:ldd::skel::Config	access:public
+Config	internal/config.h	/^class Config {$/;"	c	namespace:ldd::skel
+Config	module.h	/^    typedef boost::property_tree::ptree Config;$/;"	t	class:ldd::skel::Module	access:public
+DEBUGING	Makefile	/^DEBUGING = -g -DDEBUG # Comment this line for non-debugging code$/;"	m
+DEBUGING	examples/client/Makefile	/^DEBUGING = -g # Comment this line for non-debugging code$/;"	m
+DEBUGING	examples/example1/src/Makefile	/^DEBUGING = -g # Comment this line for non-debugging code$/;"	m
+DEBUGING	examples/example2/src/Makefile	/^DEBUGING = -g # Comment this line for non-debugging code$/;"	m
+DEBUGING	examples/template/src/Makefile	/^DEBUGING = -g # Comment this line for non-debugging code$/;"	m
+DoCleanUp	internal/child.cc	/^void SingleMasterChild::DoCleanUp() {$/;"	f	class:ldd::skel::SingleMasterChild
+DoCleanUp	internal/child.cc	/^void WorkerChild::DoCleanUp() {$/;"	f	class:ldd::skel::WorkerChild
+DoCleanUp	internal/child.h	/^    virtual void DoCleanUp() {}$/;"	f	class:ldd::skel::Child	access:protected
+DoCleanUp	internal/child.h	/^    virtual void DoCleanUp();$/;"	p	class:ldd::skel::SingleMasterChild	access:public
+DoCleanUp	internal/child.h	/^    virtual void DoCleanUp();$/;"	p	class:ldd::skel::WorkerChild	access:private
+DoInit	internal/child.cc	/^bool SimpleChild::DoInit() {$/;"	f	class:ldd::skel::SimpleChild
+DoInit	internal/child.cc	/^bool SingleMasterChild::DoInit() {$/;"	f	class:ldd::skel::SingleMasterChild
+DoInit	internal/child.cc	/^bool WorkerChild::DoInit() {$/;"	f	class:ldd::skel::WorkerChild
+DoInit	internal/child.h	/^    virtual bool DoInit() = 0;$/;"	p	class:ldd::skel::Child	access:protected
+DoInit	internal/child.h	/^    virtual bool DoInit();$/;"	p	class:ldd::skel::SimpleChild	access:private
+DoInit	internal/child.h	/^    virtual bool DoInit();$/;"	p	class:ldd::skel::SingleMasterChild	access:public
+DoInit	internal/child.h	/^    virtual bool DoInit();$/;"	p	class:ldd::skel::WorkerChild	access:private
+DoReload	internal/monitor.cc	/^void Monitor::DoReload() {$/;"	f	class:ldd::skel::Monitor
+DoReload	internal/monitor.h	/^    void DoReload();$/;"	p	class:ldd::skel::Monitor	access:private
+DoRun	internal/child.cc	/^void SimpleChild::DoRun() {$/;"	f	class:ldd::skel::SimpleChild
+DoRun	internal/child.cc	/^void SingleMasterChild::DoRun() {$/;"	f	class:ldd::skel::SingleMasterChild
+DoRun	internal/child.cc	/^void WorkerChild::DoRun() {$/;"	f	class:ldd::skel::WorkerChild
+DoRun	internal/child.h	/^    virtual void DoRun() = 0;$/;"	p	class:ldd::skel::Child	access:protected
+DoRun	internal/child.h	/^    virtual void DoRun();$/;"	p	class:ldd::skel::SimpleChild	access:private
+DoRun	internal/child.h	/^    virtual void DoRun();$/;"	p	class:ldd::skel::SingleMasterChild	access:public
+DoRun	internal/child.h	/^    virtual void DoRun();$/;"	p	class:ldd::skel::WorkerChild	access:private
+Done	examples/client/main.cc	/^    virtual void Done(const Result& result) {$/;"	f	class:MyMsg	file:	access:private
+Done	examples/example1/src/example1.cc	/^    virtual void Done(Code* code) {$/;"	f	class:MyEchoMsg	file:	access:private
+Done	examples/example2/src/example2.cc	/^    virtual void Done(Code* code) {$/;"	f	class:MyEchoMsg	file:	access:private
+Done	examples/template/src/template.cc	/^    virtual void Done(Code* code) {$/;"	f	class:MyEchoMsg	file:	access:private
+DriveZk	examples/example1/src/example1.cc	/^    void DriveZk() {$/;"	f	class:ExampleModule	file:	access:private
+DropChild	internal/monitor.cc	/^void Monitor::DropChild(pid_t pid, int port) {$/;"	f	class:ldd::skel::Monitor
+DropChild	internal/monitor.h	/^    void DropChild(pid_t pid, int port = 0);$/;"	p	class:ldd::skel::Monitor	access:private
+Emit	examples/example1/src/example1.cc	/^    virtual void Emit(Payload* response, Action* next) {$/;"	f	class:MyEchoMsg	file:	access:private
+Emit	examples/example2/src/example2.cc	/^    virtual void Emit(Payload* response, Action* next) {$/;"	f	class:MyEchoMsg	file:	access:private
+Emit	examples/template/src/template.cc	/^    virtual void Emit(Payload* response, Action* next) {$/;"	f	class:MyEchoMsg	file:	access:private
+ExampleModule	examples/example1/src/example1.cc	/^    ExampleModule()$/;"	f	class:ExampleModule	access:public
+ExampleModule	examples/example1/src/example1.cc	/^LDD_SKEL_SINGLE_MASTER_MODULE(ExampleModule);$/;"	v
+ExampleModule	examples/example1/src/example1.cc	/^class ExampleModule : public ldd::skel::SingleMasterModule {$/;"	c	file:	inherits:ldd::skel::SingleMasterModule
+ExampleModule	examples/example2/src/example2.cc	/^    ExampleModule()$/;"	f	class:ExampleModule	access:public
+ExampleModule	examples/example2/src/example2.cc	/^LDD_SKEL_SIMPLE_MODULE(ExampleModule);$/;"	v
+ExampleModule	examples/example2/src/example2.cc	/^class ExampleModule : public ldd::skel::SimpleModule {$/;"	c	file:	inherits:ldd::skel::SimpleModule
+ExampleModule::DriveZk	examples/example1/src/example1.cc	/^    void DriveZk() {$/;"	f	class:ExampleModule	file:	access:private
+ExampleModule::ExampleModule	examples/example1/src/example1.cc	/^    ExampleModule()$/;"	f	class:ExampleModule	access:public
+ExampleModule::ExampleModule	examples/example2/src/example2.cc	/^    ExampleModule()$/;"	f	class:ExampleModule	access:public
+ExampleModule::HandleZk	examples/example1/src/example1.cc	/^    void HandleZk(int events) {$/;"	f	class:ExampleModule	file:	access:private
+ExampleModule::InitModule	examples/example1/src/example1.cc	/^    virtual bool InitModule(ModuleCtx* ctx) {$/;"	f	class:ExampleModule	access:public
+ExampleModule::InitModule	examples/example2/src/example2.cc	/^    virtual bool InitModule(ModuleCtx* ctx) {$/;"	f	class:ExampleModule	access:public
+ExampleModule::InitWorker	examples/example1/src/example1.cc	/^    virtual bool InitWorker(WorkerCtx* ctx) {$/;"	f	class:ExampleModule	access:public
+ExampleModule::OnClosed	examples/example1/src/example1.cc	/^    void OnClosed(const boost::shared_ptr<ldd::net::Channel>& c) {$/;"	f	class:ExampleModule	file:	access:private
+ExampleModule::OnClosed	examples/example2/src/example2.cc	/^    void OnClosed(const boost::shared_ptr<ldd::net::Channel>& c) {$/;"	f	class:ExampleModule	file:	access:private
+ExampleModule::OnConnected	examples/example1/src/example1.cc	/^    void OnConnected(const boost::shared_ptr<ldd::net::Channel>& c) {$/;"	f	class:ExampleModule	file:	access:private
+ExampleModule::OnConnected	examples/example2/src/example2.cc	/^    void OnConnected(const boost::shared_ptr<ldd::net::Channel>& c) {$/;"	f	class:ExampleModule	file:	access:private
+ExampleModule::ReInitZk	examples/example1/src/example1.cc	/^    void ReInitZk() {$/;"	f	class:ExampleModule	file:	access:private
+ExampleModule::WatchZk	examples/example1/src/example1.cc	/^    void WatchZk(zhandle_t* zh, int type, int state, const char* path) {$/;"	f	class:ExampleModule	file:	access:private
+ExampleModule::Watcher	examples/example1/src/example1.cc	/^    static void Watcher(zhandle_t* zh, int type, int state, const char* path, void* watcherCtx) {$/;"	f	class:ExampleModule	file:	access:private
+ExampleModule::count_	examples/example1/src/example1.cc	/^    size_t count_;$/;"	m	class:ExampleModule	file:	access:private
+ExampleModule::count_	examples/example2/src/example2.cc	/^    size_t count_;$/;"	m	class:ExampleModule	file:	access:private
+ExampleModule::in_worker_	examples/example1/src/example1.cc	/^    bool in_worker_;$/;"	m	class:ExampleModule	file:	access:private
+ExampleModule::loop_	examples/example1/src/example1.cc	/^    ldd::net::EventLoop* loop_;$/;"	m	class:ExampleModule	file:	access:private
+ExampleModule::loop_	examples/example2/src/example2.cc	/^    ldd::net::EventLoop* loop_;$/;"	m	class:ExampleModule	file:	access:private
+ExampleModule::server_	examples/example1/src/example1.cc	/^    ldd::net::Server* server_;$/;"	m	class:ExampleModule	file:	access:private
+ExampleModule::server_	examples/example2/src/example2.cc	/^    ldd::net::Server* server_;$/;"	m	class:ExampleModule	file:	access:private
+ExampleModule::zh_	examples/example1/src/example1.cc	/^    zhandle_t* zh_;$/;"	m	class:ExampleModule	file:	access:private
+ExampleModule::zkev_	examples/example1/src/example1.cc	/^    ldd::net::FdEvent* zkev_;$/;"	m	class:ExampleModule	file:	access:private
+ExampleModule::zkhost_	examples/example1/src/example1.cc	/^    string zkhost_;$/;"	m	class:ExampleModule	file:	access:private
+ExampleModule::~ExampleModule	examples/example1/src/example1.cc	/^    ~ExampleModule() {$/;"	f	class:ExampleModule	access:public
+ExampleModule::~ExampleModule	examples/example2/src/example2.cc	/^    ~ExampleModule() {$/;"	f	class:ExampleModule	access:public
+Flush	internal/log_flusher.cc	/^void LogFlusher::Flush() {$/;"	f	class:ldd::skel::LogFlusher
+Flush	internal/log_flusher.h	/^    void Flush();$/;"	p	class:ldd::skel::LogFlusher	access:private
+GetAllAddr	internal/config.cc	/^static void GetAllAddr(std::vector<net::Address>* addrs) {$/;"	f	namespace:ldd::skel
+GetLanAddr	internal/config.cc	/^static bool GetLanAddr(net::Address* addr) {$/;"	f	namespace:ldd::skel
+GetWanAddr	internal/config.cc	/^static bool GetWanAddr(net::Address* addr) {$/;"	f	namespace:ldd::skel
+HandleChild	internal/child.cc	/^void Child::HandleChild() {$/;"	f	class:ldd::skel::Child
+HandleChild	internal/child.cc	/^void SingleMasterChild::HandleChild() {$/;"	f	class:ldd::skel::SingleMasterChild
+HandleChild	internal/child.cc	/^void WorkerChild::HandleChild() {$/;"	f	class:ldd::skel::WorkerChild
+HandleChild	internal/child.h	/^    virtual void HandleChild();$/;"	p	class:ldd::skel::Child	access:protected
+HandleChild	internal/child.h	/^    virtual void HandleChild();$/;"	p	class:ldd::skel::SingleMasterChild	access:public
+HandleChild	internal/child.h	/^    virtual void HandleChild();$/;"	p	class:ldd::skel::WorkerChild	access:private
+HandleChild	internal/monitor.cc	/^void Monitor::HandleChild() {$/;"	f	class:ldd::skel::Monitor
+HandleChild	internal/monitor.h	/^    void HandleChild();$/;"	p	class:ldd::skel::Monitor	access:private
+HandleChildren	internal/monitor.cc	/^void Monitor::HandleChildren() {$/;"	f	class:ldd::skel::Monitor
+HandleChildren	internal/monitor.h	/^    void HandleChildren();$/;"	p	class:ldd::skel::Monitor	access:private
+HandleReload	internal/monitor.cc	/^void Monitor::HandleReload() {$/;"	f	class:ldd::skel::Monitor
+HandleReload	internal/monitor.h	/^    void HandleReload();$/;"	p	class:ldd::skel::Monitor	access:private
+HandleSignal	internal/child.cc	/^void Child::HandleSignal(int sig) {$/;"	f	class:ldd::skel::Child
+HandleSignal	internal/child.h	/^    void HandleSignal(int sig);$/;"	p	class:ldd::skel::Child	access:private
+HandleSignal	internal/monitor.cc	/^void Monitor::HandleSignal(int sig) {$/;"	f	class:ldd::skel::Monitor
+HandleSignal	internal/monitor.h	/^    void HandleSignal(int sig);$/;"	p	class:ldd::skel::Monitor	access:private
+HandleStop	internal/child.cc	/^void Child::HandleStop() {$/;"	f	class:ldd::skel::Child
+HandleStop	internal/child.h	/^    void HandleStop();$/;"	p	class:ldd::skel::Child	access:private
+HandleStop	internal/monitor.cc	/^void Monitor::HandleStop() {$/;"	f	class:ldd::skel::Monitor
+HandleStop	internal/monitor.h	/^    void HandleStop();$/;"	p	class:ldd::skel::Monitor	access:private
+HandleZk	examples/example1/src/example1.cc	/^    void HandleZk(int events) {$/;"	f	class:ExampleModule	file:	access:private
+Init	examples/client/main.cc	/^    virtual bool Init(Payload* request,$/;"	f	class:MyMsg	file:	access:private
+Init	examples/example1/src/example1.cc	/^    virtual void Init(const Payload& request, Action* next) {$/;"	f	class:MyEchoMsg	file:	access:private
+Init	examples/example2/src/example2.cc	/^    virtual void Init(const Payload& request, Action* next) {$/;"	f	class:MyEchoMsg	file:	access:private
+Init	examples/template/src/template.cc	/^    virtual void Init(const Payload& request, Action* next) {$/;"	f	class:MyEchoMsg	file:	access:private
+Init	internal/child.cc	/^bool Child::Init() {$/;"	f	class:ldd::skel::Child
+Init	internal/child.h	/^    bool Init();$/;"	p	class:ldd::skel::Child	access:public
+Init	internal/config.cc	/^bool Config::Init(std::string* what) {$/;"	f	class:ldd::skel::Config
+Init	internal/config.h	/^    bool Init(std::string* what);$/;"	p	class:ldd::skel::Config	access:public
+Init	internal/monitor.cc	/^bool Monitor::Init(int argc, char** argv) {$/;"	f	class:ldd::skel::Monitor
+Init	internal/monitor.h	/^    bool Init(int argc, char** argv);$/;"	p	class:ldd::skel::Monitor	access:public
+Init	internal/option.cc	/^bool Option::Init(int argc, char** argv) {$/;"	f	class:ldd::skel::Option
+Init	internal/option.h	/^    bool Init(int argc, char** argv);$/;"	p	class:ldd::skel::Option	access:public
+Init	internal/proctitle.cc	/^bool ProcTitle::Init(int argc, char** argv) { return true; }$/;"	f	class:ldd::skel::ProcTitle
+Init	internal/proctitle.h	/^    static bool Init(int argc, char** argv);$/;"	p	class:ldd::skel::ProcTitle	access:public
+Init	internal/skel.cc	/^bool Skel::Init(int argc, char** argv) {$/;"	f	class:ldd::skel::Skel
+Init	internal/skel.h	/^    bool Init(int argc, char** argv);$/;"	p	class:ldd::skel::Skel	access:public
+InitModule	examples/example1/src/example1.cc	/^    virtual bool InitModule(ModuleCtx* ctx) {$/;"	f	class:ExampleModule	access:public
+InitModule	examples/example2/src/example2.cc	/^    virtual bool InitModule(ModuleCtx* ctx) {$/;"	f	class:ExampleModule	access:public
+InitModule	examples/template/src/template.cc	/^    virtual bool InitModule(ModuleCtx* ctx) {$/;"	f	class:TemplateModule	access:public
+InitModule	module.h	/^    virtual bool InitModule(ModuleCtx* ctx) = 0;$/;"	p	class:ldd::skel::SimpleModule	access:public
+InitModule	module.h	/^    virtual bool InitModule(ModuleCtx* ctx) = 0;$/;"	p	class:ldd::skel::SingleMasterModule	access:public
+InitModule	module.h	/^    virtual bool InitModule(ModuleCtx* ctx) = 0;$/;"	p	class:ldd::skel::WorkerModule	access:public
+InitWorker	examples/example1/src/example1.cc	/^    virtual bool InitWorker(WorkerCtx* ctx) {$/;"	f	class:ExampleModule	access:public
+InitWorker	examples/template/src/template.cc	/^    virtual bool InitWorker(WorkerCtx* ctx) {$/;"	f	class:TemplateModule	access:public
+InitWorker	module.h	/^    virtual bool InitWorker(WorkerCtx* ctx) = 0;$/;"	p	class:ldd::skel::SingleMasterModule	access:public
+InitWorker	module.h	/^    virtual bool InitWorker(WorkerCtx* ctx) = 0;$/;"	p	class:ldd::skel::WorkerModule	access:public
+IsDropped	internal/monitor.cc	/^bool Monitor::IsDropped(pid_t pid, int* port) {$/;"	f	class:ldd::skel::Monitor
+IsDropped	internal/monitor.h	/^    bool IsDropped(pid_t pid, int* port = NULL);$/;"	p	class:ldd::skel::Monitor	access:private
+IsPrivateAddr	internal/config.cc	/^static bool IsPrivateAddr(const net::Address& addr) {$/;"	f	namespace:ldd::skel
+IsReservedAddr	internal/config.cc	/^static bool IsReservedAddr(const net::Address& addr) {$/;"	f	namespace:ldd::skel
+KillDaemon	internal/skel.cc	/^void Skel::KillDaemon() {$/;"	f	class:ldd::skel::Skel
+KillDaemon	internal/skel.h	/^    void KillDaemon();$/;"	p	class:ldd::skel::Skel	access:private
+LDDDIR	examples/client/Makefile	/^LDDDIR=$(shell pwd)\/..\/..\/..\/..\/..\/ldd$/;"	m
+LDDDIR	examples/example1/src/Makefile	/^LDDDIR=$(shell pwd)\/..\/..\/..\/..\/..\/ldd$/;"	m
+LDDDIR	examples/example2/src/Makefile	/^LDDDIR=$(shell pwd)\/..\/..\/..\/..\/..\/ldd$/;"	m
+LDD_SKEL_CHILD_H_	internal/child.h	5;"	d
+LDD_SKEL_CONFIG_H_	internal/config.h	5;"	d
+LDD_SKEL_CONTEXT_H_	internal/context.h	5;"	d
+LDD_SKEL_INTERNAL_LOG_FLUSHER_H_	internal/log_flusher.h	5;"	d
+LDD_SKEL_MODULE_H_	module.h	5;"	d
+LDD_SKEL_MONITOR_H_	internal/monitor.h	5;"	d
+LDD_SKEL_OPTION_H_	internal/option.h	5;"	d
+LDD_SKEL_PROCTITLE_H_	internal/proctitle.h	5;"	d
+LDD_SKEL_SIMPLE_MODULE	module.h	89;"	d
+LDD_SKEL_SINGLE_MASTER_MODULE	module.h	95;"	d
+LDD_SKEL_SKEL_H_	internal/skel.h	5;"	d
+LDD_SKEL_WORKER_MODULE	module.h	92;"	d
+ListenerMap	internal/child.h	/^typedef boost::ptr_map<int, net::Listener> ListenerMap;$/;"	t	namespace:ldd::skel
+ListenerMap	internal/monitor.h	/^typedef boost::ptr_map<int, net::Listener> ListenerMap;$/;"	t	namespace:ldd::skel
+Loader	internal/child.cc	/^typedef Module* (*Loader)();$/;"	t	namespace:ldd::skel	file:
+LogFlusher	internal/log_flusher.cc	/^LogFlusher::LogFlusher(net::EventLoop* event_loop, int seconds, bool start)$/;"	f	class:ldd::skel::LogFlusher
+LogFlusher	internal/log_flusher.h	/^    LogFlusher(net::EventLoop* event_loop, int seconds, bool start = true);$/;"	p	class:ldd::skel::LogFlusher	access:public
+LogFlusher	internal/log_flusher.h	/^class LogFlusher {$/;"	c	namespace:ldd::skel
+Loop	internal/monitor.cc	/^void Monitor::Loop() {$/;"	f	class:ldd::skel::Monitor
+Loop	internal/monitor.h	/^    void Loop();$/;"	p	class:ldd::skel::Monitor	access:private
+MakeConfigs	internal/option.cc	/^void Option::MakeConfigs(po::options_description* options) {$/;"	f	class:ldd::skel::Option
+MakeConfigs	internal/option.h	/^    void MakeConfigs($/;"	p	class:ldd::skel::Option	access:public
+Module	module.h	/^class Module {$/;"	c	namespace:ldd::skel
+ModuleCtx	module.h	/^    struct ModuleCtx : virtual public Module::ModuleCtx {$/;"	s	class:ldd::skel::SimpleModule	inherits:Module::ModuleCtx	access:public
+ModuleCtx	module.h	/^    struct ModuleCtx : virtual public Module::ModuleCtx {$/;"	s	class:ldd::skel::SingleMasterModule	inherits:Module::ModuleCtx	access:public
+ModuleCtx	module.h	/^    struct ModuleCtx : virtual public Module::ModuleCtx {$/;"	s	class:ldd::skel::WorkerModule	inherits:Module::ModuleCtx	access:public
+ModuleCtx	module.h	/^    struct ModuleCtx {$/;"	s	class:ldd::skel::Module	access:public
+Monitor	internal/monitor.cc	/^Monitor::Monitor()$/;"	f	class:ldd::skel::Monitor
+Monitor	internal/monitor.h	/^    Monitor();$/;"	p	class:ldd::skel::Monitor	access:public
+Monitor	internal/monitor.h	/^class Monitor {$/;"	c	namespace:ldd::skel
+MyEchoMsg	examples/example1/src/example1.cc	/^    MyEchoMsg(size_t count)$/;"	f	class:MyEchoMsg	access:public
+MyEchoMsg	examples/example1/src/example1.cc	/^class MyEchoMsg : public ldd::net::TypedIncomingMsg<kMyEchoType> {$/;"	c	file:	inherits:ldd::net::TypedIncomingMsg
+MyEchoMsg	examples/example2/src/example2.cc	/^    MyEchoMsg(size_t count)$/;"	f	class:MyEchoMsg	access:public
+MyEchoMsg	examples/example2/src/example2.cc	/^class MyEchoMsg : public ldd::net::TypedIncomingMsg<kMyEchoType> {$/;"	c	file:	inherits:ldd::net::TypedIncomingMsg
+MyEchoMsg	examples/template/src/template.cc	/^    MyEchoMsg()$/;"	f	class:MyEchoMsg	access:public
+MyEchoMsg	examples/template/src/template.cc	/^class MyEchoMsg : public ldd::net::TypedIncomingMsg<kMyEchoType> {$/;"	c	file:	inherits:ldd::net::TypedIncomingMsg
+MyEchoMsg::Cancel	examples/example1/src/example1.cc	/^    virtual void Cancel() {$/;"	f	class:MyEchoMsg	file:	access:private
+MyEchoMsg::Cancel	examples/example2/src/example2.cc	/^    virtual void Cancel() {$/;"	f	class:MyEchoMsg	file:	access:private
+MyEchoMsg::Cancel	examples/template/src/template.cc	/^    virtual void Cancel() {$/;"	f	class:MyEchoMsg	file:	access:private
+MyEchoMsg::Done	examples/example1/src/example1.cc	/^    virtual void Done(Code* code) {$/;"	f	class:MyEchoMsg	file:	access:private
+MyEchoMsg::Done	examples/example2/src/example2.cc	/^    virtual void Done(Code* code) {$/;"	f	class:MyEchoMsg	file:	access:private
+MyEchoMsg::Done	examples/template/src/template.cc	/^    virtual void Done(Code* code) {$/;"	f	class:MyEchoMsg	file:	access:private
+MyEchoMsg::Emit	examples/example1/src/example1.cc	/^    virtual void Emit(Payload* response, Action* next) {$/;"	f	class:MyEchoMsg	file:	access:private
+MyEchoMsg::Emit	examples/example2/src/example2.cc	/^    virtual void Emit(Payload* response, Action* next) {$/;"	f	class:MyEchoMsg	file:	access:private
+MyEchoMsg::Emit	examples/template/src/template.cc	/^    virtual void Emit(Payload* response, Action* next) {$/;"	f	class:MyEchoMsg	file:	access:private
+MyEchoMsg::Init	examples/example1/src/example1.cc	/^    virtual void Init(const Payload& request, Action* next) {$/;"	f	class:MyEchoMsg	file:	access:private
+MyEchoMsg::Init	examples/example2/src/example2.cc	/^    virtual void Init(const Payload& request, Action* next) {$/;"	f	class:MyEchoMsg	file:	access:private
+MyEchoMsg::Init	examples/template/src/template.cc	/^    virtual void Init(const Payload& request, Action* next) {$/;"	f	class:MyEchoMsg	file:	access:private
+MyEchoMsg::MyEchoMsg	examples/example1/src/example1.cc	/^    MyEchoMsg(size_t count)$/;"	f	class:MyEchoMsg	access:public
+MyEchoMsg::MyEchoMsg	examples/example2/src/example2.cc	/^    MyEchoMsg(size_t count)$/;"	f	class:MyEchoMsg	access:public
+MyEchoMsg::MyEchoMsg	examples/template/src/template.cc	/^    MyEchoMsg()$/;"	f	class:MyEchoMsg	access:public
+MyEchoMsg::count_	examples/example1/src/example1.cc	/^    size_t count_;$/;"	m	class:MyEchoMsg	file:	access:private
+MyEchoMsg::count_	examples/example2/src/example2.cc	/^    size_t count_;$/;"	m	class:MyEchoMsg	file:	access:private
+MyEchoMsg::n_	examples/example1/src/example1.cc	/^    size_t n_;$/;"	m	class:MyEchoMsg	file:	access:private
+MyEchoMsg::n_	examples/example2/src/example2.cc	/^    size_t n_;$/;"	m	class:MyEchoMsg	file:	access:private
+MyEchoMsg::payload_	examples/example1/src/example1.cc	/^    Payload payload_;$/;"	m	class:MyEchoMsg	file:	access:private
+MyEchoMsg::payload_	examples/example2/src/example2.cc	/^    Payload payload_;$/;"	m	class:MyEchoMsg	file:	access:private
+MyEchoMsg::payload_	examples/template/src/template.cc	/^    Payload payload_;$/;"	m	class:MyEchoMsg	file:	access:private
+MyMsg	examples/client/main.cc	/^    MyMsg(const std::string& s)$/;"	f	class:MyMsg	access:public
+MyMsg	examples/client/main.cc	/^class MyMsg : public ldd::net::TypedOutgoingMsg<2100> {$/;"	c	file:	inherits:ldd::net::TypedOutgoingMsg
+MyMsg::Done	examples/client/main.cc	/^    virtual void Done(const Result& result) {$/;"	f	class:MyMsg	file:	access:private
+MyMsg::Init	examples/client/main.cc	/^    virtual bool Init(Payload* request,$/;"	f	class:MyMsg	file:	access:private
+MyMsg::MyMsg	examples/client/main.cc	/^    MyMsg(const std::string& s)$/;"	f	class:MyMsg	access:public
+MyMsg::Recv	examples/client/main.cc	/^    virtual bool Recv(const Payload& response,$/;"	f	class:MyMsg	file:	access:private
+MyMsg::s_	examples/client/main.cc	/^    std::string s_;$/;"	m	class:MyMsg	file:	access:private
+OPTIMIZE	Makefile	/^OPTIMIZE = -O0 # Comment this line for optimized(-O3) code$/;"	m
+OPTIMIZE	examples/client/Makefile	/^OPTIMIZE = -O0 # Comment this line for optimized(-O3) code$/;"	m
+OPTIMIZE	examples/example1/src/Makefile	/^OPTIMIZE = -O0 # Comment this line for optimized(-O3) code$/;"	m
+OPTIMIZE	examples/example2/src/Makefile	/^OPTIMIZE = -O0 # Comment this line for optimized(-O3) code$/;"	m
+OPTIMIZE	examples/template/src/Makefile	/^OPTIMIZE = -O0 # Comment this line for optimized(-O3) code$/;"	m
+OnClosed	examples/client/main.cc	/^void OnClosed(const boost::shared_ptr<ldd::net::Channel>& c) {$/;"	f
+OnClosed	examples/example1/src/example1.cc	/^    void OnClosed(const boost::shared_ptr<ldd::net::Channel>& c) {$/;"	f	class:ExampleModule	file:	access:private
+OnClosed	examples/example2/src/example2.cc	/^    void OnClosed(const boost::shared_ptr<ldd::net::Channel>& c) {$/;"	f	class:ExampleModule	file:	access:private
+OnClosed	examples/template/src/template.cc	/^    void OnClosed(const boost::shared_ptr<ldd::net::Channel>& c) {$/;"	f	class:TemplateModule	file:	access:private
+OnConnected	examples/client/main.cc	/^void OnConnected(const boost::shared_ptr<ldd::net::Channel>& c) {$/;"	f
+OnConnected	examples/example1/src/example1.cc	/^    void OnConnected(const boost::shared_ptr<ldd::net::Channel>& c) {$/;"	f	class:ExampleModule	file:	access:private
+OnConnected	examples/example2/src/example2.cc	/^    void OnConnected(const boost::shared_ptr<ldd::net::Channel>& c) {$/;"	f	class:ExampleModule	file:	access:private
+OnConnected	examples/template/src/template.cc	/^    void OnConnected(const boost::shared_ptr<ldd::net::Channel>& c) {$/;"	f	class:TemplateModule	file:	access:private
+OnDropChildTimeout	internal/monitor.cc	/^void Monitor::OnDropChildTimeout(pid_t pid) {$/;"	f	class:ldd::skel::Monitor
+OnDropChildTimeout	internal/monitor.h	/^    void OnDropChildTimeout(pid_t pid);$/;"	p	class:ldd::skel::Monitor	access:private
+OnSingleMasterInit	internal/monitor.cc	/^void Monitor::OnSingleMasterInit(int ev, int fd) {$/;"	f	class:ldd::skel::Monitor
+OnSingleMasterInit	internal/monitor.h	/^    void OnSingleMasterInit(int ev, int fd);$/;"	p	class:ldd::skel::Monitor	access:private
+OpenModule	internal/child.cc	/^bool Child::OpenModule() {$/;"	f	class:ldd::skel::Child
+OpenModule	internal/child.h	/^    bool OpenModule();$/;"	p	class:ldd::skel::Child	access:private
+Option	internal/option.cc	/^Option::Option()$/;"	f	class:ldd::skel::Option
+Option	internal/option.h	/^    Option();$/;"	p	class:ldd::skel::Option	access:public
+Option	internal/option.h	/^class Option : boost::noncopyable {$/;"	c	namespace:ldd::skel	inherits:boost::noncopyable
+ParseAddr	internal/config.cc	/^bool ParseAddr(const std::string& v, net::Address* addr, bool* valid) {$/;"	f	namespace:ldd::skel
+ParseAddr	internal/config.cc	/^static bool ParseAddr(const std::string& config, net::Address* addr,$/;"	p	namespace:ldd::skel	file:
+ParsePortField	internal/config.cc	/^bool ParsePortField(const std::string& field,$/;"	f	namespace:ldd::skel
+ParsePortField	internal/config.cc	/^static bool ParsePortField(const string& field, set<int>* ports);$/;"	p	namespace:ldd::skel	file:
+ParsePortList	internal/config.cc	/^bool ParsePortList(const std::string& list,$/;"	f	namespace:ldd::skel
+ParsePortList	internal/config.cc	/^static bool ParsePortList(const string& list, set<int>* ports, string* what);$/;"	p	namespace:ldd::skel	file:
+ParsePortValue	internal/config.cc	/^int ParsePortValue(const std::string& value) {$/;"	f	namespace:ldd::skel
+ParsePortValue	internal/config.cc	/^static int ParsePortValue(const string& value);$/;"	p	namespace:ldd::skel	file:
+ParseReloadPolicy	internal/config.cc	/^bool ParseReloadPolicy(const std::string& v, Reload::Policy* policy) {$/;"	f	namespace:ldd::skel
+ParseReloadPolicy	internal/config.cc	/^static bool ParseReloadPolicy(const std::string& config,$/;"	p	namespace:ldd::skel	file:
+ParseType	internal/config.cc	/^bool ParseType(const std::string& v, Module::Type* type) {$/;"	f	namespace:ldd::skel
+ParseType	internal/config.cc	/^static bool ParseType(const std::string& config, Module::Type* type);$/;"	p	namespace:ldd::skel	file:
+PidFileName	internal/skel.cc	/^static const char* PidFileName() {$/;"	f	namespace:ldd::skel
+Policy	internal/config.h	/^    enum Policy {$/;"	g	struct:ldd::skel::Reload	access:public
+ProcTitle	internal/proctitle.h	/^class ProcTitle {$/;"	c	namespace:ldd::skel
+ReInitZk	examples/example1/src/example1.cc	/^    void ReInitZk() {$/;"	f	class:ExampleModule	file:	access:private
+RebootWorker	internal/child.cc	/^void SingleMasterChild::RebootWorker(int port) {$/;"	f	class:ldd::skel::SingleMasterChild
+RebootWorker	internal/child.cc	/^void WorkerChild::RebootWorker() {$/;"	f	class:ldd::skel::WorkerChild
+RebootWorker	internal/child.h	/^    void RebootWorker();$/;"	p	class:ldd::skel::WorkerChild	access:private
+RebootWorker	internal/child.h	/^    void RebootWorker(int port);$/;"	p	class:ldd::skel::SingleMasterChild	access:private
+Recv	examples/client/main.cc	/^    virtual bool Recv(const Payload& response,$/;"	f	class:MyMsg	file:	access:private
+Reload	internal/config.h	/^struct Reload {$/;"	s	namespace:ldd::skel
+ReloadDaemon	internal/skel.cc	/^void Skel::ReloadDaemon() {$/;"	f	class:ldd::skel::Skel
+ReloadDaemon	internal/skel.h	/^    void ReloadDaemon();$/;"	p	class:ldd::skel::Skel	access:private
+ReloadMultiChild	internal/monitor.cc	/^void Monitor::ReloadMultiChild() {$/;"	f	class:ldd::skel::Monitor
+ReloadMultiChild	internal/monitor.h	/^    void ReloadMultiChild();$/;"	p	class:ldd::skel::Monitor	access:private
+ReloadSingleChild	internal/monitor.cc	/^void Monitor::ReloadSingleChild() {$/;"	f	class:ldd::skel::Monitor
+ReloadSingleChild	internal/monitor.h	/^    void ReloadSingleChild();$/;"	p	class:ldd::skel::Monitor	access:private
+Run	internal/child.cc	/^void Child::Run() {$/;"	f	class:ldd::skel::Child
+Run	internal/child.h	/^    void Run();$/;"	p	class:ldd::skel::Child	access:public
+Run	internal/monitor.cc	/^void Monitor::Run() {$/;"	f	class:ldd::skel::Monitor
+Run	internal/monitor.h	/^    void Run();$/;"	p	class:ldd::skel::Monitor	access:public
+Run	internal/skel.cc	/^void Skel::Run() {$/;"	f	class:ldd::skel::Skel
+Run	internal/skel.h	/^    void Run();$/;"	p	class:ldd::skel::Skel	access:public
+RunAsDaemon	internal/skel.cc	/^void Skel::RunAsDaemon() {$/;"	f	class:ldd::skel::Skel
+RunAsDaemon	internal/skel.h	/^    void RunAsDaemon();$/;"	p	class:ldd::skel::Skel	access:private
+RunForeground	internal/skel.cc	/^void Skel::RunForeground() {$/;"	f	class:ldd::skel::Skel
+RunForeground	internal/skel.h	/^    void RunForeground();$/;"	p	class:ldd::skel::Skel	access:private
+RunMaster	internal/monitor.cc	/^void Monitor::RunMaster() {$/;"	f	class:ldd::skel::Monitor
+RunMaster	internal/monitor.cc	/^void Monitor::RunMaster(int port) {$/;"	f	class:ldd::skel::Monitor
+RunMaster	internal/monitor.h	/^    void RunMaster();$/;"	p	class:ldd::skel::Monitor	access:private
+RunMaster	internal/monitor.h	/^    void RunMaster(int port);$/;"	p	class:ldd::skel::Monitor	access:private
+RunMasters	internal/monitor.cc	/^void Monitor::RunMasters() {$/;"	f	class:ldd::skel::Monitor
+RunMasters	internal/monitor.h	/^    void RunMasters();$/;"	p	class:ldd::skel::Monitor	access:private
+RunMonitor	internal/skel.cc	/^void Skel::RunMonitor() {$/;"	f	class:ldd::skel::Skel
+RunMonitor	internal/skel.h	/^    void RunMonitor();$/;"	p	class:ldd::skel::Skel	access:private
+RunWorker	internal/child.cc	/^void SingleMasterChild::RunWorker(int port) {$/;"	f	class:ldd::skel::SingleMasterChild
+RunWorker	internal/child.cc	/^void WorkerChild::RunWorker() {$/;"	f	class:ldd::skel::WorkerChild
+RunWorker	internal/child.h	/^    void RunWorker();$/;"	p	class:ldd::skel::WorkerChild	access:private
+RunWorker	internal/child.h	/^    void RunWorker(int port);$/;"	p	class:ldd::skel::SingleMasterChild	access:private
+RunWorkers	internal/child.cc	/^void SingleMasterChild::RunWorkers() {$/;"	f	class:ldd::skel::SingleMasterChild
+RunWorkers	internal/child.h	/^    void RunWorkers();$/;"	p	class:ldd::skel::SingleMasterChild	access:private
+SRCTAR	examples/client/Makefile	/^SRCTAR = yes # Comment this line if no src tarball is needed$/;"	m
+SRCTAR	examples/example1/src/Makefile	/^SRCTAR = yes # Comment this line if no src tarball is needed$/;"	m
+SRCTOP	examples/client/Makefile	/^SRCTOP = $/;"	m
+SRCTOP	examples/example1/src/Makefile	/^SRCTOP = $/;"	m
+SUBDIRS	Makefile	/^SUBDIRS = $/;"	m
+SUBDIRS	examples/Makefile	/^SUBDIRS = client example1 example2 template$/;"	m
+SUBDIRS	examples/client/Makefile	/^SUBDIRS = $/;"	m
+SUBDIRS	examples/example1/src/Makefile	/^SUBDIRS = $/;"	m
+SUBDIRS	examples/example2/src/Makefile	/^SUBDIRS = $/;"	m
+SUBDIRS	examples/template/Makefile	/^SUBDIRS = src pkg$/;"	m
+SUBDIRS	examples/template/src/Makefile	/^SUBDIRS = $/;"	m
+Set	internal/proctitle.cc	/^void ProcTitle::Set(const std::string& title) {$/;"	f	class:ldd::skel::ProcTitle
+Set	internal/proctitle.h	/^    static void Set(const std::string& title);$/;"	p	class:ldd::skel::ProcTitle	access:public
+SimpleChild	internal/child.cc	/^SimpleChild::SimpleChild(Config* config, int port,$/;"	f	class:ldd::skel::SimpleChild
+SimpleChild	internal/child.h	/^    SimpleChild(Config* config, int port, ldd::net::Listener* listener);$/;"	p	class:ldd::skel::SimpleChild	access:public
+SimpleChild	internal/child.h	/^class SimpleChild : public SinglePortChild {$/;"	c	namespace:ldd::skel	inherits:SinglePortChild
+SimpleModule	module.h	/^class SimpleModule : public Module {$/;"	c	namespace:ldd::skel	inherits:Module
+SimpleModuleCtx	internal/context.h	/^    SimpleModuleCtx(Config* config, ldd::net::Listener* listener, int port)$/;"	f	class:ldd::skel::SimpleModuleCtx	access:public
+SimpleModuleCtx	internal/context.h	/^class SimpleModuleCtx : public SimpleModule::ModuleCtx, public BaseModuleCtx {$/;"	c	namespace:ldd::skel	inherits:SimpleModule::ModuleCtx,BaseModuleCtx
+SingleMasterChild	internal/child.cc	/^SingleMasterChild::SingleMasterChild(Config* config,$/;"	f	class:ldd::skel::SingleMasterChild
+SingleMasterChild	internal/child.h	/^    SingleMasterChild(Config* config, net::EventLoop* event_loop,$/;"	p	class:ldd::skel::SingleMasterChild	access:public
+SingleMasterChild	internal/child.h	/^class SingleMasterChild : public Child {$/;"	c	namespace:ldd::skel	inherits:Child
+SingleMasterModule	module.h	/^class SingleMasterModule : public Module {$/;"	c	namespace:ldd::skel	inherits:Module
+SingleMasterModuleCtx	internal/context.h	/^    SingleMasterModuleCtx(Config* config, ldd::net::EventLoop* event_loop,$/;"	f	class:ldd::skel::SingleMasterModuleCtx	access:public
+SingleMasterModuleCtx	internal/context.h	/^class SingleMasterModuleCtx : public SingleMasterModule::ModuleCtx,$/;"	c	namespace:ldd::skel	inherits:SingleMasterModule::ModuleCtx,BaseModuleCtx
+SingleMasterWorkerCtx	internal/context.h	/^    SingleMasterWorkerCtx(ldd::net::Listener* listener, int port)$/;"	f	class:ldd::skel::SingleMasterWorkerCtx	access:public
+SingleMasterWorkerCtx	internal/context.h	/^class SingleMasterWorkerCtx : public SingleMasterModule::WorkerCtx,$/;"	c	namespace:ldd::skel	inherits:SingleMasterModule::WorkerCtx,BaseWorkerCtx
+SinglePortChild	internal/child.cc	/^SinglePortChild::SinglePortChild(Config* config, Module::Type type,$/;"	f	class:ldd::skel::SinglePortChild
+SinglePortChild	internal/child.h	/^    SinglePortChild(Config* config, Module::Type type,$/;"	p	class:ldd::skel::SinglePortChild	access:public
+SinglePortChild	internal/child.h	/^class SinglePortChild : public Child {$/;"	c	namespace:ldd::skel	inherits:Child
+Skel	internal/skel.cc	/^Skel::Skel()$/;"	f	class:ldd::skel::Skel
+Skel	internal/skel.h	/^    Skel();$/;"	p	class:ldd::skel::Skel	access:public
+Skel	internal/skel.h	/^class Skel {$/;"	c	namespace:ldd::skel
+Start	internal/log_flusher.cc	/^void LogFlusher::Start() {$/;"	f	class:ldd::skel::LogFlusher
+Start	internal/log_flusher.h	/^    void Start();$/;"	p	class:ldd::skel::LogFlusher	access:public
+Stop	internal/log_flusher.cc	/^void LogFlusher::Stop() {$/;"	f	class:ldd::skel::LogFlusher
+Stop	internal/log_flusher.h	/^    void Stop();$/;"	p	class:ldd::skel::LogFlusher	access:public
+StopChild	internal/monitor.cc	/^void Monitor::StopChild() {$/;"	f	class:ldd::skel::Monitor
+StopChild	internal/monitor.h	/^    void StopChild();$/;"	p	class:ldd::skel::Monitor	access:private
+StopChildren	internal/monitor.cc	/^void Monitor::StopChildren() {$/;"	f	class:ldd::skel::Monitor
+StopChildren	internal/monitor.h	/^    void StopChildren();$/;"	p	class:ldd::skel::Monitor	access:private
+TARGETS	Makefile	/^TARGETS = lddskel liblddskel.so$/;"	m
+TARGETS	examples/client/Makefile	/^TARGETS = client$/;"	m
+TARGETS	examples/example1/src/Makefile	/^TARGETS = example1.so$/;"	m
+TARGETS	examples/example2/src/Makefile	/^TARGETS = example2.so$/;"	m
+TARGETS	examples/template/src/Makefile	/^TARGETS = template.so$/;"	m
+TemplateModule	examples/template/src/template.cc	/^    TemplateModule()$/;"	f	class:TemplateModule	access:public
+TemplateModule	examples/template/src/template.cc	/^LDD_SKEL_SINGLE_MASTER_MODULE(TemplateModule);$/;"	v
+TemplateModule	examples/template/src/template.cc	/^class TemplateModule : public ldd::skel::SingleMasterModule {$/;"	c	file:	inherits:ldd::skel::SingleMasterModule
+TemplateModule::InitModule	examples/template/src/template.cc	/^    virtual bool InitModule(ModuleCtx* ctx) {$/;"	f	class:TemplateModule	access:public
+TemplateModule::InitWorker	examples/template/src/template.cc	/^    virtual bool InitWorker(WorkerCtx* ctx) {$/;"	f	class:TemplateModule	access:public
+TemplateModule::OnClosed	examples/template/src/template.cc	/^    void OnClosed(const boost::shared_ptr<ldd::net::Channel>& c) {$/;"	f	class:TemplateModule	file:	access:private
+TemplateModule::OnConnected	examples/template/src/template.cc	/^    void OnConnected(const boost::shared_ptr<ldd::net::Channel>& c) {$/;"	f	class:TemplateModule	file:	access:private
+TemplateModule::TemplateModule	examples/template/src/template.cc	/^    TemplateModule()$/;"	f	class:TemplateModule	access:public
+TemplateModule::count_	examples/template/src/template.cc	/^    size_t count_;$/;"	m	class:TemplateModule	file:	access:private
+TemplateModule::loop_	examples/template/src/template.cc	/^    ldd::net::EventLoop* loop_;$/;"	m	class:TemplateModule	file:	access:private
+TemplateModule::server_	examples/template/src/template.cc	/^    ldd::net::Server* server_;$/;"	m	class:TemplateModule	file:	access:private
+TemplateModule::worker_	examples/template/src/template.cc	/^    bool worker_;$/;"	m	class:TemplateModule	file:	access:private
+TemplateModule::~TemplateModule	examples/template/src/template.cc	/^    ~TemplateModule() {$/;"	f	class:TemplateModule	access:public
+Type	module.h	/^    enum Type {$/;"	g	class:ldd::skel::Module	access:public
+WatchSignals	internal/monitor.cc	/^void Monitor::WatchSignals() {$/;"	f	class:ldd::skel::Monitor
+WatchSignals	internal/monitor.h	/^    void WatchSignals();$/;"	p	class:ldd::skel::Monitor	access:private
+WatchZk	examples/example1/src/example1.cc	/^    void WatchZk(zhandle_t* zh, int type, int state, const char* path) {$/;"	f	class:ExampleModule	file:	access:private
+Watcher	examples/example1/src/example1.cc	/^    static void Watcher(zhandle_t* zh, int type, int state, const char* path, void* watcherCtx) {$/;"	f	class:ExampleModule	file:	access:private
+WorkerChild	internal/child.cc	/^WorkerChild::WorkerChild(Config* config, int port,$/;"	f	class:ldd::skel::WorkerChild
+WorkerChild	internal/child.h	/^    WorkerChild(Config* config, int port,$/;"	p	class:ldd::skel::WorkerChild	access:public
+WorkerChild	internal/child.h	/^class WorkerChild : public SinglePortChild {$/;"	c	namespace:ldd::skel	inherits:SinglePortChild
+WorkerCtx	module.h	/^    struct WorkerCtx : virtual public Module::WorkerCtx {$/;"	s	class:ldd::skel::SingleMasterModule	inherits:Module::WorkerCtx	access:public
+WorkerCtx	module.h	/^    struct WorkerCtx : virtual public Module::WorkerCtx {$/;"	s	class:ldd::skel::WorkerModule	inherits:Module::WorkerCtx	access:public
+WorkerCtx	module.h	/^    struct WorkerCtx {$/;"	s	class:ldd::skel::Module	access:public
+WorkerModule	module.h	/^class WorkerModule : public Module {$/;"	c	namespace:ldd::skel	inherits:Module
+WorkerModuleCtx	internal/context.h	/^    WorkerModuleCtx(Config* config, ldd::net::EventLoop* event_loop, int port)$/;"	f	class:ldd::skel::WorkerModuleCtx	access:public
+WorkerModuleCtx	internal/context.h	/^class WorkerModuleCtx : public WorkerModule::ModuleCtx, public BaseModuleCtx {$/;"	c	namespace:ldd::skel	inherits:WorkerModule::ModuleCtx,BaseModuleCtx
+WorkerWorkerCtx	internal/context.h	/^    WorkerWorkerCtx(ldd::net::Listener* listener)$/;"	f	class:ldd::skel::WorkerWorkerCtx	access:public
+WorkerWorkerCtx	internal/context.h	/^class WorkerWorkerCtx : public WorkerModule::WorkerCtx, public BaseWorkerCtx {$/;"	c	namespace:ldd::skel	inherits:WorkerModule::WorkerCtx,BaseWorkerCtx
+addr	internal/config.h	/^    const net::Address& addr() const { return addr_; }$/;"	f	class:ldd::skel::Config	access:public
+addr	internal/context.h	/^    virtual const net::Address& addr() const { return config_->addr(); }$/;"	f	class:ldd::skel::BaseModuleCtx	access:public
+addr	module.h	/^        virtual const net::Address& addr() const = 0;$/;"	p	struct:ldd::skel::Module::ModuleCtx	access:public
+addr_	internal/config.h	/^    net::Address addr_;$/;"	m	class:ldd::skel::Config	access:private
+auto_restart	internal/config.h	/^    bool auto_restart() const { return auto_restart_; }$/;"	f	class:ldd::skel::Config	access:public
+auto_restart_	internal/config.h	/^    bool auto_restart_;$/;"	m	class:ldd::skel::Config	access:private
+cfg_file	internal/option.h	/^    const std::string& cfg_file() const { return cfg_file_; }$/;"	f	class:ldd::skel::Option	access:public
+cfg_file_	internal/option.h	/^    std::string cfg_file_;$/;"	m	class:ldd::skel::Option	access:private
+child_	internal/monitor.h	/^    pid_t child_;$/;"	m	class:ldd::skel::Monitor	access:private
+children_	internal/monitor.h	/^    std::map<pid_t, int> children_;$/;"	m	class:ldd::skel::Monitor	access:private
+client_CXXFLAGS	examples/client/Makefile	/^client_CXXFLAGS= -I$(LDDDIR)\/..\/$/;"	m
+client_LDFLAGS	examples/client/Makefile	/^client_LDFLAGS = -L$(LDDDIR)\/net$/;"	m
+client_LDLIBS	examples/client/Makefile	/^client_LDLIBS  = -llddnet$/;"	m
+client_RPATHS	examples/client/Makefile	/^client_RPATHS  = $(LDDDIR)\/net$/;"	m
+client_SOURCES	examples/client/Makefile	/^client_SOURCES = $(wildcard *.cc)$/;"	m
+cloop_	internal/monitor.h	/^    boost::scoped_ptr<net::EventLoop> cloop_;$/;"	m	class:ldd::skel::Monitor	access:private
+config	internal/child.h	/^    Config* config() const { return config_; }$/;"	f	class:ldd::skel::Child	access:protected
+config	internal/context.h	/^    virtual const ptree& config() const { return config_->properties(); }$/;"	f	class:ldd::skel::BaseModuleCtx	access:public
+config	module.h	/^        virtual const Config& config() const = 0;$/;"	p	struct:ldd::skel::Module::ModuleCtx	access:public
+config_	internal/child.h	/^    Config* config_;$/;"	m	class:ldd::skel::Child	access:private
+config_	internal/context.h	/^    Config* config_;$/;"	m	class:ldd::skel::BaseModuleCtx	access:private
+config_	internal/monitor.h	/^    boost::shared_ptr<Config> config_;$/;"	m	class:ldd::skel::Monitor	access:private
+count_	examples/example1/src/example1.cc	/^    size_t count_;$/;"	m	class:ExampleModule	file:	access:private
+count_	examples/example1/src/example1.cc	/^    size_t count_;$/;"	m	class:MyEchoMsg	file:	access:private
+count_	examples/example2/src/example2.cc	/^    size_t count_;$/;"	m	class:ExampleModule	file:	access:private
+count_	examples/example2/src/example2.cc	/^    size_t count_;$/;"	m	class:MyEchoMsg	file:	access:private
+count_	examples/template/src/template.cc	/^    size_t count_;$/;"	m	class:TemplateModule	file:	access:private
+dlmodule_	internal/child.h	/^    void* dlmodule_;$/;"	m	class:ldd::skel::Child	access:private
+dropped_children_	internal/monitor.h	/^    boost::ptr_map<pid_t, net::TimerEvent> dropped_children_;$/;"	m	class:ldd::skel::Monitor	access:private
+dropped_ports_	internal/monitor.h	/^    std::map<pid_t, int> dropped_ports_;$/;"	m	class:ldd::skel::Monitor	access:private
+event_	internal/monitor.h	/^    boost::scoped_ptr<net::FdEvent> event_;$/;"	m	class:ldd::skel::Monitor	access:private
+event_loop	internal/context.h	/^    virtual ldd::net::EventLoop* event_loop() const { return event_loop_; }$/;"	f	class:ldd::skel::BaseModuleCtx	access:public
+event_loop	internal/context.h	/^    virtual ldd::net::EventLoop* event_loop() const {$/;"	f	class:ldd::skel::BaseWorkerCtx	access:public
+event_loop	module.h	/^        virtual net::EventLoop* event_loop() const = 0;$/;"	p	struct:ldd::skel::Module::ModuleCtx	access:public
+event_loop	module.h	/^        virtual net::EventLoop* event_loop() const = 0;$/;"	p	struct:ldd::skel::Module::WorkerCtx	access:public
+event_loop_	internal/context.h	/^    ldd::net::EventLoop* event_loop_;$/;"	m	class:ldd::skel::BaseModuleCtx	access:private
+example1.so_CXXFLAGS	examples/example1/src/Makefile	/^example1.so_CXXFLAGS= -I$(LDDDIR)\/..\/$/;"	m
+example1.so_LDFLAGS	examples/example1/src/Makefile	/^example1.so_LDFLAGS = -L$(LDDDIR)\/net$/;"	m
+example1.so_LDLIBS	examples/example1/src/Makefile	/^example1.so_LDLIBS  = -llddnet -lzookeeper_st$/;"	m
+example1.so_RPATHS	examples/example1/src/Makefile	/^example1.so_RPATHS  = $(LDDDIR)\/net$/;"	m
+example1.so_SOURCES	examples/example1/src/Makefile	/^example1.so_SOURCES = $(wildcard *.cc)$/;"	m
+example1.so_VERSION	examples/example1/src/Makefile	/^example1.so_VERSION = 1.0.0$/;"	m
+example2.so_CXXFLAGS	examples/example2/src/Makefile	/^example2.so_CXXFLAGS= -I$(LDDDIR)\/..\/$/;"	m
+example2.so_LDFLAGS	examples/example2/src/Makefile	/^example2.so_LDFLAGS = -L$(LDDDIR)\/net$/;"	m
+example2.so_LDLIBS	examples/example2/src/Makefile	/^example2.so_LDLIBS  = -llddnet$/;"	m
+example2.so_RPATHS	examples/example2/src/Makefile	/^example2.so_RPATHS  = $(LDDDIR)\/net$/;"	m
+example2.so_SOURCES	examples/example2/src/Makefile	/^example2.so_SOURCES = $(wildcard *.cc)$/;"	m
+example2.so_VERSION	examples/example2/src/Makefile	/^example2.so_VERSION = 1.0.0$/;"	m
+file	internal/config.h	/^    const std::string& file() const { return file_; }$/;"	f	class:ldd::skel::Config	access:public
+file_	internal/config.h	/^    std::string file_;$/;"	m	class:ldd::skel::Config	access:private
+flusher_	internal/monitor.h	/^    boost::scoped_ptr<LogFlusher> flusher_;$/;"	m	class:ldd::skel::Monitor	access:private
+foreground	internal/option.h	/^    bool foreground() const { return foreground_; }$/;"	f	class:ldd::skel::Option	access:public
+foreground_	internal/option.h	/^    bool foreground_;$/;"	m	class:ldd::skel::Option	access:private
+in_worker_	examples/example1/src/example1.cc	/^    bool in_worker_;$/;"	m	class:ExampleModule	file:	access:private
+init_timeout	internal/config.h	/^    int init_timeout() const { return init_timeout_; }$/;"	f	class:ldd::skel::Config	access:public
+init_timeout_	internal/config.h	/^    int init_timeout_;$/;"	m	class:ldd::skel::Config	access:private
+instance	internal/option.h	/^    static Option& instance() { return instance_; }$/;"	f	class:ldd::skel::Option	access:public
+instance_	internal/option.cc	/^Option Option::instance_;$/;"	m	class:ldd::skel::Option	file:
+instance_	internal/option.h	/^    static Option instance_;$/;"	m	class:ldd::skel::Option	access:private
+kCfgExt	internal/option.cc	/^const char* kCfgExt = ".conf";$/;"	m	namespace:ldd::skel	file:
+kDefaultCfgDir	internal/option.cc	/^const char* kDefaultCfgDir = "\/home\/s\/etc\/lddskel";$/;"	m	namespace:ldd::skel	file:
+kDefaultInitTimeout	internal/option.h	/^const int kDefaultInitTimeout = 5;$/;"	m	namespace:ldd::skel
+kDefaultLibDir	internal/option.cc	/^const char* kDefaultLibDir = "\/home\/s\/lib\/lddskel";$/;"	m	namespace:ldd::skel	file:
+kDefaultLogDir	internal/option.cc	/^const char* kDefaultLogDir = "\/home\/s\/var\/log";$/;"	m	namespace:ldd::skel	file:
+kDefaultPidDir	internal/option.cc	/^const char* kDefaultPidDir = "\/home\/s\/var\/run";$/;"	m	namespace:ldd::skel	file:
+kDefaultRebootDelay	internal/option.h	/^const int kDefaultRebootDelay = 1;$/;"	m	namespace:ldd::skel
+kDefaultStopTimeout	internal/option.h	/^const int kDefaultStopTimeout = 5;$/;"	m	namespace:ldd::skel
+kMaxWaitingWorker	internal/child.cc	/^const int kMaxWaitingWorker = 8* 1000LL;$/;"	m	namespace:ldd::skel	file:
+kModuleLoaderNames	internal/child.cc	/^const char* kModuleLoaderNames[] = {$/;"	m	namespace:ldd::skel	file:
+kMyEchoType	examples/example1/src/example1.cc	/^static const int kMyEchoType = 2100;$/;"	v	file:
+kMyEchoType	examples/example2/src/example2.cc	/^static const int kMyEchoType = 2100;$/;"	v	file:
+kMyEchoType	examples/template/src/template.cc	/^static const int kMyEchoType = 2100;$/;"	v	file:
+kPidExt	internal/option.cc	/^const char* kPidExt = ".pid";$/;"	m	namespace:ldd::skel	file:
+kPolicySafe	internal/config.h	/^        kPolicySafe,$/;"	e	enum:ldd::skel::Reload::Policy
+kPolicySimple	internal/config.h	/^        kPolicySimple,$/;"	e	enum:ldd::skel::Reload::Policy
+kPolicySole	internal/config.h	/^        kPolicySole,$/;"	e	enum:ldd::skel::Reload::Policy
+kTypeSimple	module.h	/^        kTypeSimple,$/;"	e	enum:ldd::skel::Module::Type
+kTypeSingleMaster	module.h	/^        kTypeSingleMaster,$/;"	e	enum:ldd::skel::Module::Type
+kTypeWorker	module.h	/^        kTypeWorker,$/;"	e	enum:ldd::skel::Module::Type
+kill	internal/option.h	/^    bool kill() const { return kill_; }$/;"	f	class:ldd::skel::Option	access:public
+kill_	internal/option.h	/^    bool kill_;$/;"	m	class:ldd::skel::Option	access:private
+ldd	internal/child.cc	/^namespace ldd {$/;"	n	file:
+ldd	internal/child.h	/^namespace ldd {$/;"	n
+ldd	internal/config.cc	/^namespace ldd {$/;"	n	file:
+ldd	internal/config.h	/^namespace ldd {$/;"	n
+ldd	internal/context.cc	/^namespace ldd {$/;"	n	file:
+ldd	internal/context.h	/^namespace ldd {$/;"	n
+ldd	internal/log_flusher.cc	/^namespace ldd {$/;"	n	file:
+ldd	internal/log_flusher.h	/^namespace ldd {$/;"	n
+ldd	internal/monitor.cc	/^namespace ldd {$/;"	n	file:
+ldd	internal/monitor.h	/^namespace ldd {$/;"	n
+ldd	internal/option.cc	/^namespace ldd {$/;"	n	file:
+ldd	internal/option.h	/^namespace ldd {$/;"	n
+ldd	internal/proctitle.cc	/^namespace ldd {$/;"	n	file:
+ldd	internal/proctitle.h	/^namespace ldd {$/;"	n
+ldd	internal/skel.cc	/^namespace ldd {$/;"	n	file:
+ldd	internal/skel.h	/^namespace ldd {$/;"	n
+ldd	module.h	/^namespace ldd {$/;"	n
+ldd::skel	internal/child.cc	/^namespace skel {$/;"	n	namespace:ldd	file:
+ldd::skel	internal/child.h	/^namespace skel {$/;"	n	namespace:ldd
+ldd::skel	internal/config.cc	/^namespace skel {$/;"	n	namespace:ldd	file:
+ldd::skel	internal/config.h	/^namespace skel {$/;"	n	namespace:ldd
+ldd::skel	internal/context.cc	/^namespace skel {$/;"	n	namespace:ldd	file:
+ldd::skel	internal/context.h	/^namespace skel {$/;"	n	namespace:ldd
+ldd::skel	internal/log_flusher.cc	/^namespace skel {$/;"	n	namespace:ldd	file:
+ldd::skel	internal/log_flusher.h	/^namespace skel {$/;"	n	namespace:ldd
+ldd::skel	internal/monitor.cc	/^namespace skel {$/;"	n	namespace:ldd	file:
+ldd::skel	internal/monitor.h	/^namespace skel {$/;"	n	namespace:ldd
+ldd::skel	internal/option.cc	/^namespace skel {$/;"	n	namespace:ldd	file:
+ldd::skel	internal/option.h	/^namespace skel {$/;"	n	namespace:ldd
+ldd::skel	internal/proctitle.cc	/^namespace skel {$/;"	n	namespace:ldd	file:
+ldd::skel	internal/proctitle.h	/^namespace skel {$/;"	n	namespace:ldd
+ldd::skel	internal/skel.cc	/^namespace skel {$/;"	n	namespace:ldd	file:
+ldd::skel	internal/skel.h	/^namespace skel {$/;"	n	namespace:ldd
+ldd::skel	module.h	/^namespace skel {$/;"	n	namespace:ldd
+ldd::skel::BaseModuleCtx	internal/context.h	/^class BaseModuleCtx : virtual public Module::ModuleCtx{$/;"	c	namespace:ldd::skel	inherits:Module::ModuleCtx
+ldd::skel::BaseModuleCtx::BaseModuleCtx	internal/context.h	/^    BaseModuleCtx(Config* config, ldd::net::EventLoop* event_loop)$/;"	f	class:ldd::skel::BaseModuleCtx	access:public
+ldd::skel::BaseModuleCtx::addr	internal/context.h	/^    virtual const net::Address& addr() const { return config_->addr(); }$/;"	f	class:ldd::skel::BaseModuleCtx	access:public
+ldd::skel::BaseModuleCtx::config	internal/context.h	/^    virtual const ptree& config() const { return config_->properties(); }$/;"	f	class:ldd::skel::BaseModuleCtx	access:public
+ldd::skel::BaseModuleCtx::config_	internal/context.h	/^    Config* config_;$/;"	m	class:ldd::skel::BaseModuleCtx	access:private
+ldd::skel::BaseModuleCtx::event_loop	internal/context.h	/^    virtual ldd::net::EventLoop* event_loop() const { return event_loop_; }$/;"	f	class:ldd::skel::BaseModuleCtx	access:public
+ldd::skel::BaseModuleCtx::event_loop_	internal/context.h	/^    ldd::net::EventLoop* event_loop_;$/;"	m	class:ldd::skel::BaseModuleCtx	access:private
+ldd::skel::BaseWorkerCtx	internal/context.h	/^class BaseWorkerCtx : virtual public Module::WorkerCtx {$/;"	c	namespace:ldd::skel	inherits:Module::WorkerCtx
+ldd::skel::BaseWorkerCtx::BaseWorkerCtx	internal/context.h	/^    BaseWorkerCtx(ldd::net::Listener* listener)$/;"	f	class:ldd::skel::BaseWorkerCtx	access:public
+ldd::skel::BaseWorkerCtx::event_loop	internal/context.h	/^    virtual ldd::net::EventLoop* event_loop() const {$/;"	f	class:ldd::skel::BaseWorkerCtx	access:public
+ldd::skel::BaseWorkerCtx::listener	internal/context.h	/^    virtual net::Listener* listener() const {$/;"	f	class:ldd::skel::BaseWorkerCtx	access:public
+ldd::skel::BaseWorkerCtx::listener_	internal/context.h	/^    ldd::net::Listener* listener_;$/;"	m	class:ldd::skel::BaseWorkerCtx	access:private
+ldd::skel::CheckUser	internal/config.cc	/^bool CheckUser(const std::string& user, std::string* what) {$/;"	f	namespace:ldd::skel
+ldd::skel::CheckUser	internal/config.cc	/^static bool CheckUser(const std::string& user, std::string* what);$/;"	p	namespace:ldd::skel	file:
+ldd::skel::Child	internal/child.h	/^class Child {$/;"	c	namespace:ldd::skel
+ldd::skel::Child::Child	internal/child.cc	/^Child::Child(Config* config, Module::Type type)$/;"	f	class:ldd::skel::Child
+ldd::skel::Child::Child	internal/child.h	/^    Child(Config* config, Module::Type type);$/;"	p	class:ldd::skel::Child	access:public
+ldd::skel::Child::DoCleanUp	internal/child.h	/^    virtual void DoCleanUp() {}$/;"	f	class:ldd::skel::Child	access:protected
+ldd::skel::Child::DoInit	internal/child.h	/^    virtual bool DoInit() = 0;$/;"	p	class:ldd::skel::Child	access:protected
+ldd::skel::Child::DoRun	internal/child.h	/^    virtual void DoRun() = 0;$/;"	p	class:ldd::skel::Child	access:protected
+ldd::skel::Child::HandleChild	internal/child.cc	/^void Child::HandleChild() {$/;"	f	class:ldd::skel::Child
+ldd::skel::Child::HandleChild	internal/child.h	/^    virtual void HandleChild();$/;"	p	class:ldd::skel::Child	access:protected
+ldd::skel::Child::HandleSignal	internal/child.cc	/^void Child::HandleSignal(int sig) {$/;"	f	class:ldd::skel::Child
+ldd::skel::Child::HandleSignal	internal/child.h	/^    void HandleSignal(int sig);$/;"	p	class:ldd::skel::Child	access:private
+ldd::skel::Child::HandleStop	internal/child.cc	/^void Child::HandleStop() {$/;"	f	class:ldd::skel::Child
+ldd::skel::Child::HandleStop	internal/child.h	/^    void HandleStop();$/;"	p	class:ldd::skel::Child	access:private
+ldd::skel::Child::Init	internal/child.cc	/^bool Child::Init() {$/;"	f	class:ldd::skel::Child
+ldd::skel::Child::Init	internal/child.h	/^    bool Init();$/;"	p	class:ldd::skel::Child	access:public
+ldd::skel::Child::OpenModule	internal/child.cc	/^bool Child::OpenModule() {$/;"	f	class:ldd::skel::Child
+ldd::skel::Child::OpenModule	internal/child.h	/^    bool OpenModule();$/;"	p	class:ldd::skel::Child	access:private
+ldd::skel::Child::Run	internal/child.cc	/^void Child::Run() {$/;"	f	class:ldd::skel::Child
+ldd::skel::Child::Run	internal/child.h	/^    void Run();$/;"	p	class:ldd::skel::Child	access:public
+ldd::skel::Child::config	internal/child.h	/^    Config* config() const { return config_; }$/;"	f	class:ldd::skel::Child	access:protected
+ldd::skel::Child::config_	internal/child.h	/^    Config* config_;$/;"	m	class:ldd::skel::Child	access:private
+ldd::skel::Child::dlmodule_	internal/child.h	/^    void* dlmodule_;$/;"	m	class:ldd::skel::Child	access:private
+ldd::skel::Child::loop_	internal/child.h	/^    net::EventLoop* loop_;$/;"	m	class:ldd::skel::Child	access:protected
+ldd::skel::Child::module	internal/child.h	/^    Module* module() const { return module_; }$/;"	f	class:ldd::skel::Child	access:protected
+ldd::skel::Child::module_	internal/child.h	/^    Module* module_;$/;"	m	class:ldd::skel::Child	access:private
+ldd::skel::Child::set_title	internal/child.h	/^    void set_title(const std::string& title) { title_ = title; }$/;"	f	class:ldd::skel::Child	access:protected
+ldd::skel::Child::sigev_	internal/child.h	/^    net::SignalEvent* sigev_;$/;"	m	class:ldd::skel::Child	access:protected
+ldd::skel::Child::title	internal/child.h	/^    const std::string& title() const { return title_; }$/;"	f	class:ldd::skel::Child	access:protected
+ldd::skel::Child::title_	internal/child.h	/^    std::string title_;$/;"	m	class:ldd::skel::Child	access:private
+ldd::skel::Child::type	internal/child.h	/^    Module::Type type() const { return type_; }$/;"	f	class:ldd::skel::Child	access:protected
+ldd::skel::Child::type_	internal/child.h	/^    Module::Type type_;$/;"	m	class:ldd::skel::Child	access:private
+ldd::skel::Child::~Child	internal/child.cc	/^Child::~Child() {$/;"	f	class:ldd::skel::Child
+ldd::skel::Child::~Child	internal/child.h	/^    virtual ~Child();$/;"	p	class:ldd::skel::Child	access:public
+ldd::skel::Config	internal/config.h	/^class Config {$/;"	c	namespace:ldd::skel
+ldd::skel::Config::Config	internal/config.cc	/^Config::Config()$/;"	f	class:ldd::skel::Config
+ldd::skel::Config::Config	internal/config.h	/^    explicit Config();$/;"	p	class:ldd::skel::Config	access:public
+ldd::skel::Config::Init	internal/config.cc	/^bool Config::Init(std::string* what) {$/;"	f	class:ldd::skel::Config
+ldd::skel::Config::Init	internal/config.h	/^    bool Init(std::string* what);$/;"	p	class:ldd::skel::Config	access:public
+ldd::skel::Config::addr	internal/config.h	/^    const net::Address& addr() const { return addr_; }$/;"	f	class:ldd::skel::Config	access:public
+ldd::skel::Config::addr_	internal/config.h	/^    net::Address addr_;$/;"	m	class:ldd::skel::Config	access:private
+ldd::skel::Config::auto_restart	internal/config.h	/^    bool auto_restart() const { return auto_restart_; }$/;"	f	class:ldd::skel::Config	access:public
+ldd::skel::Config::auto_restart_	internal/config.h	/^    bool auto_restart_;$/;"	m	class:ldd::skel::Config	access:private
+ldd::skel::Config::file	internal/config.h	/^    const std::string& file() const { return file_; }$/;"	f	class:ldd::skel::Config	access:public
+ldd::skel::Config::file_	internal/config.h	/^    std::string file_;$/;"	m	class:ldd::skel::Config	access:private
+ldd::skel::Config::init_timeout	internal/config.h	/^    int init_timeout() const { return init_timeout_; }$/;"	f	class:ldd::skel::Config	access:public
+ldd::skel::Config::init_timeout_	internal/config.h	/^    int init_timeout_;$/;"	m	class:ldd::skel::Config	access:private
+ldd::skel::Config::log_flush	internal/config.h	/^    int log_flush() const { return log_flush_; }$/;"	f	class:ldd::skel::Config	access:public
+ldd::skel::Config::log_flush_	internal/config.h	/^    int log_flush_;$/;"	m	class:ldd::skel::Config	access:private
+ldd::skel::Config::log_level	internal/config.h	/^    int log_level() const { return log_level_; }$/;"	f	class:ldd::skel::Config	access:public
+ldd::skel::Config::log_level_	internal/config.h	/^    int log_level_;$/;"	m	class:ldd::skel::Config	access:private
+ldd::skel::Config::log_size	internal/config.h	/^    int log_size() const { return log_size_; }$/;"	f	class:ldd::skel::Config	access:public
+ldd::skel::Config::log_size_	internal/config.h	/^    int log_size_;$/;"	m	class:ldd::skel::Config	access:private
+ldd::skel::Config::ports	internal/config.h	/^    const std::set<int>& ports() const { return ports_; }$/;"	f	class:ldd::skel::Config	access:public
+ldd::skel::Config::ports_	internal/config.h	/^    std::set<int> ports_;$/;"	m	class:ldd::skel::Config	access:private
+ldd::skel::Config::properties	internal/config.h	/^    const ptree& properties() const { return properties_; }$/;"	f	class:ldd::skel::Config	access:public
+ldd::skel::Config::properties_	internal/config.h	/^    ptree properties_;$/;"	m	class:ldd::skel::Config	access:private
+ldd::skel::Config::reboot_delay	internal/config.h	/^    int reboot_delay() const { return reboot_delay_; }$/;"	f	class:ldd::skel::Config	access:public
+ldd::skel::Config::reboot_delay_	internal/config.h	/^    int reboot_delay_;$/;"	m	class:ldd::skel::Config	access:private
+ldd::skel::Config::reload_policy	internal/config.h	/^    Reload::Policy reload_policy() const { return reload_policy_; }$/;"	f	class:ldd::skel::Config	access:public
+ldd::skel::Config::reload_policy_	internal/config.h	/^    Reload::Policy reload_policy_;$/;"	m	class:ldd::skel::Config	access:private
+ldd::skel::Config::stop_timeout	internal/config.h	/^    int stop_timeout() const { return stop_timeout_; }$/;"	f	class:ldd::skel::Config	access:public
+ldd::skel::Config::stop_timeout_	internal/config.h	/^    int stop_timeout_;$/;"	m	class:ldd::skel::Config	access:private
+ldd::skel::Config::type	internal/config.h	/^    Module::Type type() const { return type_; }$/;"	f	class:ldd::skel::Config	access:public
+ldd::skel::Config::type_	internal/config.h	/^    Module::Type type_;$/;"	m	class:ldd::skel::Config	access:private
+ldd::skel::Config::user	internal/config.h	/^    const std::string& user() const { return user_; }$/;"	f	class:ldd::skel::Config	access:public
+ldd::skel::Config::user_	internal/config.h	/^    std::string user_;$/;"	m	class:ldd::skel::Config	access:private
+ldd::skel::Config::~Config	internal/config.cc	/^Config::~Config() {$/;"	f	class:ldd::skel::Config
+ldd::skel::Config::~Config	internal/config.h	/^    ~Config();$/;"	p	class:ldd::skel::Config	access:public
+ldd::skel::GetAllAddr	internal/config.cc	/^static void GetAllAddr(std::vector<net::Address>* addrs) {$/;"	f	namespace:ldd::skel
+ldd::skel::GetLanAddr	internal/config.cc	/^static bool GetLanAddr(net::Address* addr) {$/;"	f	namespace:ldd::skel
+ldd::skel::GetWanAddr	internal/config.cc	/^static bool GetWanAddr(net::Address* addr) {$/;"	f	namespace:ldd::skel
+ldd::skel::IsPrivateAddr	internal/config.cc	/^static bool IsPrivateAddr(const net::Address& addr) {$/;"	f	namespace:ldd::skel
+ldd::skel::IsReservedAddr	internal/config.cc	/^static bool IsReservedAddr(const net::Address& addr) {$/;"	f	namespace:ldd::skel
+ldd::skel::ListenerMap	internal/child.h	/^typedef boost::ptr_map<int, net::Listener> ListenerMap;$/;"	t	namespace:ldd::skel
+ldd::skel::ListenerMap	internal/monitor.h	/^typedef boost::ptr_map<int, net::Listener> ListenerMap;$/;"	t	namespace:ldd::skel
+ldd::skel::Loader	internal/child.cc	/^typedef Module* (*Loader)();$/;"	t	namespace:ldd::skel	file:
+ldd::skel::LogFlusher	internal/log_flusher.h	/^class LogFlusher {$/;"	c	namespace:ldd::skel
+ldd::skel::LogFlusher::Flush	internal/log_flusher.cc	/^void LogFlusher::Flush() {$/;"	f	class:ldd::skel::LogFlusher
+ldd::skel::LogFlusher::Flush	internal/log_flusher.h	/^    void Flush();$/;"	p	class:ldd::skel::LogFlusher	access:private
+ldd::skel::LogFlusher::LogFlusher	internal/log_flusher.cc	/^LogFlusher::LogFlusher(net::EventLoop* event_loop, int seconds, bool start)$/;"	f	class:ldd::skel::LogFlusher
+ldd::skel::LogFlusher::LogFlusher	internal/log_flusher.h	/^    LogFlusher(net::EventLoop* event_loop, int seconds, bool start = true);$/;"	p	class:ldd::skel::LogFlusher	access:public
+ldd::skel::LogFlusher::Start	internal/log_flusher.cc	/^void LogFlusher::Start() {$/;"	f	class:ldd::skel::LogFlusher
+ldd::skel::LogFlusher::Start	internal/log_flusher.h	/^    void Start();$/;"	p	class:ldd::skel::LogFlusher	access:public
+ldd::skel::LogFlusher::Stop	internal/log_flusher.cc	/^void LogFlusher::Stop() {$/;"	f	class:ldd::skel::LogFlusher
+ldd::skel::LogFlusher::Stop	internal/log_flusher.h	/^    void Stop();$/;"	p	class:ldd::skel::LogFlusher	access:public
+ldd::skel::LogFlusher::seconds_	internal/log_flusher.h	/^    int seconds_;$/;"	m	class:ldd::skel::LogFlusher	access:private
+ldd::skel::LogFlusher::set_seconds	internal/log_flusher.h	/^    void set_seconds(int seconds) { seconds_ = seconds; }$/;"	f	class:ldd::skel::LogFlusher	access:public
+ldd::skel::LogFlusher::timer_	internal/log_flusher.h	/^    net::TimerEvent timer_;$/;"	m	class:ldd::skel::LogFlusher	access:private
+ldd::skel::LogFlusher::~LogFlusher	internal/log_flusher.cc	/^LogFlusher::~LogFlusher() {$/;"	f	class:ldd::skel::LogFlusher
+ldd::skel::LogFlusher::~LogFlusher	internal/log_flusher.h	/^    ~LogFlusher();$/;"	p	class:ldd::skel::LogFlusher	access:public
+ldd::skel::Module	module.h	/^class Module {$/;"	c	namespace:ldd::skel
+ldd::skel::Module::Config	module.h	/^    typedef boost::property_tree::ptree Config;$/;"	t	class:ldd::skel::Module	access:public
+ldd::skel::Module::ModuleCtx	module.h	/^    struct ModuleCtx {$/;"	s	class:ldd::skel::Module	access:public
+ldd::skel::Module::ModuleCtx::addr	module.h	/^        virtual const net::Address& addr() const = 0;$/;"	p	struct:ldd::skel::Module::ModuleCtx	access:public
+ldd::skel::Module::ModuleCtx::config	module.h	/^        virtual const Config& config() const = 0;$/;"	p	struct:ldd::skel::Module::ModuleCtx	access:public
+ldd::skel::Module::ModuleCtx::event_loop	module.h	/^        virtual net::EventLoop* event_loop() const = 0;$/;"	p	struct:ldd::skel::Module::ModuleCtx	access:public
+ldd::skel::Module::ModuleCtx::~ModuleCtx	module.h	/^        virtual ~ModuleCtx() {}$/;"	f	struct:ldd::skel::Module::ModuleCtx	access:public
+ldd::skel::Module::Type	module.h	/^    enum Type {$/;"	g	class:ldd::skel::Module	access:public
+ldd::skel::Module::WorkerCtx	module.h	/^    struct WorkerCtx {$/;"	s	class:ldd::skel::Module	access:public
+ldd::skel::Module::WorkerCtx::event_loop	module.h	/^        virtual net::EventLoop* event_loop() const = 0;$/;"	p	struct:ldd::skel::Module::WorkerCtx	access:public
+ldd::skel::Module::WorkerCtx::listener	module.h	/^        virtual net::Listener* listener() const = 0;$/;"	p	struct:ldd::skel::Module::WorkerCtx	access:public
+ldd::skel::Module::WorkerCtx::~WorkerCtx	module.h	/^        virtual ~WorkerCtx() {}$/;"	f	struct:ldd::skel::Module::WorkerCtx	access:public
+ldd::skel::Module::kTypeSimple	module.h	/^        kTypeSimple,$/;"	e	enum:ldd::skel::Module::Type
+ldd::skel::Module::kTypeSingleMaster	module.h	/^        kTypeSingleMaster,$/;"	e	enum:ldd::skel::Module::Type
+ldd::skel::Module::kTypeWorker	module.h	/^        kTypeWorker,$/;"	e	enum:ldd::skel::Module::Type
+ldd::skel::Module::type	module.h	/^    virtual Type type() = 0;$/;"	p	class:ldd::skel::Module	access:public
+ldd::skel::Module::~Module	module.h	/^    virtual ~Module() {}$/;"	f	class:ldd::skel::Module	access:public
+ldd::skel::Monitor	internal/monitor.h	/^class Monitor {$/;"	c	namespace:ldd::skel
+ldd::skel::Monitor::ChangeUser	internal/monitor.cc	/^void Monitor::ChangeUser() {$/;"	f	class:ldd::skel::Monitor
+ldd::skel::Monitor::ChangeUser	internal/monitor.h	/^    void ChangeUser();$/;"	p	class:ldd::skel::Monitor	access:private
+ldd::skel::Monitor::ClearDropped	internal/monitor.cc	/^void Monitor::ClearDropped(pid_t pid) {$/;"	f	class:ldd::skel::Monitor
+ldd::skel::Monitor::ClearDropped	internal/monitor.h	/^    void ClearDropped(pid_t pid);$/;"	p	class:ldd::skel::Monitor	access:private
+ldd::skel::Monitor::DoReload	internal/monitor.cc	/^void Monitor::DoReload() {$/;"	f	class:ldd::skel::Monitor
+ldd::skel::Monitor::DoReload	internal/monitor.h	/^    void DoReload();$/;"	p	class:ldd::skel::Monitor	access:private
+ldd::skel::Monitor::DropChild	internal/monitor.cc	/^void Monitor::DropChild(pid_t pid, int port) {$/;"	f	class:ldd::skel::Monitor
+ldd::skel::Monitor::DropChild	internal/monitor.h	/^    void DropChild(pid_t pid, int port = 0);$/;"	p	class:ldd::skel::Monitor	access:private
+ldd::skel::Monitor::HandleChild	internal/monitor.cc	/^void Monitor::HandleChild() {$/;"	f	class:ldd::skel::Monitor
+ldd::skel::Monitor::HandleChild	internal/monitor.h	/^    void HandleChild();$/;"	p	class:ldd::skel::Monitor	access:private
+ldd::skel::Monitor::HandleChildren	internal/monitor.cc	/^void Monitor::HandleChildren() {$/;"	f	class:ldd::skel::Monitor
+ldd::skel::Monitor::HandleChildren	internal/monitor.h	/^    void HandleChildren();$/;"	p	class:ldd::skel::Monitor	access:private
+ldd::skel::Monitor::HandleReload	internal/monitor.cc	/^void Monitor::HandleReload() {$/;"	f	class:ldd::skel::Monitor
+ldd::skel::Monitor::HandleReload	internal/monitor.h	/^    void HandleReload();$/;"	p	class:ldd::skel::Monitor	access:private
+ldd::skel::Monitor::HandleSignal	internal/monitor.cc	/^void Monitor::HandleSignal(int sig) {$/;"	f	class:ldd::skel::Monitor
+ldd::skel::Monitor::HandleSignal	internal/monitor.h	/^    void HandleSignal(int sig);$/;"	p	class:ldd::skel::Monitor	access:private
+ldd::skel::Monitor::HandleStop	internal/monitor.cc	/^void Monitor::HandleStop() {$/;"	f	class:ldd::skel::Monitor
+ldd::skel::Monitor::HandleStop	internal/monitor.h	/^    void HandleStop();$/;"	p	class:ldd::skel::Monitor	access:private
+ldd::skel::Monitor::Init	internal/monitor.cc	/^bool Monitor::Init(int argc, char** argv) {$/;"	f	class:ldd::skel::Monitor
+ldd::skel::Monitor::Init	internal/monitor.h	/^    bool Init(int argc, char** argv);$/;"	p	class:ldd::skel::Monitor	access:public
+ldd::skel::Monitor::IsDropped	internal/monitor.cc	/^bool Monitor::IsDropped(pid_t pid, int* port) {$/;"	f	class:ldd::skel::Monitor
+ldd::skel::Monitor::IsDropped	internal/monitor.h	/^    bool IsDropped(pid_t pid, int* port = NULL);$/;"	p	class:ldd::skel::Monitor	access:private
+ldd::skel::Monitor::Loop	internal/monitor.cc	/^void Monitor::Loop() {$/;"	f	class:ldd::skel::Monitor
+ldd::skel::Monitor::Loop	internal/monitor.h	/^    void Loop();$/;"	p	class:ldd::skel::Monitor	access:private
+ldd::skel::Monitor::Monitor	internal/monitor.cc	/^Monitor::Monitor()$/;"	f	class:ldd::skel::Monitor
+ldd::skel::Monitor::Monitor	internal/monitor.h	/^    Monitor();$/;"	p	class:ldd::skel::Monitor	access:public
+ldd::skel::Monitor::OnDropChildTimeout	internal/monitor.cc	/^void Monitor::OnDropChildTimeout(pid_t pid) {$/;"	f	class:ldd::skel::Monitor
+ldd::skel::Monitor::OnDropChildTimeout	internal/monitor.h	/^    void OnDropChildTimeout(pid_t pid);$/;"	p	class:ldd::skel::Monitor	access:private
+ldd::skel::Monitor::OnSingleMasterInit	internal/monitor.cc	/^void Monitor::OnSingleMasterInit(int ev, int fd) {$/;"	f	class:ldd::skel::Monitor
+ldd::skel::Monitor::OnSingleMasterInit	internal/monitor.h	/^    void OnSingleMasterInit(int ev, int fd);$/;"	p	class:ldd::skel::Monitor	access:private
+ldd::skel::Monitor::ReloadMultiChild	internal/monitor.cc	/^void Monitor::ReloadMultiChild() {$/;"	f	class:ldd::skel::Monitor
+ldd::skel::Monitor::ReloadMultiChild	internal/monitor.h	/^    void ReloadMultiChild();$/;"	p	class:ldd::skel::Monitor	access:private
+ldd::skel::Monitor::ReloadSingleChild	internal/monitor.cc	/^void Monitor::ReloadSingleChild() {$/;"	f	class:ldd::skel::Monitor
+ldd::skel::Monitor::ReloadSingleChild	internal/monitor.h	/^    void ReloadSingleChild();$/;"	p	class:ldd::skel::Monitor	access:private
+ldd::skel::Monitor::Run	internal/monitor.cc	/^void Monitor::Run() {$/;"	f	class:ldd::skel::Monitor
+ldd::skel::Monitor::Run	internal/monitor.h	/^    void Run();$/;"	p	class:ldd::skel::Monitor	access:public
+ldd::skel::Monitor::RunMaster	internal/monitor.cc	/^void Monitor::RunMaster() {$/;"	f	class:ldd::skel::Monitor
+ldd::skel::Monitor::RunMaster	internal/monitor.cc	/^void Monitor::RunMaster(int port) {$/;"	f	class:ldd::skel::Monitor
+ldd::skel::Monitor::RunMaster	internal/monitor.h	/^    void RunMaster();$/;"	p	class:ldd::skel::Monitor	access:private
+ldd::skel::Monitor::RunMaster	internal/monitor.h	/^    void RunMaster(int port);$/;"	p	class:ldd::skel::Monitor	access:private
+ldd::skel::Monitor::RunMasters	internal/monitor.cc	/^void Monitor::RunMasters() {$/;"	f	class:ldd::skel::Monitor
+ldd::skel::Monitor::RunMasters	internal/monitor.h	/^    void RunMasters();$/;"	p	class:ldd::skel::Monitor	access:private
+ldd::skel::Monitor::StopChild	internal/monitor.cc	/^void Monitor::StopChild() {$/;"	f	class:ldd::skel::Monitor
+ldd::skel::Monitor::StopChild	internal/monitor.h	/^    void StopChild();$/;"	p	class:ldd::skel::Monitor	access:private
+ldd::skel::Monitor::StopChildren	internal/monitor.cc	/^void Monitor::StopChildren() {$/;"	f	class:ldd::skel::Monitor
+ldd::skel::Monitor::StopChildren	internal/monitor.h	/^    void StopChildren();$/;"	p	class:ldd::skel::Monitor	access:private
+ldd::skel::Monitor::WatchSignals	internal/monitor.cc	/^void Monitor::WatchSignals() {$/;"	f	class:ldd::skel::Monitor
+ldd::skel::Monitor::WatchSignals	internal/monitor.h	/^    void WatchSignals();$/;"	p	class:ldd::skel::Monitor	access:private
+ldd::skel::Monitor::child_	internal/monitor.h	/^    pid_t child_;$/;"	m	class:ldd::skel::Monitor	access:private
+ldd::skel::Monitor::children_	internal/monitor.h	/^    std::map<pid_t, int> children_;$/;"	m	class:ldd::skel::Monitor	access:private
+ldd::skel::Monitor::cloop_	internal/monitor.h	/^    boost::scoped_ptr<net::EventLoop> cloop_;$/;"	m	class:ldd::skel::Monitor	access:private
+ldd::skel::Monitor::config_	internal/monitor.h	/^    boost::shared_ptr<Config> config_;$/;"	m	class:ldd::skel::Monitor	access:private
+ldd::skel::Monitor::dropped_children_	internal/monitor.h	/^    boost::ptr_map<pid_t, net::TimerEvent> dropped_children_;$/;"	m	class:ldd::skel::Monitor	access:private
+ldd::skel::Monitor::dropped_ports_	internal/monitor.h	/^    std::map<pid_t, int> dropped_ports_;$/;"	m	class:ldd::skel::Monitor	access:private
+ldd::skel::Monitor::event_	internal/monitor.h	/^    boost::scoped_ptr<net::FdEvent> event_;$/;"	m	class:ldd::skel::Monitor	access:private
+ldd::skel::Monitor::flusher_	internal/monitor.h	/^    boost::scoped_ptr<LogFlusher> flusher_;$/;"	m	class:ldd::skel::Monitor	access:private
+ldd::skel::Monitor::listeners_	internal/monitor.h	/^    boost::ptr_map<int, net::Listener> listeners_;$/;"	m	class:ldd::skel::Monitor	access:private
+ldd::skel::Monitor::mloop_	internal/monitor.h	/^    boost::scoped_ptr<net::EventLoop> mloop_;$/;"	m	class:ldd::skel::Monitor	access:private
+ldd::skel::Monitor::new_child_	internal/monitor.h	/^    pid_t new_child_;$/;"	m	class:ldd::skel::Monitor	access:private
+ldd::skel::Monitor::rconfig_	internal/monitor.h	/^    boost::shared_ptr<Config> rconfig_;$/;"	m	class:ldd::skel::Monitor	access:private
+ldd::skel::Monitor::reboot_timer_	internal/monitor.h	/^    boost::scoped_ptr<net::TimerEvent> reboot_timer_;$/;"	m	class:ldd::skel::Monitor	access:private
+ldd::skel::Monitor::reboot_timers_	internal/monitor.h	/^    boost::ptr_map<int, net::TimerEvent> reboot_timers_;$/;"	m	class:ldd::skel::Monitor	access:private
+ldd::skel::Monitor::sigev_	internal/monitor.h	/^    boost::scoped_ptr<net::SignalEvent> sigev_;$/;"	m	class:ldd::skel::Monitor	access:private
+ldd::skel::Monitor::~Monitor	internal/monitor.cc	/^Monitor::~Monitor() {$/;"	f	class:ldd::skel::Monitor
+ldd::skel::Monitor::~Monitor	internal/monitor.h	/^    ~Monitor();$/;"	p	class:ldd::skel::Monitor	access:public
+ldd::skel::Option	internal/option.h	/^class Option : boost::noncopyable {$/;"	c	namespace:ldd::skel	inherits:boost::noncopyable
+ldd::skel::Option::Init	internal/option.cc	/^bool Option::Init(int argc, char** argv) {$/;"	f	class:ldd::skel::Option
+ldd::skel::Option::Init	internal/option.h	/^    bool Init(int argc, char** argv);$/;"	p	class:ldd::skel::Option	access:public
+ldd::skel::Option::MakeConfigs	internal/option.cc	/^void Option::MakeConfigs(po::options_description* options) {$/;"	f	class:ldd::skel::Option
+ldd::skel::Option::MakeConfigs	internal/option.h	/^    void MakeConfigs($/;"	p	class:ldd::skel::Option	access:public
+ldd::skel::Option::Option	internal/option.cc	/^Option::Option()$/;"	f	class:ldd::skel::Option
+ldd::skel::Option::Option	internal/option.h	/^    Option();$/;"	p	class:ldd::skel::Option	access:public
+ldd::skel::Option::cfg_file	internal/option.h	/^    const std::string& cfg_file() const { return cfg_file_; }$/;"	f	class:ldd::skel::Option	access:public
+ldd::skel::Option::cfg_file_	internal/option.h	/^    std::string cfg_file_;$/;"	m	class:ldd::skel::Option	access:private
+ldd::skel::Option::foreground	internal/option.h	/^    bool foreground() const { return foreground_; }$/;"	f	class:ldd::skel::Option	access:public
+ldd::skel::Option::foreground_	internal/option.h	/^    bool foreground_;$/;"	m	class:ldd::skel::Option	access:private
+ldd::skel::Option::instance	internal/option.h	/^    static Option& instance() { return instance_; }$/;"	f	class:ldd::skel::Option	access:public
+ldd::skel::Option::instance_	internal/option.cc	/^Option Option::instance_;$/;"	m	class:ldd::skel::Option	file:
+ldd::skel::Option::instance_	internal/option.h	/^    static Option instance_;$/;"	m	class:ldd::skel::Option	access:private
+ldd::skel::Option::kill	internal/option.h	/^    bool kill() const { return kill_; }$/;"	f	class:ldd::skel::Option	access:public
+ldd::skel::Option::kill_	internal/option.h	/^    bool kill_;$/;"	m	class:ldd::skel::Option	access:private
+ldd::skel::Option::lib_dir	internal/option.h	/^    const std::string& lib_dir() const { return lib_dir_; }$/;"	f	class:ldd::skel::Option	access:public
+ldd::skel::Option::lib_dir_	internal/option.h	/^    std::string lib_dir_;$/;"	m	class:ldd::skel::Option	access:private
+ldd::skel::Option::log_dir	internal/option.h	/^    const std::string& log_dir() const { return log_dir_; }$/;"	f	class:ldd::skel::Option	access:public
+ldd::skel::Option::log_dir_	internal/option.h	/^    std::string log_dir_;$/;"	m	class:ldd::skel::Option	access:private
+ldd::skel::Option::name	internal/option.h	/^    const std::string& name() const { return name_; }$/;"	f	class:ldd::skel::Option	access:public
+ldd::skel::Option::name_	internal/option.h	/^    std::string name_;$/;"	m	class:ldd::skel::Option	access:private
+ldd::skel::Option::pid_file	internal/option.h	/^    const std::string& pid_file() const { return pid_file_; }$/;"	f	class:ldd::skel::Option	access:public
+ldd::skel::Option::pid_file_	internal/option.h	/^    std::string pid_file_;$/;"	m	class:ldd::skel::Option	access:private
+ldd::skel::Option::reload	internal/option.h	/^    bool reload() const { return reload_; }$/;"	f	class:ldd::skel::Option	access:public
+ldd::skel::Option::reload_	internal/option.h	/^    bool reload_;$/;"	m	class:ldd::skel::Option	access:private
+ldd::skel::Option::status	internal/option.h	/^    bool status() const { return status_; }$/;"	f	class:ldd::skel::Option	access:public
+ldd::skel::Option::status_	internal/option.h	/^    bool status_;$/;"	m	class:ldd::skel::Option	access:private
+ldd::skel::Option::vm	internal/option.h	/^        vm() const { return vm_; }$/;"	f	class:ldd::skel::Option	access:public
+ldd::skel::Option::vm_	internal/option.h	/^    boost::program_options::variables_map vm_;$/;"	m	class:ldd::skel::Option	access:private
+ldd::skel::Option::~Option	internal/option.cc	/^Option::~Option() {}$/;"	f	class:ldd::skel::Option
+ldd::skel::Option::~Option	internal/option.h	/^    ~Option();$/;"	p	class:ldd::skel::Option	access:public
+ldd::skel::ParseAddr	internal/config.cc	/^bool ParseAddr(const std::string& v, net::Address* addr, bool* valid) {$/;"	f	namespace:ldd::skel
+ldd::skel::ParseAddr	internal/config.cc	/^static bool ParseAddr(const std::string& config, net::Address* addr,$/;"	p	namespace:ldd::skel	file:
+ldd::skel::ParsePortField	internal/config.cc	/^bool ParsePortField(const std::string& field,$/;"	f	namespace:ldd::skel
+ldd::skel::ParsePortField	internal/config.cc	/^static bool ParsePortField(const string& field, set<int>* ports);$/;"	p	namespace:ldd::skel	file:
+ldd::skel::ParsePortList	internal/config.cc	/^bool ParsePortList(const std::string& list,$/;"	f	namespace:ldd::skel
+ldd::skel::ParsePortList	internal/config.cc	/^static bool ParsePortList(const string& list, set<int>* ports, string* what);$/;"	p	namespace:ldd::skel	file:
+ldd::skel::ParsePortValue	internal/config.cc	/^int ParsePortValue(const std::string& value) {$/;"	f	namespace:ldd::skel
+ldd::skel::ParsePortValue	internal/config.cc	/^static int ParsePortValue(const string& value);$/;"	p	namespace:ldd::skel	file:
+ldd::skel::ParseReloadPolicy	internal/config.cc	/^bool ParseReloadPolicy(const std::string& v, Reload::Policy* policy) {$/;"	f	namespace:ldd::skel
+ldd::skel::ParseReloadPolicy	internal/config.cc	/^static bool ParseReloadPolicy(const std::string& config,$/;"	p	namespace:ldd::skel	file:
+ldd::skel::ParseType	internal/config.cc	/^bool ParseType(const std::string& v, Module::Type* type) {$/;"	f	namespace:ldd::skel
+ldd::skel::ParseType	internal/config.cc	/^static bool ParseType(const std::string& config, Module::Type* type);$/;"	p	namespace:ldd::skel	file:
+ldd::skel::PidFileName	internal/skel.cc	/^static const char* PidFileName() {$/;"	f	namespace:ldd::skel
+ldd::skel::ProcTitle	internal/proctitle.h	/^class ProcTitle {$/;"	c	namespace:ldd::skel
+ldd::skel::ProcTitle::Init	internal/proctitle.cc	/^bool ProcTitle::Init(int argc, char** argv) { return true; }$/;"	f	class:ldd::skel::ProcTitle
+ldd::skel::ProcTitle::Init	internal/proctitle.h	/^    static bool Init(int argc, char** argv);$/;"	p	class:ldd::skel::ProcTitle	access:public
+ldd::skel::ProcTitle::Set	internal/proctitle.cc	/^void ProcTitle::Set(const std::string& title) {$/;"	f	class:ldd::skel::ProcTitle
+ldd::skel::ProcTitle::Set	internal/proctitle.h	/^    static void Set(const std::string& title);$/;"	p	class:ldd::skel::ProcTitle	access:public
+ldd::skel::Reload	internal/config.h	/^struct Reload {$/;"	s	namespace:ldd::skel
+ldd::skel::Reload::Policy	internal/config.h	/^    enum Policy {$/;"	g	struct:ldd::skel::Reload	access:public
+ldd::skel::Reload::kPolicySafe	internal/config.h	/^        kPolicySafe,$/;"	e	enum:ldd::skel::Reload::Policy
+ldd::skel::Reload::kPolicySimple	internal/config.h	/^        kPolicySimple,$/;"	e	enum:ldd::skel::Reload::Policy
+ldd::skel::Reload::kPolicySole	internal/config.h	/^        kPolicySole,$/;"	e	enum:ldd::skel::Reload::Policy
+ldd::skel::SimpleChild	internal/child.h	/^class SimpleChild : public SinglePortChild {$/;"	c	namespace:ldd::skel	inherits:SinglePortChild
+ldd::skel::SimpleChild::DoInit	internal/child.cc	/^bool SimpleChild::DoInit() {$/;"	f	class:ldd::skel::SimpleChild
+ldd::skel::SimpleChild::DoInit	internal/child.h	/^    virtual bool DoInit();$/;"	p	class:ldd::skel::SimpleChild	access:private
+ldd::skel::SimpleChild::DoRun	internal/child.cc	/^void SimpleChild::DoRun() {$/;"	f	class:ldd::skel::SimpleChild
+ldd::skel::SimpleChild::DoRun	internal/child.h	/^    virtual void DoRun();$/;"	p	class:ldd::skel::SimpleChild	access:private
+ldd::skel::SimpleChild::SimpleChild	internal/child.cc	/^SimpleChild::SimpleChild(Config* config, int port,$/;"	f	class:ldd::skel::SimpleChild
+ldd::skel::SimpleChild::SimpleChild	internal/child.h	/^    SimpleChild(Config* config, int port, ldd::net::Listener* listener);$/;"	p	class:ldd::skel::SimpleChild	access:public
+ldd::skel::SimpleChild::module	internal/child.h	/^    SimpleModule* module() const {$/;"	f	class:ldd::skel::SimpleChild	access:private
+ldd::skel::SimpleChild::~SimpleChild	internal/child.cc	/^SimpleChild::~SimpleChild() {$/;"	f	class:ldd::skel::SimpleChild
+ldd::skel::SimpleChild::~SimpleChild	internal/child.h	/^    ~SimpleChild();$/;"	p	class:ldd::skel::SimpleChild	access:public
+ldd::skel::SimpleModule	module.h	/^class SimpleModule : public Module {$/;"	c	namespace:ldd::skel	inherits:Module
+ldd::skel::SimpleModule::InitModule	module.h	/^    virtual bool InitModule(ModuleCtx* ctx) = 0;$/;"	p	class:ldd::skel::SimpleModule	access:public
+ldd::skel::SimpleModule::ModuleCtx	module.h	/^    struct ModuleCtx : virtual public Module::ModuleCtx {$/;"	s	class:ldd::skel::SimpleModule	inherits:Module::ModuleCtx	access:public
+ldd::skel::SimpleModule::ModuleCtx::listener	module.h	/^        virtual net::Listener* listener() const = 0;$/;"	p	struct:ldd::skel::SimpleModule::ModuleCtx	access:public
+ldd::skel::SimpleModule::ModuleCtx::port	module.h	/^        virtual int port() const = 0;$/;"	p	struct:ldd::skel::SimpleModule::ModuleCtx	access:public
+ldd::skel::SimpleModule::type	module.h	/^    Type type() { return kTypeSimple; }$/;"	f	class:ldd::skel::SimpleModule	access:public
+ldd::skel::SimpleModuleCtx	internal/context.h	/^class SimpleModuleCtx : public SimpleModule::ModuleCtx, public BaseModuleCtx {$/;"	c	namespace:ldd::skel	inherits:SimpleModule::ModuleCtx,BaseModuleCtx
+ldd::skel::SimpleModuleCtx::SimpleModuleCtx	internal/context.h	/^    SimpleModuleCtx(Config* config, ldd::net::Listener* listener, int port)$/;"	f	class:ldd::skel::SimpleModuleCtx	access:public
+ldd::skel::SimpleModuleCtx::listener	internal/context.h	/^    virtual net::Listener* listener() const { return listener_; }$/;"	f	class:ldd::skel::SimpleModuleCtx	access:public
+ldd::skel::SimpleModuleCtx::listener_	internal/context.h	/^    ldd::net::Listener* listener_;$/;"	m	class:ldd::skel::SimpleModuleCtx	access:private
+ldd::skel::SimpleModuleCtx::port	internal/context.h	/^    virtual int port() const { return port_; }$/;"	f	class:ldd::skel::SimpleModuleCtx	access:public
+ldd::skel::SimpleModuleCtx::port_	internal/context.h	/^    int port_;$/;"	m	class:ldd::skel::SimpleModuleCtx	access:private
+ldd::skel::SingleMasterChild	internal/child.h	/^class SingleMasterChild : public Child {$/;"	c	namespace:ldd::skel	inherits:Child
+ldd::skel::SingleMasterChild::DoCleanUp	internal/child.cc	/^void SingleMasterChild::DoCleanUp() {$/;"	f	class:ldd::skel::SingleMasterChild
+ldd::skel::SingleMasterChild::DoCleanUp	internal/child.h	/^    virtual void DoCleanUp();$/;"	p	class:ldd::skel::SingleMasterChild	access:public
+ldd::skel::SingleMasterChild::DoInit	internal/child.cc	/^bool SingleMasterChild::DoInit() {$/;"	f	class:ldd::skel::SingleMasterChild
+ldd::skel::SingleMasterChild::DoInit	internal/child.h	/^    virtual bool DoInit();$/;"	p	class:ldd::skel::SingleMasterChild	access:public
+ldd::skel::SingleMasterChild::DoRun	internal/child.cc	/^void SingleMasterChild::DoRun() {$/;"	f	class:ldd::skel::SingleMasterChild
+ldd::skel::SingleMasterChild::DoRun	internal/child.h	/^    virtual void DoRun();$/;"	p	class:ldd::skel::SingleMasterChild	access:public
+ldd::skel::SingleMasterChild::HandleChild	internal/child.cc	/^void SingleMasterChild::HandleChild() {$/;"	f	class:ldd::skel::SingleMasterChild
+ldd::skel::SingleMasterChild::HandleChild	internal/child.h	/^    virtual void HandleChild();$/;"	p	class:ldd::skel::SingleMasterChild	access:public
+ldd::skel::SingleMasterChild::RebootWorker	internal/child.cc	/^void SingleMasterChild::RebootWorker(int port) {$/;"	f	class:ldd::skel::SingleMasterChild
+ldd::skel::SingleMasterChild::RebootWorker	internal/child.h	/^    void RebootWorker(int port);$/;"	p	class:ldd::skel::SingleMasterChild	access:private
+ldd::skel::SingleMasterChild::RunWorker	internal/child.cc	/^void SingleMasterChild::RunWorker(int port) {$/;"	f	class:ldd::skel::SingleMasterChild
+ldd::skel::SingleMasterChild::RunWorker	internal/child.h	/^    void RunWorker(int port);$/;"	p	class:ldd::skel::SingleMasterChild	access:private
+ldd::skel::SingleMasterChild::RunWorkers	internal/child.cc	/^void SingleMasterChild::RunWorkers() {$/;"	f	class:ldd::skel::SingleMasterChild
+ldd::skel::SingleMasterChild::RunWorkers	internal/child.h	/^    void RunWorkers();$/;"	p	class:ldd::skel::SingleMasterChild	access:private
+ldd::skel::SingleMasterChild::SingleMasterChild	internal/child.cc	/^SingleMasterChild::SingleMasterChild(Config* config,$/;"	f	class:ldd::skel::SingleMasterChild
+ldd::skel::SingleMasterChild::SingleMasterChild	internal/child.h	/^    SingleMasterChild(Config* config, net::EventLoop* event_loop,$/;"	p	class:ldd::skel::SingleMasterChild	access:public
+ldd::skel::SingleMasterChild::listeners_	internal/child.h	/^    boost::ptr_map<int, ldd::net::Listener>& listeners_;$/;"	m	class:ldd::skel::SingleMasterChild	access:private
+ldd::skel::SingleMasterChild::mloop_	internal/child.h	/^    net::EventLoop* mloop_;$/;"	m	class:ldd::skel::SingleMasterChild	access:private
+ldd::skel::SingleMasterChild::module	internal/child.h	/^    SingleMasterModule* module() const {$/;"	f	class:ldd::skel::SingleMasterChild	access:private
+ldd::skel::SingleMasterChild::timers_	internal/child.h	/^    std::map<int, net::TimerEvent*> timers_;$/;"	m	class:ldd::skel::SingleMasterChild	access:private
+ldd::skel::SingleMasterChild::wloop_	internal/child.h	/^    net::EventLoop* wloop_;$/;"	m	class:ldd::skel::SingleMasterChild	access:private
+ldd::skel::SingleMasterChild::workers_	internal/child.h	/^    std::map<pid_t, int> workers_;$/;"	m	class:ldd::skel::SingleMasterChild	access:private
+ldd::skel::SingleMasterChild::~SingleMasterChild	internal/child.cc	/^SingleMasterChild::~SingleMasterChild() {$/;"	f	class:ldd::skel::SingleMasterChild
+ldd::skel::SingleMasterChild::~SingleMasterChild	internal/child.h	/^    ~SingleMasterChild();$/;"	p	class:ldd::skel::SingleMasterChild	access:public
+ldd::skel::SingleMasterModule	module.h	/^class SingleMasterModule : public Module {$/;"	c	namespace:ldd::skel	inherits:Module
+ldd::skel::SingleMasterModule::InitModule	module.h	/^    virtual bool InitModule(ModuleCtx* ctx) = 0;$/;"	p	class:ldd::skel::SingleMasterModule	access:public
+ldd::skel::SingleMasterModule::InitWorker	module.h	/^    virtual bool InitWorker(WorkerCtx* ctx) = 0;$/;"	p	class:ldd::skel::SingleMasterModule	access:public
+ldd::skel::SingleMasterModule::ModuleCtx	module.h	/^    struct ModuleCtx : virtual public Module::ModuleCtx {$/;"	s	class:ldd::skel::SingleMasterModule	inherits:Module::ModuleCtx	access:public
+ldd::skel::SingleMasterModule::ModuleCtx::ports	module.h	/^        virtual const std::set<int>& ports() const = 0;$/;"	p	struct:ldd::skel::SingleMasterModule::ModuleCtx	access:public
+ldd::skel::SingleMasterModule::WorkerCtx	module.h	/^    struct WorkerCtx : virtual public Module::WorkerCtx {$/;"	s	class:ldd::skel::SingleMasterModule	inherits:Module::WorkerCtx	access:public
+ldd::skel::SingleMasterModule::WorkerCtx::port	module.h	/^        virtual int port() const = 0;$/;"	p	struct:ldd::skel::SingleMasterModule::WorkerCtx	access:public
+ldd::skel::SingleMasterModule::type	module.h	/^    Type type() { return kTypeSingleMaster; }$/;"	f	class:ldd::skel::SingleMasterModule	access:public
+ldd::skel::SingleMasterModuleCtx	internal/context.h	/^class SingleMasterModuleCtx : public SingleMasterModule::ModuleCtx,$/;"	c	namespace:ldd::skel	inherits:SingleMasterModule::ModuleCtx,BaseModuleCtx
+ldd::skel::SingleMasterModuleCtx::SingleMasterModuleCtx	internal/context.h	/^    SingleMasterModuleCtx(Config* config, ldd::net::EventLoop* event_loop,$/;"	f	class:ldd::skel::SingleMasterModuleCtx	access:public
+ldd::skel::SingleMasterModuleCtx::ports	internal/context.h	/^    virtual const std::set<int>& ports() const { return ports_; }$/;"	f	class:ldd::skel::SingleMasterModuleCtx	access:public
+ldd::skel::SingleMasterModuleCtx::ports_	internal/context.h	/^    std::set<int> ports_;$/;"	m	class:ldd::skel::SingleMasterModuleCtx	access:private
+ldd::skel::SingleMasterWorkerCtx	internal/context.h	/^class SingleMasterWorkerCtx : public SingleMasterModule::WorkerCtx,$/;"	c	namespace:ldd::skel	inherits:SingleMasterModule::WorkerCtx,BaseWorkerCtx
+ldd::skel::SingleMasterWorkerCtx::SingleMasterWorkerCtx	internal/context.h	/^    SingleMasterWorkerCtx(ldd::net::Listener* listener, int port)$/;"	f	class:ldd::skel::SingleMasterWorkerCtx	access:public
+ldd::skel::SingleMasterWorkerCtx::port	internal/context.h	/^    virtual int port() const { return port_; }$/;"	f	class:ldd::skel::SingleMasterWorkerCtx	access:public
+ldd::skel::SingleMasterWorkerCtx::port_	internal/context.h	/^    int port_;$/;"	m	class:ldd::skel::SingleMasterWorkerCtx	access:private
+ldd::skel::SinglePortChild	internal/child.h	/^class SinglePortChild : public Child {$/;"	c	namespace:ldd::skel	inherits:Child
+ldd::skel::SinglePortChild::SinglePortChild	internal/child.cc	/^SinglePortChild::SinglePortChild(Config* config, Module::Type type,$/;"	f	class:ldd::skel::SinglePortChild
+ldd::skel::SinglePortChild::SinglePortChild	internal/child.h	/^    SinglePortChild(Config* config, Module::Type type,$/;"	p	class:ldd::skel::SinglePortChild	access:public
+ldd::skel::SinglePortChild::listener	internal/child.h	/^    ldd::net::Listener* listener() const { return listener_; }$/;"	f	class:ldd::skel::SinglePortChild	access:protected
+ldd::skel::SinglePortChild::listener_	internal/child.h	/^    ldd::net::Listener* listener_;$/;"	m	class:ldd::skel::SinglePortChild	access:private
+ldd::skel::SinglePortChild::port	internal/child.h	/^    int port() const { return port_; }$/;"	f	class:ldd::skel::SinglePortChild	access:protected
+ldd::skel::SinglePortChild::port_	internal/child.h	/^    int port_;$/;"	m	class:ldd::skel::SinglePortChild	access:private
+ldd::skel::Skel	internal/skel.h	/^class Skel {$/;"	c	namespace:ldd::skel
+ldd::skel::Skel::CheckStatus	internal/skel.cc	/^void Skel::CheckStatus() {$/;"	f	class:ldd::skel::Skel
+ldd::skel::Skel::CheckStatus	internal/skel.h	/^    void CheckStatus();$/;"	p	class:ldd::skel::Skel	access:private
+ldd::skel::Skel::Init	internal/skel.cc	/^bool Skel::Init(int argc, char** argv) {$/;"	f	class:ldd::skel::Skel
+ldd::skel::Skel::Init	internal/skel.h	/^    bool Init(int argc, char** argv);$/;"	p	class:ldd::skel::Skel	access:public
+ldd::skel::Skel::KillDaemon	internal/skel.cc	/^void Skel::KillDaemon() {$/;"	f	class:ldd::skel::Skel
+ldd::skel::Skel::KillDaemon	internal/skel.h	/^    void KillDaemon();$/;"	p	class:ldd::skel::Skel	access:private
+ldd::skel::Skel::ReloadDaemon	internal/skel.cc	/^void Skel::ReloadDaemon() {$/;"	f	class:ldd::skel::Skel
+ldd::skel::Skel::ReloadDaemon	internal/skel.h	/^    void ReloadDaemon();$/;"	p	class:ldd::skel::Skel	access:private
+ldd::skel::Skel::Run	internal/skel.cc	/^void Skel::Run() {$/;"	f	class:ldd::skel::Skel
+ldd::skel::Skel::Run	internal/skel.h	/^    void Run();$/;"	p	class:ldd::skel::Skel	access:public
+ldd::skel::Skel::RunAsDaemon	internal/skel.cc	/^void Skel::RunAsDaemon() {$/;"	f	class:ldd::skel::Skel
+ldd::skel::Skel::RunAsDaemon	internal/skel.h	/^    void RunAsDaemon();$/;"	p	class:ldd::skel::Skel	access:private
+ldd::skel::Skel::RunForeground	internal/skel.cc	/^void Skel::RunForeground() {$/;"	f	class:ldd::skel::Skel
+ldd::skel::Skel::RunForeground	internal/skel.h	/^    void RunForeground();$/;"	p	class:ldd::skel::Skel	access:private
+ldd::skel::Skel::RunMonitor	internal/skel.cc	/^void Skel::RunMonitor() {$/;"	f	class:ldd::skel::Skel
+ldd::skel::Skel::RunMonitor	internal/skel.h	/^    void RunMonitor();$/;"	p	class:ldd::skel::Skel	access:private
+ldd::skel::Skel::Skel	internal/skel.cc	/^Skel::Skel()$/;"	f	class:ldd::skel::Skel
+ldd::skel::Skel::Skel	internal/skel.h	/^    Skel();$/;"	p	class:ldd::skel::Skel	access:public
+ldd::skel::Skel::monitor_	internal/skel.h	/^    Monitor* monitor_;$/;"	m	class:ldd::skel::Skel	access:private
+ldd::skel::Skel::~Skel	internal/skel.cc	/^Skel::~Skel() {$/;"	f	class:ldd::skel::Skel
+ldd::skel::Skel::~Skel	internal/skel.h	/^    ~Skel();$/;"	p	class:ldd::skel::Skel	access:public
+ldd::skel::WorkerChild	internal/child.h	/^class WorkerChild : public SinglePortChild {$/;"	c	namespace:ldd::skel	inherits:SinglePortChild
+ldd::skel::WorkerChild::DoCleanUp	internal/child.cc	/^void WorkerChild::DoCleanUp() {$/;"	f	class:ldd::skel::WorkerChild
+ldd::skel::WorkerChild::DoCleanUp	internal/child.h	/^    virtual void DoCleanUp();$/;"	p	class:ldd::skel::WorkerChild	access:private
+ldd::skel::WorkerChild::DoInit	internal/child.cc	/^bool WorkerChild::DoInit() {$/;"	f	class:ldd::skel::WorkerChild
+ldd::skel::WorkerChild::DoInit	internal/child.h	/^    virtual bool DoInit();$/;"	p	class:ldd::skel::WorkerChild	access:private
+ldd::skel::WorkerChild::DoRun	internal/child.cc	/^void WorkerChild::DoRun() {$/;"	f	class:ldd::skel::WorkerChild
+ldd::skel::WorkerChild::DoRun	internal/child.h	/^    virtual void DoRun();$/;"	p	class:ldd::skel::WorkerChild	access:private
+ldd::skel::WorkerChild::HandleChild	internal/child.cc	/^void WorkerChild::HandleChild() {$/;"	f	class:ldd::skel::WorkerChild
+ldd::skel::WorkerChild::HandleChild	internal/child.h	/^    virtual void HandleChild();$/;"	p	class:ldd::skel::WorkerChild	access:private
+ldd::skel::WorkerChild::RebootWorker	internal/child.cc	/^void WorkerChild::RebootWorker() {$/;"	f	class:ldd::skel::WorkerChild
+ldd::skel::WorkerChild::RebootWorker	internal/child.h	/^    void RebootWorker();$/;"	p	class:ldd::skel::WorkerChild	access:private
+ldd::skel::WorkerChild::RunWorker	internal/child.cc	/^void WorkerChild::RunWorker() {$/;"	f	class:ldd::skel::WorkerChild
+ldd::skel::WorkerChild::RunWorker	internal/child.h	/^    void RunWorker();$/;"	p	class:ldd::skel::WorkerChild	access:private
+ldd::skel::WorkerChild::WorkerChild	internal/child.cc	/^WorkerChild::WorkerChild(Config* config, int port,$/;"	f	class:ldd::skel::WorkerChild
+ldd::skel::WorkerChild::WorkerChild	internal/child.h	/^    WorkerChild(Config* config, int port,$/;"	p	class:ldd::skel::WorkerChild	access:public
+ldd::skel::WorkerChild::mloop_	internal/child.h	/^    net::EventLoop* mloop_;$/;"	m	class:ldd::skel::WorkerChild	access:private
+ldd::skel::WorkerChild::module	internal/child.h	/^    WorkerModule* module() const {$/;"	f	class:ldd::skel::WorkerChild	access:private
+ldd::skel::WorkerChild::timer_	internal/child.h	/^    net::TimerEvent* timer_;$/;"	m	class:ldd::skel::WorkerChild	access:private
+ldd::skel::WorkerChild::wloop_	internal/child.h	/^    net::EventLoop* wloop_;$/;"	m	class:ldd::skel::WorkerChild	access:private
+ldd::skel::WorkerChild::worker_	internal/child.h	/^    pid_t worker_;$/;"	m	class:ldd::skel::WorkerChild	access:private
+ldd::skel::WorkerChild::~WorkerChild	internal/child.cc	/^WorkerChild::~WorkerChild()$/;"	f	class:ldd::skel::WorkerChild
+ldd::skel::WorkerChild::~WorkerChild	internal/child.h	/^    ~WorkerChild();$/;"	p	class:ldd::skel::WorkerChild	access:public
+ldd::skel::WorkerModule	module.h	/^class WorkerModule : public Module {$/;"	c	namespace:ldd::skel	inherits:Module
+ldd::skel::WorkerModule::InitModule	module.h	/^    virtual bool InitModule(ModuleCtx* ctx) = 0;$/;"	p	class:ldd::skel::WorkerModule	access:public
+ldd::skel::WorkerModule::InitWorker	module.h	/^    virtual bool InitWorker(WorkerCtx* ctx) = 0;$/;"	p	class:ldd::skel::WorkerModule	access:public
+ldd::skel::WorkerModule::ModuleCtx	module.h	/^    struct ModuleCtx : virtual public Module::ModuleCtx {$/;"	s	class:ldd::skel::WorkerModule	inherits:Module::ModuleCtx	access:public
+ldd::skel::WorkerModule::ModuleCtx::port	module.h	/^        virtual int port() const = 0;$/;"	p	struct:ldd::skel::WorkerModule::ModuleCtx	access:public
+ldd::skel::WorkerModule::WorkerCtx	module.h	/^    struct WorkerCtx : virtual public Module::WorkerCtx {$/;"	s	class:ldd::skel::WorkerModule	inherits:Module::WorkerCtx	access:public
+ldd::skel::WorkerModule::type	module.h	/^    Type type() { return kTypeWorker; }$/;"	f	class:ldd::skel::WorkerModule	access:public
+ldd::skel::WorkerModuleCtx	internal/context.h	/^class WorkerModuleCtx : public WorkerModule::ModuleCtx, public BaseModuleCtx {$/;"	c	namespace:ldd::skel	inherits:WorkerModule::ModuleCtx,BaseModuleCtx
+ldd::skel::WorkerModuleCtx::WorkerModuleCtx	internal/context.h	/^    WorkerModuleCtx(Config* config, ldd::net::EventLoop* event_loop, int port)$/;"	f	class:ldd::skel::WorkerModuleCtx	access:public
+ldd::skel::WorkerModuleCtx::port	internal/context.h	/^    virtual int port() const { return port_; }$/;"	f	class:ldd::skel::WorkerModuleCtx	access:public
+ldd::skel::WorkerModuleCtx::port_	internal/context.h	/^    int port_;$/;"	m	class:ldd::skel::WorkerModuleCtx	access:private
+ldd::skel::WorkerWorkerCtx	internal/context.h	/^class WorkerWorkerCtx : public WorkerModule::WorkerCtx, public BaseWorkerCtx {$/;"	c	namespace:ldd::skel	inherits:WorkerModule::WorkerCtx,BaseWorkerCtx
+ldd::skel::WorkerWorkerCtx::WorkerWorkerCtx	internal/context.h	/^    WorkerWorkerCtx(ldd::net::Listener* listener)$/;"	f	class:ldd::skel::WorkerWorkerCtx	access:public
+ldd::skel::kCfgExt	internal/option.cc	/^const char* kCfgExt = ".conf";$/;"	m	namespace:ldd::skel	file:
+ldd::skel::kDefaultCfgDir	internal/option.cc	/^const char* kDefaultCfgDir = "\/home\/s\/etc\/lddskel";$/;"	m	namespace:ldd::skel	file:
+ldd::skel::kDefaultInitTimeout	internal/option.h	/^const int kDefaultInitTimeout = 5;$/;"	m	namespace:ldd::skel
+ldd::skel::kDefaultLibDir	internal/option.cc	/^const char* kDefaultLibDir = "\/home\/s\/lib\/lddskel";$/;"	m	namespace:ldd::skel	file:
+ldd::skel::kDefaultLogDir	internal/option.cc	/^const char* kDefaultLogDir = "\/home\/s\/var\/log";$/;"	m	namespace:ldd::skel	file:
+ldd::skel::kDefaultPidDir	internal/option.cc	/^const char* kDefaultPidDir = "\/home\/s\/var\/run";$/;"	m	namespace:ldd::skel	file:
+ldd::skel::kDefaultRebootDelay	internal/option.h	/^const int kDefaultRebootDelay = 1;$/;"	m	namespace:ldd::skel
+ldd::skel::kDefaultStopTimeout	internal/option.h	/^const int kDefaultStopTimeout = 5;$/;"	m	namespace:ldd::skel
+ldd::skel::kMaxWaitingWorker	internal/child.cc	/^const int kMaxWaitingWorker = 8* 1000LL;$/;"	m	namespace:ldd::skel	file:
+ldd::skel::kModuleLoaderNames	internal/child.cc	/^const char* kModuleLoaderNames[] = {$/;"	m	namespace:ldd::skel	file:
+ldd::skel::kPidExt	internal/option.cc	/^const char* kPidExt = ".pid";$/;"	m	namespace:ldd::skel	file:
+lddskel_CXXFLAGS	Makefile	/^lddskel_CXXFLAGS = -I..\/..\/$/;"	m
+lddskel_LDFLAGS	Makefile	/^lddskel_LDFLAGS  = -L.$/;"	m
+lddskel_LDLIBS	Makefile	/^lddskel_LDLIBS   = -llddskel$/;"	m
+lddskel_RPATHS	Makefile	/^lddskel_RPATHS   = .$/;"	m
+lddskel_SOURCES	Makefile	/^lddskel_SOURCES  = main.cc$/;"	m
+lib_dir	internal/option.h	/^    const std::string& lib_dir() const { return lib_dir_; }$/;"	f	class:ldd::skel::Option	access:public
+lib_dir_	internal/option.h	/^    std::string lib_dir_;$/;"	m	class:ldd::skel::Option	access:private
+liblddskel.so_CXXFLAGS	Makefile	/^liblddskel.so_CXXFLAGS= -I..\/..\/$/;"	m
+liblddskel.so_LDFLAGS	Makefile	/^liblddskel.so_LDFLAGS = -L..\/net$/;"	m
+liblddskel.so_LDLIBS	Makefile	/^liblddskel.so_LDLIBS  = -llddnet -lboost_program_options-mt -ldaemon -ldl$/;"	m
+liblddskel.so_RPATHS	Makefile	/^liblddskel.so_RPATHS  = ..\/net$/;"	m
+liblddskel.so_SOURCES	Makefile	/^liblddskel.so_SOURCES = $(filter-out main.cc,$(wildcard *.cc)) $(wildcard internal\/*.cc)$/;"	m
+listener	internal/child.h	/^    ldd::net::Listener* listener() const { return listener_; }$/;"	f	class:ldd::skel::SinglePortChild	access:protected
+listener	internal/context.h	/^    virtual net::Listener* listener() const { return listener_; }$/;"	f	class:ldd::skel::SimpleModuleCtx	access:public
+listener	internal/context.h	/^    virtual net::Listener* listener() const {$/;"	f	class:ldd::skel::BaseWorkerCtx	access:public
+listener	module.h	/^        virtual net::Listener* listener() const = 0;$/;"	p	struct:ldd::skel::Module::WorkerCtx	access:public
+listener	module.h	/^        virtual net::Listener* listener() const = 0;$/;"	p	struct:ldd::skel::SimpleModule::ModuleCtx	access:public
+listener_	internal/child.h	/^    ldd::net::Listener* listener_;$/;"	m	class:ldd::skel::SinglePortChild	access:private
+listener_	internal/context.h	/^    ldd::net::Listener* listener_;$/;"	m	class:ldd::skel::BaseWorkerCtx	access:private
+listener_	internal/context.h	/^    ldd::net::Listener* listener_;$/;"	m	class:ldd::skel::SimpleModuleCtx	access:private
+listeners_	internal/child.h	/^    boost::ptr_map<int, ldd::net::Listener>& listeners_;$/;"	m	class:ldd::skel::SingleMasterChild	access:private
+listeners_	internal/monitor.h	/^    boost::ptr_map<int, net::Listener> listeners_;$/;"	m	class:ldd::skel::Monitor	access:private
+log_dir	internal/option.h	/^    const std::string& log_dir() const { return log_dir_; }$/;"	f	class:ldd::skel::Option	access:public
+log_dir_	internal/option.h	/^    std::string log_dir_;$/;"	m	class:ldd::skel::Option	access:private
+log_flush	internal/config.h	/^    int log_flush() const { return log_flush_; }$/;"	f	class:ldd::skel::Config	access:public
+log_flush_	internal/config.h	/^    int log_flush_;$/;"	m	class:ldd::skel::Config	access:private
+log_level	internal/config.h	/^    int log_level() const { return log_level_; }$/;"	f	class:ldd::skel::Config	access:public
+log_level_	internal/config.h	/^    int log_level_;$/;"	m	class:ldd::skel::Config	access:private
+log_size	internal/config.h	/^    int log_size() const { return log_size_; }$/;"	f	class:ldd::skel::Config	access:public
+log_size_	internal/config.h	/^    int log_size_;$/;"	m	class:ldd::skel::Config	access:private
+loop_	examples/example1/src/example1.cc	/^    ldd::net::EventLoop* loop_;$/;"	m	class:ExampleModule	file:	access:private
+loop_	examples/example2/src/example2.cc	/^    ldd::net::EventLoop* loop_;$/;"	m	class:ExampleModule	file:	access:private
+loop_	examples/template/src/template.cc	/^    ldd::net::EventLoop* loop_;$/;"	m	class:TemplateModule	file:	access:private
+loop_	internal/child.h	/^    net::EventLoop* loop_;$/;"	m	class:ldd::skel::Child	access:protected
+main	examples/client/main.cc	/^int main(int argc, char *argv[])$/;"	f
+main	main.cc	/^int main(int argc, char** argv) {$/;"	f
+mloop_	internal/child.h	/^    net::EventLoop* mloop_;$/;"	m	class:ldd::skel::SingleMasterChild	access:private
+mloop_	internal/child.h	/^    net::EventLoop* mloop_;$/;"	m	class:ldd::skel::WorkerChild	access:private
+mloop_	internal/monitor.h	/^    boost::scoped_ptr<net::EventLoop> mloop_;$/;"	m	class:ldd::skel::Monitor	access:private
+module	internal/child.h	/^    Module* module() const { return module_; }$/;"	f	class:ldd::skel::Child	access:protected
+module	internal/child.h	/^    SimpleModule* module() const {$/;"	f	class:ldd::skel::SimpleChild	access:private
+module	internal/child.h	/^    SingleMasterModule* module() const {$/;"	f	class:ldd::skel::SingleMasterChild	access:private
+module	internal/child.h	/^    WorkerModule* module() const {$/;"	f	class:ldd::skel::WorkerChild	access:private
+module_	internal/child.h	/^    Module* module_;$/;"	m	class:ldd::skel::Child	access:private
+monitor_	internal/skel.h	/^    Monitor* monitor_;$/;"	m	class:ldd::skel::Skel	access:private
+n_	examples/example1/src/example1.cc	/^    size_t n_;$/;"	m	class:MyEchoMsg	file:	access:private
+n_	examples/example2/src/example2.cc	/^    size_t n_;$/;"	m	class:MyEchoMsg	file:	access:private
+name	internal/option.h	/^    const std::string& name() const { return name_; }$/;"	f	class:ldd::skel::Option	access:public
+name_	internal/option.h	/^    std::string name_;$/;"	m	class:ldd::skel::Option	access:private
+new_child_	internal/monitor.h	/^    pid_t new_child_;$/;"	m	class:ldd::skel::Monitor	access:private
+payload_	examples/example1/src/example1.cc	/^    Payload payload_;$/;"	m	class:MyEchoMsg	file:	access:private
+payload_	examples/example2/src/example2.cc	/^    Payload payload_;$/;"	m	class:MyEchoMsg	file:	access:private
+payload_	examples/template/src/template.cc	/^    Payload payload_;$/;"	m	class:MyEchoMsg	file:	access:private
+pid_file	internal/option.h	/^    const std::string& pid_file() const { return pid_file_; }$/;"	f	class:ldd::skel::Option	access:public
+pid_file_	internal/option.h	/^    std::string pid_file_;$/;"	m	class:ldd::skel::Option	access:private
+port	internal/child.h	/^    int port() const { return port_; }$/;"	f	class:ldd::skel::SinglePortChild	access:protected
+port	internal/context.h	/^    virtual int port() const { return port_; }$/;"	f	class:ldd::skel::SimpleModuleCtx	access:public
+port	internal/context.h	/^    virtual int port() const { return port_; }$/;"	f	class:ldd::skel::SingleMasterWorkerCtx	access:public
+port	internal/context.h	/^    virtual int port() const { return port_; }$/;"	f	class:ldd::skel::WorkerModuleCtx	access:public
+port	module.h	/^        virtual int port() const = 0;$/;"	p	struct:ldd::skel::SimpleModule::ModuleCtx	access:public
+port	module.h	/^        virtual int port() const = 0;$/;"	p	struct:ldd::skel::SingleMasterModule::WorkerCtx	access:public
+port	module.h	/^        virtual int port() const = 0;$/;"	p	struct:ldd::skel::WorkerModule::ModuleCtx	access:public
+port_	internal/child.h	/^    int port_;$/;"	m	class:ldd::skel::SinglePortChild	access:private
+port_	internal/context.h	/^    int port_;$/;"	m	class:ldd::skel::SimpleModuleCtx	access:private
+port_	internal/context.h	/^    int port_;$/;"	m	class:ldd::skel::SingleMasterWorkerCtx	access:private
+port_	internal/context.h	/^    int port_;$/;"	m	class:ldd::skel::WorkerModuleCtx	access:private
+ports	internal/config.h	/^    const std::set<int>& ports() const { return ports_; }$/;"	f	class:ldd::skel::Config	access:public
+ports	internal/context.h	/^    virtual const std::set<int>& ports() const { return ports_; }$/;"	f	class:ldd::skel::SingleMasterModuleCtx	access:public
+ports	module.h	/^        virtual const std::set<int>& ports() const = 0;$/;"	p	struct:ldd::skel::SingleMasterModule::ModuleCtx	access:public
+ports_	internal/config.h	/^    std::set<int> ports_;$/;"	m	class:ldd::skel::Config	access:private
+ports_	internal/context.h	/^    std::set<int> ports_;$/;"	m	class:ldd::skel::SingleMasterModuleCtx	access:private
+properties	internal/config.h	/^    const ptree& properties() const { return properties_; }$/;"	f	class:ldd::skel::Config	access:public
+properties_	internal/config.h	/^    ptree properties_;$/;"	m	class:ldd::skel::Config	access:private
+rconfig_	internal/monitor.h	/^    boost::shared_ptr<Config> rconfig_;$/;"	m	class:ldd::skel::Monitor	access:private
+reboot_delay	internal/config.h	/^    int reboot_delay() const { return reboot_delay_; }$/;"	f	class:ldd::skel::Config	access:public
+reboot_delay_	internal/config.h	/^    int reboot_delay_;$/;"	m	class:ldd::skel::Config	access:private
+reboot_timer_	internal/monitor.h	/^    boost::scoped_ptr<net::TimerEvent> reboot_timer_;$/;"	m	class:ldd::skel::Monitor	access:private
+reboot_timers_	internal/monitor.h	/^    boost::ptr_map<int, net::TimerEvent> reboot_timers_;$/;"	m	class:ldd::skel::Monitor	access:private
+reload	internal/option.h	/^    bool reload() const { return reload_; }$/;"	f	class:ldd::skel::Option	access:public
+reload_	internal/option.h	/^    bool reload_;$/;"	m	class:ldd::skel::Option	access:private
+reload_policy	internal/config.h	/^    Reload::Policy reload_policy() const { return reload_policy_; }$/;"	f	class:ldd::skel::Config	access:public
+reload_policy_	internal/config.h	/^    Reload::Policy reload_policy_;$/;"	m	class:ldd::skel::Config	access:private
+s_	examples/client/main.cc	/^    std::string s_;$/;"	m	class:MyMsg	file:	access:private
+seconds_	internal/log_flusher.h	/^    int seconds_;$/;"	m	class:ldd::skel::LogFlusher	access:private
+server_	examples/example1/src/example1.cc	/^    ldd::net::Server* server_;$/;"	m	class:ExampleModule	file:	access:private
+server_	examples/example2/src/example2.cc	/^    ldd::net::Server* server_;$/;"	m	class:ExampleModule	file:	access:private
+server_	examples/template/src/template.cc	/^    ldd::net::Server* server_;$/;"	m	class:TemplateModule	file:	access:private
+set_seconds	internal/log_flusher.h	/^    void set_seconds(int seconds) { seconds_ = seconds; }$/;"	f	class:ldd::skel::LogFlusher	access:public
+set_title	internal/child.h	/^    void set_title(const std::string& title) { title_ = title; }$/;"	f	class:ldd::skel::Child	access:protected
+sigev_	internal/child.h	/^    net::SignalEvent* sigev_;$/;"	m	class:ldd::skel::Child	access:protected
+sigev_	internal/monitor.h	/^    boost::scoped_ptr<net::SignalEvent> sigev_;$/;"	m	class:ldd::skel::Monitor	access:private
+skel	internal/child.cc	/^namespace skel {$/;"	n	namespace:ldd	file:
+skel	internal/child.h	/^namespace skel {$/;"	n	namespace:ldd
+skel	internal/config.cc	/^namespace skel {$/;"	n	namespace:ldd	file:
+skel	internal/config.h	/^namespace skel {$/;"	n	namespace:ldd
+skel	internal/context.cc	/^namespace skel {$/;"	n	namespace:ldd	file:
+skel	internal/context.h	/^namespace skel {$/;"	n	namespace:ldd
+skel	internal/log_flusher.cc	/^namespace skel {$/;"	n	namespace:ldd	file:
+skel	internal/log_flusher.h	/^namespace skel {$/;"	n	namespace:ldd
+skel	internal/monitor.cc	/^namespace skel {$/;"	n	namespace:ldd	file:
+skel	internal/monitor.h	/^namespace skel {$/;"	n	namespace:ldd
+skel	internal/option.cc	/^namespace skel {$/;"	n	namespace:ldd	file:
+skel	internal/option.h	/^namespace skel {$/;"	n	namespace:ldd
+skel	internal/proctitle.cc	/^namespace skel {$/;"	n	namespace:ldd	file:
+skel	internal/proctitle.h	/^namespace skel {$/;"	n	namespace:ldd
+skel	internal/skel.cc	/^namespace skel {$/;"	n	namespace:ldd	file:
+skel	internal/skel.h	/^namespace skel {$/;"	n	namespace:ldd
+skel	module.h	/^namespace skel {$/;"	n	namespace:ldd
+status	internal/option.h	/^    bool status() const { return status_; }$/;"	f	class:ldd::skel::Option	access:public
+status_	internal/option.h	/^    bool status_;$/;"	m	class:ldd::skel::Option	access:private
+stop_timeout	internal/config.h	/^    int stop_timeout() const { return stop_timeout_; }$/;"	f	class:ldd::skel::Config	access:public
+stop_timeout_	internal/config.h	/^    int stop_timeout_;$/;"	m	class:ldd::skel::Config	access:private
+template.so_CXXFLAGS	examples/template/src/Makefile	/^template.so_CXXFLAGS= $/;"	m
+template.so_LDFLAGS	examples/template/src/Makefile	/^template.so_LDFLAGS = $/;"	m
+template.so_LDLIBS	examples/template/src/Makefile	/^template.so_LDLIBS  = -llddnet$/;"	m
+template.so_RPATHS	examples/template/src/Makefile	/^template.so_RPATHS  = $/;"	m
+template.so_SOURCES	examples/template/src/Makefile	/^template.so_SOURCES = $(wildcard *.cc)$/;"	m
+template.so_VERSION	examples/template/src/Makefile	/^template.so_VERSION = 0.0.0$/;"	m
+timer_	internal/child.h	/^    net::TimerEvent* timer_;$/;"	m	class:ldd::skel::WorkerChild	access:private
+timer_	internal/log_flusher.h	/^    net::TimerEvent timer_;$/;"	m	class:ldd::skel::LogFlusher	access:private
+timers_	internal/child.h	/^    std::map<int, net::TimerEvent*> timers_;$/;"	m	class:ldd::skel::SingleMasterChild	access:private
+title	internal/child.h	/^    const std::string& title() const { return title_; }$/;"	f	class:ldd::skel::Child	access:protected
+title_	internal/child.h	/^    std::string title_;$/;"	m	class:ldd::skel::Child	access:private
+type	internal/child.h	/^    Module::Type type() const { return type_; }$/;"	f	class:ldd::skel::Child	access:protected
+type	internal/config.h	/^    Module::Type type() const { return type_; }$/;"	f	class:ldd::skel::Config	access:public
+type	module.h	/^    Type type() { return kTypeSimple; }$/;"	f	class:ldd::skel::SimpleModule	access:public
+type	module.h	/^    Type type() { return kTypeSingleMaster; }$/;"	f	class:ldd::skel::SingleMasterModule	access:public
+type	module.h	/^    Type type() { return kTypeWorker; }$/;"	f	class:ldd::skel::WorkerModule	access:public
+type	module.h	/^    virtual Type type() = 0;$/;"	p	class:ldd::skel::Module	access:public
+type_	internal/child.h	/^    Module::Type type_;$/;"	m	class:ldd::skel::Child	access:private
+type_	internal/config.h	/^    Module::Type type_;$/;"	m	class:ldd::skel::Config	access:private
+user	internal/config.h	/^    const std::string& user() const { return user_; }$/;"	f	class:ldd::skel::Config	access:public
+user_	internal/config.h	/^    std::string user_;$/;"	m	class:ldd::skel::Config	access:private
+vm	internal/option.h	/^        vm() const { return vm_; }$/;"	f	class:ldd::skel::Option	access:public
+vm_	internal/option.h	/^    boost::program_options::variables_map vm_;$/;"	m	class:ldd::skel::Option	access:private
+wloop_	internal/child.h	/^    net::EventLoop* wloop_;$/;"	m	class:ldd::skel::SingleMasterChild	access:private
+wloop_	internal/child.h	/^    net::EventLoop* wloop_;$/;"	m	class:ldd::skel::WorkerChild	access:private
+worker_	examples/template/src/template.cc	/^    bool worker_;$/;"	m	class:TemplateModule	file:	access:private
+worker_	internal/child.h	/^    pid_t worker_;$/;"	m	class:ldd::skel::WorkerChild	access:private
+workers_	internal/child.h	/^    std::map<pid_t, int> workers_;$/;"	m	class:ldd::skel::SingleMasterChild	access:private
+zh_	examples/example1/src/example1.cc	/^    zhandle_t* zh_;$/;"	m	class:ExampleModule	file:	access:private
+zkev_	examples/example1/src/example1.cc	/^    ldd::net::FdEvent* zkev_;$/;"	m	class:ExampleModule	file:	access:private
+zkhost_	examples/example1/src/example1.cc	/^    string zkhost_;$/;"	m	class:ExampleModule	file:	access:private
+~Child	internal/child.cc	/^Child::~Child() {$/;"	f	class:ldd::skel::Child
+~Child	internal/child.h	/^    virtual ~Child();$/;"	p	class:ldd::skel::Child	access:public
+~Config	internal/config.cc	/^Config::~Config() {$/;"	f	class:ldd::skel::Config
+~Config	internal/config.h	/^    ~Config();$/;"	p	class:ldd::skel::Config	access:public
+~ExampleModule	examples/example1/src/example1.cc	/^    ~ExampleModule() {$/;"	f	class:ExampleModule	access:public
+~ExampleModule	examples/example2/src/example2.cc	/^    ~ExampleModule() {$/;"	f	class:ExampleModule	access:public
+~LogFlusher	internal/log_flusher.cc	/^LogFlusher::~LogFlusher() {$/;"	f	class:ldd::skel::LogFlusher
+~LogFlusher	internal/log_flusher.h	/^    ~LogFlusher();$/;"	p	class:ldd::skel::LogFlusher	access:public
+~Module	module.h	/^    virtual ~Module() {}$/;"	f	class:ldd::skel::Module	access:public
+~ModuleCtx	module.h	/^        virtual ~ModuleCtx() {}$/;"	f	struct:ldd::skel::Module::ModuleCtx	access:public
+~Monitor	internal/monitor.cc	/^Monitor::~Monitor() {$/;"	f	class:ldd::skel::Monitor
+~Monitor	internal/monitor.h	/^    ~Monitor();$/;"	p	class:ldd::skel::Monitor	access:public
+~Option	internal/option.cc	/^Option::~Option() {}$/;"	f	class:ldd::skel::Option
+~Option	internal/option.h	/^    ~Option();$/;"	p	class:ldd::skel::Option	access:public
+~SimpleChild	internal/child.cc	/^SimpleChild::~SimpleChild() {$/;"	f	class:ldd::skel::SimpleChild
+~SimpleChild	internal/child.h	/^    ~SimpleChild();$/;"	p	class:ldd::skel::SimpleChild	access:public
+~SingleMasterChild	internal/child.cc	/^SingleMasterChild::~SingleMasterChild() {$/;"	f	class:ldd::skel::SingleMasterChild
+~SingleMasterChild	internal/child.h	/^    ~SingleMasterChild();$/;"	p	class:ldd::skel::SingleMasterChild	access:public
+~Skel	internal/skel.cc	/^Skel::~Skel() {$/;"	f	class:ldd::skel::Skel
+~Skel	internal/skel.h	/^    ~Skel();$/;"	p	class:ldd::skel::Skel	access:public
+~TemplateModule	examples/template/src/template.cc	/^    ~TemplateModule() {$/;"	f	class:TemplateModule	access:public
+~WorkerChild	internal/child.cc	/^WorkerChild::~WorkerChild()$/;"	f	class:ldd::skel::WorkerChild
+~WorkerChild	internal/child.h	/^    ~WorkerChild();$/;"	p	class:ldd::skel::WorkerChild	access:public
+~WorkerCtx	module.h	/^        virtual ~WorkerCtx() {}$/;"	f	struct:ldd::skel::Module::WorkerCtx	access:public

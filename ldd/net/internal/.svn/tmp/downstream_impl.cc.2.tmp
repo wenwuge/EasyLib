@@ -1,0 +1,603 @@
+#include <boost/bind.hpp>
+#include <glog/logging.h>
+
+#include <fstream>
+
+#include <boost/interprocess/anonymous_shared_memory.hpp>
+
+#include "ldd/net/event_runner.h"
+#include "ldd/net/downstream.h"
+#include "ldd/net/channel.h"
+#include "channel_impl.h"
+#include "downstream_impl.h"
+#include "event_runner_impl.h"
+
+#define WORKER_STATUS_INTERVAL 5000
+
+#define MY_SHARED_MEMORY "_downstream_impl_"
+
+
+namespace ldd { namespace net {
+
+using namespace boost::interprocess;
+#if 0
+static int set_sock_no_block(int s)
+{
+    int flags;
+
+    if ((flags = fcntl(s, F_GETFL, NULL)) < 0) {
+        return -1;
+    }
+
+    if (fcntl(s, F_SETFL, flags | O_NONBLOCK) == -1) {
+        return -1;
+    }
+
+    return 0;
+}
+
+static void set_sock_default_opt(int s)
+{
+	//设置SO_REUSEADDR选项(服务器快速重起)
+	int on = 1;
+	int result = setsockopt(s, SOL_SOCKET, SO_REUSEADDR, (char *)&on, sizeof(on));
+	if (result < 0) {
+		close(s);
+		return ;
+	}
+	
+	on = 1;
+	result = setsockopt(s, SOL_SOCKET, SO_KEEPALIVE, (char *)&on, sizeof(on)); //keep alive in TCP connection
+	
+	//设置SO_LINGER选项(防范CLOSE_WAIT挂住所有套接字, 强行关闭)
+	struct linger optval;
+	optval.l_onoff = 1;
+	optval.l_linger = 60;
+	result = setsockopt(s, SOL_SOCKET, SO_LINGER, (char *)&optval, sizeof(struct linger));
+	if ( result < 0 ) {
+		close( s );
+		return ;
+	}
+	
+	//int len = 2 * 1024 * 1024;
+	//setsockopt(s, SOL_SOCKET, SO_RCVBUF, (char *)&len, sizeof(len));
+	//setsockopt(s, SOL_SOCKET, SO_SNDBUF, (char *)&len, sizeof(len));
+	
+	return;
+}
+#endif
+
+static int create_tcp_server(const char *lip, int lport)
+{
+	struct sockaddr_in addr;
+	int s = socket( AF_INET, SOCK_STREAM, 0 );
+	if ( s == -1 ) {
+		return -1;
+	}
+	
+	//set_sock_default_opt(s);
+    //set_sock_no_block(s);
+	int on = 1;
+	int result = setsockopt(s, SOL_SOCKET, SO_REUSEADDR, (char *)&on, sizeof(on));
+	if (result < 0) {
+		close(s);
+		return false;
+	}
+
+	addr.sin_family = AF_INET;
+	if (strcmp(lip, "0.0.0.0") == 0) {
+		addr.sin_addr.s_addr = INADDR_ANY; //htonl(INADDR_ANY);
+	}
+	else {
+		addr.sin_addr.s_addr = inet_addr( lip );
+	}
+	addr.sin_port = htons( lport );
+	
+	if (bind(s, (struct sockaddr *)&addr, sizeof(struct sockaddr_in)) == -1 ) {
+		close( s);
+		s = -1;
+		return -1;
+	}
+	
+	if (listen(s, 1024) == -1 ) {
+		close(s);
+		s = -1;
+		return -1;
+	}
+	
+	return s;
+}
+
+static DownStream::Options SanitizeOptions(const DownStream::Options& options) {
+    DownStream::Options o(options);
+    if (!o.accept_runner) {
+        o.accept_runner = EventRunner::NewInplaceEventRunner();
+    }
+
+    if (!o.max_children) {
+        o.accept_mutex = false;
+    }
+
+    return o;
+}
+
+DownStream::Impl::Impl(DownStream* downstream, const Options& options)
+    : listen_fd_(-1),
+      downstream_(downstream),
+      options_(SanitizeOptions(options)),
+      owns_accept_runner_(options.accept_runner == NULL),
+      connections_(0),
+      acceptor_(NULL),
+      accept_timer_(NULL),
+      accept_mutex_held_(false)
+{
+}
+
+DownStream::Impl::~Impl()
+{
+    if (acceptor_ != NULL) {
+        delete acceptor_;
+        acceptor_ = NULL;
+    }
+
+    if (accept_timer_ != NULL) {
+        delete accept_timer_;
+        accept_timer_ = NULL;
+    }
+
+    if (options_.max_children > 0) {
+        if (accept_mutex_held_) {
+            accept_info_->mutex.unlock();
+        }
+        if (accept_info_->pid == getpid()) {
+            accept_info_->~AcceptInfo();
+            delete region_;
+        }
+    }
+
+    if (owns_accept_runner_) {
+        delete options_.accept_runner;
+    }
+}
+
+/*
+void DownStream::Impl::Notifier(const boost::shared_ptr<Channel>& c) {
+    if (c->good()) {
+        ++connections_;
+    }
+    else {
+        --connections_;
+    }
+    options_.notifier(c);
+}
+*/
+
+bool DownStream::Impl::Init(int listen_port)
+{
+    if (options_.max_children > 0) {
+        //create inter process mutex in shared memory
+        region_ = new mapped_region(
+                anonymous_shared_memory(sizeof(*accept_info_)));
+        CHECK_NOTNULL(region_);
+
+        void *addr = region_->get_address();
+        CHECK_NOTNULL(addr);
+
+        accept_info_ = new (addr) AcceptInfo();
+        accept_info_->pid = getpid();
+    }
+
+#if 0
+    try {
+        boost::asio::ip::tcp::endpoint endpoint(
+                boost::asio::ip::tcp::v4(), listen_port);
+
+        acceptor_->open(endpoint.protocol());
+        acceptor_->set_option(
+                boost::asio::ip::tcp::acceptor::reuse_address(true));
+        acceptor_->bind(endpoint);
+        acceptor_->listen();
+
+        //set noblocking
+        boost::asio::socket_base::non_blocking_io command(true);
+        acceptor_->io_control(command);
+    } catch (boost::system::system_error &e) {
+        LOG(ERROR) << "listen error: " << e.what();
+        return false;
+    } catch (...) {
+        LOG(FATAL) << "listen error: unknown exception";
+        return false;
+    }
+
+#else 
+
+    int s = create_tcp_server("0.0.0.0", listen_port);
+    if (s == -1) {
+        LOG(ERROR) << "create tcp listen[0.0.0.0:" 
+            << listen_port << "] socket error: " << strerror(errno);
+        return false;
+    }
+
+
+    listen_fd_ = s;
+
+#endif
+
+    return true;
+}
+
+/*
+ * Note: 
+ * In multi process model, function Open must be called 
+ * after fork (or in child process)
+ *
+ * */
+bool DownStream::Impl::Open()
+{
+    if (options_.max_children > 0) {
+        return OpenProcess();
+    }
+    else {
+        return OpenThread();
+    }
+}
+
+bool DownStream::Impl::OpenProcess()
+{
+    //multi process model
+    CHECK_NOTNULL(options_.accept_runner);
+
+    EventRunner::Impl::InplaceEventRunner *runner;
+    runner = dynamic_cast<EventRunner::Impl::InplaceEventRunner *>(
+            options_.accept_runner->impl_);
+    if (runner == NULL) {
+        LOG(ERROR) << "accept runner is not a InplaceEventRunner";
+        return false;
+    }
+
+    runner->set_accept_handler(
+            boost::bind(&DownStream::Impl::Accept1, this));
+
+    //create acceptor and accept_timer
+    acceptor_ = new nob_acceptor(options_.accept_runner->impl_->ios());
+    CHECK_NOTNULL(acceptor_);
+    accept_timer_ = new boost::asio::deadline_timer(
+            options_.accept_runner->impl_->ios());
+    CHECK_NOTNULL(accept_timer_);
+
+    //assign listen fd to acceptor_
+    //int fd = ::dup(listen_fd_);
+    boost::system::error_code ec;
+    acceptor_->assign(boost::asio::ip::tcp::v4(), listen_fd_, ec);
+    if (ec) {
+        LOG(ERROR) << "assign listen fd to acceptor error: " << ec.message();
+        return false;
+    }
+
+    try {
+        //set noblocking
+        boost::asio::socket_base::non_blocking_io command(true);
+        acceptor_->io_control(command);
+    } catch (boost::system::system_error &e) {
+        LOG(ERROR) << "set noblock listen socket error: " << e.what();
+        return false;
+    } catch (...) {
+        LOG(FATAL) << "listen error: unknown exception";
+        return false;
+    }
+
+    Accept1();
+
+    if (owns_accept_runner_) {
+        if (!options_.accept_runner->Start()) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+bool DownStream::Impl::OpenThread()
+{
+    //multi thread model
+    CHECK_NOTNULL(options_.accept_runner);
+
+
+    //set accept handler
+    EventRunner::Impl::InplaceEventRunner *runner;
+    runner = dynamic_cast<EventRunner::Impl::InplaceEventRunner *>(
+            options_.accept_runner->impl_);
+    if (runner == NULL) {
+        LOG(ERROR) << "accept runner is not a InplaceEventRunner";
+        return false;
+    }
+
+    runner->set_accept_handler(
+            boost::bind(&DownStream::Impl::Accept1, this));
+
+    //create acceptor
+    acceptor_ = new nob_acceptor(options_.accept_runner->impl_->ios());
+    CHECK_NOTNULL(acceptor_);
+    accept_timer_ = new boost::asio::deadline_timer(
+            options_.accept_runner->impl_->ios());
+    CHECK_NOTNULL(accept_timer_);
+
+    //assign listen fd to acceptor_
+    boost::system::error_code ec;
+    acceptor_->assign(boost::asio::ip::tcp::v4(), listen_fd_, ec);
+    if (ec) {
+        LOG(ERROR) << "assign listen fd to acceptor error: " << ec.message();
+        return false;
+    }
+
+    try {
+        //set noblocking
+        boost::asio::socket_base::non_blocking_io command(true);
+        acceptor_->io_control(command);
+    } catch (boost::system::system_error &e) {
+        LOG(ERROR) << "set noblock listen socket error: " << e.what();
+        return false;
+    } catch (...) {
+        LOG(FATAL) << "listen error: unknown exception";
+        return false;
+    }
+
+    Accept2();
+
+    if (owns_accept_runner_) {
+        if (!options_.accept_runner->Start()) {
+            return false;
+        }
+    }
+
+
+    return true;
+}
+
+void DownStream::Impl::Accept1()
+{
+    if (options_.accept_mutex) {
+        if (!accept_mutex_held_) {
+            if (!accept_info_->mutex.try_lock()) {
+                accept_mutex_held_ = false;
+                AcceptDelay();
+                LOG(INFO) << "accept mutex obj is busy, sleep "
+                    << options_.accept_mutex_delay
+                    << " ms, then retry";
+                return;
+            }
+            accept_timer_->cancel();
+            accept_mutex_held_ = true;
+        }
+        else {
+            LOG(INFO) << "accept lock already held";
+            return;
+        }
+    }
+
+    boost::shared_ptr<Channel> channel(new Channel());
+    
+    channel->impl_ = new Channel::Impl(channel.get()
+            , options_.accept_runner 
+            , options_.accept_runner->impl_->ios()
+            , downstream_
+            , options_.pulse_interval
+            , options_.notifier);
+
+    acceptor_->async_accept(channel->impl_->socket()
+                , boost::bind(&DownStream::Impl::HandleAccept1
+                , this
+                , boost::asio::placeholders::error
+                , channel));
+}
+
+void DownStream::Impl::Accept2()
+{
+    EventRunner *work_runner = NULL;
+    if (options_.io_runners != NULL) {
+        work_runner = options_.io_runners->GetEventRunner();
+        CHECK_NOTNULL(work_runner);
+    }
+    else {
+        work_runner = options_.accept_runner;
+    }
+
+
+    boost::shared_ptr<Channel> channel(new Channel());
+    
+    channel->impl_ = new Channel::Impl(channel.get()
+            , work_runner 
+            , work_runner->impl_->ios()
+            , downstream_
+            , options_.pulse_interval
+            , options_.notifier);
+
+    acceptor_->async_accept(channel->impl_->socket()
+                , boost::bind(&DownStream::Impl::HandleAccept2
+                , this
+                , boost::asio::placeholders::error
+                , channel));
+}
+
+void DownStream::Impl::Close()
+{
+    if (acceptor_ != NULL) {
+        boost::system::error_code ec;
+        acceptor_->close(ec);
+        if (ec) {
+            LOG(ERROR) << "acceptor close error: " << ec.message();
+        }
+    }
+
+#if 0
+    if (listen_fd_ != -1) {
+        ::close(listen_fd_);
+        listen_fd_ = -1;
+    }
+#endif
+
+    if (owns_accept_runner_) {
+        options_.accept_runner->Stop();
+    }
+}
+
+void DownStream::Impl::HandleAccept1(const boost::system::error_code& e
+        , boost::shared_ptr<Channel> channel)
+{
+    if (e) {
+        channel.reset();
+
+        if (e != boost::asio::error::operation_aborted) {
+            LOG(ERROR) << "async accept error: "
+                << e.message();
+        }
+        else {
+            LOG(INFO) << "async accept is cancelled";
+        }
+
+        return;
+    }
+
+    channel->impl_->Start();
+
+    int n = 0;
+    while (n++ < options_.batch_accept) {
+        channel.reset(new Channel());
+        channel->impl_ = new Channel::Impl(channel.get()
+                , options_.accept_runner
+                , options_.accept_runner->impl_->ios()
+                , downstream_
+                , options_.pulse_interval
+                , options_.notifier);
+
+        boost::system::error_code ec;
+        acceptor_->accept(channel->impl_->socket(), ec);
+        if (ec) {
+            if (ec.value() != boost::asio::error::try_again &&
+                ec.value() != boost::asio::error::would_block) {
+                LOG(ERROR) << "sync accept error: " << ec.message();
+                return;
+            }
+
+            LOG(INFO) << "sync accept error: "
+                << ec.message();
+
+            break;
+        }
+
+        channel->impl_->Start();
+    }
+
+    if (options_.accept_mutex) {
+        if (accept_mutex_held_) {
+            //停止接收连接，释放accept锁
+            accept_mutex_held_ = false;
+            accept_info_->mutex.unlock();
+            AcceptDelay();
+        }
+    }
+    else {
+        acceptor_->async_accept(channel->impl_->socket()
+                        , boost::bind(&DownStream::Impl::HandleAccept1
+                                , this
+                                , boost::asio::placeholders::error
+                                , channel)
+                        );
+    }
+}
+
+void DownStream::Impl::HandleAccept2(const boost::system::error_code& e
+        , boost::shared_ptr<Channel> channel)
+{
+    if (e) {
+        channel.reset();
+        LOG(ERROR) << "async accept error: " << e.message();
+        return;
+    }
+
+    //启动channel事件循环,这里必须判断NULL
+    if (channel != NULL) {
+        channel->impl_->Start();
+    }
+
+    int n = 0;
+    while (n++ < options_.batch_accept) {
+        EventRunner *work_runner = NULL;
+        if (options_.io_runners != NULL) {
+            work_runner = options_.io_runners->GetEventRunner();
+            if (work_runner == NULL) {
+                LOG(FATAL) << "no event runner can be used";
+                return;
+            }
+        }
+        else {
+            work_runner = options_.accept_runner;
+        }
+
+        channel.reset(new Channel());
+
+        channel->impl_ = new Channel::Impl(channel.get()
+                        , work_runner
+                        , work_runner->impl_->ios()
+                        , downstream_
+                        , options_.pulse_interval
+                        , options_.notifier);
+
+        boost::system::error_code ec;
+        acceptor_->accept(channel->impl_->socket(), ec);
+        if (ec) {
+            if (ec.value() != boost::asio::error::try_again &&
+                ec.value() != boost::asio::error::would_block) {
+                LOG(ERROR) << "sync accept error: " << ec.message();
+                return;
+            }
+
+            LOG(INFO) << "sync accept error: " << ec.message();
+
+            break;
+        }
+
+        channel->impl_->Start();
+    }
+
+    acceptor_->async_accept(channel->impl_->socket()
+                    , boost::bind(&DownStream::Impl::HandleAccept2
+                            , this
+                            , boost::asio::placeholders::error
+                            , channel)
+                    );
+}
+
+void DownStream::Impl::AcceptDelay()
+{
+    CHECK_NOTNULL(accept_timer_);
+    accept_timer_->expires_from_now(
+            boost::posix_time::milliseconds(options_.accept_mutex_delay));
+
+    accept_timer_->async_wait(boost::bind(&DownStream::Impl::HandleAcceptDelay
+                                    , this 
+                                    , boost::asio::placeholders::error)  
+                            );
+}
+
+void DownStream::Impl::HandleAcceptDelay(const boost::system::error_code &error)
+{
+    if (error) {
+        if (error != boost::asio::error::operation_aborted) {
+            LOG(ERROR) << "accept delay timer error: " 
+                << error.message();
+        }
+        else {
+            LOG(INFO) << "accept delay timer is cancelled";
+        }
+
+        return;
+    }
+
+    Accept1();
+}
+
+
+} /*namespace net*/
+} /*namespace ldd*/
+

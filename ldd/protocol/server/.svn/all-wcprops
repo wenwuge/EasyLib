@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/qdev/!svn/ver/82272/CloudLDD/trunk/src/ldd/protocol/server
+END
+store_proto.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/qdev/!svn/ver/69029/CloudLDD/trunk/src/ldd/protocol/server/store_proto.cc
+END
+command_type.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/qdev/!svn/ver/67909/CloudLDD/trunk/src/ldd/protocol/server/command_type.h
+END
+store_proto.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/qdev/!svn/ver/69029/CloudLDD/trunk/src/ldd/protocol/server/store_proto.h
+END
+store_error.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/qdev/!svn/ver/77597/CloudLDD/trunk/src/ldd/protocol/server/store_error.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/qdev/!svn/ver/82272/CloudLDD/trunk/src/ldd/protocol/server/Makefile
+END

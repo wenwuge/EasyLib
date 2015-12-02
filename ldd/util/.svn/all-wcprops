@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/qdev/!svn/ver/104887/CloudLDD/trunk/src/ldd/util
+END
+time.inl
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/qdev/!svn/ver/71707/CloudLDD/trunk/src/ldd/util/time.inl
+END
+time.cc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/qdev/!svn/ver/71707/CloudLDD/trunk/src/ldd/util/time.cc
+END
+time.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/qdev/!svn/ver/71032/CloudLDD/trunk/src/ldd/util/time.h
+END
+timestamp.inl
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/qdev/!svn/ver/74429/CloudLDD/trunk/src/ldd/util/timestamp.inl
+END
+slice.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/qdev/!svn/ver/68462/CloudLDD/trunk/src/ldd/util/slice.h
+END
+mutex.cc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/qdev/!svn/ver/66742/CloudLDD/trunk/src/ldd/util/mutex.cc
+END
+CHANGELOG
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/qdev/!svn/ver/100815/CloudLDD/trunk/src/ldd/util/CHANGELOG
+END
+mutex.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/qdev/!svn/ver/64993/CloudLDD/trunk/src/ldd/util/mutex.h
+END
+memory_order.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/qdev/!svn/ver/68189/CloudLDD/trunk/src/ldd/util/memory_order.h
+END
+timestamp.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/qdev/!svn/ver/74429/CloudLDD/trunk/src/ldd/util/timestamp.h
+END
+thread.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/qdev/!svn/ver/71032/CloudLDD/trunk/src/ldd/util/thread.cc
+END
+thread.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/qdev/!svn/ver/64682/CloudLDD/trunk/src/ldd/util/thread.h
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/qdev/!svn/ver/95907/CloudLDD/trunk/src/ldd/util/README
+END
+atomic.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/qdev/!svn/ver/68189/CloudLDD/trunk/src/ldd/util/atomic.h
+END
+const_buffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/qdev/!svn/ver/81810/CloudLDD/trunk/src/ldd/util/const_buffer.h
+END
+time_diff.inl
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/qdev/!svn/ver/74429/CloudLDD/trunk/src/ldd/util/time_diff.inl
+END
+mutable_buffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/qdev/!svn/ver/100771/CloudLDD/trunk/src/ldd/util/mutable_buffer.h
+END
+time_diff.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/qdev/!svn/ver/74429/CloudLDD/trunk/src/ldd/util/time_diff.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/qdev/!svn/ver/100917/CloudLDD/trunk/src/ldd/util/Makefile
+END

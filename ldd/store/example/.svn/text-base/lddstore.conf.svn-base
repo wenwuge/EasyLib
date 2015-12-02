@@ -1,0 +1,17 @@
+port=40000
+module=/home/zhuyangbo/CloudLDD/trunk/src/ldd/store/lddstore.so
+type=simple
+
+[leveldb]
+read_thread_num  = 5
+write_thread_num = 1
+path			 = ./leveldb
+
+
+[zookeeper]
+host_port        = 10.119.94.91:2181
+root_path		 = 
+
+[local]
+host			= 10.16.28.11
+

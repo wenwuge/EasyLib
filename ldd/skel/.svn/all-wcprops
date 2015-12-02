@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/qdev/!svn/ver/122362/CloudLDD/trunk/src/ldd/skel
+END
+ChangeLog
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/qdev/!svn/ver/122362/CloudLDD/trunk/src/ldd/skel/ChangeLog
+END
+main.cc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/qdev/!svn/ver/70905/CloudLDD/trunk/src/ldd/skel/main.cc
+END
+module.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/qdev/!svn/ver/107458/CloudLDD/trunk/src/ldd/skel/module.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/qdev/!svn/ver/82272/CloudLDD/trunk/src/ldd/skel/Makefile
+END

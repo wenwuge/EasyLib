@@ -1,0 +1,6 @@
+用valgrind对代码进行验证的时候，注意要没有内存泄漏, definitely lost 必须为0
+
+gflags.h:526
+
+造成的内存错误可以忽略
+

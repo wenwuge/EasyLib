@@ -1,0 +1,19 @@
+* Fri Dec 05 2014 yangaofeng <yangaofeng@360.cn> 1.0.21
+- Add some channel log
+
+* Mon Aug 11 2014 yangaofeng <yangaofeng@360.cn> 1.0.20
+- Fix memory leak bug for channel
+- Add stat info, control with RES_COUNTER micro
+- Add function call stack print interface, see backtrade.h
+
+* Fri Jul 18 2014 yangaofeng <yangaofeng@360.cn> 1.0.19
+- Fix SIGPIPE bug
+- Fix dns resolve timeout bug
+- add ut test
+
+* Wed Jul 09 2014 yangaofeng <yangaofeng@360.cn> 1.0.18
+- Fix a coredump bug of event impl for lddskel reload, see event_impl.cc:OnSignal
+
+* Wed Jun 18 2014 yangaofeng <yangaofeng@360.cn> 1.0.17
+- Replace asio with libevent2
+

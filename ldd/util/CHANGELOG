@@ -1,0 +1,11 @@
+* Wed Jun 18 2014 yangaofeng <yangaofeng@360.cn> 1.0.6
+- Revise some warn of compile for centos 6.2
+* Thu Dec 19 2013 lixinjie <lixinjie@360.cn> 1.0.5
+- Add ConstBuffer/MutableBuffer
+* Mon Sep  9 2013 lixinjie <lixinjie@360.cn> 1.0.3
+- Fix atomic typo
+* Mon Sep  9 2013 lixinjie <lixinjie@360.cn> 1.0.2
+- NDEBUG mode, optimized code
+* Tue Sep  3 2013 lixinjie <lixinjie@360.cn> 1.0.0
+- Initial version
+

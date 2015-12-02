@@ -1,0 +1,8 @@
+port=32768
+addr=any
+type=simple
+reload-policy=simple
+stop-timeout=1
+
+[echo]
+count = 5

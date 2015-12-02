@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/qdev/!svn/ver/81924/CloudLDD/trunk/src/ldd/syn_client/ldd_bench
+END
+histogram.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/qdev/!svn/ver/74607/CloudLDD/trunk/src/ldd/syn_client/ldd_bench/histogram.cc
+END
+testutil.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/qdev/!svn/ver/74619/CloudLDD/trunk/src/ldd/syn_client/ldd_bench/testutil.cc
+END
+ldd_store_bench.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/qdev/!svn/ver/81924/CloudLDD/trunk/src/ldd/syn_client/ldd_bench/ldd_store_bench.cc
+END
+histogram.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/qdev/!svn/ver/78881/CloudLDD/trunk/src/ldd/syn_client/ldd_bench/histogram.h
+END
+testutil.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/qdev/!svn/ver/74607/CloudLDD/trunk/src/ldd/syn_client/ldd_bench/testutil.h
+END
+slice.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/qdev/!svn/ver/74607/CloudLDD/trunk/src/ldd/syn_client/ldd_bench/slice.h
+END
+random.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/qdev/!svn/ver/74607/CloudLDD/trunk/src/ldd/syn_client/ldd_bench/random.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/qdev/!svn/ver/77370/CloudLDD/trunk/src/ldd/syn_client/ldd_bench/Makefile
+END

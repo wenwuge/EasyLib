@@ -1,0 +1,275 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/qdev/!svn/ver/99261/CloudLDD/trunk/src/ldd/courier
+END
+watcher_action_proxy.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/qdev/!svn/ver/69472/CloudLDD/trunk/src/ldd/courier/watcher_action_proxy.cc
+END
+zkbroker.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/qdev/!svn/ver/78878/CloudLDD/trunk/src/ldd/courier/zkbroker.h
+END
+zkcontext.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/qdev/!svn/ver/66802/CloudLDD/trunk/src/ldd/courier/zkcontext.h
+END
+keeper_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/qdev/!svn/ver/67490/CloudLDD/trunk/src/ldd/courier/keeper_impl.cc
+END
+watcher_action.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/qdev/!svn/ver/64572/CloudLDD/trunk/src/ldd/courier/watcher_action.h
+END
+zkbroker_proxy.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/qdev/!svn/ver/78878/CloudLDD/trunk/src/ldd/courier/zkbroker_proxy.h
+END
+options.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/qdev/!svn/ver/76191/CloudLDD/trunk/src/ldd/courier/options.h
+END
+watcher_action_proxy.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/qdev/!svn/ver/66802/CloudLDD/trunk/src/ldd/courier/watcher_action_proxy.h
+END
+configure_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/qdev/!svn/ver/78878/CloudLDD/trunk/src/ldd/courier/configure_impl.h
+END
+completion_callback_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/qdev/!svn/ver/81937/CloudLDD/trunk/src/ldd/courier/completion_callback_impl.cc
+END
+watcher_action_store.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/qdev/!svn/ver/69472/CloudLDD/trunk/src/ldd/courier/watcher_action_store.cc
+END
+courier.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/qdev/!svn/ver/76087/CloudLDD/trunk/src/ldd/courier/courier.h
+END
+redo_policy.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/qdev/!svn/ver/69472/CloudLDD/trunk/src/ldd/courier/redo_policy.h
+END
+watcher_action_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/qdev/!svn/ver/69472/CloudLDD/trunk/src/ldd/courier/watcher_action_impl.cc
+END
+watcher_action_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/qdev/!svn/ver/65437/CloudLDD/trunk/src/ldd/courier/watcher_action_impl.h
+END
+EventList.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/qdev/!svn/ver/64874/CloudLDD/trunk/src/ldd/courier/EventList.h
+END
+client.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/qdev/!svn/ver/75197/CloudLDD/trunk/src/ldd/courier/client.h
+END
+redo_simple_policy.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/qdev/!svn/ver/69465/CloudLDD/trunk/src/ldd/courier/redo_simple_policy.cc
+END
+configure.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/qdev/!svn/ver/78878/CloudLDD/trunk/src/ldd/courier/configure.h
+END
+redo_simple_policy.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/qdev/!svn/ver/69465/CloudLDD/trunk/src/ldd/courier/redo_simple_policy.h
+END
+completion_callback_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/qdev/!svn/ver/76191/CloudLDD/trunk/src/ldd/courier/completion_callback_client.h
+END
+completion_callback_proxy.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/qdev/!svn/ver/78878/CloudLDD/trunk/src/ldd/courier/completion_callback_proxy.cc
+END
+zkbroker_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/qdev/!svn/ver/77725/CloudLDD/trunk/src/ldd/courier/zkbroker_client.cc
+END
+zkbroker_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/qdev/!svn/ver/77330/CloudLDD/trunk/src/ldd/courier/zkbroker_client.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/qdev/!svn/ver/89268/CloudLDD/trunk/src/ldd/courier/Makefile
+END
+zkbroker_proxy.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/qdev/!svn/ver/78878/CloudLDD/trunk/src/ldd/courier/zkbroker_proxy.cc
+END
+watcher_action.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/qdev/!svn/ver/67364/CloudLDD/trunk/src/ldd/courier/watcher_action.cc
+END
+keeper_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/qdev/!svn/ver/75237/CloudLDD/trunk/src/ldd/courier/keeper_impl.h
+END
+client_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/qdev/!svn/ver/75197/CloudLDD/trunk/src/ldd/courier/client_impl.cc
+END
+reactor.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/qdev/!svn/ver/81937/CloudLDD/trunk/src/ldd/courier/reactor.cc
+END
+completion_callback_store.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/qdev/!svn/ver/81937/CloudLDD/trunk/src/ldd/courier/completion_callback_store.cc
+END
+reactor.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/qdev/!svn/ver/76087/CloudLDD/trunk/src/ldd/courier/reactor.h
+END
+client_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/qdev/!svn/ver/75237/CloudLDD/trunk/src/ldd/courier/client_impl.h
+END
+configure_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/qdev/!svn/ver/78878/CloudLDD/trunk/src/ldd/courier/configure_impl.cc
+END
+completion_callback_store.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/qdev/!svn/ver/76283/CloudLDD/trunk/src/ldd/courier/completion_callback_store.h
+END
+zkbroker_store.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/qdev/!svn/ver/76283/CloudLDD/trunk/src/ldd/courier/zkbroker_store.cc
+END
+zkbroker_store.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/qdev/!svn/ver/76283/CloudLDD/trunk/src/ldd/courier/zkbroker_store.h
+END
+completion_callback_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/qdev/!svn/ver/67256/CloudLDD/trunk/src/ldd/courier/completion_callback_impl.h
+END
+watcher_action_store.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/qdev/!svn/ver/67490/CloudLDD/trunk/src/ldd/courier/watcher_action_store.h
+END
+keeper.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/qdev/!svn/ver/67490/CloudLDD/trunk/src/ldd/courier/keeper.h
+END
+completion_callback.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/qdev/!svn/ver/81937/CloudLDD/trunk/src/ldd/courier/completion_callback.cc
+END
+completion_callback.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/qdev/!svn/ver/65471/CloudLDD/trunk/src/ldd/courier/completion_callback.h
+END
+completion_callback_proxy.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/qdev/!svn/ver/76283/CloudLDD/trunk/src/ldd/courier/completion_callback_proxy.h
+END
+zkbroker.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/qdev/!svn/ver/78878/CloudLDD/trunk/src/ldd/courier/zkbroker.cc
+END
+watcher_action_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/qdev/!svn/ver/75197/CloudLDD/trunk/src/ldd/courier/watcher_action_client.h
+END

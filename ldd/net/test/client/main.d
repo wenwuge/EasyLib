@@ -1,0 +1,32 @@
+main.o main.d: main.cc \
+  /data3/yangaofeng/CloudLDD/trunk/src/ldd/net/test/client/../../../../ldd/../ldd/net/client.h \
+  /data3/yangaofeng/CloudLDD/trunk/src/ldd/net/test/client/../../../../ldd/../ldd/net/incoming_msg_registry.h \
+  /data3/yangaofeng/CloudLDD/trunk/src/ldd/net/test/client/../../../../ldd/../ldd/net/message.h \
+  /data3/yangaofeng/CloudLDD/trunk/src/ldd/net/test/client/../../../../ldd/../ldd/net/registry.h \
+  /data3/yangaofeng/CloudLDD/trunk/src/ldd/net/test/client/../../../../ldd/../ldd/net/factory.h \
+  /data3/yangaofeng/CloudLDD/trunk/src/ldd/net/test/client/../../../../ldd/../ldd/net/incoming_msg.h \
+  /data3/yangaofeng/CloudLDD/trunk/src/ldd/net/test/client/../../../../ldd/../ldd/net/payload.h \
+  /data3/yangaofeng/CloudLDD/trunk/src/ldd/net/test/client/../../../../ldd/../ldd/net/buffer.h \
+  /data3/yangaofeng/CloudLDD/trunk/src/ldd/net/test/client/../../../../ldd/../ldd/net/channel.h \
+  /data3/yangaofeng/CloudLDD/trunk/src/ldd/net/test/client/../../../../ldd/../ldd/util/time_diff.h \
+  /data3/yangaofeng/CloudLDD/trunk/src/ldd/net/test/client/../../../../ldd/../ldd/util/time.h \
+  /data3/yangaofeng/CloudLDD/trunk/src/ldd/net/test/client/../../../../ldd/../ldd/util/time.inl \
+  /data3/yangaofeng/CloudLDD/trunk/src/ldd/net/test/client/../../../../ldd/../ldd/util/time_diff.inl \
+  /data3/yangaofeng/CloudLDD/trunk/src/ldd/net/test/client/../../../../ldd/../ldd/net/server.h \
+  /data3/yangaofeng/CloudLDD/trunk/src/ldd/net/test/client/../../../../ldd/../ldd/net/event_loop.h \
+  /data3/yangaofeng/CloudLDD/trunk/src/ldd/net/test/client/../../../../ldd/../ldd/util/atomic.h \
+  /data3/yangaofeng/CloudLDD/trunk/src/ldd/net/test/client/../../../../ldd/../ldd/util/memory_order.h \
+  /data3/yangaofeng/CloudLDD/trunk/src/ldd/net/test/client/../../../../ldd/../ldd/util/detail/atomic/platform.h \
+  /data3/yangaofeng/CloudLDD/trunk/src/ldd/net/test/client/../../../../ldd/../ldd/util/detail/atomic/gcc_x86.h \
+  /data3/yangaofeng/CloudLDD/trunk/src/ldd/net/test/client/../../../../ldd/../ldd/util/detail/atomic/base.h \
+  /data3/yangaofeng/CloudLDD/trunk/src/ldd/net/test/client/../../../../ldd/../ldd/util/detail/atomic/lockpool.h \
+  /data3/yangaofeng/CloudLDD/trunk/src/ldd/net/test/client/../../../../ldd/../ldd/util/detail/atomic/classification.h \
+  /data3/yangaofeng/CloudLDD/trunk/src/ldd/net/test/client/../../../../ldd/../ldd/util/thread.h \
+  /data3/yangaofeng/CloudLDD/trunk/src/ldd/net/test/client/../../../../ldd/../ldd/net/event_loop.h \
+  /data3/yangaofeng/CloudLDD/trunk/src/ldd/net/test/client/../../../../ldd/../ldd/net/endpoint.h \
+  /data3/yangaofeng/CloudLDD/trunk/src/ldd/net/test/client/../../../../ldd/../ldd/net/address.h \
+  imsg.h \
+  /data3/yangaofeng/CloudLDD/trunk/src/ldd/net/test/client/../../../../ldd/../ldd/net/incoming_msg.h \
+  omsg.h \
+  /data3/yangaofeng/CloudLDD/trunk/src/ldd/net/test/client/../../../../ldd/../ldd/net/outgoing_msg.h \
+  /data3/yangaofeng/CloudLDD/trunk/src/ldd/net/test/client/../../../../ldd/../ldd/net/result.h

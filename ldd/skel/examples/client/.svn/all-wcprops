@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/qdev/!svn/ver/89527/CloudLDD/trunk/src/ldd/skel/examples/client
+END
+main.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/qdev/!svn/ver/72221/CloudLDD/trunk/src/ldd/skel/examples/client/main.cc
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/qdev/!svn/ver/89527/CloudLDD/trunk/src/ldd/skel/examples/client/Makefile
+END

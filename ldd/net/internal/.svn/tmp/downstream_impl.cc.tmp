@@ -1,0 +1,332 @@
+#include <boost/bind.hpp>
+#include <glog/logging.h>
+
+#include <fstream>
+
+#include "ldd/net/event_runner.h"
+#include "ldd/net/downstream.h"
+#include "ldd/net/channel.h"
+#include "ldd/net/internal/channel_impl.h"
+#include "downstream_impl.h"
+#include "event_runner_impl.h"
+
+#define WORKER_STATUS_INTERVAL 5000
+
+namespace ldd { namespace net {
+
+DownStream::Impl::Impl(DownStream *downstream
+        , EventRunner *runner
+        , ChannelHandler channel_handler
+        , const Option &option)
+            : downstream_(downstream)
+            , runner_(runner)
+            , runner_group_(NULL)
+            , channel_handler_(channel_handler)
+            , acceptor_(runner->impl_->ios())
+            , option_(option)
+            , accept_lock_(NULL)
+            , accept_timer_(runner->ios())
+            , accept_lock_held_(false)
+{
+}
+
+DownStream::Impl::Impl(DownStream *downstream
+        , EventRunner *runner
+        , EventRunnerGroup *runner_group
+        , ChannelHandler channel_handler
+        , const Option &option)
+            : downstream_(downstream)
+            , runner_(runner)
+            , runner_group_(runner_group)
+            , channel_handler_(channel_handler)
+            , acceptor_(runner->impl_->ios())
+            , option_(option)
+            , accept_lock_(NULL)
+            , accept_timer_(runner->ios())
+            , accept_lock_held_(false)
+{
+}
+
+
+DownStream::Impl::~Impl()
+{
+}
+
+bool DownStream::Impl::Init()
+{
+    if (option_.use_accept_lock) {
+
+        //create lock_file
+        if (option_.use_accept_lock) {
+            std::ofstream f(option_.lock_file_name.c_str());
+        }
+
+        accept_lock_ = new boost::interprocess::file_lock(
+                option_.lock_file_name.c_str());
+
+        InplaceEventRunner *ier = dynamic_cast<InplaceEventRunner *>(runner_);
+        if (ier == NULL) {
+            LOG(ERROR) << "use_accept_lock flag must work "
+                "with InplaceEventRunner";
+            return false;
+        }
+
+        ier->set_accept_handler(
+                boost::bind(&DownStream::Impl::Accept1, this));
+    }
+
+    try {
+        boost::asio::ip::tcp::endpoint endpoint(
+                boost::asio::ip::tcp::v4()
+                , option_.listen_port);
+
+        acceptor_.open(endpoint.protocol());
+        acceptor_.set_option(
+                boost::asio::ip::tcp::acceptor::reuse_address(true));
+        acceptor_.bind(endpoint);
+        acceptor_.listen();
+    }
+    catch (boost::system::system_error &e) {
+        LOG(ERROR) << "listen error: " << e.what();
+        return false;
+    }
+    catch (...) {
+        LOG(FATAL) << "listen error: unknown exception";
+        return false;
+    }
+
+    //set noblocking
+    boost::asio::socket_base::non_blocking_io command(true);
+    acceptor_.io_control(command);
+
+
+    return true;
+}
+
+void DownStream::Impl::Open()
+{
+    if (runner_group_ == NULL) {
+        Accept1();
+    }
+    else {
+        Accept2();
+    }
+}
+
+void DownStream::Impl::Accept1()
+{
+    if (option_.use_accept_lock) {
+        if (!accept_lock_held_) {
+            if (!accept_lock_->try_lock()) {
+                accept_lock_held_ = false;
+                AcceptDelay();
+                LOG(INFO) << "accept_lock busy, sleep " << option_.accept_delay
+                    << " ms, then retry";
+                return;
+            }
+            accept_timer_.cancel();
+            accept_lock_held_ = true;
+        }
+        else {
+            LOG(INFO) << "accept lock already held";
+            return;
+        }
+    }
+
+    new_channel_.reset(new Channel());
+    
+    new_channel_->impl_ = new Channel::Impl(new_channel_.get()
+            , runner_ 
+            , runner_->impl_->ios()
+            , downstream_
+            , option_.heartbeat
+            , channel_handler_);
+
+    acceptor_.async_accept(new_channel_->impl_->socket()
+                , boost::bind(&DownStream::Impl::HandleAccept1
+                , this
+                , boost::asio::placeholders::error));
+}
+
+void DownStream::Impl::Accept2()
+{
+    EventRunner *work_runner = runner_group_->GetEventRunner();
+    CHECK_NOTNULL(work_runner);
+
+    new_channel_.reset(new Channel());
+    
+    new_channel_->impl_ = new Channel::Impl(new_channel_.get()
+            , work_runner 
+            , work_runner->impl_->ios()
+            , downstream_
+            , option_.heartbeat
+            , channel_handler_);
+
+    acceptor_.async_accept(new_channel_->impl_->socket()
+                , boost::bind(&DownStream::Impl::HandleAccept2
+                , this
+                , boost::asio::placeholders::error));
+}
+
+void DownStream::Impl::Close()
+{
+    acceptor_.close();
+    runner_->Stop();
+    if (runner_group_ != NULL) {
+        runner_group_->Stop();
+    }
+
+    if (option_.use_accept_lock) {
+        if (accept_lock_!= NULL) {
+            delete accept_lock_;
+        }
+    }
+}
+
+void DownStream::Impl::HandleAccept1(const boost::system::error_code& e)
+{
+    if (e) {
+        new_channel_.reset();
+
+        if (e != boost::asio::error::operation_aborted) {
+            LOG(ERROR) << "async accept error: "
+                << e.message();
+        }
+        else {
+            LOG(INFO) << "async accept is cancelled";
+        }
+
+        return;
+    }
+
+    new_channel_->impl_->Start();
+
+    while (1) {
+        new_channel_.reset(new Channel());
+
+        new_channel_->impl_ = new Channel::Impl(new_channel_.get()
+                , runner_ 
+                , runner_->impl_->ios()
+                , downstream_
+                , option_.heartbeat
+                , channel_handler_);
+
+        boost::system::error_code ec;
+        acceptor_.accept(new_channel_->impl_->socket(), ec);
+        if (ec) {
+            if (ec.value() != boost::asio::error::try_again &&
+                ec.value() != boost::asio::error::would_block) {
+                LOG(ERROR) << "sync accept error: " << ec.message();
+                return;
+            }
+
+            LOG(INFO) << "sync accept error: "
+                << ec.message();
+
+            //注意:此时,new_channel_是可用的，不需要重新创建
+            break;
+        }
+
+        new_channel_->impl_->Start();
+    }
+
+    if (option_.use_accept_lock ) {
+        if (accept_lock_held_) {
+            //停止接收连接，释放accept锁
+            accept_lock_held_ = false;
+            accept_lock_->unlock();
+            AcceptDelay();
+        }
+    }
+    else {
+        acceptor_.async_accept(new_channel_->impl_->socket()
+                        , boost::bind(&DownStream::Impl::HandleAccept1
+                                , this
+                                , boost::asio::placeholders::error)
+                        );
+    }
+}
+
+void DownStream::Impl::HandleAccept2(const boost::system::error_code& e)
+{
+    if (e) {
+        new_channel_.reset();
+        LOG(ERROR) << "async accept error: " << e.message();
+        return;
+    }
+
+    //启动channel事件循环,这里必须判断NULL
+    if (new_channel_.get() != NULL) {
+        new_channel_->impl_->Start();
+    }
+
+    while (1) {
+        EventRunner *work_runner = runner_group_->GetEventRunner();
+        if (work_runner == NULL) {
+            LOG(FATAL) << "no event runner can be used";
+            return;
+        }
+
+        new_channel_.reset(new Channel());
+
+        new_channel_->impl_ = new Channel::Impl(new_channel_.get()
+                        , work_runner
+                        , work_runner->impl_->ios()
+                        , downstream_
+                        , option_.heartbeat
+                        , channel_handler_);
+
+        boost::system::error_code ec;
+        acceptor_.accept(new_channel_->impl_->socket(), ec);
+        if (ec) {
+            if (ec.value() != 11) {
+                LOG(ERROR) << "sync accept error: " << ec.message();
+                return;
+            }
+
+            LOG(INFO) << "sync accept error: " << ec.message();
+
+            //注意:new_channel_是可用的，不需要创建
+            break;
+        }
+    }
+
+    acceptor_.async_accept(new_channel_->impl_->socket()
+                    , boost::bind(&DownStream::Impl::HandleAccept2
+                            , this
+                            , boost::asio::placeholders::error)
+                    );
+}
+
+void DownStream::Impl::AcceptDelay()
+{
+    accept_timer_.expires_from_now(
+            boost::posix_time::milliseconds(option_.accept_delay));
+
+    accept_timer_.async_wait(boost::bind(&DownStream::Impl::HandleAcceptDelay
+                                    , this 
+                                    , boost::asio::placeholders::error)  
+                            );
+}
+
+void DownStream::Impl::HandleAcceptDelay(const boost::system::error_code &error)
+{
+    if (error) {
+        if (error != boost::asio::error::operation_aborted) {
+            LOG(ERROR) << "accept delay timer error: " 
+                << error.message();
+        }
+        else {
+            LOG(INFO) << "accept delay timer is cancelled";
+        }
+
+        return;
+    }
+
+    Accept1();
+}
+
+
+} /*namespace net*/
+} /*namespace ldd*/
+

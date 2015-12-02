@@ -1,0 +1,2 @@
+用valgrind对代码进行验证的时候， definitely lost 必须为0
+

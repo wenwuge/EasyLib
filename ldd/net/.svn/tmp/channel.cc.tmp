@@ -1,0 +1,65 @@
+#include <glog/logging.h>
+#include <boost/bind.hpp>
+#include "channel.h"
+#include "internal/channel_impl.h"
+#include "internal/packet.h"
+#include "outgoing_msg.h"
+#include "incoming_msg.h"
+
+namespace ldd { namespace net {
+
+Channel::Channel() 
+    : impl_(NULL)
+{}
+
+Channel::~Channel()
+{
+    //LOG(INFO) << "Channel::~Channel: called";
+    delete impl_;
+
+    return;
+}
+
+void Channel::Close()
+{
+    impl_->Close();
+}
+
+bool Channel::Send(OutgoingMsg *msg)
+{
+    return impl_->Send(msg);
+}
+
+std::string Channel::remote_ip()
+{
+    return impl_->remote_ip();
+}
+
+int Channel::remote_port()
+{
+    return impl_->remote_port();
+}
+
+std::string Channel::local_ip()
+{
+    return impl_->local_ip();
+}
+
+int Channel::local_port()
+{
+    return impl_->local_port();
+}
+
+bool Channel::good()
+{
+    return impl_->good();
+} 
+
+EventRunner *Channel::runner()
+{
+    return impl_->runner();
+}
+
+} /*namespace net*/
+} /*namespace ldd*/
+

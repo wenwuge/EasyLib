@@ -1,0 +1,40 @@
+// p2s_get.h (2013-07-10)
+// Yan Gaofeng (yangaofeng@360.cn)
+
+#ifndef __P2S_LIST_H__
+#define __P2S_LIST_H__
+
+#include "ldd/net/outgoing_msg.h"
+#include "ldd/protocol/server/command_type.h"
+#include "ldd/protocol/server/store_proto.h"
+#include "ldd/protocol/response.h"
+
+class C2PList;
+
+class P2SList : public ldd::net::OutgoingMsg {
+public:
+    P2SList(C2PList *list) : c2p_list_(list) {}
+    virtual ~P2SList() {}
+
+    DECLARE_OUTGOING_MSG_TYPE(LDD_PROXY_2_STORE_GET);
+
+    //以下逻辑由用户编写，由框架调用
+    virtual void SerializeTo(ldd::net::Buffer* request,
+        std::map<int8_t, ldd::net::Buffer>* extras);
+
+    virtual void HandleResult(const ldd::net::Buffer &buff
+            , const std::map<int8_t, ldd::net::Buffer>& extras); 
+
+    virtual void HandleFinalize();
+    virtual void HandleTimeout();
+    virtual void HandleError();
+
+private:
+    friend class C2PList;
+    C2PList *c2p_list_;
+    ldd::protocol::ListMessageS req_;
+    ldd::protocol::GetOrListResponse res_;
+};
+
+#endif /*__P2S_LIST_H__*/
+

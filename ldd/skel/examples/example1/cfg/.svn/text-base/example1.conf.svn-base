@@ -1,0 +1,10 @@
+port=32768
+addr=any
+user=cloud
+#file=example1.so
+type=single-master
+
+reload-policy=simple
+
+[echo]
+count = 5

@@ -1,0 +1,38 @@
+#include <glog/logging.h>
+#include "channel.h"
+#include "upstream.h"
+#include "internal/upstream_impl.h"
+
+namespace ldd { namespace net {
+
+UpStream::UpStream(EventRunner *event_runner
+        , uint32_t heartbeat_interval) 
+{
+    impl_ = new Impl(this, event_runner, heartbeat_interval);
+}
+
+UpStream::UpStream(EventRunnerGroup *event_runner_group
+            , uint32_t heartbeat_interval)
+{
+    impl_ = new Impl(this
+            , event_runner_group
+            , heartbeat_interval);
+}
+
+UpStream::~UpStream()
+{
+    if (impl_ != NULL) {
+        delete impl_;
+        impl_ = NULL;
+    }
+}
+
+
+boost::shared_ptr<Channel> UpStream::Connect(const std::string &host, int port)
+{
+    return impl_->Connect(host, port);
+}
+
+} /*net*/
+} /*ldd*/
+

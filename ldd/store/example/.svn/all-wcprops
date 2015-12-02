@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/qdev/!svn/ver/71239/CloudLDD/trunk/src/ldd/store/example
+END
+lddstore.conf
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/qdev/!svn/ver/71239/CloudLDD/trunk/src/ldd/store/example/lddstore.conf
+END
+start.sh
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/qdev/!svn/ver/71239/CloudLDD/trunk/src/ldd/store/example/start.sh
+END

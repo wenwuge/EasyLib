@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/qdev/!svn/ver/82275/CloudLDD/trunk/src/ldd/cage/internal
+END
+keeper_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/qdev/!svn/ver/82275/CloudLDD/trunk/src/ldd/cage/internal/keeper_impl.cc
+END
+callback_wrapper.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/qdev/!svn/ver/81810/CloudLDD/trunk/src/ldd/cage/internal/callback_wrapper.h
+END
+keeper_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/qdev/!svn/ver/81810/CloudLDD/trunk/src/ldd/cage/internal/keeper_impl.h
+END
+retry_loop.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/qdev/!svn/ver/81810/CloudLDD/trunk/src/ldd/cage/internal/retry_loop.h
+END
+result_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/qdev/!svn/ver/81810/CloudLDD/trunk/src/ldd/cage/internal/result_impl.h
+END
+operation.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/qdev/!svn/ver/81810/CloudLDD/trunk/src/ldd/cage/internal/operation.h
+END
+functions.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/qdev/!svn/ver/81810/CloudLDD/trunk/src/ldd/cage/internal/functions.cc
+END
+functions.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/qdev/!svn/ver/81810/CloudLDD/trunk/src/ldd/cage/internal/functions.h
+END
+util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/qdev/!svn/ver/81810/CloudLDD/trunk/src/ldd/cage/internal/util.cc
+END
+op_result.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/qdev/!svn/ver/81810/CloudLDD/trunk/src/ldd/cage/internal/op_result.h
+END
+util.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/qdev/!svn/ver/81810/CloudLDD/trunk/src/ldd/cage/internal/util.h
+END
+cage_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/qdev/!svn/ver/81810/CloudLDD/trunk/src/ldd/cage/internal/cage_impl.cc
+END
+retry_loop_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/qdev/!svn/ver/81810/CloudLDD/trunk/src/ldd/cage/internal/retry_loop_impl.h
+END
+cage_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/qdev/!svn/ver/81810/CloudLDD/trunk/src/ldd/cage/internal/cage_impl.h
+END
+retry_policy.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/qdev/!svn/ver/81810/CloudLDD/trunk/src/ldd/cage/internal/retry_policy.h
+END
+failure_result.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/qdev/!svn/ver/81810/CloudLDD/trunk/src/ldd/cage/internal/failure_result.h
+END

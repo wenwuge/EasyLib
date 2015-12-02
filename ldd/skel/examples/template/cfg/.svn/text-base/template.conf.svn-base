@@ -1,0 +1,6 @@
+port=32768
+addr=any
+#user=cloud
+file=template.so
+type=single-master
+

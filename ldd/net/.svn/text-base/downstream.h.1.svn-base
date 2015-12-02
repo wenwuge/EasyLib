@@ -1,0 +1,43 @@
+#ifndef __UPSTREAM_H__
+#define __UPSTREAM_H__
+
+//#include <list>
+#include <boost/asio.hpp>
+
+#include "msg_factory.h"
+#include "worker_pool.h"
+#include "channel.h"
+#include "stream.h"
+
+namespace ldd { namespace net {
+
+class UpStream : public Stream {
+public:
+    UpStream(WorkerPool *worker_pool
+            , int port
+            , ChannelHandler channel_handler
+            , uint32_t heartbeat_interval_);
+
+    virtual ~UpStream() {};
+
+    bool Open();
+    bool Close();
+
+private:
+    void HandleAccept(const boost::system::error_code& e); 
+
+private:
+    int listen_port_;
+    boost::asio::ip::tcp::acceptor acceptor_;
+
+    boost::shared_ptr<Channel> new_channel_;
+
+    uint32_t heartbeat_interval_;
+};
+
+} /*namespace net*/
+} /*namespace ldd*/
+
+
+#endif /*__UPSTREAM_H__*/
+

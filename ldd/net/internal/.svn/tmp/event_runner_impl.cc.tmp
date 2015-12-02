@@ -1,0 +1,551 @@
+// event_impl.cc (2013-07-01)
+// Yan Gaofeng (yangaofeng@360.cn)
+
+#include <string.h>
+#include <errno.h>
+#include <glog/logging.h>
+
+#include "event_runner_impl.h"
+
+namespace ldd { namespace net {
+
+void EventImpl::Add(Type event_type)
+{
+    if (event_type == kReadable) {
+        event_type_ |= kReadable;
+        stream_.io_service().dispatch(boost::bind(&EventImpl::Read, this));
+    }
+    else if (event_type == kWritable) {
+        event_type_ |= kWritable;
+        stream_.io_service().dispatch(boost::bind(&EventImpl::Write, this));
+    }
+    else {
+        LOG(FATAL) << "invalid event type: " << event_type;
+    }
+}
+
+void EventImpl::Read()
+{
+    stream_.async_read_some(boost::asio::null_buffers()
+            , boost::bind(&EventImpl::HandleRead
+                , this
+                , boost::asio::placeholders::error
+                , boost::asio::placeholders::bytes_transferred));
+}
+
+void EventImpl::Write()
+{
+    stream_.async_write_some(boost::asio::null_buffers()
+            , boost::bind(&EventImpl::HandleWrite
+                , this
+                , boost::asio::placeholders::error
+                , boost::asio::placeholders::bytes_transferred));
+}
+
+void EventImpl::HandleRead(const boost::system::error_code& error
+            , size_t bytes_transferred)
+{
+    if (error) {
+        if (error != boost::asio::error::operation_aborted) {
+            LOG(ERROR) << "read error: " << error.message();
+        }
+        else {
+            LOG(INFO) << "read operation is cancelled";
+        }
+
+        return;
+    }
+
+    handler_(kReadable, *this);
+
+    Read();
+}
+
+void EventImpl::HandleWrite(const boost::system::error_code& error
+            , size_t bytes_transferred)
+{
+    if (error) {
+        if (error != boost::asio::error::operation_aborted) {
+            LOG(ERROR) << "write error: " << error.message();
+        }
+        else {
+            LOG(INFO) << "write operation is cancelled";
+        }
+
+        return;
+    }
+
+    handler_(kWritable, *this);
+
+    Write();
+}
+
+void EventImpl::Del(Type event_type)
+{
+    if (event_type == kReadable) {
+        if (event_type_ & kReadable) {
+            event_type_ &= ~kReadable;
+        }
+        else {
+            LOG(WARNING) << "read event is not set";
+            return;
+        }
+    }
+    else if (event_type == kWritable) {
+        if (event_type_ & kWritable) {
+            event_type_ &= ~kWritable;
+        }
+        else {
+            LOG(WARNING) << "write event is not set";
+            return;
+        }
+    }
+    else {
+        LOG(FATAL) << "invalid event type: " << event_type;
+        return;
+    }
+
+    stream_.cancel();
+
+    if (event_type_ & kReadable) { 
+        LOG(INFO) << "reinstall read event";
+        stream_.io_service().dispatch(boost::bind(&EventImpl::Read, this));
+    }
+    else if (event_type_ & kWritable) {
+        LOG(INFO) << "reinstall writable event";
+        stream_.io_service().dispatch(boost::bind(&EventImpl::Write, this));
+    }
+    else if (event_type_ == kInvalid) {
+        LOG(INFO) << "all event is deleted, fd=" << fd_
+    }
+    else {
+        LOG(FATAL) << "unknown event type: " << event_type_;
+    }
+}
+
+EventRunner::Impl::InplaceEventRunner::InplaceEventRunner() 
+    : work_(ios_), start_(false), next_timer_id_(0)
+{
+}
+
+EventRunner::Impl::InplaceEventRunner::~InplaceEventRunner()
+{
+    Stop();
+}
+
+
+bool EventRunner::Impl::InplaceEventRunner::Start()
+{
+    if (start_) {
+        LOG(FATAL) << "recall start on start inplace event runner";
+        return false;
+    }
+
+#if 0
+    ios_.run();
+#else
+    while (ios_.run_one()) {
+
+        //process accept event
+        if (accept_handler_) {
+            accept_handler_();
+        }
+
+        ios_.poll();
+    }
+#endif
+
+    start_ = true;
+
+    return true;
+}
+
+void EventRunner::Impl::InplaceEventRunner::Stop()
+{
+    if (start_) {
+        ios_.stop();
+        start_ = false;
+    }
+}
+
+Event *EventRunner::Impl::InplaceEventRunner::NewEvent(int fd, const EventHandler &handler)
+{
+    int dup_fd = ::dup(fd);
+    if (dup_fd == -1) {
+        LOG(FATAL) << "dup fd error: " << strerror(errno)
+            << ", fd=" << fd;
+        return NULL;
+    }
+
+    Event *event = new EventImpl(ios_, dup_fd, handler);
+
+    return event;
+}
+
+void EventRunner::Impl::InplaceEventRunner::Post(const UserHandler &func)
+{
+    ios_.post(func);
+}
+
+void EventRunner::Impl::InplaceEventRunner::Dispatch(const UserHandler &func)
+{
+    ios_.dispatch(func);
+}
+
+TimerId EventRunner::Impl::InplaceEventRunner::RunAt(const uint64_t time_ms, const UserHandler &func)
+{
+    boost::mutex::scoped_lock lock(timer_mutex_);
+
+    TimerId timer_id = next_timer_id_;
+    next_timer_id_++;
+    if (next_timer_id_ <= 0) {
+        next_timer_id_ = 1;
+    }
+
+    Timer *timer = new Timer(ios_);
+    timers_.insert(std::make_pair(timer_id, timer));
+
+    ios_.dispatch(
+            boost::bind(&InplaceEventRunner::RealRunAt
+                , this
+                , timer_id
+                , timer
+                , time_ms
+                , func));
+
+    return timer_id;
+}
+
+void EventRunner::Impl::InplaceEventRunner::RealRunAt(TimerId timer_id
+        , Timer *timer
+        , uint64_t time_ms
+        , const UserHandler &func)
+{
+    CHECK_NOTNULL(timer);
+
+    boost::system::error_code ec;
+    timer->expires_at(boost::posix_time::from_time_t(0) 
+            + boost::posix_time::milliseconds(time_ms)
+            , ec);
+    if (ec) {
+        LOG(FATAL) << "run at error: " << ec.message();
+        return;
+    }
+
+    timer->async_wait(
+            boost::bind(
+                &InplaceEventRunner::HandleRunAt
+                , this
+                , boost::asio::placeholders::error
+                , timer_id
+                , func));
+}
+
+uint64_t EventRunner::Impl::InplaceEventRunner::RunAfter(const uint64_t delay,
+        const UserHandler &func)
+{
+    boost::mutex::scoped_lock lock(timer_mutex_);
+
+    TimerId timer_id = next_timer_id_;
+    next_timer_id_++;
+    if (next_timer_id_ <= 0) {
+        next_timer_id_ = 1;
+    }
+
+    Timer *timer = new Timer(ios_);
+    timers_.insert(std::make_pair(timer_id, timer));
+
+    ios_.dispatch(boost::bind(&InplaceEventRunner::RealRunAfter
+                , this
+                , timer_id
+                , timer
+                , delay
+                , func));
+
+    return timer_id;
+}
+
+void EventRunner::Impl::InplaceEventRunner::RealRunAfter(TimerId timer_id
+        , Timer *timer
+        , uint64_t delay
+        , const UserHandler &func)
+{
+    boost::system::error_code ec;
+    timer->expires_from_now(
+            boost::posix_time::milliseconds(delay), ec);
+    if (ec) {
+        LOG(FATAL) << "run after error: " << ec.message();
+        return;
+    }
+
+    timer->async_wait(
+            boost::bind(
+                &InplaceEventRunner::HandleRunAfter
+                , this
+                , boost::asio::placeholders::error
+                , timer_id
+                , func));
+}
+
+uint64_t EventRunner::Impl::InplaceEventRunner::RunEvery(const uint64_t interval
+                , const UserHandler &func)
+{
+    boost::mutex::scoped_lock lock(timer_mutex_);
+
+    TimerId timer_id = next_timer_id_;
+    next_timer_id_++;
+    if (next_timer_id_ <= 0) {
+        next_timer_id_ = 1;
+    }
+
+    Timer *timer = new Timer(ios_);
+    timers_.insert(std::make_pair(timer_id, timer));
+
+    ios_.dispatch(boost::bind(&InplaceEventRunner::RealRunEvery
+                , this
+                , timer_id
+                , timer
+                , interval
+                , func));
+
+    return timer_id;
+}
+
+void EventRunner::Impl::InplaceEventRunner::RealRunEvery(TimerId timer_id
+        , Timer *timer
+        , uint64_t interval
+        , const UserHandler &func)
+{
+    CHECK_NOTNULL(timer);
+
+    boost::system::error_code ec;
+    timer->expires_from_now(
+            boost::posix_time::milliseconds(interval), ec);
+    if (ec) {
+        LOG(FATAL) << "run every error: "<< ec.message();
+        return;
+    }
+
+    timer->async_wait(
+            boost::bind(
+                &InplaceEventRunner::HandleRunEvery
+                , this
+                , boost::asio::placeholders::error
+                , timer_id
+                , interval
+                , func));
+}
+
+void EventRunner::Impl::InplaceEventRunner::HandleRunAt(
+        const boost::system::error_code& error
+        , TimerId timer_id
+        , UserHandler func)
+{
+    if (error) {
+        if (error != boost::asio::error::operation_aborted) {
+            LOG(FATAL) << "run at timer error: " << error.message();
+        }
+        else {
+            LOG(INFO) << "run at timer is cancelled, timer_id=" << timer_id;
+            //DeleteTimer(timer_id);
+        }
+
+        return;
+    }
+
+    func();
+
+    DeleteTimer(timer_id);
+}
+
+void EventRunner::Impl::InplaceEventRunner::HandleRunAfter(
+        const boost::system::error_code& error
+        , TimerId timer_id
+        , UserHandler func)
+{
+    if (error) {
+        if (error != boost::asio::error::operation_aborted) {
+            LOG(FATAL) << "run after timer error: " << error.message();
+        }
+        else {
+            LOG(INFO) << "run after timer is cancelled, timer_id=" << timer_id;
+            //DeleteTimer(timer_id);
+        }
+
+        return;
+    }
+
+    func();
+
+    DeleteTimer(timer_id);
+}
+
+void EventRunner::Impl::InplaceEventRunner::HandleRunEvery(
+        const boost::system::error_code& error
+        , TimerId timer_id
+        , uint64_t interval
+        , UserHandler func)
+{
+    if (error) {
+        if (error != boost::asio::error::operation_aborted) {
+            LOG(FATAL) << "run every timer error: " << error.message();
+        }
+        else {
+            LOG(INFO) << "run every timer is cancelled, timer_id=" << timer_id;
+            //DeleteTimer(timer_id);
+        }
+
+        return;
+    }
+
+    func();
+
+    std::map<TimerId, Timer *>::iterator pos = timers_.find(timer_id);
+    if (pos == timers_.end()) {
+        LOG(ERROR) << "can not find timer on handle run every timeout, "
+            ", timer_id=" << timer_id;
+        return;
+    }
+
+    Timer *timer = pos->second;
+    CHECK_NOTNULL(timer);
+
+    boost::system::error_code ec;
+    timer->expires_from_now(
+            boost::posix_time::milliseconds(interval), ec);
+    if (ec) {
+        LOG(FATAL) << "run every agagin error : " << ec.message();
+        DeleteTimer(timer_id);
+        return;
+    }
+
+    timer->async_wait(
+            boost::bind(
+                &InplaceEventRunner::HandleRunEvery
+                , this
+                , boost::asio::placeholders::error
+                , timer_id
+                , interval
+                , func));
+}
+
+void EventRunner::Impl::InplaceEventRunner::DeleteTimer(TimerId timer_id)
+{
+    CHECK_GE(timer_id, (uint64_t)0);
+
+    boost::mutex::scoped_lock lock(timer_mutex_);
+
+    std::map<TimerId, Timer*>::iterator pos = timers_.find(timer_id);
+    if (pos == timers_.end()) {
+        LOG(WARNING) << "can not find timer on delete timer"
+            ", timer_id=" << timer_id
+    }
+    else {
+        Timer *timer = pos->second;
+        CHECK_NOTNULL(timer);
+        timers_.erase(timer_id);
+        delete timer;
+    }
+}
+
+EventRunner::Impl::ThreadedEventRunner::ThreadedEventRunner() 
+{
+}
+
+EventRunner::Impl::ThreadedEventRunner::~ThreadedEventRunner()
+{
+    Stop();
+}
+
+bool EventRunner::Impl::ThreadedEventRunner::Start()
+{
+    if (start_) {
+        LOG(FATAL) << "recall start, on start threaded event runner";
+        return false;
+    }
+
+    //run in a new thread
+    try {
+        thread_ = boost::thread(boost::bind(&ThreadedEventRunner::Run, this));
+    }
+    catch (boost::thread_resource_error &e) {
+        LOG(FATAL) << "create thread error: " << e.what();
+        return false;
+    }
+
+    start_ = true;
+
+    return true;
+}
+
+void EventRunner::Impl::ThreadedEventRunner::Run()
+{
+    ios_.run();
+}
+
+void EventRunner::Impl::ThreadedEventRunner::Stop()
+{
+    if (start_) {
+        ios_.stop();
+        thread_.join();
+        start_ = false;
+    }
+}
+
+
+
+EventRunnerGroupImpl::EventRunnerGroupImpl(int runner_count) 
+    : runner_count_(runner_count), runner_index_(0)
+{
+    for (int i = 0; i < runner_count; i++) {
+        //只能使用ThreadedEventRunner
+        runners_.push_back(EventRunner::NewThreadedEventRunner());
+    }
+}
+
+EventRunnerGroupImpl::~EventRunnerGroupImpl()
+{
+    for (int i = 0; i < runner_count_; i++) {
+        delete runners_[i];
+    }
+
+    runners_.clear();
+}
+
+bool EventRunnerGroupImpl::Start()
+{
+    for (int i = 0; i < runner_count_; i++) {
+        if (!runners_[i]->Start()) {
+            LOG(FATAL) << "event runner[" << i << "] start failed";
+            return false;
+        }
+    }
+
+    return true;
+}
+
+void EventRunnerGroupImpl::Stop()
+{
+    for (int i = 0; i < runner_count_; i++) {
+        runners_[i]->Stop();
+    }
+}
+
+EventRunner *EventRunnerGroupImpl::GetEventRunner()
+{
+    CHECK_GE(runner_index_, -1);
+
+    if (runners_.size() <= 0) {
+        LOG(WARNING) << "not event runner can be used";
+        return NULL;
+    }
+
+    EventRunner *runner = runners_[runner_index_];
+    runner_index_ = (runner_index_ + 1) % runner_count_;
+
+    return runner;
+}
+
+} /*net*/
+} /*ldd*/
+

@@ -1,0 +1,1421 @@
+#include <glog/logging.h>
+#include <boost/bind.hpp>
+#include "packet.h"
+#include "ldd/net/outgoing_msg.h"
+#include "ldd/net/incoming_msg.h"
+#include "ldd/net/internal/outgoing_msg_impl.h"
+#include "ldd/net/event_runner.h"
+#include "incoming_msg_registry.h"
+#include "channel_impl.h"
+#include "ldd/net/dynamic_incoming_msg.h"
+
+#define TIME_SUB(a, b) ((a.tv_sec * 1000 + a.tv_usec / 1000) \
+        - (b.tv_sec * 1000 + b.tv_usec / 1000))
+
+#define SOCKET_INFO() "[" << remote_ip() << ":" << remote_port() << \
+        "-" << local_ip() << ":" << local_port() << "] "
+
+#define LOG_WARNING LOG(WARNING) << SOCKET_INFO()
+#define LOG_INFO LOG(INFO) << SOCKET_INFO()
+#define LOG_ERROR LOG(ERROR) << SOCKET_INFO()
+#define LOG_FATAL LOG(FATAL) << SOCKET_INFO()
+
+namespace ldd { namespace net {
+
+using namespace std;
+
+Channel::Impl::Impl(Channel *channel
+        , EventRunner *runner
+        , boost::asio::io_service &ios
+        , IncomingMsgRegistry *incoming_msg_factory
+        , uint32_t heartbeat_interval
+        , ChannelHandler channel_handler) 
+        : channel_(channel)
+          , port_(0)
+          , socket_(ios)
+          , good_(false)
+          , heartbeat_timer_stoped_(false)
+          , heartbeat_interval_(heartbeat_interval)
+          , heartbeat_timer_(ios)
+          , runner_(runner)
+          , have_heartbeat_(false)
+          , outgoing_msg_id_(0)
+          , incoming_msg_factory_(incoming_msg_factory)
+          , server_channel_(false)
+          , double_heartbeat_flag_(false)
+          , remote_port_(0)
+          , local_port_(0)
+          , channel_handler_(channel_handler)
+          , extras_type_(Header::kInvalid)
+          , first_(0)
+{
+}
+
+Channel::Impl::~Impl()
+{
+}
+
+void Channel::Impl::Start()
+{
+    good_ = true;
+    server_channel_ = true;
+
+    //runner_->Add1();
+
+    //SetNoDelay();
+
+    GetSocketPair();
+
+    if (channel_handler_) {
+        channel_handler_(channel_->shared_from_this());
+    }
+
+    gettimeofday(&server_tv1_, NULL);
+
+#ifndef _DEBUG
+    //服务器模式，定时器入口，第一个心跳间隔为一个heartbeat_interval_
+    LOG_INFO << "start heartbeat timer, interval="
+        << heartbeat_interval_;
+
+    heartbeat_timer_.expires_from_now(
+            boost::posix_time::milliseconds(heartbeat_interval_));
+    heartbeat_timer_.async_wait(boost::bind(&Channel::Impl::HandleHeartBeatTimeout
+                                    , this 
+                                    , channel_->shared_from_this()
+                                    , boost::asio::placeholders::error)  
+                            );
+#endif
+
+    ReadHeader();
+
+    return;
+}
+
+void Channel::Impl::Open(const string &host, int port)
+{
+    host_ = host;
+    port_ = port;
+
+    Open();
+
+    return;
+}
+
+void Channel::Impl::Open()
+{
+    boost::asio::ip::tcp::endpoint endpoint(
+                boost::asio::ip::address::from_string(host_), port_);
+
+    gettimeofday(&client_tv1_, NULL);
+
+    socket_.async_connect(endpoint
+            , boost::bind(&Channel::Impl::HandleOpen
+                , this
+                , channel_->shared_from_this()
+                , boost::asio::placeholders::error));
+
+    return;
+}
+
+void Channel::Impl::ReOpen()
+{
+    //close socket
+    good_ = false;
+
+    LOG_INFO << "reconnect to server";
+
+    //清除pending_packet_
+    ClearPendingPacket();
+
+    //关闭套接字
+    boost::system::error_code ec;
+    socket_.close(ec);
+    if (ec) {
+        LOG_ERROR << "close socket error: " << ec.message();
+        return;
+    }
+
+    //connect
+    Open();
+
+    return;
+}
+
+void Channel::Impl::Close()
+{
+    if (!good_) {
+        LOG_WARNING << "channel has closed on close channel";
+        return;
+    }
+
+    boost::system::error_code ec;
+    socket_.close(ec);
+    if (ec) {
+        LOG_ERROR << "close socket error: " << ec.message();
+    }
+
+    good_ = false;
+
+    //线程安全
+    socket_.io_service().dispatch(
+            boost::bind(&Channel::Impl::HandleClose
+                , this
+                , channel_->shared_from_this()));
+
+    return;
+}
+
+void Channel::Impl::HandleClose(boost::shared_ptr<Channel> channel)
+{
+    StopHeartBeatTimer();
+
+    if (channel_handler_) {
+        channel_handler_(channel_->shared_from_this());
+    }
+
+    ClearOutgoingMsgs();
+    ClearPendingPacket();
+
+    //runner_->Sub1();
+
+    return;
+}
+
+bool Channel::Impl::Send(OutgoingMsg *msg)
+{
+    CHECK_NOTNULL(msg);
+
+    socket_.io_service().dispatch(
+            boost::bind(&Channel::Impl::HandleSend
+                , this
+                , channel_->shared_from_this()
+                , msg));
+
+    return true;
+}
+
+void Channel::Impl::ReadHeader()
+{
+    boost::asio::async_read(socket_
+            , boost::asio::buffer((char *)&header_[0]
+                , Header::kByteSize)
+            , boost::bind(&Channel::Impl::HandleReadHeader
+                , this 
+                , channel_->shared_from_this()
+                , boost::asio::placeholders::error
+                , boost::asio::placeholders::bytes_transferred)
+            );
+
+    return;
+}
+
+
+void Channel::Impl::ReadRequest()
+{
+    Header::Parser hdr(header_);
+
+    //body的生存期交给Buffer处理
+    Buffer body(hdr.body_size());
+    boost::asio::async_read(socket_
+            , boost::asio::buffer(body.ptr(), body.len())
+            , boost::bind(&Channel::Impl::HandleReadRequest
+                , this 
+                , channel_->shared_from_this()
+                , body
+                , boost::asio::placeholders::error
+                , boost::asio::placeholders::bytes_transferred) );
+
+    return;
+}
+
+void Channel::Impl::ReadExtHeader(const Buffer& body)
+{
+    Header::Parser hdr(header_);
+
+    //分配ext header内存空间， 3是 1字节ext_type + 2字节ext_len
+    //ext_header的生存期由Buffer控制
+    int ext_header_len = hdr.ext_count() * 3;
+    Buffer ext_header(ext_header_len);
+
+    boost::asio::async_read(socket_
+            , boost::asio::buffer(ext_header.ptr() , ext_header.len()) 
+            , boost::bind(&Channel::Impl::HandleReadExtHeader
+                , this 
+                , channel_->shared_from_this()
+                , body
+                , ext_header
+                , boost::asio::placeholders::error
+                , boost::asio::placeholders::bytes_transferred) );
+
+    return;
+}
+
+void Channel::Impl::ReadExt(const Buffer& body, const Buffer& ext_header)
+{
+    Header::Parser hdr(header_);
+    ExtHeader::Parser ext_hdr(hdr.ext_count(), ext_header.ptr());
+    if (!ext_hdr.IsValid(hdr.ext_len())) {
+        LOG_ERROR << "Channel::Impl::ReadExt: invalid ext header";
+        if (server_channel_) {
+            Close();
+        }
+        else {
+            ReOpen();
+        }
+
+        return;
+    }
+
+    for (int i = 0; i < hdr.ext_count(); i++) {
+        uint8_t type;
+        uint16_t len;
+        ext_hdr.GetExtItem(i, &type, &len);
+        if (len <= 0) {
+            LOG_ERROR << "Channel::Impl::ReadExt: "
+                "GetExtItem, invalid len=" << len;
+            if (server_channel_) {
+                Close();
+            }
+            else {
+                ReOpen();
+            }
+            return;
+        }
+
+        //buf的释放交由自定义的Buffer对象处理
+        Buffer ext(len);
+        extras_.insert(std::make_pair(type, ext));
+        extras_buffers_.push_back(
+                boost::asio::buffer(ext.ptr(), ext.len()));
+    }
+
+    boost::asio::async_read(socket_
+            , extras_buffers_
+            , boost::bind(&Channel::Impl::HandleReadExt
+                , this 
+                , channel_->shared_from_this()
+                , body
+                , ext_header
+                , boost::asio::placeholders::error
+                , boost::asio::placeholders::bytes_transferred) );
+
+    return;
+}
+
+void Channel::Impl::HandleReadExt(boost::shared_ptr<Channel> channel
+        , const Buffer& body
+        , const Buffer& ext_header
+        , const boost::system::error_code &error
+        , size_t bytes_transferred)
+{
+    if (!good_) {
+        LOG_WARNING << "Channel::Impl::HandleReadExt: channel is closed";
+        return;
+    }
+
+    if (error) {
+        LOG_ERROR << "Channel::Impl::HandleReadExt: " << error.message();
+        if (server_channel_) {
+            Close();
+        }
+        else {
+            ReOpen();
+        }
+
+        return;
+    }
+
+    if (extras_type_ == Header::kReq) {
+        ProcessRequest(body);
+    }
+    else if (extras_type_ == Header::kRes) {
+        ProcessResponse(body);
+    }
+    else {
+        LOG_FATAL << "Channel::Impl::HandleReadExt: "
+            "invalid extras_type, extras_type=" << extras_type_;
+    }
+
+    extras_type_ = Header::kInvalid;
+
+    //msg处理完成，继续读取下一个数据包
+    ReadHeader();
+}
+
+void Channel::Impl::ReadResponse()
+{
+    Header::Parser hdr(header_);
+    Buffer body(hdr.body_size());
+    boost::asio::async_read(socket_
+            , boost::asio::buffer(body.ptr(), body.len())
+            , boost::bind(&Channel::Impl::HandleReadResponse
+                , this 
+                , channel_->shared_from_this()
+                , body
+                , boost::asio::placeholders::error
+                , boost::asio::placeholders::bytes_transferred) );
+
+    return;
+}
+
+void Channel::Impl::StartHeartBeatTimer()
+{
+
+#ifdef _DEBUG
+    LOG_INFO << "for debug, and return, on start heartbeat timer";
+    return;
+#endif
+
+    if (!good_) {
+        LOG_WARNING << "channel is closed on start heartbeat timer";
+        return;
+    }
+
+    //普通定时器，2倍的心跳间隔时间
+    int interval = server_channel_ ?  2 * heartbeat_interval_ : heartbeat_interval_;
+    if (server_channel_) {
+        LOG_INFO << "server channel model, heartbeat interval=" 
+            << interval;
+    }
+    else {
+        gettimeofday(&client_timer_tv1_, NULL);
+        LOG_INFO << "client channel model, heartbeat interval=" 
+            << interval;
+    }
+
+    std::size_t remain_timers = heartbeat_timer_.expires_from_now(
+            boost::posix_time::milliseconds(interval));
+
+    LOG_INFO << "cancelled timers=" 
+        << remain_timers << " on start heatbeat timer"
+
+    heartbeat_timer_.async_wait(boost::bind(&Channel::Impl::HandleHeartBeatTimeout
+                                    , this 
+                                    , channel_->shared_from_this()
+                                    , boost::asio::placeholders::error)
+                            );
+    return;
+}
+
+void Channel::Impl::StopHeartBeatTimer()
+{
+#ifdef _DEBUG
+    LOG_INFO << "for debug, and return, on stop heartbeat timer";
+    return;
+#endif
+
+    if (heartbeat_timer_stoped_) {
+        LOG_WARNING << "timer has stoped, on stop heartbeat timer";
+        return;
+    }
+
+    heartbeat_timer_.cancel();
+    heartbeat_timer_stoped_ = true;
+
+    return;
+}
+
+void Channel::Impl::HandleSend(boost::shared_ptr<Channel> channel
+        , OutgoingMsg *msg)
+{
+    CHECK_NOTNULL(msg);
+
+    //指定OutgoingMsg msg_id,线程安全
+    MsgId msg_id = NextOutgoingMsgId();
+    msg->impl_->set_id(msg_id);
+
+    //创建OutgoingMsg 定时器,线程安全
+    boost::asio::deadline_timer *timer 
+        = new boost::asio::deadline_timer(runner_->ios());
+    CHECK_NOTNULL(timer);
+    msg->impl_->set_timer(timer);
+
+    if (!good_) {
+        if (msg->conn_timeout() <= 0) {
+            //立即调用超时回调函数
+            msg->HandleTimeout();
+            delete msg;
+
+            return;
+        }
+
+        outgoing_msgs_.insert(make_pair(msg->id(), msg));
+
+#ifndef _DEBUG
+        //OutgoignMsg conn 超时定时器，
+        //在channel连接成功时撤销，见CheckOutgoingMsg()
+        CHECK_NOTNULL(msg->impl_->timer());
+        msg->impl_->timer()->expires_from_now(
+                boost::posix_time::milliseconds(msg->conn_timeout()));
+        msg->impl_->set_timer_type(OutgoingMsg::Impl::kConn);
+        msg->impl_->timer()->async_wait(
+                boost::bind(&Channel::Impl::HandleRequestTimeout
+                                        , this
+                                        , channel_->shared_from_this()
+                                        , msg->id()
+                                        , boost::asio::placeholders::error)
+                );
+#endif
+
+        return;
+    }
+
+    outgoing_msgs_.insert(make_pair(msg->id(), msg));
+
+    //启动msg定时器, 定时器必须可以被撤消
+    if (msg->send_timeout() > 0) {
+
+#ifndef _DEBUG
+        CHECK_NOTNULL(msg->impl_->timer());
+
+        msg->impl_->timer()->expires_from_now(
+                boost::posix_time::milliseconds(msg->send_timeout()));
+        msg->impl_->set_timer_type(OutgoingMsg::Impl::kSend);
+        msg->impl_->timer()->async_wait(
+                boost::bind(&Channel::Impl::HandleRequestTimeout
+                                        , this
+                                        , channel_->shared_from_this()
+                                        , msg->id() 
+                                        , boost::asio::placeholders::error)
+                                );
+#endif
+
+    }
+
+    Request *req = new Request(msg);
+    CHECK_NOTNULL(req);
+
+    SerializeSendPacket(req);
+
+    return;
+}
+
+
+void Channel::Impl::SendOnePacket()
+{
+    if (!good_) {
+        LOG_WARNING << "channel is closed, on send one packet";
+        return;
+    }
+
+    if (pending_packet_.size() <= 0) {
+        LOG_INFO << "no pending packet, on send one packet";
+        return;
+    }
+
+    Packet* packet = pending_packet_.front();
+    CHECK_NOTNULL(packet);
+    pending_packet_.pop_front();
+    int32_t type = packet->type();
+
+    if (type == Packet::kOutgoing) {
+        //撤销OutgoingMsg的send_timer定时器
+        OutgoingMsg *msg = (OutgoingMsg *)packet->msg();
+        CHECK_NOTNULL(msg);
+        int32_t timer_type = msg->impl_->timer_type();
+        if (timer_type == OutgoingMsg::Impl::kSend) {
+            CHECK_NOTNULL(msg->impl_->timer());
+            LOG_INFO << "cancel request send timer";
+            msg->impl_->timer()->cancel();
+        }
+
+#ifndef _DEBUG
+        //启动Recv定时器
+        if (msg->recv_timeout() > 0) {
+            CHECK_NOTNULL(msg->impl_->timer());
+
+            LOG_INFO << "start response recv timer";
+            msg->impl_->timer()->expires_from_now(
+                    boost::posix_time::milliseconds(msg->send_timeout()));
+            msg->impl_->set_timer_type(OutgoingMsg::Impl::kRecv);
+            msg->impl_->timer()->async_wait(
+                    boost::bind(&Channel::Impl::HandleRequestTimeout
+                                            , this
+                                            , channel_->shared_from_this()
+                                            , msg->id() 
+                                            , boost::asio::placeholders::error)
+                                    );
+        }
+#endif
+        
+    }
+
+#ifdef _DEBUG
+    switch (type) {
+        case Packet::kOutgoing:
+            {
+                OutgoingMsg *msg = (OutgoingMsg *)packet->msg();
+                LOG_INFO << "send a request, id=" << msg->id();
+            }
+            break;
+        case Packet::kIncoming:
+            {
+                IncomingMsg *msg = (IncomingMsg *)packet->msg();
+                LOG_INFO << "send a response, id=" << msg->id();
+            }
+            break;
+        case Packet::kControl:
+            {
+                Ctrl *ctrl = (Ctrl *)packet;
+                LOG_INFO << "send a heartbeat, id=" << ctrl->msg_id_;
+            }
+            break;
+        case Packet::kInvalid:
+            LOG_FATAL << "invalid packet type";
+            break;
+        default:
+            LOG_FATAL << "unknown packet type";
+            break;
+    }
+#endif
+
+    vector<boost::asio::const_buffer> buffers;
+    packet->AppendTo(&buffers);
+    boost::asio::async_write(socket_
+            , buffers
+            , bind(&Channel::Impl::HandleSendOnePacket
+                , this
+                , channel_->shared_from_this()
+                , boost::asio::placeholders::error
+                , packet));
+
+    return;
+}
+
+void Channel::Impl::HandleSendOnePacket(boost::shared_ptr<Channel> channel
+        , const boost::system::error_code& error
+        , Packet *packet)
+{
+    CHECK_NOTNULL(packet);
+    delete packet;
+
+    if (!server_channel_) {
+        if (first_ == 0) {
+            gettimeofday(&client_tv3_, NULL);
+            int used_time1 = TIME_SUB(client_tv2_, client_tv1_);
+            int used_time2 = TIME_SUB(client_tv3_, client_tv2_);
+            //超过一个心跳间隔
+            if (used_time2 >= (int)heartbeat_interval_) {
+                LOG_FATAL << "from success open channel to "
+                    "success send one heartbeat used time="
+                    <<  used_time2 << "ms";
+            }
+            else {
+                LOG_INFO << "open channel used time=" << used_time1 
+                    << "ms, from open channel to send one heartbeat used time="
+                    <<  used_time2 << "ms"
+            }
+        }
+        first_ = 1;
+    }
+
+    if (!good_) {
+        LOG_WARNING << "channel is closed";
+        return;
+    }
+
+    if (error) {
+        LOG_ERROR << "Channel::Impl::HandleSendOnePacket: send failed, errmsg=" 
+            << error.message();
+
+        if (server_channel_) {
+            Close();
+        }
+        else {
+            ReOpen();
+        }
+
+        return;
+    }
+
+    //保证顺序发送
+    SendOnePacket();
+
+    return;
+}
+
+
+void Channel::Impl::SendResponse(Response* response)
+{
+    CHECK_NOTNULL(response);
+
+    socket_.io_service().dispatch(
+            boost::bind(&Channel::Impl::HandleSendResponse
+                , this
+                , channel_->shared_from_this()
+                , response));
+
+    return;
+}
+
+void Channel::Impl::HandleSendResponse(boost::shared_ptr<Channel> channel
+        , Response *response)
+{
+    CHECK_NOTNULL(response);
+
+    if (!good_) {
+        LOG_WARNING << "Channel::Impl::HandleSendResponse: channel is closed";
+        return;
+    }
+
+    if (response->last()) {
+        IncomingMsg *msg = (IncomingMsg *)response->msg();
+        if (msg != NULL) {
+            /*gfyan diff with HandleSendRequest*/
+            incoming_msgs_.erase(msg->id());
+        }
+    }
+
+    SerializeSendPacket(response);
+
+    return;
+}
+
+void Channel::Impl::HandleReadHeader(boost::shared_ptr<Channel> channel
+        , const boost::system::error_code &error
+                        , size_t bytes_transferred)
+{
+    if (!good_) {
+        LOG_WARNING << "Channel::Impl::HandleReadHeader: channel has closed";
+        return;
+    }
+
+    if (error) {
+        if (error != boost::asio::error::operation_aborted) {
+            LOG_ERROR << "Channel::Impl::HandleReadHeader: errval=" 
+                << error.value()
+                << ", errmsg="
+                << error.message();
+
+            if (server_channel_) {
+                Close();
+            }
+            else {
+                //客户端channel需要重连, 2=End of file, 104=Connection reset by peer
+                if (error.value() == 2 || error.value() == 104) {
+                    ReOpen();
+                }
+                else {
+                    Close();
+                }
+            }
+        }
+        else {
+            LOG_WARNING << "Channel::Impl::HandleReadHeader: "
+                "read header operation cancelled";
+        }
+
+        return;
+    }
+
+
+    /*1. Parse header*/
+    Header::Parser hdr(header_);
+    if (!hdr.IsValid()) {
+        LOG_ERROR << "Channel::Impl::HandleReadHeader: invalid header";
+        return;
+    }
+
+    /*2. Process control packet*/
+    switch (hdr.type()) {
+        case Header::kReq:
+            //客户端请求消息，或服务端推送消息
+            LOG_INFO << "Channel::Impl::HandleReadHeader:"
+                " recv kReq directive, request message";
+            ReadRequest();
+            return;
+            break;
+        case Header::kReqCancel:
+            {
+                LOG_INFO << "Channel::Impl::HandleReadHeader:"
+                    " recv kReqCancel directive and skiped";
+
+                std::map<MsgId, IncomingMsg *>::iterator pos 
+                    = incoming_msgs_.find(hdr.id());
+                IncomingMsg *msg = pos->second;
+                if (msg != NULL) {
+                    //gfyan 可能非线程安全
+                    msg->Cancel();
+                }
+                ReadHeader();
+                return;
+            }
+            break;
+        case Header::kReqTick:
+            //服务器接收该消息
+            LOG_INFO << "Channel::Impl::HandleReadHeader:"
+                " recv kReqTick directive and response a heartbeat";
+
+            have_heartbeat_ = true;
+
+            //服务端模式，回一个心跳给客户端
+            SendHeartBeat();
+
+            StartHeartBeatTimer();
+
+            ReadHeader();
+            return;
+            break;
+        case Header::kRes:
+            LOG_INFO << "Channel::Impl::HandleReadHeader:"
+                " recv kRes directive";
+            ReadResponse();
+            return;
+            break;
+        case Header::kResTick:
+            //客户端模式
+            LOG_INFO << "Channel::Impl::HandleReadHeader:"
+                " recv kResTick directive";
+
+            have_heartbeat_ = true;
+
+            //read next header
+            ReadHeader();
+            return;
+            break;
+        case Header::kResLast:
+            LOG_INFO << "Channel::Impl::HandleReadHeader:"
+                " recv kResLast directive";
+            ReadResponse();
+            break;
+        case Header::kInvalid:
+            LOG_ERROR << "Channel::Impl::HandleReadHeader:"
+                " recv kInvalid directive and close channel";
+            Close();
+            break;
+        default:
+            LOG_ERROR << "Channel::Impl::HandleReadHeader: invalid packet, "
+                "close channel,  type=" << hdr.type();
+            Close();
+            break;
+    }
+
+    return;
+}
+
+void Channel::Impl::HandleReadRequest(boost::shared_ptr<Channel> channel
+        , const Buffer& body
+        , const boost::system::error_code &error
+        , size_t bytes_transferred)
+{
+    if (!good_) {
+        LOG_WARNING << "Channel::Impl::HandleReadRequest: channel has closed";
+        return;
+    }
+
+    if (error) {
+        LOG_ERROR << "Channel::Impl::HandleReadRequest: read failed, errmsg="
+            << error.message();
+        if (server_channel_) {
+            Close();
+        }
+        else {
+            ReOpen();
+        }
+
+        return;
+    }
+
+    Header::Parser hdr(header_);
+
+    if (hdr.ext_count() > 0) {
+        //清除前一个请求的extras信息
+        extras_type_ = Header::kReq;
+        extras_.clear();
+        extras_buffers_.clear();
+
+        //读取extra 消息头
+        ReadExtHeader(body);
+
+        return;
+    }
+
+    ProcessRequest(body);
+
+    ReadHeader();
+
+    return;
+}
+
+void Channel::Impl::HandleReadExtHeader(boost::shared_ptr<Channel> channel
+        , const Buffer& body
+        , const Buffer& ext_header
+        , const boost::system::error_code &error
+        , size_t bytes_transferred)
+{
+    if (!good_) {
+        LOG_WARNING << "Channel::Impl::HandleReadExtHeader: channel is closed";
+        return;
+    }
+
+    if (error) {
+        LOG_ERROR << "Channel::Impl::HandleReadExtHeader: read failed, errmsg="
+            << error.message();
+        if (server_channel_) {
+            Close();
+        }
+        else {
+            ReOpen();
+        }
+
+        return;
+    }
+
+    ReadExt(body, ext_header);
+
+    return;
+}
+
+void Channel::Impl::ProcessRequest(const Buffer& body)
+{
+    Header::Parser hdr(header_);
+
+    IncomingMsg *in_msg = incoming_msg_factory_->NewIncomingMsg(
+            hdr.body_type());
+    if (in_msg == NULL) {
+        LOG_WARNING << "Channel::Impl::ProcessRequest: "
+            "NewMsg failed and goto default msg process";
+
+        //这里需要实现缺省消息处理
+        DynamicIncomingMsg* msg = incoming_msg_factory_->NewDefaultIncomingMsg();
+        if (!msg) {
+            LOG_ERROR << "Channel::Impl::ProcessRequest: "
+                "No default msg registered";
+            if (server_channel_) {
+                Close();
+            }
+            else {
+                ReOpen();
+            }
+            return;
+        }
+        msg->type_ = hdr.body_type();
+        in_msg = msg;
+    }
+
+    //为了支持撤销操作
+    incoming_msgs_.insert(make_pair<MsgId, IncomingMsg *>(hdr.id(), in_msg));
+
+    //body_交给Buffer对象处理，不需要自己释放
+    //Buffer buffer(body_, hdr.body_size());
+    //body_ = NULL;
+
+    in_msg->set_id(hdr.id());
+    in_msg->set_channel(channel_->shared_from_this());
+
+    //需要把body和ext分别解析出来交给ParseFrom使用
+    //解析工作由HandleReadExt完成
+    bool ret = in_msg->ParseFrom(body, extras_);
+    if (!ret) {
+        LOG_ERROR << "Channel::Impl::ProcessRequest: "
+            "IncomingMsg parse failed and stop channel";
+        if (server_channel_) {
+            Close();
+        }
+        else {
+            ReOpen();
+        }
+        return;
+    }
+
+    return;
+}
+
+void Channel::Impl::HandleHeartBeatTimeout(boost::shared_ptr<Channel> channel
+        , const boost::system::error_code &error)
+{
+#ifdef _DEBUG
+    LOG_INFO << "Channel::Impl::HandleHeartBeatTimeout: for debug and return";
+    return;
+#endif
+
+    if (!good_) {
+        LOG_ERROR << "Channel::Impl::HandleHeartBeatTimeout: "
+            "channel is closed";
+        return;
+    }
+
+    heartbeat_timer_stoped_ = true;
+
+    if (error) {
+        if (error != boost::asio::error::operation_aborted) {
+            LOG_ERROR << "Channel::Impl::HandleHeartBeatTimeout: "
+                "heartbeat timer error, close channel";
+        }
+        else {
+            LOG_INFO << "Channel::Impl::HandleHeartBeatTimeout: "
+                "channel timer is cancelled";
+        }
+
+        return;
+    }
+
+    if (server_channel_) {
+        gettimeofday(&server_tv2_, NULL);
+        LOG_WARNING << "Channel::Impl::HandleHeartBeatTimeout: "
+            "channel time out and close channel"
+            << ", used_time=" 
+            << TIME_SUB(server_tv2_, server_tv1_);
+        Close();
+    }
+    else {
+        gettimeofday(&client_timer_tv2_, NULL);
+
+        LOG_INFO << "HandleHeartBeatTimeout: from start timer to "
+            "timeout used_time=" 
+            << TIME_SUB(client_timer_tv2_, client_timer_tv1_);
+
+        //客户端模式
+        if (have_heartbeat_) {
+            //有心跳
+            LOG_INFO << "Channel::Impl::HandleHeartBeatTimeout: "
+                "client channel, have heartbeat and send a heartbeat";
+
+            have_heartbeat_ = false;
+
+            SendHeartBeat();
+            StartHeartBeatTimer();
+        }
+        else {
+            LOG_WARNING << "Channel::Impl::HandleHeartBeatTime: "
+                "client channel, have no heartbeat and reopen channel";
+            //客户端channel,需要重连
+            ReOpen();
+            return;
+        }
+    }
+
+    return;
+}
+
+void Channel::Impl::HandleOpen(boost::shared_ptr<Channel> channel
+        , const boost::system::error_code& error)
+{
+    if (error) {
+        if (error != boost::asio::error::operation_aborted) {
+            LOG_ERROR << "Channel::Impl::HandleOpen: open failed, "
+                "sleep a heartbeat interval, then reconnect, errmsg=" 
+                << error.message();
+
+            heartbeat_timer_.expires_from_now(
+                    boost::posix_time::milliseconds(heartbeat_interval_));
+            heartbeat_timer_.async_wait(
+                    boost::bind(&Channel::Impl::HandleWaitAndOpen
+                        , this
+                        , channel_->shared_from_this()
+                        , boost::asio::placeholders::error)
+                    );
+        }
+        else {
+            LOG_WARNING << "Channel::Impl::HandleOpen: cancelled";
+        }
+        
+        return;
+    }
+
+    //gfyan need rewrite
+    good_ = true;
+
+    //SetNoDelay();
+
+    GetSocketPair();
+
+    gettimeofday(&client_tv2_, NULL);
+    int used_time = TIME_SUB(client_tv2_, client_tv1_);
+    LOG_INFO << "Channel::Impl::HandleOpen: from start open to success open used_time="
+        << used_time;
+
+    //保证通道打开成功时，pending_packet_是空的
+    //立即发送心跳包
+    SendHeartBeat();
+    StartHeartBeatTimer();
+
+
+    if (channel_handler_) {
+        channel_handler_(channel_->shared_from_this());
+    }
+
+    //检测outgoing_msgs_是否为空，不为空则表示套接字重连了，需要把outgoing_msgs_
+    //中的内容重新发送一遍
+    CheckOutgoingMsgs();
+
+    //很重要，监听读事件,准备接收响应信息
+    ReadHeader();
+
+
+    return;
+}
+
+void Channel::Impl::HandleWaitAndOpen(boost::shared_ptr<Channel> channel
+        , const boost::system::error_code& error)
+{
+    if (error) {
+        if (error != boost::asio::error::operation_aborted) {
+            //致命错误，进程退出
+            LOG_ERROR << "Channel::Impl::HandleWaitAndOpen: "
+                << error.message();
+        }
+        else {
+            //用户主动关闭套接字,不再重连
+            LOG_WARNING << "Channel::Impl::HandleWaitAndOpen: "
+                "cancelled, socket=";
+        }
+        
+        return;
+    }
+
+    Open();
+
+    return;
+}
+
+void Channel::Impl::HandleReadResponse(boost::shared_ptr<Channel> channel
+        , const Buffer& body
+        , const boost::system::error_code &error
+        , size_t bytes_transferred)
+{
+    if (!good_) {
+        LOG_WARNING << "Channel::Impl::HandleReadResponse: channel is closed";
+        return;
+    }
+
+    if (error) {
+        LOG_ERROR << "Channel::Impl::HandleReadResponse: errmsg=" 
+            << error.message();
+
+        if (server_channel_) {
+            Close();
+        }
+        else {
+            ReOpen();
+        }
+
+        return;
+    }
+
+    Header::Parser hdr(header_);
+
+    if (hdr.ext_count() > 0) {
+        extras_type_ = Header::kRes;
+        extras_.clear();
+        extras_buffers_.clear();
+        ReadExtHeader(body);
+
+        return;
+    }
+
+    ProcessResponse(body);
+
+    ReadHeader();
+
+    return;
+}
+
+void Channel::Impl::SendHeartBeat()
+{
+#ifdef _DEBUG
+    LOG_INFO << "Channel::Impl::SendHeartBeat: for debug, and return";
+    return;
+#endif
+
+    if (!good_) {
+        LOG_WARNING << "Channel::Impl::SendHeartBeat: "
+            "channel is closed";
+        return;
+    }
+
+
+    MsgId msg_id = 0;
+    MsgType msg_type = Header::kInvalid;
+
+    if (server_channel_) {
+        Header::Parser hdr(header_);
+        msg_id = hdr.id();
+        msg_type = Header::kResTick;
+    }
+    else {
+        msg_id = NextOutgoingMsgId();
+        msg_type = Header::kReqTick;
+    }
+
+    Ctrl* ctrl = new Ctrl(msg_id, msg_type);
+    CHECK_NOTNULL(ctrl);
+
+    SerializeSendPacket(ctrl);
+
+    return;
+}
+
+void Channel::Impl::HandleRequestTimeout(boost::shared_ptr<Channel> channel
+        , MsgId msg_id
+        , const boost::system::error_code &error)
+{
+    //注意，这里不能根据good_标志，request超时必须处理，无论channel连接与否
+    //if (!good_) {
+    //    LOG_WARNING << "Channel::Impl::HandleRequestTimeout: channel is closed";
+    //    return;
+    //}
+
+    if (error) {
+        if (error != boost::asio::error::operation_aborted) {
+            LOG_ERROR << "Channel::Impl::HandleRequestTimeout: "
+                "msg timer error, msg_id=" << msg_id 
+                << ", errmsg=" << error.message();
+
+            map<MsgId, OutgoingMsg *>::iterator pos = outgoing_msgs_.find(msg_id);
+            if (pos == outgoing_msgs_.end()) {
+                LOG_ERROR << "Channel::Impl::HandleRequestTimeout: "
+                    "timer error, msg not found, msg_id=" << msg_id;
+                return;
+            }
+
+            OutgoingMsg *msg = pos->second;
+            CHECK_NOTNULL(msg);
+            msg->HandleError();
+            outgoing_msgs_.erase(msg_id);
+            delete msg;
+        }
+        else {
+            LOG_WARNING << "Channel::Impl::HandleRequestTimeout: "
+                "msg timer is cancelled, msg_id=" << msg_id;
+        }
+
+        return;
+    }
+
+    map<MsgId, OutgoingMsg *>::iterator pos = outgoing_msgs_.find(msg_id);
+    if (pos == outgoing_msgs_.end()) {
+        LOG_WARNING << "Channel::Impl::HandleRequestTimeout: "
+            "outgoing msg not exist, may be completed or error, msgid=" << msg_id;
+        return;
+    }
+
+    OutgoingMsg *msg = pos->second;
+    CHECK_NOTNULL(msg);
+
+    LOG_WARNING << "Channel::Impl::HandleRequestTimeout: "
+        "msg time out and call time out callback, msg_id=" 
+        << msg_id;
+
+    msg->HandleTimeout();
+
+    //移除msg,msg生存期结束
+    outgoing_msgs_.erase(msg_id);
+
+    delete msg;
+
+    return;
+}
+
+std::string Channel::Impl::remote_ip()
+{
+    return remote_ip_;
+}
+
+int Channel::Impl::remote_port()
+{
+    return remote_port_;
+}
+
+std::string Channel::Impl::local_ip()
+{
+    return local_ip_;
+}
+
+int Channel::Impl::local_port()
+{
+    return local_port_;
+}
+
+MsgId Channel::Impl::NextOutgoingMsgId()
+{
+    MsgId id = outgoing_msg_id_;
+
+    outgoing_msg_id_++;
+    if (outgoing_msg_id_ < 0) {
+        outgoing_msg_id_ = 0;
+    }
+
+    return id;
+}
+
+void Channel::Impl::GetSocketPair()
+{
+    boost::system::error_code ec;
+
+    if (server_channel_) {
+        remote_port_ = socket_.remote_endpoint(ec).port();
+        if (ec) {
+            LOG_ERROR << "Chanel::GetSocketPair: "
+                "get remote port failed, errval=" << ec.value() 
+                << ", errmsg=" << ec.message();
+            LOG_FATAL << "fd=" << socket_.native() << " isopen=" << socket_.is_open();
+            return;
+        }
+
+        remote_ip_ = socket_.remote_endpoint(ec).address().to_string();
+        if (ec) {
+            LOG_ERROR << "Chanel::GetSocketPair: get remote ip failed, errval=" << ec.value() 
+                << ", errmsg=" << ec.message();
+            return;
+        }
+    }
+    else {
+        //客户端模式，主动打开,服务器端口号和主机地址已知
+        remote_port_ = port_;
+        remote_ip_ = host_;
+    }
+
+    local_port_ = socket_.local_endpoint(ec).port();
+    if (ec) {
+        LOG_ERROR << "Chanel::GetSocketPair: get local port failed, errval=" << ec.value() 
+            << ", errmsg=" << ec.message();
+        return;
+    }
+
+    local_ip_ = socket_.local_endpoint(ec).address().to_string();
+    if (ec) {
+        LOG_ERROR << "Chanel::GetSocketPair: get local ip failed, errval=" << ec.value() 
+            << ", errmsg=" << ec.message();
+        return;
+    }
+
+    return;
+}
+
+void Channel::Impl::ClearPendingPacket()
+{
+    std::list<Packet *>::iterator it;
+    for (it = pending_packet_.begin(); it != pending_packet_.end(); it++) {
+        delete *it;
+    }
+
+    pending_packet_.clear();
+
+    return;
+}
+
+void Channel::Impl::ClearOutgoingMsgs()
+{
+    //处理outgoing_msgs_中消息
+    if (outgoing_msgs_.size() > 0) {
+        //遍历，删除
+        std::map<MsgId, OutgoingMsg *>::iterator it = outgoing_msgs_.begin();
+        for (; it != outgoing_msgs_.end(); it++) {
+            OutgoingMsg *msg = it->second;
+
+            CHECK_NOTNULL(msg);
+            if (msg != NULL) {
+                msg->HandleFinalize();
+            }
+
+            delete msg;
+        }
+    }
+
+    outgoing_msgs_.clear();
+
+    return;
+}
+
+void Channel::Impl::CheckOutgoingMsgs()
+{
+    if (outgoing_msgs_.size() <= 0) {
+        LOG_INFO << "Channel::Impl::CheckOutgoingMsgs: not msg need to send";
+        return;
+    }
+
+    if (outgoing_msgs_.size() > 1000) {
+        LOG_WARNING << "Channel::Impl::CheckOutgoingMsgs: "
+            "outgoing_msgs > 1000, outgoing_msgs_.size() = " 
+            << outgoing_msgs_.size();
+    }
+
+    //遍历，发送
+    //gfyan,注意，这里如果msg很多的话，可能会造成pending_packet拥堵，心跳丢失
+    //需要小心处理
+    //一个办法是，服务端在收到任何数据包时，当作一个心跳包
+    //，客户端收到任意一个数据包时，也当作一个心跳包
+    std::map<MsgId, OutgoingMsg *>::iterator it = outgoing_msgs_.begin();
+    for (; it != outgoing_msgs_.end(); it++) {
+        OutgoingMsg *msg = it->second;
+        CHECK_NOTNULL(msg);
+
+        //该定时器在Send(OutgoingMsg *msg)回调中设置,连接恢复时需要撤销
+        if (msg->impl_->timer_type() == OutgoingMsg::Impl::kConn) {
+            msg->impl_->timer()->cancel();
+        }
+
+        Request *req = new Request(msg);
+
+        SerializeSendPacket(req);
+    }
+
+    return;
+}
+
+void Channel::Impl::SetNoDelay()
+{
+    socket_.set_option(boost::asio::ip::tcp::no_delay(true));
+}
+
+void Channel::Impl::ProcessResponse(const Buffer& body)
+{
+    Header::Parser hdr(header_);
+
+    map<MsgId, OutgoingMsg *>::iterator it;
+    it = outgoing_msgs_.find(hdr.id());
+    if (it == outgoing_msgs_.end()) {
+        LOG_ERROR << "Channel::Impl::HandleReadResponse: "
+            "can not get OutgoingMsg by id=" << hdr.id() 
+            << ", may be msg timeout";
+
+        return;
+    }
+
+    OutgoingMsg *msg = it->second;
+    if (msg == NULL) {
+        LOG_FATAL << "Channel::Impl::HandleReadResponse: "
+            "invalid map pair, id=" << hdr.id();
+        Close();
+        return;
+    }
+
+    msg->HandleResult(body, extras_);
+    if (hdr.type() == Header::kResLast) {
+        //撤销请求消息outgoing_msg的定时器，
+        //该定时器在发出请求时设定
+        if (msg->impl_->timer() != NULL) {
+            msg->impl_->timer()->cancel();
+        }
+
+        msg->HandleFinalize();
+
+        outgoing_msgs_.erase(msg->id());
+
+        //gfyan 待确定
+        delete msg;
+    }
+}
+
+bool Channel::Impl::SerializeSendPacket(Packet *packet)
+{
+    //添加到发送队列
+    bool need_send = pending_packet_.empty();
+    pending_packet_.push_back(packet);
+
+
+    if (need_send) {
+        SendOnePacket();
+    }
+    else {
+        LOG_INFO << "pending packet is not empty on serizlized send packet";
+
+    }
+
+    return need_send;
+}
+
+} /*namespace net*/
+} /*namespace ldd*/
+

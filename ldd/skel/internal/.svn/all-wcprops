@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/qdev/!svn/ver/122362/CloudLDD/trunk/src/ldd/skel/internal
+END
+skel.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/qdev/!svn/ver/74728/CloudLDD/trunk/src/ldd/skel/internal/skel.cc
+END
+skel.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/qdev/!svn/ver/74728/CloudLDD/trunk/src/ldd/skel/internal/skel.h
+END
+config.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/qdev/!svn/ver/89527/CloudLDD/trunk/src/ldd/skel/internal/config.cc
+END
+proctitle.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/qdev/!svn/ver/70905/CloudLDD/trunk/src/ldd/skel/internal/proctitle.cc
+END
+config.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/qdev/!svn/ver/89527/CloudLDD/trunk/src/ldd/skel/internal/config.h
+END
+proctitle.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/qdev/!svn/ver/70905/CloudLDD/trunk/src/ldd/skel/internal/proctitle.h
+END
+option.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/qdev/!svn/ver/89527/CloudLDD/trunk/src/ldd/skel/internal/option.cc
+END
+log_flusher.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/qdev/!svn/ver/72327/CloudLDD/trunk/src/ldd/skel/internal/log_flusher.cc
+END
+option.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/qdev/!svn/ver/89527/CloudLDD/trunk/src/ldd/skel/internal/option.h
+END
+log_flusher.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/qdev/!svn/ver/72327/CloudLDD/trunk/src/ldd/skel/internal/log_flusher.h
+END
+child.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/qdev/!svn/ver/122362/CloudLDD/trunk/src/ldd/skel/internal/child.cc
+END
+context.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/qdev/!svn/ver/70905/CloudLDD/trunk/src/ldd/skel/internal/context.cc
+END
+child.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/qdev/!svn/ver/72114/CloudLDD/trunk/src/ldd/skel/internal/child.h
+END
+context.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/qdev/!svn/ver/72206/CloudLDD/trunk/src/ldd/skel/internal/context.h
+END
+monitor.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/qdev/!svn/ver/94831/CloudLDD/trunk/src/ldd/skel/internal/monitor.cc
+END
+monitor.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/qdev/!svn/ver/89527/CloudLDD/trunk/src/ldd/skel/internal/monitor.h
+END

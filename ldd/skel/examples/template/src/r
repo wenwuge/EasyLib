@@ -1,0 +1,13 @@
+#!/bin/bash
+
+name=template
+
+pwd=$(readlink -f $(dirname $0))
+ln -sf /home/s/bin/lddskel $name
+./$name \
+    --cfg-dir=$pwd/../cfg \
+    --pid-dir=$pwd/ \
+    --lib-dir=$pwd/ \
+    --log-dir=$pwd/log \
+    $@
+rm -f $name

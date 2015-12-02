@@ -1,0 +1,67 @@
+// p2s_get.cc (2013-07-10)
+// Yan Gaofeng (yangaofeng@360.cn)
+
+#include <glog/logging.h>
+
+#include <boost/bind.hpp>
+#include "ldd/net/channel.h"
+#include "ldd/net/event_runner.h"
+
+#include "c2p_list.h"
+#include "p2s_list.h"
+
+using namespace ldd::net;
+using namespace ldd::protocol;
+
+void P2SList::SerializeTo(Buffer* request,
+        std::map<int8_t, Buffer>* extras)
+{
+    //1、构造请求，填充到request和extras(如果有的话)
+    request->Reset(req_.MaxSize());
+    int len = req_.SerializeTo(request->ptr());
+    request->ReSize(len);
+
+    LOG(INFO) << "construct a list msg";
+}
+
+void P2SList::HandleResult(const Buffer &result
+        , const std::map<int8_t, Buffer>& extras)
+{
+    //解析结果
+    if (!res_.ParseFrom(result.ptr(), result.len())) {
+        LOG(FATAL) << "parse list result error";
+        return;
+    }
+
+    //发送结果
+    c2p_list_->channel()->runner()->Dispatch(
+            boost::bind(&C2PList::SendResult
+                , c2p_list_));
+}
+
+void P2SList::HandleFinalize()
+{
+    LOG(INFO) << "finalized";
+    c2p_list_->channel()->runner()->Dispatch(
+            boost::bind(&C2PList::Finalize
+                , c2p_list_));
+}
+
+void P2SList::HandleTimeout()
+{
+    LOG(INFO) << "time out";
+    res_.s64Version_ = -1;
+    c2p_list_->channel()->runner()->Dispatch(
+            boost::bind(&C2PList::SendResult
+                , c2p_list_));
+}
+
+void P2SList::HandleError()
+{
+    LOG(INFO) << "error";
+    res_.s64Version_ = -1;
+    c2p_list_->channel()->runner()->Dispatch(
+            boost::bind(&C2PList::SendResult
+                , c2p_list_));
+}
+
