@@ -4,9 +4,10 @@
 #include "classtemplate.h"
 #include "funtemplate.h"
 #include "advancetest.h"
-
+#include "messagefactory.h"
 int main(int argc, char** argv)
 {
+#if 0
 //function template test begin
     int m = 1, n = 2;
     
@@ -45,5 +46,13 @@ int main(int argc, char** argv)
     Advance(forward, 5); 
     Advance(random, 5); 
     Advance(bdirection, 5); 
+#endif
+//message factories
+    MessageFactories<BaseMessage> factories;
+    factories.Register<Message1>(1, "hello");
+    factories.Register<Message2>(2, "hello", "world");
+
+    factories.GetMessage(1);
+    factories.GetMessage(2);
     return 0;
 }
