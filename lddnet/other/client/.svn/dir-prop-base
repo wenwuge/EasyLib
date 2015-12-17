@@ -1,8 +1,0 @@
-K 10
-svn:ignore
-V 19
-*.o
-*.d
-ldd_client
-
-END
