@@ -1,0 +1,1834 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Acceptor	net/Acceptor.cc	/^Acceptor::Acceptor(EventLoop* loop, const InetAddress& listenAddr, bool reuseport)$/;"	f	class:Acceptor
+Acceptor	net/Acceptor.h	/^class Acceptor : boost::noncopyable$/;"	c	namespace:muduo::net
+ActiveTimer	net/TimerQueue.h	/^  typedef std::pair<Timer*, int64_t> ActiveTimer;$/;"	t	class:muduo::net::TimerQueue
+ActiveTimerSet	net/TimerQueue.h	/^  typedef std::set<ActiveTimer> ActiveTimerSet;$/;"	t	class:muduo::net::TimerQueue
+AppendFile	base/FileUtil.cc	/^FileUtil::AppendFile::AppendFile(StringArg filename)$/;"	f	class:FileUtil::AppendFile
+AppendFile	base/FileUtil.h	/^class AppendFile : boost::noncopyable$/;"	c	namespace:muduo::FileUtil
+ArgList	net/inspect/Inspector.h	/^  typedef std::vector<string> ArgList;$/;"	t	class:muduo::net::Inspector
+AsyncLogging	base/AsyncLogging.cc	/^AsyncLogging::AsyncLogging(const string& basename,$/;"	f	class:AsyncLogging
+AsyncLogging	base/AsyncLogging.h	/^class AsyncLogging : boost::noncopyable$/;"	c	namespace:muduo
+AtomicInt32	base/Atomic.h	/^typedef detail::AtomicIntegerT<int32_t> AtomicInt32;$/;"	t	namespace:muduo
+AtomicInt64	base/Atomic.h	/^typedef detail::AtomicIntegerT<int64_t> AtomicInt64;$/;"	t	namespace:muduo
+AtomicIntegerT	base/Atomic.h	/^  AtomicIntegerT()$/;"	f	class:muduo::detail::AtomicIntegerT
+AtomicIntegerT	base/Atomic.h	/^class AtomicIntegerT : boost::noncopyable$/;"	c	namespace:muduo::detail
+BOOST_AUTO_TEST_CASE	base/tests/LogStream_test.cc	/^BOOST_AUTO_TEST_CASE(testLogStreamBooleans)$/;"	f
+BOOST_AUTO_TEST_CASE	base/tests/LogStream_test.cc	/^BOOST_AUTO_TEST_CASE(testLogStreamFloats)$/;"	f
+BOOST_AUTO_TEST_CASE	base/tests/LogStream_test.cc	/^BOOST_AUTO_TEST_CASE(testLogStreamFmts)$/;"	f
+BOOST_AUTO_TEST_CASE	base/tests/LogStream_test.cc	/^BOOST_AUTO_TEST_CASE(testLogStreamIntegerLimits)$/;"	f
+BOOST_AUTO_TEST_CASE	base/tests/LogStream_test.cc	/^BOOST_AUTO_TEST_CASE(testLogStreamIntegers)$/;"	f
+BOOST_AUTO_TEST_CASE	base/tests/LogStream_test.cc	/^BOOST_AUTO_TEST_CASE(testLogStreamLong)$/;"	f
+BOOST_AUTO_TEST_CASE	base/tests/LogStream_test.cc	/^BOOST_AUTO_TEST_CASE(testLogStreamStrings)$/;"	f
+BOOST_AUTO_TEST_CASE	base/tests/LogStream_test.cc	/^BOOST_AUTO_TEST_CASE(testLogStreamVoid)$/;"	f
+BOOST_AUTO_TEST_CASE	net/http/tests/HttpRequest_unittest.cc	/^BOOST_AUTO_TEST_CASE(testParseRequestAllInOne)$/;"	f
+BOOST_AUTO_TEST_CASE	net/http/tests/HttpRequest_unittest.cc	/^BOOST_AUTO_TEST_CASE(testParseRequestEmptyHeaderValue)$/;"	f
+BOOST_AUTO_TEST_CASE	net/http/tests/HttpRequest_unittest.cc	/^BOOST_AUTO_TEST_CASE(testParseRequestInTwoPieces)$/;"	f
+BOOST_AUTO_TEST_CASE	net/tests/Buffer_unittest.cc	/^BOOST_AUTO_TEST_CASE(testBufferAppendRetrieve)$/;"	f
+BOOST_AUTO_TEST_CASE	net/tests/Buffer_unittest.cc	/^BOOST_AUTO_TEST_CASE(testBufferFindEOL)$/;"	f
+BOOST_AUTO_TEST_CASE	net/tests/Buffer_unittest.cc	/^BOOST_AUTO_TEST_CASE(testBufferGrow)$/;"	f
+BOOST_AUTO_TEST_CASE	net/tests/Buffer_unittest.cc	/^BOOST_AUTO_TEST_CASE(testBufferInsideGrow)$/;"	f
+BOOST_AUTO_TEST_CASE	net/tests/Buffer_unittest.cc	/^BOOST_AUTO_TEST_CASE(testBufferPrepend)$/;"	f
+BOOST_AUTO_TEST_CASE	net/tests/Buffer_unittest.cc	/^BOOST_AUTO_TEST_CASE(testBufferReadInt)$/;"	f
+BOOST_AUTO_TEST_CASE	net/tests/Buffer_unittest.cc	/^BOOST_AUTO_TEST_CASE(testBufferShrink)$/;"	f
+BOOST_AUTO_TEST_CASE	net/tests/Buffer_unittest.cc	/^BOOST_AUTO_TEST_CASE(testMove)$/;"	f
+BOOST_AUTO_TEST_CASE	net/tests/InetAddress_unittest.cc	/^BOOST_AUTO_TEST_CASE(testInetAddress)$/;"	f
+BOOST_AUTO_TEST_CASE	net/tests/InetAddress_unittest.cc	/^BOOST_AUTO_TEST_CASE(testInetAddressResolve)$/;"	f
+BOOST_AUTO_TEST_CASE	net/tests/ZlibStream_unittest.cc	/^BOOST_AUTO_TEST_CASE(testZlibOutputStream)$/;"	f
+BOOST_AUTO_TEST_CASE	net/tests/ZlibStream_unittest.cc	/^BOOST_AUTO_TEST_CASE(testZlibOutputStream1)$/;"	f
+BOOST_AUTO_TEST_CASE	net/tests/ZlibStream_unittest.cc	/^BOOST_AUTO_TEST_CASE(testZlibOutputStream2)$/;"	f
+BOOST_AUTO_TEST_CASE	net/tests/ZlibStream_unittest.cc	/^BOOST_AUTO_TEST_CASE(testZlibOutputStream3)$/;"	f
+BOOST_AUTO_TEST_CASE	net/tests/ZlibStream_unittest.cc	/^BOOST_AUTO_TEST_CASE(testZlibOutputStream4)$/;"	f
+BOOST_AUTO_TEST_CASE	net/tests/ZlibStream_unittest.cc	/^BOOST_AUTO_TEST_CASE(testZlibOutputStream5)$/;"	f
+BOOST_TEST_DYN_LINK	base/tests/LogStream_test.cc	8;"	d	file:
+BOOST_TEST_DYN_LINK	net/http/tests/HttpRequest_unittest.cc	6;"	d	file:
+BOOST_TEST_DYN_LINK	net/tests/Buffer_unittest.cc	5;"	d	file:
+BOOST_TEST_DYN_LINK	net/tests/InetAddress_unittest.cc	7;"	d	file:
+BOOST_TEST_DYN_LINK	net/tests/ZlibStream_unittest.cc	6;"	d	file:
+BOOST_TEST_MAIN	base/tests/LogStream_test.cc	7;"	d	file:
+BOOST_TEST_MAIN	net/http/tests/HttpRequest_unittest.cc	5;"	d	file:
+BOOST_TEST_MAIN	net/tests/Buffer_unittest.cc	4;"	d	file:
+BOOST_TEST_MAIN	net/tests/InetAddress_unittest.cc	6;"	d	file:
+BOOST_TEST_MAIN	net/tests/ZlibStream_unittest.cc	5;"	d	file:
+BackUp	net/protobuf/BufferStream.h	/^  virtual void BackUp(int count) \/\/ override$/;"	f	class:muduo::net::BufferOutputStream
+Bar	base/tests/Exception_test.cc	/^class Bar$/;"	c	file:
+Bench	base/tests/BlockingQueue_bench.cc	/^  Bench(int numThreads)$/;"	f	class:Bench
+Bench	base/tests/BlockingQueue_bench.cc	/^class Bench$/;"	c	file:
+BlockingQueue	base/BlockingQueue.h	/^  BlockingQueue()$/;"	f	class:muduo::BlockingQueue
+BlockingQueue	base/BlockingQueue.h	/^class BlockingQueue : boost::noncopyable$/;"	c	namespace:muduo
+BoilerPlate	net/boilerplate.h	/^class BoilerPlate : boost::noncopyable$/;"	c	namespace:muduo::net
+BoundedBlockingQueue	base/BoundedBlockingQueue.h	/^  explicit BoundedBlockingQueue(int maxSize)$/;"	f	class:muduo::BoundedBlockingQueue
+BoundedBlockingQueue	base/BoundedBlockingQueue.h	/^class BoundedBlockingQueue : boost::noncopyable$/;"	c	namespace:muduo
+Buffer	base/AsyncLogging.h	/^  typedef muduo::detail::FixedBuffer<muduo::detail::kLargeBuffer> Buffer;$/;"	t	class:muduo::AsyncLogging
+Buffer	base/LogStream.h	/^  typedef detail::FixedBuffer<detail::kSmallBuffer> Buffer;$/;"	t	class:muduo::LogStream
+Buffer	net/Buffer.h	/^  explicit Buffer(size_t initialSize = kInitialSize)$/;"	f	class:muduo::net::Buffer
+Buffer	net/Buffer.h	/^class Buffer : public muduo::copyable$/;"	c	namespace:muduo::net
+BufferOutputStream	net/protobuf/BufferStream.h	/^  BufferOutputStream(Buffer* buf)$/;"	f	class:muduo::net::BufferOutputStream
+BufferOutputStream	net/protobuf/BufferStream.h	/^class BufferOutputStream : public google::protobuf::io::ZeroCopyOutputStream$/;"	c	namespace:muduo::net
+BufferPtr	base/AsyncLogging.h	/^  typedef BufferVector::auto_type BufferPtr;$/;"	t	class:muduo::AsyncLogging
+BufferVector	base/AsyncLogging.h	/^  typedef boost::ptr_vector<Buffer> BufferVector;$/;"	t	class:muduo::AsyncLogging
+ByteCount	net/protobuf/BufferStream.h	/^  virtual int64_t ByteCount() const \/\/ override$/;"	f	class:muduo::net::BufferOutputStream
+ByteSizeConsistencyError	net/protorpc/google-inl.h	/^void ByteSizeConsistencyError(int byte_size_before_serialization,$/;"	f
+CHECK_NOTNULL	base/Logging.h	138;"	d
+CallMethod	net/protorpc/RpcChannel.cc	/^void RpcChannel::CallMethod(const ::google::protobuf::MethodDescriptor* method,$/;"	f	class:RpcChannel
+Callback	net/inspect/Inspector.h	/^  typedef boost::function<string (HttpRequest::Method, const ArgList& args)> Callback;$/;"	t	class:muduo::net::Inspector
+Channel	net/Channel.cc	/^Channel::Channel(EventLoop* loop, int fd__)$/;"	f	class:Channel
+Channel	net/Channel.h	/^class Channel : boost::noncopyable$/;"	c	namespace:muduo::net
+ChannelList	net/EventLoop.h	/^  typedef std::vector<Channel*> ChannelList;$/;"	t	class:muduo::net::EventLoop
+ChannelList	net/Poller.h	/^  typedef std::vector<Channel*> ChannelList;$/;"	t	class:muduo::net::Poller
+ChannelMap	net/Poller.h	/^  typedef std::map<int, Channel*> ChannelMap;$/;"	t	class:muduo::net::Poller
+CheckNotNull	base/Logging.h	/^T* CheckNotNull(Logger::SourceFile file, int line, const char *names, T* ptr)$/;"	f	namespace:muduo
+CloseCallback	net/Callbacks.h	/^typedef boost::function<void (const TcpConnectionPtr&)> CloseCallback;$/;"	t	namespace:muduo::net
+CommandList	net/inspect/Inspector.h	/^  typedef std::map<string, Callback> CommandList;$/;"	t	class:muduo::net::Inspector
+Comp	base/TimeZone.cc	/^  Comp(bool gmt)$/;"	f	struct:muduo::detail::Comp
+Comp	base/TimeZone.cc	/^struct Comp$/;"	s	namespace:muduo::detail	file:
+ConcreteMessagePtr	net/protobuf/ProtobufCodecLite.h	/^  typedef boost::shared_ptr<MSG> ConcreteMessagePtr;$/;"	t	class:muduo::net::ProtobufCodecLiteT
+Condition	base/Condition.h	/^  explicit Condition(MutexLock& mutex)$/;"	f	class:muduo::Condition
+Condition	base/Condition.h	/^class Condition : boost::noncopyable$/;"	c	namespace:muduo
+ConnectionCallback	net/Callbacks.h	/^typedef boost::function<void (const TcpConnectionPtr&)> ConnectionCallback;$/;"	t	namespace:muduo::net
+ConnectionMap	net/TcpServer.h	/^  typedef std::map<string, TcpConnectionPtr> ConnectionMap;$/;"	t	class:muduo::net::TcpServer
+Connector	net/Connector.cc	/^Connector::Connector(EventLoop* loop, const InetAddress& serverAddr)$/;"	f	class:Connector
+Connector	net/Connector.h	/^class Connector : boost::noncopyable,$/;"	c	namespace:muduo::net
+ConnectorPtr	net/TcpClient.h	/^typedef boost::shared_ptr<Connector> ConnectorPtr;$/;"	t	namespace:muduo::net
+CopyToStdString	base/StringPiece.h	/^  void CopyToStdString(std::string* target) const {$/;"	f	class:muduo::StringPiece
+CopyToString	base/StringPiece.h	/^  void CopyToString(string* target) const {$/;"	f	class:muduo::StringPiece
+CountDownLatch	base/CountDownLatch.cc	/^CountDownLatch::CountDownLatch(int count)$/;"	f	class:CountDownLatch
+CountDownLatch	base/CountDownLatch.h	/^class CountDownLatch : boost::noncopyable$/;"	c	namespace:muduo
+CpuTime	base/ProcessInfo.h	/^    CpuTime() : userSeconds(0.0), systemSeconds(0.0) { }$/;"	f	struct:muduo::ProcessInfo::CpuTime
+CpuTime	base/ProcessInfo.h	/^  struct CpuTime$/;"	s	namespace:muduo::ProcessInfo
+CurrentThread	base/CurrentThread.h	/^namespace CurrentThread$/;"	n	namespace:muduo
+CurrentThread	base/Thread.cc	/^namespace CurrentThread$/;"	n	namespace:muduo	file:
+DEBUG	base/Logging.h	/^    DEBUG,$/;"	e	enum:muduo::Logger::LogLevel
+Data	base/TimeZone.cc	/^struct TimeZone::Data$/;"	s	class:TimeZone	file:
+Date	base/Date.cc	/^Date::Date(const struct tm& t)$/;"	f	class:Date
+Date	base/Date.cc	/^Date::Date(int y, int m, int d)$/;"	f	class:Date
+Date	base/Date.h	/^  Date()$/;"	f	class:muduo::Date
+Date	base/Date.h	/^  explicit Date(int julianDayNum)$/;"	f	class:muduo::Date
+Date	base/Date.h	/^class Date : public muduo::copyable$/;"	c	namespace:muduo
+Deleter	base/ThreadLocalSingleton.h	/^    Deleter()$/;"	f	class:muduo::ThreadLocalSingleton::Deleter
+Deleter	base/ThreadLocalSingleton.h	/^  class Deleter$/;"	c	class:muduo::ThreadLocalSingleton
+EPollPoller	net/poller/EPollPoller.cc	/^EPollPoller::EPollPoller(EventLoop* loop)$/;"	f	class:EPollPoller
+EPollPoller	net/poller/EPollPoller.h	/^class EPollPoller : public Poller$/;"	c	namespace:muduo::net
+ERROR	base/Logging.h	/^    ERROR,$/;"	e	enum:muduo::Logger::LogLevel
+EchoClient	net/tests/EchoClient_unittest.cc	/^  EchoClient(EventLoop* loop, const InetAddress& listenAddr, const string& id)$/;"	f	class:EchoClient
+EchoClient	net/tests/EchoClient_unittest.cc	/^class EchoClient : boost::noncopyable$/;"	c	file:
+EchoServer	net/tests/EchoServer_unittest.cc	/^  EchoServer(EventLoop* loop, const InetAddress& listenAddr)$/;"	f	class:EchoServer
+EchoServer	net/tests/EchoServer_unittest.cc	/^class EchoServer$/;"	c	file:
+Entry	net/TimerQueue.h	/^  typedef std::pair<Timestamp, Timer*> Entry;$/;"	t	class:muduo::net::TimerQueue
+ErrorCallback	net/protobuf/ProtobufCodecLite.h	/^                                ErrorCode)> ErrorCallback;$/;"	t	class:muduo::net::ProtobufCodecLite
+ErrorCallback	net/protobuf/ProtobufCodecLite.h	/^  typedef ProtobufCodecLite::ErrorCallback ErrorCallback;$/;"	t	class:muduo::net::ProtobufCodecLiteT
+ErrorCode	net/protobuf/ProtobufCodecLite.h	/^  enum ErrorCode$/;"	g	class:muduo::net::ProtobufCodecLite
+EventCallback	net/Channel.h	/^  typedef boost::function<void()> EventCallback;$/;"	t	class:muduo::net::Channel
+EventList	net/poller/EPollPoller.h	/^  typedef std::vector<struct epoll_event> EventList;$/;"	t	class:muduo::net::EPollPoller
+EventLoop	net/EventLoop.cc	/^EventLoop::EventLoop()$/;"	f	class:EventLoop
+EventLoop	net/EventLoop.h	/^class EventLoop : boost::noncopyable$/;"	c	namespace:muduo::net
+EventLoopThread	net/EventLoopThread.cc	/^EventLoopThread::EventLoopThread(const ThreadInitCallback& cb,$/;"	f	class:EventLoopThread
+EventLoopThread	net/EventLoopThread.h	/^class EventLoopThread : boost::noncopyable$/;"	c	namespace:muduo::net
+EventLoopThreadPool	net/EventLoopThreadPool.cc	/^EventLoopThreadPool::EventLoopThreadPool(EventLoop* baseLoop, const string& nameArg)$/;"	f	class:EventLoopThreadPool
+EventLoopThreadPool	net/EventLoopThreadPool.h	/^class EventLoopThreadPool : boost::noncopyable$/;"	c	namespace:muduo::net
+Exception	base/Exception.cc	/^Exception::Exception(const char* msg)$/;"	f	class:Exception
+Exception	base/Exception.cc	/^Exception::Exception(const string& msg)$/;"	f	class:Exception
+Exception	base/Exception.h	/^class Exception : public std::exception$/;"	c	namespace:muduo
+FATAL	base/Logging.h	/^    FATAL,$/;"	e	enum:muduo::Logger::LogLevel
+File	base/TimeZone.cc	/^  File(const char* file)$/;"	f	class:muduo::detail::File
+File	base/TimeZone.cc	/^class File : boost::noncopyable$/;"	c	namespace:muduo::detail	file:
+FileUtil	base/FileUtil.h	/^namespace FileUtil$/;"	n	namespace:muduo
+FileUtil	base/LogFile.h	/^namespace FileUtil$/;"	n	namespace:muduo
+FixedBuffer	base/LogStream.h	/^  FixedBuffer()$/;"	f	class:muduo::detail::FixedBuffer
+FixedBuffer	base/LogStream.h	/^class FixedBuffer : boost::noncopyable$/;"	c	namespace:muduo::detail
+FlushFunc	base/Logging.h	/^  typedef void (*FlushFunc)();$/;"	t	class:muduo::Logger
+Fmt	base/LogStream.cc	/^Fmt::Fmt(const char* fmt, T val)$/;"	f	class:Fmt
+Fmt	base/LogStream.h	/^class Fmt \/\/ : boost::noncopyable$/;"	c	namespace:muduo
+Foo	base/tests/Thread_test.cc	/^  explicit Foo(double x)$/;"	f	class:Foo
+Foo	base/tests/Thread_test.cc	/^class Foo$/;"	c	file:
+Functor	net/EventLoop.h	/^  typedef boost::function<void()> Functor;$/;"	t	class:muduo::net::EventLoop
+GzipFile	base/GzipFile.h	/^  GzipFile(GzipFile&& rhs)$/;"	f	class:muduo::GzipFile
+GzipFile	base/GzipFile.h	/^  explicit GzipFile(gzFile file)$/;"	f	class:muduo::GzipFile
+GzipFile	base/GzipFile.h	/^class GzipFile : boost::noncopyable$/;"	c	namespace:muduo
+HelpList	net/inspect/Inspector.h	/^  typedef std::map<string, string> HelpList;$/;"	t	class:muduo::net::Inspector
+HighWaterMarkCallback	net/Callbacks.h	/^typedef boost::function<void (const TcpConnectionPtr&, size_t)> HighWaterMarkCallback;$/;"	t	namespace:muduo::net
+HttpCallback	net/http/HttpServer.h	/^                                HttpResponse*)> HttpCallback;$/;"	t	class:muduo::net::HttpServer
+HttpContext	net/http/HttpContext.h	/^  HttpContext()$/;"	f	class:muduo::net::HttpContext
+HttpContext	net/http/HttpContext.h	/^class HttpContext : public muduo::copyable$/;"	c	namespace:muduo::net
+HttpRequest	net/http/HttpRequest.h	/^  HttpRequest()$/;"	f	class:muduo::net::HttpRequest
+HttpRequest	net/http/HttpRequest.h	/^class HttpRequest : public muduo::copyable$/;"	c	namespace:muduo::net
+HttpRequestParseState	net/http/HttpContext.h	/^  enum HttpRequestParseState$/;"	g	class:muduo::net::HttpContext
+HttpResponse	net/http/HttpResponse.h	/^  explicit HttpResponse(bool close)$/;"	f	class:muduo::net::HttpResponse
+HttpResponse	net/http/HttpResponse.h	/^class HttpResponse : public muduo::copyable$/;"	c	namespace:muduo::net
+HttpServer	net/http/HttpServer.cc	/^HttpServer::HttpServer(EventLoop* loop,$/;"	f	class:HttpServer
+HttpServer	net/http/HttpServer.h	/^class HttpServer : boost::noncopyable$/;"	c	namespace:muduo::net
+HttpStatusCode	net/http/HttpResponse.h	/^  enum HttpStatusCode$/;"	g	class:muduo::net::HttpResponse
+INFO	base/Logging.h	/^    INFO,$/;"	e	enum:muduo::Logger::LogLevel
+IgnoreSigPipe	net/EventLoop.cc	/^  IgnoreSigPipe()$/;"	f	class:__anon2::IgnoreSigPipe
+IgnoreSigPipe	net/EventLoop.cc	/^class IgnoreSigPipe$/;"	c	namespace:__anon2	file:
+Impl	base/Logging.cc	/^Logger::Impl::Impl(LogLevel level, int savedErrno, const SourceFile& file, int line)$/;"	f	class:Logger::Impl
+Impl	base/Logging.h	/^class Impl$/;"	c	class:muduo::Logger
+InetAddress	net/InetAddress.cc	/^InetAddress::InetAddress(StringArg ip, uint16_t port, bool ipv6)$/;"	f	class:InetAddress
+InetAddress	net/InetAddress.cc	/^InetAddress::InetAddress(uint16_t port, bool loopbackOnly, bool ipv6)$/;"	f	class:InetAddress
+InetAddress	net/InetAddress.h	/^  explicit InetAddress(const struct sockaddr_in& addr)$/;"	f	class:muduo::net::InetAddress
+InetAddress	net/InetAddress.h	/^  explicit InetAddress(const struct sockaddr_in6& addr)$/;"	f	class:muduo::net::InetAddress
+InetAddress	net/InetAddress.h	/^class InetAddress : public muduo::copyable$/;"	c	namespace:muduo::net
+InitializationErrorMessage	net/protorpc/google-inl.h	/^std::string InitializationErrorMessage(const char* action,$/;"	f
+Inspector	net/inspect/Inspector.cc	/^Inspector::Inspector(EventLoop* loop,$/;"	f	class:Inspector
+Inspector	net/inspect/Inspector.h	/^class Inspector : boost::noncopyable$/;"	c	namespace:muduo::net
+LOG_DEBUG	base/Logging.h	121;"	d
+LOG_ERROR	base/Logging.h	126;"	d
+LOG_FATAL	base/Logging.h	127;"	d
+LOG_INFO	base/Logging.h	123;"	d
+LOG_SYSERR	base/Logging.h	128;"	d
+LOG_SYSFATAL	base/Logging.h	129;"	d
+LOG_TRACE	base/Logging.h	119;"	d
+LOG_WARN	base/Logging.h	125;"	d
+Localtime	base/TimeZone.cc	/^  Localtime(time_t offset, bool dst, int arrb)$/;"	f	struct:muduo::detail::Localtime
+Localtime	base/TimeZone.cc	/^struct Localtime$/;"	s	namespace:muduo::detail	file:
+LogFile	base/LogFile.cc	/^LogFile::LogFile(const string& basename,$/;"	f	class:LogFile
+LogFile	base/LogFile.h	/^class LogFile : boost::noncopyable$/;"	c	namespace:muduo
+LogLevel	base/Logging.h	/^  enum LogLevel$/;"	g	class:muduo::Logger
+LogLevel	base/Logging.h	/^  typedef Logger::LogLevel LogLevel;$/;"	t	class:muduo::Logger::Impl
+LogLevelName	base/Logging.cc	/^const char* LogLevelName[Logger::NUM_LOG_LEVELS] =$/;"	m	namespace:muduo	file:
+LogStream	base/LogStream.h	/^class LogStream : boost::noncopyable$/;"	c	namespace:muduo
+Logger	base/Logging.cc	/^Logger::Logger(SourceFile file, int line)$/;"	f	class:Logger
+Logger	base/Logging.cc	/^Logger::Logger(SourceFile file, int line, LogLevel level)$/;"	f	class:Logger
+Logger	base/Logging.cc	/^Logger::Logger(SourceFile file, int line, LogLevel level, const char* func)$/;"	f	class:Logger
+Logger	base/Logging.cc	/^Logger::Logger(SourceFile file, int line, bool toAbort)$/;"	f	class:Logger
+Logger	base/Logging.h	/^class Logger$/;"	c	namespace:muduo
+MCHECK	base/Mutex.h	26;"	d
+MUDUO_BASE_ASYNCLOGGING_H	base/AsyncLogging.h	2;"	d
+MUDUO_BASE_ATOMIC_H	base/Atomic.h	7;"	d
+MUDUO_BASE_BLOCKINGQUEUE_H	base/BlockingQueue.h	7;"	d
+MUDUO_BASE_BOUNDEDBLOCKINGQUEUE_H	base/BoundedBlockingQueue.h	7;"	d
+MUDUO_BASE_CONDITION_H	base/Condition.h	7;"	d
+MUDUO_BASE_COPYABLE_H	base/copyable.h	2;"	d
+MUDUO_BASE_COUNTDOWNLATCH_H	base/CountDownLatch.h	7;"	d
+MUDUO_BASE_CURRENTTHREAD_H	base/CurrentThread.h	7;"	d
+MUDUO_BASE_DATE_H	base/Date.h	7;"	d
+MUDUO_BASE_EXCEPTION_H	base/Exception.h	7;"	d
+MUDUO_BASE_FILEUTIL_H	base/FileUtil.h	12;"	d
+MUDUO_BASE_LOGFILE_H	base/LogFile.h	2;"	d
+MUDUO_BASE_LOGGING_H	base/Logging.h	2;"	d
+MUDUO_BASE_LOGSTREAM_H	base/LogStream.h	2;"	d
+MUDUO_BASE_MUTEX_H	base/Mutex.h	7;"	d
+MUDUO_BASE_PROCESSINFO_H	base/ProcessInfo.h	12;"	d
+MUDUO_BASE_SINGLETON_H	base/Singleton.h	7;"	d
+MUDUO_BASE_STRINGPIECE_H	base/StringPiece.h	41;"	d
+MUDUO_BASE_THREADLOCALSINGLETON_H	base/ThreadLocalSingleton.h	7;"	d
+MUDUO_BASE_THREADLOCAL_H	base/ThreadLocal.h	7;"	d
+MUDUO_BASE_THREADPOOL_H	base/ThreadPool.h	7;"	d
+MUDUO_BASE_THREAD_H	base/Thread.h	7;"	d
+MUDUO_BASE_TIMESTAMP_H	base/Timestamp.h	2;"	d
+MUDUO_BASE_TIMEZONE_H	base/TimeZone.h	7;"	d
+MUDUO_BASE_TYPES_H	base/Types.h	2;"	d
+MUDUO_BASE_WEAKCALLBACK_H	base/WeakCallback.h	10;"	d
+MUDUO_NET_ACCEPTOR_H	net/Acceptor.h	12;"	d
+MUDUO_NET_BOILERPLATE_H	net/boilerplate.h	13;"	d
+MUDUO_NET_BUFFER_H	net/Buffer.h	12;"	d
+MUDUO_NET_CALLBACKS_H	net/Callbacks.h	12;"	d
+MUDUO_NET_CHANNEL_H	net/Channel.h	12;"	d
+MUDUO_NET_CONNECTOR_H	net/Connector.h	12;"	d
+MUDUO_NET_ENDIAN_H	net/Endian.h	12;"	d
+MUDUO_NET_EVENTLOOPTHREADPOOL_H	net/EventLoopThreadPool.h	12;"	d
+MUDUO_NET_EVENTLOOPTHREAD_H	net/EventLoopThread.h	12;"	d
+MUDUO_NET_EVENTLOOP_H	net/EventLoop.h	12;"	d
+MUDUO_NET_HTTP_HTTPCONTEXT_H	net/http/HttpContext.h	12;"	d
+MUDUO_NET_HTTP_HTTPREQUEST_H	net/http/HttpRequest.h	12;"	d
+MUDUO_NET_HTTP_HTTPRESPONSE_H	net/http/HttpResponse.h	12;"	d
+MUDUO_NET_HTTP_HTTPSERVER_H	net/http/HttpServer.h	12;"	d
+MUDUO_NET_INETADDRESS_H	net/InetAddress.h	12;"	d
+MUDUO_NET_INSPECT_INSPECTOR_H	net/inspect/Inspector.h	12;"	d
+MUDUO_NET_INSPECT_PERFORMANCEINSPECTOR_H	net/inspect/PerformanceInspector.h	12;"	d
+MUDUO_NET_INSPECT_PROCESSINSPECTOR_H	net/inspect/ProcessInspector.h	12;"	d
+MUDUO_NET_INSPECT_SYSTEMINSPECTOR_H	net/inspect/SystemInspector.h	12;"	d
+MUDUO_NET_POLLER_EPOLLPOLLER_H	net/poller/EPollPoller.h	12;"	d
+MUDUO_NET_POLLER_H	net/Poller.h	12;"	d
+MUDUO_NET_POLLER_POLLPOLLER_H	net/poller/PollPoller.h	12;"	d
+MUDUO_NET_PROTOBUF_CODEC_H	net/protobuf/ProtobufCodecLite.h	15;"	d
+MUDUO_NET_PROTORPC_RPCCHANNEL_H	net/protorpc/RpcChannel.h	12;"	d
+MUDUO_NET_PROTORPC_RPCCODEC_H	net/protorpc/RpcCodec.h	12;"	d
+MUDUO_NET_PROTORPC_RPCSERVER_H	net/protorpc/RpcServer.h	12;"	d
+MUDUO_NET_SOCKETSOPS_H	net/SocketsOps.h	12;"	d
+MUDUO_NET_SOCKET_H	net/Socket.h	12;"	d
+MUDUO_NET_TCPCLIENT_H	net/TcpClient.h	12;"	d
+MUDUO_NET_TCPCONNECTION_H	net/TcpConnection.h	12;"	d
+MUDUO_NET_TCPSERVER_H	net/TcpServer.h	12;"	d
+MUDUO_NET_TIMERID_H	net/TimerId.h	12;"	d
+MUDUO_NET_TIMERQUEUE_H	net/TimerQueue.h	12;"	d
+MUDUO_NET_TIMER_H	net/Timer.h	12;"	d
+MessageCallback	net/Callbacks.h	/^                              Timestamp)> MessageCallback;$/;"	t	namespace:muduo::net
+MessagePtr	net/protobuf/ProtobufCodecLite.h	/^typedef boost::shared_ptr<google::protobuf::Message> MessagePtr;$/;"	t	namespace:muduo::net
+Method	net/http/HttpRequest.h	/^  enum Method$/;"	g	class:muduo::net::HttpRequest
+MutexLock	base/Mutex.h	/^  MutexLock()$/;"	f	class:muduo::MutexLock
+MutexLock	base/Mutex.h	/^class MutexLock : boost::noncopyable$/;"	c	namespace:muduo
+MutexLockGuard	base/Mutex.h	/^  explicit MutexLockGuard(MutexLock& mutex)$/;"	f	class:muduo::MutexLockGuard
+MutexLockGuard	base/Mutex.h	/^class MutexLockGuard : boost::noncopyable$/;"	c	namespace:muduo
+MutexLockGuard	base/Mutex.h	161;"	d
+N	base/tests/LogStream_bench.cc	/^const size_t N = 1000000;$/;"	v
+NDEBUG	net/protorpc/RpcCodec_test.cc	1;"	d	file:
+NUM_LOG_LEVELS	base/Logging.h	/^    NUM_LOG_LEVELS,$/;"	e	enum:muduo::Logger::LogLevel
+NewConnectionCallback	net/Acceptor.h	/^                                const InetAddress&)> NewConnectionCallback;$/;"	t	class:muduo::net::Acceptor
+NewConnectionCallback	net/Connector.h	/^  typedef boost::function<void (int sockfd)> NewConnectionCallback;$/;"	t	class:muduo::net::Connector
+Next	net/protobuf/BufferStream.h	/^  virtual bool Next(void** data, int* size) \/\/ override$/;"	f	class:muduo::net::BufferOutputStream
+Option	net/TcpServer.h	/^  enum Option$/;"	g	class:muduo::net::TcpServer
+OutputFunc	base/Logging.h	/^  typedef void (*OutputFunc)(const char* msg, int len);$/;"	t	class:muduo::Logger
+OutstandingCall	net/protorpc/RpcChannel.h	/^  struct OutstandingCall$/;"	s	class:muduo::net::RpcChannel
+PerformanceInspector	net/inspect/PerformanceInspector.h	/^class PerformanceInspector : boost::noncopyable$/;"	c	namespace:muduo::net
+PeriodicTimer	net/tests/Channel_test.cc	/^  PeriodicTimer(EventLoop* loop, double interval, const TimerCallback& cb)$/;"	f	class:PeriodicTimer
+PeriodicTimer	net/tests/Channel_test.cc	/^class PeriodicTimer$/;"	c	file:
+PollFdList	net/poller/PollPoller.h	/^  typedef std::vector<struct pollfd> PollFdList;$/;"	t	class:muduo::net::PollPoller
+PollPoller	net/poller/PollPoller.cc	/^PollPoller::PollPoller(EventLoop* loop)$/;"	f	class:PollPoller
+PollPoller	net/poller/PollPoller.h	/^class PollPoller : public Poller$/;"	c	namespace:muduo::net
+Poller	net/Poller.cc	/^Poller::Poller(EventLoop* loop)$/;"	f	class:Poller
+Poller	net/Poller.h	/^class Poller : boost::noncopyable$/;"	c	namespace:muduo::net
+ProcessInfo	base/ProcessInfo.h	/^namespace ProcessInfo$/;"	n	namespace:muduo
+ProcessInspector	net/inspect/ProcessInspector.h	/^class ProcessInspector : boost::noncopyable$/;"	c	namespace:muduo::net
+ProtobufCodecLite	net/protobuf/ProtobufCodecLite.h	/^  ProtobufCodecLite(const ::google::protobuf::Message* prototype,$/;"	f	class:muduo::net::ProtobufCodecLite
+ProtobufCodecLite	net/protobuf/ProtobufCodecLite.h	/^class ProtobufCodecLite : boost::noncopyable$/;"	c	namespace:muduo::net
+ProtobufCodecLiteT	net/protobuf/ProtobufCodecLite.h	/^  explicit ProtobufCodecLiteT(const ProtobufMessageCallback& messageCb,$/;"	f	class:muduo::net::ProtobufCodecLiteT
+ProtobufCodecLiteT	net/protobuf/ProtobufCodecLite.h	/^class ProtobufCodecLiteT$/;"	c	namespace:muduo::net
+ProtobufMessageCallback	net/protobuf/ProtobufCodecLite.h	/^                                Timestamp)> ProtobufMessageCallback;$/;"	t	class:muduo::net::ProtobufCodecLite
+ProtobufMessageCallback	net/protobuf/ProtobufCodecLite.h	/^                                Timestamp)> ProtobufMessageCallback;$/;"	t	class:muduo::net::ProtobufCodecLiteT
+ProtobufVersionCheck	net/protobuf/ProtobufCodecLite.cc	/^  int ProtobufVersionCheck()$/;"	f	namespace:__anon7
+ProtobufVersionCheck	net/protorpc/RpcCodec.cc	/^  int ProtobufVersionCheck()$/;"	f	namespace:__anon9
+RawMessageCallback	net/protobuf/ProtobufCodecLite.h	/^                                Timestamp)> RawMessageCallback;$/;"	t	class:muduo::net::ProtobufCodecLite
+RawMessageCallback	net/protobuf/ProtobufCodecLite.h	/^  typedef ProtobufCodecLite::RawMessageCallback RawMessageCallback;$/;"	t	class:muduo::net::ProtobufCodecLiteT
+ReadEventCallback	net/Channel.h	/^  typedef boost::function<void(Timestamp)> ReadEventCallback;$/;"	t	class:muduo::net::Channel
+ReadSmallFile	base/FileUtil.cc	/^FileUtil::ReadSmallFile::ReadSmallFile(StringArg filename)$/;"	f	class:FileUtil::ReadSmallFile
+ReadSmallFile	base/FileUtil.h	/^class ReadSmallFile : boost::noncopyable$/;"	c	namespace:muduo::FileUtil
+RpcChannel	net/protorpc/RpcChannel.cc	/^RpcChannel::RpcChannel()$/;"	f	class:RpcChannel
+RpcChannel	net/protorpc/RpcChannel.cc	/^RpcChannel::RpcChannel(const TcpConnectionPtr& conn)$/;"	f	class:RpcChannel
+RpcChannel	net/protorpc/RpcChannel.h	/^class RpcChannel : public ::google::protobuf::RpcChannel$/;"	c	namespace:muduo::net
+RpcChannelPtr	net/protorpc/RpcChannel.h	/^typedef boost::shared_ptr<RpcChannel> RpcChannelPtr;$/;"	t	namespace:muduo::net
+RpcCodec	net/protorpc/RpcCodec.h	/^typedef ProtobufCodecLiteT<RpcMessage, rpctag> RpcCodec;$/;"	t	namespace:muduo::net
+RpcMessagePtr	net/protorpc/RpcCodec.h	/^typedef boost::shared_ptr<RpcMessage> RpcMessagePtr;$/;"	t	namespace:muduo::net
+RpcServer	net/protorpc/RpcServer.cc	/^RpcServer::RpcServer(EventLoop* loop,$/;"	f	class:RpcServer
+RpcServer	net/protorpc/RpcServer.h	/^class RpcServer$/;"	c	namespace:muduo::net
+SA	net/SocketsOps.cc	/^typedef struct sockaddr SA;$/;"	t	namespace:__anon4	typeref:struct:__anon4::sockaddr	file:
+STL	base/tests/SingletonThreadLocal_test.cc	31;"	d	file:
+STRINGPIECE_BINARY_PREDICATE	base/StringPiece.h	144;"	d
+STRINGPIECE_BINARY_PREDICATE	base/StringPiece.h	153;"	d
+Singleton	base/Singleton.h	/^class Singleton : boost::noncopyable$/;"	c	namespace:muduo
+Socket	net/Socket.h	/^  explicit Socket(int sockfd)$/;"	f	class:muduo::net::Socket
+Socket	net/Socket.h	/^class Socket : boost::noncopyable$/;"	c	namespace:muduo::net
+SourceFile	base/Logging.h	/^    explicit SourceFile(const char* filename)$/;"	f	class:muduo::Logger::SourceFile
+SourceFile	base/Logging.h	/^    inline SourceFile(const char (&arr)[N])$/;"	f	class:muduo::Logger::SourceFile
+SourceFile	base/Logging.h	/^  class SourceFile$/;"	c	class:muduo::Logger
+StateE	net/TcpConnection.h	/^  enum StateE { kDisconnected, kConnecting, kConnected, kDisconnecting };$/;"	g	class:muduo::net::TcpConnection
+States	net/Connector.h	/^  enum States { kDisconnected, kConnecting, kConnected };$/;"	g	class:muduo::net::Connector
+StringArg	base/StringPiece.h	/^  StringArg(const char* str)$/;"	f	class:muduo::StringArg
+StringArg	base/StringPiece.h	/^  StringArg(const std::string& str)$/;"	f	class:muduo::StringArg
+StringArg	base/StringPiece.h	/^  StringArg(const string& str)$/;"	f	class:muduo::StringArg
+StringArg	base/StringPiece.h	/^class StringArg \/\/ copyable$/;"	c	namespace:muduo
+StringPiece	base/StringPiece.h	/^  StringPiece()$/;"	f	class:muduo::StringPiece
+StringPiece	base/StringPiece.h	/^  StringPiece(const char* offset, int len)$/;"	f	class:muduo::StringPiece
+StringPiece	base/StringPiece.h	/^  StringPiece(const char* str)$/;"	f	class:muduo::StringPiece
+StringPiece	base/StringPiece.h	/^  StringPiece(const std::string& str)$/;"	f	class:muduo::StringPiece
+StringPiece	base/StringPiece.h	/^  StringPiece(const string& str)$/;"	f	class:muduo::StringPiece
+StringPiece	base/StringPiece.h	/^  StringPiece(const unsigned char* str)$/;"	f	class:muduo::StringPiece
+StringPiece	base/StringPiece.h	/^class StringPiece {$/;"	c	namespace:muduo
+SystemInspector	net/inspect/SystemInspector.h	/^class SystemInspector : boost::noncopyable$/;"	c	namespace:muduo::net
+T	base/Logging.cc	/^  T(const char* str, unsigned len)$/;"	f	class:muduo::T
+T	base/Logging.cc	/^class T$/;"	c	namespace:muduo	file:
+TRACE	base/Logging.h	/^    TRACE,$/;"	e	enum:muduo::Logger::LogLevel
+Task	base/ThreadPool.h	/^  typedef boost::function<void ()> Task;$/;"	t	class:muduo::ThreadPool
+TcpClient	net/TcpClient.cc	/^TcpClient::TcpClient(EventLoop* loop,$/;"	f	class:TcpClient
+TcpClient	net/TcpClient.h	/^class TcpClient : boost::noncopyable$/;"	c	namespace:muduo::net
+TcpConnection	net/TcpConnection.cc	/^TcpConnection::TcpConnection(EventLoop* loop,$/;"	f	class:TcpConnection
+TcpConnection	net/TcpConnection.h	/^class TcpConnection : boost::noncopyable,$/;"	c	namespace:muduo::net
+TcpConnectionPtr	net/Callbacks.h	/^typedef boost::shared_ptr<TcpConnection> TcpConnectionPtr;$/;"	t	namespace:muduo::net
+TcpConnectionPtr	net/TcpConnection.h	/^typedef boost::shared_ptr<TcpConnection> TcpConnectionPtr;$/;"	t	namespace:muduo::net
+TcpConnectionPtr	net/protobuf/ProtobufCodecLite.h	/^typedef boost::shared_ptr<TcpConnection> TcpConnectionPtr;$/;"	t	namespace:muduo::net
+TcpConnectionPtr	net/protorpc/RpcCodec.h	/^typedef boost::shared_ptr<TcpConnection> TcpConnectionPtr;$/;"	t	namespace:muduo::net
+TcpServer	net/TcpServer.cc	/^TcpServer::TcpServer(EventLoop* loop,$/;"	f	class:TcpServer
+TcpServer	net/TcpServer.h	/^class TcpServer : boost::noncopyable$/;"	c	namespace:muduo::net
+Test	base/tests/BlockingQueue_test.cc	/^  Test(int numThreads)$/;"	f	class:Test
+Test	base/tests/BlockingQueue_test.cc	/^class Test$/;"	c	file:
+Test	base/tests/BoundedBlockingQueue_test.cc	/^  Test(int numThreads)$/;"	f	class:Test
+Test	base/tests/BoundedBlockingQueue_test.cc	/^class Test$/;"	c	file:
+Test	base/tests/SingletonThreadLocal_test.cc	/^  Test()$/;"	f	class:Test
+Test	base/tests/SingletonThreadLocal_test.cc	/^class Test : boost::noncopyable$/;"	c	file:
+Test	base/tests/Singleton_test.cc	/^  Test()$/;"	f	class:Test
+Test	base/tests/Singleton_test.cc	/^class Test : boost::noncopyable$/;"	c	file:
+Test	base/tests/ThreadLocalSingleton_test.cc	/^  Test()$/;"	f	class:Test
+Test	base/tests/ThreadLocalSingleton_test.cc	/^class Test : boost::noncopyable$/;"	c	file:
+Test	base/tests/ThreadLocal_test.cc	/^  Test()$/;"	f	class:Test
+Test	base/tests/ThreadLocal_test.cc	/^class Test : boost::noncopyable$/;"	c	file:
+TestCase	base/tests/TimeZone_unittest.cc	/^struct TestCase$/;"	s	file:
+TestNoDestroy	base/tests/Singleton_test.cc	/^  TestNoDestroy()$/;"	f	class:TestNoDestroy
+TestNoDestroy	base/tests/Singleton_test.cc	/^class TestNoDestroy : boost::noncopyable$/;"	c	file:
+Thread	base/Thread.cc	/^Thread::Thread(ThreadFunc&& func, const string& n)$/;"	f	class:Thread
+Thread	base/Thread.cc	/^Thread::Thread(const ThreadFunc& func, const string& n)$/;"	f	class:Thread
+Thread	base/Thread.h	/^class Thread : boost::noncopyable$/;"	c	namespace:muduo
+ThreadData	base/Thread.cc	/^  ThreadData(const ThreadFunc& func,$/;"	f	struct:muduo::detail::ThreadData
+ThreadData	base/Thread.cc	/^struct ThreadData$/;"	s	namespace:muduo::detail	file:
+ThreadFunc	base/Thread.cc	/^  typedef muduo::Thread::ThreadFunc ThreadFunc;$/;"	t	struct:muduo::detail::ThreadData	file:
+ThreadFunc	base/Thread.h	/^  typedef boost::function<void ()> ThreadFunc;$/;"	t	class:muduo::Thread
+ThreadInitCallback	net/EventLoopThread.h	/^  typedef boost::function<void(EventLoop*)> ThreadInitCallback;$/;"	t	class:muduo::net::EventLoopThread
+ThreadInitCallback	net/EventLoopThreadPool.h	/^  typedef boost::function<void(EventLoop*)> ThreadInitCallback;$/;"	t	class:muduo::net::EventLoopThreadPool
+ThreadInitCallback	net/TcpServer.h	/^  typedef boost::function<void(EventLoop*)> ThreadInitCallback;$/;"	t	class:muduo::net::TcpServer
+ThreadLocal	base/ThreadLocal.h	/^  ThreadLocal()$/;"	f	class:muduo::ThreadLocal
+ThreadLocal	base/ThreadLocal.h	/^class ThreadLocal : boost::noncopyable$/;"	c	namespace:muduo
+ThreadLocalSingleton	base/ThreadLocalSingleton.h	/^class ThreadLocalSingleton : boost::noncopyable$/;"	c	namespace:muduo
+ThreadNameInitializer	base/Thread.cc	/^  ThreadNameInitializer()$/;"	f	class:muduo::detail::ThreadNameInitializer
+ThreadNameInitializer	base/Thread.cc	/^class ThreadNameInitializer$/;"	c	namespace:muduo::detail	file:
+ThreadPool	base/ThreadPool.cc	/^ThreadPool::ThreadPool(const string& nameArg)$/;"	f	class:ThreadPool
+ThreadPool	base/ThreadPool.h	/^class ThreadPool : boost::noncopyable$/;"	c	namespace:muduo
+TimeZone	base/TimeZone.cc	/^TimeZone::TimeZone(const char* zonefile)$/;"	f	class:TimeZone
+TimeZone	base/TimeZone.cc	/^TimeZone::TimeZone(int eastOfUtc, const char* name)$/;"	f	class:TimeZone
+TimeZone	base/TimeZone.h	/^  TimeZone() {}  \/\/ an invalid timezone$/;"	f	class:muduo::TimeZone
+TimeZone	base/TimeZone.h	/^class TimeZone : public muduo::copyable$/;"	c	namespace:muduo
+Timer	net/Timer.h	/^  Timer(TimerCallback&& cb, Timestamp when, double interval)$/;"	f	class:muduo::net::Timer
+Timer	net/Timer.h	/^  Timer(const TimerCallback& cb, Timestamp when, double interval)$/;"	f	class:muduo::net::Timer
+Timer	net/Timer.h	/^class Timer : boost::noncopyable$/;"	c	namespace:muduo::net
+TimerCallback	net/Callbacks.h	/^typedef boost::function<void()> TimerCallback;$/;"	t	namespace:muduo::net
+TimerId	net/TimerId.h	/^  TimerId()$/;"	f	class:muduo::net::TimerId
+TimerId	net/TimerId.h	/^  TimerId(Timer* timer, int64_t seq)$/;"	f	class:muduo::net::TimerId
+TimerId	net/TimerId.h	/^class TimerId : public muduo::copyable$/;"	c	namespace:muduo::net
+TimerList	net/TimerQueue.h	/^  typedef std::set<Entry> TimerList;$/;"	t	class:muduo::net::TimerQueue
+TimerQueue	net/TimerQueue.cc	/^TimerQueue::TimerQueue(EventLoop* loop)$/;"	f	class:TimerQueue
+TimerQueue	net/TimerQueue.h	/^class TimerQueue : boost::noncopyable$/;"	c	namespace:muduo::net
+Timestamp	base/Timestamp.h	/^  Timestamp()$/;"	f	class:muduo::Timestamp
+Timestamp	base/Timestamp.h	/^  explicit Timestamp(int64_t microSecondsSinceEpochArg)$/;"	f	class:muduo::Timestamp
+Timestamp	base/Timestamp.h	/^class Timestamp : public muduo::copyable,$/;"	c	namespace:muduo
+Transition	base/TimeZone.cc	/^  Transition(time_t t, time_t l, int localIdx)$/;"	f	struct:muduo::detail::Transition
+Transition	base/TimeZone.cc	/^struct Transition$/;"	s	namespace:muduo::detail	file:
+UnassignGuard	base/Mutex.h	/^    UnassignGuard(MutexLock& owner)$/;"	f	class:muduo::MutexLock::UnassignGuard
+UnassignGuard	base/Mutex.h	/^  class UnassignGuard : boost::noncopyable$/;"	c	class:muduo::MutexLock
+Version	net/http/HttpRequest.h	/^  enum Version$/;"	g	class:muduo::net::HttpRequest
+WARN	base/Logging.h	/^    WARN,$/;"	e	enum:muduo::Logger::LogLevel
+WeakCallback	base/WeakCallback.h	/^  WeakCallback(const boost::weak_ptr<CLASS>& object,$/;"	f	class:muduo::WeakCallback
+WeakCallback	base/WeakCallback.h	/^class WeakCallback$/;"	c	namespace:muduo
+WriteCompleteCallback	net/Callbacks.h	/^typedef boost::function<void (const TcpConnectionPtr&)> WriteCompleteCallback;$/;"	t	namespace:muduo::net
+YearMonthDay	base/Date.h	/^  struct YearMonthDay$/;"	s	class:muduo::Date
+ZlibInputStream	net/ZlibStream.h	/^  explicit ZlibInputStream(Buffer* output)$/;"	f	class:muduo::net::ZlibInputStream
+ZlibInputStream	net/ZlibStream.h	/^class ZlibInputStream : boost::noncopyable$/;"	c	namespace:muduo::net
+ZlibOutputStream	net/ZlibStream.h	/^  explicit ZlibOutputStream(Buffer* output)$/;"	f	class:muduo::net::ZlibOutputStream
+ZlibOutputStream	net/ZlibStream.h	/^class ZlibOutputStream : boost::noncopyable$/;"	c	namespace:muduo::net
+__STDC_FORMAT_MACROS	base/Timestamp.cc	7;"	d	file:
+__STDC_FORMAT_MACROS	base/tests/FileUtil_test.cc	4;"	d	file:
+__STDC_FORMAT_MACROS	base/tests/LogStream_bench.cc	6;"	d	file:
+__STDC_FORMAT_MACROS	base/tests/ProcessInfo_test.cc	3;"	d	file:
+__STDC_LIMIT_MACROS	net/TimerQueue.cc	10;"	d	file:
+__type_traits	base/StringPiece.h	/^template<> struct __type_traits<muduo::StringPiece> {$/;"	s
+abbreviation	base/TimeZone.cc	/^  string abbreviation;$/;"	m	struct:TimeZone::Data	file:
+abortNotInLoopThread	net/EventLoop.cc	/^void EventLoop::abortNotInLoopThread()$/;"	f	class:EventLoop
+accept	net/Socket.cc	/^int Socket::accept(InetAddress* peeraddr)$/;"	f	class:Socket
+accept	net/SocketsOps.cc	/^int sockets::accept(int sockfd, struct sockaddr_in6* addr)$/;"	f	class:sockets
+acceptChannel_	net/Acceptor.h	/^  Channel acceptChannel_;$/;"	m	class:muduo::net::Acceptor
+acceptSocket_	net/Acceptor.h	/^  Socket acceptSocket_;$/;"	m	class:muduo::net::Acceptor
+acceptor_	net/TcpServer.h	/^  boost::scoped_ptr<Acceptor> acceptor_; \/\/ avoid revealing Acceptor$/;"	m	class:muduo::net::TcpServer
+activeChannels_	net/EventLoop.h	/^  ChannelList activeChannels_;$/;"	m	class:muduo::net::EventLoop
+activeTimers_	net/TimerQueue.h	/^  ActiveTimerSet activeTimers_;$/;"	m	class:muduo::net::TimerQueue
+add	base/Atomic.h	/^  void add(T x)$/;"	f	class:muduo::detail::AtomicIntegerT
+add	base/LogStream.h	/^  void add(size_t len) { cur_ += len; }$/;"	f	class:muduo::detail::FixedBuffer
+add	net/inspect/Inspector.cc	/^void Inspector::add(const string& module,$/;"	f	class:Inspector
+addAndGet	base/Atomic.h	/^  T addAndGet(T x)$/;"	f	class:muduo::detail::AtomicIntegerT
+addHeader	net/http/HttpRequest.h	/^  void addHeader(const char* start, const char* colon, const char* end)$/;"	f	class:muduo::net::HttpRequest
+addHeader	net/http/HttpResponse.h	/^  void addHeader(const string& key, const string& value)$/;"	f	class:muduo::net::HttpResponse
+addTime	base/Timestamp.h	/^inline Timestamp addTime(Timestamp timestamp, double seconds)$/;"	f	namespace:muduo
+addTimer	net/TimerQueue.cc	/^TimerId TimerQueue::addTimer(TimerCallback&& cb,$/;"	f	class:TimerQueue
+addTimer	net/TimerQueue.cc	/^TimerId TimerQueue::addTimer(const TimerCallback& cb,$/;"	f	class:TimerQueue
+addTimerInLoop	net/TimerQueue.cc	/^void TimerQueue::addTimerInLoop(Timer* timer)$/;"	f	class:TimerQueue
+addedToLoop_	net/Channel.h	/^  bool addedToLoop_;$/;"	m	class:muduo::net::Channel
+addr6_	net/InetAddress.h	/^    struct sockaddr_in6 addr6_;$/;"	m	union:muduo::net::InetAddress::__anon3	typeref:struct:muduo::net::InetAddress::__anon3::sockaddr_in6
+addr_	net/InetAddress.h	/^    struct sockaddr_in addr_;$/;"	m	union:muduo::net::InetAddress::__anon3	typeref:struct:muduo::net::InetAddress::__anon3::sockaddr_in
+afterFork	base/Thread.cc	/^void afterFork()$/;"	f	namespace:muduo::detail
+append	base/AsyncLogging.cc	/^void AsyncLogging::append(const char* logline, int len)$/;"	f	class:AsyncLogging
+append	base/FileUtil.cc	/^void FileUtil::AppendFile::append(const char* logline, const size_t len)$/;"	f	class:FileUtil::AppendFile
+append	base/LogFile.cc	/^void LogFile::append(const char* logline, int len)$/;"	f	class:LogFile
+append	base/LogStream.h	/^  void append(const char* \/*restrict*\/ buf, size_t len)$/;"	f	class:muduo::detail::FixedBuffer
+append	base/LogStream.h	/^  void append(const char* data, int len) { buffer_.append(data, len); }$/;"	f	class:muduo::LogStream
+append	net/Buffer.h	/^  void append(const StringPiece& str)$/;"	f	class:muduo::net::Buffer
+append	net/Buffer.h	/^  void append(const char* \/*restrict*\/ data, size_t len)$/;"	f	class:muduo::net::Buffer
+append	net/Buffer.h	/^  void append(const void* \/*restrict*\/ data, size_t len)$/;"	f	class:muduo::net::Buffer
+appendInt16	net/Buffer.h	/^  void appendInt16(int16_t x)$/;"	f	class:muduo::net::Buffer
+appendInt32	net/Buffer.h	/^  void appendInt32(int32_t x)$/;"	f	class:muduo::net::Buffer
+appendInt64	net/Buffer.h	/^  void appendInt64(int64_t x)$/;"	f	class:muduo::net::Buffer
+appendInt8	net/Buffer.h	/^  void appendInt8(int8_t x)$/;"	f	class:muduo::net::Buffer
+appendToBuffer	net/http/HttpResponse.cc	/^void HttpResponse::appendToBuffer(Buffer* output) const$/;"	f	class:HttpResponse
+append_unlocked	base/LogFile.cc	/^void LogFile::append_unlocked(const char* logline, int len)$/;"	f	class:LogFile
+arrbIdx	base/TimeZone.cc	/^  int arrbIdx;$/;"	m	struct:muduo::detail::Localtime	file:
+asInt32	net/protobuf/ProtobufCodecLite.cc	/^int32_t ProtobufCodecLite::asInt32(const char* buf)$/;"	f	class:ProtobufCodecLite
+as_string	base/StringPiece.h	/^  string as_string() const {$/;"	f	class:muduo::StringPiece
+assertInLoopThread	net/EventLoop.h	/^  void assertInLoopThread()$/;"	f	class:muduo::net::EventLoop
+assertInLoopThread	net/Poller.h	/^  void assertInLoopThread() const$/;"	f	class:muduo::net::Poller
+assertLocked	base/Mutex.h	/^  void assertLocked() const$/;"	f	class:muduo::MutexLock
+assignHolder	base/Mutex.h	/^  void assignHolder()$/;"	f	class:muduo::MutexLock
+asyncOutput	base/tests/AsyncLogging_test.cc	/^void asyncOutput(const char* msg, int len)$/;"	f
+avail	base/LogStream.h	/^  int avail() const { return static_cast<int>(end() - cur_); }$/;"	f	class:muduo::detail::FixedBuffer
+baseLoop_	net/EventLoopThreadPool.h	/^  EventLoop* baseLoop_;$/;"	m	class:muduo::net::EventLoopThreadPool
+basename_	base/AsyncLogging.h	/^  string basename_;$/;"	m	class:muduo::AsyncLogging
+basename_	base/LogFile.h	/^  const string basename_;$/;"	m	class:muduo::LogFile
+basename_	base/Logging.h	/^  SourceFile basename_;$/;"	m	class:muduo::Logger::Impl
+begin	base/StringPiece.h	/^  const char* begin() const { return ptr_; }$/;"	f	class:muduo::StringPiece
+begin	net/Buffer.h	/^  char* begin()$/;"	f	class:muduo::net::Buffer
+begin	net/Buffer.h	/^  const char* begin() const$/;"	f	class:muduo::net::Buffer
+beginWrite	net/Buffer.h	/^  char* beginWrite()$/;"	f	class:muduo::net::Buffer
+beginWrite	net/Buffer.h	/^  const char* beginWrite() const$/;"	f	class:muduo::net::Buffer
+bench	base/tests/AsyncLogging_test.cc	/^void bench(bool longLog)$/;"	f
+bench	base/tests/Logging_test.cc	/^void bench(const char* type)$/;"	f
+benchLogStream	base/tests/LogStream_bench.cc	/^void benchLogStream()$/;"	f
+benchPrintf	base/tests/LogStream_bench.cc	/^void benchPrintf(const char* fmt)$/;"	f
+benchStringStream	base/tests/LogStream_bench.cc	/^void benchStringStream()$/;"	f
+benchmark	base/tests/Timestamp_unittest.cc	/^void benchmark()$/;"	f
+benchmark	net/http/tests/HttpServer_test.cc	/^bool benchmark = false;$/;"	v
+bindAddress	net/Socket.cc	/^void Socket::bindAddress(const InetAddress& addr)$/;"	f	class:Socket
+bindOrDie	net/SocketsOps.cc	/^void sockets::bindOrDie(int sockfd, const struct sockaddr* addr)$/;"	f	class:sockets
+body_	net/http/HttpResponse.h	/^  string body_;$/;"	m	class:muduo::net::HttpResponse
+buf_	base/FileUtil.h	/^  char buf_[kBufferSize];$/;"	m	class:muduo::FileUtil::ReadSmallFile
+buf_	base/LogStream.h	/^  char buf_[32];$/;"	m	class:muduo::Fmt
+buffer	base/FileUtil.h	/^  const char* buffer() const { return buf_; }$/;"	f	class:muduo::FileUtil::ReadSmallFile
+buffer	base/LogStream.h	/^  const Buffer& buffer() const { return buffer_; }$/;"	f	class:muduo::LogStream
+bufferSize_	net/ZlibStream.h	/^  int bufferSize_;$/;"	m	class:muduo::net::ZlibOutputStream
+buffer_	base/FileUtil.h	/^  char buffer_[64*1024];$/;"	m	class:muduo::FileUtil::AppendFile
+buffer_	base/LogStream.h	/^  Buffer buffer_;$/;"	m	class:muduo::LogStream
+buffer_	net/Buffer.h	/^  std::vector<char> buffer_;$/;"	m	class:muduo::net::Buffer
+buffer_	net/protobuf/BufferStream.h	/^  Buffer* buffer_;$/;"	m	class:muduo::net::BufferOutputStream
+buffers_	base/AsyncLogging.h	/^  BufferVector buffers_;$/;"	m	class:muduo::AsyncLogging
+bzero	base/LogStream.h	/^  void bzero() { ::bzero(data_, sizeof data_); }$/;"	f	class:muduo::detail::FixedBuffer
+c_str	base/StringPiece.h	/^  const char* c_str() const { return str_; }$/;"	f	class:muduo::StringArg
+cacheTid	base/Thread.cc	/^void CurrentThread::cacheTid()$/;"	f	class:CurrentThread
+callback	net/tests/EventLoop_unittest.cc	/^void callback()$/;"	f
+callback_	net/EventLoopThread.h	/^  ThreadInitCallback callback_;$/;"	m	class:muduo::net::EventLoopThread
+callback_	net/Timer.h	/^  const TimerCallback callback_;$/;"	m	class:muduo::net::Timer
+callingExpiredTimers_	net/TimerQueue.h	/^  bool callingExpiredTimers_; \/* atomic *\/$/;"	m	class:muduo::net::TimerQueue
+callingPendingFunctors_	net/EventLoop.h	/^  bool callingPendingFunctors_; \/* atomic *\/$/;"	m	class:muduo::net::EventLoop
+cancel	net/EventLoop.cc	/^void EventLoop::cancel(TimerId timerId)$/;"	f	class:EventLoop
+cancel	net/TimerQueue.cc	/^void TimerQueue::cancel(TimerId timerId)$/;"	f	class:TimerQueue
+cancel	net/tests/TimerQueue_unittest.cc	/^void cancel(TimerId timer)$/;"	f
+cancelInLoop	net/TimerQueue.cc	/^void TimerQueue::cancelInLoop(TimerId timerId)$/;"	f	class:TimerQueue
+cancelingTimers_	net/TimerQueue.h	/^  ActiveTimerSet cancelingTimers_;$/;"	m	class:muduo::net::TimerQueue
+capacity	base/BoundedBlockingQueue.h	/^  size_t capacity() const$/;"	f	class:muduo::BoundedBlockingQueue
+cb_	net/tests/Channel_test.cc	/^  TimerCallback cb_;$/;"	m	class:PeriodicTimer	file:
+channel_	net/Connector.h	/^  boost::scoped_ptr<Channel> channel_;$/;"	m	class:muduo::net::Connector
+channel_	net/TcpConnection.h	/^  boost::scoped_ptr<Channel> channel_;$/;"	m	class:muduo::net::TcpConnection
+channels_	net/Poller.h	/^  ChannelMap channels_;$/;"	m	class:muduo::net::Poller
+checkEveryN_	base/LogFile.h	/^  const int checkEveryN_;$/;"	m	class:muduo::LogFile
+checksum	net/protobuf/ProtobufCodecLite.cc	/^int32_t ProtobufCodecLite::checksum(const void* buf, int len)$/;"	f	class:ProtobufCodecLite
+clear	base/StringPiece.h	/^  void clear() { ptr_ = NULL; length_ = 0; }$/;"	f	class:muduo::StringPiece
+client_	net/tests/EchoClient_unittest.cc	/^  TcpClient client_;$/;"	m	class:EchoClient	file:
+clients	net/tests/EchoClient_unittest.cc	/^boost::ptr_vector<EchoClient> clients;$/;"	v
+clockTicksPerSecond	base/ProcessInfo.cc	/^int ProcessInfo::clockTicksPerSecond()$/;"	f	class:ProcessInfo
+close	net/SocketsOps.cc	/^void sockets::close(int sockfd)$/;"	f	class:sockets
+closeCallback_	net/Channel.h	/^  EventCallback closeCallback_;$/;"	m	class:muduo::net::Channel
+closeCallback_	net/TcpConnection.h	/^  CloseCallback closeCallback_;$/;"	m	class:muduo::net::TcpConnection
+closeConnection	net/http/HttpResponse.h	/^  bool closeConnection() const$/;"	f	class:muduo::net::HttpResponse
+closeConnection_	net/http/HttpResponse.h	/^  bool closeConnection_;$/;"	m	class:muduo::net::HttpResponse
+cmdline	net/inspect/PerformanceInspector.cc	/^string PerformanceInspector::cmdline(HttpRequest::Method, const Inspector::ArgList&)$/;"	f	class:PerformanceInspector
+cnt	net/tests/TimerQueue_unittest.cc	/^int cnt = 0;$/;"	v
+codec_	net/protobuf/ProtobufCodecLite.h	/^  CODEC codec_;$/;"	m	class:muduo::net::ProtobufCodecLiteT
+codec_	net/protorpc/RpcChannel.h	/^  RpcCodec codec_;$/;"	m	class:muduo::net::RpcChannel
+compare	base/StringPiece.h	/^  int compare(const StringPiece& x) const {$/;"	f	class:muduo::StringPiece
+compareGmt	base/TimeZone.cc	/^  bool compareGmt;$/;"	m	struct:muduo::detail::Comp	file:
+compress	net/ZlibStream.h	/^  int compress(int flush)$/;"	f	class:muduo::net::ZlibOutputStream
+cond_	base/AsyncLogging.h	/^  muduo::Condition cond_;$/;"	m	class:muduo::AsyncLogging
+cond_	net/EventLoopThread.h	/^  Condition cond_;$/;"	m	class:muduo::net::EventLoopThread
+condition_	base/CountDownLatch.h	/^  Condition condition_;$/;"	m	class:muduo::CountDownLatch
+conn_	net/protorpc/RpcChannel.h	/^  TcpConnectionPtr conn_;$/;"	m	class:muduo::net::RpcChannel
+connect	net/Connector.cc	/^void Connector::connect()$/;"	f	class:Connector
+connect	net/SocketsOps.cc	/^int sockets::connect(int sockfd, const struct sockaddr* addr)$/;"	f	class:sockets
+connect	net/TcpClient.cc	/^void TcpClient::connect()$/;"	f	class:TcpClient
+connect	net/tests/EchoClient_unittest.cc	/^  void connect()$/;"	f	class:EchoClient
+connectDestroyed	net/TcpConnection.cc	/^void TcpConnection::connectDestroyed()$/;"	f	class:TcpConnection
+connectEstablished	net/TcpConnection.cc	/^void TcpConnection::connectEstablished()$/;"	f	class:TcpConnection
+connect_	net/Connector.h	/^  bool connect_; \/\/ atomic$/;"	m	class:muduo::net::Connector
+connect_	net/TcpClient.h	/^  bool connect_; \/\/ atomic$/;"	m	class:muduo::net::TcpClient
+connected	net/TcpConnection.h	/^  bool connected() const { return state_ == kConnected; }$/;"	f	class:muduo::net::TcpConnection
+connecting	net/Connector.cc	/^void Connector::connecting(int sockfd)$/;"	f	class:Connector
+connection	net/TcpClient.h	/^  TcpConnectionPtr connection() const$/;"	f	class:muduo::net::TcpClient
+connectionCallback_	net/TcpClient.h	/^  ConnectionCallback connectionCallback_;$/;"	m	class:muduo::net::TcpClient
+connectionCallback_	net/TcpConnection.h	/^  ConnectionCallback connectionCallback_;$/;"	m	class:muduo::net::TcpConnection
+connectionCallback_	net/TcpServer.h	/^  ConnectionCallback connectionCallback_;$/;"	m	class:muduo::net::TcpServer
+connection_	net/TcpClient.h	/^  TcpConnectionPtr connection_; \/\/ @GuardedBy mutex_$/;"	m	class:muduo::net::TcpClient
+connections_	net/TcpServer.h	/^  ConnectionMap connections_;$/;"	m	class:muduo::net::TcpServer
+connector_	net/TcpClient.h	/^  ConnectorPtr connector_; \/\/ avoid revealing Connector$/;"	m	class:muduo::net::TcpClient
+context_	net/EventLoop.h	/^  boost::any context_;$/;"	m	class:muduo::net::EventLoop
+context_	net/TcpConnection.h	/^  boost::any context_;$/;"	m	class:muduo::net::TcpConnection
+convert	base/LogStream.cc	/^size_t convert(char buf[], T value)$/;"	f	namespace:muduo::detail
+convertHex	base/LogStream.cc	/^size_t convertHex(char buf[], uintptr_t value)$/;"	f	namespace:muduo::detail
+cookieEnd	base/LogStream.cc	/^void FixedBuffer<SIZE>::cookieEnd()$/;"	f	class:FixedBuffer
+cookieStart	base/LogStream.cc	/^void FixedBuffer<SIZE>::cookieStart()$/;"	f	class:FixedBuffer
+cookie_	base/LogStream.h	/^  void (*cookie_)();$/;"	m	class:muduo::detail::FixedBuffer
+copyable	base/copyable.h	/^class copyable$/;"	c	namespace:muduo
+countDown	base/CountDownLatch.cc	/^void CountDownLatch::countDown()$/;"	f	class:CountDownLatch
+count_	base/CountDownLatch.h	/^  int count_;$/;"	m	class:muduo::CountDownLatch
+count_	base/LogFile.h	/^  int count_;$/;"	m	class:muduo::LogFile
+cpuTime	base/ProcessInfo.cc	/^ProcessInfo::CpuTime ProcessInfo::cpuTime()$/;"	f	class:ProcessInfo
+cpuinfo	net/inspect/SystemInspector.cc	/^string SystemInspector::cpuinfo(HttpRequest::Method, const Inspector::ArgList&)$/;"	f	class:SystemInspector
+createEventfd	net/EventLoop.cc	/^int createEventfd()$/;"	f	namespace:__anon2
+createNonblockingOrDie	net/SocketsOps.cc	/^int sockets::createNonblockingOrDie(sa_family_t family)$/;"	f	class:sockets
+createTimerfd	net/TimerQueue.cc	/^int createTimerfd()$/;"	f	namespace:muduo::net::detail
+cur_	base/LogStream.h	/^  char* cur_;$/;"	m	class:muduo::detail::FixedBuffer
+current	base/LogStream.h	/^  char* current() { return cur_; }$/;"	f	class:muduo::detail::FixedBuffer
+current	net/tests/EchoClient_unittest.cc	/^int current = 0;$/;"	v
+currentActiveChannel_	net/EventLoop.h	/^  Channel* currentActiveChannel_;$/;"	m	class:muduo::net::EventLoop
+currentBuffer_	base/AsyncLogging.h	/^  BufferPtr currentBuffer_;$/;"	m	class:muduo::AsyncLogging
+data	base/LogStream.h	/^  const char* data() const { return buf_; }$/;"	f	class:muduo::Fmt
+data	base/LogStream.h	/^  const char* data() const { return data_; }$/;"	f	class:muduo::detail::FixedBuffer
+data	base/StringPiece.h	/^  const char* data() const { return ptr_; }$/;"	f	class:muduo::StringPiece
+data_	base/LogStream.h	/^  char data_[SIZE];$/;"	m	class:muduo::detail::FixedBuffer
+data_	base/Logging.h	/^    const char* data_;$/;"	m	class:muduo::Logger::SourceFile
+data_	base/TimeZone.h	/^  boost::shared_ptr<Data> data_;$/;"	m	class:muduo::TimeZone
+day	base/Date.h	/^    int day;  \/\/ [1..31]$/;"	m	struct:muduo::Date::YearMonthDay
+day	base/Date.h	/^  int day() const$/;"	f	class:muduo::Date
+daysOfMonth	base/tests/Date_unittest.cc	/^int daysOfMonth(int year, int month)$/;"	f
+debugString	base/LogStream.cc	/^const char* FixedBuffer<SIZE>::debugString()$/;"	f	class:FixedBuffer
+decrement	base/Atomic.h	/^  void decrement()$/;"	f	class:muduo::detail::AtomicIntegerT
+decrementAndGet	base/Atomic.h	/^  T decrementAndGet()$/;"	f	class:muduo::detail::AtomicIntegerT
+defaultConnectionCallback	net/TcpConnection.cc	/^void muduo::net::defaultConnectionCallback(const TcpConnectionPtr& conn)$/;"	f	class:muduo::net
+defaultErrorCallback	net/protobuf/ProtobufCodecLite.cc	/^void ProtobufCodecLite::defaultErrorCallback(const TcpConnectionPtr& conn,$/;"	f	class:ProtobufCodecLite
+defaultFlush	base/Logging.cc	/^void defaultFlush()$/;"	f	namespace:muduo
+defaultHttpCallback	net/http/HttpServer.cc	/^void defaultHttpCallback(const HttpRequest&, HttpResponse* resp)$/;"	f	namespace:muduo::net::detail
+defaultMessageCallback	net/TcpConnection.cc	/^void muduo::net::defaultMessageCallback(const TcpConnectionPtr&,$/;"	f	class:muduo::net
+defaultOutput	base/Logging.cc	/^void defaultOutput(const char* msg, int len)$/;"	f	namespace:muduo
+deleter_	base/ThreadLocalSingleton.h	/^  static Deleter deleter_;$/;"	m	class:muduo::ThreadLocalSingleton
+deleter_	base/ThreadLocalSingleton.h	/^typename ThreadLocalSingleton<T>::Deleter ThreadLocalSingleton<T>::deleter_;$/;"	m	class:muduo::ThreadLocalSingleton
+destroy	base/Singleton.h	/^  static void destroy()$/;"	f	class:muduo::Singleton
+destructor	base/ThreadLocal.h	/^  static void destructor(void *x)$/;"	f	class:muduo::ThreadLocal
+destructor	base/ThreadLocalSingleton.h	/^  static void destructor(void* obj)$/;"	f	class:muduo::ThreadLocalSingleton
+detail	base/Atomic.h	/^namespace detail$/;"	n	namespace:muduo
+detail	base/Date.cc	/^namespace detail$/;"	n	namespace:muduo	file:
+detail	base/LogStream.cc	/^namespace detail$/;"	n	namespace:muduo	file:
+detail	base/LogStream.h	/^namespace detail$/;"	n	namespace:muduo
+detail	base/ProcessInfo.cc	/^namespace detail$/;"	n	namespace:muduo	file:
+detail	base/Singleton.h	/^namespace detail$/;"	n	namespace:muduo
+detail	base/Thread.cc	/^namespace detail$/;"	n	namespace:muduo	file:
+detail	base/TimeZone.cc	/^namespace detail$/;"	n	namespace:muduo	file:
+detail	net/TcpClient.cc	/^namespace detail$/;"	n	namespace:muduo::net	file:
+detail	net/TimerQueue.cc	/^namespace detail$/;"	n	namespace:muduo::net	file:
+detail	net/http/HttpServer.cc	/^namespace detail$/;"	n	namespace:muduo::net	file:
+detail	net/tests/Channel_test.cc	/^namespace detail$/;"	n	namespace:muduo::net	file:
+digits	base/LogStream.cc	/^const char digits[] = "9876543210123456789";$/;"	m	namespace:muduo::detail	file:
+digitsHex	base/LogStream.cc	/^const char digitsHex[] = "0123456789ABCDEF";$/;"	m	namespace:muduo::detail	file:
+disableAll	net/Channel.h	/^  void disableAll() { events_ = kNoneEvent; update(); }$/;"	f	class:muduo::net::Channel
+disableReading	net/Channel.h	/^  void disableReading() { events_ &= ~kReadEvent; update(); }$/;"	f	class:muduo::net::Channel
+disableWriting	net/Channel.h	/^  void disableWriting() { events_ &= ~kWriteEvent; update(); }$/;"	f	class:muduo::net::Channel
+disconnect	net/TcpClient.cc	/^void TcpClient::disconnect()$/;"	f	class:TcpClient
+disconnected	net/TcpConnection.h	/^  bool disconnected() const { return state_ == kDisconnected; }$/;"	f	class:muduo::net::TcpConnection
+doNotLogHup	net/Channel.h	/^  void doNotLogHup() { logHup_ = false; }$/;"	f	class:muduo::net::Channel
+doPendingFunctors	net/EventLoop.cc	/^void EventLoop::doPendingFunctors()$/;"	f	class:EventLoop
+done	net/protorpc/RpcChannel.h	/^    ::google::protobuf::Closure* done;$/;"	m	struct:muduo::net::RpcChannel::OutstandingCall
+doneCallback	net/protorpc/RpcChannel.cc	/^void RpcChannel::doneCallback(::google::protobuf::Message* response, int64_t id)$/;"	f	class:RpcChannel
+down_cast	base/Types.h	/^inline To down_cast(From* f)                     \/\/ so we only accept pointers$/;"	f	namespace:muduo
+down_pointer_cast	net/Callbacks.h	/^inline ::boost::shared_ptr<To> down_pointer_cast(const ::boost::shared_ptr<From>& f)$/;"	f	namespace:muduo
+dummy	net/protobuf/ProtobufCodecLite.cc	/^  int dummy = ProtobufVersionCheck();$/;"	m	namespace:__anon7	file:
+dummy	net/protorpc/RpcCodec.cc	/^  int dummy = ProtobufVersionCheck();$/;"	m	namespace:__anon9	file:
+dummyOutput	base/tests/Logging_test.cc	/^void dummyOutput(const char* msg, int len)$/;"	f
+empty	base/BoundedBlockingQueue.h	/^  bool empty() const$/;"	f	class:muduo::BoundedBlockingQueue
+empty	base/StringPiece.h	/^  bool empty() const { return length_ == 0; }$/;"	f	class:muduo::StringPiece
+enableReading	net/Channel.h	/^  void enableReading() { events_ |= kReadEvent; update(); }$/;"	f	class:muduo::net::Channel
+enableRetry	net/TcpClient.h	/^  void enableRetry() { retry_ = true; }$/;"	f	class:muduo::net::TcpClient
+enableWriting	net/Channel.h	/^  void enableWriting() { events_ |= kWriteEvent; update(); }$/;"	f	class:muduo::net::Channel
+end	base/LogStream.h	/^  const char* end() const { return data_ + sizeof data_; }$/;"	f	class:muduo::detail::FixedBuffer
+end	base/StringPiece.h	/^  const char* end() const { return ptr_ + length_; }$/;"	f	class:muduo::StringPiece
+ensureWritableBytes	net/Buffer.h	/^  void ensureWritableBytes(size_t len)$/;"	f	class:muduo::net::Buffer
+epollfd_	net/poller/EPollPoller.h	/^  int epollfd_;$/;"	m	class:muduo::net::EPollPoller
+equal	base/TimeZone.cc	/^  bool equal(const Transition& lhs, const Transition& rhs) const$/;"	f	struct:muduo::detail::Comp
+err_	base/FileUtil.h	/^  int err_;$/;"	m	class:muduo::FileUtil::ReadSmallFile
+errorCallback_	net/Channel.h	/^  EventCallback errorCallback_;$/;"	m	class:muduo::net::Channel
+errorCallback_	net/protobuf/ProtobufCodecLite.h	/^  ErrorCallback errorCallback_;$/;"	m	class:muduo::net::ProtobufCodecLite
+errorCodeToString	net/protobuf/ProtobufCodecLite.cc	/^const string& ProtobufCodecLite::errorCodeToString(ErrorCode errorCode)$/;"	f	class:ProtobufCodecLite
+euid	base/ProcessInfo.cc	/^uid_t ProcessInfo::euid()$/;"	f	class:ProcessInfo
+eventHandling	net/EventLoop.h	/^  bool eventHandling() const { return eventHandling_; }$/;"	f	class:muduo::net::EventLoop
+eventHandling_	net/Channel.h	/^  bool eventHandling_;$/;"	m	class:muduo::net::Channel
+eventHandling_	net/EventLoop.h	/^  bool eventHandling_; \/* atomic *\/$/;"	m	class:muduo::net::EventLoop
+events	net/Channel.h	/^  int events() const { return events_; }$/;"	f	class:muduo::net::Channel
+eventsToString	net/Channel.cc	/^string Channel::eventsToString() const$/;"	f	class:Channel
+eventsToString	net/Channel.cc	/^string Channel::eventsToString(int fd, int ev)$/;"	f	class:Channel
+events_	net/Channel.h	/^  int        events_;$/;"	m	class:muduo::net::Channel
+events_	net/poller/EPollPoller.h	/^  EventList events_;$/;"	m	class:muduo::net::EPollPoller
+exePath	base/ProcessInfo.cc	/^string ProcessInfo::exePath()$/;"	f	class:ProcessInfo
+exiting_	net/EventLoopThread.h	/^  bool exiting_;$/;"	m	class:muduo::net::EventLoopThread
+expiration	net/Timer.h	/^  Timestamp expiration() const  { return expiration_; }$/;"	f	class:muduo::net::Timer
+expiration_	net/Timer.h	/^  Timestamp expiration_;$/;"	m	class:muduo::net::Timer
+family	net/InetAddress.h	/^  sa_family_t family() const { return addr_.sin_family; }$/;"	f	class:muduo::net::InetAddress
+favicon	net/http/tests/HttpServer_test.cc	/^char favicon[555] = {$/;"	v
+favicon	net/inspect/Inspector.cc	/^char favicon[1743] =$/;"	v
+fd	net/Channel.h	/^  int fd() const { return fd_; }$/;"	f	class:muduo::net::Channel
+fd	net/Socket.h	/^  int fd() const { return sockfd_; }$/;"	f	class:muduo::net::Socket
+fdDirFilter	base/ProcessInfo.cc	/^int fdDirFilter(const struct dirent* d)$/;"	f	namespace:muduo::detail
+fd_	base/FileUtil.h	/^  int fd_;$/;"	m	class:muduo::FileUtil::ReadSmallFile
+fd_	net/Channel.h	/^  const int  fd_;$/;"	m	class:muduo::net::Channel
+file_	base/GzipFile.h	/^  gzFile file_;$/;"	m	class:muduo::GzipFile
+file_	base/LogFile.h	/^  boost::scoped_ptr<FileUtil::AppendFile> file_;$/;"	m	class:muduo::LogFile
+fillActiveChannels	net/poller/EPollPoller.cc	/^void EPollPoller::fillActiveChannels(int numEvents,$/;"	f	class:EPollPoller
+fillActiveChannels	net/poller/PollPoller.cc	/^void PollPoller::fillActiveChannels(int numEvents,$/;"	f	class:PollPoller
+fillEmptyBuffer	net/protobuf/ProtobufCodecLite.cc	/^void ProtobufCodecLite::fillEmptyBuffer(muduo::net::Buffer* buf,$/;"	f	class:ProtobufCodecLite
+fillEmptyBuffer	net/protobuf/ProtobufCodecLite.h	/^  void fillEmptyBuffer(muduo::net::Buffer* buf, const MSG& message)$/;"	f	class:muduo::net::ProtobufCodecLiteT
+fillHMS	base/TimeZone.cc	/^inline void fillHMS(unsigned seconds, struct tm* utc)$/;"	f	namespace:muduo::detail
+fillStackTrace	base/Exception.cc	/^void Exception::fillStackTrace()$/;"	f	class:Exception
+findCRLF	net/Buffer.h	/^  const char* findCRLF() const$/;"	f	class:muduo::net::Buffer
+findCRLF	net/Buffer.h	/^  const char* findCRLF(const char* start) const$/;"	f	class:muduo::net::Buffer
+findEOL	net/Buffer.h	/^  const char* findEOL() const$/;"	f	class:muduo::net::Buffer
+findEOL	net/Buffer.h	/^  const char* findEOL(const char* start) const$/;"	f	class:muduo::net::Buffer
+findLocaltime	base/TimeZone.cc	/^const Localtime* findLocaltime(const TimeZone::Data& data, Transition sentry, Comp comp)$/;"	f	namespace:muduo::detail
+finish	base/Logging.cc	/^void Logger::Impl::finish()$/;"	f	class:Logger::Impl
+finish	net/ZlibStream.h	/^  bool finish()$/;"	f	class:muduo::net::ZlibOutputStream
+flush	base/FileUtil.cc	/^void FileUtil::AppendFile::flush()$/;"	f	class:FileUtil::AppendFile
+flush	base/LogFile.cc	/^void LogFile::flush()$/;"	f	class:LogFile
+flushFunc	base/tests/LogFile_test.cc	/^void flushFunc()$/;"	f
+flushInterval_	base/AsyncLogging.h	/^  const int flushInterval_;$/;"	m	class:muduo::AsyncLogging
+flushInterval_	base/LogFile.h	/^  const int flushInterval_;$/;"	m	class:muduo::LogFile
+foo	base/tests/Exception_test.cc	/^void foo()$/;"	f
+foo	base/tests/Mutex_test.cc	/^int foo()$/;"	f
+forceClose	net/TcpConnection.cc	/^void TcpConnection::forceClose()$/;"	f	class:TcpConnection
+forceCloseInLoop	net/TcpConnection.cc	/^void TcpConnection::forceCloseInLoop()$/;"	f	class:TcpConnection
+forceCloseWithDelay	net/TcpConnection.cc	/^void TcpConnection::forceCloseWithDelay(double seconds)$/;"	f	class:TcpConnection
+forkBench	base/tests/Thread_bench.cc	/^void forkBench()$/;"	f
+formatInteger	base/LogStream.cc	/^void LogStream::formatInteger(T v)$/;"	f	class:LogStream
+formatTime	base/Logging.cc	/^void Logger::Impl::formatTime()$/;"	f	class:Logger::Impl
+fp_	base/FileUtil.h	/^  FILE* fp_;$/;"	m	class:muduo::FileUtil::AppendFile
+fp_	base/TimeZone.cc	/^  FILE* fp_;$/;"	m	class:muduo::detail::File	file:
+fromIpPort	net/SocketsOps.cc	/^void sockets::fromIpPort(const char* ip, uint16_t port,$/;"	f	class:sockets
+fromLocalTime	base/TimeZone.cc	/^time_t TimeZone::fromLocalTime(const struct tm& localTm) const$/;"	f	class:TimeZone
+fromUnixTime	base/Timestamp.h	/^  static Timestamp fromUnixTime(time_t t)$/;"	f	class:muduo::Timestamp
+fromUnixTime	base/Timestamp.h	/^  static Timestamp fromUnixTime(time_t t, int microseconds)$/;"	f	class:muduo::Timestamp
+fromUtcTime	base/TimeZone.cc	/^time_t TimeZone::fromUtcTime(const struct tm& utc)$/;"	f	class:TimeZone
+fromUtcTime	base/TimeZone.cc	/^time_t TimeZone::fromUtcTime(int year, int month, int day,$/;"	f	class:TimeZone
+full	base/BoundedBlockingQueue.h	/^  bool full() const$/;"	f	class:muduo::BoundedBlockingQueue
+func_	base/Thread.cc	/^  ThreadFunc func_;$/;"	m	struct:muduo::detail::ThreadData	file:
+func_	base/Thread.h	/^  ThreadFunc func_;$/;"	m	class:muduo::Thread
+function_	base/WeakCallback.h	/^  std::function<void (CLASS*, ARGS...)> function_;$/;"	m	class:muduo::WeakCallback
+g_asyncLog	base/tests/AsyncLogging_test.cc	/^muduo::AsyncLogging* g_asyncLog = NULL;$/;"	v
+g_clockTicks	base/ProcessInfo.cc	/^int g_clockTicks = static_cast<int>(::sysconf(_SC_CLK_TCK));$/;"	m	namespace:muduo::detail	file:
+g_count	base/tests/Mutex_test.cc	/^int g_count = 0;$/;"	v
+g_delays	base/tests/Thread_bench.cc	/^std::map<int, int> g_delays;$/;"	v
+g_file	base/tests/Logging_test.cc	/^FILE* g_file;$/;"	v
+g_flush	base/Logging.cc	/^Logger::FlushFunc g_flush = defaultFlush;$/;"	m	namespace:muduo	file:
+g_globalInspector	net/inspect/Inspector.cc	/^Inspector* g_globalInspector = 0;$/;"	m	namespace:__anon5	file:
+g_logFile	base/tests/LogFile_test.cc	/^boost::scoped_ptr<muduo::LogFile> g_logFile;$/;"	v
+g_logFile	base/tests/Logging_test.cc	/^boost::scoped_ptr<muduo::LogFile> g_logFile;$/;"	v
+g_logLevel	base/Logging.cc	/^Logger::LogLevel g_logLevel = initLogLevel();$/;"	m	namespace:muduo	file:
+g_logTimeZone	base/Logging.cc	/^TimeZone g_logTimeZone;$/;"	m	namespace:muduo	file:
+g_loop	net/tests/TimerQueue_unittest.cc	/^EventLoop* g_loop;$/;"	v
+g_msgptr	net/protorpc/RpcCodec_test.cc	/^MessagePtr g_msgptr;$/;"	v
+g_mutex	base/tests/Thread_bench.cc	/^muduo::MutexLock g_mutex;$/;"	v
+g_output	base/Logging.cc	/^Logger::OutputFunc g_output = defaultOutput;$/;"	m	namespace:muduo	file:
+g_pageSize	base/ProcessInfo.cc	/^int g_pageSize = static_cast<int>(::sysconf(_SC_PAGE_SIZE));$/;"	m	namespace:muduo::detail	file:
+g_startTime	base/ProcessInfo.cc	/^Timestamp g_startTime = Timestamp::now();$/;"	m	namespace:muduo::detail	file:
+g_total	base/tests/Logging_test.cc	/^int g_total;$/;"	v
+g_vec	base/tests/Mutex_test.cc	/^vector<int> g_vec;$/;"	v
+get	base/Atomic.h	/^  T get()$/;"	f	class:muduo::detail::AtomicIntegerT
+getAllLoops	net/EventLoopThreadPool.cc	/^std::vector<EventLoop*> EventLoopThreadPool::getAllLoops()$/;"	f	class:EventLoopThreadPool
+getAndAdd	base/Atomic.h	/^  T getAndAdd(T x)$/;"	f	class:muduo::detail::AtomicIntegerT
+getAndSet	base/Atomic.h	/^  T getAndSet(T newValue)$/;"	f	class:muduo::detail::AtomicIntegerT
+getContext	net/EventLoop.h	/^  const boost::any& getContext() const$/;"	f	class:muduo::net::EventLoop
+getContext	net/TcpConnection.h	/^  const boost::any& getContext() const$/;"	f	class:muduo::net::TcpConnection
+getCount	base/CountDownLatch.cc	/^int CountDownLatch::getCount() const$/;"	f	class:CountDownLatch
+getCpuTime	net/inspect/ProcessInspector.cc	/^ProcessInfo::CpuTime getCpuTime(StringPiece data)$/;"	f	namespace:muduo::inspect
+getEventLoopOfCurrentThread	net/EventLoop.cc	/^EventLoop* EventLoop::getEventLoopOfCurrentThread()$/;"	f	class:EventLoop
+getExpired	net/TimerQueue.cc	/^std::vector<TimerQueue::Entry> TimerQueue::getExpired(Timestamp now)$/;"	f	class:TimerQueue
+getGmt	base/tests/TimeZone_unittest.cc	/^time_t getGmt(const char* str)$/;"	f
+getGmt	base/tests/TimeZone_unittest.cc	/^time_t getGmt(int year, int month, int day,$/;"	f
+getHeader	net/http/HttpRequest.h	/^  string getHeader(const string& field) const$/;"	f	class:muduo::net::HttpRequest
+getJulianDayNumber	base/Date.cc	/^int getJulianDayNumber(int year, int month, int day)$/;"	f	namespace:muduo::detail
+getLocalAddr	net/SocketsOps.cc	/^struct sockaddr_in6 sockets::getLocalAddr(int sockfd)$/;"	f	class:sockets
+getLogFileName	base/LogFile.cc	/^string LogFile::getLogFileName(const string& basename, time_t* now)$/;"	f	class:LogFile
+getLong	net/inspect/ProcessInspector.cc	/^long getLong(const string& procStatus, const char* key)$/;"	f	namespace:muduo::inspect
+getLoop	net/TcpClient.h	/^  EventLoop* getLoop() const { return loop_; }$/;"	f	class:muduo::net::TcpClient
+getLoop	net/TcpConnection.h	/^  EventLoop* getLoop() const { return loop_; }$/;"	f	class:muduo::net::TcpConnection
+getLoop	net/TcpServer.h	/^  EventLoop* getLoop() const { return loop_; }$/;"	f	class:muduo::net::TcpServer
+getLoop	net/http/HttpServer.h	/^  EventLoop* getLoop() const { return server_.getLoop(); }$/;"	f	class:muduo::net::HttpServer
+getLoopForHash	net/EventLoopThreadPool.cc	/^EventLoop* EventLoopThreadPool::getLoopForHash(size_t hashCode)$/;"	f	class:EventLoopThreadPool
+getMutableContext	net/EventLoop.h	/^  boost::any* getMutableContext()$/;"	f	class:muduo::net::EventLoop
+getMutableContext	net/TcpConnection.h	/^  boost::any* getMutableContext()$/;"	f	class:muduo::net::TcpConnection
+getNextLoop	net/EventLoopThreadPool.cc	/^EventLoop* EventLoopThreadPool::getNextLoop()$/;"	f	class:EventLoopThreadPool
+getPeerAddr	net/SocketsOps.cc	/^struct sockaddr_in6 sockets::getPeerAddr(int sockfd)$/;"	f	class:sockets
+getProcessName	net/inspect/ProcessInspector.cc	/^string getProcessName(const string& procStatus)$/;"	f	namespace:muduo::inspect
+getPthreadMutex	base/Mutex.h	/^  pthread_mutex_t* getPthreadMutex() \/* non-const *\/$/;"	f	class:muduo::MutexLock
+getSockAddr	net/InetAddress.h	/^  const struct sockaddr* getSockAddr() const { return sockets::sockaddr_cast(&addr6_); }$/;"	f	class:muduo::net::InetAddress
+getSocketError	net/SocketsOps.cc	/^int sockets::getSocketError(int sockfd)$/;"	f	class:sockets
+getTcpInfo	net/Socket.cc	/^bool Socket::getTcpInfo(struct tcp_info* tcpi) const$/;"	f	class:Socket
+getTcpInfo	net/TcpConnection.cc	/^bool TcpConnection::getTcpInfo(struct tcp_info* tcpi) const$/;"	f	class:TcpConnection
+getTcpInfoString	net/Socket.cc	/^bool Socket::getTcpInfoString(char* buf, int len) const$/;"	f	class:Socket
+getTcpInfoString	net/TcpConnection.cc	/^string TcpConnection::getTcpInfoString() const$/;"	f	class:TcpConnection
+getTm	base/tests/TimeZone_unittest.cc	/^struct tm getTm(const char* str)$/;"	f
+getTm	base/tests/TimeZone_unittest.cc	/^struct tm getTm(int year, int month, int day,$/;"	f
+getVersion	net/http/HttpRequest.h	/^  Version getVersion() const$/;"	f	class:muduo::net::HttpRequest
+getYearMonthDay	base/Date.cc	/^struct Date::YearMonthDay getYearMonthDay(int julianDayNumber)$/;"	f	namespace:muduo::detail
+gettid	base/Thread.cc	/^pid_t gettid()$/;"	f	namespace:muduo::detail
+gmt	base/tests/TimeZone_unittest.cc	/^  const char* gmt;$/;"	m	struct:TestCase	file:
+gmtOffset	base/TimeZone.cc	/^  time_t gmtOffset;$/;"	m	struct:muduo::detail::Localtime	file:
+gmttime	base/TimeZone.cc	/^  time_t gmttime;$/;"	m	struct:muduo::detail::Transition	file:
+google	net/protobuf/ProtobufCodecLite.h	/^namespace google$/;"	n
+google	net/protorpc/RpcChannel.h	/^namespace google {$/;"	n
+google	net/protorpc/RpcServer.h	/^namespace google {$/;"	n
+gotAll	net/http/HttpContext.h	/^  bool gotAll() const$/;"	f	class:muduo::net::HttpContext
+growth	net/inspect/PerformanceInspector.cc	/^string PerformanceInspector::growth(HttpRequest::Method, const Inspector::ArgList&)$/;"	f	class:PerformanceInspector
+handleClose	net/TcpConnection.cc	/^void TcpConnection::handleClose()$/;"	f	class:TcpConnection
+handleError	net/Connector.cc	/^void Connector::handleError()$/;"	f	class:Connector
+handleError	net/TcpConnection.cc	/^void TcpConnection::handleError()$/;"	f	class:TcpConnection
+handleEvent	net/Channel.cc	/^void Channel::handleEvent(Timestamp receiveTime)$/;"	f	class:Channel
+handleEventWithGuard	net/Channel.cc	/^void Channel::handleEventWithGuard(Timestamp receiveTime)$/;"	f	class:Channel
+handleRead	net/Acceptor.cc	/^void Acceptor::handleRead()$/;"	f	class:Acceptor
+handleRead	net/EventLoop.cc	/^void EventLoop::handleRead()$/;"	f	class:EventLoop
+handleRead	net/TcpConnection.cc	/^void TcpConnection::handleRead(Timestamp receiveTime)$/;"	f	class:TcpConnection
+handleRead	net/TimerQueue.cc	/^void TimerQueue::handleRead()$/;"	f	class:TimerQueue
+handleRead	net/tests/Channel_test.cc	/^  void handleRead()$/;"	f	class:PeriodicTimer	file:
+handleWrite	net/Connector.cc	/^void Connector::handleWrite()$/;"	f	class:Connector
+handleWrite	net/TcpConnection.cc	/^void TcpConnection::handleWrite()$/;"	f	class:TcpConnection
+hasChannel	net/EventLoop.cc	/^bool EventLoop::hasChannel(Channel* channel)$/;"	f	class:EventLoop
+hasChannel	net/Poller.cc	/^bool Poller::hasChannel(Channel* channel) const$/;"	f	class:Poller
+hasWritten	net/Buffer.h	/^  void hasWritten(size_t len)$/;"	f	class:muduo::net::Buffer
+has_no_destroy	base/Singleton.h	/^struct has_no_destroy$/;"	s	namespace:muduo::detail
+has_trivial_assignment_operator	base/StringPiece.h	/^  typedef __true_type    has_trivial_assignment_operator;$/;"	t	struct:__type_traits
+has_trivial_copy_constructor	base/StringPiece.h	/^  typedef __true_type    has_trivial_copy_constructor;$/;"	t	struct:__type_traits
+has_trivial_default_constructor	base/StringPiece.h	/^  typedef __true_type    has_trivial_default_constructor;$/;"	t	struct:__type_traits
+has_trivial_destructor	base/StringPiece.h	/^  typedef __true_type    has_trivial_destructor;$/;"	t	struct:__type_traits
+headers	net/http/HttpRequest.h	/^  const std::map<string, string>& headers() const$/;"	f	class:muduo::net::HttpRequest
+headers_	net/http/HttpRequest.h	/^  std::map<string, string> headers_;$/;"	m	class:muduo::net::HttpRequest
+headers_	net/http/HttpResponse.h	/^  std::map<string, string> headers_;$/;"	m	class:muduo::net::HttpResponse
+heap	net/inspect/PerformanceInspector.cc	/^string PerformanceInspector::heap(HttpRequest::Method, const Inspector::ArgList&)$/;"	f	class:PerformanceInspector
+helps_	net/inspect/Inspector.h	/^  std::map<string, HelpList> helps_;$/;"	m	class:muduo::net::Inspector
+highWaterMarkCallback_	net/TcpConnection.h	/^  HighWaterMarkCallback highWaterMarkCallback_;$/;"	m	class:muduo::net::TcpConnection
+highWaterMark_	net/TcpConnection.h	/^  size_t highWaterMark_;$/;"	m	class:muduo::net::TcpConnection
+holder_	base/Mutex.h	/^  pid_t holder_;$/;"	m	class:muduo::MutexLock
+hostToNetwork16	net/Endian.h	/^inline uint16_t hostToNetwork16(uint16_t host16)$/;"	f	namespace:muduo::net::sockets
+hostToNetwork32	net/Endian.h	/^inline uint32_t hostToNetwork32(uint32_t host32)$/;"	f	namespace:muduo::net::sockets
+hostToNetwork64	net/Endian.h	/^inline uint64_t hostToNetwork64(uint64_t host64)$/;"	f	namespace:muduo::net::sockets
+hostname	base/ProcessInfo.cc	/^string ProcessInfo::hostname()$/;"	f	class:ProcessInfo
+howMuchTimeFromNow	net/TimerQueue.cc	/^struct timespec howMuchTimeFromNow(Timestamp when)$/;"	f	namespace:muduo::net::detail
+httpCallback_	net/http/HttpServer.h	/^  HttpCallback httpCallback_;$/;"	m	class:muduo::net::HttpServer
+id_	net/protorpc/RpcChannel.h	/^  AtomicInt64 id_;$/;"	m	class:muduo::net::RpcChannel
+idleFd_	net/Acceptor.h	/^  int idleFd_;$/;"	m	class:muduo::net::Acceptor
+impl_	base/Logging.h	/^  Impl impl_;$/;"	m	class:muduo::Logger
+implicit_cast	base/Types.h	/^inline To implicit_cast(From const &f)$/;"	f	namespace:muduo
+increment	base/Atomic.h	/^  void increment()$/;"	f	class:muduo::detail::AtomicIntegerT
+incrementAndGet	base/Atomic.h	/^  T incrementAndGet()$/;"	f	class:muduo::detail::AtomicIntegerT
+index	net/Channel.h	/^  int index() { return index_; }$/;"	f	class:muduo::net::Channel
+index_	net/Channel.h	/^  int        index_; \/\/ used by Poller.$/;"	m	class:muduo::net::Channel
+init	base/Singleton.h	/^  static void init()$/;"	f	class:muduo::Singleton
+init	base/Thread.cc	/^ThreadNameInitializer init;$/;"	m	namespace:muduo::detail	file:
+init	net/tests/EventLoopThreadPool_unittest.cc	/^void init(EventLoop* p)$/;"	f
+initLogLevel	base/Logging.cc	/^Logger::LogLevel initLogLevel()$/;"	f	namespace:muduo
+initObj	net/EventLoop.cc	/^IgnoreSigPipe initObj;$/;"	m	namespace:__anon2	file:
+inputBuffer	net/TcpConnection.h	/^  Buffer* inputBuffer()$/;"	f	class:muduo::net::TcpConnection
+inputBuffer_	net/TcpConnection.h	/^  Buffer inputBuffer_;$/;"	m	class:muduo::net::TcpConnection
+inputBytes	net/ZlibStream.h	/^  int64_t inputBytes() const { return zstream_.total_in; }$/;"	f	class:muduo::net::ZlibOutputStream
+insert	net/TimerQueue.cc	/^bool TimerQueue::insert(Timer* timer)$/;"	f	class:TimerQueue
+inspect	net/inspect/ProcessInspector.cc	/^namespace inspect$/;"	n	namespace:muduo	file:
+inspect	net/inspect/SystemInspector.cc	/^namespace inspect$/;"	n	namespace:muduo	file:
+instance	base/Singleton.h	/^  static T& instance()$/;"	f	class:muduo::Singleton
+instance	base/ThreadLocalSingleton.h	/^  static T& instance()$/;"	f	class:muduo::ThreadLocalSingleton
+internalCapacity	net/Buffer.h	/^  size_t internalCapacity() const$/;"	f	class:muduo::net::Buffer
+internalOutputBufferSize	net/ZlibStream.h	/^  int internalOutputBufferSize() const { return bufferSize_; }$/;"	f	class:muduo::net::ZlibOutputStream
+interval_	net/Timer.h	/^  const double interval_;$/;"	m	class:muduo::net::Timer
+interval_	net/tests/Channel_test.cc	/^  const double interval_; \/\/ in seconds$/;"	m	class:PeriodicTimer	file:
+invalid	base/Timestamp.h	/^  static Timestamp invalid()$/;"	f	class:muduo::Timestamp
+ipNetEndian	net/InetAddress.cc	/^uint32_t InetAddress::ipNetEndian() const$/;"	f	class:InetAddress
+ipPort	net/TcpServer.h	/^  const string& ipPort() const { return ipPort_; }$/;"	f	class:muduo::net::TcpServer
+ipPort_	net/TcpServer.h	/^  const string ipPort_;$/;"	m	class:muduo::net::TcpServer
+isDebugBuild	base/ProcessInfo.cc	/^bool ProcessInfo::isDebugBuild()$/;"	f	class:ProcessInfo
+isDst	base/TimeZone.cc	/^  bool isDst;$/;"	m	struct:muduo::detail::Localtime	file:
+isFull	base/ThreadPool.cc	/^bool ThreadPool::isFull() const$/;"	f	class:ThreadPool
+isInLoopThread	net/EventLoop.h	/^  bool isInLoopThread() const { return threadId_ == CurrentThread::tid(); }$/;"	f	class:muduo::net::EventLoop
+isLeapYear	base/tests/Date_unittest.cc	/^int isLeapYear(int year)$/;"	f
+isLockedByThisThread	base/Mutex.h	/^  bool isLockedByThisThread() const$/;"	f	class:muduo::MutexLock
+isMainThread	base/Thread.cc	/^bool CurrentThread::isMainThread()$/;"	f	class:CurrentThread
+isNoneEvent	net/Channel.h	/^  bool isNoneEvent() const { return events_ == kNoneEvent; }$/;"	f	class:muduo::net::Channel
+isReading	net/Channel.h	/^  bool isReading() const { return events_ & kReadEvent; }$/;"	f	class:muduo::net::Channel
+isReading	net/TcpConnection.h	/^  bool isReading() const { return reading_; }; \/\/ NOT thread safe, may race with start\/stopReadInLoop $/;"	f	class:muduo::net::TcpConnection
+isSelfConnect	net/SocketsOps.cc	/^bool sockets::isSelfConnect(int sockfd)$/;"	f	class:sockets
+isWriting	net/Channel.h	/^  bool isWriting() const { return events_ & kWriteEvent; }$/;"	f	class:muduo::net::Channel
+is_POD_type	base/StringPiece.h	/^  typedef __true_type    is_POD_type;$/;"	t	struct:__type_traits
+isdst	base/tests/TimeZone_unittest.cc	/^  bool isdst;$/;"	m	struct:TestCase	file:
+iteration	net/EventLoop.h	/^  int64_t iteration() const { return iteration_; }$/;"	f	class:muduo::net::EventLoop
+iteration_	net/EventLoop.h	/^  int64_t iteration_;$/;"	m	class:muduo::net::EventLoop
+join	base/Thread.cc	/^int Thread::join()$/;"	f	class:Thread
+joinAll	base/tests/BlockingQueue_bench.cc	/^  void joinAll()$/;"	f	class:Bench
+joinAll	base/tests/BlockingQueue_test.cc	/^  void joinAll()$/;"	f	class:Test
+joinAll	base/tests/BoundedBlockingQueue_test.cc	/^  void joinAll()$/;"	f	class:Test
+joined_	base/Thread.h	/^  bool       joined_;$/;"	m	class:muduo::Thread
+julianDayNumber	base/Date.h	/^  int julianDayNumber() const { return julianDayNumber_; }$/;"	f	class:muduo::Date
+julianDayNumber_	base/Date.h	/^  int julianDayNumber_;$/;"	m	class:muduo::Date
+k200Ok	net/http/HttpResponse.h	/^    k200Ok = 200,$/;"	e	enum:muduo::net::HttpResponse::HttpStatusCode
+k301MovedPermanently	net/http/HttpResponse.h	/^    k301MovedPermanently = 301,$/;"	e	enum:muduo::net::HttpResponse::HttpStatusCode
+k400BadRequest	net/http/HttpResponse.h	/^    k400BadRequest = 400,$/;"	e	enum:muduo::net::HttpResponse::HttpStatusCode
+k404NotFound	net/http/HttpResponse.h	/^    k404NotFound = 404,$/;"	e	enum:muduo::net::HttpResponse::HttpStatusCode
+kAdded	net/poller/EPollPoller.cc	/^const int kAdded = 1;$/;"	m	namespace:__anon6	file:
+kBufferSize	base/FileUtil.h	/^  static const int kBufferSize = 64*1024;$/;"	m	class:muduo::FileUtil::ReadSmallFile
+kCRLF	net/Buffer.cc	/^const char Buffer::kCRLF[] = "\\r\\n";$/;"	m	class:Buffer	file:
+kCRLF	net/Buffer.h	/^  static const char kCRLF[];$/;"	m	class:muduo::net::Buffer
+kCheapPrepend	net/Buffer.cc	/^const size_t Buffer::kCheapPrepend;$/;"	m	class:Buffer	file:
+kCheapPrepend	net/Buffer.h	/^  static const size_t kCheapPrepend = 8;$/;"	m	class:muduo::net::Buffer
+kCheckSumError	net/protobuf/ProtobufCodecLite.h	/^    kCheckSumError,$/;"	e	enum:muduo::net::ProtobufCodecLite::ErrorCode
+kCheckSumErrorStr	net/protobuf/ProtobufCodecLite.cc	/^  const string kCheckSumErrorStr = "CheckSumError";$/;"	m	namespace:__anon8	file:
+kChecksumLen	net/protobuf/ProtobufCodecLite.h	/^  const static int kChecksumLen = sizeof(int32_t);$/;"	m	class:muduo::net::ProtobufCodecLite
+kConnected	net/Connector.h	/^  enum States { kDisconnected, kConnecting, kConnected };$/;"	e	enum:muduo::net::Connector::States
+kConnected	net/TcpConnection.h	/^  enum StateE { kDisconnected, kConnecting, kConnected, kDisconnecting };$/;"	e	enum:muduo::net::TcpConnection::StateE
+kConnecting	net/Connector.h	/^  enum States { kDisconnected, kConnecting, kConnected };$/;"	e	enum:muduo::net::Connector::States
+kConnecting	net/TcpConnection.h	/^  enum StateE { kDisconnected, kConnecting, kConnected, kDisconnecting };$/;"	e	enum:muduo::net::TcpConnection::StateE
+kCount	base/tests/Mutex_test.cc	/^const int kCount = 10*1000*1000;$/;"	v
+kDaysPerWeek	base/Date.h	/^  static const int kDaysPerWeek = 7;$/;"	m	class:muduo::Date
+kDelete	net/http/HttpRequest.h	/^    kInvalid, kGet, kPost, kHead, kPut, kDelete$/;"	e	enum:muduo::net::HttpRequest::Method
+kDeleted	net/poller/EPollPoller.cc	/^const int kDeleted = 2;$/;"	m	namespace:__anon6	file:
+kDisconnected	net/Connector.h	/^  enum States { kDisconnected, kConnecting, kConnected };$/;"	e	enum:muduo::net::Connector::States
+kDisconnected	net/TcpConnection.h	/^  enum StateE { kDisconnected, kConnecting, kConnected, kDisconnecting };$/;"	e	enum:muduo::net::TcpConnection::StateE
+kDisconnecting	net/TcpConnection.h	/^  enum StateE { kDisconnected, kConnecting, kConnected, kDisconnecting };$/;"	e	enum:muduo::net::TcpConnection::StateE
+kExpectBody	net/http/HttpContext.h	/^    kExpectBody,$/;"	e	enum:muduo::net::HttpContext::HttpRequestParseState
+kExpectHeaders	net/http/HttpContext.h	/^    kExpectHeaders,$/;"	e	enum:muduo::net::HttpContext::HttpRequestParseState
+kExpectRequestLine	net/http/HttpContext.h	/^    kExpectRequestLine,$/;"	e	enum:muduo::net::HttpContext::HttpRequestParseState
+kGet	net/http/HttpRequest.h	/^    kInvalid, kGet, kPost, kHead, kPut, kDelete$/;"	e	enum:muduo::net::HttpRequest::Method
+kGotAll	net/http/HttpContext.h	/^    kGotAll,$/;"	e	enum:muduo::net::HttpContext::HttpRequestParseState
+kHead	net/http/HttpRequest.h	/^    kInvalid, kGet, kPost, kHead, kPut, kDelete$/;"	e	enum:muduo::net::HttpRequest::Method
+kHeaderLen	net/protobuf/ProtobufCodecLite.h	/^  const static int kHeaderLen = sizeof(int32_t);$/;"	m	class:muduo::net::ProtobufCodecLite
+kHttp10	net/http/HttpRequest.h	/^    kUnknown, kHttp10, kHttp11$/;"	e	enum:muduo::net::HttpRequest::Version
+kHttp11	net/http/HttpRequest.h	/^    kUnknown, kHttp10, kHttp11$/;"	e	enum:muduo::net::HttpRequest::Version
+kInaddrAny	net/InetAddress.cc	/^static const in_addr_t kInaddrAny = INADDR_ANY;$/;"	v	file:
+kInaddrLoopback	net/InetAddress.cc	/^static const in_addr_t kInaddrLoopback = INADDR_LOOPBACK;$/;"	v	file:
+kInitEventListSize	net/poller/EPollPoller.h	/^  static const int kInitEventListSize = 16;$/;"	m	class:muduo::net::EPollPoller
+kInitRetryDelayMs	net/Connector.h	/^  static const int kInitRetryDelayMs = 500;$/;"	m	class:muduo::net::Connector
+kInitialSize	net/Buffer.cc	/^const size_t Buffer::kInitialSize;$/;"	m	class:Buffer	file:
+kInitialSize	net/Buffer.h	/^  static const size_t kInitialSize = 1024;$/;"	m	class:muduo::net::Buffer
+kInvalid	net/http/HttpRequest.h	/^    kInvalid, kGet, kPost, kHead, kPut, kDelete$/;"	e	enum:muduo::net::HttpRequest::Method
+kInvalidLength	net/protobuf/ProtobufCodecLite.h	/^    kInvalidLength,$/;"	e	enum:muduo::net::ProtobufCodecLite::ErrorCode
+kInvalidLengthStr	net/protobuf/ProtobufCodecLite.cc	/^  const string kInvalidLengthStr = "InvalidLength";$/;"	m	namespace:__anon8	file:
+kInvalidNameLen	net/protobuf/ProtobufCodecLite.h	/^    kInvalidNameLen,$/;"	e	enum:muduo::net::ProtobufCodecLite::ErrorCode
+kInvalidNameLenStr	net/protobuf/ProtobufCodecLite.cc	/^  const string kInvalidNameLenStr = "InvalidNameLen";$/;"	m	namespace:__anon8	file:
+kJulianDayOf1970_01_01	base/Date.cc	/^const int Date::kJulianDayOf1970_01_01 = detail::getJulianDayNumber(1970, 1, 1);$/;"	m	class:muduo::Date	file:
+kJulianDayOf1970_01_01	base/Date.h	/^  static const int kJulianDayOf1970_01_01;$/;"	m	class:muduo::Date
+kLargeBuffer	base/LogStream.h	/^const int kLargeBuffer = 4000*1000;$/;"	m	namespace:muduo::detail
+kMaxMessageLen	net/protobuf/ProtobufCodecLite.h	/^  const static int kMaxMessageLen = 64*1024*1024; \/\/ same as codec_stream.h kDefaultTotalBytesLimit$/;"	m	class:muduo::net::ProtobufCodecLite
+kMaxNumericSize	base/LogStream.h	/^  static const int kMaxNumericSize = 32;$/;"	m	class:muduo::LogStream
+kMaxRetryDelayMs	net/Connector.cc	/^const int Connector::kMaxRetryDelayMs;$/;"	m	class:Connector	file:
+kMaxRetryDelayMs	net/Connector.h	/^  static const int kMaxRetryDelayMs = 30*1000;$/;"	m	class:muduo::net::Connector
+kMicroSecondsPerSecond	base/Timestamp.h	/^  static const int kMicroSecondsPerSecond = 1000 * 1000;$/;"	m	class:muduo::Timestamp
+kMinMessageLen	net/protobuf/ProtobufCodecLite.h	/^  const int kMinMessageLen;$/;"	m	class:muduo::net::ProtobufCodecLite
+kMonthsOfYear	base/tests/Date_unittest.cc	/^const int kMonthsOfYear = 12;$/;"	v
+kNew	net/poller/EPollPoller.cc	/^const int kNew = -1;$/;"	m	namespace:__anon6	file:
+kNoError	net/protobuf/ProtobufCodecLite.h	/^    kNoError = 0,$/;"	e	enum:muduo::net::ProtobufCodecLite::ErrorCode
+kNoErrorStr	net/protobuf/ProtobufCodecLite.cc	/^  const string kNoErrorStr = "NoError";$/;"	m	namespace:__anon8	file:
+kNoReusePort	net/TcpServer.h	/^    kNoReusePort,$/;"	e	enum:muduo::net::TcpServer::Option
+kNoneEvent	net/Channel.cc	/^const int Channel::kNoneEvent = 0;$/;"	m	class:Channel	file:
+kNoneEvent	net/Channel.h	/^  static const int kNoneEvent;$/;"	m	class:muduo::net::Channel
+kParseError	net/protobuf/ProtobufCodecLite.h	/^    kParseError,$/;"	e	enum:muduo::net::ProtobufCodecLite::ErrorCode
+kParseErrorStr	net/protobuf/ProtobufCodecLite.cc	/^  const string kParseErrorStr = "ParseError";$/;"	m	namespace:__anon8	file:
+kPollTimeMs	net/EventLoop.cc	/^const int kPollTimeMs = 10000;$/;"	m	namespace:__anon2	file:
+kPost	net/http/HttpRequest.h	/^    kInvalid, kGet, kPost, kHead, kPut, kDelete$/;"	e	enum:muduo::net::HttpRequest::Method
+kPut	net/http/HttpRequest.h	/^    kInvalid, kGet, kPost, kHead, kPut, kDelete$/;"	e	enum:muduo::net::HttpRequest::Method
+kReadEvent	net/Channel.cc	/^const int Channel::kReadEvent = POLLIN | POLLPRI;$/;"	m	class:Channel	file:
+kReadEvent	net/Channel.h	/^  static const int kReadEvent;$/;"	m	class:muduo::net::Channel
+kReusePort	net/TcpServer.h	/^    kReusePort,$/;"	e	enum:muduo::net::TcpServer::Option
+kRollPerSeconds_	base/LogFile.h	/^  const static int kRollPerSeconds_ = 60*60*24;$/;"	m	class:muduo::LogFile
+kRollSize	base/tests/AsyncLogging_test.cc	/^int kRollSize = 500*1000*1000;$/;"	v
+kSecondsPerDay	base/TimeZone.cc	/^const int kSecondsPerDay = 24*60*60;$/;"	m	namespace:muduo	file:
+kSmallBuffer	base/LogStream.h	/^const int kSmallBuffer = 4000;$/;"	m	namespace:muduo::detail
+kUnknown	net/http/HttpRequest.h	/^    kUnknown, kHttp10, kHttp11$/;"	e	enum:muduo::net::HttpRequest::Version
+kUnknown	net/http/HttpResponse.h	/^    kUnknown,$/;"	e	enum:muduo::net::HttpResponse::HttpStatusCode
+kUnknownErrorStr	net/protobuf/ProtobufCodecLite.cc	/^  const string kUnknownErrorStr = "UnknownError";$/;"	m	namespace:__anon8	file:
+kUnknownMessageType	net/protobuf/ProtobufCodecLite.h	/^    kUnknownMessageType,$/;"	e	enum:muduo::net::ProtobufCodecLite::ErrorCode
+kUnknownMessageTypeStr	net/protobuf/ProtobufCodecLite.cc	/^  const string kUnknownMessageTypeStr = "UnknownMessageType";$/;"	m	namespace:__anon8	file:
+kWriteEvent	net/Channel.cc	/^const int Channel::kWriteEvent = POLLOUT;$/;"	m	class:Channel	file:
+kWriteEvent	net/Channel.h	/^  static const int kWriteEvent;$/;"	m	class:muduo::net::Channel
+lastFlush_	base/LogFile.h	/^  time_t lastFlush_;$/;"	m	class:muduo::LogFile
+lastRoll_	base/LogFile.h	/^  time_t lastRoll_;$/;"	m	class:muduo::LogFile
+latch_	base/AsyncLogging.h	/^  muduo::CountDownLatch latch_;$/;"	m	class:muduo::AsyncLogging
+latch_	base/tests/BlockingQueue_bench.cc	/^  muduo::CountDownLatch latch_;$/;"	m	class:Bench	file:
+latch_	base/tests/BlockingQueue_test.cc	/^  muduo::CountDownLatch latch_;$/;"	m	class:Test	file:
+latch_	base/tests/BoundedBlockingQueue_test.cc	/^  muduo::CountDownLatch latch_;$/;"	m	class:Test	file:
+len_	base/Logging.cc	/^  const unsigned len_;$/;"	m	class:muduo::T	file:
+length	base/LogStream.h	/^  int length() const { return length_; }$/;"	f	class:muduo::Fmt
+length	base/LogStream.h	/^  int length() const { return static_cast<int>(cur_ - data_); }$/;"	f	class:muduo::detail::FixedBuffer
+length_	base/LogStream.h	/^  int length_;$/;"	m	class:muduo::Fmt
+length_	base/StringPiece.h	/^  int           length_;$/;"	m	class:muduo::StringPiece
+level_	base/Logging.h	/^  LogLevel level_;$/;"	m	class:muduo::Logger::Impl
+line_	base/Logging.h	/^  int line_;$/;"	m	class:muduo::Logger::Impl
+listen	net/Acceptor.cc	/^void Acceptor::listen()$/;"	f	class:Acceptor
+listen	net/Socket.cc	/^void Socket::listen()$/;"	f	class:Socket
+listenOrDie	net/SocketsOps.cc	/^void sockets::listenOrDie(int sockfd)$/;"	f	class:sockets
+listenning	net/Acceptor.h	/^  bool listenning() const { return listenning_; }$/;"	f	class:muduo::net::Acceptor
+listenning_	net/Acceptor.h	/^  bool listenning_;$/;"	m	class:muduo::net::Acceptor
+loadavg	net/inspect/SystemInspector.cc	/^string SystemInspector::loadavg(HttpRequest::Method, const Inspector::ArgList&)$/;"	f	class:SystemInspector
+local	base/tests/TimeZone_unittest.cc	/^  const char* local;$/;"	m	struct:TestCase	file:
+localAddr_	net/TcpConnection.h	/^  const InetAddress localAddr_;$/;"	m	class:muduo::net::TcpConnection
+localAddress	net/TcpConnection.h	/^  const InetAddress& localAddress() const { return localAddr_; }$/;"	f	class:muduo::net::TcpConnection
+localtime	base/TimeZone.cc	/^  time_t localtime;$/;"	m	struct:muduo::detail::Transition	file:
+localtimeIdx	base/TimeZone.cc	/^  int localtimeIdx;$/;"	m	struct:muduo::detail::Transition	file:
+localtimes	base/TimeZone.cc	/^  vector<detail::Localtime> localtimes;$/;"	m	struct:TimeZone::Data	file:
+lock	base/Mutex.h	/^  void lock()$/;"	f	class:muduo::MutexLock
+logHup_	net/Channel.h	/^  bool       logHup_;$/;"	m	class:muduo::net::Channel
+logInThread	base/tests/Logging_test.cc	/^void logInThread()$/;"	f
+logLevel	base/Logging.h	/^inline Logger::LogLevel Logger::logLevel()$/;"	f	class:muduo::Logger
+loop	net/EventLoop.cc	/^void EventLoop::loop()$/;"	f	class:EventLoop
+loop_	net/Acceptor.h	/^  EventLoop* loop_;$/;"	m	class:muduo::net::Acceptor
+loop_	net/Channel.h	/^  EventLoop* loop_;$/;"	m	class:muduo::net::Channel
+loop_	net/Connector.h	/^  EventLoop* loop_;$/;"	m	class:muduo::net::Connector
+loop_	net/EventLoopThread.h	/^  EventLoop* loop_;$/;"	m	class:muduo::net::EventLoopThread
+loop_	net/TcpClient.h	/^  EventLoop* loop_;$/;"	m	class:muduo::net::TcpClient
+loop_	net/TcpConnection.h	/^  EventLoop* loop_;$/;"	m	class:muduo::net::TcpConnection
+loop_	net/TcpServer.h	/^  EventLoop* loop_;  \/\/ the acceptor loop$/;"	m	class:muduo::net::TcpServer
+loop_	net/TimerQueue.h	/^  EventLoop* loop_;$/;"	m	class:muduo::net::TimerQueue
+loop_	net/tests/Channel_test.cc	/^  EventLoop* loop_;$/;"	m	class:PeriodicTimer	file:
+loop_	net/tests/EchoClient_unittest.cc	/^  EventLoop* loop_;$/;"	m	class:EchoClient	file:
+loop_	net/tests/EchoServer_unittest.cc	/^  EventLoop* loop_;$/;"	m	class:EchoServer	file:
+looping_	net/EventLoop.h	/^  bool looping_; \/* atomic *\/$/;"	m	class:muduo::net::EventLoop
+loops_	net/EventLoopThreadPool.h	/^  std::vector<EventLoop*> loops_;$/;"	m	class:muduo::net::EventLoopThreadPool
+main	base/tests/AsyncLogging_test.cc	/^int main(int argc, char* argv[])$/;"	f
+main	base/tests/Atomic_unittest.cc	/^int main()$/;"	f
+main	base/tests/BlockingQueue_bench.cc	/^int main(int argc, char* argv[])$/;"	f
+main	base/tests/BlockingQueue_test.cc	/^int main()$/;"	f
+main	base/tests/BoundedBlockingQueue_test.cc	/^int main()$/;"	f
+main	base/tests/Date_unittest.cc	/^int main()$/;"	f
+main	base/tests/Exception_test.cc	/^int main()$/;"	f
+main	base/tests/FileUtil_test.cc	/^int main()$/;"	f
+main	base/tests/Fork_test.cc	/^int main()$/;"	f
+main	base/tests/GzipFile_test.cc	/^int main()$/;"	f
+main	base/tests/LogFile_test.cc	/^int main(int argc, char* argv[])$/;"	f
+main	base/tests/LogStream_bench.cc	/^int main()$/;"	f
+main	base/tests/Logging_test.cc	/^int main()$/;"	f
+main	base/tests/Mutex_test.cc	/^int main()$/;"	f
+main	base/tests/ProcessInfo_test.cc	/^int main()$/;"	f
+main	base/tests/SingletonThreadLocal_test.cc	/^int main()$/;"	f
+main	base/tests/Singleton_test.cc	/^int main()$/;"	f
+main	base/tests/ThreadLocalSingleton_test.cc	/^int main()$/;"	f
+main	base/tests/ThreadLocal_test.cc	/^int main()$/;"	f
+main	base/tests/ThreadPool_test.cc	/^int main()$/;"	f
+main	base/tests/Thread_bench.cc	/^int main(int argc, char* argv[])$/;"	f
+main	base/tests/Thread_test.cc	/^int main()$/;"	f
+main	base/tests/TimeZone_unittest.cc	/^int main()$/;"	f
+main	base/tests/Timestamp_unittest.cc	/^int main()$/;"	f
+main	net/http/tests/HttpServer_test.cc	/^int main(int argc, char* argv[])$/;"	f
+main	net/inspect/tests/Inspector_test.cc	/^int main()$/;"	f
+main	net/protorpc/RpcCodec_test.cc	/^int main()$/;"	f
+main	net/tests/Channel_test.cc	/^int main(int argc, char* argv[])$/;"	f
+main	net/tests/EchoClient_unittest.cc	/^int main(int argc, char* argv[])$/;"	f
+main	net/tests/EchoServer_unittest.cc	/^int main(int argc, char* argv[])$/;"	f
+main	net/tests/EventLoopThreadPool_unittest.cc	/^int main()$/;"	f
+main	net/tests/EventLoopThread_unittest.cc	/^int main()$/;"	f
+main	net/tests/EventLoop_unittest.cc	/^int main()$/;"	f
+main	net/tests/TcpClient_reg1.cc	/^int main(int argc, char* argv[])$/;"	f
+main	net/tests/TcpClient_reg2.cc	/^int main(int argc, char* argv[])$/;"	f
+main	net/tests/TcpClient_reg3.cc	/^int main(int argc, char* argv[])$/;"	f
+main	net/tests/TimerQueue_unittest.cc	/^int main()$/;"	f
+makeSpace	net/Buffer.h	/^  void makeSpace(size_t len)$/;"	f	class:muduo::net::Buffer
+makeWeakCallback	base/WeakCallback.h	/^WeakCallback<CLASS, ARGS...> makeWeakCallback(const boost::shared_ptr<CLASS>& object,$/;"	f	namespace:muduo
+maxOpenFiles	base/ProcessInfo.cc	/^int ProcessInfo::maxOpenFiles()$/;"	f	class:ProcessInfo
+maxQueueSize_	base/ThreadPool.h	/^  size_t maxQueueSize_;$/;"	m	class:muduo::ThreadPool
+memberFunc	base/tests/Thread_test.cc	/^  void memberFunc()$/;"	f	class:Foo
+memberFunc2	base/tests/Thread_test.cc	/^  void memberFunc2(const std::string& text)$/;"	f	class:Foo
+memhistogram	net/inspect/PerformanceInspector.cc	/^string PerformanceInspector::memhistogram(HttpRequest::Method, const Inspector::ArgList&)$/;"	f	class:PerformanceInspector
+meminfo	net/inspect/SystemInspector.cc	/^string SystemInspector::meminfo(HttpRequest::Method, const Inspector::ArgList&)$/;"	f	class:SystemInspector
+memstats	net/inspect/PerformanceInspector.cc	/^string PerformanceInspector::memstats(HttpRequest::Method, const Inspector::ArgList&)$/;"	f	class:PerformanceInspector
+messageCallback	net/protorpc/RpcCodec_test.cc	/^void messageCallback(const TcpConnectionPtr&,$/;"	f
+messageCallback_	net/TcpClient.h	/^  MessageCallback messageCallback_;$/;"	m	class:muduo::net::TcpClient
+messageCallback_	net/TcpConnection.h	/^  MessageCallback messageCallback_;$/;"	m	class:muduo::net::TcpConnection
+messageCallback_	net/TcpServer.h	/^  MessageCallback messageCallback_;$/;"	m	class:muduo::net::TcpServer
+messageCallback_	net/protobuf/ProtobufCodecLite.h	/^  ProtobufMessageCallback messageCallback_;$/;"	m	class:muduo::net::ProtobufCodecLite
+messageCallback_	net/protobuf/ProtobufCodecLite.h	/^  ProtobufMessageCallback messageCallback_;$/;"	m	class:muduo::net::ProtobufCodecLiteT
+message_	base/Exception.h	/^  string message_;$/;"	m	class:muduo::Exception
+method	net/http/HttpRequest.h	/^  Method method() const$/;"	f	class:muduo::net::HttpRequest
+methodString	net/http/HttpRequest.h	/^  const char* methodString() const$/;"	f	class:muduo::net::HttpRequest
+method_	net/http/HttpRequest.h	/^  Method method_;$/;"	m	class:muduo::net::HttpRequest
+microSecondsSinceEpoch	base/Timestamp.h	/^  int64_t microSecondsSinceEpoch() const { return microSecondsSinceEpoch_; }$/;"	f	class:muduo::Timestamp
+microSecondsSinceEpoch_	base/Timestamp.h	/^  int64_t microSecondsSinceEpoch_;$/;"	m	class:muduo::Timestamp
+modules_	net/inspect/Inspector.h	/^  std::map<string, CommandList> modules_;$/;"	m	class:muduo::net::Inspector
+month	base/Date.h	/^    int month;  \/\/ [1..12]$/;"	m	struct:muduo::Date::YearMonthDay
+month	base/Date.h	/^  int month() const$/;"	f	class:muduo::Date
+muduo	base/AsyncLogging.h	/^namespace muduo$/;"	n
+muduo	base/Atomic.h	/^namespace muduo$/;"	n
+muduo	base/BlockingQueue.h	/^namespace muduo$/;"	n
+muduo	base/BoundedBlockingQueue.h	/^namespace muduo$/;"	n
+muduo	base/Condition.h	/^namespace muduo$/;"	n
+muduo	base/CountDownLatch.h	/^namespace muduo$/;"	n
+muduo	base/CurrentThread.h	/^namespace muduo$/;"	n
+muduo	base/Date.cc	/^namespace muduo$/;"	n	file:
+muduo	base/Date.h	/^namespace muduo$/;"	n
+muduo	base/Exception.h	/^namespace muduo$/;"	n
+muduo	base/FileUtil.h	/^namespace muduo$/;"	n
+muduo	base/GzipFile.h	/^namespace muduo$/;"	n
+muduo	base/LogFile.h	/^namespace muduo$/;"	n
+muduo	base/LogStream.cc	/^namespace muduo$/;"	n	file:
+muduo	base/LogStream.h	/^namespace muduo$/;"	n
+muduo	base/Logging.cc	/^namespace muduo$/;"	n	file:
+muduo	base/Logging.h	/^namespace muduo$/;"	n
+muduo	base/Mutex.h	/^namespace muduo$/;"	n
+muduo	base/ProcessInfo.cc	/^namespace muduo$/;"	n	file:
+muduo	base/ProcessInfo.h	/^namespace muduo$/;"	n
+muduo	base/Singleton.h	/^namespace muduo$/;"	n
+muduo	base/StringPiece.h	/^namespace muduo {$/;"	n
+muduo	base/Thread.cc	/^namespace muduo$/;"	n	file:
+muduo	base/Thread.h	/^namespace muduo$/;"	n
+muduo	base/ThreadLocal.h	/^namespace muduo$/;"	n
+muduo	base/ThreadLocalSingleton.h	/^namespace muduo$/;"	n
+muduo	base/ThreadPool.h	/^namespace muduo$/;"	n
+muduo	base/TimeZone.cc	/^namespace muduo$/;"	n	file:
+muduo	base/TimeZone.h	/^namespace muduo$/;"	n
+muduo	base/Timestamp.h	/^namespace muduo$/;"	n
+muduo	base/Types.h	/^namespace muduo$/;"	n
+muduo	base/WeakCallback.h	/^namespace muduo$/;"	n
+muduo	base/copyable.h	/^namespace muduo$/;"	n
+muduo	net/Acceptor.h	/^namespace muduo$/;"	n
+muduo	net/Buffer.h	/^namespace muduo$/;"	n
+muduo	net/Callbacks.h	/^namespace muduo$/;"	n
+muduo	net/Channel.h	/^namespace muduo$/;"	n
+muduo	net/Connector.h	/^namespace muduo$/;"	n
+muduo	net/Endian.h	/^namespace muduo$/;"	n
+muduo	net/EventLoop.h	/^namespace muduo$/;"	n
+muduo	net/EventLoopThread.h	/^namespace muduo$/;"	n
+muduo	net/EventLoopThreadPool.h	/^namespace muduo$/;"	n
+muduo	net/InetAddress.h	/^namespace muduo$/;"	n
+muduo	net/Poller.h	/^namespace muduo$/;"	n
+muduo	net/Socket.h	/^namespace muduo$/;"	n
+muduo	net/SocketsOps.h	/^namespace muduo$/;"	n
+muduo	net/TcpClient.cc	/^namespace muduo$/;"	n	file:
+muduo	net/TcpClient.h	/^namespace muduo$/;"	n
+muduo	net/TcpConnection.h	/^namespace muduo$/;"	n
+muduo	net/TcpServer.h	/^namespace muduo$/;"	n
+muduo	net/Timer.h	/^namespace muduo$/;"	n
+muduo	net/TimerId.h	/^namespace muduo$/;"	n
+muduo	net/TimerQueue.cc	/^namespace muduo$/;"	n	file:
+muduo	net/TimerQueue.h	/^namespace muduo$/;"	n
+muduo	net/ZlibStream.h	/^namespace muduo$/;"	n
+muduo	net/boilerplate.h	/^namespace muduo$/;"	n
+muduo	net/http/HttpContext.h	/^namespace muduo$/;"	n
+muduo	net/http/HttpRequest.h	/^namespace muduo$/;"	n
+muduo	net/http/HttpResponse.h	/^namespace muduo$/;"	n
+muduo	net/http/HttpServer.cc	/^namespace muduo$/;"	n	file:
+muduo	net/http/HttpServer.h	/^namespace muduo$/;"	n
+muduo	net/inspect/Inspector.h	/^namespace muduo$/;"	n
+muduo	net/inspect/PerformanceInspector.h	/^namespace muduo$/;"	n
+muduo	net/inspect/ProcessInspector.cc	/^namespace muduo$/;"	n	file:
+muduo	net/inspect/ProcessInspector.h	/^namespace muduo$/;"	n
+muduo	net/inspect/SystemInspector.cc	/^namespace muduo$/;"	n	file:
+muduo	net/inspect/SystemInspector.h	/^namespace muduo$/;"	n
+muduo	net/poller/EPollPoller.h	/^namespace muduo$/;"	n
+muduo	net/poller/PollPoller.h	/^namespace muduo$/;"	n
+muduo	net/protobuf/BufferStream.h	/^namespace muduo$/;"	n
+muduo	net/protobuf/ProtobufCodecLite.h	/^namespace muduo$/;"	n
+muduo	net/protorpc/RpcChannel.h	/^namespace muduo$/;"	n
+muduo	net/protorpc/RpcCodec.cc	/^namespace muduo$/;"	n	file:
+muduo	net/protorpc/RpcCodec.h	/^namespace muduo$/;"	n
+muduo	net/protorpc/RpcServer.h	/^namespace muduo$/;"	n
+muduo	net/tests/Channel_test.cc	/^namespace muduo$/;"	n	file:
+mutex_	base/AsyncLogging.h	/^  muduo::MutexLock mutex_;$/;"	m	class:muduo::AsyncLogging
+mutex_	base/BlockingQueue.h	/^  mutable MutexLock mutex_;$/;"	m	class:muduo::BlockingQueue
+mutex_	base/BoundedBlockingQueue.h	/^  mutable MutexLock          mutex_;$/;"	m	class:muduo::BoundedBlockingQueue
+mutex_	base/Condition.h	/^  MutexLock& mutex_;$/;"	m	class:muduo::Condition
+mutex_	base/CountDownLatch.h	/^  mutable MutexLock mutex_;$/;"	m	class:muduo::CountDownLatch
+mutex_	base/LogFile.h	/^  boost::scoped_ptr<MutexLock> mutex_;$/;"	m	class:muduo::LogFile
+mutex_	base/Mutex.h	/^  MutexLock& mutex_;$/;"	m	class:muduo::MutexLockGuard
+mutex_	base/Mutex.h	/^  pthread_mutex_t mutex_;$/;"	m	class:muduo::MutexLock
+mutex_	base/ThreadPool.h	/^  mutable MutexLock mutex_;$/;"	m	class:muduo::ThreadPool
+mutex_	net/EventLoop.h	/^  MutexLock mutex_;$/;"	m	class:muduo::net::EventLoop
+mutex_	net/EventLoopThread.h	/^  MutexLock mutex_;$/;"	m	class:muduo::net::EventLoopThread
+mutex_	net/TcpClient.h	/^  mutable MutexLock mutex_;$/;"	m	class:muduo::net::TcpClient
+mutex_	net/inspect/Inspector.h	/^  MutexLock mutex_;$/;"	m	class:muduo::net::Inspector
+mutex_	net/protorpc/RpcChannel.h	/^  MutexLock mutex_;$/;"	m	class:muduo::net::RpcChannel
+mysleep	base/tests/Thread_test.cc	/^void mysleep(int seconds)$/;"	f
+name	base/CurrentThread.h	/^  inline const char* name()$/;"	f	namespace:muduo::CurrentThread
+name	base/Thread.h	/^  const string& name() const { return name_; }$/;"	f	class:muduo::Thread
+name	base/ThreadPool.h	/^  const string& name() const$/;"	f	class:muduo::ThreadPool
+name	base/tests/SingletonThreadLocal_test.cc	/^  const muduo::string& name() const { return name_; }$/;"	f	class:Test
+name	base/tests/Singleton_test.cc	/^  const muduo::string& name() const { return name_; }$/;"	f	class:Test
+name	base/tests/ThreadLocalSingleton_test.cc	/^  const muduo::string& name() const { return name_; }$/;"	f	class:Test
+name	base/tests/ThreadLocal_test.cc	/^  const muduo::string& name() const { return name_; }$/;"	f	class:Test
+name	net/EventLoopThreadPool.h	/^  const string& name() const$/;"	f	class:muduo::net::EventLoopThreadPool
+name	net/TcpClient.h	/^  const string& name() const$/;"	f	class:muduo::net::TcpClient
+name	net/TcpConnection.h	/^  const string& name() const { return name_; }$/;"	f	class:muduo::net::TcpConnection
+name	net/TcpServer.h	/^  const string& name() const { return name_; }$/;"	f	class:muduo::net::TcpServer
+name_	base/Thread.cc	/^  string name_;$/;"	m	struct:muduo::detail::ThreadData	file:
+name_	base/Thread.h	/^  string     name_;$/;"	m	class:muduo::Thread
+name_	base/ThreadPool.h	/^  string name_;$/;"	m	class:muduo::ThreadPool
+name_	base/tests/SingletonThreadLocal_test.cc	/^  muduo::string name_;$/;"	m	class:Test	file:
+name_	base/tests/Singleton_test.cc	/^  muduo::string name_;$/;"	m	class:Test	file:
+name_	base/tests/ThreadLocalSingleton_test.cc	/^  muduo::string name_;$/;"	m	class:Test	file:
+name_	base/tests/ThreadLocal_test.cc	/^  muduo::string name_;$/;"	m	class:Test	file:
+name_	net/EventLoopThreadPool.h	/^  string name_;$/;"	m	class:muduo::net::EventLoopThreadPool
+name_	net/TcpClient.h	/^  const string name_;$/;"	m	class:muduo::net::TcpClient
+name_	net/TcpConnection.h	/^  const string name_;$/;"	m	class:muduo::net::TcpConnection
+name_	net/TcpServer.h	/^  const string name_;$/;"	m	class:muduo::net::TcpServer
+names	base/TimeZone.cc	/^  vector<string> names;$/;"	m	struct:TimeZone::Data	file:
+net	net/Acceptor.h	/^namespace net$/;"	n	namespace:muduo
+net	net/Buffer.h	/^namespace net$/;"	n	namespace:muduo
+net	net/Callbacks.h	/^namespace net$/;"	n	namespace:muduo
+net	net/Channel.h	/^namespace net$/;"	n	namespace:muduo
+net	net/Connector.h	/^namespace net$/;"	n	namespace:muduo
+net	net/Endian.h	/^namespace net$/;"	n	namespace:muduo
+net	net/EventLoop.h	/^namespace net$/;"	n	namespace:muduo
+net	net/EventLoopThread.h	/^namespace net$/;"	n	namespace:muduo
+net	net/EventLoopThreadPool.h	/^namespace net$/;"	n	namespace:muduo
+net	net/InetAddress.h	/^namespace net$/;"	n	namespace:muduo
+net	net/Poller.h	/^namespace net$/;"	n	namespace:muduo
+net	net/Socket.h	/^namespace net$/;"	n	namespace:muduo
+net	net/SocketsOps.h	/^namespace net$/;"	n	namespace:muduo
+net	net/TcpClient.cc	/^namespace net$/;"	n	namespace:muduo	file:
+net	net/TcpClient.h	/^namespace net$/;"	n	namespace:muduo
+net	net/TcpConnection.h	/^namespace net$/;"	n	namespace:muduo
+net	net/TcpServer.h	/^namespace net$/;"	n	namespace:muduo
+net	net/Timer.h	/^namespace net$/;"	n	namespace:muduo
+net	net/TimerId.h	/^namespace net$/;"	n	namespace:muduo
+net	net/TimerQueue.cc	/^namespace net$/;"	n	namespace:muduo	file:
+net	net/TimerQueue.h	/^namespace net$/;"	n	namespace:muduo
+net	net/ZlibStream.h	/^namespace net$/;"	n	namespace:muduo
+net	net/boilerplate.h	/^namespace net$/;"	n	namespace:muduo
+net	net/http/HttpContext.h	/^namespace net$/;"	n	namespace:muduo
+net	net/http/HttpRequest.h	/^namespace net$/;"	n	namespace:muduo
+net	net/http/HttpResponse.h	/^namespace net$/;"	n	namespace:muduo
+net	net/http/HttpServer.cc	/^namespace net$/;"	n	namespace:muduo	file:
+net	net/http/HttpServer.h	/^namespace net$/;"	n	namespace:muduo
+net	net/inspect/Inspector.h	/^namespace net$/;"	n	namespace:muduo
+net	net/inspect/PerformanceInspector.h	/^namespace net$/;"	n	namespace:muduo
+net	net/inspect/ProcessInspector.h	/^namespace net$/;"	n	namespace:muduo
+net	net/inspect/SystemInspector.h	/^namespace net$/;"	n	namespace:muduo
+net	net/poller/EPollPoller.h	/^namespace net$/;"	n	namespace:muduo
+net	net/poller/PollPoller.h	/^namespace net$/;"	n	namespace:muduo
+net	net/protobuf/BufferStream.h	/^namespace net$/;"	n	namespace:muduo
+net	net/protobuf/ProtobufCodecLite.h	/^namespace net$/;"	n	namespace:muduo
+net	net/protorpc/RpcChannel.h	/^namespace net$/;"	n	namespace:muduo
+net	net/protorpc/RpcCodec.cc	/^namespace net$/;"	n	namespace:muduo	file:
+net	net/protorpc/RpcCodec.h	/^namespace net$/;"	n	namespace:muduo
+net	net/protorpc/RpcServer.h	/^namespace net$/;"	n	namespace:muduo
+net	net/tests/Channel_test.cc	/^namespace net$/;"	n	namespace:muduo	file:
+networkToHost16	net/Endian.h	/^inline uint16_t networkToHost16(uint16_t net16)$/;"	f	namespace:muduo::net::sockets
+networkToHost32	net/Endian.h	/^inline uint32_t networkToHost32(uint32_t net32)$/;"	f	namespace:muduo::net::sockets
+networkToHost64	net/Endian.h	/^inline uint64_t networkToHost64(uint64_t net64)$/;"	f	namespace:muduo::net::sockets
+newConnection	net/TcpClient.cc	/^void TcpClient::newConnection(int sockfd)$/;"	f	class:TcpClient
+newConnection	net/TcpServer.cc	/^void TcpServer::newConnection(int sockfd, const InetAddress& peerAddr)$/;"	f	class:TcpServer
+newConnectionCallback_	net/Acceptor.h	/^  NewConnectionCallback newConnectionCallback_;$/;"	m	class:muduo::net::Acceptor
+newConnectionCallback_	net/Connector.h	/^  NewConnectionCallback newConnectionCallback_;$/;"	m	class:muduo::net::Connector
+newDefaultPoller	net/poller/DefaultPoller.cc	/^Poller* Poller::newDefaultPoller(EventLoop* loop)$/;"	f	class:Poller
+next	net/inspect/ProcessInspector.cc	/^StringPiece next(StringPiece data)$/;"	f	namespace:muduo::inspect
+nextBuffer_	base/AsyncLogging.h	/^  BufferPtr nextBuffer_;$/;"	m	class:muduo::AsyncLogging
+nextConnId_	net/TcpClient.h	/^  int nextConnId_;$/;"	m	class:muduo::net::TcpClient
+nextConnId_	net/TcpServer.h	/^  int nextConnId_;$/;"	m	class:muduo::net::TcpServer
+next_	net/EventLoopThreadPool.h	/^  int next_;$/;"	m	class:muduo::net::EventLoopThreadPool
+notEmpty_	base/BlockingQueue.h	/^  Condition         notEmpty_;$/;"	m	class:muduo::BlockingQueue
+notEmpty_	base/BoundedBlockingQueue.h	/^  Condition                  notEmpty_;$/;"	m	class:muduo::BoundedBlockingQueue
+notEmpty_	base/ThreadPool.h	/^  Condition notEmpty_;$/;"	m	class:muduo::ThreadPool
+notFull_	base/BoundedBlockingQueue.h	/^  Condition                  notFull_;$/;"	m	class:muduo::BoundedBlockingQueue
+notFull_	base/ThreadPool.h	/^  Condition notFull_;$/;"	m	class:muduo::ThreadPool
+notify	base/Condition.h	/^  void notify()$/;"	f	class:muduo::Condition
+notifyAll	base/Condition.h	/^  void notifyAll()$/;"	f	class:muduo::Condition
+now	base/Timestamp.cc	/^Timestamp Timestamp::now()$/;"	f	class:Timestamp
+numCreated	base/Thread.h	/^  static int numCreated() { return numCreated_.get(); }$/;"	f	class:muduo::Thread
+numCreated	net/Timer.h	/^  static int64_t numCreated() { return s_numCreated_.get(); }$/;"	f	class:muduo::net::Timer
+numCreated_	base/Thread.cc	/^AtomicInt32 Thread::numCreated_;$/;"	m	class:Thread	file:
+numCreated_	base/Thread.h	/^  static AtomicInt32 numCreated_;$/;"	m	class:muduo::Thread
+numThreads	base/ProcessInfo.cc	/^int ProcessInfo::numThreads()$/;"	f	class:ProcessInfo
+numThreads	net/tests/EchoClient_unittest.cc	/^int numThreads = 0;$/;"	v
+numThreads	net/tests/EchoServer_unittest.cc	/^int numThreads = 0;$/;"	v
+numThreads_	net/EventLoopThreadPool.h	/^  int numThreads_;$/;"	m	class:muduo::net::EventLoopThreadPool
+object_	base/WeakCallback.h	/^  boost::weak_ptr<CLASS> object_;$/;"	m	class:muduo::WeakCallback
+offset	base/GzipFile.h	/^  off_t offset() const { return ::gzoffset(file_); }$/;"	f	class:muduo::GzipFile
+onConnection	net/http/HttpServer.cc	/^void HttpServer::onConnection(const TcpConnectionPtr& conn)$/;"	f	class:HttpServer
+onConnection	net/protorpc/RpcServer.cc	/^void RpcServer::onConnection(const TcpConnectionPtr& conn)$/;"	f	class:RpcServer
+onConnection	net/tests/EchoClient_unittest.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:EchoClient	file:
+onConnection	net/tests/EchoServer_unittest.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:EchoServer	file:
+onMessage	net/http/HttpServer.cc	/^void HttpServer::onMessage(const TcpConnectionPtr& conn,$/;"	f	class:HttpServer
+onMessage	net/protobuf/ProtobufCodecLite.cc	/^void ProtobufCodecLite::onMessage(const TcpConnectionPtr& conn,$/;"	f	class:ProtobufCodecLite
+onMessage	net/protobuf/ProtobufCodecLite.h	/^  void onMessage(const TcpConnectionPtr& conn,$/;"	f	class:muduo::net::ProtobufCodecLiteT
+onMessage	net/protorpc/RpcChannel.cc	/^void RpcChannel::onMessage(const TcpConnectionPtr& conn,$/;"	f	class:RpcChannel
+onMessage	net/tests/EchoClient_unittest.cc	/^  void onMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp time)$/;"	f	class:EchoClient	file:
+onMessage	net/tests/EchoServer_unittest.cc	/^  void onMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp time)$/;"	f	class:EchoServer	file:
+onRequest	net/http/HttpServer.cc	/^void HttpServer::onRequest(const TcpConnectionPtr& conn, const HttpRequest& req)$/;"	f	class:HttpServer
+onRequest	net/http/tests/HttpServer_test.cc	/^void onRequest(const HttpRequest& req, HttpResponse* resp)$/;"	f
+onRequest	net/inspect/Inspector.cc	/^void Inspector::onRequest(const HttpRequest& req, HttpResponse* resp)$/;"	f	class:Inspector
+onRpcMessage	net/protobuf/ProtobufCodecLite.h	/^  void onRpcMessage(const TcpConnectionPtr& conn,$/;"	f	class:muduo::net::ProtobufCodecLiteT
+onRpcMessage	net/protorpc/RpcChannel.cc	/^void RpcChannel::onRpcMessage(const TcpConnectionPtr& conn,$/;"	f	class:RpcChannel
+openForAppend	base/GzipFile.h	/^  static GzipFile openForAppend(StringArg filename)$/;"	f	class:muduo::GzipFile
+openForRead	base/GzipFile.h	/^  static GzipFile openForRead(StringArg filename)$/;"	f	class:muduo::GzipFile
+openForWriteExclusive	base/GzipFile.h	/^  static GzipFile openForWriteExclusive(StringArg filename)$/;"	f	class:muduo::GzipFile
+openForWriteTruncate	base/GzipFile.h	/^  static GzipFile openForWriteTruncate(StringArg filename)$/;"	f	class:muduo::GzipFile
+openedFiles	base/ProcessInfo.cc	/^int ProcessInfo::openedFiles()$/;"	f	class:ProcessInfo
+openedFiles	net/inspect/ProcessInspector.cc	/^string ProcessInspector::openedFiles(HttpRequest::Method, const Inspector::ArgList&)$/;"	f	class:ProcessInspector
+operationToString	net/poller/EPollPoller.cc	/^const char* EPollPoller::operationToString(int op)$/;"	f	class:EPollPoller
+operator !=	base/StringPiece.h	/^  bool operator!=(const StringPiece& x) const {$/;"	f	class:muduo::StringPiece
+operator ()	base/TimeZone.cc	/^  bool operator()(const Transition& lhs, const Transition& rhs) const$/;"	f	struct:muduo::detail::Comp
+operator ()	base/WeakCallback.h	/^  void operator()(ARGS&&... args) const$/;"	f	class:muduo::WeakCallback
+operator <	base/Date.h	/^inline bool operator<(Date x, Date y)$/;"	f	namespace:muduo
+operator <	base/Timestamp.h	/^inline bool operator<(Timestamp lhs, Timestamp rhs)$/;"	f	namespace:muduo
+operator <<	base/LogStream.cc	/^LogStream& LogStream::operator<<(const void* p)$/;"	f	class:LogStream
+operator <<	base/LogStream.cc	/^LogStream& LogStream::operator<<(double v)$/;"	f	class:LogStream
+operator <<	base/LogStream.cc	/^LogStream& LogStream::operator<<(int v)$/;"	f	class:LogStream
+operator <<	base/LogStream.cc	/^LogStream& LogStream::operator<<(long long v)$/;"	f	class:LogStream
+operator <<	base/LogStream.cc	/^LogStream& LogStream::operator<<(long v)$/;"	f	class:LogStream
+operator <<	base/LogStream.cc	/^LogStream& LogStream::operator<<(short v)$/;"	f	class:LogStream
+operator <<	base/LogStream.cc	/^LogStream& LogStream::operator<<(unsigned int v)$/;"	f	class:LogStream
+operator <<	base/LogStream.cc	/^LogStream& LogStream::operator<<(unsigned long long v)$/;"	f	class:LogStream
+operator <<	base/LogStream.cc	/^LogStream& LogStream::operator<<(unsigned long v)$/;"	f	class:LogStream
+operator <<	base/LogStream.cc	/^LogStream& LogStream::operator<<(unsigned short v)$/;"	f	class:LogStream
+operator <<	base/LogStream.h	/^  self& operator<<(bool v)$/;"	f	class:muduo::LogStream
+operator <<	base/LogStream.h	/^  self& operator<<(char v)$/;"	f	class:muduo::LogStream
+operator <<	base/LogStream.h	/^  self& operator<<(const Buffer& v)$/;"	f	class:muduo::LogStream
+operator <<	base/LogStream.h	/^  self& operator<<(const StringPiece& v)$/;"	f	class:muduo::LogStream
+operator <<	base/LogStream.h	/^  self& operator<<(const char* str)$/;"	f	class:muduo::LogStream
+operator <<	base/LogStream.h	/^  self& operator<<(const std::string& v)$/;"	f	class:muduo::LogStream
+operator <<	base/LogStream.h	/^  self& operator<<(const string& v)$/;"	f	class:muduo::LogStream
+operator <<	base/LogStream.h	/^  self& operator<<(const unsigned char* str)$/;"	f	class:muduo::LogStream
+operator <<	base/LogStream.h	/^  self& operator<<(float v)$/;"	f	class:muduo::LogStream
+operator <<	base/LogStream.h	/^inline LogStream& operator<<(LogStream& s, const Fmt& fmt)$/;"	f	namespace:muduo
+operator <<	base/Logging.cc	/^inline LogStream& operator<<(LogStream& s, T v)$/;"	f	namespace:muduo
+operator <<	base/Logging.cc	/^inline LogStream& operator<<(LogStream& s, const Logger::SourceFile& v)$/;"	f	namespace:muduo
+operator =	base/GzipFile.h	/^  GzipFile& operator=(GzipFile&& rhs)$/;"	f	class:muduo::GzipFile
+operator ==	base/Date.h	/^inline bool operator==(Date x, Date y)$/;"	f	namespace:muduo
+operator ==	base/StringPiece.h	/^  bool operator==(const StringPiece& x) const {$/;"	f	class:muduo::StringPiece
+operator ==	base/Timestamp.h	/^inline bool operator==(Timestamp lhs, Timestamp rhs)$/;"	f	namespace:muduo
+operator []	base/StringPiece.h	/^  char operator[](int i) const { return ptr_[i]; }$/;"	f	class:muduo::StringPiece
+originalSize_	net/protobuf/BufferStream.h	/^  size_t originalSize_;$/;"	m	class:muduo::net::BufferOutputStream
+output	net/tests/Buffer_unittest.cc	/^void output(Buffer&& buf, const void* inner)$/;"	f
+outputBuffer	net/TcpConnection.h	/^  Buffer* outputBuffer()$/;"	f	class:muduo::net::TcpConnection
+outputBuffer_	net/TcpConnection.h	/^  Buffer outputBuffer_; \/\/ FIXME: use list<Buffer> as output buffer.$/;"	m	class:muduo::net::TcpConnection
+outputBytes	net/ZlibStream.h	/^  int64_t outputBytes() const { return zstream_.total_out; }$/;"	f	class:muduo::net::ZlibOutputStream
+outputFunc	base/tests/LogFile_test.cc	/^void outputFunc(const char* msg, int len)$/;"	f
+output_	net/ZlibStream.h	/^  Buffer* output_;$/;"	m	class:muduo::net::ZlibInputStream
+output_	net/ZlibStream.h	/^  Buffer* output_;$/;"	m	class:muduo::net::ZlibOutputStream
+outstandings_	net/protorpc/RpcChannel.h	/^  std::map<int64_t, OutstandingCall> outstandings_;$/;"	m	class:muduo::net::RpcChannel
+overview	net/inspect/ProcessInspector.cc	/^string ProcessInspector::overview(HttpRequest::Method, const Inspector::ArgList&)$/;"	f	class:ProcessInspector
+overview	net/inspect/SystemInspector.cc	/^string SystemInspector::overview(HttpRequest::Method, const Inspector::ArgList&)$/;"	f	class:SystemInspector
+ownerLoop	net/Channel.h	/^  EventLoop* ownerLoop() { return loop_; }$/;"	f	class:muduo::net::Channel
+ownerLoop_	net/Poller.h	/^  EventLoop* ownerLoop_;$/;"	m	class:muduo::net::Poller
+owner_	base/Mutex.h	/^    MutexLock& owner_;$/;"	m	class:muduo::MutexLock::UnassignGuard
+pageSize	base/ProcessInfo.cc	/^int ProcessInfo::pageSize()$/;"	f	class:ProcessInfo
+parse	net/protobuf/ProtobufCodecLite.cc	/^ProtobufCodecLite::ErrorCode ProtobufCodecLite::parse(const char* buf,$/;"	f	class:ProtobufCodecLite
+parseFromBuffer	net/protobuf/ProtobufCodecLite.cc	/^bool ProtobufCodecLite::parseFromBuffer(StringPiece buf, google::protobuf::Message* message)$/;"	f	class:ProtobufCodecLite
+parseRequest	net/http/HttpContext.cc	/^bool HttpContext::parseRequest(Buffer* buf, Timestamp receiveTime)$/;"	f	class:HttpContext
+passByConstReference	base/tests/Date_unittest.cc	/^void passByConstReference(const Date& x)$/;"	f
+passByConstReference	base/tests/Timestamp_unittest.cc	/^void passByConstReference(const Timestamp& x)$/;"	f
+passByValue	base/tests/Date_unittest.cc	/^void passByValue(Date x)$/;"	f
+passByValue	base/tests/Timestamp_unittest.cc	/^void passByValue(Timestamp x)$/;"	f
+path	net/http/HttpRequest.h	/^  const string& path() const$/;"	f	class:muduo::net::HttpRequest
+path_	net/http/HttpRequest.h	/^  string path_;$/;"	m	class:muduo::net::HttpRequest
+pcond_	base/Condition.h	/^  pthread_cond_t pcond_;$/;"	m	class:muduo::Condition
+peek	net/Buffer.h	/^  const char* peek() const$/;"	f	class:muduo::net::Buffer
+peekInt16	net/Buffer.h	/^  int16_t peekInt16() const$/;"	f	class:muduo::net::Buffer
+peekInt32	net/Buffer.h	/^  int32_t peekInt32() const$/;"	f	class:muduo::net::Buffer
+peekInt64	net/Buffer.h	/^  int64_t peekInt64() const$/;"	f	class:muduo::net::Buffer
+peekInt8	net/Buffer.h	/^  int8_t peekInt8() const$/;"	f	class:muduo::net::Buffer
+peerAddr_	net/TcpConnection.h	/^  const InetAddress peerAddr_;$/;"	m	class:muduo::net::TcpConnection
+peerAddress	net/TcpConnection.h	/^  const InetAddress& peerAddress() const { return peerAddr_; }$/;"	f	class:muduo::net::TcpConnection
+pendingFunctors_	net/EventLoop.h	/^  std::vector<Functor> pendingFunctors_; \/\/ @GuardedBy mutex_$/;"	m	class:muduo::net::EventLoop
+performanceInspector_	net/inspect/Inspector.h	/^  boost::scoped_ptr<PerformanceInspector> performanceInspector_;$/;"	m	class:muduo::net::Inspector
+pid	base/ProcessInfo.cc	/^pid_t ProcessInfo::pid()$/;"	f	class:ProcessInfo
+pid	net/inspect/ProcessInspector.cc	/^string ProcessInspector::pid(HttpRequest::Method, const Inspector::ArgList&)$/;"	f	class:ProcessInspector
+pidString	base/ProcessInfo.cc	/^string ProcessInfo::pidString()$/;"	f	class:ProcessInfo
+pkey_	base/ThreadLocal.h	/^  pthread_key_t pkey_;$/;"	m	class:muduo::ThreadLocal
+pkey_	base/ThreadLocalSingleton.h	/^    pthread_key_t pkey_;$/;"	m	class:muduo::ThreadLocalSingleton::Deleter
+pointer	base/ThreadLocalSingleton.h	/^  static T* pointer()$/;"	f	class:muduo::ThreadLocalSingleton
+poll	net/poller/EPollPoller.cc	/^Timestamp EPollPoller::poll(int timeoutMs, ChannelList* activeChannels)$/;"	f	class:EPollPoller
+poll	net/poller/PollPoller.cc	/^Timestamp PollPoller::poll(int timeoutMs, ChannelList* activeChannels)$/;"	f	class:PollPoller
+pollReturnTime	net/EventLoop.h	/^  Timestamp pollReturnTime() const { return pollReturnTime_; }$/;"	f	class:muduo::net::EventLoop
+pollReturnTime_	net/EventLoop.h	/^  Timestamp pollReturnTime_;$/;"	m	class:muduo::net::EventLoop
+poller_	net/EventLoop.h	/^  boost::scoped_ptr<Poller> poller_;$/;"	m	class:muduo::net::EventLoop
+pollfds_	net/poller/PollPoller.h	/^  PollFdList pollfds_;$/;"	m	class:muduo::net::PollPoller
+ponce_	base/Singleton.h	/^  static pthread_once_t ponce_;$/;"	m	class:muduo::Singleton
+ponce_	base/Singleton.h	/^pthread_once_t Singleton<T>::ponce_ = PTHREAD_ONCE_INIT;$/;"	m	class:muduo::Singleton
+portNetEndian	net/InetAddress.h	/^  uint16_t portNetEndian() const { return addr_.sin_port; }$/;"	f	class:muduo::net::InetAddress
+prepend	net/Buffer.h	/^  void prepend(const void* \/*restrict*\/ data, size_t len)$/;"	f	class:muduo::net::Buffer
+prependInt16	net/Buffer.h	/^  void prependInt16(int16_t x)$/;"	f	class:muduo::net::Buffer
+prependInt32	net/Buffer.h	/^  void prependInt32(int32_t x)$/;"	f	class:muduo::net::Buffer
+prependInt64	net/Buffer.h	/^  void prependInt64(int64_t x)$/;"	f	class:muduo::net::Buffer
+prependInt8	net/Buffer.h	/^  void prependInt8(int8_t x)$/;"	f	class:muduo::net::Buffer
+prependableBytes	net/Buffer.h	/^  size_t prependableBytes() const$/;"	f	class:muduo::net::Buffer
+print	base/tests/Fork_test.cc	/^void print()$/;"	f
+print	base/tests/SingletonThreadLocal_test.cc	/^void print()$/;"	f
+print	base/tests/ThreadLocal_test.cc	/^void print()$/;"	f
+print	base/tests/ThreadPool_test.cc	/^void print()$/;"	f
+print	net/protorpc/RpcCodec_test.cc	/^void print(const Buffer& buf)$/;"	f
+print	net/tests/Channel_test.cc	/^void print(const char* msg)$/;"	f
+print	net/tests/EventLoopThreadPool_unittest.cc	/^void print(EventLoop* p = NULL)$/;"	f
+print	net/tests/EventLoopThread_unittest.cc	/^void print(EventLoop* p = NULL)$/;"	f
+print	net/tests/TimerQueue_unittest.cc	/^void print(const char* msg)$/;"	f
+printActiveChannels	net/EventLoop.cc	/^void EventLoop::printActiveChannels() const$/;"	f	class:EventLoop
+printString	base/tests/ThreadPool_test.cc	/^void printString(const std::string& str)$/;"	f
+printTid	net/tests/TimerQueue_unittest.cc	/^void printTid()$/;"	f
+procStat	base/ProcessInfo.cc	/^string ProcessInfo::procStat()$/;"	f	class:ProcessInfo
+procStatus	base/ProcessInfo.cc	/^string ProcessInfo::procStatus()$/;"	f	class:ProcessInfo
+procStatus	net/inspect/ProcessInspector.cc	/^string ProcessInspector::procStatus(HttpRequest::Method, const Inspector::ArgList&)$/;"	f	class:ProcessInspector
+processInspector_	net/inspect/Inspector.h	/^  boost::scoped_ptr<ProcessInspector> processInspector_;$/;"	m	class:muduo::net::Inspector
+processRequestLine	net/http/HttpContext.cc	/^bool HttpContext::processRequestLine(const char* begin, const char* end)$/;"	f	class:HttpContext
+procname	base/ProcessInfo.cc	/^StringPiece ProcessInfo::procname(const string& stat)$/;"	f	class:ProcessInfo
+procname	base/ProcessInfo.cc	/^string ProcessInfo::procname()$/;"	f	class:ProcessInfo
+profile	net/inspect/PerformanceInspector.cc	/^string PerformanceInspector::profile(HttpRequest::Method, const Inspector::ArgList&)$/;"	f	class:PerformanceInspector
+protobuf	net/protobuf/ProtobufCodecLite.h	/^namespace protobuf$/;"	n	namespace:google
+protobuf	net/protorpc/RpcChannel.h	/^namespace protobuf {$/;"	n	namespace:google
+protobuf	net/protorpc/RpcServer.h	/^namespace protobuf {$/;"	n	namespace:google
+prototype_	net/protobuf/ProtobufCodecLite.h	/^  const ::google::protobuf::Message* prototype_;$/;"	m	class:muduo::net::ProtobufCodecLite
+pthreadId_	base/Thread.h	/^  pthread_t  pthreadId_;$/;"	m	class:muduo::Thread
+ptr_	base/StringPiece.h	/^  const char*   ptr_;$/;"	m	class:muduo::StringPiece
+put	base/BlockingQueue.h	/^  void put(T&& x)$/;"	f	class:muduo::BlockingQueue
+put	base/BlockingQueue.h	/^  void put(const T& x)$/;"	f	class:muduo::BlockingQueue
+put	base/BoundedBlockingQueue.h	/^  void put(const T& x)$/;"	f	class:muduo::BoundedBlockingQueue
+query	net/http/HttpRequest.h	/^  const string& query() const$/;"	f	class:muduo::net::HttpRequest
+query_	net/http/HttpRequest.h	/^  string query_;$/;"	m	class:muduo::net::HttpRequest
+queueInLoop	net/EventLoop.cc	/^void EventLoop::queueInLoop(Functor&& cb)$/;"	f	class:EventLoop
+queueInLoop	net/EventLoop.cc	/^void EventLoop::queueInLoop(const Functor& cb)$/;"	f	class:EventLoop
+queueSize	base/ThreadPool.cc	/^size_t ThreadPool::queueSize() const$/;"	f	class:ThreadPool
+queue_	base/BlockingQueue.h	/^  std::deque<T>     queue_;$/;"	m	class:muduo::BlockingQueue
+queue_	base/BoundedBlockingQueue.h	/^  boost::circular_buffer<T>  queue_;$/;"	m	class:muduo::BoundedBlockingQueue
+queue_	base/ThreadPool.h	/^  std::deque<Task> queue_;$/;"	m	class:muduo::ThreadPool
+queue_	base/tests/BlockingQueue_bench.cc	/^  muduo::BlockingQueue<muduo::Timestamp> queue_;$/;"	m	class:Bench	file:
+queue_	base/tests/BlockingQueue_test.cc	/^  muduo::BlockingQueue<std::string> queue_;$/;"	m	class:Test	file:
+queue_	base/tests/BoundedBlockingQueue_test.cc	/^  muduo::BoundedBlockingQueue<std::string> queue_;$/;"	m	class:Test	file:
+quit	net/EventLoop.cc	/^void EventLoop::quit()$/;"	f	class:EventLoop
+quit	net/tests/EventLoopThread_unittest.cc	/^void quit(EventLoop* p)$/;"	f
+quit_	net/EventLoop.h	/^  bool quit_; \/* atomic and shared between threads, okay on x86, I guess. *\/$/;"	m	class:muduo::net::EventLoop
+rawCb_	net/protobuf/ProtobufCodecLite.h	/^  RawMessageCallback rawCb_;$/;"	m	class:muduo::net::ProtobufCodecLite
+read	base/GzipFile.h	/^  int read(void* buf, int len) { return ::gzread(file_, buf, len); }$/;"	f	class:muduo::GzipFile
+read	net/SocketsOps.cc	/^ssize_t sockets::read(int sockfd, void *buf, size_t count)$/;"	f	class:sockets
+readBytes	base/TimeZone.cc	/^  string readBytes(int n)$/;"	f	class:muduo::detail::File
+readCallback_	net/Channel.h	/^  ReadEventCallback readCallback_;$/;"	m	class:muduo::net::Channel
+readFd	net/Buffer.cc	/^ssize_t Buffer::readFd(int fd, int* savedErrno)$/;"	f	class:Buffer
+readFile	base/FileUtil.h	/^int readFile(StringArg filename,$/;"	f	namespace:muduo::FileUtil
+readInt16	net/Buffer.h	/^  int16_t readInt16()$/;"	f	class:muduo::net::Buffer
+readInt32	base/TimeZone.cc	/^  int32_t readInt32()$/;"	f	class:muduo::detail::File
+readInt32	net/Buffer.h	/^  int32_t readInt32()$/;"	f	class:muduo::net::Buffer
+readInt64	net/Buffer.h	/^  int64_t readInt64()$/;"	f	class:muduo::net::Buffer
+readInt8	net/Buffer.h	/^  int8_t readInt8()$/;"	f	class:muduo::net::Buffer
+readTimeZoneFile	base/TimeZone.cc	/^bool readTimeZoneFile(const char* zonefile, struct TimeZone::Data* data)$/;"	f	namespace:muduo::detail
+readTimerfd	net/TimerQueue.cc	/^void readTimerfd(int timerfd, Timestamp now)$/;"	f	namespace:muduo::net::detail
+readToBuffer	base/FileUtil.cc	/^int FileUtil::ReadSmallFile::readToBuffer(int* size)$/;"	f	class:FileUtil::ReadSmallFile
+readToString	base/FileUtil.cc	/^int FileUtil::ReadSmallFile::readToString(int maxSize,$/;"	f	class:FileUtil::ReadSmallFile
+readUInt8	base/TimeZone.cc	/^  uint8_t readUInt8()$/;"	f	class:muduo::detail::File
+readableBytes	net/Buffer.h	/^  size_t readableBytes() const$/;"	f	class:muduo::net::Buffer
+readerIndex_	net/Buffer.h	/^  size_t readerIndex_;$/;"	m	class:muduo::net::Buffer
+reading_	net/TcpConnection.h	/^  bool reading_;$/;"	m	class:muduo::net::TcpConnection
+readv	net/SocketsOps.cc	/^ssize_t sockets::readv(int sockfd, const struct iovec *iov, int iovcnt)$/;"	f	class:sockets
+receiveTime	net/http/HttpRequest.h	/^  Timestamp receiveTime() const$/;"	f	class:muduo::net::HttpRequest
+receiveTime_	net/http/HttpRequest.h	/^  Timestamp receiveTime_;$/;"	m	class:muduo::net::HttpRequest
+registerCommands	net/inspect/PerformanceInspector.cc	/^void PerformanceInspector::registerCommands(Inspector* ins)$/;"	f	class:PerformanceInspector
+registerCommands	net/inspect/ProcessInspector.cc	/^void ProcessInspector::registerCommands(Inspector* ins)$/;"	f	class:ProcessInspector
+registerCommands	net/inspect/SystemInspector.cc	/^void SystemInspector::registerCommands(Inspector* ins)$/;"	f	class:SystemInspector
+registerService	net/protorpc/RpcServer.cc	/^void RpcServer::registerService(google::protobuf::Service* service)$/;"	f	class:RpcServer
+releaseFreeMemory	net/inspect/PerformanceInspector.cc	/^string PerformanceInspector::releaseFreeMemory(HttpRequest::Method, const Inspector::ArgList&)$/;"	f	class:PerformanceInspector
+remove	net/Channel.cc	/^void Channel::remove()$/;"	f	class:Channel
+remove	net/inspect/Inspector.cc	/^void Inspector::remove(const string& module, const string& command)$/;"	f	class:Inspector
+removeAndResetChannel	net/Connector.cc	/^int Connector::removeAndResetChannel()$/;"	f	class:Connector
+removeChannel	net/EventLoop.cc	/^void EventLoop::removeChannel(Channel* channel)$/;"	f	class:EventLoop
+removeChannel	net/poller/EPollPoller.cc	/^void EPollPoller::removeChannel(Channel* channel)$/;"	f	class:EPollPoller
+removeChannel	net/poller/PollPoller.cc	/^void PollPoller::removeChannel(Channel* channel)$/;"	f	class:PollPoller
+removeConnection	net/TcpClient.cc	/^void TcpClient::removeConnection(const TcpConnectionPtr& conn)$/;"	f	class:TcpClient
+removeConnection	net/TcpClient.cc	/^void removeConnection(EventLoop* loop, const TcpConnectionPtr& conn)$/;"	f	namespace:muduo::net::detail
+removeConnection	net/TcpServer.cc	/^void TcpServer::removeConnection(const TcpConnectionPtr& conn)$/;"	f	class:TcpServer
+removeConnectionInLoop	net/TcpServer.cc	/^void TcpServer::removeConnectionInLoop(const TcpConnectionPtr& conn)$/;"	f	class:TcpServer
+removeConnector	net/TcpClient.cc	/^void removeConnector(const ConnectorPtr& connector)$/;"	f	namespace:muduo::net::detail
+remove_prefix	base/StringPiece.h	/^  void remove_prefix(int n) {$/;"	f	class:muduo::StringPiece
+remove_suffix	base/StringPiece.h	/^  void remove_suffix(int n) {$/;"	f	class:muduo::StringPiece
+repeat	net/Timer.h	/^  bool repeat() const { return repeat_; }$/;"	f	class:muduo::net::Timer
+repeat_	net/Timer.h	/^  const bool repeat_;$/;"	m	class:muduo::net::Timer
+request	net/http/HttpContext.h	/^  HttpRequest& request()$/;"	f	class:muduo::net::HttpContext
+request	net/http/HttpContext.h	/^  const HttpRequest& request() const$/;"	f	class:muduo::net::HttpContext
+request_	net/http/HttpContext.h	/^  HttpRequest request_;$/;"	m	class:muduo::net::HttpContext
+require_32_bit_integer_at_least	base/Date.cc	/^char require_32_bit_integer_at_least[sizeof(int) >= sizeof(int32_t) ? 1 : -1];$/;"	m	namespace:muduo::detail	file:
+reset	base/LogStream.h	/^  void reset() { cur_ = data_; }$/;"	f	class:muduo::detail::FixedBuffer
+reset	net/TimerQueue.cc	/^void TimerQueue::reset(const std::vector<Entry>& expired, Timestamp now)$/;"	f	class:TimerQueue
+reset	net/http/HttpContext.h	/^  void reset()$/;"	f	class:muduo::net::HttpContext
+resetBuffer	base/LogStream.h	/^  void resetBuffer() { buffer_.reset(); }$/;"	f	class:muduo::LogStream
+resetChannel	net/Connector.cc	/^void Connector::resetChannel()$/;"	f	class:Connector
+resetTimerfd	net/TimerQueue.cc	/^void resetTimerfd(int timerfd, Timestamp expiration)$/;"	f	namespace:muduo::net::detail
+resolve	net/InetAddress.cc	/^bool InetAddress::resolve(StringArg hostname, InetAddress* out)$/;"	f	class:InetAddress
+response	net/protorpc/RpcChannel.h	/^    ::google::protobuf::Message* response;$/;"	m	struct:muduo::net::RpcChannel::OutstandingCall
+restart	net/Connector.cc	/^void Connector::restart()$/;"	f	class:Connector
+restart	net/Timer.cc	/^void Timer::restart(Timestamp now)$/;"	f	class:Timer
+retrieve	net/Buffer.h	/^  void retrieve(size_t len)$/;"	f	class:muduo::net::Buffer
+retrieveAll	net/Buffer.h	/^  void retrieveAll()$/;"	f	class:muduo::net::Buffer
+retrieveAllAsString	net/Buffer.h	/^  string retrieveAllAsString()$/;"	f	class:muduo::net::Buffer
+retrieveAsString	net/Buffer.h	/^  string retrieveAsString(size_t len)$/;"	f	class:muduo::net::Buffer
+retrieveInt16	net/Buffer.h	/^  void retrieveInt16()$/;"	f	class:muduo::net::Buffer
+retrieveInt32	net/Buffer.h	/^  void retrieveInt32()$/;"	f	class:muduo::net::Buffer
+retrieveInt64	net/Buffer.h	/^  void retrieveInt64()$/;"	f	class:muduo::net::Buffer
+retrieveInt8	net/Buffer.h	/^  void retrieveInt8()$/;"	f	class:muduo::net::Buffer
+retrieveUntil	net/Buffer.h	/^  void retrieveUntil(const char* end)$/;"	f	class:muduo::net::Buffer
+retry	net/Connector.cc	/^void Connector::retry(int sockfd)$/;"	f	class:Connector
+retryDelayMs_	net/Connector.h	/^  int retryDelayMs_;$/;"	m	class:muduo::net::Connector
+retry_	net/TcpClient.h	/^  bool retry_;   \/\/ atomic$/;"	m	class:muduo::net::TcpClient
+reventsToString	net/Channel.cc	/^string Channel::reventsToString() const$/;"	f	class:Channel
+revents_	net/Channel.h	/^  int        revents_; \/\/ it's the received event types of epoll or poll$/;"	m	class:muduo::net::Channel
+rollFile	base/LogFile.cc	/^bool LogFile::rollFile()$/;"	f	class:LogFile
+rollSize_	base/AsyncLogging.h	/^  size_t rollSize_;$/;"	m	class:muduo::AsyncLogging
+rollSize_	base/LogFile.h	/^  const size_t rollSize_;$/;"	m	class:muduo::LogFile
+rpcMessageCallback	net/protorpc/RpcCodec_test.cc	/^void rpcMessageCallback(const TcpConnectionPtr&,$/;"	f
+rpctag	net/protorpc/RpcCodec.cc	/^const char rpctag [] = "RPC0";$/;"	m	namespace:muduo::net	file:
+rpctag	net/protorpc/RpcCodec_test.cc	/^char rpctag[] = "RPC0";$/;"	v
+run	base/ThreadPool.cc	/^void ThreadPool::run(Task&& task)$/;"	f	class:ThreadPool
+run	base/ThreadPool.cc	/^void ThreadPool::run(const Task& task)$/;"	f	class:ThreadPool
+run	base/tests/BlockingQueue_bench.cc	/^  void run(int times)$/;"	f	class:Bench
+run	base/tests/BlockingQueue_test.cc	/^  void run(int times)$/;"	f	class:Test
+run	base/tests/BoundedBlockingQueue_test.cc	/^  void run(int times)$/;"	f	class:Test
+run	net/Timer.h	/^  void run() const$/;"	f	class:muduo::net::Timer
+runAfter	net/EventLoop.cc	/^TimerId EventLoop::runAfter(double delay, TimerCallback&& cb)$/;"	f	class:EventLoop
+runAfter	net/EventLoop.cc	/^TimerId EventLoop::runAfter(double delay, const TimerCallback& cb)$/;"	f	class:EventLoop
+runAt	net/EventLoop.cc	/^TimerId EventLoop::runAt(const Timestamp& time, TimerCallback&& cb)$/;"	f	class:EventLoop
+runAt	net/EventLoop.cc	/^TimerId EventLoop::runAt(const Timestamp& time, const TimerCallback& cb)$/;"	f	class:EventLoop
+runEvery	net/EventLoop.cc	/^TimerId EventLoop::runEvery(double interval, TimerCallback&& cb)$/;"	f	class:EventLoop
+runEvery	net/EventLoop.cc	/^TimerId EventLoop::runEvery(double interval, const TimerCallback& cb)$/;"	f	class:EventLoop
+runInLoop	net/EventLoop.cc	/^void EventLoop::runInLoop(Functor&& cb)$/;"	f	class:EventLoop
+runInLoop	net/EventLoop.cc	/^void EventLoop::runInLoop(const Functor& cb)$/;"	f	class:EventLoop
+runInThread	base/Thread.cc	/^  void runInThread()$/;"	f	struct:muduo::detail::ThreadData
+runInThread	base/ThreadPool.cc	/^void ThreadPool::runInThread()$/;"	f	class:ThreadPool
+running_	base/AsyncLogging.h	/^  bool running_;$/;"	m	class:muduo::AsyncLogging
+running_	base/ThreadPool.h	/^  bool running_;$/;"	m	class:muduo::ThreadPool
+s_numCreated_	net/Timer.h	/^  static AtomicInt64 s_numCreated_;$/;"	m	class:muduo::net::Timer
+sameType	base/Thread.cc	/^  const bool sameType = boost::is_same<int, pid_t>::value;$/;"	m	namespace:muduo::CurrentThread	file:
+scanDir	base/ProcessInfo.cc	/^int scanDir(const char *dirpath, int (*filter)(const struct dirent *))$/;"	f	namespace:muduo::detail
+secondsSinceEpoch	base/Timestamp.h	/^  time_t secondsSinceEpoch() const$/;"	f	class:muduo::Timestamp
+self	base/LogStream.h	/^  typedef LogStream self;$/;"	t	class:muduo::LogStream
+send	net/TcpConnection.cc	/^void TcpConnection::send(Buffer* buf)$/;"	f	class:TcpConnection
+send	net/TcpConnection.cc	/^void TcpConnection::send(const StringPiece& message)$/;"	f	class:TcpConnection
+send	net/TcpConnection.cc	/^void TcpConnection::send(const void* data, int len)$/;"	f	class:TcpConnection
+send	net/protobuf/ProtobufCodecLite.cc	/^void ProtobufCodecLite::send(const TcpConnectionPtr& conn,$/;"	f	class:ProtobufCodecLite
+send	net/protobuf/ProtobufCodecLite.h	/^  void send(const TcpConnectionPtr& conn,$/;"	f	class:muduo::net::ProtobufCodecLiteT
+sendInLoop	net/TcpConnection.cc	/^void TcpConnection::sendInLoop(const StringPiece& message)$/;"	f	class:TcpConnection
+sendInLoop	net/TcpConnection.cc	/^void TcpConnection::sendInLoop(const void* data, size_t len)$/;"	f	class:TcpConnection
+sequence	net/Timer.h	/^  int64_t sequence() const { return sequence_; }$/;"	f	class:muduo::net::Timer
+sequence_	net/Timer.h	/^  const int64_t sequence_;$/;"	m	class:muduo::net::Timer
+sequence_	net/TimerId.h	/^  int64_t sequence_;$/;"	m	class:muduo::net::TimerId
+serializeToBuffer	net/protobuf/ProtobufCodecLite.cc	/^int ProtobufCodecLite::serializeToBuffer(const google::protobuf::Message& message, Buffer* buf)$/;"	f	class:ProtobufCodecLite
+serverAddr_	net/Connector.h	/^  InetAddress serverAddr_;$/;"	m	class:muduo::net::Connector
+serverAddress	net/Connector.h	/^  const InetAddress& serverAddress() const { return serverAddr_; }$/;"	f	class:muduo::net::Connector
+server_	net/http/HttpServer.h	/^  TcpServer server_;$/;"	m	class:muduo::net::HttpServer
+server_	net/inspect/Inspector.h	/^  HttpServer server_;$/;"	m	class:muduo::net::Inspector
+server_	net/protorpc/RpcServer.h	/^  TcpServer server_;$/;"	m	class:muduo::net::RpcServer
+server_	net/tests/EchoServer_unittest.cc	/^  TcpServer server_;$/;"	m	class:EchoServer	file:
+services_	net/protorpc/RpcChannel.h	/^  const std::map<std::string, ::google::protobuf::Service*>* services_;$/;"	m	class:muduo::net::RpcChannel
+services_	net/protorpc/RpcServer.h	/^  std::map<std::string, ::google::protobuf::Service*> services_;$/;"	m	class:muduo::net::RpcServer
+set	base/StringPiece.h	/^  void set(const char* buffer, int len) { ptr_ = buffer; length_ = len; }$/;"	f	class:muduo::StringPiece
+set	base/StringPiece.h	/^  void set(const char* str) {$/;"	f	class:muduo::StringPiece
+set	base/StringPiece.h	/^  void set(const void* buffer, int len) {$/;"	f	class:muduo::StringPiece
+set	base/ThreadLocalSingleton.h	/^    void set(T* newObj)$/;"	f	class:muduo::ThreadLocalSingleton::Deleter
+setBody	net/http/HttpResponse.h	/^  void setBody(const string& body)$/;"	f	class:muduo::net::HttpResponse
+setBuffer	base/GzipFile.h	/^  bool setBuffer(int size) { return ::gzbuffer(file_, size) == 0; }$/;"	f	class:muduo::GzipFile
+setCloseCallback	net/Channel.h	/^  void setCloseCallback(EventCallback&& cb)$/;"	f	class:muduo::net::Channel
+setCloseCallback	net/Channel.h	/^  void setCloseCallback(const EventCallback& cb)$/;"	f	class:muduo::net::Channel
+setCloseCallback	net/TcpConnection.h	/^  void setCloseCallback(const CloseCallback& cb)$/;"	f	class:muduo::net::TcpConnection
+setCloseConnection	net/http/HttpResponse.h	/^  void setCloseConnection(bool on)$/;"	f	class:muduo::net::HttpResponse
+setConnection	net/protorpc/RpcChannel.h	/^  void setConnection(const TcpConnectionPtr& conn)$/;"	f	class:muduo::net::RpcChannel
+setConnectionCallback	net/TcpClient.h	/^  void setConnectionCallback(ConnectionCallback&& cb)$/;"	f	class:muduo::net::TcpClient
+setConnectionCallback	net/TcpClient.h	/^  void setConnectionCallback(const ConnectionCallback& cb)$/;"	f	class:muduo::net::TcpClient
+setConnectionCallback	net/TcpConnection.h	/^  void setConnectionCallback(const ConnectionCallback& cb)$/;"	f	class:muduo::net::TcpConnection
+setConnectionCallback	net/TcpServer.h	/^  void setConnectionCallback(const ConnectionCallback& cb)$/;"	f	class:muduo::net::TcpServer
+setContentType	net/http/HttpResponse.h	/^  void setContentType(const string& contentType)$/;"	f	class:muduo::net::HttpResponse
+setContext	net/EventLoop.h	/^  void setContext(const boost::any& context)$/;"	f	class:muduo::net::EventLoop
+setContext	net/TcpConnection.h	/^  void setContext(const boost::any& context)$/;"	f	class:muduo::net::TcpConnection
+setCookie	base/LogStream.h	/^  void setCookie(void (*cookie)()) { cookie_ = cookie; }$/;"	f	class:muduo::detail::FixedBuffer
+setDefaultName	base/Thread.cc	/^void Thread::setDefaultName()$/;"	f	class:Thread
+setErrorCallback	net/Channel.h	/^  void setErrorCallback(EventCallback&& cb)$/;"	f	class:muduo::net::Channel
+setErrorCallback	net/Channel.h	/^  void setErrorCallback(const EventCallback& cb)$/;"	f	class:muduo::net::Channel
+setFlush	base/Logging.cc	/^void Logger::setFlush(FlushFunc flush)$/;"	f	class:Logger
+setHighWaterMarkCallback	net/TcpConnection.h	/^  void setHighWaterMarkCallback(const HighWaterMarkCallback& cb, size_t highWaterMark)$/;"	f	class:muduo::net::TcpConnection
+setHttpCallback	net/http/HttpServer.h	/^  void setHttpCallback(const HttpCallback& cb)$/;"	f	class:muduo::net::HttpServer
+setKeepAlive	net/Socket.cc	/^void Socket::setKeepAlive(bool on)$/;"	f	class:Socket
+setLogLevel	base/Logging.cc	/^void Logger::setLogLevel(Logger::LogLevel level)$/;"	f	class:Logger
+setMaxQueueSize	base/ThreadPool.h	/^  void setMaxQueueSize(int maxSize) { maxQueueSize_ = maxSize; }$/;"	f	class:muduo::ThreadPool
+setMessageCallback	net/TcpClient.h	/^  void setMessageCallback(MessageCallback&& cb)$/;"	f	class:muduo::net::TcpClient
+setMessageCallback	net/TcpClient.h	/^  void setMessageCallback(const MessageCallback& cb)$/;"	f	class:muduo::net::TcpClient
+setMessageCallback	net/TcpConnection.h	/^  void setMessageCallback(const MessageCallback& cb)$/;"	f	class:muduo::net::TcpConnection
+setMessageCallback	net/TcpServer.h	/^  void setMessageCallback(const MessageCallback& cb)$/;"	f	class:muduo::net::TcpServer
+setMethod	net/http/HttpRequest.h	/^  bool setMethod(const char* start, const char* end)$/;"	f	class:muduo::net::HttpRequest
+setName	base/tests/SingletonThreadLocal_test.cc	/^  void setName(const muduo::string& n) { name_ = n; }$/;"	f	class:Test
+setName	base/tests/Singleton_test.cc	/^  void setName(const muduo::string& n) { name_ = n; }$/;"	f	class:Test
+setName	base/tests/ThreadLocalSingleton_test.cc	/^  void setName(const muduo::string& n) { name_ = n; }$/;"	f	class:Test
+setName	base/tests/ThreadLocal_test.cc	/^  void setName(const muduo::string& n) { name_ = n; }$/;"	f	class:Test
+setNewConnectionCallback	net/Acceptor.h	/^  void setNewConnectionCallback(const NewConnectionCallback& cb)$/;"	f	class:muduo::net::Acceptor
+setNewConnectionCallback	net/Connector.h	/^  void setNewConnectionCallback(const NewConnectionCallback& cb)$/;"	f	class:muduo::net::Connector
+setNonBlockAndCloseOnExec	net/SocketsOps.cc	/^void setNonBlockAndCloseOnExec(int sockfd)$/;"	f	namespace:__anon4
+setOutput	base/Logging.cc	/^void Logger::setOutput(OutputFunc out)$/;"	f	class:Logger
+setPath	net/http/HttpRequest.h	/^  void setPath(const char* start, const char* end)$/;"	f	class:muduo::net::HttpRequest
+setQuery	net/http/HttpRequest.h	/^  void setQuery(const char* start, const char* end)$/;"	f	class:muduo::net::HttpRequest
+setReadCallback	net/Channel.h	/^  void setReadCallback(ReadEventCallback&& cb)$/;"	f	class:muduo::net::Channel
+setReadCallback	net/Channel.h	/^  void setReadCallback(const ReadEventCallback& cb)$/;"	f	class:muduo::net::Channel
+setReceiveTime	net/http/HttpRequest.h	/^  void setReceiveTime(Timestamp t)$/;"	f	class:muduo::net::HttpRequest
+setReuseAddr	net/Socket.cc	/^void Socket::setReuseAddr(bool on)$/;"	f	class:Socket
+setReusePort	net/Socket.cc	/^void Socket::setReusePort(bool on)$/;"	f	class:Socket
+setServices	net/protorpc/RpcChannel.h	/^  void setServices(const std::map<std::string, ::google::protobuf::Service*>* services)$/;"	f	class:muduo::net::RpcChannel
+setSockAddrInet6	net/InetAddress.h	/^  void setSockAddrInet6(const struct sockaddr_in6& addr6) { addr6_ = addr6; }$/;"	f	class:muduo::net::InetAddress
+setState	net/Connector.h	/^  void setState(States s) { state_ = s; }$/;"	f	class:muduo::net::Connector
+setState	net/TcpConnection.h	/^  void setState(StateE s) { state_ = s; }$/;"	f	class:muduo::net::TcpConnection
+setStatusCode	net/http/HttpResponse.h	/^  void setStatusCode(HttpStatusCode code)$/;"	f	class:muduo::net::HttpResponse
+setStatusMessage	net/http/HttpResponse.h	/^  void setStatusMessage(const string& message)$/;"	f	class:muduo::net::HttpResponse
+setTcpNoDelay	net/Socket.cc	/^void Socket::setTcpNoDelay(bool on)$/;"	f	class:Socket
+setTcpNoDelay	net/TcpConnection.cc	/^void TcpConnection::setTcpNoDelay(bool on)$/;"	f	class:TcpConnection
+setThreadInitCallback	base/ThreadPool.h	/^  void setThreadInitCallback(const Task& cb)$/;"	f	class:muduo::ThreadPool
+setThreadInitCallback	net/TcpServer.h	/^  void setThreadInitCallback(const ThreadInitCallback& cb)$/;"	f	class:muduo::net::TcpServer
+setThreadNum	net/EventLoopThreadPool.h	/^  void setThreadNum(int numThreads) { numThreads_ = numThreads; }$/;"	f	class:muduo::net::EventLoopThreadPool
+setThreadNum	net/TcpServer.cc	/^void TcpServer::setThreadNum(int numThreads)$/;"	f	class:TcpServer
+setThreadNum	net/http/HttpServer.h	/^  void setThreadNum(int numThreads)$/;"	f	class:muduo::net::HttpServer
+setThreadNum	net/protorpc/RpcServer.h	/^  void setThreadNum(int numThreads)$/;"	f	class:muduo::net::RpcServer
+setTimeZone	base/Logging.cc	/^void Logger::setTimeZone(const TimeZone& tz)$/;"	f	class:Logger
+setVersion	net/http/HttpRequest.h	/^  void setVersion(Version v)$/;"	f	class:muduo::net::HttpRequest
+setWriteCallback	net/Channel.h	/^  void setWriteCallback(EventCallback&& cb)$/;"	f	class:muduo::net::Channel
+setWriteCallback	net/Channel.h	/^  void setWriteCallback(const EventCallback& cb)$/;"	f	class:muduo::net::Channel
+setWriteCompleteCallback	net/TcpClient.h	/^  void setWriteCompleteCallback(WriteCompleteCallback&& cb)$/;"	f	class:muduo::net::TcpClient
+setWriteCompleteCallback	net/TcpClient.h	/^  void setWriteCompleteCallback(const WriteCompleteCallback& cb)$/;"	f	class:muduo::net::TcpClient
+setWriteCompleteCallback	net/TcpConnection.h	/^  void setWriteCompleteCallback(const WriteCompleteCallback& cb)$/;"	f	class:muduo::net::TcpConnection
+setWriteCompleteCallback	net/TcpServer.h	/^  void setWriteCompleteCallback(const WriteCompleteCallback& cb)$/;"	f	class:muduo::net::TcpServer
+set_index	net/Channel.h	/^  void set_index(int idx) { index_ = idx; }$/;"	f	class:muduo::net::Channel
+set_revents	net/Channel.h	/^  void set_revents(int revt) { revents_ = revt; } \/\/ used by pollers$/;"	f	class:muduo::net::Channel
+shrink	net/Buffer.h	/^  void shrink(size_t reserve)$/;"	f	class:muduo::net::Buffer
+shutdown	net/TcpConnection.cc	/^void TcpConnection::shutdown()$/;"	f	class:TcpConnection
+shutdownInLoop	net/TcpConnection.cc	/^void TcpConnection::shutdownInLoop()$/;"	f	class:TcpConnection
+shutdownWrite	net/Socket.cc	/^void Socket::shutdownWrite()$/;"	f	class:Socket
+shutdownWrite	net/SocketsOps.cc	/^void sockets::shutdownWrite(int sockfd)$/;"	f	class:sockets
+size	base/BlockingQueue.h	/^  size_t size() const$/;"	f	class:muduo::BlockingQueue
+size	base/BoundedBlockingQueue.h	/^  size_t size() const$/;"	f	class:muduo::BoundedBlockingQueue
+size	base/StringPiece.h	/^  int size() const { return length_; }$/;"	f	class:muduo::StringPiece
+size_	base/Logging.h	/^    int size_;$/;"	m	class:muduo::Logger::SourceFile
+sleepUsec	base/Thread.cc	/^void CurrentThread::sleepUsec(int64_t usec)$/;"	f	class:CurrentThread
+sockaddr_cast	net/SocketsOps.cc	/^const struct sockaddr* sockets::sockaddr_cast(const struct sockaddr_in* addr)$/;"	f	class:sockets
+sockaddr_cast	net/SocketsOps.cc	/^const struct sockaddr* sockets::sockaddr_cast(const struct sockaddr_in6* addr)$/;"	f	class:sockets
+sockaddr_cast	net/SocketsOps.cc	/^struct sockaddr* sockets::sockaddr_cast(struct sockaddr_in6* addr)$/;"	f	class:sockets
+sockaddr_in6_cast	net/SocketsOps.cc	/^const struct sockaddr_in6* sockets::sockaddr_in6_cast(const struct sockaddr* addr)$/;"	f	class:sockets
+sockaddr_in_cast	net/SocketsOps.cc	/^const struct sockaddr_in* sockets::sockaddr_in_cast(const struct sockaddr* addr)$/;"	f	class:sockets
+socket_	net/TcpConnection.h	/^  boost::scoped_ptr<Socket> socket_;$/;"	m	class:muduo::net::TcpConnection
+sockets	net/Endian.h	/^namespace sockets$/;"	n	namespace:muduo::net
+sockets	net/InetAddress.h	/^namespace sockets$/;"	n	namespace:muduo::net
+sockets	net/SocketsOps.h	/^namespace sockets$/;"	n	namespace:muduo::net
+sockfd_	net/Socket.h	/^  const int sockfd_;$/;"	m	class:muduo::net::Socket
+split	net/inspect/Inspector.cc	/^std::vector<string> split(const string& str)$/;"	f	namespace:__anon5
+stackTrace	base/Exception.cc	/^const char* Exception::stackTrace() const throw()$/;"	f	class:Exception
+stack_	base/Exception.h	/^  string stack_;$/;"	m	class:muduo::Exception
+start	base/AsyncLogging.h	/^  void start()$/;"	f	class:muduo::AsyncLogging
+start	base/Thread.cc	/^void Thread::start()$/;"	f	class:Thread
+start	base/ThreadPool.cc	/^void ThreadPool::start(int numThreads)$/;"	f	class:ThreadPool
+start	net/Connector.cc	/^void Connector::start()$/;"	f	class:Connector
+start	net/EventLoopThreadPool.cc	/^void EventLoopThreadPool::start(const ThreadInitCallback& cb)$/;"	f	class:EventLoopThreadPool
+start	net/TcpServer.cc	/^void TcpServer::start()$/;"	f	class:TcpServer
+start	net/http/HttpServer.cc	/^void HttpServer::start()$/;"	f	class:HttpServer
+start	net/inspect/Inspector.cc	/^void Inspector::start()$/;"	f	class:Inspector
+start	net/protorpc/RpcServer.cc	/^void RpcServer::start()$/;"	f	class:RpcServer
+start	net/tests/Channel_test.cc	/^  void start()$/;"	f	class:PeriodicTimer
+start	net/tests/EchoServer_unittest.cc	/^  void start()$/;"	f	class:EchoServer
+startInLoop	net/Connector.cc	/^void Connector::startInLoop()$/;"	f	class:Connector
+startLoop	net/EventLoopThread.cc	/^EventLoop* EventLoopThread::startLoop()$/;"	f	class:EventLoopThread
+startOfPeriod_	base/LogFile.h	/^  time_t startOfPeriod_;$/;"	m	class:muduo::LogFile
+startRead	net/TcpConnection.cc	/^void TcpConnection::startRead()$/;"	f	class:TcpConnection
+startReadInLoop	net/TcpConnection.cc	/^void TcpConnection::startReadInLoop()$/;"	f	class:TcpConnection
+startThread	base/Thread.cc	/^void* startThread(void* obj)$/;"	f	namespace:muduo::detail
+startTime	base/ProcessInfo.cc	/^Timestamp ProcessInfo::startTime()$/;"	f	class:ProcessInfo
+started	base/Thread.h	/^  bool started() const { return started_; }$/;"	f	class:muduo::Thread
+started	net/EventLoopThreadPool.h	/^  bool started() const$/;"	f	class:muduo::net::EventLoopThreadPool
+started_	base/Thread.h	/^  bool       started_;$/;"	m	class:muduo::Thread
+started_	net/EventLoopThreadPool.h	/^  bool started_;$/;"	m	class:muduo::net::EventLoopThreadPool
+started_	net/TcpServer.h	/^  AtomicInt32 started_;$/;"	m	class:muduo::net::TcpServer
+starts_with	base/StringPiece.h	/^  bool starts_with(const StringPiece& x) const {$/;"	f	class:muduo::StringPiece
+stat	net/inspect/SystemInspector.cc	/^string SystemInspector::stat(HttpRequest::Method, const Inspector::ArgList&)$/;"	f	class:SystemInspector
+stateToString	net/TcpConnection.cc	/^const char* TcpConnection::stateToString() const$/;"	f	class:TcpConnection
+state_	net/Connector.h	/^  States state_;  \/\/ FIXME: use atomic variable$/;"	m	class:muduo::net::Connector
+state_	net/TcpConnection.h	/^  StateE state_;  \/\/ FIXME: use atomic variable$/;"	m	class:muduo::net::TcpConnection
+state_	net/http/HttpContext.h	/^  HttpRequestParseState state_;$/;"	m	class:muduo::net::HttpContext
+staticCheck	base/LogStream.cc	/^void LogStream::staticCheck()$/;"	f	class:LogStream
+statusCode_	net/http/HttpResponse.h	/^  HttpStatusCode statusCode_;$/;"	m	class:muduo::net::HttpResponse
+statusMessage_	net/http/HttpResponse.h	/^  string statusMessage_;$/;"	m	class:muduo::net::HttpResponse
+stop	base/AsyncLogging.h	/^  void stop()$/;"	f	class:muduo::AsyncLogging
+stop	base/ThreadPool.cc	/^void ThreadPool::stop()$/;"	f	class:ThreadPool
+stop	net/Connector.cc	/^void Connector::stop()$/;"	f	class:Connector
+stop	net/TcpClient.cc	/^void TcpClient::stop()$/;"	f	class:TcpClient
+stopInLoop	net/Connector.cc	/^void Connector::stopInLoop()$/;"	f	class:Connector
+stopRead	net/TcpConnection.cc	/^void TcpConnection::stopRead()$/;"	f	class:TcpConnection
+stopReadInLoop	net/TcpConnection.cc	/^void TcpConnection::stopReadInLoop()$/;"	f	class:TcpConnection
+str_	base/Logging.cc	/^  const char* str_;$/;"	m	class:muduo::T	file:
+str_	base/StringPiece.h	/^  const char* str_;$/;"	m	class:muduo::StringArg
+stream	base/Logging.h	/^  LogStream& stream() { return impl_.stream_; }$/;"	f	class:muduo::Logger
+stream_	base/Logging.h	/^  LogStream stream_;$/;"	m	class:muduo::Logger::Impl
+strerror_tl	base/Logging.cc	/^const char* strerror_tl(int savedErrno)$/;"	f	namespace:muduo
+stringPrintf	net/inspect/ProcessInspector.cc	/^int stringPrintf(string* out, const char* fmt, ...)$/;"	f	namespace:muduo::inspect
+swap	base/Date.h	/^  void swap(Date& that)$/;"	f	class:muduo::Date
+swap	base/GzipFile.h	/^  void swap(GzipFile& rhs) { std::swap(file_, rhs.file_); }$/;"	f	class:muduo::GzipFile
+swap	base/Timestamp.h	/^  void swap(Timestamp& that)$/;"	f	class:muduo::Timestamp
+swap	net/Buffer.h	/^  void swap(Buffer& rhs)$/;"	f	class:muduo::net::Buffer
+swap	net/http/HttpRequest.h	/^  void swap(HttpRequest& that)$/;"	f	class:muduo::net::HttpRequest
+systemInspector_	net/inspect/Inspector.h	/^  boost::scoped_ptr<SystemInspector> systemInspector_;$/;"	m	class:muduo::net::Inspector
+systemSeconds	base/ProcessInfo.h	/^    double systemSeconds;$/;"	m	struct:muduo::ProcessInfo::CpuTime
+t_cachedTid	base/Thread.cc	/^  __thread int t_cachedTid = 0;$/;"	m	namespace:muduo::CurrentThread	file:
+t_errnobuf	base/Logging.cc	/^__thread char t_errnobuf[512];$/;"	m	namespace:muduo	file:
+t_lastSecond	base/Logging.cc	/^__thread time_t t_lastSecond;$/;"	m	namespace:muduo	file:
+t_loopInThisThread	net/EventLoop.cc	/^__thread EventLoop* t_loopInThisThread = 0;$/;"	m	namespace:__anon2	file:
+t_numOpenedFiles	base/ProcessInfo.cc	/^__thread int t_numOpenedFiles = 0;$/;"	m	namespace:muduo::detail	file:
+t_pids	base/ProcessInfo.cc	/^__thread std::vector<pid_t>* t_pids = NULL;$/;"	m	namespace:muduo::detail	file:
+t_resolveBuffer	net/InetAddress.cc	/^static __thread char t_resolveBuffer[64 * 1024];$/;"	v	file:
+t_threadName	base/Thread.cc	/^  __thread const char* t_threadName = "unknown";$/;"	m	namespace:muduo::CurrentThread	file:
+t_tidString	base/Thread.cc	/^  __thread char t_tidString[32];$/;"	m	namespace:muduo::CurrentThread	file:
+t_tidStringLength	base/Thread.cc	/^  __thread int t_tidStringLength = 6;$/;"	m	namespace:muduo::CurrentThread	file:
+t_time	base/Logging.cc	/^__thread char t_time[32];$/;"	m	namespace:muduo	file:
+t_value_	base/ThreadLocalSingleton.h	/^  static __thread T* t_value_;$/;"	m	class:muduo::ThreadLocalSingleton
+t_value_	base/ThreadLocalSingleton.h	/^__thread T* ThreadLocalSingleton<T>::t_value_ = 0;$/;"	m	class:muduo::ThreadLocalSingleton
+tag	net/protobuf/ProtobufCodecLite.h	/^  const string& tag() const { return codec_.tag(); }$/;"	f	class:muduo::net::ProtobufCodecLiteT
+tag	net/protobuf/ProtobufCodecLite.h	/^  const string& tag() const { return tag_; }$/;"	f	class:muduo::net::ProtobufCodecLite
+tag_	net/protobuf/ProtobufCodecLite.h	/^  const string tag_;$/;"	m	class:muduo::net::ProtobufCodecLite
+take	base/BlockingQueue.h	/^  T take()$/;"	f	class:muduo::BlockingQueue
+take	base/BoundedBlockingQueue.h	/^  T take()$/;"	f	class:muduo::BoundedBlockingQueue
+take	base/ThreadPool.cc	/^ThreadPool::Task ThreadPool::take()$/;"	f	class:ThreadPool
+taskDirFilter	base/ProcessInfo.cc	/^int taskDirFilter(const struct dirent* d)$/;"	f	namespace:muduo::detail
+tell	base/GzipFile.h	/^  off_t tell() const { return ::gztell(file_); }$/;"	f	class:muduo::GzipFile
+test	base/tests/Exception_test.cc	/^  void test()$/;"	f	class:Bar
+test	base/tests/ThreadPool_test.cc	/^void test(int maxSize)$/;"	f
+test	base/tests/TimeZone_unittest.cc	/^void test(const TimeZone& tz, TestCase tc)$/;"	f
+testFixedTimezone	base/tests/TimeZone_unittest.cc	/^void testFixedTimezone()$/;"	f
+testHongKong	base/tests/TimeZone_unittest.cc	/^void testHongKong()$/;"	f
+testLondon	base/tests/TimeZone_unittest.cc	/^void testLondon()$/;"	f
+testMove	base/tests/BlockingQueue_test.cc	/^void testMove()$/;"	f
+testNewYork	base/tests/TimeZone_unittest.cc	/^void testNewYork()$/;"	f
+testObj1	base/tests/ThreadLocal_test.cc	/^muduo::ThreadLocal<Test> testObj1;$/;"	v
+testObj2	base/tests/ThreadLocal_test.cc	/^muduo::ThreadLocal<Test> testObj2;$/;"	v
+testSydney	base/tests/TimeZone_unittest.cc	/^void testSydney()$/;"	f
+testUtc	base/tests/TimeZone_unittest.cc	/^void testUtc()$/;"	f
+threadFunc	base/AsyncLogging.cc	/^void AsyncLogging::threadFunc()$/;"	f	class:AsyncLogging
+threadFunc	base/tests/BlockingQueue_bench.cc	/^  void threadFunc()$/;"	f	class:Bench	file:
+threadFunc	base/tests/BlockingQueue_test.cc	/^  void threadFunc()$/;"	f	class:Test	file:
+threadFunc	base/tests/BoundedBlockingQueue_test.cc	/^  void threadFunc()$/;"	f	class:Test	file:
+threadFunc	base/tests/Mutex_test.cc	/^void threadFunc()$/;"	f
+threadFunc	base/tests/SingletonThreadLocal_test.cc	/^void threadFunc(const char* changeTo)$/;"	f
+threadFunc	base/tests/Singleton_test.cc	/^void threadFunc()$/;"	f
+threadFunc	base/tests/ThreadLocalSingleton_test.cc	/^void threadFunc(const char* changeTo)$/;"	f
+threadFunc	base/tests/ThreadLocal_test.cc	/^void threadFunc()$/;"	f
+threadFunc	base/tests/Thread_bench.cc	/^void threadFunc()$/;"	f
+threadFunc	base/tests/Thread_test.cc	/^void threadFunc()$/;"	f
+threadFunc	net/EventLoopThread.cc	/^void EventLoopThread::threadFunc()$/;"	f	class:EventLoopThread
+threadFunc	net/tests/EventLoop_unittest.cc	/^void threadFunc()$/;"	f
+threadFunc	net/tests/TcpClient_reg2.cc	/^void threadFunc(EventLoop* loop)$/;"	f
+threadFunc2	base/tests/Thread_bench.cc	/^void threadFunc2(muduo::Timestamp start)$/;"	f
+threadFunc2	base/tests/Thread_test.cc	/^void threadFunc2(int x)$/;"	f
+threadFunc3	base/tests/Thread_test.cc	/^void threadFunc3()$/;"	f
+threadId_	net/EventLoop.h	/^  const pid_t threadId_;$/;"	m	class:muduo::net::EventLoop
+threadInitCallback_	base/ThreadPool.h	/^  Task threadInitCallback_;$/;"	m	class:muduo::ThreadPool
+threadInitCallback_	net/TcpServer.h	/^  ThreadInitCallback threadInitCallback_;$/;"	m	class:muduo::net::TcpServer
+threadPool	net/TcpServer.h	/^  boost::shared_ptr<EventLoopThreadPool> threadPool()$/;"	f	class:muduo::net::TcpServer
+threadPool_	net/TcpServer.h	/^  boost::shared_ptr<EventLoopThreadPool> threadPool_;$/;"	m	class:muduo::net::TcpServer
+threadStat	base/ProcessInfo.cc	/^string ProcessInfo::threadStat()$/;"	f	class:ProcessInfo
+thread_	base/AsyncLogging.h	/^  muduo::Thread thread_;$/;"	m	class:muduo::AsyncLogging
+thread_	net/EventLoopThread.h	/^  Thread thread_;$/;"	m	class:muduo::net::EventLoopThread
+threads	base/ProcessInfo.cc	/^std::vector<pid_t> ProcessInfo::threads()$/;"	f	class:ProcessInfo
+threads	net/inspect/ProcessInspector.cc	/^string ProcessInspector::threads(HttpRequest::Method, const Inspector::ArgList&)$/;"	f	class:ProcessInspector
+threads_	base/ThreadPool.h	/^  boost::ptr_vector<muduo::Thread> threads_;$/;"	m	class:muduo::ThreadPool
+threads_	base/tests/BlockingQueue_bench.cc	/^  boost::ptr_vector<muduo::Thread> threads_;$/;"	m	class:Bench	file:
+threads_	base/tests/BlockingQueue_test.cc	/^  boost::ptr_vector<muduo::Thread> threads_;$/;"	m	class:Test	file:
+threads_	base/tests/BoundedBlockingQueue_test.cc	/^  boost::ptr_vector<muduo::Thread> threads_;$/;"	m	class:Test	file:
+threads_	net/EventLoopThreadPool.h	/^  boost::ptr_vector<EventLoopThread> threads_;$/;"	m	class:muduo::net::EventLoopThreadPool
+tid	base/CurrentThread.h	/^  inline int tid()$/;"	f	namespace:muduo::CurrentThread
+tid	base/Thread.h	/^  pid_t tid() const { return *tid_; }$/;"	f	class:muduo::Thread
+tidString	base/CurrentThread.h	/^  inline const char* tidString() \/\/ for logging$/;"	f	namespace:muduo::CurrentThread
+tidStringLength	base/CurrentThread.h	/^  inline int tidStringLength() \/\/ for logging$/;"	f	namespace:muduo::CurrentThread
+tid_	base/Thread.h	/^  boost::shared_ptr<pid_t> tid_;$/;"	m	class:muduo::Thread
+tie	net/Channel.cc	/^void Channel::tie(const boost::shared_ptr<void>& obj)$/;"	f	class:Channel
+tie_	net/Channel.h	/^  boost::weak_ptr<void> tie_;$/;"	m	class:muduo::net::Channel
+tied_	net/Channel.h	/^  bool tied_;$/;"	m	class:muduo::net::Channel
+timeDifference	base/Timestamp.h	/^inline double timeDifference(Timestamp high, Timestamp low)$/;"	f	namespace:muduo
+time_	base/Logging.h	/^  Timestamp time_;$/;"	m	class:muduo::Logger::Impl
+timeout	net/tests/TcpClient_reg1.cc	/^void timeout()$/;"	f
+timerQueue_	net/EventLoop.h	/^  boost::scoped_ptr<TimerQueue> timerQueue_;$/;"	m	class:muduo::net::EventLoop
+timer_	net/TimerId.h	/^  Timer* timer_;$/;"	m	class:muduo::net::TimerId
+timerfdChannel_	net/TimerQueue.h	/^  Channel timerfdChannel_;$/;"	m	class:muduo::net::TimerQueue
+timerfdChannel_	net/tests/Channel_test.cc	/^  Channel timerfdChannel_;$/;"	m	class:PeriodicTimer	file:
+timerfd_	net/TimerQueue.h	/^  const int timerfd_;$/;"	m	class:muduo::net::TimerQueue
+timerfd_	net/tests/Channel_test.cc	/^  const int timerfd_;$/;"	m	class:PeriodicTimer	file:
+timers_	net/TimerQueue.h	/^  TimerList timers_;$/;"	m	class:muduo::net::TimerQueue
+toFormattedString	base/Timestamp.cc	/^string Timestamp::toFormattedString(bool showMicroseconds) const$/;"	f	class:Timestamp
+toIp	net/InetAddress.cc	/^string InetAddress::toIp() const$/;"	f	class:InetAddress
+toIp	net/SocketsOps.cc	/^void sockets::toIp(char* buf, size_t size,$/;"	f	class:sockets
+toIpPort	net/InetAddress.cc	/^string InetAddress::toIpPort() const$/;"	f	class:InetAddress
+toIpPort	net/SocketsOps.cc	/^void sockets::toIpPort(char* buf, size_t size,$/;"	f	class:sockets
+toIsoString	base/Date.cc	/^string Date::toIsoString() const$/;"	f	class:Date
+toLocalTime	base/TimeZone.cc	/^struct tm TimeZone::toLocalTime(time_t seconds) const$/;"	f	class:TimeZone
+toPort	net/InetAddress.cc	/^uint16_t InetAddress::toPort() const$/;"	f	class:InetAddress
+toString	base/LogStream.h	/^  string toString() const { return string(data_, length()); }$/;"	f	class:muduo::detail::FixedBuffer
+toString	base/Timestamp.cc	/^string Timestamp::toString() const$/;"	f	class:Timestamp
+toStringPiece	base/LogStream.h	/^  StringPiece toStringPiece() const { return StringPiece(data_, length()); }$/;"	f	class:muduo::detail::FixedBuffer
+toStringPiece	net/Buffer.h	/^  StringPiece toStringPiece() const$/;"	f	class:muduo::net::Buffer
+toTimeSpec	net/tests/Channel_test.cc	/^  static struct timespec toTimeSpec(double seconds)$/;"	f	class:PeriodicTimer	file:
+toUtcTime	base/TimeZone.cc	/^struct tm TimeZone::toUtcTime(time_t secondsSinceEpoch, bool yday)$/;"	f	class:TimeZone
+transitions	base/TimeZone.cc	/^  vector<detail::Transition> transitions;$/;"	m	struct:TimeZone::Data	file:
+typeof	base/Singleton.h	/^  template <typename C> static char test(typeof(&C::no_destroy)); \/\/ or decltype in C++11$/;"	m	struct:muduo::detail::has_no_destroy
+uid	base/ProcessInfo.cc	/^uid_t ProcessInfo::uid()$/;"	f	class:ProcessInfo
+unassignHolder	base/Mutex.h	/^  void unassignHolder()$/;"	f	class:muduo::MutexLock
+unlock	base/Mutex.h	/^  void unlock()$/;"	f	class:muduo::MutexLock
+unwrite	net/Buffer.h	/^  void unwrite(size_t len)$/;"	f	class:muduo::net::Buffer
+update	net/Channel.cc	/^void Channel::update()$/;"	f	class:Channel
+update	net/poller/EPollPoller.cc	/^void EPollPoller::update(int operation, Channel* channel)$/;"	f	class:EPollPoller
+updateChannel	net/EventLoop.cc	/^void EventLoop::updateChannel(Channel* channel)$/;"	f	class:EventLoop
+updateChannel	net/poller/EPollPoller.cc	/^void EPollPoller::updateChannel(Channel* channel)$/;"	f	class:EPollPoller
+updateChannel	net/poller/PollPoller.cc	/^void PollPoller::updateChannel(Channel* channel)$/;"	f	class:PollPoller
+uptime	net/inspect/ProcessInspector.cc	/^string uptime(Timestamp now, Timestamp start, bool showMicroseconds)$/;"	f	namespace:muduo::inspect
+userSeconds	base/ProcessInfo.h	/^    double userSeconds;$/;"	m	struct:muduo::ProcessInfo::CpuTime
+username	base/ProcessInfo.cc	/^string ProcessInfo::username()$/;"	f	class:ProcessInfo
+username_	net/inspect/ProcessInspector.h	/^  static string username_;$/;"	m	class:muduo::net::ProcessInspector
+valid	base/Date.h	/^  bool valid() const { return julianDayNumber_ > 0; }$/;"	f	class:muduo::Date
+valid	base/GzipFile.h	/^  bool valid() const { return file_ != NULL; }$/;"	f	class:muduo::GzipFile
+valid	base/TimeZone.cc	/^  bool valid() const { return fp_; }$/;"	f	class:muduo::detail::File
+valid	base/TimeZone.h	/^  bool valid() const$/;"	f	class:muduo::TimeZone
+valid	base/Timestamp.h	/^  bool valid() const { return microSecondsSinceEpoch_ > 0; }$/;"	f	class:muduo::Timestamp
+validateChecksum	net/protobuf/ProtobufCodecLite.cc	/^bool ProtobufCodecLite::validateChecksum(const char* buf, int len)$/;"	f	class:ProtobufCodecLite
+value	base/Singleton.h	/^  const static bool value = sizeof(test<T>(0)) == 1;$/;"	m	struct:muduo::detail::has_no_destroy
+value	base/ThreadLocal.h	/^  T& value()$/;"	f	class:muduo::ThreadLocal
+value_	base/Atomic.h	/^  volatile T value_;$/;"	m	class:muduo::detail::AtomicIntegerT
+value_	base/Singleton.h	/^  static T*             value_;$/;"	m	class:muduo::Singleton
+value_	base/Singleton.h	/^T* Singleton<T>::value_ = NULL;$/;"	m	class:muduo::Singleton
+version	net/inspect/SystemInspector.cc	/^string SystemInspector::version(HttpRequest::Method, const Inspector::ArgList&)$/;"	f	class:SystemInspector
+version_	net/http/HttpRequest.h	/^  Version version_;$/;"	m	class:muduo::net::HttpRequest
+wait	base/Condition.h	/^  void wait()$/;"	f	class:muduo::Condition
+wait	base/CountDownLatch.cc	/^void CountDownLatch::wait()$/;"	f	class:CountDownLatch
+waitForSeconds	base/Condition.cc	/^bool muduo::Condition::waitForSeconds(int seconds)$/;"	f	class:muduo::Condition
+wakeup	net/EventLoop.cc	/^void EventLoop::wakeup()$/;"	f	class:EventLoop
+wakeupChannel_	net/EventLoop.h	/^  boost::scoped_ptr<Channel> wakeupChannel_;$/;"	m	class:muduo::net::EventLoop
+wakeupFd_	net/EventLoop.h	/^  int wakeupFd_;$/;"	m	class:muduo::net::EventLoop
+weekDay	base/Date.h	/^  int weekDay() const$/;"	f	class:muduo::Date
+what	base/Exception.cc	/^const char* Exception::what() const throw()$/;"	f	class:Exception
+wkTid_	base/Thread.cc	/^  boost::weak_ptr<pid_t> wkTid_;$/;"	m	struct:muduo::detail::ThreadData	file:
+writableBytes	net/Buffer.h	/^  size_t writableBytes() const$/;"	f	class:muduo::net::Buffer
+write	base/FileUtil.cc	/^size_t FileUtil::AppendFile::write(const char* logline, size_t len)$/;"	f	class:FileUtil::AppendFile
+write	base/GzipFile.h	/^  int write(StringPiece buf) { return ::gzwrite(file_, buf.data(), buf.size()); }$/;"	f	class:muduo::GzipFile
+write	net/SocketsOps.cc	/^ssize_t sockets::write(int sockfd, const void *buf, size_t count)$/;"	f	class:sockets
+write	net/ZlibStream.h	/^  bool write(Buffer* input)$/;"	f	class:muduo::net::ZlibOutputStream
+write	net/ZlibStream.h	/^  bool write(StringPiece buf)$/;"	f	class:muduo::net::ZlibOutputStream
+writeCallback_	net/Channel.h	/^  EventCallback writeCallback_;$/;"	m	class:muduo::net::Channel
+writeCompleteCallback_	net/TcpClient.h	/^  WriteCompleteCallback writeCompleteCallback_;$/;"	m	class:muduo::net::TcpClient
+writeCompleteCallback_	net/TcpConnection.h	/^  WriteCompleteCallback writeCompleteCallback_;$/;"	m	class:muduo::net::TcpConnection
+writeCompleteCallback_	net/TcpServer.h	/^  WriteCompleteCallback writeCompleteCallback_;$/;"	m	class:muduo::net::TcpServer
+writerIndex_	net/Buffer.h	/^  size_t writerIndex_;$/;"	m	class:muduo::net::Buffer
+writtenBytes	base/FileUtil.h	/^  size_t writtenBytes() const { return writtenBytes_; }$/;"	f	class:muduo::FileUtil::AppendFile
+writtenBytes_	base/FileUtil.h	/^  size_t writtenBytes_;$/;"	m	class:muduo::FileUtil::AppendFile
+x	base/tests/Fork_test.cc	/^__thread int x = 0;$/;"	m	namespace:__anon1	file:
+x_	base/tests/Thread_test.cc	/^  double x_;$/;"	m	class:Foo	file:
+year	base/Date.h	/^    int year; \/\/ [1900..2500]$/;"	m	struct:muduo::Date::YearMonthDay
+year	base/Date.h	/^  int year() const$/;"	f	class:muduo::Date
+yearMonthDay	base/Date.cc	/^Date::YearMonthDay Date::yearMonthDay() const$/;"	f	class:Date
+zero	base/LogStream.cc	/^const char* zero = digits + 9;$/;"	m	namespace:muduo::detail	file:
+zerror_	net/ZlibStream.h	/^  int zerror_;$/;"	m	class:muduo::net::ZlibInputStream
+zerror_	net/ZlibStream.h	/^  int zerror_;$/;"	m	class:muduo::net::ZlibOutputStream
+zlibErrorCode	net/ZlibStream.h	/^  int zlibErrorCode() const { return zerror_; }$/;"	f	class:muduo::net::ZlibOutputStream
+zlibErrorMessage	net/ZlibStream.h	/^  const char* zlibErrorMessage() const { return zstream_.msg; }$/;"	f	class:muduo::net::ZlibOutputStream
+zstream_	net/ZlibStream.h	/^  z_stream zstream_;$/;"	m	class:muduo::net::ZlibInputStream
+zstream_	net/ZlibStream.h	/^  z_stream zstream_;$/;"	m	class:muduo::net::ZlibOutputStream
+~Acceptor	net/Acceptor.cc	/^Acceptor::~Acceptor()$/;"	f	class:Acceptor
+~AppendFile	base/FileUtil.cc	/^FileUtil::AppendFile::~AppendFile()$/;"	f	class:FileUtil::AppendFile
+~AsyncLogging	base/AsyncLogging.h	/^  ~AsyncLogging()$/;"	f	class:muduo::AsyncLogging
+~Channel	net/Channel.cc	/^Channel::~Channel()$/;"	f	class:Channel
+~Condition	base/Condition.h	/^  ~Condition()$/;"	f	class:muduo::Condition
+~Connector	net/Connector.cc	/^Connector::~Connector()$/;"	f	class:Connector
+~Deleter	base/ThreadLocalSingleton.h	/^    ~Deleter()$/;"	f	class:muduo::ThreadLocalSingleton::Deleter
+~EPollPoller	net/poller/EPollPoller.cc	/^EPollPoller::~EPollPoller()$/;"	f	class:EPollPoller
+~EventLoop	net/EventLoop.cc	/^EventLoop::~EventLoop()$/;"	f	class:EventLoop
+~EventLoopThread	net/EventLoopThread.cc	/^EventLoopThread::~EventLoopThread()$/;"	f	class:EventLoopThread
+~EventLoopThreadPool	net/EventLoopThreadPool.cc	/^EventLoopThreadPool::~EventLoopThreadPool()$/;"	f	class:EventLoopThreadPool
+~Exception	base/Exception.cc	/^Exception::~Exception() throw ()$/;"	f	class:Exception
+~File	base/TimeZone.cc	/^  ~File()$/;"	f	class:muduo::detail::File
+~FixedBuffer	base/LogStream.h	/^  ~FixedBuffer()$/;"	f	class:muduo::detail::FixedBuffer
+~GzipFile	base/GzipFile.h	/^  ~GzipFile()$/;"	f	class:muduo::GzipFile
+~HttpServer	net/http/HttpServer.cc	/^HttpServer::~HttpServer()$/;"	f	class:HttpServer
+~Inspector	net/inspect/Inspector.cc	/^Inspector::~Inspector()$/;"	f	class:Inspector
+~LogFile	base/LogFile.cc	/^LogFile::~LogFile()$/;"	f	class:LogFile
+~Logger	base/Logging.cc	/^Logger::~Logger()$/;"	f	class:Logger
+~MutexLock	base/Mutex.h	/^  ~MutexLock()$/;"	f	class:muduo::MutexLock
+~MutexLockGuard	base/Mutex.h	/^  ~MutexLockGuard()$/;"	f	class:muduo::MutexLockGuard
+~PeriodicTimer	net/tests/Channel_test.cc	/^  ~PeriodicTimer()$/;"	f	class:PeriodicTimer
+~PollPoller	net/poller/PollPoller.cc	/^PollPoller::~PollPoller()$/;"	f	class:PollPoller
+~Poller	net/Poller.cc	/^Poller::~Poller()$/;"	f	class:Poller
+~ProtobufCodecLite	net/protobuf/ProtobufCodecLite.h	/^  virtual ~ProtobufCodecLite() { }$/;"	f	class:muduo::net::ProtobufCodecLite
+~ReadSmallFile	base/FileUtil.cc	/^FileUtil::ReadSmallFile::~ReadSmallFile()$/;"	f	class:FileUtil::ReadSmallFile
+~RpcChannel	net/protorpc/RpcChannel.cc	/^RpcChannel::~RpcChannel()$/;"	f	class:RpcChannel
+~Socket	net/Socket.cc	/^Socket::~Socket()$/;"	f	class:Socket
+~TcpClient	net/TcpClient.cc	/^TcpClient::~TcpClient()$/;"	f	class:TcpClient
+~TcpConnection	net/TcpConnection.cc	/^TcpConnection::~TcpConnection()$/;"	f	class:TcpConnection
+~TcpServer	net/TcpServer.cc	/^TcpServer::~TcpServer()$/;"	f	class:TcpServer
+~Test	base/tests/SingletonThreadLocal_test.cc	/^  ~Test()$/;"	f	class:Test
+~Test	base/tests/Singleton_test.cc	/^  ~Test()$/;"	f	class:Test
+~Test	base/tests/ThreadLocalSingleton_test.cc	/^  ~Test()$/;"	f	class:Test
+~Test	base/tests/ThreadLocal_test.cc	/^  ~Test()$/;"	f	class:Test
+~TestNoDestroy	base/tests/Singleton_test.cc	/^  ~TestNoDestroy()$/;"	f	class:TestNoDestroy
+~Thread	base/Thread.cc	/^Thread::~Thread()$/;"	f	class:Thread
+~ThreadLocal	base/ThreadLocal.h	/^  ~ThreadLocal()$/;"	f	class:muduo::ThreadLocal
+~ThreadPool	base/ThreadPool.cc	/^ThreadPool::~ThreadPool()$/;"	f	class:ThreadPool
+~TimerQueue	net/TimerQueue.cc	/^TimerQueue::~TimerQueue()$/;"	f	class:TimerQueue
+~UnassignGuard	base/Mutex.h	/^    ~UnassignGuard()$/;"	f	class:muduo::MutexLock::UnassignGuard
+~ZlibInputStream	net/ZlibStream.h	/^  ~ZlibInputStream()$/;"	f	class:muduo::net::ZlibInputStream
+~ZlibOutputStream	net/ZlibStream.h	/^  ~ZlibOutputStream()$/;"	f	class:muduo::net::ZlibOutputStream
