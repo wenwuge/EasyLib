@@ -4,6 +4,7 @@ import os
 import urllib2
 import io
 import time 
+import hashlib
 
 def calMd5(afile):  
     m = hashlib.md5()  
@@ -55,21 +56,26 @@ class DconfManager:
     def init_dconf(self):
         for key in self.load_items_:
             item = self.load_items_[key]
-            if os.path.exists(item.dest_ptah_)==false:
-                __download(self, item.source_path_, item.dest_path_)
+            if os.path.exists(item.dest_path_) == False:
+                self.__download(item.source_path_, item.dest_path_)
             md5 = calMd5(item.dest_path_);
-            file = os.open(item.dest_path_+".md5", w)
+            file = open(item.dest_path_+".md5", "w")
             file.write(md5)
             file.close()
 
         
     def __download(self, url, dest):
-        f = urllib2.urlopen()
-        data = f. read()
+        try:
+            f = urllib2.urlopen(url)
+            data = f.read()
+        except Exception,ex:
+            print "urlopen error"
+            print "Exception:",ex
+
         with open(dest, "wb") as code:
             code.write(data)
         md5 = calMd5(dest);
-        file = os.open(dest +".md5", w)
+        file = open(dest +".md5", "w")
         file.write(md5)
         file.close()
 
@@ -78,17 +84,23 @@ class DconfManager:
         #get the source file md5
         md5_path = item.source_path_ + ".md5"
         print md5_path
-        f_online = urllib2.urlopen(md5_path)
+        try:
+            f_online = urllib2.urlopen(md5_path)
+        except Exception,ex:
+            print "urlopen error"
+            print "Exception:",ex
+
         md5_online = f_online.read()
         
         #compare the local file md5 with online
-        f_local = os.open(item.dest_path_ + ".md5")
+        f_local = open(item.dest_path_ + ".md5", "r+")
         md5_local = f_local.readline()
         f_local.close()
         
         #if not same, download the online file and do action for users
         if md5_local != md5_online:
-            __download(self, item.source_path_, item.dest_path_)
+            self.__download(item.source_path_, item.dest_path_)
+            print "local,online md5 file is not equal, download online file finish"
             os.system(item.action_)
 
     def start(self):
@@ -101,6 +113,7 @@ class DconfManager:
 if __name__ == "__main__":
     dconf = DconfManager()
     dconf.parse("./test.ini")
+    dconf.init_dconf()
     #url = "http://crule_test.safe.qihoo.net:8360/CloudRule/data/rules/cloudkill2.xml"
     #dst = "/home/libin3-s/cloudkill.xml"
     #download(url, dst)
