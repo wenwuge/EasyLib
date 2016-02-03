@@ -27,5 +27,10 @@ int main(int argc, char** argv)
     for_each(third.begin(), third.end(), output);
     third.insert(third.end(),  fourth.begin(), fourth.end());
     for_each(third.begin(), third.end(), output);
+    
+    vector<int> fifth(3, 6), sixth(3, 8);
+    fifth.assign(sixth.begin(), sixth.end());
+    for_each(sixth.begin(), sixth.end(), output);
+
     return 0;
 }
