@@ -11,6 +11,11 @@ void output(int& i)
 int main(int argc, char** argv)
 {
     vector<int> first(10,1), second(10,2);
+
+    insert(front_inserter(first), 3);
+
+    for_each(first.begin(), first.end(), output);
+#if 0
     //test back_inserter 
     copy(second.begin() , second.end() , back_inserter(first));
     for_each(first.begin(), first.end(), output);
@@ -31,6 +36,6 @@ int main(int argc, char** argv)
     vector<int> fifth(3, 6), sixth(3, 8);
     fifth.assign(sixth.begin(), sixth.end());
     for_each(sixth.begin(), sixth.end(), output);
-
+#endif
     return 0;
 }
