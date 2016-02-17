@@ -3,6 +3,7 @@
 import pexpect
 import paramiko
 import sys
+import os
 
 def ssh_cmd(ip,username,passwd, cmd):
     ret = -1
@@ -53,10 +54,16 @@ def ssh2(ip,username,passwd,cmd):
         print'%s\tError\n'%(ip)
 
 if __name__=='__main__':
-    host = sys.argv[1]
+#./multssh.py `pwd`/hosts libin3-s 'Libin123!@#' 'ls -l /home/libin3-s' 
+    hosts = sys.argv[1]
     username = sys.argv[2]
     passwd = sys.argv[3]
     cmds = sys.argv[4]
 
-    #ssh2(host, username, passwd, cmds)
-    ssh_cmd(host, username, passwd, cmds)
+    f = open(hosts)
+    for host in f:
+        host = host.strip()
+        print host
+        #ssh2(host, username, passwd, cmds)
+        ssh_cmd(host, username, passwd, cmds)
+    f.close()
