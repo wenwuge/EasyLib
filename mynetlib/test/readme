@@ -1,0 +1,1 @@
+ g++ -o echoserver EchoServer_unittest.cc  ../base/libbase.a  ../net/libnet.a  -I../base -I../net -lpthread
