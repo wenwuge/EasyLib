@@ -1,0 +1,77 @@
+syntax = "proto2";
+
+package lcs.extra;
+
+import "lcs_common.proto";
+
+// Gateway任何时候向后端服务器转发消息的时候，都要带上这个extra
+message ClientContext 
+{
+    enum ExtraID 
+    { 
+        kID = 1; 
+    }
+    
+    required Channel channel = 1;
+	//repeated StringPair http_uri_params    = 2;
+	//repeated StringPair http_header_params = 3;
+	map<string, string>     http_uri_params    = 2; 
+	map<string, string>     http_header_params = 3; 
+}
+
+// 后端服务回应Gateway的请求时，都要带上这个extra
+message Result 
+{
+    enum ExtraID 
+    { 
+        kID = 1; 
+    }
+
+    enum ErrorCode
+    {
+        kOK = 0; // successfully
+        kInvalidRequest = 1; //非法的请求，需要gateway断开这个连接
+        kInvalidClientPublicKey = 2; 
+        kInvalidClientSymmetricKey = 3; 
+        kTooManyConnections = 4; //太多的连接了，需要gateway断开这个连接
+        kRetryReq = 5; //请gateway重试请求
+    }
+
+    required ErrorCode ec   = 1;
+    optional string    mid  = 2;
+}
+
+//
+//// push服务向Gateway发送push消息时，带上这个extra
+//message Push
+//{
+//    enum ExtraID 
+//    { 
+//        kID = 2; 
+//    }
+//
+//    enum Type
+//    {
+//        kBroadcast = 0;
+//        kMulticast = 1;
+//        kUnicast   = 2;
+//    }
+//
+//    required Type     type = 1;
+//    repeated Channel.ClientID cids = 2; 
+//}
+
+
+//随机异或密钥, 有两种情况下会用到：
+//  1. Login服务器向Gateway回应消息时会带上这个extra
+//  2. Gateway与sconf服务器转发消息时带上的extra
+message RamdonXorKey
+{
+    enum ExtraID 
+    { 
+        kID = 3; 
+    }
+
+    required bytes key = 1;
+}
+

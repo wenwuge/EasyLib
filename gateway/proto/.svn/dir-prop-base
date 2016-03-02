@@ -1,0 +1,10 @@
+K 10
+svn:ignore
+V 31
+*.o
+*.d
+*.pb.h
+*.pb.cc
+*pb2.py
+
+END

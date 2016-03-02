@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/qdev/!svn/ver/157245/CloudSrv/trunk/lcs/if
+END
+lcs_push.proto
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/qdev/!svn/ver/155313/CloudSrv/trunk/lcs/if/lcs_push.proto
+END
+lcs_extra.proto
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/qdev/!svn/ver/146797/CloudSrv/trunk/lcs/if/lcs_extra.proto
+END
+lcs_session.proto
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/qdev/!svn/ver/146782/CloudSrv/trunk/lcs/if/lcs_session.proto
+END
+lcs_session_kv.proto
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/qdev/!svn/ver/146781/CloudSrv/trunk/lcs/if/lcs_session_kv.proto
+END
+lcs_msgcenter.proto
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/qdev/!svn/ver/157245/CloudSrv/trunk/lcs/if/lcs_msgcenter.proto
+END
+lcs_common.proto
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/qdev/!svn/ver/155499/CloudSrv/trunk/lcs/if/lcs_common.proto
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/qdev/!svn/ver/154588/CloudSrv/trunk/lcs/if/Makefile
+END

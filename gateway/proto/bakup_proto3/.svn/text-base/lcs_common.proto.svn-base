@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package lcs;
+
+//Gateway server add Channel into extrabuf when doing login validation
+
+enum ServerStatus {
+    kOffline = 0;
+    kOnline  = 1;
+}
+
+message Channel
+{
+    message ClientID 
+    {
+        optional int32   port    = 1;//network byte order
+        optional uint32  ipv4    = 2;//ip v4, use inet_aton, network byte ordered
+        //  optional uint64  ipv6h   = 3;//ip v6 high 8 bytes
+        //  optional uint64  ipv6l   = 4;//ip v6 low 8 bytes
+    }
+
+    optional ClientID  cid  = 1;//
+    optional uint32    gwid = 2;//gateway server id, 如果没有，就使用gw-ip代替(network byte ordered).
+}

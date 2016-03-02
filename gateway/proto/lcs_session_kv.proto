@@ -1,0 +1,40 @@
+syntax = "proto2";
+
+package lcs.kv;
+
+
+import "lcs_common.proto";
+
+//kvdb data struct:
+//  - key:mid
+//  - value: Sessions
+
+
+
+message CryptoKey
+{
+    optional int32   type   = 1 [default = 2]; //key type, 2:IDEA
+    required int32   id     = 2 [default = 1]; //key id, value range : 0~65535
+}
+
+message User {
+    optional uint64    qid       = 1;//qihoo id, 360 user center
+    optional uint64    gid       = 2;//browser cookie id
+    optional string    name      = 3;
+}
+
+message Session
+{
+    optional ServerStatus status         = 1 [default=kOffline];
+    required Channel      channel        = 2;
+    optional CryptoKey    crypto_key     = 3;//
+    optional User         user           = 4;
+    repeated int32        business_types = 5;//supporting businesses
+}
+
+message Sessions
+{
+    repeated Session sessions = 1;
+}
+
+

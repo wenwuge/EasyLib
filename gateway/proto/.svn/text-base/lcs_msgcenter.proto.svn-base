@@ -1,0 +1,57 @@
+syntax = "proto2";
+
+package lcs;
+
+import "lcs_common.proto";
+
+message Address {
+    optional string  file_path = 1; //本地文件地址
+    optional string  url_path  = 2; //网络url路径
+    repeated string  mids      = 3; //mid列表
+}
+
+message MsgInfo {
+
+    enum MsgType
+    {
+        kBroadcast  = 0;
+        kMulticast  = 1;
+        kQuery     =3;
+    }
+
+    enum MsgSubtype
+    {
+        kNormal         = 0 ;
+        kZonePush       = 1 ; //区域广播 
+        kMidAddrPush    = 2 ; //指定mid列表多播
+    }
+
+    enum MsgStatus
+    {
+        kAlive       = 0;
+        kPaused      = 1;
+        kCompleted   = 2;
+        kCanceled    = 3;
+    }
+    
+
+    optional uint32         msg_bs_type     = 1; //消息业务类型 ldd body中的type 
+    optional string         message         = 2;
+    required uint64         msg_id          = 3;
+    optional MsgType        msg_type        = 4;
+    optional MsgSubtype     msg_subtype     = 5;
+    optional MsgStatus      msg_status      = 6; 
+    optional uint64         start_time      = 7;  //unix时间戳
+    optional uint64         expire_time     = 8; //过期时间小于起始时间为一次性推送
+    optional string         server          = 9; 
+    optional uint64         success_num     = 10; //推送成功的mid数量
+    optional uint64         push_time       = 11; //消息中心推送的时间，unix时间戳
+    
+    repeated Zone           mid_zones       =20; //区域广播有效    
+    optional Gray           mid_gray        =21; //推送的灰度，广播有效
+    optional Address        mid_addr        =22; //推送的mid地址
+}
+
+
+
+

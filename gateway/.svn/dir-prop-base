@@ -1,0 +1,6 @@
+K 13
+svn:externals
+V 63
+https://se.src.corp.qihoo.net/qdev/CloudSrv/trunk/lcs/if proto
+
+END
