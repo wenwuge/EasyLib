@@ -14,7 +14,9 @@ int main(int argc, char** argv)
     derived b;
     base*   a = &b;
 
-    cout << "typeid of b is " << typeid(*a).name() << endl;
+    cout << "typeid of a is " << typeid(a).name() << endl;
+    cout << "typeid of *a is " << typeid(*a).name() << endl;
+    cout << "typeid of b is " << typeid(b).name() << endl;
     return 0;
 }
 
