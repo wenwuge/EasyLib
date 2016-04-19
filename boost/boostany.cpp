@@ -2,9 +2,14 @@
 #include <iostream>
 #include <string>
 #include <vector>
-
+#include <boost/shared_ptr.hpp>
+using namespace std;
 using namespace boost;
 
+class Test{
+public:
+    ~Test(){std::cout << "test deconstruct!" << std::endl;}
+};
 int main(int argc, char** argv)
 {
     //basic usage
@@ -29,6 +34,12 @@ int main(int argc, char** argv)
     any_vector.push_back(1);
     any_vector.push_back(std::string("hello"));
 
+    any d;
+    boost::shared_ptr<Test> test_ptr(new Test);
+    d = test_ptr;
+    test_ptr.reset();
+    std::cout << "test_ptr reset" << endl;
+    
     
     return 0;
 }
