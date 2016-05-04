@@ -1,6 +1,11 @@
 #include "channel.h"
 #include <boost/shared_ptr.hpp>
 #include <actor.h>
+Channel::Channel(Actor* actor, int fd)
+{
+    fd_ = fd;
+    actor_ = actor;
+}
 
 void Channel::Remove()
 {
@@ -39,7 +44,7 @@ void Channel::HandleEventWithGuard(Timestamp receiveTime)
   eventHandling_ = false;
 }
 
-void Channel::handleEvent(Timestamp receiveTime)
+void Channel::HandleEvent(Timestamp& receiveTime)
 {
     boost::shared_ptr<void> guard;
     if(tied_){

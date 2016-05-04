@@ -16,7 +16,7 @@ public:
     typedef boost::function<void()> EventCallback;
     typedef boost::function<void(Timestamp)> ReadEventCallback;
     Channel(Actor * actor, int fd);
-    void handleEvent(Timestamp receiveTime);
+    //void handleEvent(Timestamp receiveTime);
     void setReadCallback(const ReadEventCallback& cb)
     { readCallback_ = cb; }
     void setWriteCallback(const EventCallback& cb)

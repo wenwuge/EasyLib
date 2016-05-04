@@ -1,26 +1,42 @@
 #ifndef __EVENTLOOPTHREAD
 #define __EVENTLOOPTHREAD
-#include <Thread>
+#include <Thread.h>
 #include <vector>
-#include <Mutex>
-#include <boost/scoped_shared.hpp>
+#include <Mutex.h>
+#include <Condition.h>
+#include <boost/scoped_ptr.hpp>
+#include "actor.h"
+#include <boost/function.hpp>
+#include <boost/bind.hpp>
 
+using namespace std;
+using namespace muduo;
 typedef boost::function<void()> functor;
 
 class EventLoopThread{
 public:
-    EventLoopThread();
+    enum{
+        STOPPED,
+        STARTED
+    };
+    EventLoopThread(string& name) ;
+    ~EventLoopThread();
     void Run();
-
 private:
-    boost::scoped_shared<Thread> thread_;
-    boost::scoped_shared<Actor>  actor_;
+    void ThreadLoopFunc();
+    void ReadNotifyEvents();private:
+    boost::scoped_ptr<Thread> thread_;
+    boost::scoped_ptr<Actor>  actor_;
+    boost::scoped_ptr<Channel> notify_channel_;
     vector<functor> queue_;
     MutexLock queue_lock_;
+    MutexLock mutex_;
+    Condition cond_;
     //use the notify_fd_ to notify the thread that 
     //queue has new event
     int notify_fd_;
-    int watch_fd_;
+    uint8_t state_;
 
 };
+
 #endif
