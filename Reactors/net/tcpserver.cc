@@ -5,7 +5,7 @@
 #include <boost/function.hpp>
 #include <boost/bind.hpp>
 #define BACKLOG 20
-TcpServer::TcpServer()
+TcpServer::TcpServer():actor_(new Actor())
 {
 }
 

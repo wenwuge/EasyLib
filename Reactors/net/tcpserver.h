@@ -10,6 +10,7 @@
 #include <netinet/in.h>
 #include <sys/types.h>          /* See NOTES */
 #include <sys/socket.h>
+#include <actor.h>
 
 using namespace muduo;
 using namespace std;
