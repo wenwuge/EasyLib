@@ -5,7 +5,8 @@
 #include <boost/function.hpp>
 #include <boost/bind.hpp>
 #define BACKLOG 20
-TcpServer::TcpServer():actor_(new Actor())
+TcpServer::TcpServer():actor_(new Actor()),
+        next_id_(0)
 {
 }
 
@@ -78,8 +79,26 @@ void TcpServer::HandleReadEvent(Timestamp ts)
 
 void TcpServer::NewConnectionEstablished(int fd,struct sockaddr_in &peer) 
 {
-    cout << "conn fd: " << fd << " has been connected" << endl;
     cout << "remote ip: " << inet_ntoa(peer.sin_addr) << " port: " << ntohs(peer.sin_port) << endl; 
+    //select one event_loop_thread
+    EventLoopThread * selected_loop = &threads_[next_id_];
+    if(next_id_ == (options_.thread_num_ - 1)){
+        next_id_ = 0;
+    }else{
+        next_id_ ++ ;
+    }
+
+    //create connection object
+    boost::shared_ptr<TcpConnection> conn_ptr(new TcpConnection(selected_loop,fd));  
+
+    //set write,read,close callbacks
+    conn_ptr->SetMessageRecvCallbak(message_callback_);
+    conn_ptr->SetWriteCompletedCallback(writecomplete_callback_);
+    conn_ptr->SetConnectionCloseCallback(closed_callback_);
+    conn_ptr->SetConnectionEstablishedCallback(established_callback_);
+    
+    //put the functor into the loop selected 's functor queue
+    selected_loop->QueueInLoop(boost::bind(&TcpConnection::ConnectionEstablished, conn_ptr));
 }
 void TcpServer::Stop()
 {

@@ -40,9 +40,11 @@ void EventLoopThread::ThreadLoopFunc()
         state_ = STARTED;
         cond_.notify();
     }
+    pid_ = CurrentThread::tid();
     //here ,maybe the actor will poll
     actor_->Loop();
 }
+
 
 void EventLoopThread::ReadNotifyEvents()
 {
@@ -50,4 +52,30 @@ void EventLoopThread::ReadNotifyEvents()
 
 EventLoopThread::~EventLoopThread()
 {
+}
+
+bool EventLoopThread::IsInLoop()
+{
+    return thread_->tid() == CurrentThread::tid();
+}
+
+void EventLoopThread::NotifyEvent()
+{
+    uint64_t one = 1;
+    int n = write(notify_fd_ , &one ,sizeof(one));
+    if(n != sizeof(one)){
+        cout << "notify evnet loop failed" << endl;
+    }
+}
+
+void EventLoopThread::QueueInLoop(functor & func)
+{
+    if(IsInLoop()){
+        func();
+    }else{
+        MutexLockGuard guard(queue_lock_);
+        queue_.push_back(func);
+        //notify the relative loop thread
+        
+    }
 }

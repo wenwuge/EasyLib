@@ -36,6 +36,7 @@ private:
     //queue has new event
     int notify_fd_;
     uint8_t state_;
+    //pid_t pid_;
 
 };
 

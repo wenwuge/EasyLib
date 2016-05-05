@@ -56,6 +56,7 @@ private:
     boost::scoped_ptr<Channel> accept_channel_;
     uint8_t state_;
     int listen_fd_;
+    int next_id_;
 
 };
 
