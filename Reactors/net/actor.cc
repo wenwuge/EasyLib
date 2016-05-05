@@ -7,22 +7,7 @@ Actor::Actor()
 
 Actor::~Actor()
 {
-    looping_ = true;
-    quit_ = false;
-    while(!quit_){
-        active_channels_.clear();
-        poll_returntime_ = poller_->Poll(kPollTimeMs, active_channels_);
-        
-        for(list<Channel*>::iterator it = active_channels_.begin(); it !=  active_channels_.end(); it++){
-            current_active_channel_ = *it;
-            current_active_channel_->HandleEvent(poll_returntime_);
-        }
 
-        current_active_channel_ = NULL;
-        DoPendingFunctors();
-    }
-
-    looping_ = false;
 }
 
 void Actor::DoPendingFunctors()
@@ -40,5 +25,20 @@ void Actor::RemoveChannel(Channel* channel){
 
 void Actor::Loop()
 {
+    looping_ = true;
+    quit_ = false;
+    while(!quit_){
+        active_channels_.clear();
+        poll_returntime_ = poller_->Poll(kPollTimeMs, active_channels_);
+        
+        for(list<Channel*>::iterator it = active_channels_.begin(); it !=  active_channels_.end(); it++){
+            current_active_channel_ = *it;
+            current_active_channel_->HandleEvent(poll_returntime_);
+        }
 
+        current_active_channel_ = NULL;
+        DoPendingFunctors();
+    }
+
+    looping_ = false;
 }

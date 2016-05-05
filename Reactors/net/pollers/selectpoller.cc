@@ -1,8 +1,16 @@
 #include "selectpoller.h"
 #include <errno.h>
 #include <poll.h>
+#include<stdio.h>
+#include<stdlib.h>
 using namespace muduo;
 
+SelectPoller::SelectPoller()
+{
+    FD_ZERO(&readfds_);
+    FD_ZERO(&writefds_);
+    max_fd_ = 3;
+}
 void SelectPoller::FillActiveChannels(fd_set& readset, fd_set& writeset, ChannelList& active_channels)
 {
     for(list<int>::iterator begin = fds_.begin(); begin != fds_.end(); begin++){
@@ -41,11 +49,13 @@ Timestamp SelectPoller::Poll(int timeout_ms, ChannelList& active_channels)
     
     if(ret > 0){
         FillActiveChannels(read_set, write_set, active_channels);
-    }else if(ret = 0){
+    }else if(ret == 0){
         cout << "nothing happended"<< endl;
     }else {
+       cout << "ret : " << ret << endl;
        if(errno != EINTR){
-            cout << "select error happen!" << endl;
+            perror("select error happen!");
+    //            cout << "select error happen!, errno: " << errno <<endl;
        }
     }
     return now;
@@ -89,7 +99,7 @@ bool SelectPoller::UpdateChannel(Channel* channel)
 
     return true;
 }
-bool SelectPoller::DelChannel(Channel* channel)
+bool SelectPoller::RemoveChannel(Channel* channel)
 {
     channels_.erase(channel->fd());  
     fds_.remove(channel->fd());

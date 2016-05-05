@@ -3,6 +3,7 @@
 #include <actor.h>
 Channel::Channel(Actor* actor, int fd)
 {
+    index_ = -1;
     fd_ = fd;
     actor_ = actor;
 }

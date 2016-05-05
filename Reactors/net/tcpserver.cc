@@ -51,9 +51,10 @@ int TcpServer::Start()
     //set accept channel callback
     accept_channel_->setReadCallback(
             boost::bind(&TcpServer::HandleReadEvent, this, _1));
+    accept_channel_->enableReading();
     //accept_channel_->setCloseCallBack();
     //accept_channel_->setErrorCallBack();
-    actor_->UpdateChannel(accept_channel_.get());
+    //actor_->UpdateChannel(accept_channel_.get());
     
 
     state_ = RUNNING;

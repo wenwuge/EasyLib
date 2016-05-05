@@ -10,7 +10,7 @@ public:
     ~SelectPoller();
     virtual Timestamp Poll(int timeout_ms, ChannelList& active_channels);
     virtual bool UpdateChannel(Channel* channel);
-    virtual bool DelChannel(Channel* channel);
+    virtual bool RemoveChannel(Channel* channel);
 
 private:
     void FillActiveChannels(fd_set& readset, fd_set& writeset, ChannelList& active_channels);
