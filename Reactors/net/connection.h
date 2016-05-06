@@ -1,5 +1,19 @@
 #ifndef __CONNECTION
 #define __CONNECTION
+#include <boost/function.hpp>
+#include <boost/bind.hpp>
+#include <boost/shared_ptr.hpp>
+#include "buffer.h"
+#include <boost/make_shared.hpp>
+#include <boost/enable_shared_from_this.hpp>
+#include <Timestamp.h>
+#include  "eventloopthread.h"
+#include  "channel.h"
+using namespace muduo;
+
+
+class TcpConnection;
+
 typedef boost::shared_ptr<TcpConnection> TcpConnectionPtr;
 typedef boost::function<void (const TcpConnectionPtr&)> ConnectionCallback;
 typedef boost::function<void (const TcpConnectionPtr&)> CloseCallback;
@@ -8,7 +22,7 @@ typedef boost::function<void (const TcpConnectionPtr&)> WriteCompleteCallback;
 typedef boost::function<void (const TcpConnectionPtr&,
                               Buffer*,
                               Timestamp)> MessageCallback;
-class TcpConnection{
+class TcpConnection:public  boost::enable_shared_from_this<TcpConnection>{
 public:
     TcpConnection(EventLoopThread * thread, int fd);
     void Send(void * data, uint32_t len);
@@ -33,12 +47,14 @@ private:
     void HandleRead(Timestamp ts);
     void HandleWrite();
     void HandleClose();
+    void HandleError();
 
 
 private:
     boost::scoped_ptr<Channel> channel_;
     EventLoopThread * thread_;
     int fd_;
+    int error_;
     Buffer send_buffer_;
     Buffer recv_buffer_;
 

@@ -11,25 +11,31 @@
 #include <sys/types.h>          /* See NOTES */
 #include <sys/socket.h>
 #include <actor.h>
+#include "connection.h"
+#include "buffer.h"
 
 using namespace muduo;
 using namespace std;
 typedef boost::shared_ptr<Channel> ConnPtr;
 
-typedef boost::function<void(ConnPtr)> ReceiveCallback;
-typedef boost::function<void(ConnPtr)> SendCallback;
-typedef boost::function<void(int)> OnConnectedCallback;
-typedef boost::function<void(ConnPtr)> OnClosedCallback;
+typedef boost::shared_ptr<TcpConnection> TcpConnectionPtr;
+typedef boost::function<void (const TcpConnectionPtr&)> ConnectionCallback;
+typedef boost::function<void (const TcpConnectionPtr&)> CloseCallback;
+typedef boost::function<void (const TcpConnectionPtr&)> WriteCompleteCallback;
+
+typedef boost::function<void (const TcpConnectionPtr&,
+                              Buffer*,
+                              Timestamp)> MessageCallback;
 
 struct Options{
     uint16_t thread_num_;
     uint16_t port_;
     string addr_;
 
-    ReceiveCallback rev_cb_;
-    SendCallback    send_cb_;
-    OnConnectedCallback connected_cb_;
-    OnClosedCallback close_cb_;
+    MessageCallback  rev_cb_;
+    WriteCompleteCallback     send_cb_;
+    ConnectionCallback connected_cb_;
+    ConnectionCallback close_cb_;
 };
 
 class TcpServer{
@@ -58,6 +64,11 @@ private:
     int listen_fd_;
     int next_id_;
 
+    //various callbacks
+    MessageCallback message_callback_;
+    WriteCompleteCallback writecomplete_callback_;
+    ConnectionCallback   established_callback_;
+    ConnectionCallback   closed_callback_;
 };
 
 #endif
