@@ -68,7 +68,7 @@ void EventLoopThread::NotifyEvent()
     }
 }
 
-void EventLoopThread::QueueInLoop(functor & func)
+void EventLoopThread::QueueInLoop(const functor & func)
 {
     if(IsInLoop()){
         func();

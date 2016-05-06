@@ -22,6 +22,10 @@ public:
     EventLoopThread(string& name) ;
     ~EventLoopThread();
     void Run();
+    void QueueInLoop(const functor & func);
+private:
+    bool IsInLoop();
+    void NotifyEvent();
 private:
     void ThreadLoopFunc();
     void ReadNotifyEvents();private:
@@ -36,7 +40,7 @@ private:
     //queue has new event
     int notify_fd_;
     uint8_t state_;
-    //pid_t pid_;
+    pid_t pid_;
 
 };
 

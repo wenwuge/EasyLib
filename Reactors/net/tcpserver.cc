@@ -92,13 +92,14 @@ void TcpServer::NewConnectionEstablished(int fd,struct sockaddr_in &peer)
     boost::shared_ptr<TcpConnection> conn_ptr(new TcpConnection(selected_loop,fd));  
 
     //set write,read,close callbacks
-    conn_ptr->SetMessageRecvCallbak(message_callback_);
+    conn_ptr->SetMessageRecvCallback(message_callback_);
     conn_ptr->SetWriteCompletedCallback(writecomplete_callback_);
     conn_ptr->SetConnectionCloseCallback(closed_callback_);
     conn_ptr->SetConnectionEstablishedCallback(established_callback_);
     
     //put the functor into the loop selected 's functor queue
     selected_loop->QueueInLoop(boost::bind(&TcpConnection::ConnectionEstablished, conn_ptr));
+    //selected_loop->QueueInLoop(boost::bind(&TcpServer::Stop, this));
 }
 void TcpServer::Stop()
 {
