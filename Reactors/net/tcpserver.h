@@ -57,7 +57,7 @@ private:
     void NewConnectionEstablished(int fd,struct sockaddr_in &peer); 
 private:
     Options options_;
-    vector<EventLoopThread> threads_;
+    vector<EventLoopThread*> threads_;
     boost::scoped_ptr<Actor> actor_; //master thread's loop
     boost::scoped_ptr<Channel> accept_channel_;
     uint8_t state_;
@@ -65,10 +65,13 @@ private:
     int next_id_;
 
     //various callbacks
+    #if 0
     MessageCallback message_callback_;
     WriteCompleteCallback writecomplete_callback_;
     ConnectionCallback   established_callback_;
     ConnectionCallback   closed_callback_;
+    #endif
+    map<int, TcpConnectionPtr> conns_;
 };
 
 #endif

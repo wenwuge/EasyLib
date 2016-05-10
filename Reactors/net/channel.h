@@ -13,6 +13,12 @@ using namespace muduo;
 class Actor;
 class Channel{
 public:
+    enum{
+        CLOSED = 0,
+        CONNECTING = 1,
+        ESTABLISHED = 2,
+        CLOSING = 3
+    };
     typedef boost::function<void()> EventCallback;
     typedef boost::function<void(Timestamp)> ReadEventCallback;
     Channel(Actor * actor, int fd);
@@ -58,5 +64,6 @@ private:
     int events_;
     int revents_;
     Actor* actor_;
+    int state_;
 };
 #endif

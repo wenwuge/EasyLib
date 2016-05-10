@@ -23,8 +23,12 @@ public:
     ~EventLoopThread();
     void Run();
     void QueueInLoop(const functor & func);
-private:
+    Actor* GetActor(){
+        return actor_.get();
+    }
+
     bool IsInLoop();
+private:
     void NotifyEvent();
 private:
     void ThreadLoopFunc();
@@ -32,8 +36,7 @@ private:
     boost::scoped_ptr<Thread> thread_;
     boost::scoped_ptr<Actor>  actor_;
     boost::scoped_ptr<Channel> notify_channel_;
-    vector<functor> queue_;
-    MutexLock queue_lock_;
+
     MutexLock mutex_;
     Condition cond_;
     //use the notify_fd_ to notify the thread that 

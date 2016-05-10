@@ -17,14 +17,18 @@ void TcpServer::SetOptions(Options& option)
 
 int TcpServer::Start()
 {
+    for(int i = 0; i < options_.thread_num_; i++){
+        string name = "thread";
+        threads_.push_back(new EventLoopThread(name));
+    }
     //start background threads
     for(int i = 0; i < threads_.size(); i++)
-        threads_[i].Run();
+        threads_[i]->Run();
 
     //add listen socket into local event loop
     int listenfd;
     struct sockaddr_in server;
-    if((listenfd = socket(AF_INET, SOCK_STREAM, 0)) == -1){
+    if((listenfd = socket(AF_INET, SOCK_STREAM| SOCK_NONBLOCK | SOCK_CLOEXEC, 0)) == -1){
         perror("create socket failed");
         return -1;
     }
@@ -69,11 +73,16 @@ void TcpServer::HandleReadEvent(Timestamp ts)
    socklen_t addrlen;
 
    addrlen = sizeof(client);
-   int connfd = accept(listen_fd_, (struct sockaddr*)&client, &addrlen);
+   int connfd = accept4(listen_fd_, (struct sockaddr*)&client, &addrlen, SOCK_NONBLOCK | SOCK_CLOEXEC);
    if(connfd >= 0){
         NewConnectionEstablished(connfd, client);
    }else{
        //error process
+        if(errno != EAGAIN){
+            cout << " accept error, errno : " << errno << endl;
+            close(connfd);
+        }
+
    }
 }
 
@@ -81,7 +90,7 @@ void TcpServer::NewConnectionEstablished(int fd,struct sockaddr_in &peer)
 {
     cout << "remote ip: " << inet_ntoa(peer.sin_addr) << " port: " << ntohs(peer.sin_port) << endl; 
     //select one event_loop_thread
-    EventLoopThread * selected_loop = &threads_[next_id_];
+    EventLoopThread * selected_loop = threads_[next_id_];
     if(next_id_ == (options_.thread_num_ - 1)){
         next_id_ = 0;
     }else{
@@ -92,11 +101,12 @@ void TcpServer::NewConnectionEstablished(int fd,struct sockaddr_in &peer)
     boost::shared_ptr<TcpConnection> conn_ptr(new TcpConnection(selected_loop,fd));  
 
     //set write,read,close callbacks
-    conn_ptr->SetMessageRecvCallback(message_callback_);
-    conn_ptr->SetWriteCompletedCallback(writecomplete_callback_);
-    conn_ptr->SetConnectionCloseCallback(closed_callback_);
-    conn_ptr->SetConnectionEstablishedCallback(established_callback_);
+    conn_ptr->SetMessageRecvCallback(options_.rev_cb_);
+    conn_ptr->SetWriteCompletedCallback(options_.send_cb_);
+    conn_ptr->SetConnectionCloseCallback(options_.close_cb_);
+    conn_ptr->SetConnectionEstablishedCallback(options_.connected_cb_);
     
+    conns_[fd] = conn_ptr;
     //put the functor into the loop selected 's functor queue
     selected_loop->QueueInLoop(boost::bind(&TcpConnection::ConnectionEstablished, conn_ptr));
     //selected_loop->QueueInLoop(boost::bind(&TcpServer::Stop, this));

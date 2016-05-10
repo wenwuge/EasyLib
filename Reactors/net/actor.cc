@@ -12,6 +12,18 @@ Actor::~Actor()
 
 void Actor::DoPendingFunctors()
 {
+   vector<functor> tmp;
+   {
+        MutexLockGuard guard(queue_lock_);
+        swap(tmp, queue_);
+
+   }
+   cout << "tmp size is " << tmp.size() << endl;
+   for(int i = 0; i < tmp.size(); i++){
+       tmp[i]();
+   }
+   cout << "finish do pending functor" << endl;
+   pending_ = false;
 }
 
 void Actor::UpdateChannel(Channel* channel)
@@ -21,6 +33,12 @@ void Actor::UpdateChannel(Channel* channel)
 
 void Actor::RemoveChannel(Channel* channel){
     poller_->RemoveChannel(channel);
+}
+
+void Actor::QueueInActor(const functor &func)
+{
+    MutexLockGuard guard(queue_lock_);
+    queue_.push_back(func);
 }
 
 void Actor::Loop()
@@ -37,7 +55,8 @@ void Actor::Loop()
         }
 
         current_active_channel_ = NULL;
-        DoPendingFunctors();
+        if(pending_)
+            DoPendingFunctors();
     }
 
     looping_ = false;

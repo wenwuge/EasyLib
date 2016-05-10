@@ -66,16 +66,18 @@ public:
         return n;
 
     }
-private:
-    char* begin(){
-        return &*buffer_.begin();
-    }
+    
     void append(const char* /*restrict*/ data, size_t len)
     {
         EnsureWritableBytes(len);
         std::copy(data, data+len, begin() + write_index_);
         write_index_ += len;
     }
+private:
+    char* begin(){
+        return &*buffer_.begin();
+    }
+
     void MakeSpace(int len){
         if((read_index_ + WriteableBytes()) < len){
                 buffer_.resize(write_index_  + len);
