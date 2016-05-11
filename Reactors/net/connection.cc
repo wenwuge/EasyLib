@@ -14,6 +14,7 @@ TcpConnection::TcpConnection(EventLoopThread * thread, int fd):
 TcpConnection::~TcpConnection()
 {
     cout << "tcp connection destruct" << endl;
+    close(fd_);
 }
 
 
@@ -62,8 +63,23 @@ void TcpConnection::Send(void * data, uint32_t len)
         thread_->QueueInLoop(boost::bind(&TcpConnection::SendInLoop, this, data, len));
     }
 }
+
+void TcpConnection::ShutdownInLoop()
+{
+    //shutdown write,the socket can be read still,close one fd will stop read/write
+    if(writeable_ != false){
+        if(shutdown(fd_, SHUT_WR) < 0){
+            cout << "shutdown write error" << endl;
+        }
+        writeable_ = false;
+    }
+}
+
 void TcpConnection::Shutdown()
 {
+    if(state_ == ESTABLISHED){
+        thread_->QueueInLoop(boost::bind(&TcpConnection::ShutdownInLoop, this));
+    }
 }
 
 void TcpConnection::ForceClose()
@@ -119,6 +135,16 @@ void TcpConnection::HandleWrite()
 
 void TcpConnection::HandleClose()
 {
+    //rm from conns, del the clannel from reactor
+    state_ = CLOSED;
+    channel_->disableAll();
+    
+    //call closed callback, user callback
+    if(disconnected_callback_)
+        disconnected_callback_(shared_from_this());
+    //tcpserver callback ,remove 
+    if(closed_callback_)
+        closed_callback_(shared_from_this());
 }
 
 void TcpConnection::HandleError()

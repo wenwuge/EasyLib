@@ -85,6 +85,17 @@ void TcpServer::HandleReadEvent(Timestamp ts)
 
    }
 }
+void TcpServer::RemoveTcpConnection(const TcpConnectionPtr& conn)
+{
+    actor_->QueueInActor(boost::bind(&TcpServer::RemoveTcpConnectionInLoop,
+                this, conn));    
+}
+void TcpServer::RemoveTcpConnectionInLoop(const TcpConnectionPtr& conn)
+{
+    conns_.erase(conn->fd());
+    
+    options_.close_cb_(conn);
+}
 
 void TcpServer::NewConnectionEstablished(int fd,struct sockaddr_in &peer) 
 {
@@ -103,7 +114,9 @@ void TcpServer::NewConnectionEstablished(int fd,struct sockaddr_in &peer)
     //set write,read,close callbacks
     conn_ptr->SetMessageRecvCallback(options_.rev_cb_);
     conn_ptr->SetWriteCompletedCallback(options_.send_cb_);
-    conn_ptr->SetConnectionCloseCallback(options_.close_cb_);
+    conn_ptr->SetConnectionDisconnectedCallback(options_.close_cb_);
+    conn_ptr->SetConnectionCloseCallback(boost::bind(&TcpServer::RemoveTcpConnection,
+                this, _1));
     conn_ptr->SetConnectionEstablishedCallback(options_.connected_cb_);
     
     conns_[fd] = conn_ptr;

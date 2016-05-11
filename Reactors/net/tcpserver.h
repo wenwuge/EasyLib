@@ -55,6 +55,8 @@ public:
 private:
     void HandleReadEvent(Timestamp ts);
     void NewConnectionEstablished(int fd,struct sockaddr_in &peer); 
+    void RemoveTcpConnection(const TcpConnectionPtr& conn);
+    void RemoveTcpConnectionInLoop(const TcpConnectionPtr& conn);
 private:
     Options options_;
     vector<EventLoopThread*> threads_;

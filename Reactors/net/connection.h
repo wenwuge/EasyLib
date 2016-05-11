@@ -6,9 +6,12 @@
 #include "buffer.h"
 #include <boost/make_shared.hpp>
 #include <boost/enable_shared_from_this.hpp>
+#include <boost/any.hpp>
 #include <Timestamp.h>
 #include  "eventloopthread.h"
 #include  "channel.h"
+#include <sys/socket.h>
+#include <unistd.h>
 using namespace muduo;
 
 
@@ -46,6 +49,9 @@ public:
     void SetConnectionCloseCallback(ConnectionCallback callback){
         closed_callback_ = callback;
     }
+    void SetConnectionDisconnectedCallback(ConnectionCallback callback){
+        disconnected_callback_ = callback;
+    }
     void SetConnectionEstablishedCallback(ConnectionCallback callback){
         established_callback_ = callback;
     }
@@ -55,6 +61,15 @@ public:
     bool Readable(){
         return readable_;
     }
+    int fd(){
+        return fd_;
+    }
+    void SetContext(boost::any&  context){
+        context_ = context;
+    }
+    boost::any* GetContext(){
+        return &context_;
+    }
 private:
     //functions below ,the channel will callback
     void HandleRead(Timestamp ts);
@@ -63,6 +78,7 @@ private:
     void HandleError();
     void SendInLoop(void * data, uint32_t len);
 
+    void ShutdownInLoop();
 private:
     boost::scoped_ptr<Channel> channel_;
     EventLoopThread * thread_;
@@ -70,11 +86,13 @@ private:
     int error_;
     Buffer send_buffer_;
     Buffer recv_buffer_;
+    boost::any context_;
 
     //various callbacks
     MessageCallback message_callback_;
     WriteCompleteCallback writecomplete_callback_;
     ConnectionCallback   established_callback_;
+    ConnectionCallback   disconnected_callback_;
     ConnectionCallback   closed_callback_;
     uint8_t state_;
     bool writeable_;
