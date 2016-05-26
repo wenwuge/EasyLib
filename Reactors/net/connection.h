@@ -70,6 +70,10 @@ public:
     boost::any* GetContext(){
         return &context_;
     }
+
+    Actor* GetActor(){
+        return thread_->GetActor();
+    }
 private:
     //functions below ,the channel will callback
     void HandleRead(Timestamp ts);

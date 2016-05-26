@@ -7,6 +7,7 @@
 #include <boost/function.hpp>
 #include <vector>
 #include <Mutex.h>
+#include "timer.h"
 
 using namespace std;
 using namespace muduo;
@@ -23,6 +24,9 @@ public:
     void DoPendingFunctors();
     void QueueInActor(const functor &func);
     void SetPending(){pending_ = true;};
+    TimerId RunAt(const Timestamp& time, const TimerCallback &cb);
+    TimerId RunEvery(int delay, const TimerCallback &cb);
+    TimerId RunAfter(int interval, const TimerCallback &cb);
 
 private:
     bool quit_;
@@ -35,6 +39,7 @@ private:
     Channel* current_active_channel_;
     vector<functor> queue_;
     MutexLock queue_lock_;
+    TimerQueue timer_queue_;
 };
 
 #endif

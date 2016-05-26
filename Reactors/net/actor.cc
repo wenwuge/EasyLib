@@ -1,7 +1,8 @@
 #include "actor.h"
 const int kPollTimeMs = 10000;
 Actor::Actor()
-    :poller_(Poller::newDefaultPoller(this))
+    :poller_(Poller::newDefaultPoller(this)),
+     timer_queue_(this)
 {
 }
 
@@ -60,4 +61,24 @@ void Actor::Loop()
     }
 
     looping_ = false;
+}
+
+
+TimerId Actor::RunAt(const Timestamp& time, const TimerCallback &cb)
+{
+    return timer_queue_.AddTimer(cb, time, 0);  
+}
+
+TimerId Actor::RunEvery(int delay, const TimerCallback &cb)
+{
+    Timestamp now = Timestamp::now(); 
+    Timestamp time(now.microSecondsSinceEpoch() + delay*1000*1000)  ;
+    return timer_queue_.AddTimer(cb, time, delay);  
+}
+
+TimerId Actor::RunAfter(int interval, const TimerCallback &cb)
+{
+    Timestamp now = Timestamp::now(); 
+    Timestamp time(now.microSecondsSinceEpoch() + interval)  ;
+    return timer_queue_.AddTimer(cb, time, 0);  
 }
