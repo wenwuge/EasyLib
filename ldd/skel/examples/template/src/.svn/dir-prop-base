@@ -1,9 +1,0 @@
-K 10
-svn:ignore
-V 21
-*.d
-*.o
-template
-log
-
-END
