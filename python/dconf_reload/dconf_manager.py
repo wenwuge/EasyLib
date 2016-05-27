@@ -114,8 +114,6 @@ if __name__ == "__main__":
     dconf = DconfManager()
     dconf.parse("./test.ini")
     dconf.init_dconf()
-    #url = "http://crule_test.safe.qihoo.net:8360/CloudRule/data/rules/cloudkill2.xml"
-    #dst = "/home/libin3-s/cloudkill.xml"
     #download(url, dst)
     dconf.start()
 
