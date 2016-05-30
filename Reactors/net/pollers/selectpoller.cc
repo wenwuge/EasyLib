@@ -15,17 +15,18 @@ void SelectPoller::FillActiveChannels(fd_set& readset, fd_set& writeset, Channel
 {
     for(list<int>::iterator begin = fds_.begin(); begin != fds_.end(); begin++){
         int flag = 0;
-        if(FD_ISSET(*begin, &readfds_)){
+        Channel* channel = channels_[*begin];
+        if(FD_ISSET(*begin, &readset)){
             flag |= kReadEvent;
-
+            channel->set_revents(kReadEvent);
         }
         
-        if(FD_ISSET(*begin, &writefds_)){
+        if(FD_ISSET(*begin, &writeset)){
             flag |= kWriteEvent;
+            channel->set_revents(kWriteEvent);
         }
+
         if(flag){
-            Channel* channel = channels_[*begin];
-            channel->set_revents(kReadEvent);
             active_channels.push_back(channel);
         }
     }
@@ -37,8 +38,16 @@ Timestamp SelectPoller::Poll(int timeout_ms, ChannelList& active_channels)
 {
     fd_set read_set;
     fd_set write_set;
-    memcpy(&read_set, &readfds_, sizeof(fd_set));
-    memcpy(&write_set, &writefds_, sizeof(fd_set));
+    FD_ZERO(&read_set);
+    FD_ZERO(&write_set);
+    //memcpy(&read_set, &readfds_, sizeof(fd_set));
+    //memcpy(&write_set, &writefds_, sizeof(fd_set));
+    for(list<int>::iterator it = fds_.begin(); it != fds_.end(); it++){
+        if(FD_ISSET(*it, &readfds_))
+            FD_SET(*it, &read_set);
+        if(FD_ISSET(*it, &writefds_))
+            FD_SET(*it, &write_set);
+    }
     struct timeval timeout;
     timeout.tv_sec = timeout_ms/1000;
     timeout.tv_usec = (timeout_ms%1000)*1000;
@@ -48,11 +57,12 @@ Timestamp SelectPoller::Poll(int timeout_ms, ChannelList& active_channels)
     Timestamp now(Timestamp::now());
     
     if(ret > 0){
+        cout << "some event has happen, ret: " << ret << endl;
         FillActiveChannels(read_set, write_set, active_channels);
     }else if(ret == 0){
         cout << "nothing happended"<< endl;
     }else {
-       cout << "ret : " << ret << endl;
+       //cout << "ret : " << ret << endl;
        if(errno != EINTR){
             perror("select error happen!");
     //            cout << "select error happen!, errno: " << errno <<endl;
