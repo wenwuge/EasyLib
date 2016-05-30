@@ -90,8 +90,8 @@ void TcpConnection::ConnectionEstablished()
     //add the connection into local thread loop,mainly read event
 
     std::cout << "tcp connection establised, call established_callback" << endl;
-
-    established_callback_(shared_from_this());
+    if(established_callback_)
+        established_callback_(shared_from_this());
     channel_->enableReading();
     state_ = ESTABLISHED;
     readable_ = true;

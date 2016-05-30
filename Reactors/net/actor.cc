@@ -79,6 +79,6 @@ TimerId Actor::RunEvery(int delay, const TimerCallback &cb)
 TimerId Actor::RunAfter(int interval, const TimerCallback &cb)
 {
     Timestamp now = Timestamp::now(); 
-    Timestamp time(now.microSecondsSinceEpoch() + interval)  ;
+    Timestamp time(now.microSecondsSinceEpoch() + interval*1000*1000)  ;
     return timer_queue_.AddTimer(cb, time, 0);  
 }
