@@ -4,6 +4,8 @@
 #include <arpa/inet.h>
 #include <boost/function.hpp>
 #include <boost/bind.hpp>
+#include <signal.h>
+
 #define BACKLOG 20
 TcpServer::TcpServer():actor_(new Actor()),
         next_id_(0)
@@ -17,6 +19,7 @@ void TcpServer::SetOptions(Options& option)
 
 int TcpServer::Start()
 {
+    signal(SIGPIPE, SIG_IGN);
     for(int i = 0; i < options_.thread_num_; i++){
         string name = "thread";
         threads_.push_back(new EventLoopThread(name));
@@ -60,7 +63,11 @@ int TcpServer::Start()
     //accept_channel_->setCloseCallBack();
     //accept_channel_->setErrorCallBack();
     //actor_->UpdateChannel(accept_channel_.get());
-    
+    //init worker manager
+    if(options_.workers_num_ > 0){
+       worker_manager_.reset(new WorkerManager(options_.workers_num_)); 
+       worker_manager_->StartWork();
+    }
 
     state_ = RUNNING;
     //start master evnet loop
@@ -126,4 +133,9 @@ void TcpServer::NewConnectionEstablished(int fd,struct sockaddr_in &peer)
 }
 void TcpServer::Stop()
 {
+}
+
+void TcpServer::QueueCpuCostJob(const CpuCostJob& job)
+{
+    worker_manager_->QueueJob(job);
 }

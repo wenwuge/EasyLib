@@ -10,6 +10,9 @@ TcpConnection::TcpConnection(EventLoopThread * thread, int fd):
     channel_->setWriteCallback(boost::bind(&TcpConnection::HandleWrite, this));
     channel_->setCloseCallback(boost::bind(&TcpConnection::HandleClose, this));
     channel_->setErrorCallback(boost::bind(&TcpConnection::HandleError, this));
+    int optval = 1;
+    setsockopt(fd, SOL_SOCKET, SO_KEEPALIVE, &optval, static_cast<socklen_t>(sizeof optval));   
+
 }
 TcpConnection::~TcpConnection()
 {

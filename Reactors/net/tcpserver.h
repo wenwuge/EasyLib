@@ -13,6 +13,7 @@
 #include <actor.h>
 #include "connection.h"
 #include "buffer.h"
+#include "workers.h"
 
 using namespace muduo;
 using namespace std;
@@ -26,11 +27,13 @@ typedef boost::function<void (const TcpConnectionPtr&)> WriteCompleteCallback;
 typedef boost::function<void (const TcpConnectionPtr&,
                               Buffer*,
                               Timestamp)> MessageCallback;
+typedef boost::function<void ()> CpuCostJob;
 
 struct Options{
     uint16_t thread_num_;
     uint16_t port_;
     string addr_;
+    int   workers_num_;
 
     MessageCallback  rev_cb_;
     WriteCompleteCallback     send_cb_;
@@ -51,6 +54,7 @@ public:
     void SetOptions(Options& option);
     int Start();
     void Stop();
+    void QueueCpuCostJob(const CpuCostJob& job);
 
 private:
     void HandleReadEvent(Timestamp ts);
@@ -74,6 +78,7 @@ private:
     ConnectionCallback   closed_callback_;
     #endif
     map<int, TcpConnectionPtr> conns_;
+    boost::scoped_ptr<WorkerManager> worker_manager_;
 };
 
 #endif
