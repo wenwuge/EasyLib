@@ -1,0 +1,107 @@
+syntax on
+set nu
+set autoindent
+set smartindent
+set expandtab
+set ts=4
+set shiftwidth=4
+set softtabstop=4
+
+set background=dark
+set hlsearch
+set incsearch
+
+
+let $LANG="zh_CN.gbk"
+set fileencodings=gbk,chinese,latin-1
+set fileencoding=gbk
+set encoding=gbk
+
+set ic
+let Tlist_Ctags_Cmd = '/usr/bin/ctags'
+let Tlist_Show_One_File = 1            "²»Í¬Ê±ÏÔÊ¾¶à¸öÎÄ¼þµÄtag£¬Ö»ÏÔÊ¾µ±Ç°ÎÄ¼þµÄ
+let Tlist_Exit_OnlyWindow = 1          "Èç¹ûtaglist´°¿ÚÊÇ×îºóÒ»¸ö´°¿Ú£¬ÔòÍË³övim
+
+
+filetype plugin indent on
+filetype plugin on
+set nocp
+set completeopt=longest,menu
+
+set tags=tags;
+set tags+=.tags;
+"set tags+=/home/libin3-s/easylib/EasyLib/muduo/muduo/tags;
+set tags+=/home/libin3-s/muduo/muduo/tags;
+set tags+=/home/libin3-s/qdev/CloudSrv/trunk/lcs/lcs_gateway/src/tags;
+set tags+=/home/libin3-s/qdev/CloudSrv/trunk/cloudcom/src/osl/tags;
+"set tags+=/home/libin3-s/msgpacker/include/tags;
+"set tags+=/home/libin3-s/tags;
+"set tags+=/home/libin3-s/schedule/liveshowcloud.8.28/scheduler/trunk/common/tags;
+set autochdir 
+if has("cscope")
+set csprg=/usr/bin/cscope
+set csto=1
+set cst
+set nocsverb
+if filereadable("cscope.out")
+cs add cscope.out
+endif
+set csverb
+endif
+nmap <C-@>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <C-@>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <C-@>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <C-@>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <C-@>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap <C-@>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap <C-@>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+nmap <C-@>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <C-@>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+
+"omnicppcomplete setting---
+imap <F3> <C-X><C-O>
+set completeopt=menu,menuone " �ص����ܲ�ȫʱ��Ԥ������
+let OmniCpp_MayCompleteDot = 1 " autocomplete with .
+let OmniCpp_MayCompleteArrow = 1 " autocomplete with ->
+let OmniCpp_MayCompleteScope = 1 " autocomplete with ::
+let OmniCpp_SelectFirstItem = 2 " select first item (but don't insert)
+let OmniCpp_NamespaceSearch = 2 " search namespaces in this and included files
+let OmniCpp_ShowPrototypeInAbbr = 1 " show function prototype in popup window
+let OmniCpp_GlobalScopeSearch=1 " enable the global scope search
+let OmniCpp_DisplayMode=1 " Class scope completion mode: always show all members
+let OmniCpp_DefaultNamespaces=["std"]
+let OmniCpp_ShowScopeInAbbr=1 " show scope in abbreviation and remove the
+last column
+let OmniCpp_ShowAccess=1 
+highlight Pmenu    guibg=darkgrey  guifg=black
+highlight PmenuSel guibg=lightgrey guifg=black
+
+function! UpdateCtags()
+let curdir=getcwd()
+while !filereadable("./tags")
+cd ..
+if getcwd() == "/"
+break
+endif
+endwhile
+if filewritable("./tags")
+"!ctags -R --file-scope=yes --langmap=c:+.h --languages=c,c++ --links=yes --c-kinds=+p --c++-kinds=+p --fields=+iaS --extra=+q
+!ctags -R --c++-kinds=+p  --fields=+ias --extra=+q
+endif
+execute ":cd " . curdir
+endfunction
+nmap <F8> :call UpdateCtags()<CR>
+
+"taglist setting
+let Tlist_Ctags_Cmd = '/usr/bin/ctags'
+let Tlist_Show_One_File = 0
+let Tlist_Exit_OnlyWindow = 1
+let Tlist_Show_Menu=1
+"let Tlist_Auto_Open=1
+let Tlist_File_Fold_Auto_Close=0
+noremap <F7> :TlistToggle<CR>
+noremap <F6> :!ctags -R<CR>
+
+"winmanager setting
+let g:winManagerWindowLayout='FileExplorer|TagList'
+nmap wm :WMToggle<cr>

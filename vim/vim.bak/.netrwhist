@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/libin3-s/mylib/EasyLib/Reactors'
+let g:netrw_dirhist_2='/home/libin3-s/mylib/EasyLib'
+let g:netrw_dirhist_3='/home/libin3-s/mylib/EasyLib/Reactors/net'
